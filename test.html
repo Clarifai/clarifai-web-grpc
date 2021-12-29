@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PostApps Example</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="./dist/src/index.js"></script>
+    <script>
+        import {PostAppsRequest} from "./proto/clarifai/api/service_pb";
+
+        $(document).ready(() => {
+            // event handlers
+            $('#send').click(function () {
+                const stub = new ClarifaiStub();
+                const request = new PostAppsRequest();
+                stub.grpc().postApps(request)
+                const call = request.grpc().postApps(
+                    request, {'custom-header-1': 'value1'},
+                    (err: grpcWeb.Error, response: MultiAppResponse) => {
+                        if (err) {
+
+                        } else {
+
+                        }
+                    });
+                call.on('status', (status: grpcWeb.Status) => {
+                    if (status.metadata) {
+                        console.log('Received metadata');
+                        console.log(status.metadata);
+                    }
+                });
+            });
+
+            $('#msg').focus();
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="row" id="first">
+        <div class="form-group">
+            <div class="input-group">
+                <input type="text" class="form-control" id="msg">
+                <span class="input-group-btn">
+            <button class="btn btn-primary" type="button" id="send">Send
+            </button>
+          </span>
+            </div>
+            <p class="help-block">Example: "Hello", "4 Hello", "err Hello"</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
