@@ -3,14 +3,12 @@
     "target": "es6",
     "module": "ESNext",
     "strict": true,
+    "declaration": true,
     "allowJs": true,
     "outDir": "./dist",
-    "moduleResolution": "node",
-    "types": ["node"]
+    "moduleResolution": "node"
   },
-  "include": [
-    "./src"
-  ],
+  "include": ["index.ts", "proto"],
   "exclude": [
     "node_modules"
   ]

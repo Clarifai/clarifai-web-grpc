@@ -1,4 +1,4 @@
-import {V2Client} from '../proto/clarifai/api/serviceServiceClientPb';
+import {V2Client} from './proto/clarifai/api/serviceServiceClientPb';
 
 class ClarifaiStub {
     static grpc() {
@@ -6,7 +6,6 @@ class ClarifaiStub {
 
         return new V2Client(base, null, null);
     }
-
 }
 
 module.exports = {ClarifaiStub};
