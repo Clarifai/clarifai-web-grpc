@@ -1,9 +1,14 @@
 import { ClarifaiStub } from '../index'
-import { strictEqual } from 'assert'
+import { expect } from 'chai'
 
 describe('Basic Client Stub', () => {
   it('works', () => {
     const client = ClarifaiStub.grpc()
-    strictEqual(client.hostname_, 'api.clarifai.com')
+    expect(client.hostname_).to.equal('api.clarifai.com')
+  })
+
+  it('allows custom hostname', () => {
+    const client = ClarifaiStub.grpc('api-dev.clarifai.com')
+    expect(client.hostname_).to.equal('api-dev.clarifai.com')
   })
 })
