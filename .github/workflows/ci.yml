@@ -34,7 +34,6 @@ jobs:
   #         node-version: 16
   #     - name: Install deps
   #       run: yarn install
-
   #     - name: Release it
   #       env:
   #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
