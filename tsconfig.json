@@ -1,13 +1,20 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "module": "commonjs",
+    "module": "ESNext",
     "strict": true,
+    "declaration": true,
     "allowJs": true,
     "outDir": "./dist",
-    "types": ["node"]
+    "moduleResolution": "node"
   },
+  "include": ["./index.ts"],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
 }
