@@ -8,8 +8,13 @@
     "outDir": "./dist",
     "moduleResolution": "node"
   },
-  "include": ["index.ts", "proto"],
+  "include": ["./index.ts"],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
 }
