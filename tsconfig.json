@@ -8,7 +8,12 @@
     "outDir": "./dist",
     "moduleResolution": "node"
   },
-  "include": ["./index.ts"],
+  "include": [
+    "./index.ts",
+    "./resources.ts",
+    "./service.ts",
+    "proto/",
+  ],
   "exclude": [
     "node_modules"
   ],

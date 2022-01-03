@@ -1,5 +1,5 @@
 {
-  "name": "clarifai-grpc-web",
+  "name": "clarifai-web-grpc",
   "version": "7.10.0",
   "description": "The official Clarifai gRPC-web client",
   "main": "dist/index.js",
