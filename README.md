@@ -2,6 +2,8 @@
 
 The official Clarifai gRPC client for use in client browser applications.
 
+[![NPM](https://nodei.co/npm/clarifai-web-grpc.png)](https://www.npmjs.com/package/clarifai-web-grpc)
+
 ## Installation
 
 ```bash
