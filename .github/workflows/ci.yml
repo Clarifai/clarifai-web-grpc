@@ -21,22 +21,20 @@ jobs:
       - name: Run tests
         run: yarn test
       - name: Build package
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: yarn build
 
-  # release:
-  #   needs: build
-  #   runs-on: ubuntu-20.04
-  #   steps:
-  #     # Setup steps
-  #     - uses: actions/checkout@v2
-  #     - uses: actions/setup-node@v2
-  #       with:
-  #         node-version: 16
-  #     - name: Install deps
-  #       run: yarn install
-  #     - name: Release it
-  #       env:
-  #         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-  #       run: yarn release
+  release:
+    needs: build
+    runs-on: ubuntu-20.04
+    steps:
+      # Setup steps
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - name: Install deps
+        run: yarn install
+      - name: Release it
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: yarn release
