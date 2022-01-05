@@ -7,3 +7,5 @@ export class ClarifaiStub {
 }
 
 export { V2Client }
+
+export { Error } from 'grpc-web'
