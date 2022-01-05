@@ -8,4 +8,4 @@ export class ClarifaiStub {
 
 export { V2Client }
 
-export { Error } from 'grpc-web'
+export { Error, Metadata, ClientReadableStream } from 'grpc-web'
