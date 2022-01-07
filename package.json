@@ -2,8 +2,9 @@
   "name": "clarifai-web-grpc",
   "version": "1.0.0",
   "description": "The official Clarifai gRPC-web client",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
   "repository": "https://github.com/Clarifai/clarifai-web-grpc",
   "author": "Clarifai Inc.",
   "license": "Apache-2.0",
@@ -11,7 +12,9 @@
   "scripts": {
     "test": "mocha",
     "clean": "rm -rf dist clarifai-web-grpc-*.tgz",
-    "build": "tsc -b",
+    "build:cjs": "tsc -b tsconfig.cjs.json",
+    "build:esm": "tsc -b",
+    "build": "yarn build:esm && yarn build:cjs",
     "prepack": "yarn clean && yarn build",
     "release": "semantic-release",
     "prepare": "husky install"
