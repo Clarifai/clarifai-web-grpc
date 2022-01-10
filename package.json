@@ -11,6 +11,7 @@
   "keywords": [],
   "scripts": {
     "test": "mocha",
+    "lint": "standard index.ts resources.ts service.ts",
     "clean": "rm -rf dist clarifai-web-grpc-*.tgz",
     "build:cjs": "tsc -b tsconfig.cjs.json",
     "build:esm": "tsc -b",
@@ -35,6 +36,7 @@
     "husky": "^7.0.4",
     "mocha": "^9.1.3",
     "semantic-release": "^18.0.1",
+    "standard": "^16.0.4",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.4"
   },

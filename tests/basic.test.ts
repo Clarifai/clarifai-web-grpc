@@ -1,6 +1,7 @@
 import { ClarifaiStub as StubSRC } from '../index'
 import { ClarifaiStub as StubCJS } from '../dist/cjs/index'
 import { ClarifaiStub as StubESM } from '../dist/esm/index'
+import { describe, it } from 'mocha'
 import { expect } from 'chai'
 
 describe('Client Stub (src)', () => {
