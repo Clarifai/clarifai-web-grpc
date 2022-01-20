@@ -7,7 +7,7 @@ import { expect } from 'chai'
 describe('Client Stub (src)', () => {
   it('works', () => {
     const client = StubSRC.grpc()
-    expect(client.hostname_).to.equal('api.clarifai.com')
+    expect(client.hostname_).to.equal('api-grpc-web.clarifai.com')
   })
 
   it('allows custom hostname', () => {
@@ -19,7 +19,7 @@ describe('Client Stub (src)', () => {
 describe('Client Stub (cjs)', () => {
   it('works', () => {
     const client = StubCJS.grpc()
-    expect(client.hostname_).to.equal('api.clarifai.com')
+    expect(client.hostname_).to.equal('api-grpc-web.clarifai.com')
   })
 
   it('allows custom hostname', () => {
@@ -31,7 +31,7 @@ describe('Client Stub (cjs)', () => {
 describe('Client Stub (esm)', () => {
   it('works', () => {
     const client = StubESM.grpc()
-    expect(client.hostname_).to.equal('api.clarifai.com')
+    expect(client.hostname_).to.equal('api-grpc-web.clarifai.com')
   })
 
   it('allows custom hostname', () => {
