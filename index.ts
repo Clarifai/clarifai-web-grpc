@@ -7,5 +7,3 @@ export class ClarifaiStub {
 }
 
 export { V2Client }
-export { Error, Metadata, ClientReadableStream } from 'grpc-web'
-export { BaseResponse } from './proto/clarifai/api/status/status_pb'
