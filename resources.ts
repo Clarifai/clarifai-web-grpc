@@ -10,6 +10,6 @@ export {
   DoubleValue, FloatValue, Int64Value, UInt64Value, Int32Value, UInt32Value,
   BoolValue, StringValue, BytesValue
 } from 'google-protobuf/google/protobuf/wrappers_pb'
-export { Error, Metadata } from 'grpc-web'
+export type { Error, Metadata } from 'grpc-web'
 export { Status, BaseResponse } from './proto/clarifai/api/status/status_pb'
 export { StatusCode } from './proto/clarifai/api/status/status_code_pb'
