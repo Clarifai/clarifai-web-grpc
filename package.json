@@ -5,6 +5,20 @@
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./resources": {
+      "import": "./dist/esm/resources.js",
+      "require": "./dist/cjs/resources.js"
+    },
+    "./service": {
+      "import": "./dist/esm/service.js",
+      "require": "./dist/cjs/service.js"
+    }
+  },
   "repository": "https://github.com/Clarifai/clarifai-web-grpc",
   "author": "Clarifai Inc.",
   "license": "Apache-2.0",
