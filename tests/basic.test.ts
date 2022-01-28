@@ -1,8 +1,8 @@
 import { describe, it } from 'mocha'
 import { expect } from 'chai'
-import { ClarifaiStub as StubSRC } from '../index'
-import { ClarifaiStub as StubCJS } from '../dist/cjs/index'
-import { ClarifaiStub as StubESM } from '../dist/esm/index'
+import { ClarifaiStub as StubSRC } from '../src/index'
+import { ClarifaiStub as StubCJS } from '../dist/index'
+import { ClarifaiStub as StubESM } from '../lib/index'
 
 describe('Client Stub (src)', () => {
   it('works', () => {

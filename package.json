@@ -2,21 +2,21 @@
   "name": "clarifai-web-grpc",
   "version": "1.0.0",
   "description": "The official Clarifai gRPC-web client",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/esm/index.d.ts",
+  "main": "dist/index.js",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
+      "import": "./lib/index.js",
+      "require": "./dist/index.js"
     },
     "./resources": {
-      "import": "./dist/esm/resources.js",
-      "require": "./dist/cjs/resources.js"
+      "import": "./lib/resources.js",
+      "require": "./dist/resources.js"
     },
     "./service": {
-      "import": "./dist/esm/service.js",
-      "require": "./dist/cjs/service.js"
+      "import": "./lib/service.js",
+      "require": "./dist/service.js"
     }
   },
   "repository": "https://github.com/Clarifai/clarifai-web-grpc",
@@ -26,7 +26,7 @@
   "scripts": {
     "test": "mocha",
     "lint": "eslint index.ts resources.ts service.ts",
-    "clean": "rm -rf dist clarifai-web-grpc-*.tgz",
+    "clean": "rm -rf dist lib clarifai-web-grpc-*.tgz",
     "typecheck": "tsc --pretty --noEmit",
     "build:cjs": "tsc -b tsconfig.cjs.json",
     "build:esm": "tsc -b",

@@ -1,8 +1,8 @@
 import { describe, it } from 'mocha'
 import { expect } from 'chai'
-import * as ResourcesSRC from '../resources'
-import * as ResourcesCJS from '../dist/cjs/resources'
-import * as ResourcesESM from '../dist/esm/resources'
+import * as ResourcesSRC from '../src/resources'
+import * as ResourcesCJS from '../dist/resources'
+import * as ResourcesESM from '../lib/resources'
 
 function verifyInterface (modInterface: Record<string, unknown>) {
   expect(modInterface.Any).to.be.instanceOf(Function)
