@@ -17,6 +17,12 @@
     "./service": {
       "import": "./lib/service.js",
       "require": "./dist/service.js"
+    },
+    "./lib/resources": {
+      "import": "./lib/resources.js"
+    },
+    "./lib/service": {
+      "import": "./lib/service.js"
     }
   },
   "repository": "https://github.com/Clarifai/clarifai-web-grpc",
