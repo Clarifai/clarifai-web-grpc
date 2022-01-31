@@ -1,47 +1,31 @@
 import { describe, it } from 'mocha'
 import { expect } from 'chai'
-import * as ResourcesSRC from '../src/resources'
-import * as ResourcesCJS from '../dist/resources'
-import * as ResourcesESM from '../lib/resources'
+import * as Resources from '../src/resources'
 
-function verifyInterface (modInterface: Record<string, unknown>) {
-  expect(modInterface.Any).to.be.instanceOf(Function)
-  expect(modInterface.Api).to.be.instanceOf(Function)
-  expect(modInterface.Duration).to.be.instanceOf(Function)
-  expect(modInterface.Empty).to.be.instanceOf(Function)
-  expect(modInterface.Struct).to.be.instanceOf(Function)
-  expect(modInterface.Timestamp).to.be.instanceOf(Function)
-  expect(modInterface.Type).to.be.instanceOf(Function)
-  expect(modInterface.Field).to.be.instanceOf(Function)
-  expect(modInterface.Enum).to.be.instanceOf(Function)
-  expect(modInterface.EnumValue).to.be.instanceOf(Function)
-  expect(modInterface.Option).to.be.instanceOf(Function)
-  expect(modInterface.DoubleValue).to.be.instanceOf(Function)
-  expect(modInterface.FloatValue).to.be.instanceOf(Function)
-  expect(modInterface.Int64Value).to.be.instanceOf(Function)
-  expect(modInterface.UInt64Value).to.be.instanceOf(Function)
-  expect(modInterface.Int32Value).to.be.instanceOf(Function)
-  expect(modInterface.UInt32Value).to.be.instanceOf(Function)
-  expect(modInterface.BoolValue).to.be.instanceOf(Function)
-  expect(modInterface.StringValue).to.be.instanceOf(Function)
-  expect(modInterface.BytesValue).to.be.instanceOf(Function)
-  expect(modInterface.BaseResponse).to.be.instanceOf(Function)
-}
-
-describe('Resources/Helpers (src)', () => {
+describe('Resources/Helpers', () => {
   it('exports various google-protobuf & grpc-web helper classes', () => {
-    verifyInterface(ResourcesSRC)
-  })
-})
-
-describe('Resources/Helpers (cjs)', () => {
-  it('exports various google-protobuf & grpc-web helper classes', () => {
-    verifyInterface(ResourcesCJS)
-  })
-})
-
-describe('Resources/Helpers (esm)', () => {
-  it('exports various google-protobuf & grpc-web helper classes', () => {
-    verifyInterface(ResourcesESM)
+    expect(Resources.Any).to.be.instanceOf(Function)
+    expect(Resources.Api).to.be.instanceOf(Function)
+    expect(Resources.Duration).to.be.instanceOf(Function)
+    expect(Resources.Empty).to.be.instanceOf(Function)
+    expect(Resources.Struct).to.be.instanceOf(Function)
+    expect(Resources.Timestamp).to.be.instanceOf(Function)
+    expect(Resources.Type).to.be.instanceOf(Function)
+    expect(Resources.Field).to.be.instanceOf(Function)
+    expect(Resources.Enum).to.be.instanceOf(Function)
+    expect(Resources.EnumValue).to.be.instanceOf(Function)
+    expect(Resources.Option).to.be.instanceOf(Function)
+    expect(Resources.DoubleValue).to.be.instanceOf(Function)
+    expect(Resources.FloatValue).to.be.instanceOf(Function)
+    expect(Resources.Int64Value).to.be.instanceOf(Function)
+    expect(Resources.UInt64Value).to.be.instanceOf(Function)
+    expect(Resources.Int32Value).to.be.instanceOf(Function)
+    expect(Resources.UInt32Value).to.be.instanceOf(Function)
+    expect(Resources.BoolValue).to.be.instanceOf(Function)
+    expect(Resources.StringValue).to.be.instanceOf(Function)
+    expect(Resources.BytesValue).to.be.instanceOf(Function)
+    expect(Resources.BaseResponse).to.be.instanceOf(Function)
+    expect(Resources.Status).to.be.instanceOf(Function)
+    expect(Resources.StatusCode).to.be.instanceOf(Object)
   })
 })

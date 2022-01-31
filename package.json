@@ -2,27 +2,17 @@
   "name": "clarifai-web-grpc",
   "version": "1.0.0",
   "description": "The official Clarifai gRPC-web client",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "module": "lib/index.js",
   "types": "lib/index.d.ts",
   "exports": {
-    ".": {
-      "import": "./lib/index.js",
-      "require": "./dist/index.js"
-    },
-    "./resources": {
-      "import": "./lib/resources.js",
-      "require": "./dist/resources.js"
-    },
-    "./service": {
-      "import": "./lib/service.js",
-      "require": "./dist/service.js"
-    },
-    "./lib/resources": {
-      "import": "./lib/resources.js"
-    },
-    "./lib/service": {
-      "import": "./lib/service.js"
+    ".": "./lib/index.js",
+    "./resources": "./lib/resources.js",
+    "./service": "./lib/service.js"
+  },
+  "typesVersions": {
+    "*": {
+      "*": ["lib/*"]
     }
   },
   "repository": "https://github.com/Clarifai/clarifai-web-grpc",
@@ -32,14 +22,13 @@
   "scripts": {
     "test": "mocha",
     "lint": "eslint ./src/index.ts ./src/resources.ts ./src/service.ts",
-    "clean": "rm -rf dist lib clarifai-web-grpc-*.tgz",
+    "clean": "rm -rf lib clarifai-web-grpc-*.tgz",
     "typecheck": "tsc --pretty --noEmit",
-    "build:cjs": "tsc -b tsconfig.cjs.json",
-    "build:esm": "tsc -b",
-    "build": "yarn build:esm && yarn build:cjs",
+    "build": "tsc -b && yarn copy-generated-protos",
     "prepack": "yarn clean && yarn build",
     "release": "semantic-release",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "copy-generated-protos": "cp -R src/proto src/google lib"
   },
   "dependencies": {
     "google-protobuf": "~3.14.0",
