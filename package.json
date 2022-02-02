@@ -12,7 +12,9 @@
   },
   "typesVersions": {
     "*": {
-      "*": ["lib/*"]
+      "index": ["lib/index.d.ts"],
+      "resources": ["lib/resources.d.ts"],
+      "service": ["lib/service.d.ts"]
     }
   },
   "repository": "https://github.com/Clarifai/clarifai-web-grpc",
