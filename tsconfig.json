@@ -6,18 +6,17 @@
     "declaration": true,
     "allowJs": true,
     "outDir": "./lib",
-    "moduleResolution": "node",
-    "baseUrl": "."
+    "moduleResolution": "node"
   },
   "include": [
-    "src"
+    "./src",
   ],
   "exclude": [
     "node_modules"
   ],
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS",
-    },
+      "module": "CommonJS"
+    }
   }
 }
