@@ -25,7 +25,7 @@
   "keywords": [],
   "scripts": {
     "test": "mocha",
-    "lint": "eslint ./src/index.ts ./src/resources.ts ./src/service.ts",
+    "lint": "eslint index.ts resources.ts service.ts",
     "clean": "rm -rf dist lib clarifai-web-grpc-*.tgz",
     "typecheck": "tsc --pretty --noEmit",
     "build:cjs": "tsc -b tsconfig.cjs.json",
