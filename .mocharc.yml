@@ -1,5 +1,0 @@
-color: true
-extension:
-  - ts
-require: ts-node/register
-spec: tests/**/*.test.ts

@@ -2,6 +2,7 @@
   "name": "clarifai-web-grpc",
   "version": "1.0.0",
   "description": "The official Clarifai gRPC-web client",
+  "type": "module",
   "main": "lib/index.js",
   "module": "lib/index.js",
   "types": "lib/index.d.ts",
