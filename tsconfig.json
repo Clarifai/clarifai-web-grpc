@@ -7,7 +7,6 @@
     "allowJs": true,
     "outDir": "./lib",
     "moduleResolution": "node",
-    "esModuleInterop": true,
     "baseUrl": "."
   },
   "include": [
