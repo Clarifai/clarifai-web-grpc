@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "ESNext",
+    "strict": true,
+    "declaration": true,
+    "allowJs": true,
+    "outDir": "./lib",
+    "moduleResolution": "node"
+  },
+  "include": [
+    "proto",
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

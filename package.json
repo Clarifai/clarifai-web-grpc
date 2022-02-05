@@ -8,6 +8,9 @@
   "license": "Apache-2.0",
   "keywords": [],
   "scripts": {
+    "build": "tsc -b",
+    "clean": "rm -rf lib clarifai-web-grpc-*.tgz",
+    "prepack": "yarn clean && yarn build",
     "release": "semantic-release",
     "prepare": "husky install"
   },
