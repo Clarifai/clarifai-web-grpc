@@ -18,8 +18,12 @@ jobs:
           node-version: 16
       - name: Install deps
         run: yarn install
+      - name: Lint code
+        run: yarn lint
       - name: Build package
         run: yarn build
+      - name: Run tests
+        run: yarn test
 
   release:
     needs: build

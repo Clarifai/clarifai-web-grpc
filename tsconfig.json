@@ -5,13 +5,21 @@
     "strict": true,
     "declaration": true,
     "allowJs": true,
-    "outDir": "./lib",
+    "outDir": "./dist/esm",
     "moduleResolution": "node"
   },
   "include": [
-    "proto",
+    "./index.ts",
+    "./resources.ts",
+    "./service.ts",
+    "proto/",
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
 }
