@@ -2,9 +2,11 @@ import * as jspb from "google-protobuf"
 
 import * as proto_clarifai_api_status_status_pb from '../../../proto/clarifai/api/status/status_pb';
 import * as proto_clarifai_api_utils_extensions_pb from '../../../proto/clarifai/api/utils/extensions_pb';
+import * as proto_utils_matrix_pb from '../../../proto/utils/matrix_pb';
 import * as proto_clarifai_auth_util_extension_pb from '../../../proto/clarifai/auth/util/extension_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
+import * as google_protobuf_wrappers_pb from 'google-protobuf/google/protobuf/wrappers_pb';
 
 export class Annotation extends jspb.Message {
   getId(): string;
@@ -142,6 +144,9 @@ export class App extends jspb.Message {
   getStarCount(): number;
   setStarCount(value: number): void;
 
+  getNotes(): string;
+  setNotes(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): App.AsObject;
   static toObject(includeInstance: boolean, msg: App): App.AsObject;
@@ -167,6 +172,7 @@ export namespace App {
     dataTierId: string,
     isStarred: boolean,
     starCount: number,
+    notes: string,
   }
 }
 
@@ -909,6 +915,11 @@ export class Data extends jspb.Message {
   clearTimeSegmentsList(): void;
   addTimeSegments(value?: TimeSegment, index?: number): TimeSegment;
 
+  getHitsList(): Array<Hit>;
+  setHitsList(value: Array<Hit>): void;
+  clearHitsList(): void;
+  addHits(value?: Hit, index?: number): Hit;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Data.AsObject;
   static toObject(includeInstance: boolean, msg: Data): Data.AsObject;
@@ -933,6 +944,7 @@ export namespace Data {
     audio?: Audio.AsObject,
     tracksList: Array<Track.AsObject>,
     timeSegmentsList: Array<TimeSegment.AsObject>,
+    hitsList: Array<Hit.AsObject>,
   }
 }
 
@@ -995,6 +1007,16 @@ export class RegionInfo extends jspb.Message {
   hasPoint(): boolean;
   clearPoint(): void;
 
+  getSpan(): Span | undefined;
+  setSpan(value?: Span): void;
+  hasSpan(): boolean;
+  clearSpan(): void;
+
+  getToken(): Token | undefined;
+  setToken(value?: Token): void;
+  hasToken(): boolean;
+  clearToken(): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RegionInfo.AsObject;
   static toObject(includeInstance: boolean, msg: RegionInfo): RegionInfo.AsObject;
@@ -1009,6 +1031,8 @@ export namespace RegionInfo {
     mask?: Mask.AsObject,
     polygon?: Polygon.AsObject,
     point?: Point.AsObject,
+    span?: Span.AsObject,
+    token?: Token.AsObject,
   }
 }
 
@@ -1157,6 +1181,58 @@ export namespace Point {
     row: number,
     col: number,
     z: number,
+  }
+}
+
+export class Span extends jspb.Message {
+  getCharStart(): number;
+  setCharStart(value: number): void;
+
+  getCharEnd(): number;
+  setCharEnd(value: number): void;
+
+  getRawText(): string;
+  setRawText(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Span.AsObject;
+  static toObject(includeInstance: boolean, msg: Span): Span.AsObject;
+  static serializeBinaryToWriter(message: Span, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Span;
+  static deserializeBinaryFromReader(message: Span, reader: jspb.BinaryReader): Span;
+}
+
+export namespace Span {
+  export type AsObject = {
+    charStart: number,
+    charEnd: number,
+    rawText: string,
+  }
+}
+
+export class Token extends jspb.Message {
+  getCharStart(): number;
+  setCharStart(value: number): void;
+
+  getCharEnd(): number;
+  setCharEnd(value: number): void;
+
+  getRawText(): string;
+  setRawText(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Token.AsObject;
+  static toObject(includeInstance: boolean, msg: Token): Token.AsObject;
+  static serializeBinaryToWriter(message: Token, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Token;
+  static deserializeBinaryFromReader(message: Token, reader: jspb.BinaryReader): Token;
+}
+
+export namespace Token {
+  export type AsObject = {
+    charStart: number,
+    charEnd: number,
+    rawText: string,
   }
 }
 
@@ -1476,7 +1552,7 @@ export namespace InputCount {
   }
 }
 
-export class DatasetFilter extends jspb.Message {
+export class AnnotationFilter extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
@@ -1496,30 +1572,26 @@ export class DatasetFilter extends jspb.Message {
   getAppId(): string;
   setAppId(value: string): void;
 
-  getDatasetId(): string;
-  setDatasetId(value: string): void;
-
   getSavedSearch(): Search | undefined;
   setSavedSearch(value?: Search): void;
   hasSavedSearch(): boolean;
   clearSavedSearch(): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DatasetFilter.AsObject;
-  static toObject(includeInstance: boolean, msg: DatasetFilter): DatasetFilter.AsObject;
-  static serializeBinaryToWriter(message: DatasetFilter, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DatasetFilter;
-  static deserializeBinaryFromReader(message: DatasetFilter, reader: jspb.BinaryReader): DatasetFilter;
+  toObject(includeInstance?: boolean): AnnotationFilter.AsObject;
+  static toObject(includeInstance: boolean, msg: AnnotationFilter): AnnotationFilter.AsObject;
+  static serializeBinaryToWriter(message: AnnotationFilter, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AnnotationFilter;
+  static deserializeBinaryFromReader(message: AnnotationFilter, reader: jspb.BinaryReader): AnnotationFilter;
 }
 
-export namespace DatasetFilter {
+export namespace AnnotationFilter {
   export type AsObject = {
     id: string,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     userId: string,
     appId: string,
-    datasetId: string,
     savedSearch?: Search.AsObject,
   }
 }
@@ -1547,10 +1619,10 @@ export class DatasetVersion extends jspb.Message {
   getDatasetId(): string;
   setDatasetId(value: string): void;
 
-  getDatasetFilterConfig(): DatasetVersionDatasetFilterConfig | undefined;
-  setDatasetFilterConfig(value?: DatasetVersionDatasetFilterConfig): void;
-  hasDatasetFilterConfig(): boolean;
-  clearDatasetFilterConfig(): void;
+  getAnnotationFilterConfig(): AnnotationFilterConfig | undefined;
+  setAnnotationFilterConfig(value?: AnnotationFilterConfig): void;
+  hasAnnotationFilterConfig(): boolean;
+  clearAnnotationFilterConfig(): void;
 
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
   setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
@@ -1560,10 +1632,10 @@ export class DatasetVersion extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
-  getSummary(): DatasetVersionSummary | undefined;
-  setSummary(value?: DatasetVersionSummary): void;
-  hasSummary(): boolean;
-  clearSummary(): void;
+  getMetrics(): DatasetVersionMetrics | undefined;
+  setMetrics(value?: DatasetVersionMetrics): void;
+  hasMetrics(): boolean;
+  clearMetrics(): void;
 
   getMetadata(): google_protobuf_struct_pb.Struct | undefined;
   setMetadata(value?: google_protobuf_struct_pb.Struct): void;
@@ -1598,10 +1670,10 @@ export namespace DatasetVersion {
     appId: string,
     userId: string,
     datasetId: string,
-    datasetFilterConfig?: DatasetVersionDatasetFilterConfig.AsObject,
+    annotationFilterConfig?: AnnotationFilterConfig.AsObject,
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     description: string,
-    summary?: DatasetVersionSummary.AsObject,
+    metrics?: DatasetVersionMetrics.AsObject,
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
     visibility?: Visibility.AsObject,
     embedModelVersionIdsList: Array<string>,
@@ -1609,45 +1681,149 @@ export namespace DatasetVersion {
 
   export enum DataConfigCase { 
     DATA_CONFIG_NOT_SET = 0,
-    DATASET_FILTER_CONFIG = 7,
+    ANNOTATION_FILTER_CONFIG = 15,
   }
 }
 
-export class DatasetVersionDatasetFilterConfig extends jspb.Message {
-  getDatasetFilter(): DatasetFilter | undefined;
-  setDatasetFilter(value?: DatasetFilter): void;
-  hasDatasetFilter(): boolean;
-  clearDatasetFilter(): void;
+export class AnnotationFilterConfig extends jspb.Message {
+  getAnnotationFilter(): AnnotationFilter | undefined;
+  setAnnotationFilter(value?: AnnotationFilter): void;
+  hasAnnotationFilter(): boolean;
+  clearAnnotationFilter(): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DatasetVersionDatasetFilterConfig.AsObject;
-  static toObject(includeInstance: boolean, msg: DatasetVersionDatasetFilterConfig): DatasetVersionDatasetFilterConfig.AsObject;
-  static serializeBinaryToWriter(message: DatasetVersionDatasetFilterConfig, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DatasetVersionDatasetFilterConfig;
-  static deserializeBinaryFromReader(message: DatasetVersionDatasetFilterConfig, reader: jspb.BinaryReader): DatasetVersionDatasetFilterConfig;
+  toObject(includeInstance?: boolean): AnnotationFilterConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: AnnotationFilterConfig): AnnotationFilterConfig.AsObject;
+  static serializeBinaryToWriter(message: AnnotationFilterConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AnnotationFilterConfig;
+  static deserializeBinaryFromReader(message: AnnotationFilterConfig, reader: jspb.BinaryReader): AnnotationFilterConfig;
 }
 
-export namespace DatasetVersionDatasetFilterConfig {
+export namespace AnnotationFilterConfig {
   export type AsObject = {
-    datasetFilter?: DatasetFilter.AsObject,
+    annotationFilter?: AnnotationFilter.AsObject,
   }
 }
 
-export class DatasetVersionSummary extends jspb.Message {
-  getInputCountsMap(): jspb.Map<string, number>;
-  clearInputCountsMap(): void;
+export class DatasetVersionMetrics extends jspb.Message {
+  getInputsCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setInputsCount(value?: google_protobuf_wrappers_pb.UInt64Value): void;
+  hasInputsCount(): boolean;
+  clearInputsCount(): void;
+
+  getUnlabeledInputsCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setUnlabeledInputsCount(value?: google_protobuf_wrappers_pb.UInt64Value): void;
+  hasUnlabeledInputsCount(): boolean;
+  clearUnlabeledInputsCount(): void;
+
+  getInputsWithMetadataCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setInputsWithMetadataCount(value?: google_protobuf_wrappers_pb.UInt64Value): void;
+  hasInputsWithMetadataCount(): boolean;
+  clearInputsWithMetadataCount(): void;
+
+  getInputsWithGeoCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setInputsWithGeoCount(value?: google_protobuf_wrappers_pb.UInt64Value): void;
+  hasInputsWithGeoCount(): boolean;
+  clearInputsWithGeoCount(): void;
+
+  getRegionsCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setRegionsCount(value?: google_protobuf_wrappers_pb.UInt64Value): void;
+  hasRegionsCount(): boolean;
+  clearRegionsCount(): void;
+
+  getRegionLocationMatrix(): proto_utils_matrix_pbMatrixUint64 | undefined;
+  setRegionLocationMatrix(value?: proto_utils_matrix_pbMatrixUint64): void;
+  hasRegionLocationMatrix(): boolean;
+  clearRegionLocationMatrix(): void;
+
+  getBoundingBoxesCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setBoundingBoxesCount(value?: google_protobuf_wrappers_pb.UInt64Value): void;
+  hasBoundingBoxesCount(): boolean;
+  clearBoundingBoxesCount(): void;
+
+  getPolygonsCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setPolygonsCount(value?: google_protobuf_wrappers_pb.UInt64Value): void;
+  hasPolygonsCount(): boolean;
+  clearPolygonsCount(): void;
+
+  getPointsCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setPointsCount(value?: google_protobuf_wrappers_pb.UInt64Value): void;
+  hasPointsCount(): boolean;
+  clearPointsCount(): void;
+
+  getMasksCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setMasksCount(value?: google_protobuf_wrappers_pb.UInt64Value): void;
+  hasMasksCount(): boolean;
+  clearMasksCount(): void;
+
+  getRegionInputsCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setRegionInputsCount(value?: google_protobuf_wrappers_pb.UInt64Value): void;
+  hasRegionInputsCount(): boolean;
+  clearRegionInputsCount(): void;
+
+  getRegionFramesCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setRegionFramesCount(value?: google_protobuf_wrappers_pb.UInt64Value): void;
+  hasRegionFramesCount(): boolean;
+  clearRegionFramesCount(): void;
+
+  getFramesCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setFramesCount(value?: google_protobuf_wrappers_pb.UInt64Value): void;
+  hasFramesCount(): boolean;
+  clearFramesCount(): void;
+
+  getFrameInputsCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setFrameInputsCount(value?: google_protobuf_wrappers_pb.UInt64Value): void;
+  hasFrameInputsCount(): boolean;
+  clearFrameInputsCount(): void;
+
+  getEmbeddingsCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setEmbeddingsCount(value?: google_protobuf_wrappers_pb.UInt64Value): void;
+  hasEmbeddingsCount(): boolean;
+  clearEmbeddingsCount(): void;
+
+  getPositiveInputTagsCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setPositiveInputTagsCount(value?: google_protobuf_wrappers_pb.UInt64Value): void;
+  hasPositiveInputTagsCount(): boolean;
+  clearPositiveInputTagsCount(): void;
+
+  getPositiveRegionTagsCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setPositiveRegionTagsCount(value?: google_protobuf_wrappers_pb.UInt64Value): void;
+  hasPositiveRegionTagsCount(): boolean;
+  clearPositiveRegionTagsCount(): void;
+
+  getPositiveFrameTagsCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setPositiveFrameTagsCount(value?: google_protobuf_wrappers_pb.UInt64Value): void;
+  hasPositiveFrameTagsCount(): boolean;
+  clearPositiveFrameTagsCount(): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DatasetVersionSummary.AsObject;
-  static toObject(includeInstance: boolean, msg: DatasetVersionSummary): DatasetVersionSummary.AsObject;
-  static serializeBinaryToWriter(message: DatasetVersionSummary, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DatasetVersionSummary;
-  static deserializeBinaryFromReader(message: DatasetVersionSummary, reader: jspb.BinaryReader): DatasetVersionSummary;
+  toObject(includeInstance?: boolean): DatasetVersionMetrics.AsObject;
+  static toObject(includeInstance: boolean, msg: DatasetVersionMetrics): DatasetVersionMetrics.AsObject;
+  static serializeBinaryToWriter(message: DatasetVersionMetrics, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DatasetVersionMetrics;
+  static deserializeBinaryFromReader(message: DatasetVersionMetrics, reader: jspb.BinaryReader): DatasetVersionMetrics;
 }
 
-export namespace DatasetVersionSummary {
+export namespace DatasetVersionMetrics {
   export type AsObject = {
-    inputCountsMap: Array<[string, number]>,
+    inputsCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    unlabeledInputsCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    inputsWithMetadataCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    inputsWithGeoCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    regionsCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    regionLocationMatrix?: proto_utils_matrix_pbMatrixUint64.AsObject,
+    boundingBoxesCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    polygonsCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    pointsCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    masksCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    regionInputsCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    regionFramesCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    framesCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    frameInputsCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    embeddingsCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    positiveInputTagsCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    positiveRegionTagsCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    positiveFrameTagsCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
   }
 }
 
@@ -1788,6 +1964,9 @@ export class Model extends jspb.Message {
   getModelTypeId(): string;
   setModelTypeId(value: string): void;
 
+  getTask(): string;
+  setTask(value: string): void;
+
   getVisibility(): Visibility | undefined;
   setVisibility(value?: Visibility): void;
   hasVisibility(): boolean;
@@ -1852,6 +2031,7 @@ export namespace Model {
     inputInfo?: InputInfo.AsObject,
     trainInfo?: TrainInfo.AsObject,
     modelTypeId: string,
+    task: string,
     visibility?: Visibility.AsObject,
     description: string,
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
@@ -1955,12 +2135,6 @@ export class OutputInfo extends jspb.Message {
   getMessage(): string;
   setMessage(value: string): void;
 
-  getType(): string;
-  setType(value: string): void;
-
-  getTypeExt(): string;
-  setTypeExt(value: string): void;
-
   getFieldsMap(): google_protobuf_struct_pb.Struct | undefined;
   setFieldsMap(value?: google_protobuf_struct_pb.Struct): void;
   hasFieldsMap(): boolean;
@@ -1984,8 +2158,6 @@ export namespace OutputInfo {
     data?: Data.AsObject,
     outputConfig?: OutputConfig.AsObject,
     message: string,
-    type: string,
-    typeExt: string,
     fieldsMap?: google_protobuf_struct_pb.Struct.AsObject,
     params?: google_protobuf_struct_pb.Struct.AsObject,
   }
@@ -2143,9 +2315,6 @@ export class ModelType extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
-  getType(): string;
-  setType(value: string): void;
-
   getInputFieldsList(): Array<string>;
   setInputFieldsList(value: Array<string>): void;
   clearInputFieldsList(): void;
@@ -2199,7 +2368,6 @@ export namespace ModelType {
     id: string,
     title: string,
     description: string,
-    type: string,
     inputFieldsList: Array<string>,
     outputFieldsList: Array<string>,
     trainable: boolean,
@@ -2316,6 +2484,11 @@ export class ModelTypeEnumOption extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
+  getAliasesList(): Array<ModelTypeEnumOptionAlias>;
+  setAliasesList(value: Array<ModelTypeEnumOptionAlias>): void;
+  clearAliasesList(): void;
+  addAliases(value?: ModelTypeEnumOptionAlias, index?: number): ModelTypeEnumOptionAlias;
+
   getDescription(): string;
   setDescription(value: string): void;
 
@@ -2338,18 +2511,34 @@ export class ModelTypeEnumOption extends jspb.Message {
 export namespace ModelTypeEnumOption {
   export type AsObject = {
     id: string,
+    aliasesList: Array<ModelTypeEnumOptionAlias.AsObject>,
     description: string,
     modelTypeFieldsList: Array<ModelTypeField.AsObject>,
     internalOnly: boolean,
   }
 }
 
+export class ModelTypeEnumOptionAlias extends jspb.Message {
+  getIdInt(): number;
+  setIdInt(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelTypeEnumOptionAlias.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelTypeEnumOptionAlias): ModelTypeEnumOptionAlias.AsObject;
+  static serializeBinaryToWriter(message: ModelTypeEnumOptionAlias, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelTypeEnumOptionAlias;
+  static deserializeBinaryFromReader(message: ModelTypeEnumOptionAlias, reader: jspb.BinaryReader): ModelTypeEnumOptionAlias;
+}
+
+export namespace ModelTypeEnumOptionAlias {
+  export type AsObject = {
+    idInt: number,
+  }
+}
+
 export class ModelQuery extends jspb.Message {
   getName(): string;
   setName(value: string): void;
-
-  getType(): string;
-  setType(value: string): void;
 
   getModelTypeId(): string;
   setModelTypeId(value: string): void;
@@ -2365,7 +2554,6 @@ export class ModelQuery extends jspb.Message {
 export namespace ModelQuery {
   export type AsObject = {
     name: string,
-    type: string,
     modelTypeId: string,
   }
 }
@@ -2427,6 +2615,11 @@ export class ModelVersion extends jspb.Message {
   getLicense(): string;
   setLicense(value: string): void;
 
+  getDatasetVersion(): DatasetVersion | undefined;
+  setDatasetVersion(value?: DatasetVersion): void;
+  hasDatasetVersion(): boolean;
+  clearDatasetVersion(): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelVersion.AsObject;
   static toObject(includeInstance: boolean, msg: ModelVersion): ModelVersion.AsObject;
@@ -2451,6 +2644,99 @@ export namespace ModelVersion {
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
     license: string,
+    datasetVersion?: DatasetVersion.AsObject,
+  }
+}
+
+export class PretrainedModelConfig extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  getType(): string;
+  setType(value: string): void;
+
+  getInputFieldsMap(): google_protobuf_struct_pb.Struct | undefined;
+  setInputFieldsMap(value?: google_protobuf_struct_pb.Struct): void;
+  hasInputFieldsMap(): boolean;
+  clearInputFieldsMap(): void;
+
+  getOutputFieldsMap(): google_protobuf_struct_pb.Struct | undefined;
+  setOutputFieldsMap(value?: google_protobuf_struct_pb.Struct): void;
+  hasOutputFieldsMap(): boolean;
+  clearOutputFieldsMap(): void;
+
+  getDataProviderParams(): string;
+  setDataProviderParams(value: string): void;
+
+  getModelZipUrl(): string;
+  setModelZipUrl(value: string): void;
+
+  getOverwrite(): boolean;
+  setOverwrite(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PretrainedModelConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: PretrainedModelConfig): PretrainedModelConfig.AsObject;
+  static serializeBinaryToWriter(message: PretrainedModelConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PretrainedModelConfig;
+  static deserializeBinaryFromReader(message: PretrainedModelConfig, reader: jspb.BinaryReader): PretrainedModelConfig;
+}
+
+export namespace PretrainedModelConfig {
+  export type AsObject = {
+    id: string,
+    type: string,
+    inputFieldsMap?: google_protobuf_struct_pb.Struct.AsObject,
+    outputFieldsMap?: google_protobuf_struct_pb.Struct.AsObject,
+    dataProviderParams: string,
+    modelZipUrl: string,
+    overwrite: boolean,
+  }
+}
+
+export class TrainStats extends jspb.Message {
+  getLossCurveList(): Array<LossCurveEntry>;
+  setLossCurveList(value: Array<LossCurveEntry>): void;
+  clearLossCurveList(): void;
+  addLossCurve(value?: LossCurveEntry, index?: number): LossCurveEntry;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TrainStats.AsObject;
+  static toObject(includeInstance: boolean, msg: TrainStats): TrainStats.AsObject;
+  static serializeBinaryToWriter(message: TrainStats, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TrainStats;
+  static deserializeBinaryFromReader(message: TrainStats, reader: jspb.BinaryReader): TrainStats;
+}
+
+export namespace TrainStats {
+  export type AsObject = {
+    lossCurveList: Array<LossCurveEntry.AsObject>,
+  }
+}
+
+export class LossCurveEntry extends jspb.Message {
+  getEpoch(): number;
+  setEpoch(value: number): void;
+
+  getGlobalStep(): number;
+  setGlobalStep(value: number): void;
+
+  getCost(): number;
+  setCost(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LossCurveEntry.AsObject;
+  static toObject(includeInstance: boolean, msg: LossCurveEntry): LossCurveEntry.AsObject;
+  static serializeBinaryToWriter(message: LossCurveEntry, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LossCurveEntry;
+  static deserializeBinaryFromReader(message: LossCurveEntry, reader: jspb.BinaryReader): LossCurveEntry;
+}
+
+export namespace LossCurveEntry {
+  export type AsObject = {
+    epoch: number,
+    globalStep: number,
+    cost: number,
   }
 }
 
@@ -3160,6 +3446,12 @@ export class Hit extends jspb.Message {
   hasAnnotation(): boolean;
   clearAnnotation(): void;
 
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  getAppId(): string;
+  setAppId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Hit.AsObject;
   static toObject(includeInstance: boolean, msg: Hit): Hit.AsObject;
@@ -3173,6 +3465,8 @@ export namespace Hit {
     score: number,
     input?: Input.AsObject,
     annotation?: Annotation.AsObject,
+    userId: string,
+    appId: string,
   }
 }
 
@@ -4204,6 +4498,9 @@ export class AppDuplication extends jspb.Message {
   hasFilter(): boolean;
   clearFilter(): void;
 
+  getExistingAppId(): string;
+  setExistingAppId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AppDuplication.AsObject;
   static toObject(includeInstance: boolean, msg: AppDuplication): AppDuplication.AsObject;
@@ -4221,6 +4518,7 @@ export namespace AppDuplication {
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     lastModifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     filter?: AppDuplicationFilters.AsObject,
+    existingAppId: string,
   }
 }
 
@@ -4255,6 +4553,72 @@ export namespace AppDuplicationFilters {
     copyAnnotations: boolean,
     copyModels: boolean,
     copyWorkflows: boolean,
+  }
+}
+
+export class LabelOrder extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  hasStatus(): boolean;
+  clearStatus(): void;
+
+  getAutoRelease(): boolean;
+  setAutoRelease(value: boolean): void;
+
+  getAllowEmptyTag(): boolean;
+  setAllowEmptyTag(value: boolean): void;
+
+  getDesiredFulfillTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDesiredFulfillTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  hasDesiredFulfillTime(): boolean;
+  clearDesiredFulfillTime(): void;
+
+  getEstimateFulfillTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEstimateFulfillTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  hasEstimateFulfillTime(): boolean;
+  clearEstimateFulfillTime(): void;
+
+  getTask(): Task | undefined;
+  setTask(value?: Task): void;
+  hasTask(): boolean;
+  clearTask(): void;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): void;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LabelOrder.AsObject;
+  static toObject(includeInstance: boolean, msg: LabelOrder): LabelOrder.AsObject;
+  static serializeBinaryToWriter(message: LabelOrder, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LabelOrder;
+  static deserializeBinaryFromReader(message: LabelOrder, reader: jspb.BinaryReader): LabelOrder;
+}
+
+export namespace LabelOrder {
+  export type AsObject = {
+    id: string,
+    name: string,
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    autoRelease: boolean,
+    allowEmptyTag: boolean,
+    desiredFulfillTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    estimateFulfillTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    task?: Task.AsObject,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -4497,6 +4861,7 @@ export namespace TaskInputSource {
     INPUT_SOURCE_TYPE_NOT_SET = 0,
     ALL_INPUTS = 1,
     SAVED_SEARCH = 2,
+    DATASET = 3,
   }
 }
 
@@ -4992,6 +5357,18 @@ export namespace TimeInfo {
   }
 }
 
+export enum DatasetVersionMetricsGroupType { 
+  DATASET_VERSION_METRICS_GROUP_TYPE_NOT_SET = 0,
+  INPUT_TYPE = 2,
+  CONCEPT_ID = 10,
+  CONCEPTS_COUNT = 11,
+  BOUNDING_BOXES_COUNT = 20,
+  POLYGONS_COUNT = 21,
+  POINTS_COUNT = 22,
+  MASKS_COUNT = 23,
+  PIXELS_COUNT = 30,
+  ASPECT_RATIO = 31,
+}
 export enum ExpirationAction { 
   EXPIRATION_ACTION_NOT_SET = 0,
   DELAY = 1,

@@ -95,6 +95,9 @@ export class ListAnnotationsRequest extends jspb.Message {
   getListAllAnnotations(): boolean;
   setListAllAnnotations(value: boolean): void;
 
+  getReturnModelOutput(): boolean;
+  setReturnModelOutput(value: boolean): void;
+
   getPage(): number;
   setPage(value: number): void;
 
@@ -121,6 +124,7 @@ export namespace ListAnnotationsRequest {
     modelVersionIdsList: Array<string>,
     statusesList: Array<proto_clarifai_api_status_status_pb.Status.AsObject>,
     listAllAnnotations: boolean,
+    returnModelOutput: boolean,
     page: number,
     perPage: number,
     taskId: string,
@@ -2616,6 +2620,58 @@ export namespace PatchModelsRequest {
   }
 }
 
+export class IdUpdateSource extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  getNewId(): string;
+  setNewId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): IdUpdateSource.AsObject;
+  static toObject(includeInstance: boolean, msg: IdUpdateSource): IdUpdateSource.AsObject;
+  static serializeBinaryToWriter(message: IdUpdateSource, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): IdUpdateSource;
+  static deserializeBinaryFromReader(message: IdUpdateSource, reader: jspb.BinaryReader): IdUpdateSource;
+}
+
+export namespace IdUpdateSource {
+  export type AsObject = {
+    id: string,
+    newId: string,
+  }
+}
+
+export class PatchModelIdsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  hasUserAppId(): boolean;
+  clearUserAppId(): void;
+
+  getIdsList(): Array<IdUpdateSource>;
+  setIdsList(value: Array<IdUpdateSource>): void;
+  clearIdsList(): void;
+  addIds(value?: IdUpdateSource, index?: number): IdUpdateSource;
+
+  getAction(): string;
+  setAction(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PatchModelIdsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PatchModelIdsRequest): PatchModelIdsRequest.AsObject;
+  static serializeBinaryToWriter(message: PatchModelIdsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PatchModelIdsRequest;
+  static deserializeBinaryFromReader(message: PatchModelIdsRequest, reader: jspb.BinaryReader): PatchModelIdsRequest;
+}
+
+export namespace PatchModelIdsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    idsList: Array<IdUpdateSource.AsObject>,
+    action: string,
+  }
+}
+
 export class DeleteModelRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
   setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
@@ -3293,6 +3349,11 @@ export class MultiModelTypeResponse extends jspb.Message {
   clearModelTypesList(): void;
   addModelTypes(value?: proto_clarifai_api_resources_pb.ModelType, index?: number): proto_clarifai_api_resources_pb.ModelType;
 
+  getModelImporters(): proto_clarifai_api_resources_pb.ModelTypeField | undefined;
+  setModelImporters(value?: proto_clarifai_api_resources_pb.ModelTypeField): void;
+  hasModelImporters(): boolean;
+  clearModelImporters(): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MultiModelTypeResponse.AsObject;
   static toObject(includeInstance: boolean, msg: MultiModelTypeResponse): MultiModelTypeResponse.AsObject;
@@ -3305,6 +3366,7 @@ export namespace MultiModelTypeResponse {
   export type AsObject = {
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     modelTypesList: Array<proto_clarifai_api_resources_pb.ModelType.AsObject>,
+    modelImporters?: proto_clarifai_api_resources_pb.ModelTypeField.AsObject,
   }
 }
 
@@ -3814,6 +3876,96 @@ export namespace PostSearchesRequest {
   }
 }
 
+export class PatchInputsSearchesRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  hasUserAppId(): boolean;
+  clearUserAppId(): void;
+
+  getSearchesList(): Array<proto_clarifai_api_resources_pb.Search>;
+  setSearchesList(value: Array<proto_clarifai_api_resources_pb.Search>): void;
+  clearSearchesList(): void;
+  addSearches(value?: proto_clarifai_api_resources_pb.Search, index?: number): proto_clarifai_api_resources_pb.Search;
+
+  getAction(): string;
+  setAction(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PatchInputsSearchesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PatchInputsSearchesRequest): PatchInputsSearchesRequest.AsObject;
+  static serializeBinaryToWriter(message: PatchInputsSearchesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PatchInputsSearchesRequest;
+  static deserializeBinaryFromReader(message: PatchInputsSearchesRequest, reader: jspb.BinaryReader): PatchInputsSearchesRequest;
+}
+
+export namespace PatchInputsSearchesRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    searchesList: Array<proto_clarifai_api_resources_pb.Search.AsObject>,
+    action: string,
+  }
+}
+
+export class PatchAnnotationsSearchesRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  hasUserAppId(): boolean;
+  clearUserAppId(): void;
+
+  getSearchesList(): Array<proto_clarifai_api_resources_pb.Search>;
+  setSearchesList(value: Array<proto_clarifai_api_resources_pb.Search>): void;
+  clearSearchesList(): void;
+  addSearches(value?: proto_clarifai_api_resources_pb.Search, index?: number): proto_clarifai_api_resources_pb.Search;
+
+  getAction(): string;
+  setAction(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PatchAnnotationsSearchesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PatchAnnotationsSearchesRequest): PatchAnnotationsSearchesRequest.AsObject;
+  static serializeBinaryToWriter(message: PatchAnnotationsSearchesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PatchAnnotationsSearchesRequest;
+  static deserializeBinaryFromReader(message: PatchAnnotationsSearchesRequest, reader: jspb.BinaryReader): PatchAnnotationsSearchesRequest;
+}
+
+export namespace PatchAnnotationsSearchesRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    searchesList: Array<proto_clarifai_api_resources_pb.Search.AsObject>,
+    action: string,
+  }
+}
+
+export class PatchSearchesRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  hasUserAppId(): boolean;
+  clearUserAppId(): void;
+
+  getSearchesList(): Array<proto_clarifai_api_resources_pb.Search>;
+  setSearchesList(value: Array<proto_clarifai_api_resources_pb.Search>): void;
+  clearSearchesList(): void;
+  addSearches(value?: proto_clarifai_api_resources_pb.Search, index?: number): proto_clarifai_api_resources_pb.Search;
+
+  getAction(): string;
+  setAction(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PatchSearchesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PatchSearchesRequest): PatchSearchesRequest.AsObject;
+  static serializeBinaryToWriter(message: PatchSearchesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PatchSearchesRequest;
+  static deserializeBinaryFromReader(message: PatchSearchesRequest, reader: jspb.BinaryReader): PatchSearchesRequest;
+}
+
+export namespace PatchSearchesRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    searchesList: Array<proto_clarifai_api_resources_pb.Search.AsObject>,
+    action: string,
+  }
+}
+
 export class PostSearchesByIDRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
   setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
@@ -4209,6 +4361,9 @@ export class GetWorkflowRequest extends jspb.Message {
   clearAdditionalFieldsList(): void;
   addAdditionalFields(value: string, index?: number): void;
 
+  getExcludeClarifaiWorkflows(): boolean;
+  setExcludeClarifaiWorkflows(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetWorkflowRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetWorkflowRequest): GetWorkflowRequest.AsObject;
@@ -4223,6 +4378,7 @@ export namespace GetWorkflowRequest {
     workflowId: string,
     favorClarifaiWorkflows: boolean,
     additionalFieldsList: Array<string>,
+    excludeClarifaiWorkflows: boolean,
   }
 }
 
@@ -5189,6 +5345,192 @@ export namespace SingleTaskCountResponse {
     appId: string,
     taskId: string,
     countsList: Array<proto_clarifai_api_resources_pb.TaskStatusCountPerUser.AsObject>,
+  }
+}
+
+export class PostLabelOrdersRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  hasUserAppId(): boolean;
+  clearUserAppId(): void;
+
+  getLabelOrdersList(): Array<proto_clarifai_api_resources_pb.LabelOrder>;
+  setLabelOrdersList(value: Array<proto_clarifai_api_resources_pb.LabelOrder>): void;
+  clearLabelOrdersList(): void;
+  addLabelOrders(value?: proto_clarifai_api_resources_pb.LabelOrder, index?: number): proto_clarifai_api_resources_pb.LabelOrder;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostLabelOrdersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostLabelOrdersRequest): PostLabelOrdersRequest.AsObject;
+  static serializeBinaryToWriter(message: PostLabelOrdersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostLabelOrdersRequest;
+  static deserializeBinaryFromReader(message: PostLabelOrdersRequest, reader: jspb.BinaryReader): PostLabelOrdersRequest;
+}
+
+export namespace PostLabelOrdersRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    labelOrdersList: Array<proto_clarifai_api_resources_pb.LabelOrder.AsObject>,
+  }
+}
+
+export class GetLabelOrderRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  hasUserAppId(): boolean;
+  clearUserAppId(): void;
+
+  getLabelOrderId(): string;
+  setLabelOrderId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetLabelOrderRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetLabelOrderRequest): GetLabelOrderRequest.AsObject;
+  static serializeBinaryToWriter(message: GetLabelOrderRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetLabelOrderRequest;
+  static deserializeBinaryFromReader(message: GetLabelOrderRequest, reader: jspb.BinaryReader): GetLabelOrderRequest;
+}
+
+export namespace GetLabelOrderRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    labelOrderId: string,
+  }
+}
+
+export class ListLabelOrdersRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  hasUserAppId(): boolean;
+  clearUserAppId(): void;
+
+  getPage(): number;
+  setPage(value: number): void;
+
+  getPerPage(): number;
+  setPerPage(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListLabelOrdersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListLabelOrdersRequest): ListLabelOrdersRequest.AsObject;
+  static serializeBinaryToWriter(message: ListLabelOrdersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListLabelOrdersRequest;
+  static deserializeBinaryFromReader(message: ListLabelOrdersRequest, reader: jspb.BinaryReader): ListLabelOrdersRequest;
+}
+
+export namespace ListLabelOrdersRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    page: number,
+    perPage: number,
+  }
+}
+
+export class PatchLabelOrdersRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  hasUserAppId(): boolean;
+  clearUserAppId(): void;
+
+  getLabelOrdersList(): Array<proto_clarifai_api_resources_pb.LabelOrder>;
+  setLabelOrdersList(value: Array<proto_clarifai_api_resources_pb.LabelOrder>): void;
+  clearLabelOrdersList(): void;
+  addLabelOrders(value?: proto_clarifai_api_resources_pb.LabelOrder, index?: number): proto_clarifai_api_resources_pb.LabelOrder;
+
+  getAction(): string;
+  setAction(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PatchLabelOrdersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PatchLabelOrdersRequest): PatchLabelOrdersRequest.AsObject;
+  static serializeBinaryToWriter(message: PatchLabelOrdersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PatchLabelOrdersRequest;
+  static deserializeBinaryFromReader(message: PatchLabelOrdersRequest, reader: jspb.BinaryReader): PatchLabelOrdersRequest;
+}
+
+export namespace PatchLabelOrdersRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    labelOrdersList: Array<proto_clarifai_api_resources_pb.LabelOrder.AsObject>,
+    action: string,
+  }
+}
+
+export class DeleteLabelOrdersRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  hasUserAppId(): boolean;
+  clearUserAppId(): void;
+
+  getIdsList(): Array<string>;
+  setIdsList(value: Array<string>): void;
+  clearIdsList(): void;
+  addIds(value: string, index?: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteLabelOrdersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteLabelOrdersRequest): DeleteLabelOrdersRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteLabelOrdersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteLabelOrdersRequest;
+  static deserializeBinaryFromReader(message: DeleteLabelOrdersRequest, reader: jspb.BinaryReader): DeleteLabelOrdersRequest;
+}
+
+export namespace DeleteLabelOrdersRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    idsList: Array<string>,
+  }
+}
+
+export class MultiLabelOrderResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  hasStatus(): boolean;
+  clearStatus(): void;
+
+  getLabelOrdersList(): Array<proto_clarifai_api_resources_pb.LabelOrder>;
+  setLabelOrdersList(value: Array<proto_clarifai_api_resources_pb.LabelOrder>): void;
+  clearLabelOrdersList(): void;
+  addLabelOrders(value?: proto_clarifai_api_resources_pb.LabelOrder, index?: number): proto_clarifai_api_resources_pb.LabelOrder;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MultiLabelOrderResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiLabelOrderResponse): MultiLabelOrderResponse.AsObject;
+  static serializeBinaryToWriter(message: MultiLabelOrderResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiLabelOrderResponse;
+  static deserializeBinaryFromReader(message: MultiLabelOrderResponse, reader: jspb.BinaryReader): MultiLabelOrderResponse;
+}
+
+export namespace MultiLabelOrderResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    labelOrdersList: Array<proto_clarifai_api_resources_pb.LabelOrder.AsObject>,
+  }
+}
+
+export class SingleLabelOrderResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  hasStatus(): boolean;
+  clearStatus(): void;
+
+  getLabelOrder(): proto_clarifai_api_resources_pb.LabelOrder | undefined;
+  setLabelOrder(value?: proto_clarifai_api_resources_pb.LabelOrder): void;
+  hasLabelOrder(): boolean;
+  clearLabelOrder(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SingleLabelOrderResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SingleLabelOrderResponse): SingleLabelOrderResponse.AsObject;
+  static serializeBinaryToWriter(message: SingleLabelOrderResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SingleLabelOrderResponse;
+  static deserializeBinaryFromReader(message: SingleLabelOrderResponse, reader: jspb.BinaryReader): SingleLabelOrderResponse;
+}
+
+export namespace SingleLabelOrderResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    labelOrder?: proto_clarifai_api_resources_pb.LabelOrder.AsObject,
   }
 }
 
