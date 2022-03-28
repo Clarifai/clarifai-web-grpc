@@ -14,8 +14,8 @@ yarn add clarifai-web-grpc
 
 ```ts
 import { ClarifaiStub } from 'clarifai-web-grpc'
-import { App } from 'clarifai-web-grpc/resources'
-import { PostAppsRequest } from 'clarifai-web-grpc/service'
+import { App } from 'clarifai-web-grpc/proto/clarifai/api/resources_pb'
+import { PostAppsRequest } from 'clarifai-web-grpc/proto/clarifai/api/service_pb'
 
 const client = ClarifaiStub.grpc()
 // use client to create an App
