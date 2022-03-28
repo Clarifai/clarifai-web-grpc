@@ -2,15 +2,24 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {missingRequire} reports error on implicit type usages.
  * @suppress {messageConventions} JS Compiler reports an error if a variable or
  *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
+/* eslint-disable */
+// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = Function('return this')();
+var global = (function() {
+  if (this) { return this; }
+  if (typeof window !== 'undefined') { return window; }
+  if (typeof global !== 'undefined') { return global; }
+  if (typeof self !== 'undefined') { return self; }
+  return Function('return this')();
+}.call(null));
 
 goog.exportSymbol('proto.clarifai.api.status.StatusCode', null, global);
 /**
@@ -123,11 +132,16 @@ proto.clarifai.api.status.StatusCode = {
   DATA_DUMP_FAILED: 25152,
   DATA_DUMP_IN_PROGRESS: 25153,
   DATA_DUMP_NO_DATA: 25154,
+  DATA_DUMP_UNEXPECTED_ERROR: 25155,
   APP_DUPLICATION_SUCCESS: 25200,
   APP_DUPLICATION_FAILED: 25201,
   APP_DUPLICATION_PENDING: 25202,
   APP_DUPLICATION_IN_PROGRESS: 25203,
   APP_DUPLICATION_INVALID_REQUEST: 25204,
+  MODULE_DOES_NOT_EXIST: 25300,
+  MODULE_PERMISSION_DENIED: 25301,
+  MODULE_INVALID_ARGUMENT: 25302,
+  MODULE_INVALID_REQUEST: 25303,
   INPUT_DOWNLOAD_SUCCESS: 30000,
   INPUT_DOWNLOAD_PENDING: 30001,
   INPUT_DOWNLOAD_FAILED: 30002,

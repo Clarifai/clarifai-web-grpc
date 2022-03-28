@@ -1,4 +1,4 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
 
 import * as proto_clarifai_api_resources_pb from '../../../proto/clarifai/api/resources_pb';
 import * as proto_clarifai_api_status_status_pb from '../../../proto/clarifai/api/status/status_pb';
@@ -11,12 +11,13 @@ import * as google_protobuf_duration_pb from 'google-protobuf/google/protobuf/du
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 
+
 export class Pagination extends jspb.Message {
   getPage(): number;
-  setPage(value: number): void;
+  setPage(value: number): Pagination;
 
   getPerPage(): number;
-  setPerPage(value: number): void;
+  setPerPage(value: number): Pagination;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Pagination.AsObject;
@@ -35,15 +36,15 @@ export namespace Pagination {
 
 export class GetAnnotationRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetAnnotationRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): GetAnnotationRequest;
 
   getAnnotationId(): string;
-  setAnnotationId(value: string): void;
+  setAnnotationId(value: string): GetAnnotationRequest;
 
   getInputId(): string;
-  setInputId(value: string): void;
+  setInputId(value: string): GetAnnotationRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetAnnotationRequest.AsObject;
@@ -63,46 +64,49 @@ export namespace GetAnnotationRequest {
 
 export class ListAnnotationsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListAnnotationsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): ListAnnotationsRequest;
 
   getIdsList(): Array<string>;
-  setIdsList(value: Array<string>): void;
-  clearIdsList(): void;
-  addIds(value: string, index?: number): void;
+  setIdsList(value: Array<string>): ListAnnotationsRequest;
+  clearIdsList(): ListAnnotationsRequest;
+  addIds(value: string, index?: number): ListAnnotationsRequest;
 
   getInputIdsList(): Array<string>;
-  setInputIdsList(value: Array<string>): void;
-  clearInputIdsList(): void;
-  addInputIds(value: string, index?: number): void;
+  setInputIdsList(value: Array<string>): ListAnnotationsRequest;
+  clearInputIdsList(): ListAnnotationsRequest;
+  addInputIds(value: string, index?: number): ListAnnotationsRequest;
 
   getUserIdsList(): Array<string>;
-  setUserIdsList(value: Array<string>): void;
-  clearUserIdsList(): void;
-  addUserIds(value: string, index?: number): void;
+  setUserIdsList(value: Array<string>): ListAnnotationsRequest;
+  clearUserIdsList(): ListAnnotationsRequest;
+  addUserIds(value: string, index?: number): ListAnnotationsRequest;
 
   getModelVersionIdsList(): Array<string>;
-  setModelVersionIdsList(value: Array<string>): void;
-  clearModelVersionIdsList(): void;
-  addModelVersionIds(value: string, index?: number): void;
+  setModelVersionIdsList(value: Array<string>): ListAnnotationsRequest;
+  clearModelVersionIdsList(): ListAnnotationsRequest;
+  addModelVersionIds(value: string, index?: number): ListAnnotationsRequest;
 
   getStatusesList(): Array<proto_clarifai_api_status_status_pb.Status>;
-  setStatusesList(value: Array<proto_clarifai_api_status_status_pb.Status>): void;
-  clearStatusesList(): void;
+  setStatusesList(value: Array<proto_clarifai_api_status_status_pb.Status>): ListAnnotationsRequest;
+  clearStatusesList(): ListAnnotationsRequest;
   addStatuses(value?: proto_clarifai_api_status_status_pb.Status, index?: number): proto_clarifai_api_status_status_pb.Status;
 
   getListAllAnnotations(): boolean;
-  setListAllAnnotations(value: boolean): void;
+  setListAllAnnotations(value: boolean): ListAnnotationsRequest;
+
+  getReturnModelOutput(): boolean;
+  setReturnModelOutput(value: boolean): ListAnnotationsRequest;
 
   getPage(): number;
-  setPage(value: number): void;
+  setPage(value: number): ListAnnotationsRequest;
 
   getPerPage(): number;
-  setPerPage(value: number): void;
+  setPerPage(value: number): ListAnnotationsRequest;
 
   getTaskId(): string;
-  setTaskId(value: string): void;
+  setTaskId(value: string): ListAnnotationsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAnnotationsRequest.AsObject;
@@ -121,6 +125,7 @@ export namespace ListAnnotationsRequest {
     modelVersionIdsList: Array<string>,
     statusesList: Array<proto_clarifai_api_status_status_pb.Status.AsObject>,
     listAllAnnotations: boolean,
+    returnModelOutput: boolean,
     page: number,
     perPage: number,
     taskId: string,
@@ -129,13 +134,13 @@ export namespace ListAnnotationsRequest {
 
 export class PostAnnotationsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostAnnotationsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostAnnotationsRequest;
 
   getAnnotationsList(): Array<proto_clarifai_api_resources_pb.Annotation>;
-  setAnnotationsList(value: Array<proto_clarifai_api_resources_pb.Annotation>): void;
-  clearAnnotationsList(): void;
+  setAnnotationsList(value: Array<proto_clarifai_api_resources_pb.Annotation>): PostAnnotationsRequest;
+  clearAnnotationsList(): PostAnnotationsRequest;
   addAnnotations(value?: proto_clarifai_api_resources_pb.Annotation, index?: number): proto_clarifai_api_resources_pb.Annotation;
 
   serializeBinary(): Uint8Array;
@@ -155,17 +160,17 @@ export namespace PostAnnotationsRequest {
 
 export class PatchAnnotationsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchAnnotationsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PatchAnnotationsRequest;
 
   getAnnotationsList(): Array<proto_clarifai_api_resources_pb.Annotation>;
-  setAnnotationsList(value: Array<proto_clarifai_api_resources_pb.Annotation>): void;
-  clearAnnotationsList(): void;
+  setAnnotationsList(value: Array<proto_clarifai_api_resources_pb.Annotation>): PatchAnnotationsRequest;
+  clearAnnotationsList(): PatchAnnotationsRequest;
   addAnnotations(value?: proto_clarifai_api_resources_pb.Annotation, index?: number): proto_clarifai_api_resources_pb.Annotation;
 
   getAction(): string;
-  setAction(value: string): void;
+  setAction(value: string): PatchAnnotationsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PatchAnnotationsRequest.AsObject;
@@ -185,23 +190,23 @@ export namespace PatchAnnotationsRequest {
 
 export class PatchAnnotationsStatusRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchAnnotationsStatusRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PatchAnnotationsStatusRequest;
 
   getStatusCode(): proto_clarifai_api_status_status_code_pb.StatusCode;
-  setStatusCode(value: proto_clarifai_api_status_status_code_pb.StatusCode): void;
+  setStatusCode(value: proto_clarifai_api_status_status_code_pb.StatusCode): PatchAnnotationsStatusRequest;
 
   getUserIdsList(): Array<string>;
-  setUserIdsList(value: Array<string>): void;
-  clearUserIdsList(): void;
-  addUserIds(value: string, index?: number): void;
+  setUserIdsList(value: Array<string>): PatchAnnotationsStatusRequest;
+  clearUserIdsList(): PatchAnnotationsStatusRequest;
+  addUserIds(value: string, index?: number): PatchAnnotationsStatusRequest;
 
   getTaskId(): string;
-  setTaskId(value: string): void;
+  setTaskId(value: string): PatchAnnotationsStatusRequest;
 
   getAction(): string;
-  setAction(value: string): void;
+  setAction(value: string): PatchAnnotationsStatusRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PatchAnnotationsStatusRequest.AsObject;
@@ -223,17 +228,17 @@ export namespace PatchAnnotationsStatusRequest {
 
 export class PatchAnnotationsStatusResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): PatchAnnotationsStatusResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): PatchAnnotationsStatusResponse;
 
   getUserIdsList(): Array<string>;
-  setUserIdsList(value: Array<string>): void;
-  clearUserIdsList(): void;
-  addUserIds(value: string, index?: number): void;
+  setUserIdsList(value: Array<string>): PatchAnnotationsStatusResponse;
+  clearUserIdsList(): PatchAnnotationsStatusResponse;
+  addUserIds(value: string, index?: number): PatchAnnotationsStatusResponse;
 
   getUpdatedCount(): number;
-  setUpdatedCount(value: number): void;
+  setUpdatedCount(value: number): PatchAnnotationsStatusResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PatchAnnotationsStatusResponse.AsObject;
@@ -253,15 +258,15 @@ export namespace PatchAnnotationsStatusResponse {
 
 export class DeleteAnnotationRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteAnnotationRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): DeleteAnnotationRequest;
 
   getInputId(): string;
-  setInputId(value: string): void;
+  setInputId(value: string): DeleteAnnotationRequest;
 
   getAnnotationId(): string;
-  setAnnotationId(value: string): void;
+  setAnnotationId(value: string): DeleteAnnotationRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteAnnotationRequest.AsObject;
@@ -281,19 +286,19 @@ export namespace DeleteAnnotationRequest {
 
 export class DeleteAnnotationsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteAnnotationsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): DeleteAnnotationsRequest;
 
   getIdsList(): Array<string>;
-  setIdsList(value: Array<string>): void;
-  clearIdsList(): void;
-  addIds(value: string, index?: number): void;
+  setIdsList(value: Array<string>): DeleteAnnotationsRequest;
+  clearIdsList(): DeleteAnnotationsRequest;
+  addIds(value: string, index?: number): DeleteAnnotationsRequest;
 
   getInputIdsList(): Array<string>;
-  setInputIdsList(value: Array<string>): void;
-  clearInputIdsList(): void;
-  addInputIds(value: string, index?: number): void;
+  setInputIdsList(value: Array<string>): DeleteAnnotationsRequest;
+  clearInputIdsList(): DeleteAnnotationsRequest;
+  addInputIds(value: string, index?: number): DeleteAnnotationsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteAnnotationsRequest.AsObject;
@@ -313,14 +318,14 @@ export namespace DeleteAnnotationsRequest {
 
 export class SingleAnnotationResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleAnnotationResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): SingleAnnotationResponse;
 
   getAnnotation(): proto_clarifai_api_resources_pb.Annotation | undefined;
-  setAnnotation(value?: proto_clarifai_api_resources_pb.Annotation): void;
+  setAnnotation(value?: proto_clarifai_api_resources_pb.Annotation): SingleAnnotationResponse;
   hasAnnotation(): boolean;
-  clearAnnotation(): void;
+  clearAnnotation(): SingleAnnotationResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SingleAnnotationResponse.AsObject;
@@ -339,13 +344,13 @@ export namespace SingleAnnotationResponse {
 
 export class MultiAnnotationResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiAnnotationResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiAnnotationResponse;
 
   getAnnotationsList(): Array<proto_clarifai_api_resources_pb.Annotation>;
-  setAnnotationsList(value: Array<proto_clarifai_api_resources_pb.Annotation>): void;
-  clearAnnotationsList(): void;
+  setAnnotationsList(value: Array<proto_clarifai_api_resources_pb.Annotation>): MultiAnnotationResponse;
+  clearAnnotationsList(): MultiAnnotationResponse;
   addAnnotations(value?: proto_clarifai_api_resources_pb.Annotation, index?: number): proto_clarifai_api_resources_pb.Annotation;
 
   serializeBinary(): Uint8Array;
@@ -365,14 +370,14 @@ export namespace MultiAnnotationResponse {
 
 export class GetAppRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetAppRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): GetAppRequest;
 
   getAdditionalFieldsList(): Array<string>;
-  setAdditionalFieldsList(value: Array<string>): void;
-  clearAdditionalFieldsList(): void;
-  addAdditionalFields(value: string, index?: number): void;
+  setAdditionalFieldsList(value: Array<string>): GetAppRequest;
+  clearAdditionalFieldsList(): GetAppRequest;
+  addAdditionalFields(value: string, index?: number): GetAppRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetAppRequest.AsObject;
@@ -391,41 +396,41 @@ export namespace GetAppRequest {
 
 export class ListAppsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListAppsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): ListAppsRequest;
 
   getPage(): number;
-  setPage(value: number): void;
+  setPage(value: number): ListAppsRequest;
 
   getPerPage(): number;
-  setPerPage(value: number): void;
+  setPerPage(value: number): ListAppsRequest;
 
   getSortAscending(): boolean;
-  setSortAscending(value: boolean): void;
+  setSortAscending(value: boolean): ListAppsRequest;
 
   getSortByName(): boolean;
-  setSortByName(value: boolean): void;
+  setSortByName(value: boolean): ListAppsRequest;
 
   getSortByModifiedAt(): boolean;
-  setSortByModifiedAt(value: boolean): void;
+  setSortByModifiedAt(value: boolean): ListAppsRequest;
 
   getQuery(): string;
-  setQuery(value: string): void;
+  setQuery(value: string): ListAppsRequest;
 
   getName(): string;
-  setName(value: string): void;
+  setName(value: string): ListAppsRequest;
 
   getFeaturedOnly(): boolean;
-  setFeaturedOnly(value: boolean): void;
+  setFeaturedOnly(value: boolean): ListAppsRequest;
 
   getStarredOnly(): boolean;
-  setStarredOnly(value: boolean): void;
+  setStarredOnly(value: boolean): ListAppsRequest;
 
   getAdditionalFieldsList(): Array<string>;
-  setAdditionalFieldsList(value: Array<string>): void;
-  clearAdditionalFieldsList(): void;
-  addAdditionalFields(value: string, index?: number): void;
+  setAdditionalFieldsList(value: Array<string>): ListAppsRequest;
+  clearAdditionalFieldsList(): ListAppsRequest;
+  addAdditionalFields(value: string, index?: number): ListAppsRequest;
 
   getSortByCase(): ListAppsRequest.SortByCase;
 
@@ -461,13 +466,13 @@ export namespace ListAppsRequest {
 
 export class PostAppsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostAppsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostAppsRequest;
 
   getAppsList(): Array<proto_clarifai_api_resources_pb.App>;
-  setAppsList(value: Array<proto_clarifai_api_resources_pb.App>): void;
-  clearAppsList(): void;
+  setAppsList(value: Array<proto_clarifai_api_resources_pb.App>): PostAppsRequest;
+  clearAppsList(): PostAppsRequest;
   addApps(value?: proto_clarifai_api_resources_pb.App, index?: number): proto_clarifai_api_resources_pb.App;
 
   serializeBinary(): Uint8Array;
@@ -487,9 +492,9 @@ export namespace PostAppsRequest {
 
 export class DeleteAppRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteAppRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): DeleteAppRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteAppRequest.AsObject;
@@ -507,25 +512,25 @@ export namespace DeleteAppRequest {
 
 export class PatchAppsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchAppsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PatchAppsRequest;
 
   getAppsList(): Array<proto_clarifai_api_resources_pb.App>;
-  setAppsList(value: Array<proto_clarifai_api_resources_pb.App>): void;
-  clearAppsList(): void;
+  setAppsList(value: Array<proto_clarifai_api_resources_pb.App>): PatchAppsRequest;
+  clearAppsList(): PatchAppsRequest;
   addApps(value?: proto_clarifai_api_resources_pb.App, index?: number): proto_clarifai_api_resources_pb.App;
 
   getAction(): string;
-  setAction(value: string): void;
+  setAction(value: string): PatchAppsRequest;
 
   getMetadataAction(): proto_clarifai_api_resources_pb.PatchAction | undefined;
-  setMetadataAction(value?: proto_clarifai_api_resources_pb.PatchAction): void;
+  setMetadataAction(value?: proto_clarifai_api_resources_pb.PatchAction): PatchAppsRequest;
   hasMetadataAction(): boolean;
-  clearMetadataAction(): void;
+  clearMetadataAction(): PatchAppsRequest;
 
   getReindex(): boolean;
-  setReindex(value: boolean): void;
+  setReindex(value: boolean): PatchAppsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PatchAppsRequest.AsObject;
@@ -547,19 +552,19 @@ export namespace PatchAppsRequest {
 
 export class PostAppsSearchesRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostAppsSearchesRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostAppsSearchesRequest;
 
   getAppQuery(): proto_clarifai_api_resources_pb.AppQuery | undefined;
-  setAppQuery(value?: proto_clarifai_api_resources_pb.AppQuery): void;
+  setAppQuery(value?: proto_clarifai_api_resources_pb.AppQuery): PostAppsSearchesRequest;
   hasAppQuery(): boolean;
-  clearAppQuery(): void;
+  clearAppQuery(): PostAppsSearchesRequest;
 
   getPagination(): Pagination | undefined;
-  setPagination(value?: Pagination): void;
+  setPagination(value?: Pagination): PostAppsSearchesRequest;
   hasPagination(): boolean;
-  clearPagination(): void;
+  clearPagination(): PostAppsSearchesRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostAppsSearchesRequest.AsObject;
@@ -579,14 +584,14 @@ export namespace PostAppsSearchesRequest {
 
 export class SingleAppResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleAppResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): SingleAppResponse;
 
   getApp(): proto_clarifai_api_resources_pb.App | undefined;
-  setApp(value?: proto_clarifai_api_resources_pb.App): void;
+  setApp(value?: proto_clarifai_api_resources_pb.App): SingleAppResponse;
   hasApp(): boolean;
-  clearApp(): void;
+  clearApp(): SingleAppResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SingleAppResponse.AsObject;
@@ -605,13 +610,13 @@ export namespace SingleAppResponse {
 
 export class MultiAppResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiAppResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiAppResponse;
 
   getAppsList(): Array<proto_clarifai_api_resources_pb.App>;
-  setAppsList(value: Array<proto_clarifai_api_resources_pb.App>): void;
-  clearAppsList(): void;
+  setAppsList(value: Array<proto_clarifai_api_resources_pb.App>): MultiAppResponse;
+  clearAppsList(): MultiAppResponse;
   addApps(value?: proto_clarifai_api_resources_pb.App, index?: number): proto_clarifai_api_resources_pb.App;
 
   serializeBinary(): Uint8Array;
@@ -631,12 +636,12 @@ export namespace MultiAppResponse {
 
 export class ListCollaboratorsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListCollaboratorsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): ListCollaboratorsRequest;
 
   getListAllCollaborators(): boolean;
-  setListAllCollaborators(value: boolean): void;
+  setListAllCollaborators(value: boolean): ListCollaboratorsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListCollaboratorsRequest.AsObject;
@@ -655,13 +660,13 @@ export namespace ListCollaboratorsRequest {
 
 export class PostCollaboratorsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostCollaboratorsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostCollaboratorsRequest;
 
   getCollaboratorsList(): Array<proto_clarifai_api_resources_pb.Collaborator>;
-  setCollaboratorsList(value: Array<proto_clarifai_api_resources_pb.Collaborator>): void;
-  clearCollaboratorsList(): void;
+  setCollaboratorsList(value: Array<proto_clarifai_api_resources_pb.Collaborator>): PostCollaboratorsRequest;
+  clearCollaboratorsList(): PostCollaboratorsRequest;
   addCollaborators(value?: proto_clarifai_api_resources_pb.Collaborator, index?: number): proto_clarifai_api_resources_pb.Collaborator;
 
   serializeBinary(): Uint8Array;
@@ -681,17 +686,17 @@ export namespace PostCollaboratorsRequest {
 
 export class PatchCollaboratorsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchCollaboratorsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PatchCollaboratorsRequest;
 
   getCollaboratorsList(): Array<proto_clarifai_api_resources_pb.Collaborator>;
-  setCollaboratorsList(value: Array<proto_clarifai_api_resources_pb.Collaborator>): void;
-  clearCollaboratorsList(): void;
+  setCollaboratorsList(value: Array<proto_clarifai_api_resources_pb.Collaborator>): PatchCollaboratorsRequest;
+  clearCollaboratorsList(): PatchCollaboratorsRequest;
   addCollaborators(value?: proto_clarifai_api_resources_pb.Collaborator, index?: number): proto_clarifai_api_resources_pb.Collaborator;
 
   getAction(): string;
-  setAction(value: string): void;
+  setAction(value: string): PatchCollaboratorsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PatchCollaboratorsRequest.AsObject;
@@ -711,19 +716,19 @@ export namespace PatchCollaboratorsRequest {
 
 export class DeleteCollaboratorsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteCollaboratorsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): DeleteCollaboratorsRequest;
 
   getCollaboratorIdsList(): Array<string>;
-  setCollaboratorIdsList(value: Array<string>): void;
-  clearCollaboratorIdsList(): void;
-  addCollaboratorIds(value: string, index?: number): void;
+  setCollaboratorIdsList(value: Array<string>): DeleteCollaboratorsRequest;
+  clearCollaboratorIdsList(): DeleteCollaboratorsRequest;
+  addCollaboratorIds(value: string, index?: number): DeleteCollaboratorsRequest;
 
   getUserEmailsList(): Array<string>;
-  setUserEmailsList(value: Array<string>): void;
-  clearUserEmailsList(): void;
-  addUserEmails(value: string, index?: number): void;
+  setUserEmailsList(value: Array<string>): DeleteCollaboratorsRequest;
+  clearUserEmailsList(): DeleteCollaboratorsRequest;
+  addUserEmails(value: string, index?: number): DeleteCollaboratorsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteCollaboratorsRequest.AsObject;
@@ -743,13 +748,13 @@ export namespace DeleteCollaboratorsRequest {
 
 export class MultiCollaboratorsResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiCollaboratorsResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiCollaboratorsResponse;
 
   getCollaboratorsList(): Array<proto_clarifai_api_resources_pb.Collaborator>;
-  setCollaboratorsList(value: Array<proto_clarifai_api_resources_pb.Collaborator>): void;
-  clearCollaboratorsList(): void;
+  setCollaboratorsList(value: Array<proto_clarifai_api_resources_pb.Collaborator>): MultiCollaboratorsResponse;
+  clearCollaboratorsList(): MultiCollaboratorsResponse;
   addCollaborators(value?: proto_clarifai_api_resources_pb.Collaborator, index?: number): proto_clarifai_api_resources_pb.Collaborator;
 
   serializeBinary(): Uint8Array;
@@ -769,15 +774,15 @@ export namespace MultiCollaboratorsResponse {
 
 export class ListCollaborationsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListCollaborationsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): ListCollaborationsRequest;
 
   getPage(): number;
-  setPage(value: number): void;
+  setPage(value: number): ListCollaborationsRequest;
 
   getPerPage(): number;
-  setPerPage(value: number): void;
+  setPerPage(value: number): ListCollaborationsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListCollaborationsRequest.AsObject;
@@ -797,13 +802,13 @@ export namespace ListCollaborationsRequest {
 
 export class MultiCollaborationsResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiCollaborationsResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiCollaborationsResponse;
 
   getCollaborationsList(): Array<proto_clarifai_api_resources_pb.Collaboration>;
-  setCollaborationsList(value: Array<proto_clarifai_api_resources_pb.Collaboration>): void;
-  clearCollaborationsList(): void;
+  setCollaborationsList(value: Array<proto_clarifai_api_resources_pb.Collaboration>): MultiCollaborationsResponse;
+  clearCollaborationsList(): MultiCollaborationsResponse;
   addCollaborations(value?: proto_clarifai_api_resources_pb.Collaboration, index?: number): proto_clarifai_api_resources_pb.Collaboration;
 
   serializeBinary(): Uint8Array;
@@ -823,7 +828,7 @@ export namespace MultiCollaborationsResponse {
 
 export class GetStatusCodeRequest extends jspb.Message {
   getStatusCodeId(): string;
-  setStatusCodeId(value: string): void;
+  setStatusCodeId(value: string): GetStatusCodeRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetStatusCodeRequest.AsObject;
@@ -855,9 +860,9 @@ export namespace ListStatusCodesRequest {
 
 export class SingleStatusCodeResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleStatusCodeResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): SingleStatusCodeResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SingleStatusCodeResponse.AsObject;
@@ -875,13 +880,13 @@ export namespace SingleStatusCodeResponse {
 
 export class MultiStatusCodeResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiStatusCodeResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiStatusCodeResponse;
 
   getStatusesList(): Array<proto_clarifai_api_status_status_pb.Status>;
-  setStatusesList(value: Array<proto_clarifai_api_status_status_pb.Status>): void;
-  clearStatusesList(): void;
+  setStatusesList(value: Array<proto_clarifai_api_status_status_pb.Status>): MultiStatusCodeResponse;
+  clearStatusesList(): MultiStatusCodeResponse;
   addStatuses(value?: proto_clarifai_api_status_status_pb.Status, index?: number): proto_clarifai_api_status_status_pb.Status;
 
   serializeBinary(): Uint8Array;
@@ -901,12 +906,12 @@ export namespace MultiStatusCodeResponse {
 
 export class GetConceptRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetConceptRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): GetConceptRequest;
 
   getConceptId(): string;
-  setConceptId(value: string): void;
+  setConceptId(value: string): GetConceptRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetConceptRequest.AsObject;
@@ -925,15 +930,15 @@ export namespace GetConceptRequest {
 
 export class ListConceptsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListConceptsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): ListConceptsRequest;
 
   getPage(): number;
-  setPage(value: number): void;
+  setPage(value: number): ListConceptsRequest;
 
   getPerPage(): number;
-  setPerPage(value: number): void;
+  setPerPage(value: number): ListConceptsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListConceptsRequest.AsObject;
@@ -953,19 +958,19 @@ export namespace ListConceptsRequest {
 
 export class PostConceptsSearchesRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostConceptsSearchesRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostConceptsSearchesRequest;
 
   getConceptQuery(): proto_clarifai_api_resources_pb.ConceptQuery | undefined;
-  setConceptQuery(value?: proto_clarifai_api_resources_pb.ConceptQuery): void;
+  setConceptQuery(value?: proto_clarifai_api_resources_pb.ConceptQuery): PostConceptsSearchesRequest;
   hasConceptQuery(): boolean;
-  clearConceptQuery(): void;
+  clearConceptQuery(): PostConceptsSearchesRequest;
 
   getPagination(): Pagination | undefined;
-  setPagination(value?: Pagination): void;
+  setPagination(value?: Pagination): PostConceptsSearchesRequest;
   hasPagination(): boolean;
-  clearPagination(): void;
+  clearPagination(): PostConceptsSearchesRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostConceptsSearchesRequest.AsObject;
@@ -985,13 +990,13 @@ export namespace PostConceptsSearchesRequest {
 
 export class PostConceptsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostConceptsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostConceptsRequest;
 
   getConceptsList(): Array<proto_clarifai_api_resources_pb.Concept>;
-  setConceptsList(value: Array<proto_clarifai_api_resources_pb.Concept>): void;
-  clearConceptsList(): void;
+  setConceptsList(value: Array<proto_clarifai_api_resources_pb.Concept>): PostConceptsRequest;
+  clearConceptsList(): PostConceptsRequest;
   addConcepts(value?: proto_clarifai_api_resources_pb.Concept, index?: number): proto_clarifai_api_resources_pb.Concept;
 
   serializeBinary(): Uint8Array;
@@ -1011,17 +1016,17 @@ export namespace PostConceptsRequest {
 
 export class PatchConceptsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchConceptsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PatchConceptsRequest;
 
   getConceptsList(): Array<proto_clarifai_api_resources_pb.Concept>;
-  setConceptsList(value: Array<proto_clarifai_api_resources_pb.Concept>): void;
-  clearConceptsList(): void;
+  setConceptsList(value: Array<proto_clarifai_api_resources_pb.Concept>): PatchConceptsRequest;
+  clearConceptsList(): PatchConceptsRequest;
   addConcepts(value?: proto_clarifai_api_resources_pb.Concept, index?: number): proto_clarifai_api_resources_pb.Concept;
 
   getAction(): string;
-  setAction(value: string): void;
+  setAction(value: string): PatchConceptsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PatchConceptsRequest.AsObject;
@@ -1041,15 +1046,15 @@ export namespace PatchConceptsRequest {
 
 export class GetConceptCountsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetConceptCountsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): GetConceptCountsRequest;
 
   getPage(): number;
-  setPage(value: number): void;
+  setPage(value: number): GetConceptCountsRequest;
 
   getPerPage(): number;
-  setPerPage(value: number): void;
+  setPerPage(value: number): GetConceptCountsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetConceptCountsRequest.AsObject;
@@ -1069,14 +1074,14 @@ export namespace GetConceptCountsRequest {
 
 export class SingleConceptResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleConceptResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): SingleConceptResponse;
 
   getConcept(): proto_clarifai_api_resources_pb.Concept | undefined;
-  setConcept(value?: proto_clarifai_api_resources_pb.Concept): void;
+  setConcept(value?: proto_clarifai_api_resources_pb.Concept): SingleConceptResponse;
   hasConcept(): boolean;
-  clearConcept(): void;
+  clearConcept(): SingleConceptResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SingleConceptResponse.AsObject;
@@ -1095,13 +1100,13 @@ export namespace SingleConceptResponse {
 
 export class MultiConceptResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiConceptResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiConceptResponse;
 
   getConceptsList(): Array<proto_clarifai_api_resources_pb.Concept>;
-  setConceptsList(value: Array<proto_clarifai_api_resources_pb.Concept>): void;
-  clearConceptsList(): void;
+  setConceptsList(value: Array<proto_clarifai_api_resources_pb.Concept>): MultiConceptResponse;
+  clearConceptsList(): MultiConceptResponse;
   addConcepts(value?: proto_clarifai_api_resources_pb.Concept, index?: number): proto_clarifai_api_resources_pb.Concept;
 
   serializeBinary(): Uint8Array;
@@ -1121,13 +1126,13 @@ export namespace MultiConceptResponse {
 
 export class MultiConceptCountResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiConceptCountResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiConceptCountResponse;
 
   getConceptCountsList(): Array<proto_clarifai_api_resources_pb.ConceptCount>;
-  setConceptCountsList(value: Array<proto_clarifai_api_resources_pb.ConceptCount>): void;
-  clearConceptCountsList(): void;
+  setConceptCountsList(value: Array<proto_clarifai_api_resources_pb.ConceptCount>): MultiConceptCountResponse;
+  clearConceptCountsList(): MultiConceptCountResponse;
   addConceptCounts(value?: proto_clarifai_api_resources_pb.ConceptCount, index?: number): proto_clarifai_api_resources_pb.ConceptCount;
 
   serializeBinary(): Uint8Array;
@@ -1147,24 +1152,24 @@ export namespace MultiConceptCountResponse {
 
 export class ListConceptRelationsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListConceptRelationsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): ListConceptRelationsRequest;
 
   getConceptId(): string;
-  setConceptId(value: string): void;
+  setConceptId(value: string): ListConceptRelationsRequest;
 
   getPredicate(): string;
-  setPredicate(value: string): void;
+  setPredicate(value: string): ListConceptRelationsRequest;
 
   getKnowledgeGraphId(): string;
-  setKnowledgeGraphId(value: string): void;
+  setKnowledgeGraphId(value: string): ListConceptRelationsRequest;
 
   getPage(): number;
-  setPage(value: number): void;
+  setPage(value: number): ListConceptRelationsRequest;
 
   getPerPage(): number;
-  setPerPage(value: number): void;
+  setPerPage(value: number): ListConceptRelationsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListConceptRelationsRequest.AsObject;
@@ -1187,16 +1192,16 @@ export namespace ListConceptRelationsRequest {
 
 export class PostConceptRelationsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostConceptRelationsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostConceptRelationsRequest;
 
   getConceptId(): string;
-  setConceptId(value: string): void;
+  setConceptId(value: string): PostConceptRelationsRequest;
 
   getConceptRelationsList(): Array<proto_clarifai_api_resources_pb.ConceptRelation>;
-  setConceptRelationsList(value: Array<proto_clarifai_api_resources_pb.ConceptRelation>): void;
-  clearConceptRelationsList(): void;
+  setConceptRelationsList(value: Array<proto_clarifai_api_resources_pb.ConceptRelation>): PostConceptRelationsRequest;
+  clearConceptRelationsList(): PostConceptRelationsRequest;
   addConceptRelations(value?: proto_clarifai_api_resources_pb.ConceptRelation, index?: number): proto_clarifai_api_resources_pb.ConceptRelation;
 
   serializeBinary(): Uint8Array;
@@ -1217,17 +1222,17 @@ export namespace PostConceptRelationsRequest {
 
 export class DeleteConceptRelationsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteConceptRelationsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): DeleteConceptRelationsRequest;
 
   getConceptId(): string;
-  setConceptId(value: string): void;
+  setConceptId(value: string): DeleteConceptRelationsRequest;
 
   getIdsList(): Array<string>;
-  setIdsList(value: Array<string>): void;
-  clearIdsList(): void;
-  addIds(value: string, index?: number): void;
+  setIdsList(value: Array<string>): DeleteConceptRelationsRequest;
+  clearIdsList(): DeleteConceptRelationsRequest;
+  addIds(value: string, index?: number): DeleteConceptRelationsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteConceptRelationsRequest.AsObject;
@@ -1247,9 +1252,9 @@ export namespace DeleteConceptRelationsRequest {
 
 export class ListKnowledgeGraphsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListKnowledgeGraphsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): ListKnowledgeGraphsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListKnowledgeGraphsRequest.AsObject;
@@ -1267,13 +1272,13 @@ export namespace ListKnowledgeGraphsRequest {
 
 export class PostKnowledgeGraphsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostKnowledgeGraphsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostKnowledgeGraphsRequest;
 
   getKnowledgeGraphsList(): Array<proto_clarifai_api_resources_pb.KnowledgeGraph>;
-  setKnowledgeGraphsList(value: Array<proto_clarifai_api_resources_pb.KnowledgeGraph>): void;
-  clearKnowledgeGraphsList(): void;
+  setKnowledgeGraphsList(value: Array<proto_clarifai_api_resources_pb.KnowledgeGraph>): PostKnowledgeGraphsRequest;
+  clearKnowledgeGraphsList(): PostKnowledgeGraphsRequest;
   addKnowledgeGraphs(value?: proto_clarifai_api_resources_pb.KnowledgeGraph, index?: number): proto_clarifai_api_resources_pb.KnowledgeGraph;
 
   serializeBinary(): Uint8Array;
@@ -1293,13 +1298,13 @@ export namespace PostKnowledgeGraphsRequest {
 
 export class PostConceptMappingJobsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostConceptMappingJobsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostConceptMappingJobsRequest;
 
   getConceptMappingJobsList(): Array<proto_clarifai_api_resources_pb.ConceptMappingJob>;
-  setConceptMappingJobsList(value: Array<proto_clarifai_api_resources_pb.ConceptMappingJob>): void;
-  clearConceptMappingJobsList(): void;
+  setConceptMappingJobsList(value: Array<proto_clarifai_api_resources_pb.ConceptMappingJob>): PostConceptMappingJobsRequest;
+  clearConceptMappingJobsList(): PostConceptMappingJobsRequest;
   addConceptMappingJobs(value?: proto_clarifai_api_resources_pb.ConceptMappingJob, index?: number): proto_clarifai_api_resources_pb.ConceptMappingJob;
 
   serializeBinary(): Uint8Array;
@@ -1319,13 +1324,13 @@ export namespace PostConceptMappingJobsRequest {
 
 export class MultiConceptRelationResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiConceptRelationResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiConceptRelationResponse;
 
   getConceptRelationsList(): Array<proto_clarifai_api_resources_pb.ConceptRelation>;
-  setConceptRelationsList(value: Array<proto_clarifai_api_resources_pb.ConceptRelation>): void;
-  clearConceptRelationsList(): void;
+  setConceptRelationsList(value: Array<proto_clarifai_api_resources_pb.ConceptRelation>): MultiConceptRelationResponse;
+  clearConceptRelationsList(): MultiConceptRelationResponse;
   addConceptRelations(value?: proto_clarifai_api_resources_pb.ConceptRelation, index?: number): proto_clarifai_api_resources_pb.ConceptRelation;
 
   serializeBinary(): Uint8Array;
@@ -1345,13 +1350,13 @@ export namespace MultiConceptRelationResponse {
 
 export class MultiKnowledgeGraphResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiKnowledgeGraphResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiKnowledgeGraphResponse;
 
   getKnowledgeGraphsList(): Array<proto_clarifai_api_resources_pb.KnowledgeGraph>;
-  setKnowledgeGraphsList(value: Array<proto_clarifai_api_resources_pb.KnowledgeGraph>): void;
-  clearKnowledgeGraphsList(): void;
+  setKnowledgeGraphsList(value: Array<proto_clarifai_api_resources_pb.KnowledgeGraph>): MultiKnowledgeGraphResponse;
+  clearKnowledgeGraphsList(): MultiKnowledgeGraphResponse;
   addKnowledgeGraphs(value?: proto_clarifai_api_resources_pb.KnowledgeGraph, index?: number): proto_clarifai_api_resources_pb.KnowledgeGraph;
 
   serializeBinary(): Uint8Array;
@@ -1371,14 +1376,14 @@ export namespace MultiKnowledgeGraphResponse {
 
 export class MultiConceptMappingJobResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiConceptMappingJobResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiConceptMappingJobResponse;
 
   getIdsList(): Array<string>;
-  setIdsList(value: Array<string>): void;
-  clearIdsList(): void;
-  addIds(value: string, index?: number): void;
+  setIdsList(value: Array<string>): MultiConceptMappingJobResponse;
+  clearIdsList(): MultiConceptMappingJobResponse;
+  addIds(value: string, index?: number): MultiConceptMappingJobResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MultiConceptMappingJobResponse.AsObject;
@@ -1397,15 +1402,15 @@ export namespace MultiConceptMappingJobResponse {
 
 export class GetConceptLanguageRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetConceptLanguageRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): GetConceptLanguageRequest;
 
   getConceptId(): string;
-  setConceptId(value: string): void;
+  setConceptId(value: string): GetConceptLanguageRequest;
 
   getLanguage(): string;
-  setLanguage(value: string): void;
+  setLanguage(value: string): GetConceptLanguageRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetConceptLanguageRequest.AsObject;
@@ -1425,18 +1430,18 @@ export namespace GetConceptLanguageRequest {
 
 export class ListConceptLanguagesRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListConceptLanguagesRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): ListConceptLanguagesRequest;
 
   getConceptId(): string;
-  setConceptId(value: string): void;
+  setConceptId(value: string): ListConceptLanguagesRequest;
 
   getPage(): number;
-  setPage(value: number): void;
+  setPage(value: number): ListConceptLanguagesRequest;
 
   getPerPage(): number;
-  setPerPage(value: number): void;
+  setPerPage(value: number): ListConceptLanguagesRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListConceptLanguagesRequest.AsObject;
@@ -1457,20 +1462,20 @@ export namespace ListConceptLanguagesRequest {
 
 export class PatchConceptLanguagesRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchConceptLanguagesRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PatchConceptLanguagesRequest;
 
   getConceptId(): string;
-  setConceptId(value: string): void;
+  setConceptId(value: string): PatchConceptLanguagesRequest;
 
   getConceptLanguagesList(): Array<proto_clarifai_api_resources_pb.ConceptLanguage>;
-  setConceptLanguagesList(value: Array<proto_clarifai_api_resources_pb.ConceptLanguage>): void;
-  clearConceptLanguagesList(): void;
+  setConceptLanguagesList(value: Array<proto_clarifai_api_resources_pb.ConceptLanguage>): PatchConceptLanguagesRequest;
+  clearConceptLanguagesList(): PatchConceptLanguagesRequest;
   addConceptLanguages(value?: proto_clarifai_api_resources_pb.ConceptLanguage, index?: number): proto_clarifai_api_resources_pb.ConceptLanguage;
 
   getAction(): string;
-  setAction(value: string): void;
+  setAction(value: string): PatchConceptLanguagesRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PatchConceptLanguagesRequest.AsObject;
@@ -1491,16 +1496,16 @@ export namespace PatchConceptLanguagesRequest {
 
 export class PostConceptLanguagesRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostConceptLanguagesRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostConceptLanguagesRequest;
 
   getConceptId(): string;
-  setConceptId(value: string): void;
+  setConceptId(value: string): PostConceptLanguagesRequest;
 
   getConceptLanguagesList(): Array<proto_clarifai_api_resources_pb.ConceptLanguage>;
-  setConceptLanguagesList(value: Array<proto_clarifai_api_resources_pb.ConceptLanguage>): void;
-  clearConceptLanguagesList(): void;
+  setConceptLanguagesList(value: Array<proto_clarifai_api_resources_pb.ConceptLanguage>): PostConceptLanguagesRequest;
+  clearConceptLanguagesList(): PostConceptLanguagesRequest;
   addConceptLanguages(value?: proto_clarifai_api_resources_pb.ConceptLanguage, index?: number): proto_clarifai_api_resources_pb.ConceptLanguage;
 
   serializeBinary(): Uint8Array;
@@ -1521,14 +1526,14 @@ export namespace PostConceptLanguagesRequest {
 
 export class SingleConceptLanguageResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleConceptLanguageResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): SingleConceptLanguageResponse;
 
   getConceptLanguage(): proto_clarifai_api_resources_pb.ConceptLanguage | undefined;
-  setConceptLanguage(value?: proto_clarifai_api_resources_pb.ConceptLanguage): void;
+  setConceptLanguage(value?: proto_clarifai_api_resources_pb.ConceptLanguage): SingleConceptLanguageResponse;
   hasConceptLanguage(): boolean;
-  clearConceptLanguage(): void;
+  clearConceptLanguage(): SingleConceptLanguageResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SingleConceptLanguageResponse.AsObject;
@@ -1547,13 +1552,13 @@ export namespace SingleConceptLanguageResponse {
 
 export class MultiConceptLanguageResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiConceptLanguageResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiConceptLanguageResponse;
 
   getConceptLanguagesList(): Array<proto_clarifai_api_resources_pb.ConceptLanguage>;
-  setConceptLanguagesList(value: Array<proto_clarifai_api_resources_pb.ConceptLanguage>): void;
-  clearConceptLanguagesList(): void;
+  setConceptLanguagesList(value: Array<proto_clarifai_api_resources_pb.ConceptLanguage>): MultiConceptLanguageResponse;
+  clearConceptLanguagesList(): MultiConceptLanguageResponse;
   addConceptLanguages(value?: proto_clarifai_api_resources_pb.ConceptLanguage, index?: number): proto_clarifai_api_resources_pb.ConceptLanguage;
 
   serializeBinary(): Uint8Array;
@@ -1573,12 +1578,12 @@ export namespace MultiConceptLanguageResponse {
 
 export class GetInputRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetInputRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): GetInputRequest;
 
   getInputId(): string;
-  setInputId(value: string): void;
+  setInputId(value: string): GetInputRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetInputRequest.AsObject;
@@ -1597,17 +1602,17 @@ export namespace GetInputRequest {
 
 export class GetInputSamplesRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetInputSamplesRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): GetInputSamplesRequest;
 
   getTaskId(): string;
-  setTaskId(value: string): void;
+  setTaskId(value: string): GetInputSamplesRequest;
 
   getUserIdsList(): Array<string>;
-  setUserIdsList(value: Array<string>): void;
-  clearUserIdsList(): void;
-  addUserIds(value: string, index?: number): void;
+  setUserIdsList(value: Array<string>): GetInputSamplesRequest;
+  clearUserIdsList(): GetInputSamplesRequest;
+  addUserIds(value: string, index?: number): GetInputSamplesRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetInputSamplesRequest.AsObject;
@@ -1627,25 +1632,25 @@ export namespace GetInputSamplesRequest {
 
 export class ListInputsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListInputsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): ListInputsRequest;
 
   getPage(): number;
-  setPage(value: number): void;
+  setPage(value: number): ListInputsRequest;
 
   getPerPage(): number;
-  setPerPage(value: number): void;
+  setPerPage(value: number): ListInputsRequest;
 
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): ListInputsRequest;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): ListInputsRequest;
 
   getIdsList(): Array<string>;
-  setIdsList(value: Array<string>): void;
-  clearIdsList(): void;
-  addIds(value: string, index?: number): void;
+  setIdsList(value: Array<string>): ListInputsRequest;
+  clearIdsList(): ListInputsRequest;
+  addIds(value: string, index?: number): ListInputsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListInputsRequest.AsObject;
@@ -1667,18 +1672,18 @@ export namespace ListInputsRequest {
 
 export class StreamInputsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): StreamInputsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): StreamInputsRequest;
 
   getPerPage(): number;
-  setPerPage(value: number): void;
+  setPerPage(value: number): StreamInputsRequest;
 
   getLastId(): string;
-  setLastId(value: string): void;
+  setLastId(value: string): StreamInputsRequest;
 
   getDescending(): boolean;
-  setDescending(value: boolean): void;
+  setDescending(value: boolean): StreamInputsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StreamInputsRequest.AsObject;
@@ -1699,13 +1704,13 @@ export namespace StreamInputsRequest {
 
 export class PostInputsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostInputsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostInputsRequest;
 
   getInputsList(): Array<proto_clarifai_api_resources_pb.Input>;
-  setInputsList(value: Array<proto_clarifai_api_resources_pb.Input>): void;
-  clearInputsList(): void;
+  setInputsList(value: Array<proto_clarifai_api_resources_pb.Input>): PostInputsRequest;
+  clearInputsList(): PostInputsRequest;
   addInputs(value?: proto_clarifai_api_resources_pb.Input, index?: number): proto_clarifai_api_resources_pb.Input;
 
   serializeBinary(): Uint8Array;
@@ -1725,17 +1730,17 @@ export namespace PostInputsRequest {
 
 export class PatchInputsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchInputsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PatchInputsRequest;
 
   getInputsList(): Array<proto_clarifai_api_resources_pb.Input>;
-  setInputsList(value: Array<proto_clarifai_api_resources_pb.Input>): void;
-  clearInputsList(): void;
+  setInputsList(value: Array<proto_clarifai_api_resources_pb.Input>): PatchInputsRequest;
+  clearInputsList(): PatchInputsRequest;
   addInputs(value?: proto_clarifai_api_resources_pb.Input, index?: number): proto_clarifai_api_resources_pb.Input;
 
   getAction(): string;
-  setAction(value: string): void;
+  setAction(value: string): PatchInputsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PatchInputsRequest.AsObject;
@@ -1755,12 +1760,12 @@ export namespace PatchInputsRequest {
 
 export class DeleteInputRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteInputRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): DeleteInputRequest;
 
   getInputId(): string;
-  setInputId(value: string): void;
+  setInputId(value: string): DeleteInputRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteInputRequest.AsObject;
@@ -1779,14 +1784,14 @@ export namespace DeleteInputRequest {
 
 export class DeleteInputsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteInputsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): DeleteInputsRequest;
 
   getIdsList(): Array<string>;
-  setIdsList(value: Array<string>): void;
-  clearIdsList(): void;
-  addIds(value: string, index?: number): void;
+  setIdsList(value: Array<string>): DeleteInputsRequest;
+  clearIdsList(): DeleteInputsRequest;
+  addIds(value: string, index?: number): DeleteInputsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteInputsRequest.AsObject;
@@ -1805,14 +1810,14 @@ export namespace DeleteInputsRequest {
 
 export class SingleInputResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleInputResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): SingleInputResponse;
 
   getInput(): proto_clarifai_api_resources_pb.Input | undefined;
-  setInput(value?: proto_clarifai_api_resources_pb.Input): void;
+  setInput(value?: proto_clarifai_api_resources_pb.Input): SingleInputResponse;
   hasInput(): boolean;
-  clearInput(): void;
+  clearInput(): SingleInputResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SingleInputResponse.AsObject;
@@ -1831,13 +1836,13 @@ export namespace SingleInputResponse {
 
 export class MultiInputResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiInputResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiInputResponse;
 
   getInputsList(): Array<proto_clarifai_api_resources_pb.Input>;
-  setInputsList(value: Array<proto_clarifai_api_resources_pb.Input>): void;
-  clearInputsList(): void;
+  setInputsList(value: Array<proto_clarifai_api_resources_pb.Input>): MultiInputResponse;
+  clearInputsList(): MultiInputResponse;
   addInputs(value?: proto_clarifai_api_resources_pb.Input, index?: number): proto_clarifai_api_resources_pb.Input;
 
   serializeBinary(): Uint8Array;
@@ -1857,13 +1862,13 @@ export namespace MultiInputResponse {
 
 export class MultiInputAnnotationResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiInputAnnotationResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiInputAnnotationResponse;
 
   getHitsList(): Array<proto_clarifai_api_resources_pb.Hit>;
-  setHitsList(value: Array<proto_clarifai_api_resources_pb.Hit>): void;
-  clearHitsList(): void;
+  setHitsList(value: Array<proto_clarifai_api_resources_pb.Hit>): MultiInputAnnotationResponse;
+  clearHitsList(): MultiInputAnnotationResponse;
   addHits(value?: proto_clarifai_api_resources_pb.Hit, index?: number): proto_clarifai_api_resources_pb.Hit;
 
   serializeBinary(): Uint8Array;
@@ -1883,14 +1888,14 @@ export namespace MultiInputAnnotationResponse {
 
 export class SingleInputCountResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleInputCountResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): SingleInputCountResponse;
 
   getCounts(): proto_clarifai_api_resources_pb.InputCount | undefined;
-  setCounts(value?: proto_clarifai_api_resources_pb.InputCount): void;
+  setCounts(value?: proto_clarifai_api_resources_pb.InputCount): SingleInputCountResponse;
   hasCounts(): boolean;
-  clearCounts(): void;
+  clearCounts(): SingleInputCountResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SingleInputCountResponse.AsObject;
@@ -1909,9 +1914,9 @@ export namespace SingleInputCountResponse {
 
 export class GetInputCountRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetInputCountRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): GetInputCountRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetInputCountRequest.AsObject;
@@ -1927,27 +1932,671 @@ export namespace GetInputCountRequest {
   }
 }
 
+export class ListDatasetsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListDatasetsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): ListDatasetsRequest;
+
+  getPage(): number;
+  setPage(value: number): ListDatasetsRequest;
+
+  getPerPage(): number;
+  setPerPage(value: number): ListDatasetsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListDatasetsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListDatasetsRequest): ListDatasetsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListDatasetsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListDatasetsRequest;
+  static deserializeBinaryFromReader(message: ListDatasetsRequest, reader: jspb.BinaryReader): ListDatasetsRequest;
+}
+
+export namespace ListDatasetsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    page: number,
+    perPage: number,
+  }
+}
+
+export class GetDatasetRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetDatasetRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): GetDatasetRequest;
+
+  getDatasetId(): string;
+  setDatasetId(value: string): GetDatasetRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDatasetRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDatasetRequest): GetDatasetRequest.AsObject;
+  static serializeBinaryToWriter(message: GetDatasetRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDatasetRequest;
+  static deserializeBinaryFromReader(message: GetDatasetRequest, reader: jspb.BinaryReader): GetDatasetRequest;
+}
+
+export namespace GetDatasetRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    datasetId: string,
+  }
+}
+
+export class PostDatasetsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostDatasetsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostDatasetsRequest;
+
+  getDatasetsList(): Array<proto_clarifai_api_resources_pb.Dataset>;
+  setDatasetsList(value: Array<proto_clarifai_api_resources_pb.Dataset>): PostDatasetsRequest;
+  clearDatasetsList(): PostDatasetsRequest;
+  addDatasets(value?: proto_clarifai_api_resources_pb.Dataset, index?: number): proto_clarifai_api_resources_pb.Dataset;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostDatasetsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostDatasetsRequest): PostDatasetsRequest.AsObject;
+  static serializeBinaryToWriter(message: PostDatasetsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostDatasetsRequest;
+  static deserializeBinaryFromReader(message: PostDatasetsRequest, reader: jspb.BinaryReader): PostDatasetsRequest;
+}
+
+export namespace PostDatasetsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    datasetsList: Array<proto_clarifai_api_resources_pb.Dataset.AsObject>,
+  }
+}
+
+export class PatchDatasetsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchDatasetsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PatchDatasetsRequest;
+
+  getDatasetsList(): Array<proto_clarifai_api_resources_pb.Dataset>;
+  setDatasetsList(value: Array<proto_clarifai_api_resources_pb.Dataset>): PatchDatasetsRequest;
+  clearDatasetsList(): PatchDatasetsRequest;
+  addDatasets(value?: proto_clarifai_api_resources_pb.Dataset, index?: number): proto_clarifai_api_resources_pb.Dataset;
+
+  getAction(): string;
+  setAction(value: string): PatchDatasetsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PatchDatasetsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PatchDatasetsRequest): PatchDatasetsRequest.AsObject;
+  static serializeBinaryToWriter(message: PatchDatasetsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PatchDatasetsRequest;
+  static deserializeBinaryFromReader(message: PatchDatasetsRequest, reader: jspb.BinaryReader): PatchDatasetsRequest;
+}
+
+export namespace PatchDatasetsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    datasetsList: Array<proto_clarifai_api_resources_pb.Dataset.AsObject>,
+    action: string,
+  }
+}
+
+export class DeleteDatasetsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteDatasetsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): DeleteDatasetsRequest;
+
+  getDatasetIdsList(): Array<string>;
+  setDatasetIdsList(value: Array<string>): DeleteDatasetsRequest;
+  clearDatasetIdsList(): DeleteDatasetsRequest;
+  addDatasetIds(value: string, index?: number): DeleteDatasetsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteDatasetsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteDatasetsRequest): DeleteDatasetsRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteDatasetsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteDatasetsRequest;
+  static deserializeBinaryFromReader(message: DeleteDatasetsRequest, reader: jspb.BinaryReader): DeleteDatasetsRequest;
+}
+
+export namespace DeleteDatasetsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    datasetIdsList: Array<string>,
+  }
+}
+
+export class MultiDatasetResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiDatasetResponse;
+  hasStatus(): boolean;
+  clearStatus(): MultiDatasetResponse;
+
+  getDatasetsList(): Array<proto_clarifai_api_resources_pb.Dataset>;
+  setDatasetsList(value: Array<proto_clarifai_api_resources_pb.Dataset>): MultiDatasetResponse;
+  clearDatasetsList(): MultiDatasetResponse;
+  addDatasets(value?: proto_clarifai_api_resources_pb.Dataset, index?: number): proto_clarifai_api_resources_pb.Dataset;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MultiDatasetResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiDatasetResponse): MultiDatasetResponse.AsObject;
+  static serializeBinaryToWriter(message: MultiDatasetResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiDatasetResponse;
+  static deserializeBinaryFromReader(message: MultiDatasetResponse, reader: jspb.BinaryReader): MultiDatasetResponse;
+}
+
+export namespace MultiDatasetResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    datasetsList: Array<proto_clarifai_api_resources_pb.Dataset.AsObject>,
+  }
+}
+
+export class SingleDatasetResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleDatasetResponse;
+  hasStatus(): boolean;
+  clearStatus(): SingleDatasetResponse;
+
+  getDataset(): proto_clarifai_api_resources_pb.Dataset | undefined;
+  setDataset(value?: proto_clarifai_api_resources_pb.Dataset): SingleDatasetResponse;
+  hasDataset(): boolean;
+  clearDataset(): SingleDatasetResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SingleDatasetResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SingleDatasetResponse): SingleDatasetResponse.AsObject;
+  static serializeBinaryToWriter(message: SingleDatasetResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SingleDatasetResponse;
+  static deserializeBinaryFromReader(message: SingleDatasetResponse, reader: jspb.BinaryReader): SingleDatasetResponse;
+}
+
+export namespace SingleDatasetResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    dataset?: proto_clarifai_api_resources_pb.Dataset.AsObject,
+  }
+}
+
+export class ListDatasetInputsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListDatasetInputsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): ListDatasetInputsRequest;
+
+  getDatasetId(): string;
+  setDatasetId(value: string): ListDatasetInputsRequest;
+
+  getPage(): number;
+  setPage(value: number): ListDatasetInputsRequest;
+
+  getPerPage(): number;
+  setPerPage(value: number): ListDatasetInputsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListDatasetInputsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListDatasetInputsRequest): ListDatasetInputsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListDatasetInputsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListDatasetInputsRequest;
+  static deserializeBinaryFromReader(message: ListDatasetInputsRequest, reader: jspb.BinaryReader): ListDatasetInputsRequest;
+}
+
+export namespace ListDatasetInputsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    datasetId: string,
+    page: number,
+    perPage: number,
+  }
+}
+
+export class GetDatasetInputRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetDatasetInputRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): GetDatasetInputRequest;
+
+  getDatasetId(): string;
+  setDatasetId(value: string): GetDatasetInputRequest;
+
+  getInputId(): string;
+  setInputId(value: string): GetDatasetInputRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDatasetInputRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDatasetInputRequest): GetDatasetInputRequest.AsObject;
+  static serializeBinaryToWriter(message: GetDatasetInputRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDatasetInputRequest;
+  static deserializeBinaryFromReader(message: GetDatasetInputRequest, reader: jspb.BinaryReader): GetDatasetInputRequest;
+}
+
+export namespace GetDatasetInputRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    datasetId: string,
+    inputId: string,
+  }
+}
+
+export class PostDatasetInputsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostDatasetInputsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostDatasetInputsRequest;
+
+  getDatasetId(): string;
+  setDatasetId(value: string): PostDatasetInputsRequest;
+
+  getDatasetInputsList(): Array<proto_clarifai_api_resources_pb.DatasetInput>;
+  setDatasetInputsList(value: Array<proto_clarifai_api_resources_pb.DatasetInput>): PostDatasetInputsRequest;
+  clearDatasetInputsList(): PostDatasetInputsRequest;
+  addDatasetInputs(value?: proto_clarifai_api_resources_pb.DatasetInput, index?: number): proto_clarifai_api_resources_pb.DatasetInput;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostDatasetInputsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostDatasetInputsRequest): PostDatasetInputsRequest.AsObject;
+  static serializeBinaryToWriter(message: PostDatasetInputsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostDatasetInputsRequest;
+  static deserializeBinaryFromReader(message: PostDatasetInputsRequest, reader: jspb.BinaryReader): PostDatasetInputsRequest;
+}
+
+export namespace PostDatasetInputsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    datasetId: string,
+    datasetInputsList: Array<proto_clarifai_api_resources_pb.DatasetInput.AsObject>,
+  }
+}
+
+export class DeleteDatasetInputsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteDatasetInputsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): DeleteDatasetInputsRequest;
+
+  getDatasetId(): string;
+  setDatasetId(value: string): DeleteDatasetInputsRequest;
+
+  getInputIdsList(): Array<string>;
+  setInputIdsList(value: Array<string>): DeleteDatasetInputsRequest;
+  clearInputIdsList(): DeleteDatasetInputsRequest;
+  addInputIds(value: string, index?: number): DeleteDatasetInputsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteDatasetInputsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteDatasetInputsRequest): DeleteDatasetInputsRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteDatasetInputsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteDatasetInputsRequest;
+  static deserializeBinaryFromReader(message: DeleteDatasetInputsRequest, reader: jspb.BinaryReader): DeleteDatasetInputsRequest;
+}
+
+export namespace DeleteDatasetInputsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    datasetId: string,
+    inputIdsList: Array<string>,
+  }
+}
+
+export class MultiDatasetInputResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiDatasetInputResponse;
+  hasStatus(): boolean;
+  clearStatus(): MultiDatasetInputResponse;
+
+  getDatasetInputsList(): Array<proto_clarifai_api_resources_pb.DatasetInput>;
+  setDatasetInputsList(value: Array<proto_clarifai_api_resources_pb.DatasetInput>): MultiDatasetInputResponse;
+  clearDatasetInputsList(): MultiDatasetInputResponse;
+  addDatasetInputs(value?: proto_clarifai_api_resources_pb.DatasetInput, index?: number): proto_clarifai_api_resources_pb.DatasetInput;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MultiDatasetInputResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiDatasetInputResponse): MultiDatasetInputResponse.AsObject;
+  static serializeBinaryToWriter(message: MultiDatasetInputResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiDatasetInputResponse;
+  static deserializeBinaryFromReader(message: MultiDatasetInputResponse, reader: jspb.BinaryReader): MultiDatasetInputResponse;
+}
+
+export namespace MultiDatasetInputResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    datasetInputsList: Array<proto_clarifai_api_resources_pb.DatasetInput.AsObject>,
+  }
+}
+
+export class SingleDatasetInputResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleDatasetInputResponse;
+  hasStatus(): boolean;
+  clearStatus(): SingleDatasetInputResponse;
+
+  getDatasetInput(): proto_clarifai_api_resources_pb.DatasetInput | undefined;
+  setDatasetInput(value?: proto_clarifai_api_resources_pb.DatasetInput): SingleDatasetInputResponse;
+  hasDatasetInput(): boolean;
+  clearDatasetInput(): SingleDatasetInputResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SingleDatasetInputResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SingleDatasetInputResponse): SingleDatasetInputResponse.AsObject;
+  static serializeBinaryToWriter(message: SingleDatasetInputResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SingleDatasetInputResponse;
+  static deserializeBinaryFromReader(message: SingleDatasetInputResponse, reader: jspb.BinaryReader): SingleDatasetInputResponse;
+}
+
+export namespace SingleDatasetInputResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    datasetInput?: proto_clarifai_api_resources_pb.DatasetInput.AsObject,
+  }
+}
+
+export class ListDatasetVersionsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListDatasetVersionsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): ListDatasetVersionsRequest;
+
+  getDatasetId(): string;
+  setDatasetId(value: string): ListDatasetVersionsRequest;
+
+  getPage(): number;
+  setPage(value: number): ListDatasetVersionsRequest;
+
+  getPerPage(): number;
+  setPerPage(value: number): ListDatasetVersionsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListDatasetVersionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListDatasetVersionsRequest): ListDatasetVersionsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListDatasetVersionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListDatasetVersionsRequest;
+  static deserializeBinaryFromReader(message: ListDatasetVersionsRequest, reader: jspb.BinaryReader): ListDatasetVersionsRequest;
+}
+
+export namespace ListDatasetVersionsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    datasetId: string,
+    page: number,
+    perPage: number,
+  }
+}
+
+export class GetDatasetVersionRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetDatasetVersionRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): GetDatasetVersionRequest;
+
+  getDatasetId(): string;
+  setDatasetId(value: string): GetDatasetVersionRequest;
+
+  getDatasetVersionId(): string;
+  setDatasetVersionId(value: string): GetDatasetVersionRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDatasetVersionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDatasetVersionRequest): GetDatasetVersionRequest.AsObject;
+  static serializeBinaryToWriter(message: GetDatasetVersionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDatasetVersionRequest;
+  static deserializeBinaryFromReader(message: GetDatasetVersionRequest, reader: jspb.BinaryReader): GetDatasetVersionRequest;
+}
+
+export namespace GetDatasetVersionRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    datasetId: string,
+    datasetVersionId: string,
+  }
+}
+
+export class ListDatasetVersionMetricsGroupsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListDatasetVersionMetricsGroupsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): ListDatasetVersionMetricsGroupsRequest;
+
+  getDatasetId(): string;
+  setDatasetId(value: string): ListDatasetVersionMetricsGroupsRequest;
+
+  getDatasetVersionId(): string;
+  setDatasetVersionId(value: string): ListDatasetVersionMetricsGroupsRequest;
+
+  getPage(): number;
+  setPage(value: number): ListDatasetVersionMetricsGroupsRequest;
+
+  getPerPage(): number;
+  setPerPage(value: number): ListDatasetVersionMetricsGroupsRequest;
+
+  getParentPathsList(): Array<string>;
+  setParentPathsList(value: Array<string>): ListDatasetVersionMetricsGroupsRequest;
+  clearParentPathsList(): ListDatasetVersionMetricsGroupsRequest;
+  addParentPaths(value: string, index?: number): ListDatasetVersionMetricsGroupsRequest;
+
+  getTypesList(): Array<proto_clarifai_api_resources_pb.DatasetVersionMetricsGroupType>;
+  setTypesList(value: Array<proto_clarifai_api_resources_pb.DatasetVersionMetricsGroupType>): ListDatasetVersionMetricsGroupsRequest;
+  clearTypesList(): ListDatasetVersionMetricsGroupsRequest;
+  addTypes(value: proto_clarifai_api_resources_pb.DatasetVersionMetricsGroupType, index?: number): ListDatasetVersionMetricsGroupsRequest;
+
+  getValuesList(): Array<google_protobuf_struct_pb.Value>;
+  setValuesList(value: Array<google_protobuf_struct_pb.Value>): ListDatasetVersionMetricsGroupsRequest;
+  clearValuesList(): ListDatasetVersionMetricsGroupsRequest;
+  addValues(value?: google_protobuf_struct_pb.Value, index?: number): google_protobuf_struct_pb.Value;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListDatasetVersionMetricsGroupsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListDatasetVersionMetricsGroupsRequest): ListDatasetVersionMetricsGroupsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListDatasetVersionMetricsGroupsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListDatasetVersionMetricsGroupsRequest;
+  static deserializeBinaryFromReader(message: ListDatasetVersionMetricsGroupsRequest, reader: jspb.BinaryReader): ListDatasetVersionMetricsGroupsRequest;
+}
+
+export namespace ListDatasetVersionMetricsGroupsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    datasetId: string,
+    datasetVersionId: string,
+    page: number,
+    perPage: number,
+    parentPathsList: Array<string>,
+    typesList: Array<proto_clarifai_api_resources_pb.DatasetVersionMetricsGroupType>,
+    valuesList: Array<google_protobuf_struct_pb.Value.AsObject>,
+  }
+}
+
+export class PostDatasetVersionsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostDatasetVersionsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostDatasetVersionsRequest;
+
+  getDatasetId(): string;
+  setDatasetId(value: string): PostDatasetVersionsRequest;
+
+  getDatasetVersionsList(): Array<proto_clarifai_api_resources_pb.DatasetVersion>;
+  setDatasetVersionsList(value: Array<proto_clarifai_api_resources_pb.DatasetVersion>): PostDatasetVersionsRequest;
+  clearDatasetVersionsList(): PostDatasetVersionsRequest;
+  addDatasetVersions(value?: proto_clarifai_api_resources_pb.DatasetVersion, index?: number): proto_clarifai_api_resources_pb.DatasetVersion;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostDatasetVersionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostDatasetVersionsRequest): PostDatasetVersionsRequest.AsObject;
+  static serializeBinaryToWriter(message: PostDatasetVersionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostDatasetVersionsRequest;
+  static deserializeBinaryFromReader(message: PostDatasetVersionsRequest, reader: jspb.BinaryReader): PostDatasetVersionsRequest;
+}
+
+export namespace PostDatasetVersionsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    datasetId: string,
+    datasetVersionsList: Array<proto_clarifai_api_resources_pb.DatasetVersion.AsObject>,
+  }
+}
+
+export class PatchDatasetVersionsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchDatasetVersionsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PatchDatasetVersionsRequest;
+
+  getDatasetId(): string;
+  setDatasetId(value: string): PatchDatasetVersionsRequest;
+
+  getDatasetVersionsList(): Array<proto_clarifai_api_resources_pb.DatasetVersion>;
+  setDatasetVersionsList(value: Array<proto_clarifai_api_resources_pb.DatasetVersion>): PatchDatasetVersionsRequest;
+  clearDatasetVersionsList(): PatchDatasetVersionsRequest;
+  addDatasetVersions(value?: proto_clarifai_api_resources_pb.DatasetVersion, index?: number): proto_clarifai_api_resources_pb.DatasetVersion;
+
+  getAction(): string;
+  setAction(value: string): PatchDatasetVersionsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PatchDatasetVersionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PatchDatasetVersionsRequest): PatchDatasetVersionsRequest.AsObject;
+  static serializeBinaryToWriter(message: PatchDatasetVersionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PatchDatasetVersionsRequest;
+  static deserializeBinaryFromReader(message: PatchDatasetVersionsRequest, reader: jspb.BinaryReader): PatchDatasetVersionsRequest;
+}
+
+export namespace PatchDatasetVersionsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    datasetId: string,
+    datasetVersionsList: Array<proto_clarifai_api_resources_pb.DatasetVersion.AsObject>,
+    action: string,
+  }
+}
+
+export class DeleteDatasetVersionsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteDatasetVersionsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): DeleteDatasetVersionsRequest;
+
+  getDatasetId(): string;
+  setDatasetId(value: string): DeleteDatasetVersionsRequest;
+
+  getDatasetVersionIdsList(): Array<string>;
+  setDatasetVersionIdsList(value: Array<string>): DeleteDatasetVersionsRequest;
+  clearDatasetVersionIdsList(): DeleteDatasetVersionsRequest;
+  addDatasetVersionIds(value: string, index?: number): DeleteDatasetVersionsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteDatasetVersionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteDatasetVersionsRequest): DeleteDatasetVersionsRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteDatasetVersionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteDatasetVersionsRequest;
+  static deserializeBinaryFromReader(message: DeleteDatasetVersionsRequest, reader: jspb.BinaryReader): DeleteDatasetVersionsRequest;
+}
+
+export namespace DeleteDatasetVersionsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    datasetId: string,
+    datasetVersionIdsList: Array<string>,
+  }
+}
+
+export class MultiDatasetVersionResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiDatasetVersionResponse;
+  hasStatus(): boolean;
+  clearStatus(): MultiDatasetVersionResponse;
+
+  getDatasetVersionsList(): Array<proto_clarifai_api_resources_pb.DatasetVersion>;
+  setDatasetVersionsList(value: Array<proto_clarifai_api_resources_pb.DatasetVersion>): MultiDatasetVersionResponse;
+  clearDatasetVersionsList(): MultiDatasetVersionResponse;
+  addDatasetVersions(value?: proto_clarifai_api_resources_pb.DatasetVersion, index?: number): proto_clarifai_api_resources_pb.DatasetVersion;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MultiDatasetVersionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiDatasetVersionResponse): MultiDatasetVersionResponse.AsObject;
+  static serializeBinaryToWriter(message: MultiDatasetVersionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiDatasetVersionResponse;
+  static deserializeBinaryFromReader(message: MultiDatasetVersionResponse, reader: jspb.BinaryReader): MultiDatasetVersionResponse;
+}
+
+export namespace MultiDatasetVersionResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    datasetVersionsList: Array<proto_clarifai_api_resources_pb.DatasetVersion.AsObject>,
+  }
+}
+
+export class MultiDatasetVersionMetricsGroupResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiDatasetVersionMetricsGroupResponse;
+  hasStatus(): boolean;
+  clearStatus(): MultiDatasetVersionMetricsGroupResponse;
+
+  getDatasetVersionMetricsGroupsList(): Array<proto_clarifai_api_resources_pb.DatasetVersionMetricsGroup>;
+  setDatasetVersionMetricsGroupsList(value: Array<proto_clarifai_api_resources_pb.DatasetVersionMetricsGroup>): MultiDatasetVersionMetricsGroupResponse;
+  clearDatasetVersionMetricsGroupsList(): MultiDatasetVersionMetricsGroupResponse;
+  addDatasetVersionMetricsGroups(value?: proto_clarifai_api_resources_pb.DatasetVersionMetricsGroup, index?: number): proto_clarifai_api_resources_pb.DatasetVersionMetricsGroup;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MultiDatasetVersionMetricsGroupResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiDatasetVersionMetricsGroupResponse): MultiDatasetVersionMetricsGroupResponse.AsObject;
+  static serializeBinaryToWriter(message: MultiDatasetVersionMetricsGroupResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiDatasetVersionMetricsGroupResponse;
+  static deserializeBinaryFromReader(message: MultiDatasetVersionMetricsGroupResponse, reader: jspb.BinaryReader): MultiDatasetVersionMetricsGroupResponse;
+}
+
+export namespace MultiDatasetVersionMetricsGroupResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    datasetVersionMetricsGroupsList: Array<proto_clarifai_api_resources_pb.DatasetVersionMetricsGroup.AsObject>,
+  }
+}
+
+export class SingleDatasetVersionResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleDatasetVersionResponse;
+  hasStatus(): boolean;
+  clearStatus(): SingleDatasetVersionResponse;
+
+  getDatasetVersion(): proto_clarifai_api_resources_pb.DatasetVersion | undefined;
+  setDatasetVersion(value?: proto_clarifai_api_resources_pb.DatasetVersion): SingleDatasetVersionResponse;
+  hasDatasetVersion(): boolean;
+  clearDatasetVersion(): SingleDatasetVersionResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SingleDatasetVersionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SingleDatasetVersionResponse): SingleDatasetVersionResponse.AsObject;
+  static serializeBinaryToWriter(message: SingleDatasetVersionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SingleDatasetVersionResponse;
+  static deserializeBinaryFromReader(message: SingleDatasetVersionResponse, reader: jspb.BinaryReader): SingleDatasetVersionResponse;
+}
+
+export namespace SingleDatasetVersionResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    datasetVersion?: proto_clarifai_api_resources_pb.DatasetVersion.AsObject,
+  }
+}
+
 export class PostModelOutputsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostModelOutputsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostModelOutputsRequest;
 
   getModelId(): string;
-  setModelId(value: string): void;
+  setModelId(value: string): PostModelOutputsRequest;
 
   getVersionId(): string;
-  setVersionId(value: string): void;
+  setVersionId(value: string): PostModelOutputsRequest;
 
   getInputsList(): Array<proto_clarifai_api_resources_pb.Input>;
-  setInputsList(value: Array<proto_clarifai_api_resources_pb.Input>): void;
-  clearInputsList(): void;
+  setInputsList(value: Array<proto_clarifai_api_resources_pb.Input>): PostModelOutputsRequest;
+  clearInputsList(): PostModelOutputsRequest;
   addInputs(value?: proto_clarifai_api_resources_pb.Input, index?: number): proto_clarifai_api_resources_pb.Input;
 
   getModel(): proto_clarifai_api_resources_pb.Model | undefined;
-  setModel(value?: proto_clarifai_api_resources_pb.Model): void;
+  setModel(value?: proto_clarifai_api_resources_pb.Model): PostModelOutputsRequest;
   hasModel(): boolean;
-  clearModel(): void;
+  clearModel(): PostModelOutputsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostModelOutputsRequest.AsObject;
@@ -1969,21 +2618,21 @@ export namespace PostModelOutputsRequest {
 
 export class ListModelInputsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListModelInputsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): ListModelInputsRequest;
 
   getModelId(): string;
-  setModelId(value: string): void;
+  setModelId(value: string): ListModelInputsRequest;
 
   getVersionId(): string;
-  setVersionId(value: string): void;
+  setVersionId(value: string): ListModelInputsRequest;
 
   getPage(): number;
-  setPage(value: number): void;
+  setPage(value: number): ListModelInputsRequest;
 
   getPerPage(): number;
-  setPerPage(value: number): void;
+  setPerPage(value: number): ListModelInputsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListModelInputsRequest.AsObject;
@@ -2005,12 +2654,12 @@ export namespace ListModelInputsRequest {
 
 export class GetKeyRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetKeyRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): GetKeyRequest;
 
   getKeyId(): string;
-  setKeyId(value: string): void;
+  setKeyId(value: string): GetKeyRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetKeyRequest.AsObject;
@@ -2029,15 +2678,15 @@ export namespace GetKeyRequest {
 
 export class ListKeysRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListKeysRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): ListKeysRequest;
 
   getPage(): number;
-  setPage(value: number): void;
+  setPage(value: number): ListKeysRequest;
 
   getPerPage(): number;
-  setPerPage(value: number): void;
+  setPerPage(value: number): ListKeysRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListKeysRequest.AsObject;
@@ -2057,15 +2706,15 @@ export namespace ListKeysRequest {
 
 export class ListAppKeysRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListAppKeysRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): ListAppKeysRequest;
 
   getPage(): number;
-  setPage(value: number): void;
+  setPage(value: number): ListAppKeysRequest;
 
   getPerPage(): number;
-  setPerPage(value: number): void;
+  setPerPage(value: number): ListAppKeysRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAppKeysRequest.AsObject;
@@ -2085,13 +2734,13 @@ export namespace ListAppKeysRequest {
 
 export class PostKeysRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostKeysRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostKeysRequest;
 
   getKeysList(): Array<proto_clarifai_api_resources_pb.Key>;
-  setKeysList(value: Array<proto_clarifai_api_resources_pb.Key>): void;
-  clearKeysList(): void;
+  setKeysList(value: Array<proto_clarifai_api_resources_pb.Key>): PostKeysRequest;
+  clearKeysList(): PostKeysRequest;
   addKeys(value?: proto_clarifai_api_resources_pb.Key, index?: number): proto_clarifai_api_resources_pb.Key;
 
   serializeBinary(): Uint8Array;
@@ -2111,12 +2760,12 @@ export namespace PostKeysRequest {
 
 export class DeleteKeyRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteKeyRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): DeleteKeyRequest;
 
   getKeyId(): string;
-  setKeyId(value: string): void;
+  setKeyId(value: string): DeleteKeyRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteKeyRequest.AsObject;
@@ -2135,17 +2784,17 @@ export namespace DeleteKeyRequest {
 
 export class PatchKeysRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchKeysRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PatchKeysRequest;
 
   getKeysList(): Array<proto_clarifai_api_resources_pb.Key>;
-  setKeysList(value: Array<proto_clarifai_api_resources_pb.Key>): void;
-  clearKeysList(): void;
+  setKeysList(value: Array<proto_clarifai_api_resources_pb.Key>): PatchKeysRequest;
+  clearKeysList(): PatchKeysRequest;
   addKeys(value?: proto_clarifai_api_resources_pb.Key, index?: number): proto_clarifai_api_resources_pb.Key;
 
   getAction(): string;
-  setAction(value: string): void;
+  setAction(value: string): PatchKeysRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PatchKeysRequest.AsObject;
@@ -2165,14 +2814,14 @@ export namespace PatchKeysRequest {
 
 export class SingleKeyResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleKeyResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): SingleKeyResponse;
 
   getKey(): proto_clarifai_api_resources_pb.Key | undefined;
-  setKey(value?: proto_clarifai_api_resources_pb.Key): void;
+  setKey(value?: proto_clarifai_api_resources_pb.Key): SingleKeyResponse;
   hasKey(): boolean;
-  clearKey(): void;
+  clearKey(): SingleKeyResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SingleKeyResponse.AsObject;
@@ -2191,13 +2840,13 @@ export namespace SingleKeyResponse {
 
 export class MultiKeyResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiKeyResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiKeyResponse;
 
   getKeysList(): Array<proto_clarifai_api_resources_pb.Key>;
-  setKeysList(value: Array<proto_clarifai_api_resources_pb.Key>): void;
-  clearKeysList(): void;
+  setKeysList(value: Array<proto_clarifai_api_resources_pb.Key>): MultiKeyResponse;
+  clearKeysList(): MultiKeyResponse;
   addKeys(value?: proto_clarifai_api_resources_pb.Key, index?: number): proto_clarifai_api_resources_pb.Key;
 
   serializeBinary(): Uint8Array;
@@ -2217,26 +2866,26 @@ export namespace MultiKeyResponse {
 
 export class GetModelRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetModelRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): GetModelRequest;
 
   getModelId(): string;
-  setModelId(value: string): void;
+  setModelId(value: string): GetModelRequest;
 
   getVersionId(): string;
-  setVersionId(value: string): void;
+  setVersionId(value: string): GetModelRequest;
 
   getLanguage(): string;
-  setLanguage(value: string): void;
+  setLanguage(value: string): GetModelRequest;
 
   getTrainedBefore(): boolean;
-  setTrainedBefore(value: boolean): void;
+  setTrainedBefore(value: boolean): GetModelRequest;
 
   getAdditionalFieldsList(): Array<string>;
-  setAdditionalFieldsList(value: Array<string>): void;
-  clearAdditionalFieldsList(): void;
-  addAdditionalFields(value: string, index?: number): void;
+  setAdditionalFieldsList(value: Array<string>): GetModelRequest;
+  clearAdditionalFieldsList(): GetModelRequest;
+  addAdditionalFields(value: string, index?: number): GetModelRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetModelRequest.AsObject;
@@ -2259,78 +2908,81 @@ export namespace GetModelRequest {
 
 export class ListModelsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListModelsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): ListModelsRequest;
 
   getPage(): number;
-  setPage(value: number): void;
+  setPage(value: number): ListModelsRequest;
 
   getPerPage(): number;
-  setPerPage(value: number): void;
+  setPerPage(value: number): ListModelsRequest;
 
   getSortAscending(): boolean;
-  setSortAscending(value: boolean): void;
+  setSortAscending(value: boolean): ListModelsRequest;
 
   getSortByName(): boolean;
-  setSortByName(value: boolean): void;
+  setSortByName(value: boolean): ListModelsRequest;
 
   getSortByNumInputs(): boolean;
-  setSortByNumInputs(value: boolean): void;
+  setSortByNumInputs(value: boolean): ListModelsRequest;
 
   getSortByModifiedAt(): boolean;
-  setSortByModifiedAt(value: boolean): void;
+  setSortByModifiedAt(value: boolean): ListModelsRequest;
 
   getQuery(): string;
-  setQuery(value: string): void;
+  setQuery(value: string): ListModelsRequest;
 
   getName(): string;
-  setName(value: string): void;
+  setName(value: string): ListModelsRequest;
+
+  getFilterByUserId(): boolean;
+  setFilterByUserId(value: boolean): ListModelsRequest;
 
   getModelTypeId(): string;
-  setModelTypeId(value: string): void;
+  setModelTypeId(value: string): ListModelsRequest;
 
   getTrainedOnly(): boolean;
-  setTrainedOnly(value: boolean): void;
+  setTrainedOnly(value: boolean): ListModelsRequest;
 
   getInputFieldsList(): Array<string>;
-  setInputFieldsList(value: Array<string>): void;
-  clearInputFieldsList(): void;
-  addInputFields(value: string, index?: number): void;
+  setInputFieldsList(value: Array<string>): ListModelsRequest;
+  clearInputFieldsList(): ListModelsRequest;
+  addInputFields(value: string, index?: number): ListModelsRequest;
 
   getOutputFieldsList(): Array<string>;
-  setOutputFieldsList(value: Array<string>): void;
-  clearOutputFieldsList(): void;
-  addOutputFields(value: string, index?: number): void;
+  setOutputFieldsList(value: Array<string>): ListModelsRequest;
+  clearOutputFieldsList(): ListModelsRequest;
+  addOutputFields(value: string, index?: number): ListModelsRequest;
 
   getLicense(): string;
-  setLicense(value: string): void;
+  setLicense(value: string): ListModelsRequest;
 
   getFeaturedOnly(): boolean;
-  setFeaturedOnly(value: boolean): void;
+  setFeaturedOnly(value: boolean): ListModelsRequest;
 
   getStarredOnly(): boolean;
-  setStarredOnly(value: boolean): void;
+  setStarredOnly(value: boolean): ListModelsRequest;
 
   getToolkitsList(): Array<string>;
-  setToolkitsList(value: Array<string>): void;
-  clearToolkitsList(): void;
-  addToolkits(value: string, index?: number): void;
+  setToolkitsList(value: Array<string>): ListModelsRequest;
+  clearToolkitsList(): ListModelsRequest;
+  addToolkits(value: string, index?: number): ListModelsRequest;
 
   getUseCasesList(): Array<string>;
-  setUseCasesList(value: Array<string>): void;
-  clearUseCasesList(): void;
-  addUseCases(value: string, index?: number): void;
+  setUseCasesList(value: Array<string>): ListModelsRequest;
+  clearUseCasesList(): ListModelsRequest;
+  addUseCases(value: string, index?: number): ListModelsRequest;
 
   getLanguagesList(): Array<string>;
-  setLanguagesList(value: Array<string>): void;
-  clearLanguagesList(): void;
-  addLanguages(value: string, index?: number): void;
+  setLanguagesList(value: Array<string>): ListModelsRequest;
+  clearLanguagesList(): ListModelsRequest;
+  addLanguages(value: string, index?: number): ListModelsRequest;
 
   getAdditionalFieldsList(): Array<string>;
-  setAdditionalFieldsList(value: Array<string>): void;
-  clearAdditionalFieldsList(): void;
-  addAdditionalFields(value: string, index?: number): void;
+  setAdditionalFieldsList(value: Array<string>): ListModelsRequest;
+  clearAdditionalFieldsList(): ListModelsRequest;
+  addAdditionalFields(value: string, index?: number): ListModelsRequest;
 
   getSortByCase(): ListModelsRequest.SortByCase;
 
@@ -2353,6 +3005,7 @@ export namespace ListModelsRequest {
     sortByModifiedAt: boolean,
     query: string,
     name: string,
+    filterByUserId: boolean,
     modelTypeId: string,
     trainedOnly: boolean,
     inputFieldsList: Array<string>,
@@ -2376,20 +3029,20 @@ export namespace ListModelsRequest {
 
 export class PatchModelToolkitsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchModelToolkitsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PatchModelToolkitsRequest;
 
   getModelId(): string;
-  setModelId(value: string): void;
+  setModelId(value: string): PatchModelToolkitsRequest;
 
   getToolkitsList(): Array<string>;
-  setToolkitsList(value: Array<string>): void;
-  clearToolkitsList(): void;
-  addToolkits(value: string, index?: number): void;
+  setToolkitsList(value: Array<string>): PatchModelToolkitsRequest;
+  clearToolkitsList(): PatchModelToolkitsRequest;
+  addToolkits(value: string, index?: number): PatchModelToolkitsRequest;
 
   getAction(): string;
-  setAction(value: string): void;
+  setAction(value: string): PatchModelToolkitsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PatchModelToolkitsRequest.AsObject;
@@ -2410,20 +3063,20 @@ export namespace PatchModelToolkitsRequest {
 
 export class PatchModelUseCasesRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchModelUseCasesRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PatchModelUseCasesRequest;
 
   getModelId(): string;
-  setModelId(value: string): void;
+  setModelId(value: string): PatchModelUseCasesRequest;
 
   getUsecasesList(): Array<string>;
-  setUsecasesList(value: Array<string>): void;
-  clearUsecasesList(): void;
-  addUsecases(value: string, index?: number): void;
+  setUsecasesList(value: Array<string>): PatchModelUseCasesRequest;
+  clearUsecasesList(): PatchModelUseCasesRequest;
+  addUsecases(value: string, index?: number): PatchModelUseCasesRequest;
 
   getAction(): string;
-  setAction(value: string): void;
+  setAction(value: string): PatchModelUseCasesRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PatchModelUseCasesRequest.AsObject;
@@ -2444,20 +3097,20 @@ export namespace PatchModelUseCasesRequest {
 
 export class PatchModelLanguagesRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchModelLanguagesRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PatchModelLanguagesRequest;
 
   getModelId(): string;
-  setModelId(value: string): void;
+  setModelId(value: string): PatchModelLanguagesRequest;
 
   getLanguagesList(): Array<string>;
-  setLanguagesList(value: Array<string>): void;
-  clearLanguagesList(): void;
-  addLanguages(value: string, index?: number): void;
+  setLanguagesList(value: Array<string>): PatchModelLanguagesRequest;
+  clearLanguagesList(): PatchModelLanguagesRequest;
+  addLanguages(value: string, index?: number): PatchModelLanguagesRequest;
 
   getAction(): string;
-  setAction(value: string): void;
+  setAction(value: string): PatchModelLanguagesRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PatchModelLanguagesRequest.AsObject;
@@ -2478,14 +3131,14 @@ export namespace PatchModelLanguagesRequest {
 
 export class MultiModelToolkitResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiModelToolkitResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiModelToolkitResponse;
 
   getToolkitsList(): Array<string>;
-  setToolkitsList(value: Array<string>): void;
-  clearToolkitsList(): void;
-  addToolkits(value: string, index?: number): void;
+  setToolkitsList(value: Array<string>): MultiModelToolkitResponse;
+  clearToolkitsList(): MultiModelToolkitResponse;
+  addToolkits(value: string, index?: number): MultiModelToolkitResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MultiModelToolkitResponse.AsObject;
@@ -2504,14 +3157,14 @@ export namespace MultiModelToolkitResponse {
 
 export class MultiModelUseCaseResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiModelUseCaseResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiModelUseCaseResponse;
 
   getUsecasesList(): Array<string>;
-  setUsecasesList(value: Array<string>): void;
-  clearUsecasesList(): void;
-  addUsecases(value: string, index?: number): void;
+  setUsecasesList(value: Array<string>): MultiModelUseCaseResponse;
+  clearUsecasesList(): MultiModelUseCaseResponse;
+  addUsecases(value: string, index?: number): MultiModelUseCaseResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MultiModelUseCaseResponse.AsObject;
@@ -2530,14 +3183,14 @@ export namespace MultiModelUseCaseResponse {
 
 export class MultiModelLanguageResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiModelLanguageResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiModelLanguageResponse;
 
   getLanguagesList(): Array<string>;
-  setLanguagesList(value: Array<string>): void;
-  clearLanguagesList(): void;
-  addLanguages(value: string, index?: number): void;
+  setLanguagesList(value: Array<string>): MultiModelLanguageResponse;
+  clearLanguagesList(): MultiModelLanguageResponse;
+  addLanguages(value: string, index?: number): MultiModelLanguageResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MultiModelLanguageResponse.AsObject;
@@ -2556,18 +3209,18 @@ export namespace MultiModelLanguageResponse {
 
 export class PostModelsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostModelsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostModelsRequest;
 
   getModel(): proto_clarifai_api_resources_pb.Model | undefined;
-  setModel(value?: proto_clarifai_api_resources_pb.Model): void;
+  setModel(value?: proto_clarifai_api_resources_pb.Model): PostModelsRequest;
   hasModel(): boolean;
-  clearModel(): void;
+  clearModel(): PostModelsRequest;
 
   getModelsList(): Array<proto_clarifai_api_resources_pb.Model>;
-  setModelsList(value: Array<proto_clarifai_api_resources_pb.Model>): void;
-  clearModelsList(): void;
+  setModelsList(value: Array<proto_clarifai_api_resources_pb.Model>): PostModelsRequest;
+  clearModelsList(): PostModelsRequest;
   addModels(value?: proto_clarifai_api_resources_pb.Model, index?: number): proto_clarifai_api_resources_pb.Model;
 
   serializeBinary(): Uint8Array;
@@ -2588,17 +3241,17 @@ export namespace PostModelsRequest {
 
 export class PatchModelsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchModelsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PatchModelsRequest;
 
   getModelsList(): Array<proto_clarifai_api_resources_pb.Model>;
-  setModelsList(value: Array<proto_clarifai_api_resources_pb.Model>): void;
-  clearModelsList(): void;
+  setModelsList(value: Array<proto_clarifai_api_resources_pb.Model>): PatchModelsRequest;
+  clearModelsList(): PatchModelsRequest;
   addModels(value?: proto_clarifai_api_resources_pb.Model, index?: number): proto_clarifai_api_resources_pb.Model;
 
   getAction(): string;
-  setAction(value: string): void;
+  setAction(value: string): PatchModelsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PatchModelsRequest.AsObject;
@@ -2616,14 +3269,66 @@ export namespace PatchModelsRequest {
   }
 }
 
+export class IdUpdateSource extends jspb.Message {
+  getId(): string;
+  setId(value: string): IdUpdateSource;
+
+  getNewId(): string;
+  setNewId(value: string): IdUpdateSource;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): IdUpdateSource.AsObject;
+  static toObject(includeInstance: boolean, msg: IdUpdateSource): IdUpdateSource.AsObject;
+  static serializeBinaryToWriter(message: IdUpdateSource, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): IdUpdateSource;
+  static deserializeBinaryFromReader(message: IdUpdateSource, reader: jspb.BinaryReader): IdUpdateSource;
+}
+
+export namespace IdUpdateSource {
+  export type AsObject = {
+    id: string,
+    newId: string,
+  }
+}
+
+export class PatchModelIdsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchModelIdsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PatchModelIdsRequest;
+
+  getIdsList(): Array<IdUpdateSource>;
+  setIdsList(value: Array<IdUpdateSource>): PatchModelIdsRequest;
+  clearIdsList(): PatchModelIdsRequest;
+  addIds(value?: IdUpdateSource, index?: number): IdUpdateSource;
+
+  getAction(): string;
+  setAction(value: string): PatchModelIdsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PatchModelIdsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PatchModelIdsRequest): PatchModelIdsRequest.AsObject;
+  static serializeBinaryToWriter(message: PatchModelIdsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PatchModelIdsRequest;
+  static deserializeBinaryFromReader(message: PatchModelIdsRequest, reader: jspb.BinaryReader): PatchModelIdsRequest;
+}
+
+export namespace PatchModelIdsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    idsList: Array<IdUpdateSource.AsObject>,
+    action: string,
+  }
+}
+
 export class DeleteModelRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteModelRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): DeleteModelRequest;
 
   getModelId(): string;
-  setModelId(value: string): void;
+  setModelId(value: string): DeleteModelRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteModelRequest.AsObject;
@@ -2642,17 +3347,17 @@ export namespace DeleteModelRequest {
 
 export class DeleteModelsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteModelsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): DeleteModelsRequest;
 
   getIdsList(): Array<string>;
-  setIdsList(value: Array<string>): void;
-  clearIdsList(): void;
-  addIds(value: string, index?: number): void;
+  setIdsList(value: Array<string>): DeleteModelsRequest;
+  clearIdsList(): DeleteModelsRequest;
+  addIds(value: string, index?: number): DeleteModelsRequest;
 
   getDeleteAll(): boolean;
-  setDeleteAll(value: boolean): void;
+  setDeleteAll(value: boolean): DeleteModelsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteModelsRequest.AsObject;
@@ -2672,19 +3377,19 @@ export namespace DeleteModelsRequest {
 
 export class PostModelsSearchesRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostModelsSearchesRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostModelsSearchesRequest;
 
   getModelQuery(): proto_clarifai_api_resources_pb.ModelQuery | undefined;
-  setModelQuery(value?: proto_clarifai_api_resources_pb.ModelQuery): void;
+  setModelQuery(value?: proto_clarifai_api_resources_pb.ModelQuery): PostModelsSearchesRequest;
   hasModelQuery(): boolean;
-  clearModelQuery(): void;
+  clearModelQuery(): PostModelsSearchesRequest;
 
   getPagination(): Pagination | undefined;
-  setPagination(value?: Pagination): void;
+  setPagination(value?: Pagination): PostModelsSearchesRequest;
   hasPagination(): boolean;
-  clearPagination(): void;
+  clearPagination(): PostModelsSearchesRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostModelsSearchesRequest.AsObject;
@@ -2704,14 +3409,14 @@ export namespace PostModelsSearchesRequest {
 
 export class SingleModelResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleModelResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): SingleModelResponse;
 
   getModel(): proto_clarifai_api_resources_pb.Model | undefined;
-  setModel(value?: proto_clarifai_api_resources_pb.Model): void;
+  setModel(value?: proto_clarifai_api_resources_pb.Model): SingleModelResponse;
   hasModel(): boolean;
-  clearModel(): void;
+  clearModel(): SingleModelResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SingleModelResponse.AsObject;
@@ -2730,13 +3435,13 @@ export namespace SingleModelResponse {
 
 export class MultiModelResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiModelResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiModelResponse;
 
   getModelsList(): Array<proto_clarifai_api_resources_pb.Model>;
-  setModelsList(value: Array<proto_clarifai_api_resources_pb.Model>): void;
-  clearModelsList(): void;
+  setModelsList(value: Array<proto_clarifai_api_resources_pb.Model>): MultiModelResponse;
+  clearModelsList(): MultiModelResponse;
   addModels(value?: proto_clarifai_api_resources_pb.Model, index?: number): proto_clarifai_api_resources_pb.Model;
 
   serializeBinary(): Uint8Array;
@@ -2756,20 +3461,20 @@ export namespace MultiModelResponse {
 
 export class PatchModelVersionsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchModelVersionsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PatchModelVersionsRequest;
 
   getModelId(): string;
-  setModelId(value: string): void;
+  setModelId(value: string): PatchModelVersionsRequest;
 
   getModelVersionsList(): Array<proto_clarifai_api_resources_pb.ModelVersion>;
-  setModelVersionsList(value: Array<proto_clarifai_api_resources_pb.ModelVersion>): void;
-  clearModelVersionsList(): void;
+  setModelVersionsList(value: Array<proto_clarifai_api_resources_pb.ModelVersion>): PatchModelVersionsRequest;
+  clearModelVersionsList(): PatchModelVersionsRequest;
   addModelVersions(value?: proto_clarifai_api_resources_pb.ModelVersion, index?: number): proto_clarifai_api_resources_pb.ModelVersion;
 
   getAction(): string;
-  setAction(value: string): void;
+  setAction(value: string): PatchModelVersionsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PatchModelVersionsRequest.AsObject;
@@ -2790,15 +3495,15 @@ export namespace PatchModelVersionsRequest {
 
 export class GetModelVersionRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetModelVersionRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): GetModelVersionRequest;
 
   getModelId(): string;
-  setModelId(value: string): void;
+  setModelId(value: string): GetModelVersionRequest;
 
   getVersionId(): string;
-  setVersionId(value: string): void;
+  setVersionId(value: string): GetModelVersionRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetModelVersionRequest.AsObject;
@@ -2818,23 +3523,23 @@ export namespace GetModelVersionRequest {
 
 export class ListModelVersionsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListModelVersionsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): ListModelVersionsRequest;
 
   getModelId(): string;
-  setModelId(value: string): void;
+  setModelId(value: string): ListModelVersionsRequest;
 
   getPage(): number;
-  setPage(value: number): void;
+  setPage(value: number): ListModelVersionsRequest;
 
   getPerPage(): number;
-  setPerPage(value: number): void;
+  setPerPage(value: number): ListModelVersionsRequest;
 
   getConceptIdsList(): Array<string>;
-  setConceptIdsList(value: Array<string>): void;
-  clearConceptIdsList(): void;
-  addConceptIds(value: string, index?: number): void;
+  setConceptIdsList(value: Array<string>): ListModelVersionsRequest;
+  clearConceptIdsList(): ListModelVersionsRequest;
+  addConceptIds(value: string, index?: number): ListModelVersionsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListModelVersionsRequest.AsObject;
@@ -2856,15 +3561,15 @@ export namespace ListModelVersionsRequest {
 
 export class DeleteModelVersionRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteModelVersionRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): DeleteModelVersionRequest;
 
   getModelId(): string;
-  setModelId(value: string): void;
+  setModelId(value: string): DeleteModelVersionRequest;
 
   getVersionId(): string;
-  setVersionId(value: string): void;
+  setVersionId(value: string): DeleteModelVersionRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteModelVersionRequest.AsObject;
@@ -2884,14 +3589,14 @@ export namespace DeleteModelVersionRequest {
 
 export class SingleModelVersionResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleModelVersionResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): SingleModelVersionResponse;
 
   getModelVersion(): proto_clarifai_api_resources_pb.ModelVersion | undefined;
-  setModelVersion(value?: proto_clarifai_api_resources_pb.ModelVersion): void;
+  setModelVersion(value?: proto_clarifai_api_resources_pb.ModelVersion): SingleModelVersionResponse;
   hasModelVersion(): boolean;
-  clearModelVersion(): void;
+  clearModelVersion(): SingleModelVersionResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SingleModelVersionResponse.AsObject;
@@ -2910,13 +3615,13 @@ export namespace SingleModelVersionResponse {
 
 export class MultiModelVersionResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiModelVersionResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiModelVersionResponse;
 
   getModelVersionsList(): Array<proto_clarifai_api_resources_pb.ModelVersion>;
-  setModelVersionsList(value: Array<proto_clarifai_api_resources_pb.ModelVersion>): void;
-  clearModelVersionsList(): void;
+  setModelVersionsList(value: Array<proto_clarifai_api_resources_pb.ModelVersion>): MultiModelVersionResponse;
+  clearModelVersionsList(): MultiModelVersionResponse;
   addModelVersions(value?: proto_clarifai_api_resources_pb.ModelVersion, index?: number): proto_clarifai_api_resources_pb.ModelVersion;
 
   serializeBinary(): Uint8Array;
@@ -2936,43 +3641,43 @@ export namespace MultiModelVersionResponse {
 
 export class PostModelVersionsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostModelVersionsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostModelVersionsRequest;
 
   getModelId(): string;
-  setModelId(value: string): void;
+  setModelId(value: string): PostModelVersionsRequest;
 
   getModelVersionsList(): Array<proto_clarifai_api_resources_pb.ModelVersion>;
-  setModelVersionsList(value: Array<proto_clarifai_api_resources_pb.ModelVersion>): void;
-  clearModelVersionsList(): void;
+  setModelVersionsList(value: Array<proto_clarifai_api_resources_pb.ModelVersion>): PostModelVersionsRequest;
+  clearModelVersionsList(): PostModelVersionsRequest;
   addModelVersions(value?: proto_clarifai_api_resources_pb.ModelVersion, index?: number): proto_clarifai_api_resources_pb.ModelVersion;
 
   getSearch(): proto_clarifai_api_resources_pb.Search | undefined;
-  setSearch(value?: proto_clarifai_api_resources_pb.Search): void;
+  setSearch(value?: proto_clarifai_api_resources_pb.Search): PostModelVersionsRequest;
   hasSearch(): boolean;
-  clearSearch(): void;
+  clearSearch(): PostModelVersionsRequest;
 
   getTrainSearch(): proto_clarifai_api_resources_pb.Search | undefined;
-  setTrainSearch(value?: proto_clarifai_api_resources_pb.Search): void;
+  setTrainSearch(value?: proto_clarifai_api_resources_pb.Search): PostModelVersionsRequest;
   hasTrainSearch(): boolean;
-  clearTrainSearch(): void;
+  clearTrainSearch(): PostModelVersionsRequest;
 
   getTestSearch(): proto_clarifai_api_resources_pb.Search | undefined;
-  setTestSearch(value?: proto_clarifai_api_resources_pb.Search): void;
+  setTestSearch(value?: proto_clarifai_api_resources_pb.Search): PostModelVersionsRequest;
   hasTestSearch(): boolean;
-  clearTestSearch(): void;
+  clearTestSearch(): PostModelVersionsRequest;
 
   getEvaluateAfterTraining(): boolean;
-  setEvaluateAfterTraining(value: boolean): void;
+  setEvaluateAfterTraining(value: boolean): PostModelVersionsRequest;
 
   getDescription(): string;
-  setDescription(value: string): void;
+  setDescription(value: string): PostModelVersionsRequest;
 
   getDatasetVersion(): proto_clarifai_api_resources_pb.DatasetVersion | undefined;
-  setDatasetVersion(value?: proto_clarifai_api_resources_pb.DatasetVersion): void;
+  setDatasetVersion(value?: proto_clarifai_api_resources_pb.DatasetVersion): PostModelVersionsRequest;
   hasDatasetVersion(): boolean;
-  clearDatasetVersion(): void;
+  clearDatasetVersion(): PostModelVersionsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostModelVersionsRequest.AsObject;
@@ -2996,9 +3701,105 @@ export namespace PostModelVersionsRequest {
   }
 }
 
+export class PostWorkflowVersionsUnPublishRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostWorkflowVersionsUnPublishRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostWorkflowVersionsUnPublishRequest;
+
+  getWorkflowId(): string;
+  setWorkflowId(value: string): PostWorkflowVersionsUnPublishRequest;
+
+  getPublicationsList(): Array<WorkflowVersionUnPublishRequest>;
+  setPublicationsList(value: Array<WorkflowVersionUnPublishRequest>): PostWorkflowVersionsUnPublishRequest;
+  clearPublicationsList(): PostWorkflowVersionsUnPublishRequest;
+  addPublications(value?: WorkflowVersionUnPublishRequest, index?: number): WorkflowVersionUnPublishRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostWorkflowVersionsUnPublishRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostWorkflowVersionsUnPublishRequest): PostWorkflowVersionsUnPublishRequest.AsObject;
+  static serializeBinaryToWriter(message: PostWorkflowVersionsUnPublishRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostWorkflowVersionsUnPublishRequest;
+  static deserializeBinaryFromReader(message: PostWorkflowVersionsUnPublishRequest, reader: jspb.BinaryReader): PostWorkflowVersionsUnPublishRequest;
+}
+
+export namespace PostWorkflowVersionsUnPublishRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    workflowId: string,
+    publicationsList: Array<WorkflowVersionUnPublishRequest.AsObject>,
+  }
+}
+
+export class PostWorkflowVersionsPublishRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostWorkflowVersionsPublishRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostWorkflowVersionsPublishRequest;
+
+  getWorkflowId(): string;
+  setWorkflowId(value: string): PostWorkflowVersionsPublishRequest;
+
+  getPublicationsList(): Array<WorkflowVersionPublishRequest>;
+  setPublicationsList(value: Array<WorkflowVersionPublishRequest>): PostWorkflowVersionsPublishRequest;
+  clearPublicationsList(): PostWorkflowVersionsPublishRequest;
+  addPublications(value?: WorkflowVersionPublishRequest, index?: number): WorkflowVersionPublishRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostWorkflowVersionsPublishRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostWorkflowVersionsPublishRequest): PostWorkflowVersionsPublishRequest.AsObject;
+  static serializeBinaryToWriter(message: PostWorkflowVersionsPublishRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostWorkflowVersionsPublishRequest;
+  static deserializeBinaryFromReader(message: PostWorkflowVersionsPublishRequest, reader: jspb.BinaryReader): PostWorkflowVersionsPublishRequest;
+}
+
+export namespace PostWorkflowVersionsPublishRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    workflowId: string,
+    publicationsList: Array<WorkflowVersionPublishRequest.AsObject>,
+  }
+}
+
+export class WorkflowVersionPublishRequest extends jspb.Message {
+  getVersionId(): string;
+  setVersionId(value: string): WorkflowVersionPublishRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WorkflowVersionPublishRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: WorkflowVersionPublishRequest): WorkflowVersionPublishRequest.AsObject;
+  static serializeBinaryToWriter(message: WorkflowVersionPublishRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WorkflowVersionPublishRequest;
+  static deserializeBinaryFromReader(message: WorkflowVersionPublishRequest, reader: jspb.BinaryReader): WorkflowVersionPublishRequest;
+}
+
+export namespace WorkflowVersionPublishRequest {
+  export type AsObject = {
+    versionId: string,
+  }
+}
+
+export class WorkflowVersionUnPublishRequest extends jspb.Message {
+  getVersionId(): string;
+  setVersionId(value: string): WorkflowVersionUnPublishRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WorkflowVersionUnPublishRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: WorkflowVersionUnPublishRequest): WorkflowVersionUnPublishRequest.AsObject;
+  static serializeBinaryToWriter(message: WorkflowVersionUnPublishRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WorkflowVersionUnPublishRequest;
+  static deserializeBinaryFromReader(message: WorkflowVersionUnPublishRequest, reader: jspb.BinaryReader): WorkflowVersionUnPublishRequest;
+}
+
+export namespace WorkflowVersionUnPublishRequest {
+  export type AsObject = {
+    versionId: string,
+  }
+}
+
 export class ModelVersionPublishRequest extends jspb.Message {
   getVersionId(): string;
-  setVersionId(value: string): void;
+  setVersionId(value: string): ModelVersionPublishRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelVersionPublishRequest.AsObject;
@@ -3016,16 +3817,16 @@ export namespace ModelVersionPublishRequest {
 
 export class PostModelVersionsPublishRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostModelVersionsPublishRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostModelVersionsPublishRequest;
 
   getModelId(): string;
-  setModelId(value: string): void;
+  setModelId(value: string): PostModelVersionsPublishRequest;
 
   getPublicationsList(): Array<ModelVersionPublishRequest>;
-  setPublicationsList(value: Array<ModelVersionPublishRequest>): void;
-  clearPublicationsList(): void;
+  setPublicationsList(value: Array<ModelVersionPublishRequest>): PostModelVersionsPublishRequest;
+  clearPublicationsList(): PostModelVersionsPublishRequest;
   addPublications(value?: ModelVersionPublishRequest, index?: number): ModelVersionPublishRequest;
 
   serializeBinary(): Uint8Array;
@@ -3046,7 +3847,7 @@ export namespace PostModelVersionsPublishRequest {
 
 export class ModelVersionUnpublishRequest extends jspb.Message {
   getVersionId(): string;
-  setVersionId(value: string): void;
+  setVersionId(value: string): ModelVersionUnpublishRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelVersionUnpublishRequest.AsObject;
@@ -3064,16 +3865,16 @@ export namespace ModelVersionUnpublishRequest {
 
 export class PostModelVersionsUnPublishRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostModelVersionsUnPublishRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostModelVersionsUnPublishRequest;
 
   getModelId(): string;
-  setModelId(value: string): void;
+  setModelId(value: string): PostModelVersionsUnPublishRequest;
 
   getPublicationsList(): Array<ModelVersionUnpublishRequest>;
-  setPublicationsList(value: Array<ModelVersionUnpublishRequest>): void;
-  clearPublicationsList(): void;
+  setPublicationsList(value: Array<ModelVersionUnpublishRequest>): PostModelVersionsUnPublishRequest;
+  clearPublicationsList(): PostModelVersionsUnPublishRequest;
   addPublications(value?: ModelVersionUnpublishRequest, index?: number): ModelVersionUnpublishRequest;
 
   serializeBinary(): Uint8Array;
@@ -3094,23 +3895,23 @@ export namespace PostModelVersionsUnPublishRequest {
 
 export class PostModelVersionMetricsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostModelVersionMetricsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostModelVersionMetricsRequest;
 
   getModelId(): string;
-  setModelId(value: string): void;
+  setModelId(value: string): PostModelVersionMetricsRequest;
 
   getVersionId(): string;
-  setVersionId(value: string): void;
+  setVersionId(value: string): PostModelVersionMetricsRequest;
 
   getMaxExamples(): number;
-  setMaxExamples(value: number): void;
+  setMaxExamples(value: number): PostModelVersionMetricsRequest;
 
   getTestSearch(): proto_clarifai_api_resources_pb.Search | undefined;
-  setTestSearch(value?: proto_clarifai_api_resources_pb.Search): void;
+  setTestSearch(value?: proto_clarifai_api_resources_pb.Search): PostModelVersionMetricsRequest;
   hasTestSearch(): boolean;
-  clearTestSearch(): void;
+  clearTestSearch(): PostModelVersionMetricsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostModelVersionMetricsRequest.AsObject;
@@ -3132,20 +3933,20 @@ export namespace PostModelVersionMetricsRequest {
 
 export class GetModelVersionMetricsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetModelVersionMetricsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): GetModelVersionMetricsRequest;
 
   getModelId(): string;
-  setModelId(value: string): void;
+  setModelId(value: string): GetModelVersionMetricsRequest;
 
   getVersionId(): string;
-  setVersionId(value: string): void;
+  setVersionId(value: string): GetModelVersionMetricsRequest;
 
   getFields(): proto_clarifai_api_resources_pb.FieldsValue | undefined;
-  setFields(value?: proto_clarifai_api_resources_pb.FieldsValue): void;
+  setFields(value?: proto_clarifai_api_resources_pb.FieldsValue): GetModelVersionMetricsRequest;
   hasFields(): boolean;
-  clearFields(): void;
+  clearFields(): GetModelVersionMetricsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetModelVersionMetricsRequest.AsObject;
@@ -3166,12 +3967,12 @@ export namespace GetModelVersionMetricsRequest {
 
 export class GetModelTypeRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetModelTypeRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): GetModelTypeRequest;
 
   getModelTypeId(): string;
-  setModelTypeId(value: string): void;
+  setModelTypeId(value: string): GetModelTypeRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetModelTypeRequest.AsObject;
@@ -3190,15 +3991,15 @@ export namespace GetModelTypeRequest {
 
 export class ListModelTypesRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListModelTypesRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): ListModelTypesRequest;
 
   getPage(): number;
-  setPage(value: number): void;
+  setPage(value: number): ListModelTypesRequest;
 
   getPerPage(): number;
-  setPerPage(value: number): void;
+  setPerPage(value: number): ListModelTypesRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListModelTypesRequest.AsObject;
@@ -3232,14 +4033,14 @@ export namespace ListOpenSourceLicensesRequest {
 
 export class ListOpenSourceLicensesResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): ListOpenSourceLicensesResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): ListOpenSourceLicensesResponse;
 
   getLicensesList(): Array<string>;
-  setLicensesList(value: Array<string>): void;
-  clearLicensesList(): void;
-  addLicenses(value: string, index?: number): void;
+  setLicensesList(value: Array<string>): ListOpenSourceLicensesResponse;
+  clearLicensesList(): ListOpenSourceLicensesResponse;
+  addLicenses(value: string, index?: number): ListOpenSourceLicensesResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListOpenSourceLicensesResponse.AsObject;
@@ -3258,14 +4059,14 @@ export namespace ListOpenSourceLicensesResponse {
 
 export class SingleModelTypeResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleModelTypeResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): SingleModelTypeResponse;
 
   getModelType(): proto_clarifai_api_resources_pb.ModelType | undefined;
-  setModelType(value?: proto_clarifai_api_resources_pb.ModelType): void;
+  setModelType(value?: proto_clarifai_api_resources_pb.ModelType): SingleModelTypeResponse;
   hasModelType(): boolean;
-  clearModelType(): void;
+  clearModelType(): SingleModelTypeResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SingleModelTypeResponse.AsObject;
@@ -3284,14 +4085,19 @@ export namespace SingleModelTypeResponse {
 
 export class MultiModelTypeResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiModelTypeResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiModelTypeResponse;
 
   getModelTypesList(): Array<proto_clarifai_api_resources_pb.ModelType>;
-  setModelTypesList(value: Array<proto_clarifai_api_resources_pb.ModelType>): void;
-  clearModelTypesList(): void;
+  setModelTypesList(value: Array<proto_clarifai_api_resources_pb.ModelType>): MultiModelTypeResponse;
+  clearModelTypesList(): MultiModelTypeResponse;
   addModelTypes(value?: proto_clarifai_api_resources_pb.ModelType, index?: number): proto_clarifai_api_resources_pb.ModelType;
+
+  getModelImporters(): proto_clarifai_api_resources_pb.ModelTypeField | undefined;
+  setModelImporters(value?: proto_clarifai_api_resources_pb.ModelTypeField): MultiModelTypeResponse;
+  hasModelImporters(): boolean;
+  clearModelImporters(): MultiModelTypeResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MultiModelTypeResponse.AsObject;
@@ -3305,23 +4111,24 @@ export namespace MultiModelTypeResponse {
   export type AsObject = {
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     modelTypesList: Array<proto_clarifai_api_resources_pb.ModelType.AsObject>,
+    modelImporters?: proto_clarifai_api_resources_pb.ModelTypeField.AsObject,
   }
 }
 
 export class GetModelVersionInputExampleRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetModelVersionInputExampleRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): GetModelVersionInputExampleRequest;
 
   getModelId(): string;
-  setModelId(value: string): void;
+  setModelId(value: string): GetModelVersionInputExampleRequest;
 
   getModelVersionId(): string;
-  setModelVersionId(value: string): void;
+  setModelVersionId(value: string): GetModelVersionInputExampleRequest;
 
   getExampleId(): string;
-  setExampleId(value: string): void;
+  setExampleId(value: string): GetModelVersionInputExampleRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetModelVersionInputExampleRequest.AsObject;
@@ -3342,21 +4149,21 @@ export namespace GetModelVersionInputExampleRequest {
 
 export class ListModelVersionInputExamplesRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListModelVersionInputExamplesRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): ListModelVersionInputExamplesRequest;
 
   getModelId(): string;
-  setModelId(value: string): void;
+  setModelId(value: string): ListModelVersionInputExamplesRequest;
 
   getModelVersionId(): string;
-  setModelVersionId(value: string): void;
+  setModelVersionId(value: string): ListModelVersionInputExamplesRequest;
 
   getPage(): number;
-  setPage(value: number): void;
+  setPage(value: number): ListModelVersionInputExamplesRequest;
 
   getPerPage(): number;
-  setPerPage(value: number): void;
+  setPerPage(value: number): ListModelVersionInputExamplesRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListModelVersionInputExamplesRequest.AsObject;
@@ -3378,14 +4185,14 @@ export namespace ListModelVersionInputExamplesRequest {
 
 export class SingleModelVersionInputExampleResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleModelVersionInputExampleResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): SingleModelVersionInputExampleResponse;
 
   getModelVersionInputExample(): proto_clarifai_api_resources_pb.ModelVersionInputExample | undefined;
-  setModelVersionInputExample(value?: proto_clarifai_api_resources_pb.ModelVersionInputExample): void;
+  setModelVersionInputExample(value?: proto_clarifai_api_resources_pb.ModelVersionInputExample): SingleModelVersionInputExampleResponse;
   hasModelVersionInputExample(): boolean;
-  clearModelVersionInputExample(): void;
+  clearModelVersionInputExample(): SingleModelVersionInputExampleResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SingleModelVersionInputExampleResponse.AsObject;
@@ -3404,13 +4211,13 @@ export namespace SingleModelVersionInputExampleResponse {
 
 export class MultiModelVersionInputExampleResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiModelVersionInputExampleResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiModelVersionInputExampleResponse;
 
   getModelVersionInputExamplesList(): Array<proto_clarifai_api_resources_pb.ModelVersionInputExample>;
-  setModelVersionInputExamplesList(value: Array<proto_clarifai_api_resources_pb.ModelVersionInputExample>): void;
-  clearModelVersionInputExamplesList(): void;
+  setModelVersionInputExamplesList(value: Array<proto_clarifai_api_resources_pb.ModelVersionInputExample>): MultiModelVersionInputExampleResponse;
+  clearModelVersionInputExamplesList(): MultiModelVersionInputExampleResponse;
   addModelVersionInputExamples(value?: proto_clarifai_api_resources_pb.ModelVersionInputExample, index?: number): proto_clarifai_api_resources_pb.ModelVersionInputExample;
 
   serializeBinary(): Uint8Array;
@@ -3430,18 +4237,18 @@ export namespace MultiModelVersionInputExampleResponse {
 
 export class ListModelReferencesRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListModelReferencesRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): ListModelReferencesRequest;
 
   getModelId(): string;
-  setModelId(value: string): void;
+  setModelId(value: string): ListModelReferencesRequest;
 
   getPage(): number;
-  setPage(value: number): void;
+  setPage(value: number): ListModelReferencesRequest;
 
   getPerPage(): number;
-  setPerPage(value: number): void;
+  setPerPage(value: number): ListModelReferencesRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListModelReferencesRequest.AsObject;
@@ -3462,13 +4269,13 @@ export namespace ListModelReferencesRequest {
 
 export class MultiModelReferenceResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiModelReferenceResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiModelReferenceResponse;
 
   getModelReferencesList(): Array<proto_clarifai_api_resources_pb.ModelReference>;
-  setModelReferencesList(value: Array<proto_clarifai_api_resources_pb.ModelReference>): void;
-  clearModelReferencesList(): void;
+  setModelReferencesList(value: Array<proto_clarifai_api_resources_pb.ModelReference>): MultiModelReferenceResponse;
+  clearModelReferencesList(): MultiModelReferenceResponse;
   addModelReferences(value?: proto_clarifai_api_resources_pb.ModelReference, index?: number): proto_clarifai_api_resources_pb.ModelReference;
 
   serializeBinary(): Uint8Array;
@@ -3488,13 +4295,13 @@ export namespace MultiModelReferenceResponse {
 
 export class MultiOutputResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiOutputResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiOutputResponse;
 
   getOutputsList(): Array<proto_clarifai_api_resources_pb.Output>;
-  setOutputsList(value: Array<proto_clarifai_api_resources_pb.Output>): void;
-  clearOutputsList(): void;
+  setOutputsList(value: Array<proto_clarifai_api_resources_pb.Output>): MultiOutputResponse;
+  clearOutputsList(): MultiOutputResponse;
   addOutputs(value?: proto_clarifai_api_resources_pb.Output, index?: number): proto_clarifai_api_resources_pb.Output;
 
   serializeBinary(): Uint8Array;
@@ -3514,12 +4321,12 @@ export namespace MultiOutputResponse {
 
 export class ListScopesRequest extends jspb.Message {
   getKeyType(): string;
-  setKeyType(value: string): void;
+  setKeyType(value: string): ListScopesRequest;
 
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListScopesRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): ListScopesRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListScopesRequest.AsObject;
@@ -3538,9 +4345,9 @@ export namespace ListScopesRequest {
 
 export class MyScopesRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): MyScopesRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): MyScopesRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MyScopesRequest.AsObject;
@@ -3558,9 +4365,9 @@ export namespace MyScopesRequest {
 
 export class MyScopesUserRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): MyScopesUserRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): MyScopesUserRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MyScopesUserRequest.AsObject;
@@ -3592,18 +4399,18 @@ export namespace MyScopesRootRequest {
 
 export class MultiScopeDepsResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiScopeDepsResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiScopeDepsResponse;
 
   getScopeDepsList(): Array<proto_clarifai_api_resources_pb.ScopeDeps>;
-  setScopeDepsList(value: Array<proto_clarifai_api_resources_pb.ScopeDeps>): void;
-  clearScopeDepsList(): void;
+  setScopeDepsList(value: Array<proto_clarifai_api_resources_pb.ScopeDeps>): MultiScopeDepsResponse;
+  clearScopeDepsList(): MultiScopeDepsResponse;
   addScopeDeps(value?: proto_clarifai_api_resources_pb.ScopeDeps, index?: number): proto_clarifai_api_resources_pb.ScopeDeps;
 
   getEndpointDepsList(): Array<proto_clarifai_api_resources_pb.EndpointDeps>;
-  setEndpointDepsList(value: Array<proto_clarifai_api_resources_pb.EndpointDeps>): void;
-  clearEndpointDepsList(): void;
+  setEndpointDepsList(value: Array<proto_clarifai_api_resources_pb.EndpointDeps>): MultiScopeDepsResponse;
+  clearEndpointDepsList(): MultiScopeDepsResponse;
   addEndpointDeps(value?: proto_clarifai_api_resources_pb.EndpointDeps, index?: number): proto_clarifai_api_resources_pb.EndpointDeps;
 
   serializeBinary(): Uint8Array;
@@ -3624,24 +4431,24 @@ export namespace MultiScopeDepsResponse {
 
 export class MultiScopeResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiScopeResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiScopeResponse;
 
   getScopesList(): Array<string>;
-  setScopesList(value: Array<string>): void;
-  clearScopesList(): void;
-  addScopes(value: string, index?: number): void;
+  setScopesList(value: Array<string>): MultiScopeResponse;
+  clearScopesList(): MultiScopeResponse;
+  addScopes(value: string, index?: number): MultiScopeResponse;
 
   getApp(): proto_clarifai_api_resources_pb.App | undefined;
-  setApp(value?: proto_clarifai_api_resources_pb.App): void;
+  setApp(value?: proto_clarifai_api_resources_pb.App): MultiScopeResponse;
   hasApp(): boolean;
-  clearApp(): void;
+  clearApp(): MultiScopeResponse;
 
   getEndpointsList(): Array<string>;
-  setEndpointsList(value: Array<string>): void;
-  clearEndpointsList(): void;
-  addEndpoints(value: string, index?: number): void;
+  setEndpointsList(value: Array<string>): MultiScopeResponse;
+  clearEndpointsList(): MultiScopeResponse;
+  addEndpoints(value: string, index?: number): MultiScopeResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MultiScopeResponse.AsObject;
@@ -3662,19 +4469,19 @@ export namespace MultiScopeResponse {
 
 export class MultiScopeUserResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiScopeUserResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiScopeUserResponse;
 
   getScopesList(): Array<string>;
-  setScopesList(value: Array<string>): void;
-  clearScopesList(): void;
-  addScopes(value: string, index?: number): void;
+  setScopesList(value: Array<string>): MultiScopeUserResponse;
+  clearScopesList(): MultiScopeUserResponse;
+  addScopes(value: string, index?: number): MultiScopeUserResponse;
 
   getEndpointsList(): Array<string>;
-  setEndpointsList(value: Array<string>): void;
-  clearEndpointsList(): void;
-  addEndpoints(value: string, index?: number): void;
+  setEndpointsList(value: Array<string>): MultiScopeUserResponse;
+  clearEndpointsList(): MultiScopeUserResponse;
+  addEndpoints(value: string, index?: number): MultiScopeUserResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MultiScopeUserResponse.AsObject;
@@ -3694,19 +4501,19 @@ export namespace MultiScopeUserResponse {
 
 export class MultiScopeRootResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiScopeRootResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiScopeRootResponse;
 
   getScopesList(): Array<string>;
-  setScopesList(value: Array<string>): void;
-  clearScopesList(): void;
-  addScopes(value: string, index?: number): void;
+  setScopesList(value: Array<string>): MultiScopeRootResponse;
+  clearScopesList(): MultiScopeRootResponse;
+  addScopes(value: string, index?: number): MultiScopeRootResponse;
 
   getEndpointsList(): Array<string>;
-  setEndpointsList(value: Array<string>): void;
-  clearEndpointsList(): void;
-  addEndpoints(value: string, index?: number): void;
+  setEndpointsList(value: Array<string>): MultiScopeRootResponse;
+  clearEndpointsList(): MultiScopeRootResponse;
+  addEndpoints(value: string, index?: number): MultiScopeRootResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MultiScopeRootResponse.AsObject;
@@ -3726,12 +4533,12 @@ export namespace MultiScopeRootResponse {
 
 export class GetSearchRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetSearchRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): GetSearchRequest;
 
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): GetSearchRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetSearchRequest.AsObject;
@@ -3750,15 +4557,15 @@ export namespace GetSearchRequest {
 
 export class ListSearchesRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListSearchesRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): ListSearchesRequest;
 
   getPage(): number;
-  setPage(value: number): void;
+  setPage(value: number): ListSearchesRequest;
 
   getPerPage(): number;
-  setPerPage(value: number): void;
+  setPerPage(value: number): ListSearchesRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListSearchesRequest.AsObject;
@@ -3778,24 +4585,24 @@ export namespace ListSearchesRequest {
 
 export class PostSearchesRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostSearchesRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostSearchesRequest;
 
   getQuery(): proto_clarifai_api_resources_pb.Query | undefined;
-  setQuery(value?: proto_clarifai_api_resources_pb.Query): void;
+  setQuery(value?: proto_clarifai_api_resources_pb.Query): PostSearchesRequest;
   hasQuery(): boolean;
-  clearQuery(): void;
+  clearQuery(): PostSearchesRequest;
 
   getSearchesList(): Array<proto_clarifai_api_resources_pb.Search>;
-  setSearchesList(value: Array<proto_clarifai_api_resources_pb.Search>): void;
-  clearSearchesList(): void;
+  setSearchesList(value: Array<proto_clarifai_api_resources_pb.Search>): PostSearchesRequest;
+  clearSearchesList(): PostSearchesRequest;
   addSearches(value?: proto_clarifai_api_resources_pb.Search, index?: number): proto_clarifai_api_resources_pb.Search;
 
   getPagination(): Pagination | undefined;
-  setPagination(value?: Pagination): void;
+  setPagination(value?: Pagination): PostSearchesRequest;
   hasPagination(): boolean;
-  clearPagination(): void;
+  clearPagination(): PostSearchesRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostSearchesRequest.AsObject;
@@ -3814,19 +4621,109 @@ export namespace PostSearchesRequest {
   }
 }
 
+export class PatchInputsSearchesRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchInputsSearchesRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PatchInputsSearchesRequest;
+
+  getSearchesList(): Array<proto_clarifai_api_resources_pb.Search>;
+  setSearchesList(value: Array<proto_clarifai_api_resources_pb.Search>): PatchInputsSearchesRequest;
+  clearSearchesList(): PatchInputsSearchesRequest;
+  addSearches(value?: proto_clarifai_api_resources_pb.Search, index?: number): proto_clarifai_api_resources_pb.Search;
+
+  getAction(): string;
+  setAction(value: string): PatchInputsSearchesRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PatchInputsSearchesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PatchInputsSearchesRequest): PatchInputsSearchesRequest.AsObject;
+  static serializeBinaryToWriter(message: PatchInputsSearchesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PatchInputsSearchesRequest;
+  static deserializeBinaryFromReader(message: PatchInputsSearchesRequest, reader: jspb.BinaryReader): PatchInputsSearchesRequest;
+}
+
+export namespace PatchInputsSearchesRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    searchesList: Array<proto_clarifai_api_resources_pb.Search.AsObject>,
+    action: string,
+  }
+}
+
+export class PatchAnnotationsSearchesRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchAnnotationsSearchesRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PatchAnnotationsSearchesRequest;
+
+  getSearchesList(): Array<proto_clarifai_api_resources_pb.Search>;
+  setSearchesList(value: Array<proto_clarifai_api_resources_pb.Search>): PatchAnnotationsSearchesRequest;
+  clearSearchesList(): PatchAnnotationsSearchesRequest;
+  addSearches(value?: proto_clarifai_api_resources_pb.Search, index?: number): proto_clarifai_api_resources_pb.Search;
+
+  getAction(): string;
+  setAction(value: string): PatchAnnotationsSearchesRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PatchAnnotationsSearchesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PatchAnnotationsSearchesRequest): PatchAnnotationsSearchesRequest.AsObject;
+  static serializeBinaryToWriter(message: PatchAnnotationsSearchesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PatchAnnotationsSearchesRequest;
+  static deserializeBinaryFromReader(message: PatchAnnotationsSearchesRequest, reader: jspb.BinaryReader): PatchAnnotationsSearchesRequest;
+}
+
+export namespace PatchAnnotationsSearchesRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    searchesList: Array<proto_clarifai_api_resources_pb.Search.AsObject>,
+    action: string,
+  }
+}
+
+export class PatchSearchesRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchSearchesRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PatchSearchesRequest;
+
+  getSearchesList(): Array<proto_clarifai_api_resources_pb.Search>;
+  setSearchesList(value: Array<proto_clarifai_api_resources_pb.Search>): PatchSearchesRequest;
+  clearSearchesList(): PatchSearchesRequest;
+  addSearches(value?: proto_clarifai_api_resources_pb.Search, index?: number): proto_clarifai_api_resources_pb.Search;
+
+  getAction(): string;
+  setAction(value: string): PatchSearchesRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PatchSearchesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PatchSearchesRequest): PatchSearchesRequest.AsObject;
+  static serializeBinaryToWriter(message: PatchSearchesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PatchSearchesRequest;
+  static deserializeBinaryFromReader(message: PatchSearchesRequest, reader: jspb.BinaryReader): PatchSearchesRequest;
+}
+
+export namespace PatchSearchesRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    searchesList: Array<proto_clarifai_api_resources_pb.Search.AsObject>,
+    action: string,
+  }
+}
+
 export class PostSearchesByIDRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostSearchesByIDRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostSearchesByIDRequest;
 
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): PostSearchesByIDRequest;
 
   getPagination(): Pagination | undefined;
-  setPagination(value?: Pagination): void;
+  setPagination(value?: Pagination): PostSearchesByIDRequest;
   hasPagination(): boolean;
-  clearPagination(): void;
+  clearPagination(): PostSearchesByIDRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostSearchesByIDRequest.AsObject;
@@ -3846,12 +4743,12 @@ export namespace PostSearchesByIDRequest {
 
 export class DeleteSearchRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteSearchRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): DeleteSearchRequest;
 
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): DeleteSearchRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteSearchRequest.AsObject;
@@ -3870,19 +4767,19 @@ export namespace DeleteSearchRequest {
 
 export class PostAnnotationsSearchesRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostAnnotationsSearchesRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostAnnotationsSearchesRequest;
 
   getSearchesList(): Array<proto_clarifai_api_resources_pb.Search>;
-  setSearchesList(value: Array<proto_clarifai_api_resources_pb.Search>): void;
-  clearSearchesList(): void;
+  setSearchesList(value: Array<proto_clarifai_api_resources_pb.Search>): PostAnnotationsSearchesRequest;
+  clearSearchesList(): PostAnnotationsSearchesRequest;
   addSearches(value?: proto_clarifai_api_resources_pb.Search, index?: number): proto_clarifai_api_resources_pb.Search;
 
   getPagination(): Pagination | undefined;
-  setPagination(value?: Pagination): void;
+  setPagination(value?: Pagination): PostAnnotationsSearchesRequest;
   hasPagination(): boolean;
-  clearPagination(): void;
+  clearPagination(): PostAnnotationsSearchesRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostAnnotationsSearchesRequest.AsObject;
@@ -3902,12 +4799,12 @@ export namespace PostAnnotationsSearchesRequest {
 
 export class DeleteAnnotationSearchMetricsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteAnnotationSearchMetricsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): DeleteAnnotationSearchMetricsRequest;
 
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): DeleteAnnotationSearchMetricsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteAnnotationSearchMetricsRequest.AsObject;
@@ -3926,19 +4823,19 @@ export namespace DeleteAnnotationSearchMetricsRequest {
 
 export class PostInputsSearchesRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostInputsSearchesRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostInputsSearchesRequest;
 
   getSearchesList(): Array<proto_clarifai_api_resources_pb.Search>;
-  setSearchesList(value: Array<proto_clarifai_api_resources_pb.Search>): void;
-  clearSearchesList(): void;
+  setSearchesList(value: Array<proto_clarifai_api_resources_pb.Search>): PostInputsSearchesRequest;
+  clearSearchesList(): PostInputsSearchesRequest;
   addSearches(value?: proto_clarifai_api_resources_pb.Search, index?: number): proto_clarifai_api_resources_pb.Search;
 
   getPagination(): Pagination | undefined;
-  setPagination(value?: Pagination): void;
+  setPagination(value?: Pagination): PostInputsSearchesRequest;
   hasPagination(): boolean;
-  clearPagination(): void;
+  clearPagination(): PostInputsSearchesRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostInputsSearchesRequest.AsObject;
@@ -3958,14 +4855,14 @@ export namespace PostInputsSearchesRequest {
 
 export class SingleSearchResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleSearchResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): SingleSearchResponse;
 
   getSearch(): proto_clarifai_api_resources_pb.Search | undefined;
-  setSearch(value?: proto_clarifai_api_resources_pb.Search): void;
+  setSearch(value?: proto_clarifai_api_resources_pb.Search): SingleSearchResponse;
   hasSearch(): boolean;
-  clearSearch(): void;
+  clearSearch(): SingleSearchResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SingleSearchResponse.AsObject;
@@ -3984,26 +4881,26 @@ export namespace SingleSearchResponse {
 
 export class MultiSearchResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiSearchResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiSearchResponse;
 
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): MultiSearchResponse;
 
   getHitsList(): Array<proto_clarifai_api_resources_pb.Hit>;
-  setHitsList(value: Array<proto_clarifai_api_resources_pb.Hit>): void;
-  clearHitsList(): void;
+  setHitsList(value: Array<proto_clarifai_api_resources_pb.Hit>): MultiSearchResponse;
+  clearHitsList(): MultiSearchResponse;
   addHits(value?: proto_clarifai_api_resources_pb.Hit, index?: number): proto_clarifai_api_resources_pb.Hit;
 
   getQuery(): proto_clarifai_api_resources_pb.Query | undefined;
-  setQuery(value?: proto_clarifai_api_resources_pb.Query): void;
+  setQuery(value?: proto_clarifai_api_resources_pb.Query): MultiSearchResponse;
   hasQuery(): boolean;
-  clearQuery(): void;
+  clearQuery(): MultiSearchResponse;
 
   getSearchesList(): Array<proto_clarifai_api_resources_pb.Search>;
-  setSearchesList(value: Array<proto_clarifai_api_resources_pb.Search>): void;
-  clearSearchesList(): void;
+  setSearchesList(value: Array<proto_clarifai_api_resources_pb.Search>): MultiSearchResponse;
+  clearSearchesList(): MultiSearchResponse;
   addSearches(value?: proto_clarifai_api_resources_pb.Search, index?: number): proto_clarifai_api_resources_pb.Search;
 
   serializeBinary(): Uint8Array;
@@ -4026,30 +4923,30 @@ export namespace MultiSearchResponse {
 
 export class PostAnnotationSearchMetricsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostAnnotationSearchMetricsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostAnnotationSearchMetricsRequest;
 
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): PostAnnotationSearchMetricsRequest;
 
   getGroundTruth(): proto_clarifai_api_resources_pb.Search | undefined;
-  setGroundTruth(value?: proto_clarifai_api_resources_pb.Search): void;
+  setGroundTruth(value?: proto_clarifai_api_resources_pb.Search): PostAnnotationSearchMetricsRequest;
   hasGroundTruth(): boolean;
-  clearGroundTruth(): void;
+  clearGroundTruth(): PostAnnotationSearchMetricsRequest;
 
   getSearchToEval(): proto_clarifai_api_resources_pb.Search | undefined;
-  setSearchToEval(value?: proto_clarifai_api_resources_pb.Search): void;
+  setSearchToEval(value?: proto_clarifai_api_resources_pb.Search): PostAnnotationSearchMetricsRequest;
   hasSearchToEval(): boolean;
-  clearSearchToEval(): void;
+  clearSearchToEval(): PostAnnotationSearchMetricsRequest;
 
   getData(): proto_clarifai_api_resources_pb.Data | undefined;
-  setData(value?: proto_clarifai_api_resources_pb.Data): void;
+  setData(value?: proto_clarifai_api_resources_pb.Data): PostAnnotationSearchMetricsRequest;
   hasData(): boolean;
-  clearData(): void;
+  clearData(): PostAnnotationSearchMetricsRequest;
 
   getEvaluationType(): proto_clarifai_api_resources_pb.EvaluationType;
-  setEvaluationType(value: proto_clarifai_api_resources_pb.EvaluationType): void;
+  setEvaluationType(value: proto_clarifai_api_resources_pb.EvaluationType): PostAnnotationSearchMetricsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostAnnotationSearchMetricsRequest.AsObject;
@@ -4072,12 +4969,12 @@ export namespace PostAnnotationSearchMetricsRequest {
 
 export class GetAnnotationSearchMetricsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetAnnotationSearchMetricsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): GetAnnotationSearchMetricsRequest;
 
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): GetAnnotationSearchMetricsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetAnnotationSearchMetricsRequest.AsObject;
@@ -4096,9 +4993,9 @@ export namespace GetAnnotationSearchMetricsRequest {
 
 export class ListAnnotationSearchMetricsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListAnnotationSearchMetricsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): ListAnnotationSearchMetricsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAnnotationSearchMetricsRequest.AsObject;
@@ -4116,13 +5013,13 @@ export namespace ListAnnotationSearchMetricsRequest {
 
 export class MultiAnnotationSearchMetricsResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiAnnotationSearchMetricsResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiAnnotationSearchMetricsResponse;
 
   getAnnotationSearchMetricsList(): Array<proto_clarifai_api_resources_pb.AnnotationSearchMetrics>;
-  setAnnotationSearchMetricsList(value: Array<proto_clarifai_api_resources_pb.AnnotationSearchMetrics>): void;
-  clearAnnotationSearchMetricsList(): void;
+  setAnnotationSearchMetricsList(value: Array<proto_clarifai_api_resources_pb.AnnotationSearchMetrics>): MultiAnnotationSearchMetricsResponse;
+  clearAnnotationSearchMetricsList(): MultiAnnotationSearchMetricsResponse;
   addAnnotationSearchMetrics(value?: proto_clarifai_api_resources_pb.AnnotationSearchMetrics, index?: number): proto_clarifai_api_resources_pb.AnnotationSearchMetrics;
 
   serializeBinary(): Uint8Array;
@@ -4140,16 +5037,202 @@ export namespace MultiAnnotationSearchMetricsResponse {
   }
 }
 
+export class ListAnnotationFiltersRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListAnnotationFiltersRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): ListAnnotationFiltersRequest;
+
+  getPage(): number;
+  setPage(value: number): ListAnnotationFiltersRequest;
+
+  getPerPage(): number;
+  setPerPage(value: number): ListAnnotationFiltersRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAnnotationFiltersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAnnotationFiltersRequest): ListAnnotationFiltersRequest.AsObject;
+  static serializeBinaryToWriter(message: ListAnnotationFiltersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAnnotationFiltersRequest;
+  static deserializeBinaryFromReader(message: ListAnnotationFiltersRequest, reader: jspb.BinaryReader): ListAnnotationFiltersRequest;
+}
+
+export namespace ListAnnotationFiltersRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    page: number,
+    perPage: number,
+  }
+}
+
+export class GetAnnotationFilterRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetAnnotationFilterRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): GetAnnotationFilterRequest;
+
+  getAnnotationFilterId(): string;
+  setAnnotationFilterId(value: string): GetAnnotationFilterRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetAnnotationFilterRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetAnnotationFilterRequest): GetAnnotationFilterRequest.AsObject;
+  static serializeBinaryToWriter(message: GetAnnotationFilterRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetAnnotationFilterRequest;
+  static deserializeBinaryFromReader(message: GetAnnotationFilterRequest, reader: jspb.BinaryReader): GetAnnotationFilterRequest;
+}
+
+export namespace GetAnnotationFilterRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    annotationFilterId: string,
+  }
+}
+
+export class PostAnnotationFiltersRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostAnnotationFiltersRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostAnnotationFiltersRequest;
+
+  getAnnotationFiltersList(): Array<proto_clarifai_api_resources_pb.AnnotationFilter>;
+  setAnnotationFiltersList(value: Array<proto_clarifai_api_resources_pb.AnnotationFilter>): PostAnnotationFiltersRequest;
+  clearAnnotationFiltersList(): PostAnnotationFiltersRequest;
+  addAnnotationFilters(value?: proto_clarifai_api_resources_pb.AnnotationFilter, index?: number): proto_clarifai_api_resources_pb.AnnotationFilter;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostAnnotationFiltersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostAnnotationFiltersRequest): PostAnnotationFiltersRequest.AsObject;
+  static serializeBinaryToWriter(message: PostAnnotationFiltersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostAnnotationFiltersRequest;
+  static deserializeBinaryFromReader(message: PostAnnotationFiltersRequest, reader: jspb.BinaryReader): PostAnnotationFiltersRequest;
+}
+
+export namespace PostAnnotationFiltersRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    annotationFiltersList: Array<proto_clarifai_api_resources_pb.AnnotationFilter.AsObject>,
+  }
+}
+
+export class PatchAnnotationFiltersRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchAnnotationFiltersRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PatchAnnotationFiltersRequest;
+
+  getAnnotationFiltersList(): Array<proto_clarifai_api_resources_pb.AnnotationFilter>;
+  setAnnotationFiltersList(value: Array<proto_clarifai_api_resources_pb.AnnotationFilter>): PatchAnnotationFiltersRequest;
+  clearAnnotationFiltersList(): PatchAnnotationFiltersRequest;
+  addAnnotationFilters(value?: proto_clarifai_api_resources_pb.AnnotationFilter, index?: number): proto_clarifai_api_resources_pb.AnnotationFilter;
+
+  getAction(): string;
+  setAction(value: string): PatchAnnotationFiltersRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PatchAnnotationFiltersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PatchAnnotationFiltersRequest): PatchAnnotationFiltersRequest.AsObject;
+  static serializeBinaryToWriter(message: PatchAnnotationFiltersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PatchAnnotationFiltersRequest;
+  static deserializeBinaryFromReader(message: PatchAnnotationFiltersRequest, reader: jspb.BinaryReader): PatchAnnotationFiltersRequest;
+}
+
+export namespace PatchAnnotationFiltersRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    annotationFiltersList: Array<proto_clarifai_api_resources_pb.AnnotationFilter.AsObject>,
+    action: string,
+  }
+}
+
+export class DeleteAnnotationFiltersRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteAnnotationFiltersRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): DeleteAnnotationFiltersRequest;
+
+  getAnnotationFilterIdsList(): Array<string>;
+  setAnnotationFilterIdsList(value: Array<string>): DeleteAnnotationFiltersRequest;
+  clearAnnotationFilterIdsList(): DeleteAnnotationFiltersRequest;
+  addAnnotationFilterIds(value: string, index?: number): DeleteAnnotationFiltersRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteAnnotationFiltersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteAnnotationFiltersRequest): DeleteAnnotationFiltersRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteAnnotationFiltersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteAnnotationFiltersRequest;
+  static deserializeBinaryFromReader(message: DeleteAnnotationFiltersRequest, reader: jspb.BinaryReader): DeleteAnnotationFiltersRequest;
+}
+
+export namespace DeleteAnnotationFiltersRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    annotationFilterIdsList: Array<string>,
+  }
+}
+
+export class MultiAnnotationFilterResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiAnnotationFilterResponse;
+  hasStatus(): boolean;
+  clearStatus(): MultiAnnotationFilterResponse;
+
+  getAnnotationFiltersList(): Array<proto_clarifai_api_resources_pb.AnnotationFilter>;
+  setAnnotationFiltersList(value: Array<proto_clarifai_api_resources_pb.AnnotationFilter>): MultiAnnotationFilterResponse;
+  clearAnnotationFiltersList(): MultiAnnotationFilterResponse;
+  addAnnotationFilters(value?: proto_clarifai_api_resources_pb.AnnotationFilter, index?: number): proto_clarifai_api_resources_pb.AnnotationFilter;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MultiAnnotationFilterResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiAnnotationFilterResponse): MultiAnnotationFilterResponse.AsObject;
+  static serializeBinaryToWriter(message: MultiAnnotationFilterResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiAnnotationFilterResponse;
+  static deserializeBinaryFromReader(message: MultiAnnotationFilterResponse, reader: jspb.BinaryReader): MultiAnnotationFilterResponse;
+}
+
+export namespace MultiAnnotationFilterResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    annotationFiltersList: Array<proto_clarifai_api_resources_pb.AnnotationFilter.AsObject>,
+  }
+}
+
+export class SingleAnnotationFilterResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleAnnotationFilterResponse;
+  hasStatus(): boolean;
+  clearStatus(): SingleAnnotationFilterResponse;
+
+  getAnnotationFilter(): proto_clarifai_api_resources_pb.AnnotationFilter | undefined;
+  setAnnotationFilter(value?: proto_clarifai_api_resources_pb.AnnotationFilter): SingleAnnotationFilterResponse;
+  hasAnnotationFilter(): boolean;
+  clearAnnotationFilter(): SingleAnnotationFilterResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SingleAnnotationFilterResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SingleAnnotationFilterResponse): SingleAnnotationFilterResponse.AsObject;
+  static serializeBinaryToWriter(message: SingleAnnotationFilterResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SingleAnnotationFilterResponse;
+  static deserializeBinaryFromReader(message: SingleAnnotationFilterResponse, reader: jspb.BinaryReader): SingleAnnotationFilterResponse;
+}
+
+export namespace SingleAnnotationFilterResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    annotationFilter?: proto_clarifai_api_resources_pb.AnnotationFilter.AsObject,
+  }
+}
+
 export class PostValidatePasswordRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostValidatePasswordRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostValidatePasswordRequest;
 
   getPassword(): proto_clarifai_api_resources_pb.Password | undefined;
-  setPassword(value?: proto_clarifai_api_resources_pb.Password): void;
+  setPassword(value?: proto_clarifai_api_resources_pb.Password): PostValidatePasswordRequest;
   hasPassword(): boolean;
-  clearPassword(): void;
+  clearPassword(): PostValidatePasswordRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostValidatePasswordRequest.AsObject;
@@ -4168,14 +5251,14 @@ export namespace PostValidatePasswordRequest {
 
 export class SinglePasswordValidationResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SinglePasswordValidationResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): SinglePasswordValidationResponse;
 
   getPasswordViolations(): proto_clarifai_api_resources_pb.PasswordViolations | undefined;
-  setPasswordViolations(value?: proto_clarifai_api_resources_pb.PasswordViolations): void;
+  setPasswordViolations(value?: proto_clarifai_api_resources_pb.PasswordViolations): SinglePasswordValidationResponse;
   hasPasswordViolations(): boolean;
-  clearPasswordViolations(): void;
+  clearPasswordViolations(): SinglePasswordValidationResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SinglePasswordValidationResponse.AsObject;
@@ -4194,20 +5277,23 @@ export namespace SinglePasswordValidationResponse {
 
 export class GetWorkflowRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetWorkflowRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): GetWorkflowRequest;
 
   getWorkflowId(): string;
-  setWorkflowId(value: string): void;
+  setWorkflowId(value: string): GetWorkflowRequest;
 
   getFavorClarifaiWorkflows(): boolean;
-  setFavorClarifaiWorkflows(value: boolean): void;
+  setFavorClarifaiWorkflows(value: boolean): GetWorkflowRequest;
 
   getAdditionalFieldsList(): Array<string>;
-  setAdditionalFieldsList(value: Array<string>): void;
-  clearAdditionalFieldsList(): void;
-  addAdditionalFields(value: string, index?: number): void;
+  setAdditionalFieldsList(value: Array<string>): GetWorkflowRequest;
+  clearAdditionalFieldsList(): GetWorkflowRequest;
+  addAdditionalFields(value: string, index?: number): GetWorkflowRequest;
+
+  getExcludeClarifaiWorkflows(): boolean;
+  setExcludeClarifaiWorkflows(value: boolean): GetWorkflowRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetWorkflowRequest.AsObject;
@@ -4223,46 +5309,47 @@ export namespace GetWorkflowRequest {
     workflowId: string,
     favorClarifaiWorkflows: boolean,
     additionalFieldsList: Array<string>,
+    excludeClarifaiWorkflows: boolean,
   }
 }
 
 export class ListWorkflowsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListWorkflowsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): ListWorkflowsRequest;
 
   getPage(): number;
-  setPage(value: number): void;
+  setPage(value: number): ListWorkflowsRequest;
 
   getPerPage(): number;
-  setPerPage(value: number): void;
+  setPerPage(value: number): ListWorkflowsRequest;
 
   getSortAscending(): boolean;
-  setSortAscending(value: boolean): void;
+  setSortAscending(value: boolean): ListWorkflowsRequest;
 
   getSortById(): boolean;
-  setSortById(value: boolean): void;
+  setSortById(value: boolean): ListWorkflowsRequest;
 
   getSortByModifiedAt(): boolean;
-  setSortByModifiedAt(value: boolean): void;
+  setSortByModifiedAt(value: boolean): ListWorkflowsRequest;
 
   getQuery(): string;
-  setQuery(value: string): void;
+  setQuery(value: string): ListWorkflowsRequest;
 
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): ListWorkflowsRequest;
 
   getFeaturedOnly(): boolean;
-  setFeaturedOnly(value: boolean): void;
+  setFeaturedOnly(value: boolean): ListWorkflowsRequest;
 
   getStarredOnly(): boolean;
-  setStarredOnly(value: boolean): void;
+  setStarredOnly(value: boolean): ListWorkflowsRequest;
 
   getAdditionalFieldsList(): Array<string>;
-  setAdditionalFieldsList(value: Array<string>): void;
-  clearAdditionalFieldsList(): void;
-  addAdditionalFields(value: string, index?: number): void;
+  setAdditionalFieldsList(value: Array<string>): ListWorkflowsRequest;
+  clearAdditionalFieldsList(): ListWorkflowsRequest;
+  addAdditionalFields(value: string, index?: number): ListWorkflowsRequest;
 
   getSortByCase(): ListWorkflowsRequest.SortByCase;
 
@@ -4298,13 +5385,13 @@ export namespace ListWorkflowsRequest {
 
 export class PostWorkflowsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostWorkflowsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostWorkflowsRequest;
 
   getWorkflowsList(): Array<proto_clarifai_api_resources_pb.Workflow>;
-  setWorkflowsList(value: Array<proto_clarifai_api_resources_pb.Workflow>): void;
-  clearWorkflowsList(): void;
+  setWorkflowsList(value: Array<proto_clarifai_api_resources_pb.Workflow>): PostWorkflowsRequest;
+  clearWorkflowsList(): PostWorkflowsRequest;
   addWorkflows(value?: proto_clarifai_api_resources_pb.Workflow, index?: number): proto_clarifai_api_resources_pb.Workflow;
 
   serializeBinary(): Uint8Array;
@@ -4324,17 +5411,17 @@ export namespace PostWorkflowsRequest {
 
 export class PatchWorkflowsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchWorkflowsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PatchWorkflowsRequest;
 
   getWorkflowsList(): Array<proto_clarifai_api_resources_pb.Workflow>;
-  setWorkflowsList(value: Array<proto_clarifai_api_resources_pb.Workflow>): void;
-  clearWorkflowsList(): void;
+  setWorkflowsList(value: Array<proto_clarifai_api_resources_pb.Workflow>): PatchWorkflowsRequest;
+  clearWorkflowsList(): PatchWorkflowsRequest;
   addWorkflows(value?: proto_clarifai_api_resources_pb.Workflow, index?: number): proto_clarifai_api_resources_pb.Workflow;
 
   getAction(): string;
-  setAction(value: string): void;
+  setAction(value: string): PatchWorkflowsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PatchWorkflowsRequest.AsObject;
@@ -4354,12 +5441,12 @@ export namespace PatchWorkflowsRequest {
 
 export class DeleteWorkflowRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteWorkflowRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): DeleteWorkflowRequest;
 
   getWorkflowId(): string;
-  setWorkflowId(value: string): void;
+  setWorkflowId(value: string): DeleteWorkflowRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteWorkflowRequest.AsObject;
@@ -4378,17 +5465,17 @@ export namespace DeleteWorkflowRequest {
 
 export class DeleteWorkflowsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteWorkflowsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): DeleteWorkflowsRequest;
 
   getIdsList(): Array<string>;
-  setIdsList(value: Array<string>): void;
-  clearIdsList(): void;
-  addIds(value: string, index?: number): void;
+  setIdsList(value: Array<string>): DeleteWorkflowsRequest;
+  clearIdsList(): DeleteWorkflowsRequest;
+  addIds(value: string, index?: number): DeleteWorkflowsRequest;
 
   getDeleteAll(): boolean;
-  setDeleteAll(value: boolean): void;
+  setDeleteAll(value: boolean): DeleteWorkflowsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteWorkflowsRequest.AsObject;
@@ -4408,14 +5495,14 @@ export namespace DeleteWorkflowsRequest {
 
 export class SingleWorkflowResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleWorkflowResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): SingleWorkflowResponse;
 
   getWorkflow(): proto_clarifai_api_resources_pb.Workflow | undefined;
-  setWorkflow(value?: proto_clarifai_api_resources_pb.Workflow): void;
+  setWorkflow(value?: proto_clarifai_api_resources_pb.Workflow): SingleWorkflowResponse;
   hasWorkflow(): boolean;
-  clearWorkflow(): void;
+  clearWorkflow(): SingleWorkflowResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SingleWorkflowResponse.AsObject;
@@ -4434,13 +5521,13 @@ export namespace SingleWorkflowResponse {
 
 export class MultiWorkflowResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiWorkflowResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiWorkflowResponse;
 
   getWorkflowsList(): Array<proto_clarifai_api_resources_pb.Workflow>;
-  setWorkflowsList(value: Array<proto_clarifai_api_resources_pb.Workflow>): void;
-  clearWorkflowsList(): void;
+  setWorkflowsList(value: Array<proto_clarifai_api_resources_pb.Workflow>): MultiWorkflowResponse;
+  clearWorkflowsList(): MultiWorkflowResponse;
   addWorkflows(value?: proto_clarifai_api_resources_pb.Workflow, index?: number): proto_clarifai_api_resources_pb.Workflow;
 
   serializeBinary(): Uint8Array;
@@ -4460,33 +5547,33 @@ export namespace MultiWorkflowResponse {
 
 export class PostWorkflowResultsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostWorkflowResultsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostWorkflowResultsRequest;
 
   getWorkflowId(): string;
-  setWorkflowId(value: string): void;
+  setWorkflowId(value: string): PostWorkflowResultsRequest;
 
   getVersionId(): string;
-  setVersionId(value: string): void;
+  setVersionId(value: string): PostWorkflowResultsRequest;
 
   getInputsList(): Array<proto_clarifai_api_resources_pb.Input>;
-  setInputsList(value: Array<proto_clarifai_api_resources_pb.Input>): void;
-  clearInputsList(): void;
+  setInputsList(value: Array<proto_clarifai_api_resources_pb.Input>): PostWorkflowResultsRequest;
+  clearInputsList(): PostWorkflowResultsRequest;
   addInputs(value?: proto_clarifai_api_resources_pb.Input, index?: number): proto_clarifai_api_resources_pb.Input;
 
   getOutputConfig(): proto_clarifai_api_resources_pb.OutputConfig | undefined;
-  setOutputConfig(value?: proto_clarifai_api_resources_pb.OutputConfig): void;
+  setOutputConfig(value?: proto_clarifai_api_resources_pb.OutputConfig): PostWorkflowResultsRequest;
   hasOutputConfig(): boolean;
-  clearOutputConfig(): void;
+  clearOutputConfig(): PostWorkflowResultsRequest;
 
   getFavorClarifaiWorkflows(): boolean;
-  setFavorClarifaiWorkflows(value: boolean): void;
+  setFavorClarifaiWorkflows(value: boolean): PostWorkflowResultsRequest;
 
   getWorkflowState(): proto_clarifai_api_resources_pb.WorkflowState | undefined;
-  setWorkflowState(value?: proto_clarifai_api_resources_pb.WorkflowState): void;
+  setWorkflowState(value?: proto_clarifai_api_resources_pb.WorkflowState): PostWorkflowResultsRequest;
   hasWorkflowState(): boolean;
-  clearWorkflowState(): void;
+  clearWorkflowState(): PostWorkflowResultsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostWorkflowResultsRequest.AsObject;
@@ -4510,24 +5597,24 @@ export namespace PostWorkflowResultsRequest {
 
 export class PostWorkflowResultsResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): PostWorkflowResultsResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): PostWorkflowResultsResponse;
 
   getWorkflow(): proto_clarifai_api_resources_pb.Workflow | undefined;
-  setWorkflow(value?: proto_clarifai_api_resources_pb.Workflow): void;
+  setWorkflow(value?: proto_clarifai_api_resources_pb.Workflow): PostWorkflowResultsResponse;
   hasWorkflow(): boolean;
-  clearWorkflow(): void;
+  clearWorkflow(): PostWorkflowResultsResponse;
 
   getResultsList(): Array<proto_clarifai_api_resources_pb.WorkflowResult>;
-  setResultsList(value: Array<proto_clarifai_api_resources_pb.WorkflowResult>): void;
-  clearResultsList(): void;
+  setResultsList(value: Array<proto_clarifai_api_resources_pb.WorkflowResult>): PostWorkflowResultsResponse;
+  clearResultsList(): PostWorkflowResultsResponse;
   addResults(value?: proto_clarifai_api_resources_pb.WorkflowResult, index?: number): proto_clarifai_api_resources_pb.WorkflowResult;
 
   getWorkflowState(): proto_clarifai_api_resources_pb.WorkflowState | undefined;
-  setWorkflowState(value?: proto_clarifai_api_resources_pb.WorkflowState): void;
+  setWorkflowState(value?: proto_clarifai_api_resources_pb.WorkflowState): PostWorkflowResultsResponse;
   hasWorkflowState(): boolean;
-  clearWorkflowState(): void;
+  clearWorkflowState(): PostWorkflowResultsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostWorkflowResultsResponse.AsObject;
@@ -4548,31 +5635,31 @@ export namespace PostWorkflowResultsResponse {
 
 export class PostWorkflowResultsSimilarityRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostWorkflowResultsSimilarityRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostWorkflowResultsSimilarityRequest;
 
   getWorkflowId(): string;
-  setWorkflowId(value: string): void;
+  setWorkflowId(value: string): PostWorkflowResultsSimilarityRequest;
 
   getVersionId(): string;
-  setVersionId(value: string): void;
+  setVersionId(value: string): PostWorkflowResultsSimilarityRequest;
 
   getModelVersionId(): string;
-  setModelVersionId(value: string): void;
+  setModelVersionId(value: string): PostWorkflowResultsSimilarityRequest;
 
   getProbeInputsList(): Array<proto_clarifai_api_resources_pb.Input>;
-  setProbeInputsList(value: Array<proto_clarifai_api_resources_pb.Input>): void;
-  clearProbeInputsList(): void;
+  setProbeInputsList(value: Array<proto_clarifai_api_resources_pb.Input>): PostWorkflowResultsSimilarityRequest;
+  clearProbeInputsList(): PostWorkflowResultsSimilarityRequest;
   addProbeInputs(value?: proto_clarifai_api_resources_pb.Input, index?: number): proto_clarifai_api_resources_pb.Input;
 
   getPoolInputsList(): Array<proto_clarifai_api_resources_pb.Input>;
-  setPoolInputsList(value: Array<proto_clarifai_api_resources_pb.Input>): void;
-  clearPoolInputsList(): void;
+  setPoolInputsList(value: Array<proto_clarifai_api_resources_pb.Input>): PostWorkflowResultsSimilarityRequest;
+  clearPoolInputsList(): PostWorkflowResultsSimilarityRequest;
   addPoolInputs(value?: proto_clarifai_api_resources_pb.Input, index?: number): proto_clarifai_api_resources_pb.Input;
 
   getFavorClarifaiWorkflows(): boolean;
-  setFavorClarifaiWorkflows(value: boolean): void;
+  setFavorClarifaiWorkflows(value: boolean): PostWorkflowResultsSimilarityRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostWorkflowResultsSimilarityRequest.AsObject;
@@ -4596,13 +5683,13 @@ export namespace PostWorkflowResultsSimilarityRequest {
 
 export class PostWorkflowResultsSimilarityResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): PostWorkflowResultsSimilarityResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): PostWorkflowResultsSimilarityResponse;
 
   getResultsList(): Array<proto_clarifai_api_resources_pb.WorkflowResultsSimilarity>;
-  setResultsList(value: Array<proto_clarifai_api_resources_pb.WorkflowResultsSimilarity>): void;
-  clearResultsList(): void;
+  setResultsList(value: Array<proto_clarifai_api_resources_pb.WorkflowResultsSimilarity>): PostWorkflowResultsSimilarityResponse;
+  clearResultsList(): PostWorkflowResultsSimilarityResponse;
   addResults(value?: proto_clarifai_api_resources_pb.WorkflowResultsSimilarity, index?: number): proto_clarifai_api_resources_pb.WorkflowResultsSimilarity;
 
   serializeBinary(): Uint8Array;
@@ -4622,18 +5709,18 @@ export namespace PostWorkflowResultsSimilarityResponse {
 
 export class ListWorkflowVersionsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListWorkflowVersionsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): ListWorkflowVersionsRequest;
 
   getWorkflowId(): string;
-  setWorkflowId(value: string): void;
+  setWorkflowId(value: string): ListWorkflowVersionsRequest;
 
   getPage(): number;
-  setPage(value: number): void;
+  setPage(value: number): ListWorkflowVersionsRequest;
 
   getPerPage(): number;
-  setPerPage(value: number): void;
+  setPerPage(value: number): ListWorkflowVersionsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListWorkflowVersionsRequest.AsObject;
@@ -4654,15 +5741,15 @@ export namespace ListWorkflowVersionsRequest {
 
 export class GetWorkflowVersionRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetWorkflowVersionRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): GetWorkflowVersionRequest;
 
   getWorkflowId(): string;
-  setWorkflowId(value: string): void;
+  setWorkflowId(value: string): GetWorkflowVersionRequest;
 
   getWorkflowVersionId(): string;
-  setWorkflowVersionId(value: string): void;
+  setWorkflowVersionId(value: string): GetWorkflowVersionRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetWorkflowVersionRequest.AsObject;
@@ -4682,17 +5769,17 @@ export namespace GetWorkflowVersionRequest {
 
 export class DeleteWorkflowVersionsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteWorkflowVersionsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): DeleteWorkflowVersionsRequest;
 
   getWorkflowId(): string;
-  setWorkflowId(value: string): void;
+  setWorkflowId(value: string): DeleteWorkflowVersionsRequest;
 
   getWorkflowVersionIdsList(): Array<string>;
-  setWorkflowVersionIdsList(value: Array<string>): void;
-  clearWorkflowVersionIdsList(): void;
-  addWorkflowVersionIds(value: string, index?: number): void;
+  setWorkflowVersionIdsList(value: Array<string>): DeleteWorkflowVersionsRequest;
+  clearWorkflowVersionIdsList(): DeleteWorkflowVersionsRequest;
+  addWorkflowVersionIds(value: string, index?: number): DeleteWorkflowVersionsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteWorkflowVersionsRequest.AsObject;
@@ -4712,20 +5799,20 @@ export namespace DeleteWorkflowVersionsRequest {
 
 export class PatchWorkflowVersionsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchWorkflowVersionsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PatchWorkflowVersionsRequest;
 
   getWorkflowId(): string;
-  setWorkflowId(value: string): void;
+  setWorkflowId(value: string): PatchWorkflowVersionsRequest;
 
   getWorkflowVersionsList(): Array<proto_clarifai_api_resources_pb.WorkflowVersion>;
-  setWorkflowVersionsList(value: Array<proto_clarifai_api_resources_pb.WorkflowVersion>): void;
-  clearWorkflowVersionsList(): void;
+  setWorkflowVersionsList(value: Array<proto_clarifai_api_resources_pb.WorkflowVersion>): PatchWorkflowVersionsRequest;
+  clearWorkflowVersionsList(): PatchWorkflowVersionsRequest;
   addWorkflowVersions(value?: proto_clarifai_api_resources_pb.WorkflowVersion, index?: number): proto_clarifai_api_resources_pb.WorkflowVersion;
 
   getAction(): string;
-  setAction(value: string): void;
+  setAction(value: string): PatchWorkflowVersionsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PatchWorkflowVersionsRequest.AsObject;
@@ -4746,13 +5833,13 @@ export namespace PatchWorkflowVersionsRequest {
 
 export class MultiWorkflowVersionResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiWorkflowVersionResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiWorkflowVersionResponse;
 
   getWorkflowVersionsList(): Array<proto_clarifai_api_resources_pb.WorkflowVersion>;
-  setWorkflowVersionsList(value: Array<proto_clarifai_api_resources_pb.WorkflowVersion>): void;
-  clearWorkflowVersionsList(): void;
+  setWorkflowVersionsList(value: Array<proto_clarifai_api_resources_pb.WorkflowVersion>): MultiWorkflowVersionResponse;
+  clearWorkflowVersionsList(): MultiWorkflowVersionResponse;
   addWorkflowVersions(value?: proto_clarifai_api_resources_pb.WorkflowVersion, index?: number): proto_clarifai_api_resources_pb.WorkflowVersion;
 
   serializeBinary(): Uint8Array;
@@ -4772,14 +5859,14 @@ export namespace MultiWorkflowVersionResponse {
 
 export class SingleWorkflowVersionResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleWorkflowVersionResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): SingleWorkflowVersionResponse;
 
   getWorkflowVersion(): proto_clarifai_api_resources_pb.WorkflowVersion | undefined;
-  setWorkflowVersion(value?: proto_clarifai_api_resources_pb.WorkflowVersion): void;
+  setWorkflowVersion(value?: proto_clarifai_api_resources_pb.WorkflowVersion): SingleWorkflowVersionResponse;
   hasWorkflowVersion(): boolean;
-  clearWorkflowVersion(): void;
+  clearWorkflowVersion(): SingleWorkflowVersionResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SingleWorkflowVersionResponse.AsObject;
@@ -4798,13 +5885,13 @@ export namespace SingleWorkflowVersionResponse {
 
 export class PostAppDuplicationsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostAppDuplicationsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostAppDuplicationsRequest;
 
   getAppDuplicationsList(): Array<proto_clarifai_api_resources_pb.AppDuplication>;
-  setAppDuplicationsList(value: Array<proto_clarifai_api_resources_pb.AppDuplication>): void;
-  clearAppDuplicationsList(): void;
+  setAppDuplicationsList(value: Array<proto_clarifai_api_resources_pb.AppDuplication>): PostAppDuplicationsRequest;
+  clearAppDuplicationsList(): PostAppDuplicationsRequest;
   addAppDuplications(value?: proto_clarifai_api_resources_pb.AppDuplication, index?: number): proto_clarifai_api_resources_pb.AppDuplication;
 
   serializeBinary(): Uint8Array;
@@ -4824,12 +5911,12 @@ export namespace PostAppDuplicationsRequest {
 
 export class GetAppDuplicationRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetAppDuplicationRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): GetAppDuplicationRequest;
 
   getAppDuplicationId(): string;
-  setAppDuplicationId(value: string): void;
+  setAppDuplicationId(value: string): GetAppDuplicationRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetAppDuplicationRequest.AsObject;
@@ -4848,15 +5935,15 @@ export namespace GetAppDuplicationRequest {
 
 export class ListAppDuplicationsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListAppDuplicationsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): ListAppDuplicationsRequest;
 
   getPage(): number;
-  setPage(value: number): void;
+  setPage(value: number): ListAppDuplicationsRequest;
 
   getPerPage(): number;
-  setPerPage(value: number): void;
+  setPerPage(value: number): ListAppDuplicationsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAppDuplicationsRequest.AsObject;
@@ -4876,13 +5963,13 @@ export namespace ListAppDuplicationsRequest {
 
 export class MultiAppDuplicationsResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiAppDuplicationsResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiAppDuplicationsResponse;
 
   getAppDuplicationsList(): Array<proto_clarifai_api_resources_pb.AppDuplication>;
-  setAppDuplicationsList(value: Array<proto_clarifai_api_resources_pb.AppDuplication>): void;
-  clearAppDuplicationsList(): void;
+  setAppDuplicationsList(value: Array<proto_clarifai_api_resources_pb.AppDuplication>): MultiAppDuplicationsResponse;
+  clearAppDuplicationsList(): MultiAppDuplicationsResponse;
   addAppDuplications(value?: proto_clarifai_api_resources_pb.AppDuplication, index?: number): proto_clarifai_api_resources_pb.AppDuplication;
 
   serializeBinary(): Uint8Array;
@@ -4902,14 +5989,14 @@ export namespace MultiAppDuplicationsResponse {
 
 export class SingleAppDuplicationResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleAppDuplicationResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): SingleAppDuplicationResponse;
 
   getAppDuplication(): proto_clarifai_api_resources_pb.AppDuplication | undefined;
-  setAppDuplication(value?: proto_clarifai_api_resources_pb.AppDuplication): void;
+  setAppDuplication(value?: proto_clarifai_api_resources_pb.AppDuplication): SingleAppDuplicationResponse;
   hasAppDuplication(): boolean;
-  clearAppDuplication(): void;
+  clearAppDuplication(): SingleAppDuplicationResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SingleAppDuplicationResponse.AsObject;
@@ -4928,13 +6015,13 @@ export namespace SingleAppDuplicationResponse {
 
 export class PostTasksRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostTasksRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostTasksRequest;
 
   getTasksList(): Array<proto_clarifai_api_resources_pb.Task>;
-  setTasksList(value: Array<proto_clarifai_api_resources_pb.Task>): void;
-  clearTasksList(): void;
+  setTasksList(value: Array<proto_clarifai_api_resources_pb.Task>): PostTasksRequest;
+  clearTasksList(): PostTasksRequest;
   addTasks(value?: proto_clarifai_api_resources_pb.Task, index?: number): proto_clarifai_api_resources_pb.Task;
 
   serializeBinary(): Uint8Array;
@@ -4954,12 +6041,12 @@ export namespace PostTasksRequest {
 
 export class GetTaskRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetTaskRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): GetTaskRequest;
 
   getTaskId(): string;
-  setTaskId(value: string): void;
+  setTaskId(value: string): GetTaskRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetTaskRequest.AsObject;
@@ -4978,28 +6065,28 @@ export namespace GetTaskRequest {
 
 export class ListTasksRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListTasksRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): ListTasksRequest;
 
   getPage(): number;
-  setPage(value: number): void;
+  setPage(value: number): ListTasksRequest;
 
   getPerPage(): number;
-  setPerPage(value: number): void;
+  setPerPage(value: number): ListTasksRequest;
 
   getWorkerUserIdsList(): Array<string>;
-  setWorkerUserIdsList(value: Array<string>): void;
-  clearWorkerUserIdsList(): void;
-  addWorkerUserIds(value: string, index?: number): void;
+  setWorkerUserIdsList(value: Array<string>): ListTasksRequest;
+  clearWorkerUserIdsList(): ListTasksRequest;
+  addWorkerUserIds(value: string, index?: number): ListTasksRequest;
 
   getReviewUserIdsList(): Array<string>;
-  setReviewUserIdsList(value: Array<string>): void;
-  clearReviewUserIdsList(): void;
-  addReviewUserIds(value: string, index?: number): void;
+  setReviewUserIdsList(value: Array<string>): ListTasksRequest;
+  clearReviewUserIdsList(): ListTasksRequest;
+  addReviewUserIds(value: string, index?: number): ListTasksRequest;
 
   getIncludingLabelOrderTasks(): boolean;
-  setIncludingLabelOrderTasks(value: boolean): void;
+  setIncludingLabelOrderTasks(value: boolean): ListTasksRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListTasksRequest.AsObject;
@@ -5022,17 +6109,17 @@ export namespace ListTasksRequest {
 
 export class PatchTasksRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchTasksRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PatchTasksRequest;
 
   getTasksList(): Array<proto_clarifai_api_resources_pb.Task>;
-  setTasksList(value: Array<proto_clarifai_api_resources_pb.Task>): void;
-  clearTasksList(): void;
+  setTasksList(value: Array<proto_clarifai_api_resources_pb.Task>): PatchTasksRequest;
+  clearTasksList(): PatchTasksRequest;
   addTasks(value?: proto_clarifai_api_resources_pb.Task, index?: number): proto_clarifai_api_resources_pb.Task;
 
   getAction(): string;
-  setAction(value: string): void;
+  setAction(value: string): PatchTasksRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PatchTasksRequest.AsObject;
@@ -5052,14 +6139,14 @@ export namespace PatchTasksRequest {
 
 export class DeleteTasksRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteTasksRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): DeleteTasksRequest;
 
   getIdsList(): Array<string>;
-  setIdsList(value: Array<string>): void;
-  clearIdsList(): void;
-  addIds(value: string, index?: number): void;
+  setIdsList(value: Array<string>): DeleteTasksRequest;
+  clearIdsList(): DeleteTasksRequest;
+  addIds(value: string, index?: number): DeleteTasksRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteTasksRequest.AsObject;
@@ -5078,13 +6165,13 @@ export namespace DeleteTasksRequest {
 
 export class MultiTaskResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiTaskResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiTaskResponse;
 
   getTasksList(): Array<proto_clarifai_api_resources_pb.Task>;
-  setTasksList(value: Array<proto_clarifai_api_resources_pb.Task>): void;
-  clearTasksList(): void;
+  setTasksList(value: Array<proto_clarifai_api_resources_pb.Task>): MultiTaskResponse;
+  clearTasksList(): MultiTaskResponse;
   addTasks(value?: proto_clarifai_api_resources_pb.Task, index?: number): proto_clarifai_api_resources_pb.Task;
 
   serializeBinary(): Uint8Array;
@@ -5104,14 +6191,14 @@ export namespace MultiTaskResponse {
 
 export class SingleTaskResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleTaskResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): SingleTaskResponse;
 
   getTask(): proto_clarifai_api_resources_pb.Task | undefined;
-  setTask(value?: proto_clarifai_api_resources_pb.Task): void;
+  setTask(value?: proto_clarifai_api_resources_pb.Task): SingleTaskResponse;
   hasTask(): boolean;
-  clearTask(): void;
+  clearTask(): SingleTaskResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SingleTaskResponse.AsObject;
@@ -5130,17 +6217,17 @@ export namespace SingleTaskResponse {
 
 export class GetTaskCountRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetTaskCountRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): GetTaskCountRequest;
 
   getTaskId(): string;
-  setTaskId(value: string): void;
+  setTaskId(value: string): GetTaskCountRequest;
 
   getUserIdsList(): Array<string>;
-  setUserIdsList(value: Array<string>): void;
-  clearUserIdsList(): void;
-  addUserIds(value: string, index?: number): void;
+  setUserIdsList(value: Array<string>): GetTaskCountRequest;
+  clearUserIdsList(): GetTaskCountRequest;
+  addUserIds(value: string, index?: number): GetTaskCountRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetTaskCountRequest.AsObject;
@@ -5160,19 +6247,19 @@ export namespace GetTaskCountRequest {
 
 export class SingleTaskCountResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleTaskCountResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): SingleTaskCountResponse;
 
   getAppId(): string;
-  setAppId(value: string): void;
+  setAppId(value: string): SingleTaskCountResponse;
 
   getTaskId(): string;
-  setTaskId(value: string): void;
+  setTaskId(value: string): SingleTaskCountResponse;
 
   getCountsList(): Array<proto_clarifai_api_resources_pb.TaskStatusCountPerUser>;
-  setCountsList(value: Array<proto_clarifai_api_resources_pb.TaskStatusCountPerUser>): void;
-  clearCountsList(): void;
+  setCountsList(value: Array<proto_clarifai_api_resources_pb.TaskStatusCountPerUser>): SingleTaskCountResponse;
+  clearCountsList(): SingleTaskCountResponse;
   addCounts(value?: proto_clarifai_api_resources_pb.TaskStatusCountPerUser, index?: number): proto_clarifai_api_resources_pb.TaskStatusCountPerUser;
 
   serializeBinary(): Uint8Array;
@@ -5192,15 +6279,201 @@ export namespace SingleTaskCountResponse {
   }
 }
 
+export class PostLabelOrdersRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostLabelOrdersRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostLabelOrdersRequest;
+
+  getLabelOrdersList(): Array<proto_clarifai_api_resources_pb.LabelOrder>;
+  setLabelOrdersList(value: Array<proto_clarifai_api_resources_pb.LabelOrder>): PostLabelOrdersRequest;
+  clearLabelOrdersList(): PostLabelOrdersRequest;
+  addLabelOrders(value?: proto_clarifai_api_resources_pb.LabelOrder, index?: number): proto_clarifai_api_resources_pb.LabelOrder;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostLabelOrdersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostLabelOrdersRequest): PostLabelOrdersRequest.AsObject;
+  static serializeBinaryToWriter(message: PostLabelOrdersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostLabelOrdersRequest;
+  static deserializeBinaryFromReader(message: PostLabelOrdersRequest, reader: jspb.BinaryReader): PostLabelOrdersRequest;
+}
+
+export namespace PostLabelOrdersRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    labelOrdersList: Array<proto_clarifai_api_resources_pb.LabelOrder.AsObject>,
+  }
+}
+
+export class GetLabelOrderRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetLabelOrderRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): GetLabelOrderRequest;
+
+  getLabelOrderId(): string;
+  setLabelOrderId(value: string): GetLabelOrderRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetLabelOrderRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetLabelOrderRequest): GetLabelOrderRequest.AsObject;
+  static serializeBinaryToWriter(message: GetLabelOrderRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetLabelOrderRequest;
+  static deserializeBinaryFromReader(message: GetLabelOrderRequest, reader: jspb.BinaryReader): GetLabelOrderRequest;
+}
+
+export namespace GetLabelOrderRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    labelOrderId: string,
+  }
+}
+
+export class ListLabelOrdersRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListLabelOrdersRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): ListLabelOrdersRequest;
+
+  getPage(): number;
+  setPage(value: number): ListLabelOrdersRequest;
+
+  getPerPage(): number;
+  setPerPage(value: number): ListLabelOrdersRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListLabelOrdersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListLabelOrdersRequest): ListLabelOrdersRequest.AsObject;
+  static serializeBinaryToWriter(message: ListLabelOrdersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListLabelOrdersRequest;
+  static deserializeBinaryFromReader(message: ListLabelOrdersRequest, reader: jspb.BinaryReader): ListLabelOrdersRequest;
+}
+
+export namespace ListLabelOrdersRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    page: number,
+    perPage: number,
+  }
+}
+
+export class PatchLabelOrdersRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchLabelOrdersRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PatchLabelOrdersRequest;
+
+  getLabelOrdersList(): Array<proto_clarifai_api_resources_pb.LabelOrder>;
+  setLabelOrdersList(value: Array<proto_clarifai_api_resources_pb.LabelOrder>): PatchLabelOrdersRequest;
+  clearLabelOrdersList(): PatchLabelOrdersRequest;
+  addLabelOrders(value?: proto_clarifai_api_resources_pb.LabelOrder, index?: number): proto_clarifai_api_resources_pb.LabelOrder;
+
+  getAction(): string;
+  setAction(value: string): PatchLabelOrdersRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PatchLabelOrdersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PatchLabelOrdersRequest): PatchLabelOrdersRequest.AsObject;
+  static serializeBinaryToWriter(message: PatchLabelOrdersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PatchLabelOrdersRequest;
+  static deserializeBinaryFromReader(message: PatchLabelOrdersRequest, reader: jspb.BinaryReader): PatchLabelOrdersRequest;
+}
+
+export namespace PatchLabelOrdersRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    labelOrdersList: Array<proto_clarifai_api_resources_pb.LabelOrder.AsObject>,
+    action: string,
+  }
+}
+
+export class DeleteLabelOrdersRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteLabelOrdersRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): DeleteLabelOrdersRequest;
+
+  getIdsList(): Array<string>;
+  setIdsList(value: Array<string>): DeleteLabelOrdersRequest;
+  clearIdsList(): DeleteLabelOrdersRequest;
+  addIds(value: string, index?: number): DeleteLabelOrdersRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteLabelOrdersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteLabelOrdersRequest): DeleteLabelOrdersRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteLabelOrdersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteLabelOrdersRequest;
+  static deserializeBinaryFromReader(message: DeleteLabelOrdersRequest, reader: jspb.BinaryReader): DeleteLabelOrdersRequest;
+}
+
+export namespace DeleteLabelOrdersRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    idsList: Array<string>,
+  }
+}
+
+export class MultiLabelOrderResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiLabelOrderResponse;
+  hasStatus(): boolean;
+  clearStatus(): MultiLabelOrderResponse;
+
+  getLabelOrdersList(): Array<proto_clarifai_api_resources_pb.LabelOrder>;
+  setLabelOrdersList(value: Array<proto_clarifai_api_resources_pb.LabelOrder>): MultiLabelOrderResponse;
+  clearLabelOrdersList(): MultiLabelOrderResponse;
+  addLabelOrders(value?: proto_clarifai_api_resources_pb.LabelOrder, index?: number): proto_clarifai_api_resources_pb.LabelOrder;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MultiLabelOrderResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiLabelOrderResponse): MultiLabelOrderResponse.AsObject;
+  static serializeBinaryToWriter(message: MultiLabelOrderResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiLabelOrderResponse;
+  static deserializeBinaryFromReader(message: MultiLabelOrderResponse, reader: jspb.BinaryReader): MultiLabelOrderResponse;
+}
+
+export namespace MultiLabelOrderResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    labelOrdersList: Array<proto_clarifai_api_resources_pb.LabelOrder.AsObject>,
+  }
+}
+
+export class SingleLabelOrderResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleLabelOrderResponse;
+  hasStatus(): boolean;
+  clearStatus(): SingleLabelOrderResponse;
+
+  getLabelOrder(): proto_clarifai_api_resources_pb.LabelOrder | undefined;
+  setLabelOrder(value?: proto_clarifai_api_resources_pb.LabelOrder): SingleLabelOrderResponse;
+  hasLabelOrder(): boolean;
+  clearLabelOrder(): SingleLabelOrderResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SingleLabelOrderResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SingleLabelOrderResponse): SingleLabelOrderResponse.AsObject;
+  static serializeBinaryToWriter(message: SingleLabelOrderResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SingleLabelOrderResponse;
+  static deserializeBinaryFromReader(message: SingleLabelOrderResponse, reader: jspb.BinaryReader): SingleLabelOrderResponse;
+}
+
+export namespace SingleLabelOrderResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    labelOrder?: proto_clarifai_api_resources_pb.LabelOrder.AsObject,
+  }
+}
+
 export class PostCollectorsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostCollectorsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostCollectorsRequest;
 
   getCollectorsList(): Array<proto_clarifai_api_resources_pb.Collector>;
-  setCollectorsList(value: Array<proto_clarifai_api_resources_pb.Collector>): void;
-  clearCollectorsList(): void;
+  setCollectorsList(value: Array<proto_clarifai_api_resources_pb.Collector>): PostCollectorsRequest;
+  clearCollectorsList(): PostCollectorsRequest;
   addCollectors(value?: proto_clarifai_api_resources_pb.Collector, index?: number): proto_clarifai_api_resources_pb.Collector;
 
   serializeBinary(): Uint8Array;
@@ -5220,17 +6493,17 @@ export namespace PostCollectorsRequest {
 
 export class PatchCollectorsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchCollectorsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PatchCollectorsRequest;
 
   getCollectorsList(): Array<proto_clarifai_api_resources_pb.Collector>;
-  setCollectorsList(value: Array<proto_clarifai_api_resources_pb.Collector>): void;
-  clearCollectorsList(): void;
+  setCollectorsList(value: Array<proto_clarifai_api_resources_pb.Collector>): PatchCollectorsRequest;
+  clearCollectorsList(): PatchCollectorsRequest;
   addCollectors(value?: proto_clarifai_api_resources_pb.Collector, index?: number): proto_clarifai_api_resources_pb.Collector;
 
   getAction(): string;
-  setAction(value: string): void;
+  setAction(value: string): PatchCollectorsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PatchCollectorsRequest.AsObject;
@@ -5250,17 +6523,17 @@ export namespace PatchCollectorsRequest {
 
 export class DeleteCollectorsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteCollectorsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): DeleteCollectorsRequest;
 
   getIdsList(): Array<string>;
-  setIdsList(value: Array<string>): void;
-  clearIdsList(): void;
-  addIds(value: string, index?: number): void;
+  setIdsList(value: Array<string>): DeleteCollectorsRequest;
+  clearIdsList(): DeleteCollectorsRequest;
+  addIds(value: string, index?: number): DeleteCollectorsRequest;
 
   getDeleteAll(): boolean;
-  setDeleteAll(value: boolean): void;
+  setDeleteAll(value: boolean): DeleteCollectorsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteCollectorsRequest.AsObject;
@@ -5280,12 +6553,12 @@ export namespace DeleteCollectorsRequest {
 
 export class GetCollectorRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetCollectorRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): GetCollectorRequest;
 
   getCollectorId(): string;
-  setCollectorId(value: string): void;
+  setCollectorId(value: string): GetCollectorRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetCollectorRequest.AsObject;
@@ -5304,15 +6577,15 @@ export namespace GetCollectorRequest {
 
 export class ListCollectorsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListCollectorsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): ListCollectorsRequest;
 
   getPage(): number;
-  setPage(value: number): void;
+  setPage(value: number): ListCollectorsRequest;
 
   getPerPage(): number;
-  setPerPage(value: number): void;
+  setPerPage(value: number): ListCollectorsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListCollectorsRequest.AsObject;
@@ -5332,13 +6605,13 @@ export namespace ListCollectorsRequest {
 
 export class MultiCollectorResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiCollectorResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiCollectorResponse;
 
   getCollectorsList(): Array<proto_clarifai_api_resources_pb.Collector>;
-  setCollectorsList(value: Array<proto_clarifai_api_resources_pb.Collector>): void;
-  clearCollectorsList(): void;
+  setCollectorsList(value: Array<proto_clarifai_api_resources_pb.Collector>): MultiCollectorResponse;
+  clearCollectorsList(): MultiCollectorResponse;
   addCollectors(value?: proto_clarifai_api_resources_pb.Collector, index?: number): proto_clarifai_api_resources_pb.Collector;
 
   serializeBinary(): Uint8Array;
@@ -5358,14 +6631,14 @@ export namespace MultiCollectorResponse {
 
 export class SingleCollectorResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleCollectorResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): SingleCollectorResponse;
 
   getCollector(): proto_clarifai_api_resources_pb.Collector | undefined;
-  setCollector(value?: proto_clarifai_api_resources_pb.Collector): void;
+  setCollector(value?: proto_clarifai_api_resources_pb.Collector): SingleCollectorResponse;
   hasCollector(): boolean;
-  clearCollector(): void;
+  clearCollector(): SingleCollectorResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SingleCollectorResponse.AsObject;
@@ -5384,13 +6657,13 @@ export namespace SingleCollectorResponse {
 
 export class PostStatValuesRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostStatValuesRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostStatValuesRequest;
 
   getStatValuesList(): Array<proto_clarifai_api_resources_pb.StatValue>;
-  setStatValuesList(value: Array<proto_clarifai_api_resources_pb.StatValue>): void;
-  clearStatValuesList(): void;
+  setStatValuesList(value: Array<proto_clarifai_api_resources_pb.StatValue>): PostStatValuesRequest;
+  clearStatValuesList(): PostStatValuesRequest;
   addStatValues(value?: proto_clarifai_api_resources_pb.StatValue, index?: number): proto_clarifai_api_resources_pb.StatValue;
 
   serializeBinary(): Uint8Array;
@@ -5410,13 +6683,13 @@ export namespace PostStatValuesRequest {
 
 export class MultiStatValueResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiStatValueResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiStatValueResponse;
 
   getStatValuesList(): Array<proto_clarifai_api_resources_pb.StatValue>;
-  setStatValuesList(value: Array<proto_clarifai_api_resources_pb.StatValue>): void;
-  clearStatValuesList(): void;
+  setStatValuesList(value: Array<proto_clarifai_api_resources_pb.StatValue>): MultiStatValueResponse;
+  clearStatValuesList(): MultiStatValueResponse;
   addStatValues(value?: proto_clarifai_api_resources_pb.StatValue, index?: number): proto_clarifai_api_resources_pb.StatValue;
 
   serializeBinary(): Uint8Array;
@@ -5436,13 +6709,13 @@ export namespace MultiStatValueResponse {
 
 export class PostStatValuesAggregateRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostStatValuesAggregateRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostStatValuesAggregateRequest;
 
   getStatValueAggregateQueriesList(): Array<proto_clarifai_api_resources_pb.StatValueAggregateQuery>;
-  setStatValueAggregateQueriesList(value: Array<proto_clarifai_api_resources_pb.StatValueAggregateQuery>): void;
-  clearStatValueAggregateQueriesList(): void;
+  setStatValueAggregateQueriesList(value: Array<proto_clarifai_api_resources_pb.StatValueAggregateQuery>): PostStatValuesAggregateRequest;
+  clearStatValueAggregateQueriesList(): PostStatValuesAggregateRequest;
   addStatValueAggregateQueries(value?: proto_clarifai_api_resources_pb.StatValueAggregateQuery, index?: number): proto_clarifai_api_resources_pb.StatValueAggregateQuery;
 
   serializeBinary(): Uint8Array;
@@ -5462,13 +6735,13 @@ export namespace PostStatValuesAggregateRequest {
 
 export class MultiStatValueAggregateResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiStatValueAggregateResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiStatValueAggregateResponse;
 
   getStatValueAggregateResultsList(): Array<proto_clarifai_api_resources_pb.StatValueAggregateResult>;
-  setStatValueAggregateResultsList(value: Array<proto_clarifai_api_resources_pb.StatValueAggregateResult>): void;
-  clearStatValueAggregateResultsList(): void;
+  setStatValueAggregateResultsList(value: Array<proto_clarifai_api_resources_pb.StatValueAggregateResult>): MultiStatValueAggregateResponse;
+  clearStatValueAggregateResultsList(): MultiStatValueAggregateResponse;
   addStatValueAggregateResults(value?: proto_clarifai_api_resources_pb.StatValueAggregateResult, index?: number): proto_clarifai_api_resources_pb.StatValueAggregateResult;
 
   serializeBinary(): Uint8Array;
@@ -5488,15 +6761,15 @@ export namespace MultiStatValueAggregateResponse {
 
 export class PostTrendingMetricsViewRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostTrendingMetricsViewRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): PostTrendingMetricsViewRequest;
 
   getViewType(): string;
-  setViewType(value: string): void;
+  setViewType(value: string): PostTrendingMetricsViewRequest;
 
   getObjectId(): string;
-  setObjectId(value: string): void;
+  setObjectId(value: string): PostTrendingMetricsViewRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostTrendingMetricsViewRequest.AsObject;
@@ -5516,18 +6789,18 @@ export namespace PostTrendingMetricsViewRequest {
 
 export class ListTrendingMetricsViewsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): void;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListTrendingMetricsViewsRequest;
   hasUserAppId(): boolean;
-  clearUserAppId(): void;
+  clearUserAppId(): ListTrendingMetricsViewsRequest;
 
   getViewType(): string;
-  setViewType(value: string): void;
+  setViewType(value: string): ListTrendingMetricsViewsRequest;
 
   getPage(): number;
-  setPage(value: number): void;
+  setPage(value: number): ListTrendingMetricsViewsRequest;
 
   getPerPage(): number;
-  setPerPage(value: number): void;
+  setPerPage(value: number): ListTrendingMetricsViewsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListTrendingMetricsViewsRequest.AsObject;
@@ -5548,13 +6821,13 @@ export namespace ListTrendingMetricsViewsRequest {
 
 export class MultiTrendingMetricsViewResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiTrendingMetricsViewResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): MultiTrendingMetricsViewResponse;
 
   getMetricsList(): Array<proto_clarifai_api_resources_pb.TrendingMetric>;
-  setMetricsList(value: Array<proto_clarifai_api_resources_pb.TrendingMetric>): void;
-  clearMetricsList(): void;
+  setMetricsList(value: Array<proto_clarifai_api_resources_pb.TrendingMetric>): MultiTrendingMetricsViewResponse;
+  clearMetricsList(): MultiTrendingMetricsViewResponse;
   addMetrics(value?: proto_clarifai_api_resources_pb.TrendingMetric, index?: number): proto_clarifai_api_resources_pb.TrendingMetric;
 
   serializeBinary(): Uint8Array;

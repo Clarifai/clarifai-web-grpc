@@ -1,65 +1,68 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
 
 import * as proto_clarifai_api_status_status_pb from '../../../proto/clarifai/api/status/status_pb';
 import * as proto_clarifai_api_utils_extensions_pb from '../../../proto/clarifai/api/utils/extensions_pb';
+import * as proto_clarifai_api_utils_matrix_pb from '../../../proto/clarifai/api/utils/matrix_pb';
 import * as proto_clarifai_auth_util_extension_pb from '../../../proto/clarifai/auth/util/extension_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
+import * as google_protobuf_wrappers_pb from 'google-protobuf/google/protobuf/wrappers_pb';
+
 
 export class Annotation extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): Annotation;
 
   getInputId(): string;
-  setInputId(value: string): void;
+  setInputId(value: string): Annotation;
 
   getData(): Data | undefined;
-  setData(value?: Data): void;
+  setData(value?: Data): Annotation;
   hasData(): boolean;
-  clearData(): void;
+  clearData(): Annotation;
 
   getAnnotationInfo(): google_protobuf_struct_pb.Struct | undefined;
-  setAnnotationInfo(value?: google_protobuf_struct_pb.Struct): void;
+  setAnnotationInfo(value?: google_protobuf_struct_pb.Struct): Annotation;
   hasAnnotationInfo(): boolean;
-  clearAnnotationInfo(): void;
+  clearAnnotationInfo(): Annotation;
 
   getUserId(): string;
-  setUserId(value: string): void;
+  setUserId(value: string): Annotation;
 
   getModelVersionId(): string;
-  setModelVersionId(value: string): void;
+  setModelVersionId(value: string): Annotation;
 
   getEmbedModelVersionId(): string;
-  setEmbedModelVersionId(value: string): void;
+  setEmbedModelVersionId(value: string): Annotation;
 
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): Annotation;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): Annotation;
 
   getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Annotation;
   hasCreatedAt(): boolean;
-  clearCreatedAt(): void;
+  clearCreatedAt(): Annotation;
 
   getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): Annotation;
   hasModifiedAt(): boolean;
-  clearModifiedAt(): void;
+  clearModifiedAt(): Annotation;
 
   getTrusted(): boolean;
-  setTrusted(value: boolean): void;
+  setTrusted(value: boolean): Annotation;
 
   getInputLevel(): boolean;
-  setInputLevel(value: boolean): void;
+  setInputLevel(value: boolean): Annotation;
 
   getConsensusInfo(): google_protobuf_struct_pb.Struct | undefined;
-  setConsensusInfo(value?: google_protobuf_struct_pb.Struct): void;
+  setConsensusInfo(value?: google_protobuf_struct_pb.Struct): Annotation;
   hasConsensusInfo(): boolean;
-  clearConsensusInfo(): void;
+  clearConsensusInfo(): Annotation;
 
   getTaskId(): string;
-  setTaskId(value: string): void;
+  setTaskId(value: string): Annotation;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Annotation.AsObject;
@@ -90,57 +93,60 @@ export namespace Annotation {
 
 export class App extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): App;
 
   getName(): string;
-  setName(value: string): void;
+  setName(value: string): App;
 
   getDefaultLanguage(): string;
-  setDefaultLanguage(value: string): void;
+  setDefaultLanguage(value: string): App;
 
   getDefaultWorkflowId(): string;
-  setDefaultWorkflowId(value: string): void;
+  setDefaultWorkflowId(value: string): App;
 
   getUserId(): string;
-  setUserId(value: string): void;
+  setUserId(value: string): App;
 
   getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): App;
   hasCreatedAt(): boolean;
-  clearCreatedAt(): void;
+  clearCreatedAt(): App;
 
   getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): App;
   hasModifiedAt(): boolean;
-  clearModifiedAt(): void;
+  clearModifiedAt(): App;
 
   getLegalConsentStatus(): number;
-  setLegalConsentStatus(value: number): void;
+  setLegalConsentStatus(value: number): App;
 
   getMetadata(): google_protobuf_struct_pb.Struct | undefined;
-  setMetadata(value?: google_protobuf_struct_pb.Struct): void;
+  setMetadata(value?: google_protobuf_struct_pb.Struct): App;
   hasMetadata(): boolean;
-  clearMetadata(): void;
+  clearMetadata(): App;
 
   getDescription(): string;
-  setDescription(value: string): void;
+  setDescription(value: string): App;
 
   getSampleMs(): number;
-  setSampleMs(value: number): void;
+  setSampleMs(value: number): App;
 
   getVisibility(): Visibility | undefined;
-  setVisibility(value?: Visibility): void;
+  setVisibility(value?: Visibility): App;
   hasVisibility(): boolean;
-  clearVisibility(): void;
+  clearVisibility(): App;
 
   getDataTierId(): string;
-  setDataTierId(value: string): void;
+  setDataTierId(value: string): App;
 
   getIsStarred(): boolean;
-  setIsStarred(value: boolean): void;
+  setIsStarred(value: boolean): App;
 
   getStarCount(): number;
-  setStarCount(value: number): void;
+  setStarCount(value: number): App;
+
+  getNotes(): string;
+  setNotes(value: string): App;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): App.AsObject;
@@ -167,12 +173,13 @@ export namespace App {
     dataTierId: string,
     isStarred: boolean,
     starCount: number,
+    notes: string,
   }
 }
 
 export class AppQuery extends jspb.Message {
   getName(): string;
-  setName(value: string): void;
+  setName(value: string): AppQuery;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AppQuery.AsObject;
@@ -190,42 +197,42 @@ export namespace AppQuery {
 
 export class Collaborator extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): Collaborator;
 
   getApp(): App | undefined;
-  setApp(value?: App): void;
+  setApp(value?: App): Collaborator;
   hasApp(): boolean;
-  clearApp(): void;
+  clearApp(): Collaborator;
 
   getUser(): User | undefined;
-  setUser(value?: User): void;
+  setUser(value?: User): Collaborator;
   hasUser(): boolean;
-  clearUser(): void;
+  clearUser(): Collaborator;
 
   getScopesList(): Array<string>;
-  setScopesList(value: Array<string>): void;
-  clearScopesList(): void;
-  addScopes(value: string, index?: number): void;
+  setScopesList(value: Array<string>): Collaborator;
+  clearScopesList(): Collaborator;
+  addScopes(value: string, index?: number): Collaborator;
 
   getEndpointsList(): Array<string>;
-  setEndpointsList(value: Array<string>): void;
-  clearEndpointsList(): void;
-  addEndpoints(value: string, index?: number): void;
+  setEndpointsList(value: Array<string>): Collaborator;
+  clearEndpointsList(): Collaborator;
+  addEndpoints(value: string, index?: number): Collaborator;
 
   getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Collaborator;
   hasCreatedAt(): boolean;
-  clearCreatedAt(): void;
+  clearCreatedAt(): Collaborator;
 
   getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): Collaborator;
   hasModifiedAt(): boolean;
-  clearModifiedAt(): void;
+  clearModifiedAt(): Collaborator;
 
   getDeletedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setDeletedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setDeletedAt(value?: google_protobuf_timestamp_pb.Timestamp): Collaborator;
   hasDeletedAt(): boolean;
-  clearDeletedAt(): void;
+  clearDeletedAt(): Collaborator;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Collaborator.AsObject;
@@ -250,29 +257,29 @@ export namespace Collaborator {
 
 export class Collaboration extends jspb.Message {
   getApp(): App | undefined;
-  setApp(value?: App): void;
+  setApp(value?: App): Collaboration;
   hasApp(): boolean;
-  clearApp(): void;
+  clearApp(): Collaboration;
 
   getAppOwner(): User | undefined;
-  setAppOwner(value?: User): void;
+  setAppOwner(value?: User): Collaboration;
   hasAppOwner(): boolean;
-  clearAppOwner(): void;
+  clearAppOwner(): Collaboration;
 
   getScopesList(): Array<string>;
-  setScopesList(value: Array<string>): void;
-  clearScopesList(): void;
-  addScopes(value: string, index?: number): void;
+  setScopesList(value: Array<string>): Collaboration;
+  clearScopesList(): Collaboration;
+  addScopes(value: string, index?: number): Collaboration;
 
   getEndpointsList(): Array<string>;
-  setEndpointsList(value: Array<string>): void;
-  clearEndpointsList(): void;
-  addEndpoints(value: string, index?: number): void;
+  setEndpointsList(value: Array<string>): Collaboration;
+  clearEndpointsList(): Collaboration;
+  addEndpoints(value: string, index?: number): Collaboration;
 
   getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Collaboration;
   hasCreatedAt(): boolean;
-  clearCreatedAt(): void;
+  clearCreatedAt(): Collaboration;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Collaboration.AsObject;
@@ -294,25 +301,25 @@ export namespace Collaboration {
 
 export class Audio extends jspb.Message {
   getUrl(): string;
-  setUrl(value: string): void;
+  setUrl(value: string): Audio;
 
   getBase64(): Uint8Array | string;
   getBase64_asU8(): Uint8Array;
   getBase64_asB64(): string;
-  setBase64(value: Uint8Array | string): void;
+  setBase64(value: Uint8Array | string): Audio;
 
   getAllowDuplicateUrl(): boolean;
-  setAllowDuplicateUrl(value: boolean): void;
+  setAllowDuplicateUrl(value: boolean): Audio;
 
   getHosted(): HostedURL | undefined;
-  setHosted(value?: HostedURL): void;
+  setHosted(value?: HostedURL): Audio;
   hasHosted(): boolean;
-  clearHosted(): void;
+  clearHosted(): Audio;
 
   getAudioInfo(): AudioInfo | undefined;
-  setAudioInfo(value?: AudioInfo): void;
+  setAudioInfo(value?: AudioInfo): Audio;
   hasAudioInfo(): boolean;
-  clearAudioInfo(): void;
+  clearAudioInfo(): Audio;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Audio.AsObject;
@@ -334,16 +341,16 @@ export namespace Audio {
 
 export class AudioInfo extends jspb.Message {
   getAudioFormat(): string;
-  setAudioFormat(value: string): void;
+  setAudioFormat(value: string): AudioInfo;
 
   getSampleRate(): number;
-  setSampleRate(value: number): void;
+  setSampleRate(value: number): AudioInfo;
 
   getDurationSeconds(): number;
-  setDurationSeconds(value: number): void;
+  setDurationSeconds(value: number): AudioInfo;
 
   getBitRate(): number;
-  setBitRate(value: number): void;
+  setBitRate(value: number): AudioInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AudioInfo.AsObject;
@@ -364,20 +371,20 @@ export namespace AudioInfo {
 
 export class Track extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): Track;
 
   getData(): Data | undefined;
-  setData(value?: Data): void;
+  setData(value?: Data): Track;
   hasData(): boolean;
-  clearData(): void;
+  clearData(): Track;
 
   getTimeInfo(): TimeInfo | undefined;
-  setTimeInfo(value?: TimeInfo): void;
+  setTimeInfo(value?: TimeInfo): Track;
   hasTimeInfo(): boolean;
-  clearTimeInfo(): void;
+  clearTimeInfo(): Track;
 
   getQuality(): number;
-  setQuality(value: number): void;
+  setQuality(value: number): Track;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Track.AsObject;
@@ -398,23 +405,23 @@ export namespace Track {
 
 export class Cluster extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): Cluster;
 
   getCount(): number;
-  setCount(value: number): void;
+  setCount(value: number): Cluster;
 
   getScore(): number;
-  setScore(value: number): void;
+  setScore(value: number): Cluster;
 
   getHitsList(): Array<Hit>;
-  setHitsList(value: Array<Hit>): void;
-  clearHitsList(): void;
+  setHitsList(value: Array<Hit>): Cluster;
+  clearHitsList(): Cluster;
   addHits(value?: Hit, index?: number): Hit;
 
   getProjectionList(): Array<number>;
-  setProjectionList(value: Array<number>): void;
-  clearProjectionList(): void;
-  addProjection(value: number, index?: number): void;
+  setProjectionList(value: Array<number>): Cluster;
+  clearProjectionList(): Cluster;
+  addProjection(value: number, index?: number): Cluster;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Cluster.AsObject;
@@ -436,15 +443,15 @@ export namespace Cluster {
 
 export class Color extends jspb.Message {
   getRawHex(): string;
-  setRawHex(value: string): void;
+  setRawHex(value: string): Color;
 
   getW3c(): W3C | undefined;
-  setW3c(value?: W3C): void;
+  setW3c(value?: W3C): Color;
   hasW3c(): boolean;
-  clearW3c(): void;
+  clearW3c(): Color;
 
   getValue(): number;
-  setValue(value: number): void;
+  setValue(value: number): Color;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Color.AsObject;
@@ -464,10 +471,10 @@ export namespace Color {
 
 export class W3C extends jspb.Message {
   getHex(): string;
-  setHex(value: string): void;
+  setHex(value: string): W3C;
 
   getName(): string;
-  setName(value: string): void;
+  setName(value: string): W3C;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): W3C.AsObject;
@@ -486,10 +493,10 @@ export namespace W3C {
 
 export class UserAppIDSet extends jspb.Message {
   getUserId(): string;
-  setUserId(value: string): void;
+  setUserId(value: string): UserAppIDSet;
 
   getAppId(): string;
-  setAppId(value: string): void;
+  setAppId(value: string): UserAppIDSet;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UserAppIDSet.AsObject;
@@ -508,13 +515,13 @@ export namespace UserAppIDSet {
 
 export class PatchAction extends jspb.Message {
   getOp(): string;
-  setOp(value: string): void;
+  setOp(value: string): PatchAction;
 
   getMergeConflictResolution(): string;
-  setMergeConflictResolution(value: string): void;
+  setMergeConflictResolution(value: string): PatchAction;
 
   getPath(): string;
-  setPath(value: string): void;
+  setPath(value: string): PatchAction;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PatchAction.AsObject;
@@ -534,38 +541,38 @@ export namespace PatchAction {
 
 export class Concept extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): Concept;
 
   getName(): string;
-  setName(value: string): void;
+  setName(value: string): Concept;
 
   getValue(): number;
-  setValue(value: number): void;
+  setValue(value: number): Concept;
 
   getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Concept;
   hasCreatedAt(): boolean;
-  clearCreatedAt(): void;
+  clearCreatedAt(): Concept;
 
   getLanguage(): string;
-  setLanguage(value: string): void;
+  setLanguage(value: string): Concept;
 
   getAppId(): string;
-  setAppId(value: string): void;
+  setAppId(value: string): Concept;
 
   getDefinition(): string;
-  setDefinition(value: string): void;
+  setDefinition(value: string): Concept;
 
   getVocabId(): string;
-  setVocabId(value: string): void;
+  setVocabId(value: string): Concept;
 
   getVisibility(): Visibility | undefined;
-  setVisibility(value?: Visibility): void;
+  setVisibility(value?: Visibility): Concept;
   hasVisibility(): boolean;
-  clearVisibility(): void;
+  clearVisibility(): Concept;
 
   getUserId(): string;
-  setUserId(value: string): void;
+  setUserId(value: string): Concept;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Concept.AsObject;
@@ -592,20 +599,20 @@ export namespace Concept {
 
 export class ConceptCount extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): ConceptCount;
 
   getName(): string;
-  setName(value: string): void;
+  setName(value: string): ConceptCount;
 
   getConceptTypeCount(): ConceptTypeCount | undefined;
-  setConceptTypeCount(value?: ConceptTypeCount): void;
+  setConceptTypeCount(value?: ConceptTypeCount): ConceptCount;
   hasConceptTypeCount(): boolean;
-  clearConceptTypeCount(): void;
+  clearConceptTypeCount(): ConceptCount;
 
   getDetailConceptCount(): DetailConceptCount | undefined;
-  setDetailConceptCount(value?: DetailConceptCount): void;
+  setDetailConceptCount(value?: DetailConceptCount): ConceptCount;
   hasDetailConceptCount(): boolean;
-  clearDetailConceptCount(): void;
+  clearDetailConceptCount(): ConceptCount;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConceptCount.AsObject;
@@ -626,10 +633,10 @@ export namespace ConceptCount {
 
 export class ConceptTypeCount extends jspb.Message {
   getPositive(): number;
-  setPositive(value: number): void;
+  setPositive(value: number): ConceptTypeCount;
 
   getNegative(): number;
-  setNegative(value: number): void;
+  setNegative(value: number): ConceptTypeCount;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConceptTypeCount.AsObject;
@@ -648,24 +655,24 @@ export namespace ConceptTypeCount {
 
 export class DetailConceptCount extends jspb.Message {
   getProcessed(): ConceptTypeCount | undefined;
-  setProcessed(value?: ConceptTypeCount): void;
+  setProcessed(value?: ConceptTypeCount): DetailConceptCount;
   hasProcessed(): boolean;
-  clearProcessed(): void;
+  clearProcessed(): DetailConceptCount;
 
   getToProcess(): ConceptTypeCount | undefined;
-  setToProcess(value?: ConceptTypeCount): void;
+  setToProcess(value?: ConceptTypeCount): DetailConceptCount;
   hasToProcess(): boolean;
-  clearToProcess(): void;
+  clearToProcess(): DetailConceptCount;
 
   getErrors(): ConceptTypeCount | undefined;
-  setErrors(value?: ConceptTypeCount): void;
+  setErrors(value?: ConceptTypeCount): DetailConceptCount;
   hasErrors(): boolean;
-  clearErrors(): void;
+  clearErrors(): DetailConceptCount;
 
   getProcessing(): ConceptTypeCount | undefined;
-  setProcessing(value?: ConceptTypeCount): void;
+  setProcessing(value?: ConceptTypeCount): DetailConceptCount;
   hasProcessing(): boolean;
-  clearProcessing(): void;
+  clearProcessing(): DetailConceptCount;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DetailConceptCount.AsObject;
@@ -686,13 +693,13 @@ export namespace DetailConceptCount {
 
 export class ConceptQuery extends jspb.Message {
   getName(): string;
-  setName(value: string): void;
+  setName(value: string): ConceptQuery;
 
   getLanguage(): string;
-  setLanguage(value: string): void;
+  setLanguage(value: string): ConceptQuery;
 
   getWorkflowId(): string;
-  setWorkflowId(value: string): void;
+  setWorkflowId(value: string): ConceptQuery;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConceptQuery.AsObject;
@@ -712,28 +719,28 @@ export namespace ConceptQuery {
 
 export class ConceptRelation extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): ConceptRelation;
 
   getSubjectConcept(): Concept | undefined;
-  setSubjectConcept(value?: Concept): void;
+  setSubjectConcept(value?: Concept): ConceptRelation;
   hasSubjectConcept(): boolean;
-  clearSubjectConcept(): void;
+  clearSubjectConcept(): ConceptRelation;
 
   getObjectConcept(): Concept | undefined;
-  setObjectConcept(value?: Concept): void;
+  setObjectConcept(value?: Concept): ConceptRelation;
   hasObjectConcept(): boolean;
-  clearObjectConcept(): void;
+  clearObjectConcept(): ConceptRelation;
 
   getPredicate(): string;
-  setPredicate(value: string): void;
+  setPredicate(value: string): ConceptRelation;
 
   getKnowledgeGraphId(): string;
-  setKnowledgeGraphId(value: string): void;
+  setKnowledgeGraphId(value: string): ConceptRelation;
 
   getVisibility(): Visibility | undefined;
-  setVisibility(value?: Visibility): void;
+  setVisibility(value?: Visibility): ConceptRelation;
   hasVisibility(): boolean;
-  clearVisibility(): void;
+  clearVisibility(): ConceptRelation;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConceptRelation.AsObject;
@@ -756,19 +763,19 @@ export namespace ConceptRelation {
 
 export class KnowledgeGraph extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): KnowledgeGraph;
 
   getName(): string;
-  setName(value: string): void;
+  setName(value: string): KnowledgeGraph;
 
   getDescription(): string;
-  setDescription(value: string): void;
+  setDescription(value: string): KnowledgeGraph;
 
   getExamplesAppId(): string;
-  setExamplesAppId(value: string): void;
+  setExamplesAppId(value: string): KnowledgeGraph;
 
   getSampledExamplesAppId(): string;
-  setSampledExamplesAppId(value: string): void;
+  setSampledExamplesAppId(value: string): KnowledgeGraph;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): KnowledgeGraph.AsObject;
@@ -790,12 +797,12 @@ export namespace KnowledgeGraph {
 
 export class ConceptMappingJob extends jspb.Message {
   getKnowledgeGraphId(): string;
-  setKnowledgeGraphId(value: string): void;
+  setKnowledgeGraphId(value: string): ConceptMappingJob;
 
   getConceptIdsList(): Array<string>;
-  setConceptIdsList(value: Array<string>): void;
-  clearConceptIdsList(): void;
-  addConceptIds(value: string, index?: number): void;
+  setConceptIdsList(value: Array<string>): ConceptMappingJob;
+  clearConceptIdsList(): ConceptMappingJob;
+  addConceptIds(value: string, index?: number): ConceptMappingJob;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConceptMappingJob.AsObject;
@@ -814,13 +821,13 @@ export namespace ConceptMappingJob {
 
 export class ConceptLanguage extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): ConceptLanguage;
 
   getName(): string;
-  setName(value: string): void;
+  setName(value: string): ConceptLanguage;
 
   getDefinition(): string;
-  setDefinition(value: string): void;
+  setDefinition(value: string): ConceptLanguage;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConceptLanguage.AsObject;
@@ -840,74 +847,79 @@ export namespace ConceptLanguage {
 
 export class Data extends jspb.Message {
   getImage(): Image | undefined;
-  setImage(value?: Image): void;
+  setImage(value?: Image): Data;
   hasImage(): boolean;
-  clearImage(): void;
+  clearImage(): Data;
 
   getVideo(): Video | undefined;
-  setVideo(value?: Video): void;
+  setVideo(value?: Video): Data;
   hasVideo(): boolean;
-  clearVideo(): void;
+  clearVideo(): Data;
 
   getConceptsList(): Array<Concept>;
-  setConceptsList(value: Array<Concept>): void;
-  clearConceptsList(): void;
+  setConceptsList(value: Array<Concept>): Data;
+  clearConceptsList(): Data;
   addConcepts(value?: Concept, index?: number): Concept;
 
   getMetadata(): google_protobuf_struct_pb.Struct | undefined;
-  setMetadata(value?: google_protobuf_struct_pb.Struct): void;
+  setMetadata(value?: google_protobuf_struct_pb.Struct): Data;
   hasMetadata(): boolean;
-  clearMetadata(): void;
+  clearMetadata(): Data;
 
   getGeo(): Geo | undefined;
-  setGeo(value?: Geo): void;
+  setGeo(value?: Geo): Data;
   hasGeo(): boolean;
-  clearGeo(): void;
+  clearGeo(): Data;
 
   getColorsList(): Array<Color>;
-  setColorsList(value: Array<Color>): void;
-  clearColorsList(): void;
+  setColorsList(value: Array<Color>): Data;
+  clearColorsList(): Data;
   addColors(value?: Color, index?: number): Color;
 
   getClustersList(): Array<Cluster>;
-  setClustersList(value: Array<Cluster>): void;
-  clearClustersList(): void;
+  setClustersList(value: Array<Cluster>): Data;
+  clearClustersList(): Data;
   addClusters(value?: Cluster, index?: number): Cluster;
 
   getEmbeddingsList(): Array<Embedding>;
-  setEmbeddingsList(value: Array<Embedding>): void;
-  clearEmbeddingsList(): void;
+  setEmbeddingsList(value: Array<Embedding>): Data;
+  clearEmbeddingsList(): Data;
   addEmbeddings(value?: Embedding, index?: number): Embedding;
 
   getRegionsList(): Array<Region>;
-  setRegionsList(value: Array<Region>): void;
-  clearRegionsList(): void;
+  setRegionsList(value: Array<Region>): Data;
+  clearRegionsList(): Data;
   addRegions(value?: Region, index?: number): Region;
 
   getFramesList(): Array<Frame>;
-  setFramesList(value: Array<Frame>): void;
-  clearFramesList(): void;
+  setFramesList(value: Array<Frame>): Data;
+  clearFramesList(): Data;
   addFrames(value?: Frame, index?: number): Frame;
 
   getText(): Text | undefined;
-  setText(value?: Text): void;
+  setText(value?: Text): Data;
   hasText(): boolean;
-  clearText(): void;
+  clearText(): Data;
 
   getAudio(): Audio | undefined;
-  setAudio(value?: Audio): void;
+  setAudio(value?: Audio): Data;
   hasAudio(): boolean;
-  clearAudio(): void;
+  clearAudio(): Data;
 
   getTracksList(): Array<Track>;
-  setTracksList(value: Array<Track>): void;
-  clearTracksList(): void;
+  setTracksList(value: Array<Track>): Data;
+  clearTracksList(): Data;
   addTracks(value?: Track, index?: number): Track;
 
   getTimeSegmentsList(): Array<TimeSegment>;
-  setTimeSegmentsList(value: Array<TimeSegment>): void;
-  clearTimeSegmentsList(): void;
+  setTimeSegmentsList(value: Array<TimeSegment>): Data;
+  clearTimeSegmentsList(): Data;
   addTimeSegments(value?: TimeSegment, index?: number): TimeSegment;
+
+  getHitsList(): Array<Hit>;
+  setHitsList(value: Array<Hit>): Data;
+  clearHitsList(): Data;
+  addHits(value?: Hit, index?: number): Hit;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Data.AsObject;
@@ -933,28 +945,29 @@ export namespace Data {
     audio?: Audio.AsObject,
     tracksList: Array<Track.AsObject>,
     timeSegmentsList: Array<TimeSegment.AsObject>,
+    hitsList: Array<Hit.AsObject>,
   }
 }
 
 export class Region extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): Region;
 
   getRegionInfo(): RegionInfo | undefined;
-  setRegionInfo(value?: RegionInfo): void;
+  setRegionInfo(value?: RegionInfo): Region;
   hasRegionInfo(): boolean;
-  clearRegionInfo(): void;
+  clearRegionInfo(): Region;
 
   getData(): Data | undefined;
-  setData(value?: Data): void;
+  setData(value?: Data): Region;
   hasData(): boolean;
-  clearData(): void;
+  clearData(): Region;
 
   getValue(): number;
-  setValue(value: number): void;
+  setValue(value: number): Region;
 
   getTrackId(): string;
-  setTrackId(value: string): void;
+  setTrackId(value: string): Region;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Region.AsObject;
@@ -976,24 +989,34 @@ export namespace Region {
 
 export class RegionInfo extends jspb.Message {
   getBoundingBox(): BoundingBox | undefined;
-  setBoundingBox(value?: BoundingBox): void;
+  setBoundingBox(value?: BoundingBox): RegionInfo;
   hasBoundingBox(): boolean;
-  clearBoundingBox(): void;
+  clearBoundingBox(): RegionInfo;
 
   getMask(): Mask | undefined;
-  setMask(value?: Mask): void;
+  setMask(value?: Mask): RegionInfo;
   hasMask(): boolean;
-  clearMask(): void;
+  clearMask(): RegionInfo;
 
   getPolygon(): Polygon | undefined;
-  setPolygon(value?: Polygon): void;
+  setPolygon(value?: Polygon): RegionInfo;
   hasPolygon(): boolean;
-  clearPolygon(): void;
+  clearPolygon(): RegionInfo;
 
   getPoint(): Point | undefined;
-  setPoint(value?: Point): void;
+  setPoint(value?: Point): RegionInfo;
   hasPoint(): boolean;
-  clearPoint(): void;
+  clearPoint(): RegionInfo;
+
+  getSpan(): Span | undefined;
+  setSpan(value?: Span): RegionInfo;
+  hasSpan(): boolean;
+  clearSpan(): RegionInfo;
+
+  getToken(): Token | undefined;
+  setToken(value?: Token): RegionInfo;
+  hasToken(): boolean;
+  clearToken(): RegionInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RegionInfo.AsObject;
@@ -1009,21 +1032,23 @@ export namespace RegionInfo {
     mask?: Mask.AsObject,
     polygon?: Polygon.AsObject,
     point?: Point.AsObject,
+    span?: Span.AsObject,
+    token?: Token.AsObject,
   }
 }
 
 export class BoundingBox extends jspb.Message {
   getTopRow(): number;
-  setTopRow(value: number): void;
+  setTopRow(value: number): BoundingBox;
 
   getLeftCol(): number;
-  setLeftCol(value: number): void;
+  setLeftCol(value: number): BoundingBox;
 
   getBottomRow(): number;
-  setBottomRow(value: number): void;
+  setBottomRow(value: number): BoundingBox;
 
   getRightCol(): number;
-  setRightCol(value: number): void;
+  setRightCol(value: number): BoundingBox;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BoundingBox.AsObject;
@@ -1044,10 +1069,10 @@ export namespace BoundingBox {
 
 export class FrameInfo extends jspb.Message {
   getIndex(): number;
-  setIndex(value: number): void;
+  setIndex(value: number): FrameInfo;
 
   getTime(): number;
-  setTime(value: number): void;
+  setTime(value: number): FrameInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FrameInfo.AsObject;
@@ -1066,17 +1091,17 @@ export namespace FrameInfo {
 
 export class Frame extends jspb.Message {
   getFrameInfo(): FrameInfo | undefined;
-  setFrameInfo(value?: FrameInfo): void;
+  setFrameInfo(value?: FrameInfo): Frame;
   hasFrameInfo(): boolean;
-  clearFrameInfo(): void;
+  clearFrameInfo(): Frame;
 
   getData(): Data | undefined;
-  setData(value?: Data): void;
+  setData(value?: Data): Frame;
   hasData(): boolean;
-  clearData(): void;
+  clearData(): Frame;
 
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): Frame;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Frame.AsObject;
@@ -1096,9 +1121,9 @@ export namespace Frame {
 
 export class Mask extends jspb.Message {
   getImage(): Image | undefined;
-  setImage(value?: Image): void;
+  setImage(value?: Image): Mask;
   hasImage(): boolean;
-  clearImage(): void;
+  clearImage(): Mask;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Mask.AsObject;
@@ -1116,8 +1141,8 @@ export namespace Mask {
 
 export class Polygon extends jspb.Message {
   getPointsList(): Array<Point>;
-  setPointsList(value: Array<Point>): void;
-  clearPointsList(): void;
+  setPointsList(value: Array<Point>): Polygon;
+  clearPointsList(): Polygon;
   addPoints(value?: Point, index?: number): Point;
 
   serializeBinary(): Uint8Array;
@@ -1136,13 +1161,13 @@ export namespace Polygon {
 
 export class Point extends jspb.Message {
   getRow(): number;
-  setRow(value: number): void;
+  setRow(value: number): Point;
 
   getCol(): number;
-  setCol(value: number): void;
+  setCol(value: number): Point;
 
   getZ(): number;
-  setZ(value: number): void;
+  setZ(value: number): Point;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Point.AsObject;
@@ -1160,14 +1185,66 @@ export namespace Point {
   }
 }
 
+export class Span extends jspb.Message {
+  getCharStart(): number;
+  setCharStart(value: number): Span;
+
+  getCharEnd(): number;
+  setCharEnd(value: number): Span;
+
+  getRawText(): string;
+  setRawText(value: string): Span;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Span.AsObject;
+  static toObject(includeInstance: boolean, msg: Span): Span.AsObject;
+  static serializeBinaryToWriter(message: Span, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Span;
+  static deserializeBinaryFromReader(message: Span, reader: jspb.BinaryReader): Span;
+}
+
+export namespace Span {
+  export type AsObject = {
+    charStart: number,
+    charEnd: number,
+    rawText: string,
+  }
+}
+
+export class Token extends jspb.Message {
+  getCharStart(): number;
+  setCharStart(value: number): Token;
+
+  getCharEnd(): number;
+  setCharEnd(value: number): Token;
+
+  getRawText(): string;
+  setRawText(value: string): Token;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Token.AsObject;
+  static toObject(includeInstance: boolean, msg: Token): Token.AsObject;
+  static serializeBinaryToWriter(message: Token, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Token;
+  static deserializeBinaryFromReader(message: Token, reader: jspb.BinaryReader): Token;
+}
+
+export namespace Token {
+  export type AsObject = {
+    charStart: number,
+    charEnd: number,
+    rawText: string,
+  }
+}
+
 export class Embedding extends jspb.Message {
   getVectorList(): Array<number>;
-  setVectorList(value: Array<number>): void;
-  clearVectorList(): void;
-  addVector(value: number, index?: number): void;
+  setVectorList(value: Array<number>): Embedding;
+  clearVectorList(): Embedding;
+  addVector(value: number, index?: number): Embedding;
 
   getNumDimensions(): number;
-  setNumDimensions(value: number): void;
+  setNumDimensions(value: number): Embedding;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Embedding.AsObject;
@@ -1186,10 +1263,10 @@ export namespace Embedding {
 
 export class GeoPoint extends jspb.Message {
   getLongitude(): number;
-  setLongitude(value: number): void;
+  setLongitude(value: number): GeoPoint;
 
   getLatitude(): number;
-  setLatitude(value: number): void;
+  setLatitude(value: number): GeoPoint;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GeoPoint.AsObject;
@@ -1208,10 +1285,10 @@ export namespace GeoPoint {
 
 export class GeoLimit extends jspb.Message {
   getType(): string;
-  setType(value: string): void;
+  setType(value: string): GeoLimit;
 
   getValue(): number;
-  setValue(value: number): void;
+  setValue(value: number): GeoLimit;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GeoLimit.AsObject;
@@ -1230,9 +1307,9 @@ export namespace GeoLimit {
 
 export class GeoBoxedPoint extends jspb.Message {
   getGeoPoint(): GeoPoint | undefined;
-  setGeoPoint(value?: GeoPoint): void;
+  setGeoPoint(value?: GeoPoint): GeoBoxedPoint;
   hasGeoPoint(): boolean;
-  clearGeoPoint(): void;
+  clearGeoPoint(): GeoBoxedPoint;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GeoBoxedPoint.AsObject;
@@ -1250,18 +1327,18 @@ export namespace GeoBoxedPoint {
 
 export class Geo extends jspb.Message {
   getGeoPoint(): GeoPoint | undefined;
-  setGeoPoint(value?: GeoPoint): void;
+  setGeoPoint(value?: GeoPoint): Geo;
   hasGeoPoint(): boolean;
-  clearGeoPoint(): void;
+  clearGeoPoint(): Geo;
 
   getGeoLimit(): GeoLimit | undefined;
-  setGeoLimit(value?: GeoLimit): void;
+  setGeoLimit(value?: GeoLimit): Geo;
   hasGeoLimit(): boolean;
-  clearGeoLimit(): void;
+  clearGeoLimit(): Geo;
 
   getGeoBoxList(): Array<GeoBoxedPoint>;
-  setGeoBoxList(value: Array<GeoBoxedPoint>): void;
-  clearGeoBoxList(): void;
+  setGeoBoxList(value: Array<GeoBoxedPoint>): Geo;
+  clearGeoBoxList(): Geo;
   addGeoBox(value?: GeoBoxedPoint, index?: number): GeoBoxedPoint;
 
   serializeBinary(): Uint8Array;
@@ -1282,25 +1359,25 @@ export namespace Geo {
 
 export class Image extends jspb.Message {
   getUrl(): string;
-  setUrl(value: string): void;
+  setUrl(value: string): Image;
 
   getBase64(): Uint8Array | string;
   getBase64_asU8(): Uint8Array;
   getBase64_asB64(): string;
-  setBase64(value: Uint8Array | string): void;
+  setBase64(value: Uint8Array | string): Image;
 
   getAllowDuplicateUrl(): boolean;
-  setAllowDuplicateUrl(value: boolean): void;
+  setAllowDuplicateUrl(value: boolean): Image;
 
   getHosted(): HostedURL | undefined;
-  setHosted(value?: HostedURL): void;
+  setHosted(value?: HostedURL): Image;
   hasHosted(): boolean;
-  clearHosted(): void;
+  clearHosted(): Image;
 
   getImageInfo(): ImageInfo | undefined;
-  setImageInfo(value?: ImageInfo): void;
+  setImageInfo(value?: ImageInfo): Image;
   hasImageInfo(): boolean;
-  clearImageInfo(): void;
+  clearImageInfo(): Image;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Image.AsObject;
@@ -1322,16 +1399,16 @@ export namespace Image {
 
 export class ImageInfo extends jspb.Message {
   getWidth(): number;
-  setWidth(value: number): void;
+  setWidth(value: number): ImageInfo;
 
   getHeight(): number;
-  setHeight(value: number): void;
+  setHeight(value: number): ImageInfo;
 
   getFormat(): string;
-  setFormat(value: string): void;
+  setFormat(value: string): ImageInfo;
 
   getColorMode(): string;
-  setColorMode(value: string): void;
+  setColorMode(value: string): ImageInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ImageInfo.AsObject;
@@ -1352,18 +1429,18 @@ export namespace ImageInfo {
 
 export class HostedURL extends jspb.Message {
   getPrefix(): string;
-  setPrefix(value: string): void;
+  setPrefix(value: string): HostedURL;
 
   getSuffix(): string;
-  setSuffix(value: string): void;
+  setSuffix(value: string): HostedURL;
 
   getSizesList(): Array<string>;
-  setSizesList(value: Array<string>): void;
-  clearSizesList(): void;
-  addSizes(value: string, index?: number): void;
+  setSizesList(value: Array<string>): HostedURL;
+  clearSizesList(): HostedURL;
+  addSizes(value: string, index?: number): HostedURL;
 
   getCrossorigin(): string;
-  setCrossorigin(value: string): void;
+  setCrossorigin(value: string): HostedURL;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HostedURL.AsObject;
@@ -1384,32 +1461,32 @@ export namespace HostedURL {
 
 export class Input extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): Input;
 
   getData(): Data | undefined;
-  setData(value?: Data): void;
+  setData(value?: Data): Input;
   hasData(): boolean;
-  clearData(): void;
+  clearData(): Input;
 
   getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Input;
   hasCreatedAt(): boolean;
-  clearCreatedAt(): void;
+  clearCreatedAt(): Input;
 
   getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): Input;
   hasModifiedAt(): boolean;
-  clearModifiedAt(): void;
+  clearModifiedAt(): Input;
 
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): Input;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): Input;
 
   getDatasetIdsList(): Array<string>;
-  setDatasetIdsList(value: Array<string>): void;
-  clearDatasetIdsList(): void;
-  addDatasetIds(value: string, index?: number): void;
+  setDatasetIdsList(value: Array<string>): Input;
+  clearDatasetIdsList(): Input;
+  addDatasetIds(value: string, index?: number): Input;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Input.AsObject;
@@ -1432,28 +1509,28 @@ export namespace Input {
 
 export class InputCount extends jspb.Message {
   getProcessed(): number;
-  setProcessed(value: number): void;
+  setProcessed(value: number): InputCount;
 
   getToProcess(): number;
-  setToProcess(value: number): void;
+  setToProcess(value: number): InputCount;
 
   getErrors(): number;
-  setErrors(value: number): void;
+  setErrors(value: number): InputCount;
 
   getProcessing(): number;
-  setProcessing(value: number): void;
+  setProcessing(value: number): InputCount;
 
   getReindexed(): number;
-  setReindexed(value: number): void;
+  setReindexed(value: number): InputCount;
 
   getToReindex(): number;
-  setToReindex(value: number): void;
+  setToReindex(value: number): InputCount;
 
   getReindexErrors(): number;
-  setReindexErrors(value: number): void;
+  setReindexErrors(value: number): InputCount;
 
   getReindexing(): number;
-  setReindexing(value: number): void;
+  setReindexing(value: number): InputCount;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InputCount.AsObject;
@@ -1476,109 +1553,201 @@ export namespace InputCount {
   }
 }
 
-export class DatasetFilter extends jspb.Message {
+export class Dataset extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): Dataset;
 
   getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Dataset;
   hasCreatedAt(): boolean;
-  clearCreatedAt(): void;
+  clearCreatedAt(): Dataset;
 
   getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): Dataset;
   hasModifiedAt(): boolean;
-  clearModifiedAt(): void;
-
-  getUserId(): string;
-  setUserId(value: string): void;
+  clearModifiedAt(): Dataset;
 
   getAppId(): string;
-  setAppId(value: string): void;
+  setAppId(value: string): Dataset;
 
-  getDatasetId(): string;
-  setDatasetId(value: string): void;
+  getUserId(): string;
+  setUserId(value: string): Dataset;
 
-  getSavedSearch(): Search | undefined;
-  setSavedSearch(value?: Search): void;
-  hasSavedSearch(): boolean;
-  clearSavedSearch(): void;
+  getDescription(): string;
+  setDescription(value: string): Dataset;
+
+  getMetadata(): google_protobuf_struct_pb.Struct | undefined;
+  setMetadata(value?: google_protobuf_struct_pb.Struct): Dataset;
+  hasMetadata(): boolean;
+  clearMetadata(): Dataset;
+
+  getVisibility(): Visibility | undefined;
+  setVisibility(value?: Visibility): Dataset;
+  hasVisibility(): boolean;
+  clearVisibility(): Dataset;
+
+  getDefaultAnnotationFilter(): AnnotationFilter | undefined;
+  setDefaultAnnotationFilter(value?: AnnotationFilter): Dataset;
+  hasDefaultAnnotationFilter(): boolean;
+  clearDefaultAnnotationFilter(): Dataset;
+
+  getNotes(): string;
+  setNotes(value: string): Dataset;
+
+  getVersion(): DatasetVersion | undefined;
+  setVersion(value?: DatasetVersion): Dataset;
+  hasVersion(): boolean;
+  clearVersion(): Dataset;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DatasetFilter.AsObject;
-  static toObject(includeInstance: boolean, msg: DatasetFilter): DatasetFilter.AsObject;
-  static serializeBinaryToWriter(message: DatasetFilter, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DatasetFilter;
-  static deserializeBinaryFromReader(message: DatasetFilter, reader: jspb.BinaryReader): DatasetFilter;
+  toObject(includeInstance?: boolean): Dataset.AsObject;
+  static toObject(includeInstance: boolean, msg: Dataset): Dataset.AsObject;
+  static serializeBinaryToWriter(message: Dataset, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Dataset;
+  static deserializeBinaryFromReader(message: Dataset, reader: jspb.BinaryReader): Dataset;
 }
 
-export namespace DatasetFilter {
+export namespace Dataset {
+  export type AsObject = {
+    id: string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    appId: string,
+    userId: string,
+    description: string,
+    metadata?: google_protobuf_struct_pb.Struct.AsObject,
+    visibility?: Visibility.AsObject,
+    defaultAnnotationFilter?: AnnotationFilter.AsObject,
+    notes: string,
+    version?: DatasetVersion.AsObject,
+  }
+}
+
+export class AnnotationFilter extends jspb.Message {
+  getId(): string;
+  setId(value: string): AnnotationFilter;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): AnnotationFilter;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): AnnotationFilter;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): AnnotationFilter;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): AnnotationFilter;
+
+  getUserId(): string;
+  setUserId(value: string): AnnotationFilter;
+
+  getAppId(): string;
+  setAppId(value: string): AnnotationFilter;
+
+  getSavedSearch(): Search | undefined;
+  setSavedSearch(value?: Search): AnnotationFilter;
+  hasSavedSearch(): boolean;
+  clearSavedSearch(): AnnotationFilter;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AnnotationFilter.AsObject;
+  static toObject(includeInstance: boolean, msg: AnnotationFilter): AnnotationFilter.AsObject;
+  static serializeBinaryToWriter(message: AnnotationFilter, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AnnotationFilter;
+  static deserializeBinaryFromReader(message: AnnotationFilter, reader: jspb.BinaryReader): AnnotationFilter;
+}
+
+export namespace AnnotationFilter {
   export type AsObject = {
     id: string,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     userId: string,
     appId: string,
-    datasetId: string,
     savedSearch?: Search.AsObject,
+  }
+}
+
+export class DatasetInput extends jspb.Message {
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): DatasetInput;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): DatasetInput;
+
+  getInput(): Input | undefined;
+  setInput(value?: Input): DatasetInput;
+  hasInput(): boolean;
+  clearInput(): DatasetInput;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DatasetInput.AsObject;
+  static toObject(includeInstance: boolean, msg: DatasetInput): DatasetInput.AsObject;
+  static serializeBinaryToWriter(message: DatasetInput, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DatasetInput;
+  static deserializeBinaryFromReader(message: DatasetInput, reader: jspb.BinaryReader): DatasetInput;
+}
+
+export namespace DatasetInput {
+  export type AsObject = {
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    input?: Input.AsObject,
   }
 }
 
 export class DatasetVersion extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): DatasetVersion;
 
   getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): DatasetVersion;
   hasCreatedAt(): boolean;
-  clearCreatedAt(): void;
+  clearCreatedAt(): DatasetVersion;
 
   getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): DatasetVersion;
   hasModifiedAt(): boolean;
-  clearModifiedAt(): void;
+  clearModifiedAt(): DatasetVersion;
 
   getAppId(): string;
-  setAppId(value: string): void;
+  setAppId(value: string): DatasetVersion;
 
   getUserId(): string;
-  setUserId(value: string): void;
+  setUserId(value: string): DatasetVersion;
 
   getDatasetId(): string;
-  setDatasetId(value: string): void;
+  setDatasetId(value: string): DatasetVersion;
 
-  getDatasetFilterConfig(): DatasetVersionDatasetFilterConfig | undefined;
-  setDatasetFilterConfig(value?: DatasetVersionDatasetFilterConfig): void;
-  hasDatasetFilterConfig(): boolean;
-  clearDatasetFilterConfig(): void;
+  getAnnotationFilterConfig(): AnnotationFilterConfig | undefined;
+  setAnnotationFilterConfig(value?: AnnotationFilterConfig): DatasetVersion;
+  hasAnnotationFilterConfig(): boolean;
+  clearAnnotationFilterConfig(): DatasetVersion;
 
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): DatasetVersion;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): DatasetVersion;
 
   getDescription(): string;
-  setDescription(value: string): void;
+  setDescription(value: string): DatasetVersion;
 
-  getSummary(): DatasetVersionSummary | undefined;
-  setSummary(value?: DatasetVersionSummary): void;
-  hasSummary(): boolean;
-  clearSummary(): void;
+  getMetrics(): DatasetVersionMetrics | undefined;
+  setMetrics(value?: DatasetVersionMetrics): DatasetVersion;
+  hasMetrics(): boolean;
+  clearMetrics(): DatasetVersion;
 
   getMetadata(): google_protobuf_struct_pb.Struct | undefined;
-  setMetadata(value?: google_protobuf_struct_pb.Struct): void;
+  setMetadata(value?: google_protobuf_struct_pb.Struct): DatasetVersion;
   hasMetadata(): boolean;
-  clearMetadata(): void;
+  clearMetadata(): DatasetVersion;
 
   getVisibility(): Visibility | undefined;
-  setVisibility(value?: Visibility): void;
+  setVisibility(value?: Visibility): DatasetVersion;
   hasVisibility(): boolean;
-  clearVisibility(): void;
+  clearVisibility(): DatasetVersion;
 
   getEmbedModelVersionIdsList(): Array<string>;
-  setEmbedModelVersionIdsList(value: Array<string>): void;
-  clearEmbedModelVersionIdsList(): void;
-  addEmbedModelVersionIds(value: string, index?: number): void;
+  setEmbedModelVersionIdsList(value: Array<string>): DatasetVersion;
+  clearEmbedModelVersionIdsList(): DatasetVersion;
+  addEmbedModelVersionIds(value: string, index?: number): DatasetVersion;
 
   getDataConfigCase(): DatasetVersion.DataConfigCase;
 
@@ -1598,10 +1767,10 @@ export namespace DatasetVersion {
     appId: string,
     userId: string,
     datasetId: string,
-    datasetFilterConfig?: DatasetVersionDatasetFilterConfig.AsObject,
+    annotationFilterConfig?: AnnotationFilterConfig.AsObject,
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     description: string,
-    summary?: DatasetVersionSummary.AsObject,
+    metrics?: DatasetVersionMetrics.AsObject,
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
     visibility?: Visibility.AsObject,
     embedModelVersionIdsList: Array<string>,
@@ -1609,57 +1778,195 @@ export namespace DatasetVersion {
 
   export enum DataConfigCase { 
     DATA_CONFIG_NOT_SET = 0,
-    DATASET_FILTER_CONFIG = 7,
+    ANNOTATION_FILTER_CONFIG = 15,
   }
 }
 
-export class DatasetVersionDatasetFilterConfig extends jspb.Message {
-  getDatasetFilter(): DatasetFilter | undefined;
-  setDatasetFilter(value?: DatasetFilter): void;
-  hasDatasetFilter(): boolean;
-  clearDatasetFilter(): void;
+export class AnnotationFilterConfig extends jspb.Message {
+  getAnnotationFilter(): AnnotationFilter | undefined;
+  setAnnotationFilter(value?: AnnotationFilter): AnnotationFilterConfig;
+  hasAnnotationFilter(): boolean;
+  clearAnnotationFilter(): AnnotationFilterConfig;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DatasetVersionDatasetFilterConfig.AsObject;
-  static toObject(includeInstance: boolean, msg: DatasetVersionDatasetFilterConfig): DatasetVersionDatasetFilterConfig.AsObject;
-  static serializeBinaryToWriter(message: DatasetVersionDatasetFilterConfig, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DatasetVersionDatasetFilterConfig;
-  static deserializeBinaryFromReader(message: DatasetVersionDatasetFilterConfig, reader: jspb.BinaryReader): DatasetVersionDatasetFilterConfig;
+  toObject(includeInstance?: boolean): AnnotationFilterConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: AnnotationFilterConfig): AnnotationFilterConfig.AsObject;
+  static serializeBinaryToWriter(message: AnnotationFilterConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AnnotationFilterConfig;
+  static deserializeBinaryFromReader(message: AnnotationFilterConfig, reader: jspb.BinaryReader): AnnotationFilterConfig;
 }
 
-export namespace DatasetVersionDatasetFilterConfig {
+export namespace AnnotationFilterConfig {
   export type AsObject = {
-    datasetFilter?: DatasetFilter.AsObject,
+    annotationFilter?: AnnotationFilter.AsObject,
   }
 }
 
-export class DatasetVersionSummary extends jspb.Message {
-  getInputCountsMap(): jspb.Map<string, number>;
-  clearInputCountsMap(): void;
+export class DatasetVersionMetrics extends jspb.Message {
+  getInputsCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setInputsCount(value?: google_protobuf_wrappers_pb.UInt64Value): DatasetVersionMetrics;
+  hasInputsCount(): boolean;
+  clearInputsCount(): DatasetVersionMetrics;
+
+  getUnlabeledInputsCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setUnlabeledInputsCount(value?: google_protobuf_wrappers_pb.UInt64Value): DatasetVersionMetrics;
+  hasUnlabeledInputsCount(): boolean;
+  clearUnlabeledInputsCount(): DatasetVersionMetrics;
+
+  getInputsWithMetadataCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setInputsWithMetadataCount(value?: google_protobuf_wrappers_pb.UInt64Value): DatasetVersionMetrics;
+  hasInputsWithMetadataCount(): boolean;
+  clearInputsWithMetadataCount(): DatasetVersionMetrics;
+
+  getInputsWithGeoCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setInputsWithGeoCount(value?: google_protobuf_wrappers_pb.UInt64Value): DatasetVersionMetrics;
+  hasInputsWithGeoCount(): boolean;
+  clearInputsWithGeoCount(): DatasetVersionMetrics;
+
+  getRegionsCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setRegionsCount(value?: google_protobuf_wrappers_pb.UInt64Value): DatasetVersionMetrics;
+  hasRegionsCount(): boolean;
+  clearRegionsCount(): DatasetVersionMetrics;
+
+  getRegionLocationMatrix(): proto_clarifai_api_utils_matrix_pb.MatrixUint64 | undefined;
+  setRegionLocationMatrix(value?: proto_clarifai_api_utils_matrix_pb.MatrixUint64): DatasetVersionMetrics;
+  hasRegionLocationMatrix(): boolean;
+  clearRegionLocationMatrix(): DatasetVersionMetrics;
+
+  getBoundingBoxesCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setBoundingBoxesCount(value?: google_protobuf_wrappers_pb.UInt64Value): DatasetVersionMetrics;
+  hasBoundingBoxesCount(): boolean;
+  clearBoundingBoxesCount(): DatasetVersionMetrics;
+
+  getPolygonsCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setPolygonsCount(value?: google_protobuf_wrappers_pb.UInt64Value): DatasetVersionMetrics;
+  hasPolygonsCount(): boolean;
+  clearPolygonsCount(): DatasetVersionMetrics;
+
+  getPointsCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setPointsCount(value?: google_protobuf_wrappers_pb.UInt64Value): DatasetVersionMetrics;
+  hasPointsCount(): boolean;
+  clearPointsCount(): DatasetVersionMetrics;
+
+  getMasksCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setMasksCount(value?: google_protobuf_wrappers_pb.UInt64Value): DatasetVersionMetrics;
+  hasMasksCount(): boolean;
+  clearMasksCount(): DatasetVersionMetrics;
+
+  getRegionInputsCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setRegionInputsCount(value?: google_protobuf_wrappers_pb.UInt64Value): DatasetVersionMetrics;
+  hasRegionInputsCount(): boolean;
+  clearRegionInputsCount(): DatasetVersionMetrics;
+
+  getRegionFramesCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setRegionFramesCount(value?: google_protobuf_wrappers_pb.UInt64Value): DatasetVersionMetrics;
+  hasRegionFramesCount(): boolean;
+  clearRegionFramesCount(): DatasetVersionMetrics;
+
+  getFramesCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setFramesCount(value?: google_protobuf_wrappers_pb.UInt64Value): DatasetVersionMetrics;
+  hasFramesCount(): boolean;
+  clearFramesCount(): DatasetVersionMetrics;
+
+  getFrameInputsCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setFrameInputsCount(value?: google_protobuf_wrappers_pb.UInt64Value): DatasetVersionMetrics;
+  hasFrameInputsCount(): boolean;
+  clearFrameInputsCount(): DatasetVersionMetrics;
+
+  getEmbeddingsCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setEmbeddingsCount(value?: google_protobuf_wrappers_pb.UInt64Value): DatasetVersionMetrics;
+  hasEmbeddingsCount(): boolean;
+  clearEmbeddingsCount(): DatasetVersionMetrics;
+
+  getPositiveInputTagsCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setPositiveInputTagsCount(value?: google_protobuf_wrappers_pb.UInt64Value): DatasetVersionMetrics;
+  hasPositiveInputTagsCount(): boolean;
+  clearPositiveInputTagsCount(): DatasetVersionMetrics;
+
+  getPositiveRegionTagsCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setPositiveRegionTagsCount(value?: google_protobuf_wrappers_pb.UInt64Value): DatasetVersionMetrics;
+  hasPositiveRegionTagsCount(): boolean;
+  clearPositiveRegionTagsCount(): DatasetVersionMetrics;
+
+  getPositiveFrameTagsCount(): google_protobuf_wrappers_pb.UInt64Value | undefined;
+  setPositiveFrameTagsCount(value?: google_protobuf_wrappers_pb.UInt64Value): DatasetVersionMetrics;
+  hasPositiveFrameTagsCount(): boolean;
+  clearPositiveFrameTagsCount(): DatasetVersionMetrics;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DatasetVersionSummary.AsObject;
-  static toObject(includeInstance: boolean, msg: DatasetVersionSummary): DatasetVersionSummary.AsObject;
-  static serializeBinaryToWriter(message: DatasetVersionSummary, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DatasetVersionSummary;
-  static deserializeBinaryFromReader(message: DatasetVersionSummary, reader: jspb.BinaryReader): DatasetVersionSummary;
+  toObject(includeInstance?: boolean): DatasetVersionMetrics.AsObject;
+  static toObject(includeInstance: boolean, msg: DatasetVersionMetrics): DatasetVersionMetrics.AsObject;
+  static serializeBinaryToWriter(message: DatasetVersionMetrics, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DatasetVersionMetrics;
+  static deserializeBinaryFromReader(message: DatasetVersionMetrics, reader: jspb.BinaryReader): DatasetVersionMetrics;
 }
 
-export namespace DatasetVersionSummary {
+export namespace DatasetVersionMetrics {
   export type AsObject = {
-    inputCountsMap: Array<[string, number]>,
+    inputsCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    unlabeledInputsCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    inputsWithMetadataCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    inputsWithGeoCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    regionsCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    regionLocationMatrix?: proto_clarifai_api_utils_matrix_pb.MatrixUint64.AsObject,
+    boundingBoxesCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    polygonsCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    pointsCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    masksCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    regionInputsCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    regionFramesCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    framesCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    frameInputsCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    embeddingsCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    positiveInputTagsCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    positiveRegionTagsCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+    positiveFrameTagsCount?: google_protobuf_wrappers_pb.UInt64Value.AsObject,
+  }
+}
+
+export class DatasetVersionMetricsGroup extends jspb.Message {
+  getParentPath(): string;
+  setParentPath(value: string): DatasetVersionMetricsGroup;
+
+  getType(): DatasetVersionMetricsGroupType;
+  setType(value: DatasetVersionMetricsGroupType): DatasetVersionMetricsGroup;
+
+  getValue(): google_protobuf_struct_pb.Value | undefined;
+  setValue(value?: google_protobuf_struct_pb.Value): DatasetVersionMetricsGroup;
+  hasValue(): boolean;
+  clearValue(): DatasetVersionMetricsGroup;
+
+  getMetrics(): DatasetVersionMetrics | undefined;
+  setMetrics(value?: DatasetVersionMetrics): DatasetVersionMetricsGroup;
+  hasMetrics(): boolean;
+  clearMetrics(): DatasetVersionMetricsGroup;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DatasetVersionMetricsGroup.AsObject;
+  static toObject(includeInstance: boolean, msg: DatasetVersionMetricsGroup): DatasetVersionMetricsGroup.AsObject;
+  static serializeBinaryToWriter(message: DatasetVersionMetricsGroup, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DatasetVersionMetricsGroup;
+  static deserializeBinaryFromReader(message: DatasetVersionMetricsGroup, reader: jspb.BinaryReader): DatasetVersionMetricsGroup;
+}
+
+export namespace DatasetVersionMetricsGroup {
+  export type AsObject = {
+    parentPath: string,
+    type: DatasetVersionMetricsGroupType,
+    value?: google_protobuf_struct_pb.Value.AsObject,
+    metrics?: DatasetVersionMetrics.AsObject,
   }
 }
 
 export class WorkflowResultsSimilarity extends jspb.Message {
   getProbeInput(): Input | undefined;
-  setProbeInput(value?: Input): void;
+  setProbeInput(value?: Input): WorkflowResultsSimilarity;
   hasProbeInput(): boolean;
-  clearProbeInput(): void;
+  clearProbeInput(): WorkflowResultsSimilarity;
 
   getPoolResultsList(): Array<Hit>;
-  setPoolResultsList(value: Array<Hit>): void;
-  clearPoolResultsList(): void;
+  setPoolResultsList(value: Array<Hit>): WorkflowResultsSimilarity;
+  clearPoolResultsList(): WorkflowResultsSimilarity;
   addPoolResults(value?: Hit, index?: number): Hit;
 
   serializeBinary(): Uint8Array;
@@ -1679,43 +1986,43 @@ export namespace WorkflowResultsSimilarity {
 
 export class Key extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): Key;
 
   getType(): string;
-  setType(value: string): void;
+  setType(value: string): Key;
 
   getDescription(): string;
-  setDescription(value: string): void;
+  setDescription(value: string): Key;
 
   getScopesList(): Array<string>;
-  setScopesList(value: Array<string>): void;
-  clearScopesList(): void;
-  addScopes(value: string, index?: number): void;
+  setScopesList(value: Array<string>): Key;
+  clearScopesList(): Key;
+  addScopes(value: string, index?: number): Key;
 
   getEndpointsList(): Array<string>;
-  setEndpointsList(value: Array<string>): void;
-  clearEndpointsList(): void;
-  addEndpoints(value: string, index?: number): void;
+  setEndpointsList(value: Array<string>): Key;
+  clearEndpointsList(): Key;
+  addEndpoints(value: string, index?: number): Key;
 
   getAppsList(): Array<App>;
-  setAppsList(value: Array<App>): void;
-  clearAppsList(): void;
+  setAppsList(value: Array<App>): Key;
+  clearAppsList(): Key;
   addApps(value?: App, index?: number): App;
 
   getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Key;
   hasCreatedAt(): boolean;
-  clearCreatedAt(): void;
+  clearCreatedAt(): Key;
 
   getExpiresAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setExpiresAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setExpiresAt(value?: google_protobuf_timestamp_pb.Timestamp): Key;
   hasExpiresAt(): boolean;
-  clearExpiresAt(): void;
+  clearExpiresAt(): Key;
 
   getAuthorizedIdpIdsList(): Array<string>;
-  setAuthorizedIdpIdsList(value: Array<string>): void;
-  clearAuthorizedIdpIdsList(): void;
-  addAuthorizedIdpIds(value: string, index?: number): void;
+  setAuthorizedIdpIdsList(value: Array<string>): Key;
+  clearAuthorizedIdpIdsList(): Key;
+  addAuthorizedIdpIds(value: string, index?: number): Key;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Key.AsObject;
@@ -1741,94 +2048,97 @@ export namespace Key {
 
 export class Model extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): Model;
 
   getName(): string;
-  setName(value: string): void;
+  setName(value: string): Model;
 
   getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Model;
   hasCreatedAt(): boolean;
-  clearCreatedAt(): void;
+  clearCreatedAt(): Model;
 
   getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): Model;
   hasModifiedAt(): boolean;
-  clearModifiedAt(): void;
+  clearModifiedAt(): Model;
 
   getAppId(): string;
-  setAppId(value: string): void;
+  setAppId(value: string): Model;
 
   getOutputInfo(): OutputInfo | undefined;
-  setOutputInfo(value?: OutputInfo): void;
+  setOutputInfo(value?: OutputInfo): Model;
   hasOutputInfo(): boolean;
-  clearOutputInfo(): void;
+  clearOutputInfo(): Model;
 
   getModelVersion(): ModelVersion | undefined;
-  setModelVersion(value?: ModelVersion): void;
+  setModelVersion(value?: ModelVersion): Model;
   hasModelVersion(): boolean;
-  clearModelVersion(): void;
+  clearModelVersion(): Model;
 
   getDisplayName(): string;
-  setDisplayName(value: string): void;
+  setDisplayName(value: string): Model;
 
   getUserId(): string;
-  setUserId(value: string): void;
+  setUserId(value: string): Model;
 
   getInputInfo(): InputInfo | undefined;
-  setInputInfo(value?: InputInfo): void;
+  setInputInfo(value?: InputInfo): Model;
   hasInputInfo(): boolean;
-  clearInputInfo(): void;
+  clearInputInfo(): Model;
 
   getTrainInfo(): TrainInfo | undefined;
-  setTrainInfo(value?: TrainInfo): void;
+  setTrainInfo(value?: TrainInfo): Model;
   hasTrainInfo(): boolean;
-  clearTrainInfo(): void;
+  clearTrainInfo(): Model;
 
   getModelTypeId(): string;
-  setModelTypeId(value: string): void;
+  setModelTypeId(value: string): Model;
+
+  getTask(): string;
+  setTask(value: string): Model;
 
   getVisibility(): Visibility | undefined;
-  setVisibility(value?: Visibility): void;
+  setVisibility(value?: Visibility): Model;
   hasVisibility(): boolean;
-  clearVisibility(): void;
+  clearVisibility(): Model;
 
   getDescription(): string;
-  setDescription(value: string): void;
+  setDescription(value: string): Model;
 
   getMetadata(): google_protobuf_struct_pb.Struct | undefined;
-  setMetadata(value?: google_protobuf_struct_pb.Struct): void;
+  setMetadata(value?: google_protobuf_struct_pb.Struct): Model;
   hasMetadata(): boolean;
-  clearMetadata(): void;
+  clearMetadata(): Model;
 
   getNotes(): string;
-  setNotes(value: string): void;
+  setNotes(value: string): Model;
 
   getToolkitsList(): Array<string>;
-  setToolkitsList(value: Array<string>): void;
-  clearToolkitsList(): void;
-  addToolkits(value: string, index?: number): void;
+  setToolkitsList(value: Array<string>): Model;
+  clearToolkitsList(): Model;
+  addToolkits(value: string, index?: number): Model;
 
   getUseCasesList(): Array<string>;
-  setUseCasesList(value: Array<string>): void;
-  clearUseCasesList(): void;
-  addUseCases(value: string, index?: number): void;
+  setUseCasesList(value: Array<string>): Model;
+  clearUseCasesList(): Model;
+  addUseCases(value: string, index?: number): Model;
 
   getLanguagesList(): Array<string>;
-  setLanguagesList(value: Array<string>): void;
-  clearLanguagesList(): void;
-  addLanguages(value: string, index?: number): void;
+  setLanguagesList(value: Array<string>): Model;
+  clearLanguagesList(): Model;
+  addLanguages(value: string, index?: number): Model;
 
   getIsStarred(): boolean;
-  setIsStarred(value: boolean): void;
+  setIsStarred(value: boolean): Model;
 
   getStarCount(): number;
-  setStarCount(value: number): void;
+  setStarCount(value: number): Model;
 
   getImportInfo(): ImportInfo | undefined;
-  setImportInfo(value?: ImportInfo): void;
+  setImportInfo(value?: ImportInfo): Model;
   hasImportInfo(): boolean;
-  clearImportInfo(): void;
+  clearImportInfo(): Model;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Model.AsObject;
@@ -1852,6 +2162,7 @@ export namespace Model {
     inputInfo?: InputInfo.AsObject,
     trainInfo?: TrainInfo.AsObject,
     modelTypeId: string,
+    task: string,
     visibility?: Visibility.AsObject,
     description: string,
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
@@ -1867,21 +2178,21 @@ export namespace Model {
 
 export class ModelReference extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): ModelReference;
 
   getModelId(): string;
-  setModelId(value: string): void;
+  setModelId(value: string): ModelReference;
 
   getUrl(): string;
-  setUrl(value: string): void;
+  setUrl(value: string): ModelReference;
 
   getName(): string;
-  setName(value: string): void;
+  setName(value: string): ModelReference;
 
   getMetadata(): google_protobuf_struct_pb.Struct | undefined;
-  setMetadata(value?: google_protobuf_struct_pb.Struct): void;
+  setMetadata(value?: google_protobuf_struct_pb.Struct): ModelReference;
   hasMetadata(): boolean;
-  clearMetadata(): void;
+  clearMetadata(): ModelReference;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelReference.AsObject;
@@ -1903,24 +2214,24 @@ export namespace ModelReference {
 
 export class ModelVersionInputExample extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): ModelVersionInputExample;
 
   getModelId(): string;
-  setModelId(value: string): void;
+  setModelId(value: string): ModelVersionInputExample;
 
   getModelVersionId(): string;
-  setModelVersionId(value: string): void;
+  setModelVersionId(value: string): ModelVersionInputExample;
 
   getData(): Data | undefined;
-  setData(value?: Data): void;
+  setData(value?: Data): ModelVersionInputExample;
   hasData(): boolean;
-  clearData(): void;
+  clearData(): ModelVersionInputExample;
 
   getName(): string;
-  setName(value: string): void;
+  setName(value: string): ModelVersionInputExample;
 
   getDescription(): string;
-  setDescription(value: string): void;
+  setDescription(value: string): ModelVersionInputExample;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelVersionInputExample.AsObject;
@@ -1943,33 +2254,27 @@ export namespace ModelVersionInputExample {
 
 export class OutputInfo extends jspb.Message {
   getData(): Data | undefined;
-  setData(value?: Data): void;
+  setData(value?: Data): OutputInfo;
   hasData(): boolean;
-  clearData(): void;
+  clearData(): OutputInfo;
 
   getOutputConfig(): OutputConfig | undefined;
-  setOutputConfig(value?: OutputConfig): void;
+  setOutputConfig(value?: OutputConfig): OutputInfo;
   hasOutputConfig(): boolean;
-  clearOutputConfig(): void;
+  clearOutputConfig(): OutputInfo;
 
   getMessage(): string;
-  setMessage(value: string): void;
-
-  getType(): string;
-  setType(value: string): void;
-
-  getTypeExt(): string;
-  setTypeExt(value: string): void;
+  setMessage(value: string): OutputInfo;
 
   getFieldsMap(): google_protobuf_struct_pb.Struct | undefined;
-  setFieldsMap(value?: google_protobuf_struct_pb.Struct): void;
+  setFieldsMap(value?: google_protobuf_struct_pb.Struct): OutputInfo;
   hasFieldsMap(): boolean;
-  clearFieldsMap(): void;
+  clearFieldsMap(): OutputInfo;
 
   getParams(): google_protobuf_struct_pb.Struct | undefined;
-  setParams(value?: google_protobuf_struct_pb.Struct): void;
+  setParams(value?: google_protobuf_struct_pb.Struct): OutputInfo;
   hasParams(): boolean;
-  clearParams(): void;
+  clearParams(): OutputInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OutputInfo.AsObject;
@@ -1984,8 +2289,6 @@ export namespace OutputInfo {
     data?: Data.AsObject,
     outputConfig?: OutputConfig.AsObject,
     message: string,
-    type: string,
-    typeExt: string,
     fieldsMap?: google_protobuf_struct_pb.Struct.AsObject,
     params?: google_protobuf_struct_pb.Struct.AsObject,
   }
@@ -1993,14 +2296,14 @@ export namespace OutputInfo {
 
 export class InputInfo extends jspb.Message {
   getFieldsMap(): google_protobuf_struct_pb.Struct | undefined;
-  setFieldsMap(value?: google_protobuf_struct_pb.Struct): void;
+  setFieldsMap(value?: google_protobuf_struct_pb.Struct): InputInfo;
   hasFieldsMap(): boolean;
-  clearFieldsMap(): void;
+  clearFieldsMap(): InputInfo;
 
   getParams(): google_protobuf_struct_pb.Struct | undefined;
-  setParams(value?: google_protobuf_struct_pb.Struct): void;
+  setParams(value?: google_protobuf_struct_pb.Struct): InputInfo;
   hasParams(): boolean;
-  clearParams(): void;
+  clearParams(): InputInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InputInfo.AsObject;
@@ -2019,9 +2322,9 @@ export namespace InputInfo {
 
 export class TrainInfo extends jspb.Message {
   getParams(): google_protobuf_struct_pb.Struct | undefined;
-  setParams(value?: google_protobuf_struct_pb.Struct): void;
+  setParams(value?: google_protobuf_struct_pb.Struct): TrainInfo;
   hasParams(): boolean;
-  clearParams(): void;
+  clearParams(): TrainInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainInfo.AsObject;
@@ -2039,9 +2342,9 @@ export namespace TrainInfo {
 
 export class ImportInfo extends jspb.Message {
   getParams(): google_protobuf_struct_pb.Struct | undefined;
-  setParams(value?: google_protobuf_struct_pb.Struct): void;
+  setParams(value?: google_protobuf_struct_pb.Struct): ImportInfo;
   hasParams(): boolean;
-  clearParams(): void;
+  clearParams(): ImportInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ImportInfo.AsObject;
@@ -2059,52 +2362,52 @@ export namespace ImportInfo {
 
 export class OutputConfig extends jspb.Message {
   getConceptsMutuallyExclusive(): boolean;
-  setConceptsMutuallyExclusive(value: boolean): void;
+  setConceptsMutuallyExclusive(value: boolean): OutputConfig;
 
   getClosedEnvironment(): boolean;
-  setClosedEnvironment(value: boolean): void;
+  setClosedEnvironment(value: boolean): OutputConfig;
 
   getExistingModelId(): string;
-  setExistingModelId(value: string): void;
+  setExistingModelId(value: string): OutputConfig;
 
   getLanguage(): string;
-  setLanguage(value: string): void;
+  setLanguage(value: string): OutputConfig;
 
   getHyperParameters(): string;
-  setHyperParameters(value: string): void;
+  setHyperParameters(value: string): OutputConfig;
 
   getMaxConcepts(): number;
-  setMaxConcepts(value: number): void;
+  setMaxConcepts(value: number): OutputConfig;
 
   getMinValue(): number;
-  setMinValue(value: number): void;
+  setMinValue(value: number): OutputConfig;
 
   getSelectConceptsList(): Array<Concept>;
-  setSelectConceptsList(value: Array<Concept>): void;
-  clearSelectConceptsList(): void;
+  setSelectConceptsList(value: Array<Concept>): OutputConfig;
+  clearSelectConceptsList(): OutputConfig;
   addSelectConcepts(value?: Concept, index?: number): Concept;
 
   getTrainingTimeout(): number;
-  setTrainingTimeout(value: number): void;
+  setTrainingTimeout(value: number): OutputConfig;
 
   getSampleMs(): number;
-  setSampleMs(value: number): void;
+  setSampleMs(value: number): OutputConfig;
 
   getHyperParams(): google_protobuf_struct_pb.Struct | undefined;
-  setHyperParams(value?: google_protobuf_struct_pb.Struct): void;
+  setHyperParams(value?: google_protobuf_struct_pb.Struct): OutputConfig;
   hasHyperParams(): boolean;
-  clearHyperParams(): void;
+  clearHyperParams(): OutputConfig;
 
   getEmbedModelVersionId(): string;
-  setEmbedModelVersionId(value: string): void;
+  setEmbedModelVersionId(value: string): OutputConfig;
 
   getFailOnMissingPositiveExamples(): boolean;
-  setFailOnMissingPositiveExamples(value: boolean): void;
+  setFailOnMissingPositiveExamples(value: boolean): OutputConfig;
 
   getModelMetadata(): google_protobuf_struct_pb.Struct | undefined;
-  setModelMetadata(value?: google_protobuf_struct_pb.Struct): void;
+  setModelMetadata(value?: google_protobuf_struct_pb.Struct): OutputConfig;
   hasModelMetadata(): boolean;
-  clearModelMetadata(): void;
+  clearModelMetadata(): OutputConfig;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OutputConfig.AsObject;
@@ -2135,56 +2438,53 @@ export namespace OutputConfig {
 
 export class ModelType extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): ModelType;
 
   getTitle(): string;
-  setTitle(value: string): void;
+  setTitle(value: string): ModelType;
 
   getDescription(): string;
-  setDescription(value: string): void;
-
-  getType(): string;
-  setType(value: string): void;
+  setDescription(value: string): ModelType;
 
   getInputFieldsList(): Array<string>;
-  setInputFieldsList(value: Array<string>): void;
-  clearInputFieldsList(): void;
-  addInputFields(value: string, index?: number): void;
+  setInputFieldsList(value: Array<string>): ModelType;
+  clearInputFieldsList(): ModelType;
+  addInputFields(value: string, index?: number): ModelType;
 
   getOutputFieldsList(): Array<string>;
-  setOutputFieldsList(value: Array<string>): void;
-  clearOutputFieldsList(): void;
-  addOutputFields(value: string, index?: number): void;
+  setOutputFieldsList(value: Array<string>): ModelType;
+  clearOutputFieldsList(): ModelType;
+  addOutputFields(value: string, index?: number): ModelType;
 
   getTrainable(): boolean;
-  setTrainable(value: boolean): void;
+  setTrainable(value: boolean): ModelType;
 
   getCreatable(): boolean;
-  setCreatable(value: boolean): void;
+  setCreatable(value: boolean): ModelType;
 
   getInternalOnly(): boolean;
-  setInternalOnly(value: boolean): void;
+  setInternalOnly(value: boolean): ModelType;
 
   getModelTypeFieldsList(): Array<ModelTypeField>;
-  setModelTypeFieldsList(value: Array<ModelTypeField>): void;
-  clearModelTypeFieldsList(): void;
+  setModelTypeFieldsList(value: Array<ModelTypeField>): ModelType;
+  clearModelTypeFieldsList(): ModelType;
   addModelTypeFields(value?: ModelTypeField, index?: number): ModelTypeField;
 
   getRequiresSequentialFrames(): boolean;
-  setRequiresSequentialFrames(value: boolean): void;
+  setRequiresSequentialFrames(value: boolean): ModelType;
 
   getEvaluable(): boolean;
-  setEvaluable(value: boolean): void;
+  setEvaluable(value: boolean): ModelType;
 
   getExpectedPretrainedInputFields(): google_protobuf_struct_pb.Struct | undefined;
-  setExpectedPretrainedInputFields(value?: google_protobuf_struct_pb.Struct): void;
+  setExpectedPretrainedInputFields(value?: google_protobuf_struct_pb.Struct): ModelType;
   hasExpectedPretrainedInputFields(): boolean;
-  clearExpectedPretrainedInputFields(): void;
+  clearExpectedPretrainedInputFields(): ModelType;
 
   getExpectedPretrainedOutputFields(): google_protobuf_struct_pb.Struct | undefined;
-  setExpectedPretrainedOutputFields(value?: google_protobuf_struct_pb.Struct): void;
+  setExpectedPretrainedOutputFields(value?: google_protobuf_struct_pb.Struct): ModelType;
   hasExpectedPretrainedOutputFields(): boolean;
-  clearExpectedPretrainedOutputFields(): void;
+  clearExpectedPretrainedOutputFields(): ModelType;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelType.AsObject;
@@ -2199,7 +2499,6 @@ export namespace ModelType {
     id: string,
     title: string,
     description: string,
-    type: string,
     inputFieldsList: Array<string>,
     outputFieldsList: Array<string>,
     trainable: boolean,
@@ -2215,37 +2514,37 @@ export namespace ModelType {
 
 export class ModelTypeField extends jspb.Message {
   getPath(): string;
-  setPath(value: string): void;
+  setPath(value: string): ModelTypeField;
 
   getFieldType(): ModelTypeField.ModelTypeFieldType;
-  setFieldType(value: ModelTypeField.ModelTypeFieldType): void;
+  setFieldType(value: ModelTypeField.ModelTypeFieldType): ModelTypeField;
 
   getDefaultValue(): google_protobuf_struct_pb.Value | undefined;
-  setDefaultValue(value?: google_protobuf_struct_pb.Value): void;
+  setDefaultValue(value?: google_protobuf_struct_pb.Value): ModelTypeField;
   hasDefaultValue(): boolean;
-  clearDefaultValue(): void;
+  clearDefaultValue(): ModelTypeField;
 
   getDescription(): string;
-  setDescription(value: string): void;
+  setDescription(value: string): ModelTypeField;
 
   getPlaceholder(): string;
-  setPlaceholder(value: string): void;
+  setPlaceholder(value: string): ModelTypeField;
 
   getModelTypeEnumOptionsList(): Array<ModelTypeEnumOption>;
-  setModelTypeEnumOptionsList(value: Array<ModelTypeEnumOption>): void;
-  clearModelTypeEnumOptionsList(): void;
+  setModelTypeEnumOptionsList(value: Array<ModelTypeEnumOption>): ModelTypeField;
+  clearModelTypeEnumOptionsList(): ModelTypeField;
   addModelTypeEnumOptions(value?: ModelTypeEnumOption, index?: number): ModelTypeEnumOption;
 
   getInternalOnly(): boolean;
-  setInternalOnly(value: boolean): void;
+  setInternalOnly(value: boolean): ModelTypeField;
 
   getRequired(): boolean;
-  setRequired(value: boolean): void;
+  setRequired(value: boolean): ModelTypeField;
 
   getModelTypeRangeInfo(): ModelTypeRangeInfo | undefined;
-  setModelTypeRangeInfo(value?: ModelTypeRangeInfo): void;
+  setModelTypeRangeInfo(value?: ModelTypeRangeInfo): ModelTypeField;
   hasModelTypeRangeInfo(): boolean;
-  clearModelTypeRangeInfo(): void;
+  clearModelTypeRangeInfo(): ModelTypeField;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelTypeField.AsObject;
@@ -2288,13 +2587,13 @@ export namespace ModelTypeField {
 
 export class ModelTypeRangeInfo extends jspb.Message {
   getMin(): number;
-  setMin(value: number): void;
+  setMin(value: number): ModelTypeRangeInfo;
 
   getMax(): number;
-  setMax(value: number): void;
+  setMax(value: number): ModelTypeRangeInfo;
 
   getStep(): number;
-  setStep(value: number): void;
+  setStep(value: number): ModelTypeRangeInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelTypeRangeInfo.AsObject;
@@ -2314,18 +2613,23 @@ export namespace ModelTypeRangeInfo {
 
 export class ModelTypeEnumOption extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): ModelTypeEnumOption;
+
+  getAliasesList(): Array<ModelTypeEnumOptionAlias>;
+  setAliasesList(value: Array<ModelTypeEnumOptionAlias>): ModelTypeEnumOption;
+  clearAliasesList(): ModelTypeEnumOption;
+  addAliases(value?: ModelTypeEnumOptionAlias, index?: number): ModelTypeEnumOptionAlias;
 
   getDescription(): string;
-  setDescription(value: string): void;
+  setDescription(value: string): ModelTypeEnumOption;
 
   getModelTypeFieldsList(): Array<ModelTypeField>;
-  setModelTypeFieldsList(value: Array<ModelTypeField>): void;
-  clearModelTypeFieldsList(): void;
+  setModelTypeFieldsList(value: Array<ModelTypeField>): ModelTypeEnumOption;
+  clearModelTypeFieldsList(): ModelTypeEnumOption;
   addModelTypeFields(value?: ModelTypeField, index?: number): ModelTypeField;
 
   getInternalOnly(): boolean;
-  setInternalOnly(value: boolean): void;
+  setInternalOnly(value: boolean): ModelTypeEnumOption;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelTypeEnumOption.AsObject;
@@ -2338,21 +2642,37 @@ export class ModelTypeEnumOption extends jspb.Message {
 export namespace ModelTypeEnumOption {
   export type AsObject = {
     id: string,
+    aliasesList: Array<ModelTypeEnumOptionAlias.AsObject>,
     description: string,
     modelTypeFieldsList: Array<ModelTypeField.AsObject>,
     internalOnly: boolean,
   }
 }
 
+export class ModelTypeEnumOptionAlias extends jspb.Message {
+  getIdInt(): number;
+  setIdInt(value: number): ModelTypeEnumOptionAlias;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelTypeEnumOptionAlias.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelTypeEnumOptionAlias): ModelTypeEnumOptionAlias.AsObject;
+  static serializeBinaryToWriter(message: ModelTypeEnumOptionAlias, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelTypeEnumOptionAlias;
+  static deserializeBinaryFromReader(message: ModelTypeEnumOptionAlias, reader: jspb.BinaryReader): ModelTypeEnumOptionAlias;
+}
+
+export namespace ModelTypeEnumOptionAlias {
+  export type AsObject = {
+    idInt: number,
+  }
+}
+
 export class ModelQuery extends jspb.Message {
   getName(): string;
-  setName(value: string): void;
-
-  getType(): string;
-  setType(value: string): void;
+  setName(value: string): ModelQuery;
 
   getModelTypeId(): string;
-  setModelTypeId(value: string): void;
+  setModelTypeId(value: string): ModelQuery;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelQuery.AsObject;
@@ -2365,67 +2685,71 @@ export class ModelQuery extends jspb.Message {
 export namespace ModelQuery {
   export type AsObject = {
     name: string,
-    type: string,
     modelTypeId: string,
   }
 }
 
 export class ModelVersion extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): ModelVersion;
 
   getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): ModelVersion;
   hasCreatedAt(): boolean;
-  clearCreatedAt(): void;
+  clearCreatedAt(): ModelVersion;
 
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): ModelVersion;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): ModelVersion;
 
   getActiveConceptCount(): number;
-  setActiveConceptCount(value: number): void;
+  setActiveConceptCount(value: number): ModelVersion;
 
   getMetrics(): EvalMetrics | undefined;
-  setMetrics(value?: EvalMetrics): void;
+  setMetrics(value?: EvalMetrics): ModelVersion;
   hasMetrics(): boolean;
-  clearMetrics(): void;
+  clearMetrics(): ModelVersion;
 
   getTotalInputCount(): number;
-  setTotalInputCount(value: number): void;
+  setTotalInputCount(value: number): ModelVersion;
 
   getCompletedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCompletedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCompletedAt(value?: google_protobuf_timestamp_pb.Timestamp): ModelVersion;
   hasCompletedAt(): boolean;
-  clearCompletedAt(): void;
+  clearCompletedAt(): ModelVersion;
 
   getDescription(): string;
-  setDescription(value: string): void;
+  setDescription(value: string): ModelVersion;
 
   getVisibility(): Visibility | undefined;
-  setVisibility(value?: Visibility): void;
+  setVisibility(value?: Visibility): ModelVersion;
   hasVisibility(): boolean;
-  clearVisibility(): void;
+  clearVisibility(): ModelVersion;
 
   getAppId(): string;
-  setAppId(value: string): void;
+  setAppId(value: string): ModelVersion;
 
   getUserId(): string;
-  setUserId(value: string): void;
+  setUserId(value: string): ModelVersion;
 
   getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): ModelVersion;
   hasModifiedAt(): boolean;
-  clearModifiedAt(): void;
+  clearModifiedAt(): ModelVersion;
 
   getMetadata(): google_protobuf_struct_pb.Struct | undefined;
-  setMetadata(value?: google_protobuf_struct_pb.Struct): void;
+  setMetadata(value?: google_protobuf_struct_pb.Struct): ModelVersion;
   hasMetadata(): boolean;
-  clearMetadata(): void;
+  clearMetadata(): ModelVersion;
 
   getLicense(): string;
-  setLicense(value: string): void;
+  setLicense(value: string): ModelVersion;
+
+  getDatasetVersion(): DatasetVersion | undefined;
+  setDatasetVersion(value?: DatasetVersion): ModelVersion;
+  hasDatasetVersion(): boolean;
+  clearDatasetVersion(): ModelVersion;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelVersion.AsObject;
@@ -2451,15 +2775,108 @@ export namespace ModelVersion {
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
     license: string,
+    datasetVersion?: DatasetVersion.AsObject,
+  }
+}
+
+export class PretrainedModelConfig extends jspb.Message {
+  getId(): string;
+  setId(value: string): PretrainedModelConfig;
+
+  getType(): string;
+  setType(value: string): PretrainedModelConfig;
+
+  getInputFieldsMap(): google_protobuf_struct_pb.Struct | undefined;
+  setInputFieldsMap(value?: google_protobuf_struct_pb.Struct): PretrainedModelConfig;
+  hasInputFieldsMap(): boolean;
+  clearInputFieldsMap(): PretrainedModelConfig;
+
+  getOutputFieldsMap(): google_protobuf_struct_pb.Struct | undefined;
+  setOutputFieldsMap(value?: google_protobuf_struct_pb.Struct): PretrainedModelConfig;
+  hasOutputFieldsMap(): boolean;
+  clearOutputFieldsMap(): PretrainedModelConfig;
+
+  getDataProviderParams(): string;
+  setDataProviderParams(value: string): PretrainedModelConfig;
+
+  getModelZipUrl(): string;
+  setModelZipUrl(value: string): PretrainedModelConfig;
+
+  getOverwrite(): boolean;
+  setOverwrite(value: boolean): PretrainedModelConfig;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PretrainedModelConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: PretrainedModelConfig): PretrainedModelConfig.AsObject;
+  static serializeBinaryToWriter(message: PretrainedModelConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PretrainedModelConfig;
+  static deserializeBinaryFromReader(message: PretrainedModelConfig, reader: jspb.BinaryReader): PretrainedModelConfig;
+}
+
+export namespace PretrainedModelConfig {
+  export type AsObject = {
+    id: string,
+    type: string,
+    inputFieldsMap?: google_protobuf_struct_pb.Struct.AsObject,
+    outputFieldsMap?: google_protobuf_struct_pb.Struct.AsObject,
+    dataProviderParams: string,
+    modelZipUrl: string,
+    overwrite: boolean,
+  }
+}
+
+export class TrainStats extends jspb.Message {
+  getLossCurveList(): Array<LossCurveEntry>;
+  setLossCurveList(value: Array<LossCurveEntry>): TrainStats;
+  clearLossCurveList(): TrainStats;
+  addLossCurve(value?: LossCurveEntry, index?: number): LossCurveEntry;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TrainStats.AsObject;
+  static toObject(includeInstance: boolean, msg: TrainStats): TrainStats.AsObject;
+  static serializeBinaryToWriter(message: TrainStats, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TrainStats;
+  static deserializeBinaryFromReader(message: TrainStats, reader: jspb.BinaryReader): TrainStats;
+}
+
+export namespace TrainStats {
+  export type AsObject = {
+    lossCurveList: Array<LossCurveEntry.AsObject>,
+  }
+}
+
+export class LossCurveEntry extends jspb.Message {
+  getEpoch(): number;
+  setEpoch(value: number): LossCurveEntry;
+
+  getGlobalStep(): number;
+  setGlobalStep(value: number): LossCurveEntry;
+
+  getCost(): number;
+  setCost(value: number): LossCurveEntry;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LossCurveEntry.AsObject;
+  static toObject(includeInstance: boolean, msg: LossCurveEntry): LossCurveEntry.AsObject;
+  static serializeBinaryToWriter(message: LossCurveEntry, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LossCurveEntry;
+  static deserializeBinaryFromReader(message: LossCurveEntry, reader: jspb.BinaryReader): LossCurveEntry;
+}
+
+export namespace LossCurveEntry {
+  export type AsObject = {
+    epoch: number,
+    globalStep: number,
+    cost: number,
   }
 }
 
 export class LabelCount extends jspb.Message {
   getConceptName(): string;
-  setConceptName(value: string): void;
+  setConceptName(value: string): LabelCount;
 
   getCount(): number;
-  setCount(value: number): void;
+  setCount(value: number): LabelCount;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LabelCount.AsObject;
@@ -2478,8 +2895,8 @@ export namespace LabelCount {
 
 export class LabelDistribution extends jspb.Message {
   getPositiveLabelCountsList(): Array<LabelCount>;
-  setPositiveLabelCountsList(value: Array<LabelCount>): void;
-  clearPositiveLabelCountsList(): void;
+  setPositiveLabelCountsList(value: Array<LabelCount>): LabelDistribution;
+  clearPositiveLabelCountsList(): LabelDistribution;
   addPositiveLabelCounts(value?: LabelCount, index?: number): LabelCount;
 
   serializeBinary(): Uint8Array;
@@ -2498,13 +2915,13 @@ export namespace LabelDistribution {
 
 export class CooccurrenceMatrixEntry extends jspb.Message {
   getRow(): string;
-  setRow(value: string): void;
+  setRow(value: string): CooccurrenceMatrixEntry;
 
   getCol(): string;
-  setCol(value: string): void;
+  setCol(value: string): CooccurrenceMatrixEntry;
 
   getCount(): number;
-  setCount(value: number): void;
+  setCount(value: number): CooccurrenceMatrixEntry;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CooccurrenceMatrixEntry.AsObject;
@@ -2524,14 +2941,14 @@ export namespace CooccurrenceMatrixEntry {
 
 export class CooccurrenceMatrix extends jspb.Message {
   getMatrixList(): Array<CooccurrenceMatrixEntry>;
-  setMatrixList(value: Array<CooccurrenceMatrixEntry>): void;
-  clearMatrixList(): void;
+  setMatrixList(value: Array<CooccurrenceMatrixEntry>): CooccurrenceMatrix;
+  clearMatrixList(): CooccurrenceMatrix;
   addMatrix(value?: CooccurrenceMatrixEntry, index?: number): CooccurrenceMatrixEntry;
 
   getConceptIdsList(): Array<string>;
-  setConceptIdsList(value: Array<string>): void;
-  clearConceptIdsList(): void;
-  addConceptIds(value: string, index?: number): void;
+  setConceptIdsList(value: Array<string>): CooccurrenceMatrix;
+  clearConceptIdsList(): CooccurrenceMatrix;
+  addConceptIds(value: string, index?: number): CooccurrenceMatrix;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CooccurrenceMatrix.AsObject;
@@ -2550,13 +2967,13 @@ export namespace CooccurrenceMatrix {
 
 export class ConfusionMatrixEntry extends jspb.Message {
   getPredicted(): string;
-  setPredicted(value: string): void;
+  setPredicted(value: string): ConfusionMatrixEntry;
 
   getActual(): string;
-  setActual(value: string): void;
+  setActual(value: string): ConfusionMatrixEntry;
 
   getValue(): number;
-  setValue(value: number): void;
+  setValue(value: number): ConfusionMatrixEntry;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConfusionMatrixEntry.AsObject;
@@ -2576,14 +2993,14 @@ export namespace ConfusionMatrixEntry {
 
 export class ConfusionMatrix extends jspb.Message {
   getMatrixList(): Array<ConfusionMatrixEntry>;
-  setMatrixList(value: Array<ConfusionMatrixEntry>): void;
-  clearMatrixList(): void;
+  setMatrixList(value: Array<ConfusionMatrixEntry>): ConfusionMatrix;
+  clearMatrixList(): ConfusionMatrix;
   addMatrix(value?: ConfusionMatrixEntry, index?: number): ConfusionMatrixEntry;
 
   getConceptIdsList(): Array<string>;
-  setConceptIdsList(value: Array<string>): void;
-  clearConceptIdsList(): void;
-  addConceptIds(value: string, index?: number): void;
+  setConceptIdsList(value: Array<string>): ConfusionMatrix;
+  clearConceptIdsList(): ConfusionMatrix;
+  addConceptIds(value: string, index?: number): ConfusionMatrix;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConfusionMatrix.AsObject;
@@ -2602,29 +3019,29 @@ export namespace ConfusionMatrix {
 
 export class ROC extends jspb.Message {
   getFprList(): Array<number>;
-  setFprList(value: Array<number>): void;
-  clearFprList(): void;
-  addFpr(value: number, index?: number): void;
+  setFprList(value: Array<number>): ROC;
+  clearFprList(): ROC;
+  addFpr(value: number, index?: number): ROC;
 
   getTprList(): Array<number>;
-  setTprList(value: Array<number>): void;
-  clearTprList(): void;
-  addTpr(value: number, index?: number): void;
+  setTprList(value: Array<number>): ROC;
+  clearTprList(): ROC;
+  addTpr(value: number, index?: number): ROC;
 
   getThresholdsList(): Array<number>;
-  setThresholdsList(value: Array<number>): void;
-  clearThresholdsList(): void;
-  addThresholds(value: number, index?: number): void;
+  setThresholdsList(value: Array<number>): ROC;
+  clearThresholdsList(): ROC;
+  addThresholds(value: number, index?: number): ROC;
 
   getFprPerImageList(): Array<number>;
-  setFprPerImageList(value: Array<number>): void;
-  clearFprPerImageList(): void;
-  addFprPerImage(value: number, index?: number): void;
+  setFprPerImageList(value: Array<number>): ROC;
+  clearFprPerImageList(): ROC;
+  addFprPerImage(value: number, index?: number): ROC;
 
   getFprPerObjectList(): Array<number>;
-  setFprPerObjectList(value: Array<number>): void;
-  clearFprPerObjectList(): void;
-  addFprPerObject(value: number, index?: number): void;
+  setFprPerObjectList(value: Array<number>): ROC;
+  clearFprPerObjectList(): ROC;
+  addFprPerObject(value: number, index?: number): ROC;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ROC.AsObject;
@@ -2646,19 +3063,19 @@ export namespace ROC {
 
 export class PrecisionRecallCurve extends jspb.Message {
   getRecallList(): Array<number>;
-  setRecallList(value: Array<number>): void;
-  clearRecallList(): void;
-  addRecall(value: number, index?: number): void;
+  setRecallList(value: Array<number>): PrecisionRecallCurve;
+  clearRecallList(): PrecisionRecallCurve;
+  addRecall(value: number, index?: number): PrecisionRecallCurve;
 
   getPrecisionList(): Array<number>;
-  setPrecisionList(value: Array<number>): void;
-  clearPrecisionList(): void;
-  addPrecision(value: number, index?: number): void;
+  setPrecisionList(value: Array<number>): PrecisionRecallCurve;
+  clearPrecisionList(): PrecisionRecallCurve;
+  addPrecision(value: number, index?: number): PrecisionRecallCurve;
 
   getThresholdsList(): Array<number>;
-  setThresholdsList(value: Array<number>): void;
-  clearThresholdsList(): void;
-  addThresholds(value: number, index?: number): void;
+  setThresholdsList(value: Array<number>): PrecisionRecallCurve;
+  clearThresholdsList(): PrecisionRecallCurve;
+  addThresholds(value: number, index?: number): PrecisionRecallCurve;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PrecisionRecallCurve.AsObject;
@@ -2678,49 +3095,49 @@ export namespace PrecisionRecallCurve {
 
 export class BinaryMetrics extends jspb.Message {
   getNumPos(): number;
-  setNumPos(value: number): void;
+  setNumPos(value: number): BinaryMetrics;
 
   getNumNeg(): number;
-  setNumNeg(value: number): void;
+  setNumNeg(value: number): BinaryMetrics;
 
   getNumTot(): number;
-  setNumTot(value: number): void;
+  setNumTot(value: number): BinaryMetrics;
 
   getRocAuc(): number;
-  setRocAuc(value: number): void;
+  setRocAuc(value: number): BinaryMetrics;
 
   getF1(): number;
-  setF1(value: number): void;
+  setF1(value: number): BinaryMetrics;
 
   getConcept(): Concept | undefined;
-  setConcept(value?: Concept): void;
+  setConcept(value?: Concept): BinaryMetrics;
   hasConcept(): boolean;
-  clearConcept(): void;
+  clearConcept(): BinaryMetrics;
 
   getRocCurve(): ROC | undefined;
-  setRocCurve(value?: ROC): void;
+  setRocCurve(value?: ROC): BinaryMetrics;
   hasRocCurve(): boolean;
-  clearRocCurve(): void;
+  clearRocCurve(): BinaryMetrics;
 
   getPrecisionRecallCurve(): PrecisionRecallCurve | undefined;
-  setPrecisionRecallCurve(value?: PrecisionRecallCurve): void;
+  setPrecisionRecallCurve(value?: PrecisionRecallCurve): BinaryMetrics;
   hasPrecisionRecallCurve(): boolean;
-  clearPrecisionRecallCurve(): void;
+  clearPrecisionRecallCurve(): BinaryMetrics;
 
   getAvgPrecision(): number;
-  setAvgPrecision(value: number): void;
+  setAvgPrecision(value: number): BinaryMetrics;
 
   getAreaName(): string;
-  setAreaName(value: string): void;
+  setAreaName(value: string): BinaryMetrics;
 
   getAreaMin(): number;
-  setAreaMin(value: number): void;
+  setAreaMin(value: number): BinaryMetrics;
 
   getAreaMax(): number;
-  setAreaMax(value: number): void;
+  setAreaMax(value: number): BinaryMetrics;
 
   getIou(): number;
-  setIou(value: number): void;
+  setIou(value: number): BinaryMetrics;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BinaryMetrics.AsObject;
@@ -2750,22 +3167,22 @@ export namespace BinaryMetrics {
 
 export class TrackerMetrics extends jspb.Message {
   getMotMota(): number;
-  setMotMota(value: number): void;
+  setMotMota(value: number): TrackerMetrics;
 
   getMotNumSwitches(): number;
-  setMotNumSwitches(value: number): void;
+  setMotNumSwitches(value: number): TrackerMetrics;
 
   getMorseFrag(): number;
-  setMorseFrag(value: number): void;
+  setMorseFrag(value: number): TrackerMetrics;
 
   getAvgPrecision(): number;
-  setAvgPrecision(value: number): void;
+  setAvgPrecision(value: number): TrackerMetrics;
 
   getAiid(): string;
-  setAiid(value: string): void;
+  setAiid(value: string): TrackerMetrics;
 
   getUniqueSwitchRate(): number;
-  setUniqueSwitchRate(value: number): void;
+  setUniqueSwitchRate(value: number): TrackerMetrics;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrackerMetrics.AsObject;
@@ -2788,30 +3205,30 @@ export namespace TrackerMetrics {
 
 export class EvalTestSetEntry extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): EvalTestSetEntry;
 
   getUrl(): string;
-  setUrl(value: string): void;
+  setUrl(value: string): EvalTestSetEntry;
 
   getInput(): Input | undefined;
-  setInput(value?: Input): void;
+  setInput(value?: Input): EvalTestSetEntry;
   hasInput(): boolean;
-  clearInput(): void;
+  clearInput(): EvalTestSetEntry;
 
   getPredictedConceptsList(): Array<Concept>;
-  setPredictedConceptsList(value: Array<Concept>): void;
-  clearPredictedConceptsList(): void;
+  setPredictedConceptsList(value: Array<Concept>): EvalTestSetEntry;
+  clearPredictedConceptsList(): EvalTestSetEntry;
   addPredictedConcepts(value?: Concept, index?: number): Concept;
 
   getGroundTruthConceptsList(): Array<Concept>;
-  setGroundTruthConceptsList(value: Array<Concept>): void;
-  clearGroundTruthConceptsList(): void;
+  setGroundTruthConceptsList(value: Array<Concept>): EvalTestSetEntry;
+  clearGroundTruthConceptsList(): EvalTestSetEntry;
   addGroundTruthConcepts(value?: Concept, index?: number): Concept;
 
   getAnnotation(): Annotation | undefined;
-  setAnnotation(value?: Annotation): void;
+  setAnnotation(value?: Annotation): EvalTestSetEntry;
   hasAnnotation(): boolean;
-  clearAnnotation(): void;
+  clearAnnotation(): EvalTestSetEntry;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EvalTestSetEntry.AsObject;
@@ -2834,22 +3251,22 @@ export namespace EvalTestSetEntry {
 
 export class LOPQEvalResult extends jspb.Message {
   getK(): number;
-  setK(value: number): void;
+  setK(value: number): LOPQEvalResult;
 
   getRecallVsBruteForce(): number;
-  setRecallVsBruteForce(value: number): void;
+  setRecallVsBruteForce(value: number): LOPQEvalResult;
 
   getKendallTauVsBruteForce(): number;
-  setKendallTauVsBruteForce(value: number): void;
+  setKendallTauVsBruteForce(value: number): LOPQEvalResult;
 
   getMostFrequentCodePercent(): number;
-  setMostFrequentCodePercent(value: number): void;
+  setMostFrequentCodePercent(value: number): LOPQEvalResult;
 
   getLopqNdcg(): number;
-  setLopqNdcg(value: number): void;
+  setLopqNdcg(value: number): LOPQEvalResult;
 
   getBruteForceNdcg(): number;
-  setBruteForceNdcg(value: number): void;
+  setBruteForceNdcg(value: number): LOPQEvalResult;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LOPQEvalResult.AsObject;
@@ -2872,38 +3289,38 @@ export namespace LOPQEvalResult {
 
 export class MetricsSummary extends jspb.Message {
   getTop1Accuracy(): number;
-  setTop1Accuracy(value: number): void;
+  setTop1Accuracy(value: number): MetricsSummary;
 
   getTop5Accuracy(): number;
-  setTop5Accuracy(value: number): void;
+  setTop5Accuracy(value: number): MetricsSummary;
 
   getMacroAvgRocAuc(): number;
-  setMacroAvgRocAuc(value: number): void;
+  setMacroAvgRocAuc(value: number): MetricsSummary;
 
   getMacroStdRocAuc(): number;
-  setMacroStdRocAuc(value: number): void;
+  setMacroStdRocAuc(value: number): MetricsSummary;
 
   getMacroAvgF1Score(): number;
-  setMacroAvgF1Score(value: number): void;
+  setMacroAvgF1Score(value: number): MetricsSummary;
 
   getMacroStdF1Score(): number;
-  setMacroStdF1Score(value: number): void;
+  setMacroStdF1Score(value: number): MetricsSummary;
 
   getMacroAvgPrecision(): number;
-  setMacroAvgPrecision(value: number): void;
+  setMacroAvgPrecision(value: number): MetricsSummary;
 
   getMacroAvgRecall(): number;
-  setMacroAvgRecall(value: number): void;
+  setMacroAvgRecall(value: number): MetricsSummary;
 
   getMeanAvgPrecisionIou50(): number;
-  setMeanAvgPrecisionIou50(value: number): void;
+  setMeanAvgPrecisionIou50(value: number): MetricsSummary;
 
   getMeanAvgPrecisionIouRange(): number;
-  setMeanAvgPrecisionIouRange(value: number): void;
+  setMeanAvgPrecisionIouRange(value: number): MetricsSummary;
 
   getLopqMetricsList(): Array<LOPQEvalResult>;
-  setLopqMetricsList(value: Array<LOPQEvalResult>): void;
-  clearLopqMetricsList(): void;
+  setLopqMetricsList(value: Array<LOPQEvalResult>): MetricsSummary;
+  clearLopqMetricsList(): MetricsSummary;
   addLopqMetrics(value?: LOPQEvalResult, index?: number): LOPQEvalResult;
 
   serializeBinary(): Uint8Array;
@@ -2932,56 +3349,56 @@ export namespace MetricsSummary {
 
 export class EvalMetrics extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): EvalMetrics;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): EvalMetrics;
 
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): EvalMetrics;
 
   getSummary(): MetricsSummary | undefined;
-  setSummary(value?: MetricsSummary): void;
+  setSummary(value?: MetricsSummary): EvalMetrics;
   hasSummary(): boolean;
-  clearSummary(): void;
+  clearSummary(): EvalMetrics;
 
   getConfusionMatrix(): ConfusionMatrix | undefined;
-  setConfusionMatrix(value?: ConfusionMatrix): void;
+  setConfusionMatrix(value?: ConfusionMatrix): EvalMetrics;
   hasConfusionMatrix(): boolean;
-  clearConfusionMatrix(): void;
+  clearConfusionMatrix(): EvalMetrics;
 
   getCooccurrenceMatrix(): CooccurrenceMatrix | undefined;
-  setCooccurrenceMatrix(value?: CooccurrenceMatrix): void;
+  setCooccurrenceMatrix(value?: CooccurrenceMatrix): EvalMetrics;
   hasCooccurrenceMatrix(): boolean;
-  clearCooccurrenceMatrix(): void;
+  clearCooccurrenceMatrix(): EvalMetrics;
 
   getLabelCounts(): LabelDistribution | undefined;
-  setLabelCounts(value?: LabelDistribution): void;
+  setLabelCounts(value?: LabelDistribution): EvalMetrics;
   hasLabelCounts(): boolean;
-  clearLabelCounts(): void;
+  clearLabelCounts(): EvalMetrics;
 
   getBinaryMetricsList(): Array<BinaryMetrics>;
-  setBinaryMetricsList(value: Array<BinaryMetrics>): void;
-  clearBinaryMetricsList(): void;
+  setBinaryMetricsList(value: Array<BinaryMetrics>): EvalMetrics;
+  clearBinaryMetricsList(): EvalMetrics;
   addBinaryMetrics(value?: BinaryMetrics, index?: number): BinaryMetrics;
 
   getTestSetList(): Array<EvalTestSetEntry>;
-  setTestSetList(value: Array<EvalTestSetEntry>): void;
-  clearTestSetList(): void;
+  setTestSetList(value: Array<EvalTestSetEntry>): EvalMetrics;
+  clearTestSetList(): EvalMetrics;
   addTestSet(value?: EvalTestSetEntry, index?: number): EvalTestSetEntry;
 
   getMetricsByAreaList(): Array<BinaryMetrics>;
-  setMetricsByAreaList(value: Array<BinaryMetrics>): void;
-  clearMetricsByAreaList(): void;
+  setMetricsByAreaList(value: Array<BinaryMetrics>): EvalMetrics;
+  clearMetricsByAreaList(): EvalMetrics;
   addMetricsByArea(value?: BinaryMetrics, index?: number): BinaryMetrics;
 
   getMetricsByClassList(): Array<BinaryMetrics>;
-  setMetricsByClassList(value: Array<BinaryMetrics>): void;
-  clearMetricsByClassList(): void;
+  setMetricsByClassList(value: Array<BinaryMetrics>): EvalMetrics;
+  clearMetricsByClassList(): EvalMetrics;
   addMetricsByClass(value?: BinaryMetrics, index?: number): BinaryMetrics;
 
   getTrackerMetricsList(): Array<TrackerMetrics>;
-  setTrackerMetricsList(value: Array<TrackerMetrics>): void;
-  clearTrackerMetricsList(): void;
+  setTrackerMetricsList(value: Array<TrackerMetrics>): EvalMetrics;
+  clearTrackerMetricsList(): EvalMetrics;
   addTrackerMetrics(value?: TrackerMetrics, index?: number): TrackerMetrics;
 
   serializeBinary(): Uint8Array;
@@ -3010,25 +3427,25 @@ export namespace EvalMetrics {
 
 export class FieldsValue extends jspb.Message {
   getConfusionMatrix(): boolean;
-  setConfusionMatrix(value: boolean): void;
+  setConfusionMatrix(value: boolean): FieldsValue;
 
   getCooccurrenceMatrix(): boolean;
-  setCooccurrenceMatrix(value: boolean): void;
+  setCooccurrenceMatrix(value: boolean): FieldsValue;
 
   getLabelCounts(): boolean;
-  setLabelCounts(value: boolean): void;
+  setLabelCounts(value: boolean): FieldsValue;
 
   getBinaryMetrics(): boolean;
-  setBinaryMetrics(value: boolean): void;
+  setBinaryMetrics(value: boolean): FieldsValue;
 
   getTestSet(): boolean;
-  setTestSet(value: boolean): void;
+  setTestSet(value: boolean): FieldsValue;
 
   getMetricsByArea(): boolean;
-  setMetricsByArea(value: boolean): void;
+  setMetricsByArea(value: boolean): FieldsValue;
 
   getMetricsByClass(): boolean;
-  setMetricsByClass(value: boolean): void;
+  setMetricsByClass(value: boolean): FieldsValue;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FieldsValue.AsObject;
@@ -3052,32 +3469,32 @@ export namespace FieldsValue {
 
 export class Output extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): Output;
 
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): Output;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): Output;
 
   getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Output;
   hasCreatedAt(): boolean;
-  clearCreatedAt(): void;
+  clearCreatedAt(): Output;
 
   getModel(): Model | undefined;
-  setModel(value?: Model): void;
+  setModel(value?: Model): Output;
   hasModel(): boolean;
-  clearModel(): void;
+  clearModel(): Output;
 
   getInput(): Input | undefined;
-  setInput(value?: Input): void;
+  setInput(value?: Input): Output;
   hasInput(): boolean;
-  clearInput(): void;
+  clearInput(): Output;
 
   getData(): Data | undefined;
-  setData(value?: Data): void;
+  setData(value?: Data): Output;
   hasData(): boolean;
-  clearData(): void;
+  clearData(): Output;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Output.AsObject;
@@ -3100,12 +3517,12 @@ export namespace Output {
 
 export class ScopeDeps extends jspb.Message {
   getScope(): string;
-  setScope(value: string): void;
+  setScope(value: string): ScopeDeps;
 
   getDependingScopesList(): Array<string>;
-  setDependingScopesList(value: Array<string>): void;
-  clearDependingScopesList(): void;
-  addDependingScopes(value: string, index?: number): void;
+  setDependingScopesList(value: Array<string>): ScopeDeps;
+  clearDependingScopesList(): ScopeDeps;
+  addDependingScopes(value: string, index?: number): ScopeDeps;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ScopeDeps.AsObject;
@@ -3124,12 +3541,12 @@ export namespace ScopeDeps {
 
 export class EndpointDeps extends jspb.Message {
   getEndpoint(): string;
-  setEndpoint(value: string): void;
+  setEndpoint(value: string): EndpointDeps;
 
   getDependingScopesList(): Array<string>;
-  setDependingScopesList(value: Array<string>): void;
-  clearDependingScopesList(): void;
-  addDependingScopes(value: string, index?: number): void;
+  setDependingScopesList(value: Array<string>): EndpointDeps;
+  clearDependingScopesList(): EndpointDeps;
+  addDependingScopes(value: string, index?: number): EndpointDeps;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EndpointDeps.AsObject;
@@ -3148,17 +3565,23 @@ export namespace EndpointDeps {
 
 export class Hit extends jspb.Message {
   getScore(): number;
-  setScore(value: number): void;
+  setScore(value: number): Hit;
 
   getInput(): Input | undefined;
-  setInput(value?: Input): void;
+  setInput(value?: Input): Hit;
   hasInput(): boolean;
-  clearInput(): void;
+  clearInput(): Hit;
 
   getAnnotation(): Annotation | undefined;
-  setAnnotation(value?: Annotation): void;
+  setAnnotation(value?: Annotation): Hit;
   hasAnnotation(): boolean;
-  clearAnnotation(): void;
+  clearAnnotation(): Hit;
+
+  getUserId(): string;
+  setUserId(value: string): Hit;
+
+  getAppId(): string;
+  setAppId(value: string): Hit;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Hit.AsObject;
@@ -3173,27 +3596,29 @@ export namespace Hit {
     score: number,
     input?: Input.AsObject,
     annotation?: Annotation.AsObject,
+    userId: string,
+    appId: string,
   }
 }
 
 export class And extends jspb.Message {
   getInput(): Input | undefined;
-  setInput(value?: Input): void;
+  setInput(value?: Input): And;
   hasInput(): boolean;
-  clearInput(): void;
+  clearInput(): And;
 
   getOutput(): Output | undefined;
-  setOutput(value?: Output): void;
+  setOutput(value?: Output): And;
   hasOutput(): boolean;
-  clearOutput(): void;
+  clearOutput(): And;
 
   getNegate(): boolean;
-  setNegate(value: boolean): void;
+  setNegate(value: boolean): And;
 
   getAnnotation(): Annotation | undefined;
-  setAnnotation(value?: Annotation): void;
+  setAnnotation(value?: Annotation): And;
   hasAnnotation(): boolean;
-  clearAnnotation(): void;
+  clearAnnotation(): And;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): And.AsObject;
@@ -3214,21 +3639,21 @@ export namespace And {
 
 export class Query extends jspb.Message {
   getAndsList(): Array<And>;
-  setAndsList(value: Array<And>): void;
-  clearAndsList(): void;
+  setAndsList(value: Array<And>): Query;
+  clearAndsList(): Query;
   addAnds(value?: And, index?: number): And;
 
   getLanguage(): string;
-  setLanguage(value: string): void;
+  setLanguage(value: string): Query;
 
   getFiltersList(): Array<Filter>;
-  setFiltersList(value: Array<Filter>): void;
-  clearFiltersList(): void;
+  setFiltersList(value: Array<Filter>): Query;
+  clearFiltersList(): Query;
   addFilters(value?: Filter, index?: number): Filter;
 
   getRanksList(): Array<Rank>;
-  setRanksList(value: Array<Rank>): void;
-  clearRanksList(): void;
+  setRanksList(value: Array<Rank>): Query;
+  clearRanksList(): Query;
   addRanks(value?: Rank, index?: number): Rank;
 
   serializeBinary(): Uint8Array;
@@ -3250,50 +3675,50 @@ export namespace Query {
 
 export class Search extends jspb.Message {
   getQuery(): Query | undefined;
-  setQuery(value?: Query): void;
+  setQuery(value?: Query): Search;
   hasQuery(): boolean;
-  clearQuery(): void;
+  clearQuery(): Search;
 
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): Search;
 
   getApplicationId(): string;
-  setApplicationId(value: string): void;
+  setApplicationId(value: string): Search;
 
   getName(): string;
-  setName(value: string): void;
+  setName(value: string): Search;
 
   getAsOf(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setAsOf(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setAsOf(value?: google_protobuf_timestamp_pb.Timestamp): Search;
   hasAsOf(): boolean;
-  clearAsOf(): void;
+  clearAsOf(): Search;
 
   getGitHash(): string;
-  setGitHash(value: string): void;
+  setGitHash(value: string): Search;
 
   getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Search;
   hasCreatedAt(): boolean;
-  clearCreatedAt(): void;
+  clearCreatedAt(): Search;
 
   getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): Search;
   hasModifiedAt(): boolean;
-  clearModifiedAt(): void;
+  clearModifiedAt(): Search;
 
   getAlgorithm(): string;
-  setAlgorithm(value: string): void;
+  setAlgorithm(value: string): Search;
 
   getSave(): boolean;
-  setSave(value: boolean): void;
+  setSave(value: boolean): Search;
 
   getMinValue(): number;
-  setMinValue(value: number): void;
+  setMinValue(value: number): Search;
 
   getVisibility(): Visibility | undefined;
-  setVisibility(value?: Visibility): void;
+  setVisibility(value?: Visibility): Search;
   hasVisibility(): boolean;
-  clearVisibility(): void;
+  clearVisibility(): Search;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Search.AsObject;
@@ -3322,22 +3747,22 @@ export namespace Search {
 
 export class Filter extends jspb.Message {
   getNegate(): boolean;
-  setNegate(value: boolean): void;
+  setNegate(value: boolean): Filter;
 
   getAnnotation(): Annotation | undefined;
-  setAnnotation(value?: Annotation): void;
+  setAnnotation(value?: Annotation): Filter;
   hasAnnotation(): boolean;
-  clearAnnotation(): void;
+  clearAnnotation(): Filter;
 
   getInput(): Input | undefined;
-  setInput(value?: Input): void;
+  setInput(value?: Input): Filter;
   hasInput(): boolean;
-  clearInput(): void;
+  clearInput(): Filter;
 
   getLastUpdatedTimeRange(): TimeRange | undefined;
-  setLastUpdatedTimeRange(value?: TimeRange): void;
+  setLastUpdatedTimeRange(value?: TimeRange): Filter;
   hasLastUpdatedTimeRange(): boolean;
-  clearLastUpdatedTimeRange(): void;
+  clearLastUpdatedTimeRange(): Filter;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Filter.AsObject;
@@ -3358,14 +3783,14 @@ export namespace Filter {
 
 export class TimeRange extends jspb.Message {
   getStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): TimeRange;
   hasStartTime(): boolean;
-  clearStartTime(): void;
+  clearStartTime(): TimeRange;
 
   getEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): TimeRange;
   hasEndTime(): boolean;
-  clearEndTime(): void;
+  clearEndTime(): TimeRange;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TimeRange.AsObject;
@@ -3384,12 +3809,12 @@ export namespace TimeRange {
 
 export class Rank extends jspb.Message {
   getNegate(): boolean;
-  setNegate(value: boolean): void;
+  setNegate(value: boolean): Rank;
 
   getAnnotation(): Annotation | undefined;
-  setAnnotation(value?: Annotation): void;
+  setAnnotation(value?: Annotation): Rank;
   hasAnnotation(): boolean;
-  clearAnnotation(): void;
+  clearAnnotation(): Rank;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Rank.AsObject;
@@ -3408,32 +3833,32 @@ export namespace Rank {
 
 export class AnnotationSearchMetrics extends jspb.Message {
   getGroundTruth(): Search | undefined;
-  setGroundTruth(value?: Search): void;
+  setGroundTruth(value?: Search): AnnotationSearchMetrics;
   hasGroundTruth(): boolean;
-  clearGroundTruth(): void;
+  clearGroundTruth(): AnnotationSearchMetrics;
 
   getSearchToEval(): Search | undefined;
-  setSearchToEval(value?: Search): void;
+  setSearchToEval(value?: Search): AnnotationSearchMetrics;
   hasSearchToEval(): boolean;
-  clearSearchToEval(): void;
+  clearSearchToEval(): AnnotationSearchMetrics;
 
   getMetrics(): EvalMetrics | undefined;
-  setMetrics(value?: EvalMetrics): void;
+  setMetrics(value?: EvalMetrics): AnnotationSearchMetrics;
   hasMetrics(): boolean;
-  clearMetrics(): void;
+  clearMetrics(): AnnotationSearchMetrics;
 
   getData(): Data | undefined;
-  setData(value?: Data): void;
+  setData(value?: Data): AnnotationSearchMetrics;
   hasData(): boolean;
-  clearData(): void;
+  clearData(): AnnotationSearchMetrics;
 
   getActiveConceptCount(): number;
-  setActiveConceptCount(value: number): void;
+  setActiveConceptCount(value: number): AnnotationSearchMetrics;
 
   getVisibility(): Visibility | undefined;
-  setVisibility(value?: Visibility): void;
+  setVisibility(value?: Visibility): AnnotationSearchMetrics;
   hasVisibility(): boolean;
-  clearVisibility(): void;
+  clearVisibility(): AnnotationSearchMetrics;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AnnotationSearchMetrics.AsObject;
@@ -3456,23 +3881,23 @@ export namespace AnnotationSearchMetrics {
 
 export class Text extends jspb.Message {
   getRaw(): string;
-  setRaw(value: string): void;
+  setRaw(value: string): Text;
 
   getUrl(): string;
-  setUrl(value: string): void;
+  setUrl(value: string): Text;
 
   getAllowDuplicateUrl(): boolean;
-  setAllowDuplicateUrl(value: boolean): void;
+  setAllowDuplicateUrl(value: boolean): Text;
 
   getHosted(): HostedURL | undefined;
-  setHosted(value?: HostedURL): void;
+  setHosted(value?: HostedURL): Text;
   hasHosted(): boolean;
-  clearHosted(): void;
+  clearHosted(): Text;
 
   getTextInfo(): TextInfo | undefined;
-  setTextInfo(value?: TextInfo): void;
+  setTextInfo(value?: TextInfo): Text;
   hasTextInfo(): boolean;
-  clearTextInfo(): void;
+  clearTextInfo(): Text;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Text.AsObject;
@@ -3494,10 +3919,10 @@ export namespace Text {
 
 export class TextInfo extends jspb.Message {
   getCharCount(): number;
-  setCharCount(value: number): void;
+  setCharCount(value: number): TextInfo;
 
   getEncoding(): string;
-  setEncoding(value: string): void;
+  setEncoding(value: string): TextInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TextInfo.AsObject;
@@ -3516,83 +3941,83 @@ export namespace TextInfo {
 
 export class User extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): User;
 
   getPrimaryEmail(): string;
-  setPrimaryEmail(value: string): void;
+  setPrimaryEmail(value: string): User;
 
   getFirstName(): string;
-  setFirstName(value: string): void;
+  setFirstName(value: string): User;
 
   getLastName(): string;
-  setLastName(value: string): void;
+  setLastName(value: string): User;
 
   getCompanyName(): string;
-  setCompanyName(value: string): void;
+  setCompanyName(value: string): User;
 
   getJobTitle(): string;
-  setJobTitle(value: string): void;
+  setJobTitle(value: string): User;
 
   getJobRole(): string;
-  setJobRole(value: string): void;
+  setJobRole(value: string): User;
 
   getBillType(): string;
-  setBillType(value: string): void;
+  setBillType(value: string): User;
 
   getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): User;
   hasCreatedAt(): boolean;
-  clearCreatedAt(): void;
+  clearCreatedAt(): User;
 
   getDateGdprConsent(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setDateGdprConsent(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setDateGdprConsent(value?: google_protobuf_timestamp_pb.Timestamp): User;
   hasDateGdprConsent(): boolean;
-  clearDateGdprConsent(): void;
+  clearDateGdprConsent(): User;
 
   getDateTosConsent(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setDateTosConsent(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setDateTosConsent(value?: google_protobuf_timestamp_pb.Timestamp): User;
   hasDateTosConsent(): boolean;
-  clearDateTosConsent(): void;
+  clearDateTosConsent(): User;
 
   getDateMarketingConsent(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setDateMarketingConsent(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setDateMarketingConsent(value?: google_protobuf_timestamp_pb.Timestamp): User;
   hasDateMarketingConsent(): boolean;
-  clearDateMarketingConsent(): void;
+  clearDateMarketingConsent(): User;
 
   getMetadata(): google_protobuf_struct_pb.Struct | undefined;
-  setMetadata(value?: google_protobuf_struct_pb.Struct): void;
+  setMetadata(value?: google_protobuf_struct_pb.Struct): User;
   hasMetadata(): boolean;
-  clearMetadata(): void;
+  clearMetadata(): User;
 
   getEmailAddressesList(): Array<EmailAddress>;
-  setEmailAddressesList(value: Array<EmailAddress>): void;
-  clearEmailAddressesList(): void;
+  setEmailAddressesList(value: Array<EmailAddress>): User;
+  clearEmailAddressesList(): User;
   addEmailAddresses(value?: EmailAddress, index?: number): EmailAddress;
 
   getIsOrgAdmin(): boolean;
-  setIsOrgAdmin(value: boolean): void;
+  setIsOrgAdmin(value: boolean): User;
 
   getTwoFactorAuthEnabled(): boolean;
-  setTwoFactorAuthEnabled(value: boolean): void;
+  setTwoFactorAuthEnabled(value: boolean): User;
 
   getTeamsCount(): number;
-  setTeamsCount(value: number): void;
+  setTeamsCount(value: number): User;
 
   getIsStarred(): boolean;
-  setIsStarred(value: boolean): void;
+  setIsStarred(value: boolean): User;
 
   getStarCount(): number;
-  setStarCount(value: number): void;
+  setStarCount(value: number): User;
 
   getVisibility(): Visibility | undefined;
-  setVisibility(value?: Visibility): void;
+  setVisibility(value?: Visibility): User;
   hasVisibility(): boolean;
-  clearVisibility(): void;
+  clearVisibility(): User;
 
   getUserDetail(): UserDetail | undefined;
-  setUserDetail(value?: UserDetail): void;
+  setUserDetail(value?: UserDetail): User;
   hasUserDetail(): boolean;
-  clearUserDetail(): void;
+  clearUserDetail(): User;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): User.AsObject;
@@ -3630,50 +4055,50 @@ export namespace User {
 
 export class UserDetail extends jspb.Message {
   getPrimaryEmail(): string;
-  setPrimaryEmail(value: string): void;
+  setPrimaryEmail(value: string): UserDetail;
 
   getBillType(): string;
-  setBillType(value: string): void;
+  setBillType(value: string): UserDetail;
 
   getDateGdprConsent(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setDateGdprConsent(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setDateGdprConsent(value?: google_protobuf_timestamp_pb.Timestamp): UserDetail;
   hasDateGdprConsent(): boolean;
-  clearDateGdprConsent(): void;
+  clearDateGdprConsent(): UserDetail;
 
   getDateTosConsent(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setDateTosConsent(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setDateTosConsent(value?: google_protobuf_timestamp_pb.Timestamp): UserDetail;
   hasDateTosConsent(): boolean;
-  clearDateTosConsent(): void;
+  clearDateTosConsent(): UserDetail;
 
   getDateMarketingConsent(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setDateMarketingConsent(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setDateMarketingConsent(value?: google_protobuf_timestamp_pb.Timestamp): UserDetail;
   hasDateMarketingConsent(): boolean;
-  clearDateMarketingConsent(): void;
+  clearDateMarketingConsent(): UserDetail;
 
   getMetadata(): google_protobuf_struct_pb.Struct | undefined;
-  setMetadata(value?: google_protobuf_struct_pb.Struct): void;
+  setMetadata(value?: google_protobuf_struct_pb.Struct): UserDetail;
   hasMetadata(): boolean;
-  clearMetadata(): void;
+  clearMetadata(): UserDetail;
 
   getEmailAddressesList(): Array<EmailAddress>;
-  setEmailAddressesList(value: Array<EmailAddress>): void;
-  clearEmailAddressesList(): void;
+  setEmailAddressesList(value: Array<EmailAddress>): UserDetail;
+  clearEmailAddressesList(): UserDetail;
   addEmailAddresses(value?: EmailAddress, index?: number): EmailAddress;
 
   getIsOrgAdmin(): boolean;
-  setIsOrgAdmin(value: boolean): void;
+  setIsOrgAdmin(value: boolean): UserDetail;
 
   getTwoFactorAuthEnabled(): boolean;
-  setTwoFactorAuthEnabled(value: boolean): void;
+  setTwoFactorAuthEnabled(value: boolean): UserDetail;
 
   getTeamsCount(): number;
-  setTeamsCount(value: number): void;
+  setTeamsCount(value: number): UserDetail;
 
   getCountry(): string;
-  setCountry(value: string): void;
+  setCountry(value: string): UserDetail;
 
   getState(): string;
-  setState(value: string): void;
+  setState(value: string): UserDetail;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UserDetail.AsObject;
@@ -3702,13 +4127,13 @@ export namespace UserDetail {
 
 export class EmailAddress extends jspb.Message {
   getEmail(): string;
-  setEmail(value: string): void;
+  setEmail(value: string): EmailAddress;
 
   getPrimary(): boolean;
-  setPrimary(value: boolean): void;
+  setPrimary(value: boolean): EmailAddress;
 
   getVerified(): boolean;
-  setVerified(value: boolean): void;
+  setVerified(value: boolean): EmailAddress;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EmailAddress.AsObject;
@@ -3728,7 +4153,7 @@ export namespace EmailAddress {
 
 export class Password extends jspb.Message {
   getPlaintext(): string;
-  setPlaintext(value: string): void;
+  setPlaintext(value: string): Password;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Password.AsObject;
@@ -3746,46 +4171,46 @@ export namespace Password {
 
 export class PasswordViolations extends jspb.Message {
   getMinimumLength(): boolean;
-  setMinimumLength(value: boolean): void;
+  setMinimumLength(value: boolean): PasswordViolations;
 
   getMaximumLength(): boolean;
-  setMaximumLength(value: boolean): void;
+  setMaximumLength(value: boolean): PasswordViolations;
 
   getUpperCaseNeeded(): boolean;
-  setUpperCaseNeeded(value: boolean): void;
+  setUpperCaseNeeded(value: boolean): PasswordViolations;
 
   getLowerCaseNeeded(): boolean;
-  setLowerCaseNeeded(value: boolean): void;
+  setLowerCaseNeeded(value: boolean): PasswordViolations;
 
   getNumericNeeded(): boolean;
-  setNumericNeeded(value: boolean): void;
+  setNumericNeeded(value: boolean): PasswordViolations;
 
   getNonAlphanumericNeeded(): boolean;
-  setNonAlphanumericNeeded(value: boolean): void;
+  setNonAlphanumericNeeded(value: boolean): PasswordViolations;
 
   getPasswordReuse(): boolean;
-  setPasswordReuse(value: boolean): void;
+  setPasswordReuse(value: boolean): PasswordViolations;
 
   getExcludeNames(): boolean;
-  setExcludeNames(value: boolean): void;
+  setExcludeNames(value: boolean): PasswordViolations;
 
   getExcludeEmail(): boolean;
-  setExcludeEmail(value: boolean): void;
+  setExcludeEmail(value: boolean): PasswordViolations;
 
   getNoConfusingLetters(): boolean;
-  setNoConfusingLetters(value: boolean): void;
+  setNoConfusingLetters(value: boolean): PasswordViolations;
 
   getNoSimplePasswords(): boolean;
-  setNoSimplePasswords(value: boolean): void;
+  setNoSimplePasswords(value: boolean): PasswordViolations;
 
   getNoCommonVocabs(): boolean;
-  setNoCommonVocabs(value: boolean): void;
+  setNoCommonVocabs(value: boolean): PasswordViolations;
 
   getNoOverlapWithOld(): boolean;
-  setNoOverlapWithOld(value: boolean): void;
+  setNoOverlapWithOld(value: boolean): PasswordViolations;
 
   getPasswordLifespan(): boolean;
-  setPasswordLifespan(value: boolean): void;
+  setPasswordLifespan(value: boolean): PasswordViolations;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PasswordViolations.AsObject;
@@ -3816,28 +4241,28 @@ export namespace PasswordViolations {
 
 export class Video extends jspb.Message {
   getUrl(): string;
-  setUrl(value: string): void;
+  setUrl(value: string): Video;
 
   getBase64(): Uint8Array | string;
   getBase64_asU8(): Uint8Array;
   getBase64_asB64(): string;
-  setBase64(value: Uint8Array | string): void;
+  setBase64(value: Uint8Array | string): Video;
 
   getAllowDuplicateUrl(): boolean;
-  setAllowDuplicateUrl(value: boolean): void;
+  setAllowDuplicateUrl(value: boolean): Video;
 
   getThumbnailUrl(): string;
-  setThumbnailUrl(value: string): void;
+  setThumbnailUrl(value: string): Video;
 
   getHosted(): HostedURL | undefined;
-  setHosted(value?: HostedURL): void;
+  setHosted(value?: HostedURL): Video;
   hasHosted(): boolean;
-  clearHosted(): void;
+  clearHosted(): Video;
 
   getVideoInfo(): VideoInfo | undefined;
-  setVideoInfo(value?: VideoInfo): void;
+  setVideoInfo(value?: VideoInfo): Video;
   hasVideoInfo(): boolean;
-  clearVideoInfo(): void;
+  clearVideoInfo(): Video;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Video.AsObject;
@@ -3860,25 +4285,25 @@ export namespace Video {
 
 export class VideoInfo extends jspb.Message {
   getWidth(): number;
-  setWidth(value: number): void;
+  setWidth(value: number): VideoInfo;
 
   getHeight(): number;
-  setHeight(value: number): void;
+  setHeight(value: number): VideoInfo;
 
   getFps(): number;
-  setFps(value: number): void;
+  setFps(value: number): VideoInfo;
 
   getVideoFormat(): string;
-  setVideoFormat(value: string): void;
+  setVideoFormat(value: string): VideoInfo;
 
   getBitRate(): number;
-  setBitRate(value: number): void;
+  setBitRate(value: number): VideoInfo;
 
   getFrameCount(): number;
-  setFrameCount(value: number): void;
+  setFrameCount(value: number): VideoInfo;
 
   getDurationSeconds(): number;
-  setDurationSeconds(value: number): void;
+  setDurationSeconds(value: number): VideoInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VideoInfo.AsObject;
@@ -3902,60 +4327,60 @@ export namespace VideoInfo {
 
 export class Workflow extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): Workflow;
 
   getAppId(): string;
-  setAppId(value: string): void;
+  setAppId(value: string): Workflow;
 
   getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Workflow;
   hasCreatedAt(): boolean;
-  clearCreatedAt(): void;
+  clearCreatedAt(): Workflow;
 
   getNodesList(): Array<WorkflowNode>;
-  setNodesList(value: Array<WorkflowNode>): void;
-  clearNodesList(): void;
+  setNodesList(value: Array<WorkflowNode>): Workflow;
+  clearNodesList(): Workflow;
   addNodes(value?: WorkflowNode, index?: number): WorkflowNode;
 
   getMetadata(): google_protobuf_struct_pb.Struct | undefined;
-  setMetadata(value?: google_protobuf_struct_pb.Struct): void;
+  setMetadata(value?: google_protobuf_struct_pb.Struct): Workflow;
   hasMetadata(): boolean;
-  clearMetadata(): void;
+  clearMetadata(): Workflow;
 
   getVisibility(): Visibility | undefined;
-  setVisibility(value?: Visibility): void;
+  setVisibility(value?: Visibility): Workflow;
   hasVisibility(): boolean;
-  clearVisibility(): void;
+  clearVisibility(): Workflow;
 
   getUserId(): string;
-  setUserId(value: string): void;
+  setUserId(value: string): Workflow;
 
   getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): Workflow;
   hasModifiedAt(): boolean;
-  clearModifiedAt(): void;
+  clearModifiedAt(): Workflow;
 
   getVersion(): WorkflowVersion | undefined;
-  setVersion(value?: WorkflowVersion): void;
+  setVersion(value?: WorkflowVersion): Workflow;
   hasVersion(): boolean;
-  clearVersion(): void;
+  clearVersion(): Workflow;
 
   getIsStarred(): boolean;
-  setIsStarred(value: boolean): void;
+  setIsStarred(value: boolean): Workflow;
 
   getStarCount(): number;
-  setStarCount(value: number): void;
+  setStarCount(value: number): Workflow;
 
   getDescription(): string;
-  setDescription(value: string): void;
+  setDescription(value: string): Workflow;
 
   getNotes(): string;
-  setNotes(value: string): void;
+  setNotes(value: string): Workflow;
 
   getUseCasesList(): Array<string>;
-  setUseCasesList(value: Array<string>): void;
-  clearUseCasesList(): void;
-  addUseCases(value: string, index?: number): void;
+  setUseCasesList(value: Array<string>): Workflow;
+  clearUseCasesList(): Workflow;
+  addUseCases(value: string, index?: number): Workflow;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Workflow.AsObject;
@@ -3986,47 +4411,47 @@ export namespace Workflow {
 
 export class WorkflowVersion extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): WorkflowVersion;
 
   getWorkflowId(): string;
-  setWorkflowId(value: string): void;
+  setWorkflowId(value: string): WorkflowVersion;
 
   getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): WorkflowVersion;
   hasCreatedAt(): boolean;
-  clearCreatedAt(): void;
+  clearCreatedAt(): WorkflowVersion;
 
   getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): WorkflowVersion;
   hasModifiedAt(): boolean;
-  clearModifiedAt(): void;
+  clearModifiedAt(): WorkflowVersion;
 
   getVisibility(): Visibility | undefined;
-  setVisibility(value?: Visibility): void;
+  setVisibility(value?: Visibility): WorkflowVersion;
   hasVisibility(): boolean;
-  clearVisibility(): void;
+  clearVisibility(): WorkflowVersion;
 
   getNodesList(): Array<WorkflowNode>;
-  setNodesList(value: Array<WorkflowNode>): void;
-  clearNodesList(): void;
+  setNodesList(value: Array<WorkflowNode>): WorkflowVersion;
+  clearNodesList(): WorkflowVersion;
   addNodes(value?: WorkflowNode, index?: number): WorkflowNode;
 
   getMetadata(): google_protobuf_struct_pb.Struct | undefined;
-  setMetadata(value?: google_protobuf_struct_pb.Struct): void;
+  setMetadata(value?: google_protobuf_struct_pb.Struct): WorkflowVersion;
   hasMetadata(): boolean;
-  clearMetadata(): void;
+  clearMetadata(): WorkflowVersion;
 
   getAppId(): string;
-  setAppId(value: string): void;
+  setAppId(value: string): WorkflowVersion;
 
   getUserId(): string;
-  setUserId(value: string): void;
+  setUserId(value: string): WorkflowVersion;
 
   getDescription(): string;
-  setDescription(value: string): void;
+  setDescription(value: string): WorkflowVersion;
 
   getLicense(): string;
-  setLicense(value: string): void;
+  setLicense(value: string): WorkflowVersion;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WorkflowVersion.AsObject;
@@ -4054,20 +4479,20 @@ export namespace WorkflowVersion {
 
 export class WorkflowNode extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): WorkflowNode;
 
   getModel(): Model | undefined;
-  setModel(value?: Model): void;
+  setModel(value?: Model): WorkflowNode;
   hasModel(): boolean;
-  clearModel(): void;
+  clearModel(): WorkflowNode;
 
   getNodeInputsList(): Array<NodeInput>;
-  setNodeInputsList(value: Array<NodeInput>): void;
-  clearNodeInputsList(): void;
+  setNodeInputsList(value: Array<NodeInput>): WorkflowNode;
+  clearNodeInputsList(): WorkflowNode;
   addNodeInputs(value?: NodeInput, index?: number): NodeInput;
 
   getSuppressOutput(): boolean;
-  setSuppressOutput(value: boolean): void;
+  setSuppressOutput(value: boolean): WorkflowNode;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WorkflowNode.AsObject;
@@ -4088,7 +4513,7 @@ export namespace WorkflowNode {
 
 export class NodeInput extends jspb.Message {
   getNodeId(): string;
-  setNodeId(value: string): void;
+  setNodeId(value: string): NodeInput;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NodeInput.AsObject;
@@ -4106,35 +4531,35 @@ export namespace NodeInput {
 
 export class WorkflowResult extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): WorkflowResult;
 
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): WorkflowResult;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): WorkflowResult;
 
   getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): WorkflowResult;
   hasCreatedAt(): boolean;
-  clearCreatedAt(): void;
+  clearCreatedAt(): WorkflowResult;
 
   getModel(): Model | undefined;
-  setModel(value?: Model): void;
+  setModel(value?: Model): WorkflowResult;
   hasModel(): boolean;
-  clearModel(): void;
+  clearModel(): WorkflowResult;
 
   getInput(): Input | undefined;
-  setInput(value?: Input): void;
+  setInput(value?: Input): WorkflowResult;
   hasInput(): boolean;
-  clearInput(): void;
+  clearInput(): WorkflowResult;
 
   getOutputsList(): Array<Output>;
-  setOutputsList(value: Array<Output>): void;
-  clearOutputsList(): void;
+  setOutputsList(value: Array<Output>): WorkflowResult;
+  clearOutputsList(): WorkflowResult;
   addOutputs(value?: Output, index?: number): Output;
 
   getSuppressOutput(): boolean;
-  setSuppressOutput(value: boolean): void;
+  setSuppressOutput(value: boolean): WorkflowResult;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WorkflowResult.AsObject;
@@ -4158,7 +4583,7 @@ export namespace WorkflowResult {
 
 export class WorkflowState extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): WorkflowState;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WorkflowState.AsObject;
@@ -4176,33 +4601,36 @@ export namespace WorkflowState {
 
 export class AppDuplication extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): AppDuplication;
 
   getNewAppId(): string;
-  setNewAppId(value: string): void;
+  setNewAppId(value: string): AppDuplication;
 
   getNewAppName(): string;
-  setNewAppName(value: string): void;
+  setNewAppName(value: string): AppDuplication;
 
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): AppDuplication;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): AppDuplication;
 
   getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): AppDuplication;
   hasCreatedAt(): boolean;
-  clearCreatedAt(): void;
+  clearCreatedAt(): AppDuplication;
 
   getLastModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setLastModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setLastModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): AppDuplication;
   hasLastModifiedAt(): boolean;
-  clearLastModifiedAt(): void;
+  clearLastModifiedAt(): AppDuplication;
 
   getFilter(): AppDuplicationFilters | undefined;
-  setFilter(value?: AppDuplicationFilters): void;
+  setFilter(value?: AppDuplicationFilters): AppDuplication;
   hasFilter(): boolean;
-  clearFilter(): void;
+  clearFilter(): AppDuplication;
+
+  getExistingAppId(): string;
+  setExistingAppId(value: string): AppDuplication;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AppDuplication.AsObject;
@@ -4221,24 +4649,25 @@ export namespace AppDuplication {
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     lastModifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     filter?: AppDuplicationFilters.AsObject,
+    existingAppId: string,
   }
 }
 
 export class AppDuplicationFilters extends jspb.Message {
   getCopyInputs(): boolean;
-  setCopyInputs(value: boolean): void;
+  setCopyInputs(value: boolean): AppDuplicationFilters;
 
   getCopyConcepts(): boolean;
-  setCopyConcepts(value: boolean): void;
+  setCopyConcepts(value: boolean): AppDuplicationFilters;
 
   getCopyAnnotations(): boolean;
-  setCopyAnnotations(value: boolean): void;
+  setCopyAnnotations(value: boolean): AppDuplicationFilters;
 
   getCopyModels(): boolean;
-  setCopyModels(value: boolean): void;
+  setCopyModels(value: boolean): AppDuplicationFilters;
 
   getCopyWorkflows(): boolean;
-  setCopyWorkflows(value: boolean): void;
+  setCopyWorkflows(value: boolean): AppDuplicationFilters;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AppDuplicationFilters.AsObject;
@@ -4258,77 +4687,143 @@ export namespace AppDuplicationFilters {
   }
 }
 
-export class Task extends jspb.Message {
+export class LabelOrder extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
-
-  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
-  hasCreatedAt(): boolean;
-  clearCreatedAt(): void;
-
-  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
-  hasModifiedAt(): boolean;
-  clearModifiedAt(): void;
-
-  getType(): Task.TaskType;
-  setType(value: Task.TaskType): void;
-
-  getDescription(): string;
-  setDescription(value: string): void;
-
-  getWorker(): TaskWorker | undefined;
-  setWorker(value?: TaskWorker): void;
-  hasWorker(): boolean;
-  clearWorker(): void;
-
-  getConceptIdsList(): Array<string>;
-  setConceptIdsList(value: Array<string>): void;
-  clearConceptIdsList(): void;
-  addConceptIds(value: string, index?: number): void;
-
-  getInputSource(): TaskInputSource | undefined;
-  setInputSource(value?: TaskInputSource): void;
-  hasInputSource(): boolean;
-  clearInputSource(): void;
-
-  getSampleMs(): number;
-  setSampleMs(value: number): void;
-
-  getAiAssistant(): TaskAIAssistant | undefined;
-  setAiAssistant(value?: TaskAIAssistant): void;
-  hasAiAssistant(): boolean;
-  clearAiAssistant(): void;
-
-  getReview(): TaskReview | undefined;
-  setReview(value?: TaskReview): void;
-  hasReview(): boolean;
-  clearReview(): void;
-
-  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
-  hasStatus(): boolean;
-  clearStatus(): void;
+  setId(value: string): LabelOrder;
 
   getName(): string;
-  setName(value: string): void;
+  setName(value: string): LabelOrder;
+
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): LabelOrder;
+  hasStatus(): boolean;
+  clearStatus(): LabelOrder;
+
+  getAutoRelease(): boolean;
+  setAutoRelease(value: boolean): LabelOrder;
+
+  getAllowEmptyTag(): boolean;
+  setAllowEmptyTag(value: boolean): LabelOrder;
+
+  getDesiredFulfillTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDesiredFulfillTime(value?: google_protobuf_timestamp_pb.Timestamp): LabelOrder;
+  hasDesiredFulfillTime(): boolean;
+  clearDesiredFulfillTime(): LabelOrder;
+
+  getEstimateFulfillTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEstimateFulfillTime(value?: google_protobuf_timestamp_pb.Timestamp): LabelOrder;
+  hasEstimateFulfillTime(): boolean;
+  clearEstimateFulfillTime(): LabelOrder;
+
+  getTask(): Task | undefined;
+  setTask(value?: Task): LabelOrder;
+  hasTask(): boolean;
+  clearTask(): LabelOrder;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): LabelOrder;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): LabelOrder;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): LabelOrder;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): LabelOrder;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LabelOrder.AsObject;
+  static toObject(includeInstance: boolean, msg: LabelOrder): LabelOrder.AsObject;
+  static serializeBinaryToWriter(message: LabelOrder, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LabelOrder;
+  static deserializeBinaryFromReader(message: LabelOrder, reader: jspb.BinaryReader): LabelOrder;
+}
+
+export namespace LabelOrder {
+  export type AsObject = {
+    id: string,
+    name: string,
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    autoRelease: boolean,
+    allowEmptyTag: boolean,
+    desiredFulfillTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    estimateFulfillTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    task?: Task.AsObject,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class Task extends jspb.Message {
+  getId(): string;
+  setId(value: string): Task;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Task;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): Task;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): Task;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): Task;
+
+  getType(): Task.TaskType;
+  setType(value: Task.TaskType): Task;
+
+  getDescription(): string;
+  setDescription(value: string): Task;
+
+  getWorker(): TaskWorker | undefined;
+  setWorker(value?: TaskWorker): Task;
+  hasWorker(): boolean;
+  clearWorker(): Task;
+
+  getConceptIdsList(): Array<string>;
+  setConceptIdsList(value: Array<string>): Task;
+  clearConceptIdsList(): Task;
+  addConceptIds(value: string, index?: number): Task;
+
+  getInputSource(): TaskInputSource | undefined;
+  setInputSource(value?: TaskInputSource): Task;
+  hasInputSource(): boolean;
+  clearInputSource(): Task;
+
+  getSampleMs(): number;
+  setSampleMs(value: number): Task;
+
+  getAiAssistant(): TaskAIAssistant | undefined;
+  setAiAssistant(value?: TaskAIAssistant): Task;
+  hasAiAssistant(): boolean;
+  clearAiAssistant(): Task;
+
+  getReview(): TaskReview | undefined;
+  setReview(value?: TaskReview): Task;
+  hasReview(): boolean;
+  clearReview(): Task;
+
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): Task;
+  hasStatus(): boolean;
+  clearStatus(): Task;
+
+  getName(): string;
+  setName(value: string): Task;
 
   getAiAssistParams(): AiAssistParameters | undefined;
-  setAiAssistParams(value?: AiAssistParameters): void;
+  setAiAssistParams(value?: AiAssistParameters): Task;
   hasAiAssistParams(): boolean;
-  clearAiAssistParams(): void;
+  clearAiAssistParams(): Task;
 
   getVisibility(): Visibility | undefined;
-  setVisibility(value?: Visibility): void;
+  setVisibility(value?: Visibility): Task;
   hasVisibility(): boolean;
-  clearVisibility(): void;
+  clearVisibility(): Task;
 
   getAppId(): string;
-  setAppId(value: string): void;
+  setAppId(value: string): Task;
 
   getUserId(): string;
-  setUserId(value: string): void;
+  setUserId(value: string): Task;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Task.AsObject;
@@ -4369,15 +4864,15 @@ export namespace Task {
 
 export class AiAssistParameters extends jspb.Message {
   getMinThreshold(): number;
-  setMinThreshold(value: number): void;
+  setMinThreshold(value: number): AiAssistParameters;
 
   getMaxThreshold(): number;
-  setMaxThreshold(value: number): void;
+  setMaxThreshold(value: number): AiAssistParameters;
 
   getConceptRelationIdsList(): Array<string>;
-  setConceptRelationIdsList(value: Array<string>): void;
-  clearConceptRelationIdsList(): void;
-  addConceptRelationIds(value: string, index?: number): void;
+  setConceptRelationIdsList(value: Array<string>): AiAssistParameters;
+  clearConceptRelationIdsList(): AiAssistParameters;
+  addConceptRelationIds(value: string, index?: number): AiAssistParameters;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AiAssistParameters.AsObject;
@@ -4397,17 +4892,17 @@ export namespace AiAssistParameters {
 
 export class TaskWorker extends jspb.Message {
   getStrategy(): TaskWorker.TaskWorkerStrategy;
-  setStrategy(value: TaskWorker.TaskWorkerStrategy): void;
+  setStrategy(value: TaskWorker.TaskWorkerStrategy): TaskWorker;
 
   getUserIdsList(): Array<string>;
-  setUserIdsList(value: Array<string>): void;
-  clearUserIdsList(): void;
-  addUserIds(value: string, index?: number): void;
+  setUserIdsList(value: Array<string>): TaskWorker;
+  clearUserIdsList(): TaskWorker;
+  addUserIds(value: string, index?: number): TaskWorker;
 
   getPartitionedStrategyInfo(): TaskWorkerPartitionedStrategyInfo | undefined;
-  setPartitionedStrategyInfo(value?: TaskWorkerPartitionedStrategyInfo): void;
+  setPartitionedStrategyInfo(value?: TaskWorkerPartitionedStrategyInfo): TaskWorker;
   hasPartitionedStrategyInfo(): boolean;
-  clearPartitionedStrategyInfo(): void;
+  clearPartitionedStrategyInfo(): TaskWorker;
 
   getStrategyInfoCase(): TaskWorker.StrategyInfoCase;
 
@@ -4440,15 +4935,15 @@ export namespace TaskWorker {
 
 export class TaskWorkerPartitionedStrategyInfo extends jspb.Message {
   getType(): TaskWorkerPartitionedStrategyInfo.TaskWorkerPartitionedStrategy;
-  setType(value: TaskWorkerPartitionedStrategyInfo.TaskWorkerPartitionedStrategy): void;
+  setType(value: TaskWorkerPartitionedStrategyInfo.TaskWorkerPartitionedStrategy): TaskWorkerPartitionedStrategyInfo;
 
   getWorkersPerInput(): number;
-  setWorkersPerInput(value: number): void;
+  setWorkersPerInput(value: number): TaskWorkerPartitionedStrategyInfo;
 
   getWeights(): google_protobuf_struct_pb.Struct | undefined;
-  setWeights(value?: google_protobuf_struct_pb.Struct): void;
+  setWeights(value?: google_protobuf_struct_pb.Struct): TaskWorkerPartitionedStrategyInfo;
   hasWeights(): boolean;
-  clearWeights(): void;
+  clearWeights(): TaskWorkerPartitionedStrategyInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TaskWorkerPartitionedStrategyInfo.AsObject;
@@ -4474,10 +4969,10 @@ export namespace TaskWorkerPartitionedStrategyInfo {
 
 export class TaskInputSource extends jspb.Message {
   getType(): TaskInputSource.TaskInputSourceType;
-  setType(value: TaskInputSource.TaskInputSourceType): void;
+  setType(value: TaskInputSource.TaskInputSourceType): TaskInputSource;
 
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): TaskInputSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TaskInputSource.AsObject;
@@ -4497,27 +4992,28 @@ export namespace TaskInputSource {
     INPUT_SOURCE_TYPE_NOT_SET = 0,
     ALL_INPUTS = 1,
     SAVED_SEARCH = 2,
+    DATASET = 3,
   }
 }
 
 export class TaskReview extends jspb.Message {
   getStrategy(): TaskReview.TaskReviewStrategy;
-  setStrategy(value: TaskReview.TaskReviewStrategy): void;
+  setStrategy(value: TaskReview.TaskReviewStrategy): TaskReview;
 
   getUserIdsList(): Array<string>;
-  setUserIdsList(value: Array<string>): void;
-  clearUserIdsList(): void;
-  addUserIds(value: string, index?: number): void;
+  setUserIdsList(value: Array<string>): TaskReview;
+  clearUserIdsList(): TaskReview;
+  addUserIds(value: string, index?: number): TaskReview;
 
   getManualStrategyInfo(): TaskReviewManualStrategyInfo | undefined;
-  setManualStrategyInfo(value?: TaskReviewManualStrategyInfo): void;
+  setManualStrategyInfo(value?: TaskReviewManualStrategyInfo): TaskReview;
   hasManualStrategyInfo(): boolean;
-  clearManualStrategyInfo(): void;
+  clearManualStrategyInfo(): TaskReview;
 
   getConsensusStrategyInfo(): TaskReviewConsensusStrategyInfo | undefined;
-  setConsensusStrategyInfo(value?: TaskReviewConsensusStrategyInfo): void;
+  setConsensusStrategyInfo(value?: TaskReviewConsensusStrategyInfo): TaskReview;
   hasConsensusStrategyInfo(): boolean;
-  clearConsensusStrategyInfo(): void;
+  clearConsensusStrategyInfo(): TaskReview;
 
   getStrategyInfoCase(): TaskReview.StrategyInfoCase;
 
@@ -4553,7 +5049,7 @@ export namespace TaskReview {
 
 export class TaskReviewManualStrategyInfo extends jspb.Message {
   getSamplePercentage(): number;
-  setSamplePercentage(value: number): void;
+  setSamplePercentage(value: number): TaskReviewManualStrategyInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TaskReviewManualStrategyInfo.AsObject;
@@ -4571,7 +5067,7 @@ export namespace TaskReviewManualStrategyInfo {
 
 export class TaskReviewConsensusStrategyInfo extends jspb.Message {
   getApprovalThreshold(): number;
-  setApprovalThreshold(value: number): void;
+  setApprovalThreshold(value: number): TaskReviewConsensusStrategyInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TaskReviewConsensusStrategyInfo.AsObject;
@@ -4589,7 +5085,7 @@ export namespace TaskReviewConsensusStrategyInfo {
 
 export class TaskAIAssistant extends jspb.Message {
   getWorkflowId(): string;
-  setWorkflowId(value: string): void;
+  setWorkflowId(value: string): TaskAIAssistant;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TaskAIAssistant.AsObject;
@@ -4607,22 +5103,22 @@ export namespace TaskAIAssistant {
 
 export class TaskStatusCountPerUser extends jspb.Message {
   getUserId(): string;
-  setUserId(value: string): void;
+  setUserId(value: string): TaskStatusCountPerUser;
 
   getPending(): number;
-  setPending(value: number): void;
+  setPending(value: number): TaskStatusCountPerUser;
 
   getAwaitingReview(): number;
-  setAwaitingReview(value: number): void;
+  setAwaitingReview(value: number): TaskStatusCountPerUser;
 
   getSuccess(): number;
-  setSuccess(value: number): void;
+  setSuccess(value: number): TaskStatusCountPerUser;
 
   getReviewDenied(): number;
-  setReviewDenied(value: number): void;
+  setReviewDenied(value: number): TaskStatusCountPerUser;
 
   getAwaitingConsensusReview(): number;
-  setAwaitingConsensusReview(value: number): void;
+  setAwaitingConsensusReview(value: number): TaskStatusCountPerUser;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TaskStatusCountPerUser.AsObject;
@@ -4645,31 +5141,31 @@ export namespace TaskStatusCountPerUser {
 
 export class Collector extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): Collector;
 
   getDescription(): string;
-  setDescription(value: string): void;
+  setDescription(value: string): Collector;
 
   getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Collector;
   hasCreatedAt(): boolean;
-  clearCreatedAt(): void;
+  clearCreatedAt(): Collector;
 
   getPreQueueWorkflowId(): string;
-  setPreQueueWorkflowId(value: string): void;
+  setPreQueueWorkflowId(value: string): Collector;
 
   getPostQueueWorkflowId(): string;
-  setPostQueueWorkflowId(value: string): void;
+  setPostQueueWorkflowId(value: string): Collector;
 
   getCollectorSource(): CollectorSource | undefined;
-  setCollectorSource(value?: CollectorSource): void;
+  setCollectorSource(value?: CollectorSource): Collector;
   hasCollectorSource(): boolean;
-  clearCollectorSource(): void;
+  clearCollectorSource(): Collector;
 
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): void;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): Collector;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): Collector;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Collector.AsObject;
@@ -4693,9 +5189,9 @@ export namespace Collector {
 
 export class CollectorSource extends jspb.Message {
   getApiPostModelOutputsCollectorSource(): APIPostModelOutputsCollectorSource | undefined;
-  setApiPostModelOutputsCollectorSource(value?: APIPostModelOutputsCollectorSource): void;
+  setApiPostModelOutputsCollectorSource(value?: APIPostModelOutputsCollectorSource): CollectorSource;
   hasApiPostModelOutputsCollectorSource(): boolean;
-  clearApiPostModelOutputsCollectorSource(): void;
+  clearApiPostModelOutputsCollectorSource(): CollectorSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CollectorSource.AsObject;
@@ -4713,19 +5209,19 @@ export namespace CollectorSource {
 
 export class APIPostModelOutputsCollectorSource extends jspb.Message {
   getModelUserId(): string;
-  setModelUserId(value: string): void;
+  setModelUserId(value: string): APIPostModelOutputsCollectorSource;
 
   getModelAppId(): string;
-  setModelAppId(value: string): void;
+  setModelAppId(value: string): APIPostModelOutputsCollectorSource;
 
   getModelId(): string;
-  setModelId(value: string): void;
+  setModelId(value: string): APIPostModelOutputsCollectorSource;
 
   getModelVersionId(): string;
-  setModelVersionId(value: string): void;
+  setModelVersionId(value: string): APIPostModelOutputsCollectorSource;
 
   getPostInputsKeyId(): string;
-  setPostInputsKeyId(value: string): void;
+  setPostInputsKeyId(value: string): APIPostModelOutputsCollectorSource;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): APIPostModelOutputsCollectorSource.AsObject;
@@ -4747,17 +5243,17 @@ export namespace APIPostModelOutputsCollectorSource {
 
 export class StatValue extends jspb.Message {
   getTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setTime(value?: google_protobuf_timestamp_pb.Timestamp): StatValue;
   hasTime(): boolean;
-  clearTime(): void;
+  clearTime(): StatValue;
 
   getValue(): number;
-  setValue(value: number): void;
+  setValue(value: number): StatValue;
 
   getTagsList(): Array<string>;
-  setTagsList(value: Array<string>): void;
-  clearTagsList(): void;
-  addTags(value: string, index?: number): void;
+  setTagsList(value: Array<string>): StatValue;
+  clearTagsList(): StatValue;
+  addTags(value: string, index?: number): StatValue;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StatValue.AsObject;
@@ -4777,14 +5273,14 @@ export namespace StatValue {
 
 export class StatValueAggregateResult extends jspb.Message {
   getStatValueAggregatesList(): Array<StatValueAggregate>;
-  setStatValueAggregatesList(value: Array<StatValueAggregate>): void;
-  clearStatValueAggregatesList(): void;
+  setStatValueAggregatesList(value: Array<StatValueAggregate>): StatValueAggregateResult;
+  clearStatValueAggregatesList(): StatValueAggregateResult;
   addStatValueAggregates(value?: StatValueAggregate, index?: number): StatValueAggregate;
 
   getStatValueAggregateQuery(): StatValueAggregateQuery | undefined;
-  setStatValueAggregateQuery(value?: StatValueAggregateQuery): void;
+  setStatValueAggregateQuery(value?: StatValueAggregateQuery): StatValueAggregateResult;
   hasStatValueAggregateQuery(): boolean;
-  clearStatValueAggregateQuery(): void;
+  clearStatValueAggregateQuery(): StatValueAggregateResult;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StatValueAggregateResult.AsObject;
@@ -4803,20 +5299,20 @@ export namespace StatValueAggregateResult {
 
 export class StatValueAggregate extends jspb.Message {
   getTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setTime(value?: google_protobuf_timestamp_pb.Timestamp): StatValueAggregate;
   hasTime(): boolean;
-  clearTime(): void;
+  clearTime(): StatValueAggregate;
 
   getAggregateValue(): number;
-  setAggregateValue(value: number): void;
+  setAggregateValue(value: number): StatValueAggregate;
 
   getCount(): number;
-  setCount(value: number): void;
+  setCount(value: number): StatValueAggregate;
 
   getTagsList(): Array<string>;
-  setTagsList(value: Array<string>): void;
-  clearTagsList(): void;
-  addTags(value: string, index?: number): void;
+  setTagsList(value: Array<string>): StatValueAggregate;
+  clearTagsList(): StatValueAggregate;
+  addTags(value: string, index?: number): StatValueAggregate;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StatValueAggregate.AsObject;
@@ -4837,30 +5333,30 @@ export namespace StatValueAggregate {
 
 export class StatValueAggregateQuery extends jspb.Message {
   getTagsList(): Array<string>;
-  setTagsList(value: Array<string>): void;
-  clearTagsList(): void;
-  addTags(value: string, index?: number): void;
+  setTagsList(value: Array<string>): StatValueAggregateQuery;
+  clearTagsList(): StatValueAggregateQuery;
+  addTags(value: string, index?: number): StatValueAggregateQuery;
 
   getTagGroupsList(): Array<string>;
-  setTagGroupsList(value: Array<string>): void;
-  clearTagGroupsList(): void;
-  addTagGroups(value: string, index?: number): void;
+  setTagGroupsList(value: Array<string>): StatValueAggregateQuery;
+  clearTagGroupsList(): StatValueAggregateQuery;
+  addTagGroups(value: string, index?: number): StatValueAggregateQuery;
 
   getStatValueAggType(): StatValueAggType;
-  setStatValueAggType(value: StatValueAggType): void;
+  setStatValueAggType(value: StatValueAggType): StatValueAggregateQuery;
 
   getStatTimeAggType(): StatTimeAggType;
-  setStatTimeAggType(value: StatTimeAggType): void;
+  setStatTimeAggType(value: StatTimeAggType): StatValueAggregateQuery;
 
   getStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): StatValueAggregateQuery;
   hasStartTime(): boolean;
-  clearStartTime(): void;
+  clearStartTime(): StatValueAggregateQuery;
 
   getEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): StatValueAggregateQuery;
   hasEndTime(): boolean;
-  clearEndTime(): void;
+  clearEndTime(): StatValueAggregateQuery;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StatValueAggregateQuery.AsObject;
@@ -4883,7 +5379,7 @@ export namespace StatValueAggregateQuery {
 
 export class Visibility extends jspb.Message {
   getGettable(): Visibility.Gettable;
-  setGettable(value: Visibility.Gettable): void;
+  setGettable(value: Visibility.Gettable): Visibility;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Visibility.AsObject;
@@ -4908,16 +5404,16 @@ export namespace Visibility {
 
 export class TrendingMetric extends jspb.Message {
   getUserId(): string;
-  setUserId(value: string): void;
+  setUserId(value: string): TrendingMetric;
 
   getAppId(): string;
-  setAppId(value: string): void;
+  setAppId(value: string): TrendingMetric;
 
   getObjectId(): string;
-  setObjectId(value: string): void;
+  setObjectId(value: string): TrendingMetric;
 
   getViewCount(): number;
-  setViewCount(value: number): void;
+  setViewCount(value: number): TrendingMetric;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrendingMetric.AsObject;
@@ -4938,17 +5434,17 @@ export namespace TrendingMetric {
 
 export class TimeSegment extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): TimeSegment;
 
   getData(): Data | undefined;
-  setData(value?: Data): void;
+  setData(value?: Data): TimeSegment;
   hasData(): boolean;
-  clearData(): void;
+  clearData(): TimeSegment;
 
   getTimeInfo(): TimeInfo | undefined;
-  setTimeInfo(value?: TimeInfo): void;
+  setTimeInfo(value?: TimeInfo): TimeSegment;
   hasTimeInfo(): boolean;
-  clearTimeInfo(): void;
+  clearTimeInfo(): TimeSegment;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TimeSegment.AsObject;
@@ -4968,13 +5464,13 @@ export namespace TimeSegment {
 
 export class TimeInfo extends jspb.Message {
   getNumFrames(): number;
-  setNumFrames(value: number): void;
+  setNumFrames(value: number): TimeInfo;
 
   getBeginTime(): number;
-  setBeginTime(value: number): void;
+  setBeginTime(value: number): TimeInfo;
 
   getEndTime(): number;
-  setEndTime(value: number): void;
+  setEndTime(value: number): TimeInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TimeInfo.AsObject;
@@ -4992,6 +5488,18 @@ export namespace TimeInfo {
   }
 }
 
+export enum DatasetVersionMetricsGroupType { 
+  DATASET_VERSION_METRICS_GROUP_TYPE_NOT_SET = 0,
+  INPUT_TYPE = 2,
+  CONCEPT_ID = 10,
+  CONCEPTS_COUNT = 11,
+  BOUNDING_BOXES_COUNT = 20,
+  POLYGONS_COUNT = 21,
+  POINTS_COUNT = 22,
+  MASKS_COUNT = 23,
+  PIXELS_COUNT = 30,
+  ASPECT_RATIO = 31,
+}
 export enum ExpirationAction { 
   EXPIRATION_ACTION_NOT_SET = 0,
   DELAY = 1,

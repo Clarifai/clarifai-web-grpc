@@ -2,15 +2,24 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {missingRequire} reports error on implicit type usages.
  * @suppress {messageConventions} JS Compiler reports an error if a variable or
  *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
+/* eslint-disable */
+// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = Function('return this')();
+var global = (function() {
+  if (this) { return this; }
+  if (typeof window !== 'undefined') { return window; }
+  if (typeof global !== 'undefined') { return global; }
+  if (typeof self !== 'undefined') { return self; }
+  return Function('return this')();
+}.call(null));
 
 var google_protobuf_descriptor_pb = require('google-protobuf/google/protobuf/descriptor_pb.js');
 goog.object.extend(proto, google_protobuf_descriptor_pb);
@@ -117,8 +126,10 @@ proto.clarifai.auth.scope.ScopeList.deserializeBinaryFromReader = function(msg, 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!Array<!proto.clarifai.auth.scope.S>} */ (reader.readPackedEnum());
-      msg.setScopesList(value);
+      var values = /** @type {!Array<!proto.clarifai.auth.scope.S>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addScopes(values[i]);
+      }
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -251,7 +262,6 @@ proto.clarifai.auth.scope.S = {
   UNDEF: 0,
   ALL: 1,
   PREDICT: 2,
-  SEARCH: 3,
   INPUTS_ADD: 4,
   INPUTS_GET: 5,
   INPUTS_PATCH: 7,
@@ -307,7 +317,21 @@ proto.clarifai.auth.scope.S = {
   USERFEATURECONFIGS_GET: 71,
   FINDDUPLICATEANNOTATIONSJOBS_ADD: 102,
   FINDDUPLICATEANNOTATIONSJOBS_GET: 103,
-  FINDDUPLICATEANNOTATIONSJOBS_DELETE: 104
+  FINDDUPLICATEANNOTATIONSJOBS_DELETE: 104,
+  DATASETS_GET: 105,
+  DATASETS_ADD: 106,
+  DATASETS_DELETE: 107,
+  SEARCH: 3,
+  SAVEDSEARCH_GET: 114,
+  SAVEDSEARCH_ADD: 115,
+  SAVEDSEARCH_DELETE: 116,
+  MODELVERSIONPUBLICATIONS_ADD: 117,
+  MODELVERSIONPUBLICATIONS_DELETE: 118,
+  WORKFLOWPUBLICATIONS_ADD: 119,
+  WORKFLOWPUBLICATIONS_DELETE: 120,
+  BULKOPERATION_ADD: 121,
+  BULKOPERATION_GET: 122,
+  BULKOPERATION_DELETE: 123
 };
 
 

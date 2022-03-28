@@ -1,34 +1,35 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
 
 import * as proto_clarifai_auth_util_extension_pb from '../../../../proto/clarifai/auth/util/extension_pb';
 import * as proto_clarifai_api_status_status_code_pb from '../../../../proto/clarifai/api/status/status_code_pb';
 
+
 export class Status extends jspb.Message {
   getCode(): proto_clarifai_api_status_status_code_pb.StatusCode;
-  setCode(value: proto_clarifai_api_status_status_code_pb.StatusCode): void;
+  setCode(value: proto_clarifai_api_status_status_code_pb.StatusCode): Status;
 
   getDescription(): string;
-  setDescription(value: string): void;
+  setDescription(value: string): Status;
 
   getDetails(): string;
-  setDetails(value: string): void;
+  setDetails(value: string): Status;
 
   getStackTraceList(): Array<string>;
-  setStackTraceList(value: Array<string>): void;
-  clearStackTraceList(): void;
-  addStackTrace(value: string, index?: number): void;
+  setStackTraceList(value: Array<string>): Status;
+  clearStackTraceList(): Status;
+  addStackTrace(value: string, index?: number): Status;
 
   getPercentCompleted(): number;
-  setPercentCompleted(value: number): void;
+  setPercentCompleted(value: number): Status;
 
   getTimeRemaining(): number;
-  setTimeRemaining(value: number): void;
+  setTimeRemaining(value: number): Status;
 
   getReqId(): string;
-  setReqId(value: string): void;
+  setReqId(value: string): Status;
 
   getInternalDetails(): string;
-  setInternalDetails(value: string): void;
+  setInternalDetails(value: string): Status;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Status.AsObject;
@@ -53,9 +54,9 @@ export namespace Status {
 
 export class BaseResponse extends jspb.Message {
   getStatus(): Status | undefined;
-  setStatus(value?: Status): void;
+  setStatus(value?: Status): BaseResponse;
   hasStatus(): boolean;
-  clearStatus(): void;
+  clearStatus(): BaseResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BaseResponse.AsObject;
