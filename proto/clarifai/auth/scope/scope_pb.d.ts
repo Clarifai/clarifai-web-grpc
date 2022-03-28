@@ -1,17 +1,18 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
 
 import * as google_protobuf_descriptor_pb from 'google-protobuf/google/protobuf/descriptor_pb';
 
+
 export class ScopeList extends jspb.Message {
   getScopesList(): Array<S>;
-  setScopesList(value: Array<S>): void;
-  clearScopesList(): void;
-  addScopes(value: S, index?: number): void;
+  setScopesList(value: Array<S>): ScopeList;
+  clearScopesList(): ScopeList;
+  addScopes(value: S, index?: number): ScopeList;
 
   getEndpointsList(): Array<string>;
-  setEndpointsList(value: Array<string>): void;
-  clearEndpointsList(): void;
-  addEndpoints(value: string, index?: number): void;
+  setEndpointsList(value: Array<string>): ScopeList;
+  clearEndpointsList(): ScopeList;
+  addEndpoints(value: string, index?: number): ScopeList;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ScopeList.AsObject;
@@ -32,7 +33,6 @@ export enum S {
   UNDEF = 0,
   ALL = 1,
   PREDICT = 2,
-  SEARCH = 3,
   INPUTS_ADD = 4,
   INPUTS_GET = 5,
   INPUTS_PATCH = 7,
@@ -89,4 +89,18 @@ export enum S {
   FINDDUPLICATEANNOTATIONSJOBS_ADD = 102,
   FINDDUPLICATEANNOTATIONSJOBS_GET = 103,
   FINDDUPLICATEANNOTATIONSJOBS_DELETE = 104,
+  DATASETS_GET = 105,
+  DATASETS_ADD = 106,
+  DATASETS_DELETE = 107,
+  SEARCH = 3,
+  SAVEDSEARCH_GET = 114,
+  SAVEDSEARCH_ADD = 115,
+  SAVEDSEARCH_DELETE = 116,
+  MODELVERSIONPUBLICATIONS_ADD = 117,
+  MODELVERSIONPUBLICATIONS_DELETE = 118,
+  WORKFLOWPUBLICATIONS_ADD = 119,
+  WORKFLOWPUBLICATIONS_DELETE = 120,
+  BULKOPERATION_ADD = 121,
+  BULKOPERATION_GET = 122,
+  BULKOPERATION_DELETE = 123,
 }

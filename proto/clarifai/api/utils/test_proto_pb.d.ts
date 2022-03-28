@@ -1,32 +1,33 @@
-import * as jspb from "google-protobuf"
+import * as jspb from 'google-protobuf'
 
 import * as proto_clarifai_api_utils_extensions_pb from '../../../../proto/clarifai/api/utils/extensions_pb';
 
+
 export class TestProto extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): TestProto;
 
   getMessage(): string;
-  setMessage(value: string): void;
+  setMessage(value: string): TestProto;
 
   getValue(): number;
-  setValue(value: number): void;
+  setValue(value: number): TestProto;
 
   getImageBytes(): Uint8Array | string;
   getImageBytes_asU8(): Uint8Array;
   getImageBytes_asB64(): string;
-  setImageBytes(value: Uint8Array | string): void;
+  setImageBytes(value: Uint8Array | string): TestProto;
 
   getStringOneof(): string;
-  setStringOneof(value: string): void;
+  setStringOneof(value: string): TestProto;
 
   getBoolOneof(): boolean;
-  setBoolOneof(value: boolean): void;
+  setBoolOneof(value: boolean): TestProto;
 
   getMessageOneof(): TestProto2 | undefined;
-  setMessageOneof(value?: TestProto2): void;
+  setMessageOneof(value?: TestProto2): TestProto;
   hasMessageOneof(): boolean;
-  clearMessageOneof(): void;
+  clearMessageOneof(): TestProto;
 
   getOneOfFieldCase(): TestProto.OneOfFieldCase;
 
@@ -59,10 +60,10 @@ export namespace TestProto {
 
 export class TestProto2 extends jspb.Message {
   getId(): string;
-  setId(value: string): void;
+  setId(value: string): TestProto2;
 
   getFlip(): boolean;
-  setFlip(value: boolean): void;
+  setFlip(value: boolean): TestProto2;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TestProto2.AsObject;
