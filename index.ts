@@ -1,4 +1,4 @@
-import { V2Client } from './proto/clarifai/api/service_grpc_web_pb'
+import { V2Client, V2PromiseClient } from './proto/clarifai/api/service_grpc_web_pb'
 
 export class ClarifaiStub {
   static grpc (hostname = 'api.clarifai.com') {
@@ -6,6 +6,6 @@ export class ClarifaiStub {
   }
 }
 
-export { V2Client }
+export { V2Client, V2PromiseClient }
 export { RpcError, Metadata, ClientReadableStream } from 'grpc-web'
 export { BaseResponse } from './proto/clarifai/api/status/status_pb'
