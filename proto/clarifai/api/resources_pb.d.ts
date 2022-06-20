@@ -921,6 +921,11 @@ export class Data extends jspb.Message {
   clearHitsList(): Data;
   addHits(value?: Hit, index?: number): Hit;
 
+  getHeatmapsList(): Array<Image>;
+  setHeatmapsList(value: Array<Image>): Data;
+  clearHeatmapsList(): Data;
+  addHeatmaps(value?: Image, index?: number): Image;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Data.AsObject;
   static toObject(includeInstance: boolean, msg: Data): Data.AsObject;
@@ -946,6 +951,7 @@ export namespace Data {
     tracksList: Array<Track.AsObject>,
     timeSegmentsList: Array<TimeSegment.AsObject>,
     hitsList: Array<Hit.AsObject>,
+    heatmapsList: Array<Image.AsObject>,
   }
 }
 
@@ -1729,10 +1735,8 @@ export class DatasetVersion extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): DatasetVersion;
 
-  getMetrics(): DatasetVersionMetrics | undefined;
-  setMetrics(value?: DatasetVersionMetrics): DatasetVersion;
-  hasMetrics(): boolean;
-  clearMetrics(): DatasetVersion;
+  getMetricsMap(): jspb.Map<string, DatasetVersionMetrics>;
+  clearMetricsMap(): DatasetVersion;
 
   getMetadata(): google_protobuf_struct_pb.Struct | undefined;
   setMetadata(value?: google_protobuf_struct_pb.Struct): DatasetVersion;
@@ -1770,7 +1774,7 @@ export namespace DatasetVersion {
     annotationFilterConfig?: AnnotationFilterConfig.AsObject,
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     description: string,
-    metrics?: DatasetVersionMetrics.AsObject,
+    metricsMap: Array<[string, DatasetVersionMetrics.AsObject]>,
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
     visibility?: Visibility.AsObject,
     embedModelVersionIdsList: Array<string>,
@@ -2092,6 +2096,11 @@ export class Model extends jspb.Message {
   hasTrainInfo(): boolean;
   clearTrainInfo(): Model;
 
+  getDefaultEvalInfo(): EvalInfo | undefined;
+  setDefaultEvalInfo(value?: EvalInfo): Model;
+  hasDefaultEvalInfo(): boolean;
+  clearDefaultEvalInfo(): Model;
+
   getModelTypeId(): string;
   setModelTypeId(value: string): Model;
 
@@ -2110,6 +2119,11 @@ export class Model extends jspb.Message {
   setMetadata(value?: google_protobuf_struct_pb.Struct): Model;
   hasMetadata(): boolean;
   clearMetadata(): Model;
+
+  getPresets(): google_protobuf_struct_pb.Struct | undefined;
+  setPresets(value?: google_protobuf_struct_pb.Struct): Model;
+  hasPresets(): boolean;
+  clearPresets(): Model;
 
   getNotes(): string;
   setNotes(value: string): Model;
@@ -2140,6 +2154,11 @@ export class Model extends jspb.Message {
   hasImportInfo(): boolean;
   clearImportInfo(): Model;
 
+  getWorkflowRecommended(): google_protobuf_wrappers_pb.BoolValue | undefined;
+  setWorkflowRecommended(value?: google_protobuf_wrappers_pb.BoolValue): Model;
+  hasWorkflowRecommended(): boolean;
+  clearWorkflowRecommended(): Model;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Model.AsObject;
   static toObject(includeInstance: boolean, msg: Model): Model.AsObject;
@@ -2161,11 +2180,13 @@ export namespace Model {
     userId: string,
     inputInfo?: InputInfo.AsObject,
     trainInfo?: TrainInfo.AsObject,
+    defaultEvalInfo?: EvalInfo.AsObject,
     modelTypeId: string,
     task: string,
     visibility?: Visibility.AsObject,
     description: string,
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
+    presets?: google_protobuf_struct_pb.Struct.AsObject,
     notes: string,
     toolkitsList: Array<string>,
     useCasesList: Array<string>,
@@ -2173,6 +2194,7 @@ export namespace Model {
     isStarred: boolean,
     starCount: number,
     importInfo?: ImportInfo.AsObject,
+    workflowRecommended?: google_protobuf_wrappers_pb.BoolValue.AsObject,
   }
 }
 
@@ -2340,6 +2362,26 @@ export namespace TrainInfo {
   }
 }
 
+export class EvalInfo extends jspb.Message {
+  getParams(): google_protobuf_struct_pb.Struct | undefined;
+  setParams(value?: google_protobuf_struct_pb.Struct): EvalInfo;
+  hasParams(): boolean;
+  clearParams(): EvalInfo;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EvalInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: EvalInfo): EvalInfo.AsObject;
+  static serializeBinaryToWriter(message: EvalInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EvalInfo;
+  static deserializeBinaryFromReader(message: EvalInfo, reader: jspb.BinaryReader): EvalInfo;
+}
+
+export namespace EvalInfo {
+  export type AsObject = {
+    params?: google_protobuf_struct_pb.Struct.AsObject,
+  }
+}
+
 export class ImportInfo extends jspb.Message {
   getParams(): google_protobuf_struct_pb.Struct | undefined;
   setParams(value?: google_protobuf_struct_pb.Struct): ImportInfo;
@@ -2476,15 +2518,15 @@ export class ModelType extends jspb.Message {
   getEvaluable(): boolean;
   setEvaluable(value: boolean): ModelType;
 
-  getExpectedPretrainedInputFields(): google_protobuf_struct_pb.Struct | undefined;
-  setExpectedPretrainedInputFields(value?: google_protobuf_struct_pb.Struct): ModelType;
-  hasExpectedPretrainedInputFields(): boolean;
-  clearExpectedPretrainedInputFields(): ModelType;
+  getExpectedInputLayersList(): Array<ModelLayerInfo>;
+  setExpectedInputLayersList(value: Array<ModelLayerInfo>): ModelType;
+  clearExpectedInputLayersList(): ModelType;
+  addExpectedInputLayers(value?: ModelLayerInfo, index?: number): ModelLayerInfo;
 
-  getExpectedPretrainedOutputFields(): google_protobuf_struct_pb.Struct | undefined;
-  setExpectedPretrainedOutputFields(value?: google_protobuf_struct_pb.Struct): ModelType;
-  hasExpectedPretrainedOutputFields(): boolean;
-  clearExpectedPretrainedOutputFields(): ModelType;
+  getExpectedOutputLayersList(): Array<ModelLayerInfo>;
+  setExpectedOutputLayersList(value: Array<ModelLayerInfo>): ModelType;
+  clearExpectedOutputLayersList(): ModelType;
+  addExpectedOutputLayers(value?: ModelLayerInfo, index?: number): ModelLayerInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelType.AsObject;
@@ -2507,8 +2549,74 @@ export namespace ModelType {
     modelTypeFieldsList: Array<ModelTypeField.AsObject>,
     requiresSequentialFrames: boolean,
     evaluable: boolean,
-    expectedPretrainedInputFields?: google_protobuf_struct_pb.Struct.AsObject,
-    expectedPretrainedOutputFields?: google_protobuf_struct_pb.Struct.AsObject,
+    expectedInputLayersList: Array<ModelLayerInfo.AsObject>,
+    expectedOutputLayersList: Array<ModelLayerInfo.AsObject>,
+  }
+}
+
+export class ModelLayerInfo extends jspb.Message {
+  getDataFieldName(): string;
+  setDataFieldName(value: string): ModelLayerInfo;
+
+  getShapesList(): Array<LayerShape>;
+  setShapesList(value: Array<LayerShape>): ModelLayerInfo;
+  clearShapesList(): ModelLayerInfo;
+  addShapes(value?: LayerShape, index?: number): LayerShape;
+
+  getDescription(): string;
+  setDescription(value: string): ModelLayerInfo;
+
+  getRequiresLabelFilename(): boolean;
+  setRequiresLabelFilename(value: boolean): ModelLayerInfo;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelLayerInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelLayerInfo): ModelLayerInfo.AsObject;
+  static serializeBinaryToWriter(message: ModelLayerInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelLayerInfo;
+  static deserializeBinaryFromReader(message: ModelLayerInfo, reader: jspb.BinaryReader): ModelLayerInfo;
+}
+
+export namespace ModelLayerInfo {
+  export type AsObject = {
+    dataFieldName: string,
+    shapesList: Array<LayerShape.AsObject>,
+    description: string,
+    requiresLabelFilename: boolean,
+  }
+}
+
+export class LayerShape extends jspb.Message {
+  getDimsList(): Array<number>;
+  setDimsList(value: Array<number>): LayerShape;
+  clearDimsList(): LayerShape;
+  addDims(value: number, index?: number): LayerShape;
+
+  getMaxDimsList(): Array<number>;
+  setMaxDimsList(value: Array<number>): LayerShape;
+  clearMaxDimsList(): LayerShape;
+  addMaxDims(value: number, index?: number): LayerShape;
+
+  getDataType(): DataType;
+  setDataType(value: DataType): LayerShape;
+
+  getDescription(): string;
+  setDescription(value: string): LayerShape;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LayerShape.AsObject;
+  static toObject(includeInstance: boolean, msg: LayerShape): LayerShape.AsObject;
+  static serializeBinaryToWriter(message: LayerShape, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LayerShape;
+  static deserializeBinaryFromReader(message: LayerShape, reader: jspb.BinaryReader): LayerShape;
+}
+
+export namespace LayerShape {
+  export type AsObject = {
+    dimsList: Array<number>,
+    maxDimsList: Array<number>,
+    dataType: DataType,
+    description: string,
   }
 }
 
@@ -2582,6 +2690,8 @@ export namespace ModelTypeField {
     WORKFLOW_EMBED_MODELS = 12,
     ARRAY_OF_STRINGS = 13,
     RECURSIVE_ENUM = 14,
+    PYTHON_CODE = 15,
+    DATASET_ID = 16,
   }
 }
 
@@ -2714,6 +2824,11 @@ export class ModelVersion extends jspb.Message {
   getTotalInputCount(): number;
   setTotalInputCount(value: number): ModelVersion;
 
+  getPretrainedModelConfig(): PretrainedModelConfig | undefined;
+  setPretrainedModelConfig(value?: PretrainedModelConfig): ModelVersion;
+  hasPretrainedModelConfig(): boolean;
+  clearPretrainedModelConfig(): ModelVersion;
+
   getCompletedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setCompletedAt(value?: google_protobuf_timestamp_pb.Timestamp): ModelVersion;
   hasCompletedAt(): boolean;
@@ -2767,6 +2882,7 @@ export namespace ModelVersion {
     activeConceptCount: number,
     metrics?: EvalMetrics.AsObject,
     totalInputCount: number,
+    pretrainedModelConfig?: PretrainedModelConfig.AsObject,
     completedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     description: string,
     visibility?: Visibility.AsObject,
@@ -2780,12 +2896,6 @@ export namespace ModelVersion {
 }
 
 export class PretrainedModelConfig extends jspb.Message {
-  getId(): string;
-  setId(value: string): PretrainedModelConfig;
-
-  getType(): string;
-  setType(value: string): PretrainedModelConfig;
-
   getInputFieldsMap(): google_protobuf_struct_pb.Struct | undefined;
   setInputFieldsMap(value?: google_protobuf_struct_pb.Struct): PretrainedModelConfig;
   hasInputFieldsMap(): boolean;
@@ -2796,14 +2906,8 @@ export class PretrainedModelConfig extends jspb.Message {
   hasOutputFieldsMap(): boolean;
   clearOutputFieldsMap(): PretrainedModelConfig;
 
-  getDataProviderParams(): string;
-  setDataProviderParams(value: string): PretrainedModelConfig;
-
   getModelZipUrl(): string;
   setModelZipUrl(value: string): PretrainedModelConfig;
-
-  getOverwrite(): boolean;
-  setOverwrite(value: boolean): PretrainedModelConfig;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PretrainedModelConfig.AsObject;
@@ -2815,13 +2919,9 @@ export class PretrainedModelConfig extends jspb.Message {
 
 export namespace PretrainedModelConfig {
   export type AsObject = {
-    id: string,
-    type: string,
     inputFieldsMap?: google_protobuf_struct_pb.Struct.AsObject,
     outputFieldsMap?: google_protobuf_struct_pb.Struct.AsObject,
-    dataProviderParams: string,
     modelZipUrl: string,
-    overwrite: boolean,
   }
 }
 
@@ -3401,6 +3501,11 @@ export class EvalMetrics extends jspb.Message {
   clearTrackerMetricsList(): EvalMetrics;
   addTrackerMetrics(value?: TrackerMetrics, index?: number): TrackerMetrics;
 
+  getEvalInfo(): EvalInfo | undefined;
+  setEvalInfo(value?: EvalInfo): EvalMetrics;
+  hasEvalInfo(): boolean;
+  clearEvalInfo(): EvalMetrics;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EvalMetrics.AsObject;
   static toObject(includeInstance: boolean, msg: EvalMetrics): EvalMetrics.AsObject;
@@ -3422,6 +3527,7 @@ export namespace EvalMetrics {
     metricsByAreaList: Array<BinaryMetrics.AsObject>,
     metricsByClassList: Array<BinaryMetrics.AsObject>,
     trackerMetricsList: Array<TrackerMetrics.AsObject>,
+    evalInfo?: EvalInfo.AsObject,
   }
 }
 
@@ -4632,6 +4738,11 @@ export class AppDuplication extends jspb.Message {
   getExistingAppId(): string;
   setExistingAppId(value: string): AppDuplication;
 
+  getProgressList(): Array<AppCopyProgress>;
+  setProgressList(value: Array<AppCopyProgress>): AppDuplication;
+  clearProgressList(): AppDuplication;
+  addProgress(value?: AppCopyProgress, index?: number): AppCopyProgress;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AppDuplication.AsObject;
   static toObject(includeInstance: boolean, msg: AppDuplication): AppDuplication.AsObject;
@@ -4650,6 +4761,29 @@ export namespace AppDuplication {
     lastModifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     filter?: AppDuplicationFilters.AsObject,
     existingAppId: string,
+    progressList: Array<AppCopyProgress.AsObject>,
+  }
+}
+
+export class AppCopyProgress extends jspb.Message {
+  getField(): string;
+  setField(value: string): AppCopyProgress;
+
+  getValue(): number;
+  setValue(value: number): AppCopyProgress;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AppCopyProgress.AsObject;
+  static toObject(includeInstance: boolean, msg: AppCopyProgress): AppCopyProgress.AsObject;
+  static serializeBinaryToWriter(message: AppCopyProgress, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AppCopyProgress;
+  static deserializeBinaryFromReader(message: AppCopyProgress, reader: jspb.BinaryReader): AppCopyProgress;
+}
+
+export namespace AppCopyProgress {
+  export type AsObject = {
+    field: string,
+    value: number,
   }
 }
 
@@ -4899,6 +5033,11 @@ export class TaskWorker extends jspb.Message {
   clearUserIdsList(): TaskWorker;
   addUserIds(value: string, index?: number): TaskWorker;
 
+  getUsersList(): Array<User>;
+  setUsersList(value: Array<User>): TaskWorker;
+  clearUsersList(): TaskWorker;
+  addUsers(value?: User, index?: number): User;
+
   getPartitionedStrategyInfo(): TaskWorkerPartitionedStrategyInfo | undefined;
   setPartitionedStrategyInfo(value?: TaskWorkerPartitionedStrategyInfo): TaskWorker;
   hasPartitionedStrategyInfo(): boolean;
@@ -4918,6 +5057,7 @@ export namespace TaskWorker {
   export type AsObject = {
     strategy: TaskWorker.TaskWorkerStrategy,
     userIdsList: Array<string>,
+    usersList: Array<User.AsObject>,
     partitionedStrategyInfo?: TaskWorkerPartitionedStrategyInfo.AsObject,
   }
 
@@ -5005,6 +5145,11 @@ export class TaskReview extends jspb.Message {
   clearUserIdsList(): TaskReview;
   addUserIds(value: string, index?: number): TaskReview;
 
+  getUsersList(): Array<User>;
+  setUsersList(value: Array<User>): TaskReview;
+  clearUsersList(): TaskReview;
+  addUsers(value?: User, index?: number): User;
+
   getManualStrategyInfo(): TaskReviewManualStrategyInfo | undefined;
   setManualStrategyInfo(value?: TaskReviewManualStrategyInfo): TaskReview;
   hasManualStrategyInfo(): boolean;
@@ -5029,6 +5174,7 @@ export namespace TaskReview {
   export type AsObject = {
     strategy: TaskReview.TaskReviewStrategy,
     userIdsList: Array<string>,
+    usersList: Array<User.AsObject>,
     manualStrategyInfo?: TaskReviewManualStrategyInfo.AsObject,
     consensusStrategyInfo?: TaskReviewConsensusStrategyInfo.AsObject,
   }
@@ -5377,6 +5523,52 @@ export namespace StatValueAggregateQuery {
   }
 }
 
+export class DatasetInputsSearchAddJob extends jspb.Message {
+  getId(): string;
+  setId(value: string): DatasetInputsSearchAddJob;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): DatasetInputsSearchAddJob;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): DatasetInputsSearchAddJob;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): DatasetInputsSearchAddJob;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): DatasetInputsSearchAddJob;
+
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): DatasetInputsSearchAddJob;
+  hasStatus(): boolean;
+  clearStatus(): DatasetInputsSearchAddJob;
+
+  getDatasetId(): string;
+  setDatasetId(value: string): DatasetInputsSearchAddJob;
+
+  getSearch(): Search | undefined;
+  setSearch(value?: Search): DatasetInputsSearchAddJob;
+  hasSearch(): boolean;
+  clearSearch(): DatasetInputsSearchAddJob;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DatasetInputsSearchAddJob.AsObject;
+  static toObject(includeInstance: boolean, msg: DatasetInputsSearchAddJob): DatasetInputsSearchAddJob.AsObject;
+  static serializeBinaryToWriter(message: DatasetInputsSearchAddJob, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DatasetInputsSearchAddJob;
+  static deserializeBinaryFromReader(message: DatasetInputsSearchAddJob, reader: jspb.BinaryReader): DatasetInputsSearchAddJob;
+}
+
+export namespace DatasetInputsSearchAddJob {
+  export type AsObject = {
+    id: string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    datasetId: string,
+    search?: Search.AsObject,
+  }
+}
+
 export class Visibility extends jspb.Message {
   getGettable(): Visibility.Gettable;
   setGettable(value: Visibility.Gettable): Visibility;
@@ -5510,6 +5702,14 @@ export enum LicenseScope {
   PREDICT = 1,
   TRAIN = 2,
   SEARCH = 3,
+}
+export enum DataType { 
+  UNDEFINED = 0,
+  STRING = 1,
+  UINT8 = 2,
+  INT32 = 3,
+  INT64 = 4,
+  FP32 = 5,
 }
 export enum ValueComparator { 
   CONCEPT_THRESHOLD_NOT_SET = 0,

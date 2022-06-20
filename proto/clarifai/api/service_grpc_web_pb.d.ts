@@ -772,6 +772,20 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiAppResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiAppResponse>;
 
+  patchApp(
+    request: proto_clarifai_api_service_pb.PatchAppRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleAppResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleAppResponse>;
+
+  patchAppsIds(
+    request: proto_clarifai_api_service_pb.PatchAppsIdsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiAppResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiAppResponse>;
+
   postAppsSearches(
     request: proto_clarifai_api_service_pb.PostAppsSearchesRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -1107,6 +1121,13 @@ export class V2Client {
     callback: (err: grpcWeb.RpcError,
                response: proto_clarifai_api_service_pb.MultiTrendingMetricsViewResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiTrendingMetricsViewResponse>;
+
+  getDatasetInputsSearchAddJob(
+    request: proto_clarifai_api_service_pb.GetDatasetInputsSearchAddJobRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleDatasetInputsSearchAddJobResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleDatasetInputsSearchAddJobResponse>;
 
 }
 
@@ -1660,6 +1681,16 @@ export class V2PromiseClient {
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiAppResponse>;
 
+  patchApp(
+    request: proto_clarifai_api_service_pb.PatchAppRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleAppResponse>;
+
+  patchAppsIds(
+    request: proto_clarifai_api_service_pb.PatchAppsIdsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiAppResponse>;
+
   postAppsSearches(
     request: proto_clarifai_api_service_pb.PostAppsSearchesRequest,
     metadata?: grpcWeb.Metadata
@@ -1899,6 +1930,11 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.ListTrendingMetricsViewsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiTrendingMetricsViewResponse>;
+
+  getDatasetInputsSearchAddJob(
+    request: proto_clarifai_api_service_pb.GetDatasetInputsSearchAddJobRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleDatasetInputsSearchAddJobResponse>;
 
 }
 
