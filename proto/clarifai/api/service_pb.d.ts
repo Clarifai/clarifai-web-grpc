@@ -7017,6 +7017,188 @@ export namespace MultiTrendingMetricsViewResponse {
   }
 }
 
+export class PostBulkOperationsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostBulkOperationsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostBulkOperationsRequest;
+
+  getBulkOperationsList(): Array<proto_clarifai_api_resources_pb.BulkOperation>;
+  setBulkOperationsList(value: Array<proto_clarifai_api_resources_pb.BulkOperation>): PostBulkOperationsRequest;
+  clearBulkOperationsList(): PostBulkOperationsRequest;
+  addBulkOperations(value?: proto_clarifai_api_resources_pb.BulkOperation, index?: number): proto_clarifai_api_resources_pb.BulkOperation;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostBulkOperationsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostBulkOperationsRequest): PostBulkOperationsRequest.AsObject;
+  static serializeBinaryToWriter(message: PostBulkOperationsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostBulkOperationsRequest;
+  static deserializeBinaryFromReader(message: PostBulkOperationsRequest, reader: jspb.BinaryReader): PostBulkOperationsRequest;
+}
+
+export namespace PostBulkOperationsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    bulkOperationsList: Array<proto_clarifai_api_resources_pb.BulkOperation.AsObject>,
+  }
+}
+
+export class ListBulkOperationsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListBulkOperationsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): ListBulkOperationsRequest;
+
+  getPage(): number;
+  setPage(value: number): ListBulkOperationsRequest;
+
+  getPerPage(): number;
+  setPerPage(value: number): ListBulkOperationsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListBulkOperationsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListBulkOperationsRequest): ListBulkOperationsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListBulkOperationsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListBulkOperationsRequest;
+  static deserializeBinaryFromReader(message: ListBulkOperationsRequest, reader: jspb.BinaryReader): ListBulkOperationsRequest;
+}
+
+export namespace ListBulkOperationsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    page: number,
+    perPage: number,
+  }
+}
+
+export class GetBulkOperationRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetBulkOperationRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): GetBulkOperationRequest;
+
+  getId(): string;
+  setId(value: string): GetBulkOperationRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetBulkOperationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetBulkOperationRequest): GetBulkOperationRequest.AsObject;
+  static serializeBinaryToWriter(message: GetBulkOperationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetBulkOperationRequest;
+  static deserializeBinaryFromReader(message: GetBulkOperationRequest, reader: jspb.BinaryReader): GetBulkOperationRequest;
+}
+
+export namespace GetBulkOperationRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    id: string,
+  }
+}
+
+export class CancelBulkOperationRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): CancelBulkOperationRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): CancelBulkOperationRequest;
+
+  getIdsList(): Array<string>;
+  setIdsList(value: Array<string>): CancelBulkOperationRequest;
+  clearIdsList(): CancelBulkOperationRequest;
+  addIds(value: string, index?: number): CancelBulkOperationRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CancelBulkOperationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CancelBulkOperationRequest): CancelBulkOperationRequest.AsObject;
+  static serializeBinaryToWriter(message: CancelBulkOperationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CancelBulkOperationRequest;
+  static deserializeBinaryFromReader(message: CancelBulkOperationRequest, reader: jspb.BinaryReader): CancelBulkOperationRequest;
+}
+
+export namespace CancelBulkOperationRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    idsList: Array<string>,
+  }
+}
+
+export class DeleteBulkOperationRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteBulkOperationRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): DeleteBulkOperationRequest;
+
+  getIdsList(): Array<string>;
+  setIdsList(value: Array<string>): DeleteBulkOperationRequest;
+  clearIdsList(): DeleteBulkOperationRequest;
+  addIds(value: string, index?: number): DeleteBulkOperationRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteBulkOperationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteBulkOperationRequest): DeleteBulkOperationRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteBulkOperationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteBulkOperationRequest;
+  static deserializeBinaryFromReader(message: DeleteBulkOperationRequest, reader: jspb.BinaryReader): DeleteBulkOperationRequest;
+}
+
+export namespace DeleteBulkOperationRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    idsList: Array<string>,
+  }
+}
+
+export class SingleBulkOperationsResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleBulkOperationsResponse;
+  hasStatus(): boolean;
+  clearStatus(): SingleBulkOperationsResponse;
+
+  getBulkOperation(): proto_clarifai_api_resources_pb.BulkOperation | undefined;
+  setBulkOperation(value?: proto_clarifai_api_resources_pb.BulkOperation): SingleBulkOperationsResponse;
+  hasBulkOperation(): boolean;
+  clearBulkOperation(): SingleBulkOperationsResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SingleBulkOperationsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SingleBulkOperationsResponse): SingleBulkOperationsResponse.AsObject;
+  static serializeBinaryToWriter(message: SingleBulkOperationsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SingleBulkOperationsResponse;
+  static deserializeBinaryFromReader(message: SingleBulkOperationsResponse, reader: jspb.BinaryReader): SingleBulkOperationsResponse;
+}
+
+export namespace SingleBulkOperationsResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    bulkOperation?: proto_clarifai_api_resources_pb.BulkOperation.AsObject,
+  }
+}
+
+export class MultiBulkOperationsResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiBulkOperationsResponse;
+  hasStatus(): boolean;
+  clearStatus(): MultiBulkOperationsResponse;
+
+  getBulkOperationList(): Array<proto_clarifai_api_resources_pb.BulkOperation>;
+  setBulkOperationList(value: Array<proto_clarifai_api_resources_pb.BulkOperation>): MultiBulkOperationsResponse;
+  clearBulkOperationList(): MultiBulkOperationsResponse;
+  addBulkOperation(value?: proto_clarifai_api_resources_pb.BulkOperation, index?: number): proto_clarifai_api_resources_pb.BulkOperation;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MultiBulkOperationsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiBulkOperationsResponse): MultiBulkOperationsResponse.AsObject;
+  static serializeBinaryToWriter(message: MultiBulkOperationsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiBulkOperationsResponse;
+  static deserializeBinaryFromReader(message: MultiBulkOperationsResponse, reader: jspb.BinaryReader): MultiBulkOperationsResponse;
+}
+
+export namespace MultiBulkOperationsResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    bulkOperationList: Array<proto_clarifai_api_resources_pb.BulkOperation.AsObject>,
+  }
+}
+
 export enum OrganizationInvitationStatus { 
   NOT_SET = 0,
   PENDING = 1,

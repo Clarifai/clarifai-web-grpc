@@ -9793,6 +9793,311 @@ proto.clarifai.api.V2PromiseClient.prototype.listTrendingMetricsViews =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostBulkOperationsRequest,
+ *   !proto.clarifai.api.MultiBulkOperationsResponse>}
+ */
+const methodDescriptor_V2_PostBulkOperations = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostBulkOperations',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostBulkOperationsRequest,
+  proto.clarifai.api.MultiBulkOperationsResponse,
+  /**
+   * @param {!proto.clarifai.api.PostBulkOperationsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiBulkOperationsResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostBulkOperationsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiBulkOperationsResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiBulkOperationsResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postBulkOperations =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostBulkOperations',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostBulkOperations,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostBulkOperationsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiBulkOperationsResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postBulkOperations =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostBulkOperations',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostBulkOperations);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListBulkOperationsRequest,
+ *   !proto.clarifai.api.MultiBulkOperationsResponse>}
+ */
+const methodDescriptor_V2_ListBulkOperations = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListBulkOperations',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListBulkOperationsRequest,
+  proto.clarifai.api.MultiBulkOperationsResponse,
+  /**
+   * @param {!proto.clarifai.api.ListBulkOperationsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiBulkOperationsResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListBulkOperationsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiBulkOperationsResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiBulkOperationsResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listBulkOperations =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListBulkOperations',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListBulkOperations,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListBulkOperationsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiBulkOperationsResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listBulkOperations =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListBulkOperations',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListBulkOperations);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.GetBulkOperationRequest,
+ *   !proto.clarifai.api.SingleBulkOperationsResponse>}
+ */
+const methodDescriptor_V2_GetBulkOperation = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/GetBulkOperation',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.GetBulkOperationRequest,
+  proto.clarifai.api.SingleBulkOperationsResponse,
+  /**
+   * @param {!proto.clarifai.api.GetBulkOperationRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SingleBulkOperationsResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.GetBulkOperationRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SingleBulkOperationsResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleBulkOperationsResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.getBulkOperation =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/GetBulkOperation',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetBulkOperation,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.GetBulkOperationRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.SingleBulkOperationsResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.getBulkOperation =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/GetBulkOperation',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetBulkOperation);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.CancelBulkOperationRequest,
+ *   !proto.clarifai.api.MultiBulkOperationsResponse>}
+ */
+const methodDescriptor_V2_CancelBulkOperations = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/CancelBulkOperations',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.CancelBulkOperationRequest,
+  proto.clarifai.api.MultiBulkOperationsResponse,
+  /**
+   * @param {!proto.clarifai.api.CancelBulkOperationRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiBulkOperationsResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.CancelBulkOperationRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiBulkOperationsResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiBulkOperationsResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.cancelBulkOperations =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/CancelBulkOperations',
+      request,
+      metadata || {},
+      methodDescriptor_V2_CancelBulkOperations,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.CancelBulkOperationRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiBulkOperationsResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.cancelBulkOperations =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/CancelBulkOperations',
+      request,
+      metadata || {},
+      methodDescriptor_V2_CancelBulkOperations);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.DeleteBulkOperationRequest,
+ *   !proto.clarifai.api.status.BaseResponse>}
+ */
+const methodDescriptor_V2_DeleteBulkOperations = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/DeleteBulkOperations',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.DeleteBulkOperationRequest,
+  proto_clarifai_api_status_status_pb.BaseResponse,
+  /**
+   * @param {!proto.clarifai.api.DeleteBulkOperationRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto_clarifai_api_status_status_pb.BaseResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.DeleteBulkOperationRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.status.BaseResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.status.BaseResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.deleteBulkOperations =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/DeleteBulkOperations',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeleteBulkOperations,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.DeleteBulkOperationRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.status.BaseResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.deleteBulkOperations =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/DeleteBulkOperations',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeleteBulkOperations);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.GetDatasetInputsSearchAddJobRequest,
  *   !proto.clarifai.api.SingleDatasetInputsSearchAddJobResponse>}
  */
