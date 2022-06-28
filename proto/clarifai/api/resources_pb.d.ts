@@ -5680,6 +5680,300 @@ export namespace TimeInfo {
   }
 }
 
+export class BulkOperation extends jspb.Message {
+  getId(): string;
+  setId(value: string): BulkOperation;
+
+  getInputIds(): InputIDs | undefined;
+  setInputIds(value?: InputIDs): BulkOperation;
+  hasInputIds(): boolean;
+  clearInputIds(): BulkOperation;
+
+  getSearch(): Search | undefined;
+  setSearch(value?: Search): BulkOperation;
+  hasSearch(): boolean;
+  clearSearch(): BulkOperation;
+
+  getOperation(): Operation | undefined;
+  setOperation(value?: Operation): BulkOperation;
+  hasOperation(): boolean;
+  clearOperation(): BulkOperation;
+
+  getAppId(): string;
+  setAppId(value: string): BulkOperation;
+
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): BulkOperation;
+  hasStatus(): boolean;
+  clearStatus(): BulkOperation;
+
+  getProgress(): Progress | undefined;
+  setProgress(value?: Progress): BulkOperation;
+  hasProgress(): boolean;
+  clearProgress(): BulkOperation;
+
+  getCreatedBy(): string;
+  setCreatedBy(value: string): BulkOperation;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): BulkOperation;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): BulkOperation;
+
+  getLastModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLastModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): BulkOperation;
+  hasLastModifiedAt(): boolean;
+  clearLastModifiedAt(): BulkOperation;
+
+  getInputSourceCase(): BulkOperation.InputSourceCase;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BulkOperation.AsObject;
+  static toObject(includeInstance: boolean, msg: BulkOperation): BulkOperation.AsObject;
+  static serializeBinaryToWriter(message: BulkOperation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BulkOperation;
+  static deserializeBinaryFromReader(message: BulkOperation, reader: jspb.BinaryReader): BulkOperation;
+}
+
+export namespace BulkOperation {
+  export type AsObject = {
+    id: string,
+    inputIds?: InputIDs.AsObject,
+    search?: Search.AsObject,
+    operation?: Operation.AsObject,
+    appId: string,
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    progress?: Progress.AsObject,
+    createdBy: string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    lastModifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+
+  export enum InputSourceCase { 
+    INPUT_SOURCE_NOT_SET = 0,
+    INPUT_IDS = 2,
+    SEARCH = 10,
+  }
+}
+
+export class InputIDs extends jspb.Message {
+  getInputIdsList(): Array<string>;
+  setInputIdsList(value: Array<string>): InputIDs;
+  clearInputIdsList(): InputIDs;
+  addInputIds(value: string, index?: number): InputIDs;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InputIDs.AsObject;
+  static toObject(includeInstance: boolean, msg: InputIDs): InputIDs.AsObject;
+  static serializeBinaryToWriter(message: InputIDs, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InputIDs;
+  static deserializeBinaryFromReader(message: InputIDs, reader: jspb.BinaryReader): InputIDs;
+}
+
+export namespace InputIDs {
+  export type AsObject = {
+    inputIdsList: Array<string>,
+  }
+}
+
+export class Progress extends jspb.Message {
+  getProcessed(): number;
+  setProcessed(value: number): Progress;
+
+  getLastProcessedId(): string;
+  setLastProcessedId(value: string): Progress;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Progress.AsObject;
+  static toObject(includeInstance: boolean, msg: Progress): Progress.AsObject;
+  static serializeBinaryToWriter(message: Progress, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Progress;
+  static deserializeBinaryFromReader(message: Progress, reader: jspb.BinaryReader): Progress;
+}
+
+export namespace Progress {
+  export type AsObject = {
+    processed: number,
+    lastProcessedId: string,
+  }
+}
+
+export class Operation extends jspb.Message {
+  getAddConcepts(): AddConcepts | undefined;
+  setAddConcepts(value?: AddConcepts): Operation;
+  hasAddConcepts(): boolean;
+  clearAddConcepts(): Operation;
+
+  getDeleteConcepts(): DeleteConcepts | undefined;
+  setDeleteConcepts(value?: DeleteConcepts): Operation;
+  hasDeleteConcepts(): boolean;
+  clearDeleteConcepts(): Operation;
+
+  getAddMetadata(): AddMetadata | undefined;
+  setAddMetadata(value?: AddMetadata): Operation;
+  hasAddMetadata(): boolean;
+  clearAddMetadata(): Operation;
+
+  getDeleteMetadata(): DeleteMetadata | undefined;
+  setDeleteMetadata(value?: DeleteMetadata): Operation;
+  hasDeleteMetadata(): boolean;
+  clearDeleteMetadata(): Operation;
+
+  getOverwriteGeo(): OverwriteGeo | undefined;
+  setOverwriteGeo(value?: OverwriteGeo): Operation;
+  hasOverwriteGeo(): boolean;
+  clearOverwriteGeo(): Operation;
+
+  getDeleteGeo(): DeleteGeo | undefined;
+  setDeleteGeo(value?: DeleteGeo): Operation;
+  hasDeleteGeo(): boolean;
+  clearDeleteGeo(): Operation;
+
+  getOperationCase(): Operation.OperationCase;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Operation.AsObject;
+  static toObject(includeInstance: boolean, msg: Operation): Operation.AsObject;
+  static serializeBinaryToWriter(message: Operation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Operation;
+  static deserializeBinaryFromReader(message: Operation, reader: jspb.BinaryReader): Operation;
+}
+
+export namespace Operation {
+  export type AsObject = {
+    addConcepts?: AddConcepts.AsObject,
+    deleteConcepts?: DeleteConcepts.AsObject,
+    addMetadata?: AddMetadata.AsObject,
+    deleteMetadata?: DeleteMetadata.AsObject,
+    overwriteGeo?: OverwriteGeo.AsObject,
+    deleteGeo?: DeleteGeo.AsObject,
+  }
+
+  export enum OperationCase { 
+    OPERATION_NOT_SET = 0,
+    ADD_CONCEPTS = 1,
+    DELETE_CONCEPTS = 2,
+    ADD_METADATA = 3,
+    DELETE_METADATA = 4,
+    OVERWRITE_GEO = 5,
+    DELETE_GEO = 6,
+  }
+}
+
+export class AddConcepts extends jspb.Message {
+  getConceptsList(): Array<Concept>;
+  setConceptsList(value: Array<Concept>): AddConcepts;
+  clearConceptsList(): AddConcepts;
+  addConcepts(value?: Concept, index?: number): Concept;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AddConcepts.AsObject;
+  static toObject(includeInstance: boolean, msg: AddConcepts): AddConcepts.AsObject;
+  static serializeBinaryToWriter(message: AddConcepts, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AddConcepts;
+  static deserializeBinaryFromReader(message: AddConcepts, reader: jspb.BinaryReader): AddConcepts;
+}
+
+export namespace AddConcepts {
+  export type AsObject = {
+    conceptsList: Array<Concept.AsObject>,
+  }
+}
+
+export class DeleteConcepts extends jspb.Message {
+  getConceptsList(): Array<Concept>;
+  setConceptsList(value: Array<Concept>): DeleteConcepts;
+  clearConceptsList(): DeleteConcepts;
+  addConcepts(value?: Concept, index?: number): Concept;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteConcepts.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteConcepts): DeleteConcepts.AsObject;
+  static serializeBinaryToWriter(message: DeleteConcepts, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteConcepts;
+  static deserializeBinaryFromReader(message: DeleteConcepts, reader: jspb.BinaryReader): DeleteConcepts;
+}
+
+export namespace DeleteConcepts {
+  export type AsObject = {
+    conceptsList: Array<Concept.AsObject>,
+  }
+}
+
+export class AddMetadata extends jspb.Message {
+  getMetadata(): google_protobuf_struct_pb.Struct | undefined;
+  setMetadata(value?: google_protobuf_struct_pb.Struct): AddMetadata;
+  hasMetadata(): boolean;
+  clearMetadata(): AddMetadata;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AddMetadata.AsObject;
+  static toObject(includeInstance: boolean, msg: AddMetadata): AddMetadata.AsObject;
+  static serializeBinaryToWriter(message: AddMetadata, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AddMetadata;
+  static deserializeBinaryFromReader(message: AddMetadata, reader: jspb.BinaryReader): AddMetadata;
+}
+
+export namespace AddMetadata {
+  export type AsObject = {
+    metadata?: google_protobuf_struct_pb.Struct.AsObject,
+  }
+}
+
+export class DeleteMetadata extends jspb.Message {
+  getMetadata(): google_protobuf_struct_pb.Struct | undefined;
+  setMetadata(value?: google_protobuf_struct_pb.Struct): DeleteMetadata;
+  hasMetadata(): boolean;
+  clearMetadata(): DeleteMetadata;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteMetadata.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteMetadata): DeleteMetadata.AsObject;
+  static serializeBinaryToWriter(message: DeleteMetadata, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteMetadata;
+  static deserializeBinaryFromReader(message: DeleteMetadata, reader: jspb.BinaryReader): DeleteMetadata;
+}
+
+export namespace DeleteMetadata {
+  export type AsObject = {
+    metadata?: google_protobuf_struct_pb.Struct.AsObject,
+  }
+}
+
+export class OverwriteGeo extends jspb.Message {
+  getGeo(): Geo | undefined;
+  setGeo(value?: Geo): OverwriteGeo;
+  hasGeo(): boolean;
+  clearGeo(): OverwriteGeo;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OverwriteGeo.AsObject;
+  static toObject(includeInstance: boolean, msg: OverwriteGeo): OverwriteGeo.AsObject;
+  static serializeBinaryToWriter(message: OverwriteGeo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OverwriteGeo;
+  static deserializeBinaryFromReader(message: OverwriteGeo, reader: jspb.BinaryReader): OverwriteGeo;
+}
+
+export namespace OverwriteGeo {
+  export type AsObject = {
+    geo?: Geo.AsObject,
+  }
+}
+
+export class DeleteGeo extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteGeo.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteGeo): DeleteGeo.AsObject;
+  static serializeBinaryToWriter(message: DeleteGeo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteGeo;
+  static deserializeBinaryFromReader(message: DeleteGeo, reader: jspb.BinaryReader): DeleteGeo;
+}
+
+export namespace DeleteGeo {
+  export type AsObject = {
+  }
+}
+
 export enum DatasetVersionMetricsGroupType { 
   DATASET_VERSION_METRICS_GROUP_TYPE_NOT_SET = 0,
   INPUT_TYPE = 2,

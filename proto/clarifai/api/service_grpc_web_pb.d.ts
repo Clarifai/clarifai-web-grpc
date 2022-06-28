@@ -1122,6 +1122,41 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiTrendingMetricsViewResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiTrendingMetricsViewResponse>;
 
+  postBulkOperations(
+    request: proto_clarifai_api_service_pb.PostBulkOperationsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiBulkOperationsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiBulkOperationsResponse>;
+
+  listBulkOperations(
+    request: proto_clarifai_api_service_pb.ListBulkOperationsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiBulkOperationsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiBulkOperationsResponse>;
+
+  getBulkOperation(
+    request: proto_clarifai_api_service_pb.GetBulkOperationRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleBulkOperationsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleBulkOperationsResponse>;
+
+  cancelBulkOperations(
+    request: proto_clarifai_api_service_pb.CancelBulkOperationRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiBulkOperationsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiBulkOperationsResponse>;
+
+  deleteBulkOperations(
+    request: proto_clarifai_api_service_pb.DeleteBulkOperationRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
   getDatasetInputsSearchAddJob(
     request: proto_clarifai_api_service_pb.GetDatasetInputsSearchAddJobRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -1930,6 +1965,31 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.ListTrendingMetricsViewsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiTrendingMetricsViewResponse>;
+
+  postBulkOperations(
+    request: proto_clarifai_api_service_pb.PostBulkOperationsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiBulkOperationsResponse>;
+
+  listBulkOperations(
+    request: proto_clarifai_api_service_pb.ListBulkOperationsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiBulkOperationsResponse>;
+
+  getBulkOperation(
+    request: proto_clarifai_api_service_pb.GetBulkOperationRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleBulkOperationsResponse>;
+
+  cancelBulkOperations(
+    request: proto_clarifai_api_service_pb.CancelBulkOperationRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiBulkOperationsResponse>;
+
+  deleteBulkOperations(
+    request: proto_clarifai_api_service_pb.DeleteBulkOperationRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
 
   getDatasetInputsSearchAddJob(
     request: proto_clarifai_api_service_pb.GetDatasetInputsSearchAddJobRequest,
