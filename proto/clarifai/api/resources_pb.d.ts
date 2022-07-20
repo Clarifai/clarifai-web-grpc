@@ -574,6 +574,11 @@ export class Concept extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): Concept;
 
+  getKeypointInfo(): KeypointInfo | undefined;
+  setKeypointInfo(value?: KeypointInfo): Concept;
+  hasKeypointInfo(): boolean;
+  clearKeypointInfo(): Concept;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Concept.AsObject;
   static toObject(includeInstance: boolean, msg: Concept): Concept.AsObject;
@@ -594,6 +599,53 @@ export namespace Concept {
     vocabId: string,
     visibility?: Visibility.AsObject,
     userId: string,
+    keypointInfo?: KeypointInfo.AsObject,
+  }
+}
+
+export class KeypointInfo extends jspb.Message {
+  getKeypointNamesList(): Array<string>;
+  setKeypointNamesList(value: Array<string>): KeypointInfo;
+  clearKeypointNamesList(): KeypointInfo;
+  addKeypointNames(value: string, index?: number): KeypointInfo;
+
+  getSkeletonList(): Array<ListOfFloat>;
+  setSkeletonList(value: Array<ListOfFloat>): KeypointInfo;
+  clearSkeletonList(): KeypointInfo;
+  addSkeleton(value?: ListOfFloat, index?: number): ListOfFloat;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): KeypointInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: KeypointInfo): KeypointInfo.AsObject;
+  static serializeBinaryToWriter(message: KeypointInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): KeypointInfo;
+  static deserializeBinaryFromReader(message: KeypointInfo, reader: jspb.BinaryReader): KeypointInfo;
+}
+
+export namespace KeypointInfo {
+  export type AsObject = {
+    keypointNamesList: Array<string>,
+    skeletonList: Array<ListOfFloat.AsObject>,
+  }
+}
+
+export class ListOfFloat extends jspb.Message {
+  getValuesList(): Array<number>;
+  setValuesList(value: Array<number>): ListOfFloat;
+  clearValuesList(): ListOfFloat;
+  addValues(value: number, index?: number): ListOfFloat;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListOfFloat.AsObject;
+  static toObject(includeInstance: boolean, msg: ListOfFloat): ListOfFloat.AsObject;
+  static serializeBinaryToWriter(message: ListOfFloat, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListOfFloat;
+  static deserializeBinaryFromReader(message: ListOfFloat, reader: jspb.BinaryReader): ListOfFloat;
+}
+
+export namespace ListOfFloat {
+  export type AsObject = {
+    valuesList: Array<number>,
   }
 }
 
@@ -1024,6 +1076,11 @@ export class RegionInfo extends jspb.Message {
   hasToken(): boolean;
   clearToken(): RegionInfo;
 
+  getKeypointLocationsList(): Array<Point>;
+  setKeypointLocationsList(value: Array<Point>): RegionInfo;
+  clearKeypointLocationsList(): RegionInfo;
+  addKeypointLocations(value?: Point, index?: number): Point;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RegionInfo.AsObject;
   static toObject(includeInstance: boolean, msg: RegionInfo): RegionInfo.AsObject;
@@ -1040,6 +1097,7 @@ export namespace RegionInfo {
     point?: Point.AsObject,
     span?: Span.AsObject,
     token?: Token.AsObject,
+    keypointLocationsList: Array<Point.AsObject>,
   }
 }
 
@@ -1175,6 +1233,9 @@ export class Point extends jspb.Message {
   getZ(): number;
   setZ(value: number): Point;
 
+  getVisibility(): Point.Visibility;
+  setVisibility(value: Point.Visibility): Point;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Point.AsObject;
   static toObject(includeInstance: boolean, msg: Point): Point.AsObject;
@@ -1188,6 +1249,13 @@ export namespace Point {
     row: number,
     col: number,
     z: number,
+    visibility: Point.Visibility,
+  }
+
+  export enum Visibility { 
+    NOT_PRESENT = 0,
+    NOT_VISIBLE = 1,
+    VISIBLE = 2,
   }
 }
 
@@ -2143,6 +2211,16 @@ export class Model extends jspb.Message {
   clearLanguagesList(): Model;
   addLanguages(value: string, index?: number): Model;
 
+  getLanguagesFullList(): Array<FullTag>;
+  setLanguagesFullList(value: Array<FullTag>): Model;
+  clearLanguagesFullList(): Model;
+  addLanguagesFull(value?: FullTag, index?: number): FullTag;
+
+  getCheckConsentsList(): Array<string>;
+  setCheckConsentsList(value: Array<string>): Model;
+  clearCheckConsentsList(): Model;
+  addCheckConsents(value: string, index?: number): Model;
+
   getIsStarred(): boolean;
   setIsStarred(value: boolean): Model;
 
@@ -2191,6 +2269,8 @@ export namespace Model {
     toolkitsList: Array<string>,
     useCasesList: Array<string>,
     languagesList: Array<string>,
+    languagesFullList: Array<FullTag.AsObject>,
+    checkConsentsList: Array<string>,
     isStarred: boolean,
     starCount: number,
     importInfo?: ImportInfo.AsObject,
@@ -2692,6 +2772,7 @@ export namespace ModelTypeField {
     RECURSIVE_ENUM = 14,
     PYTHON_CODE = 15,
     DATASET_ID = 16,
+    DATASET_VERSION_ID = 17,
   }
 }
 
@@ -4090,6 +4171,11 @@ export class User extends jspb.Message {
   hasDateMarketingConsent(): boolean;
   clearDateMarketingConsent(): User;
 
+  getDatePiiConsent(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDatePiiConsent(value?: google_protobuf_timestamp_pb.Timestamp): User;
+  hasDatePiiConsent(): boolean;
+  clearDatePiiConsent(): User;
+
   getMetadata(): google_protobuf_struct_pb.Struct | undefined;
   setMetadata(value?: google_protobuf_struct_pb.Struct): User;
   hasMetadata(): boolean;
@@ -4147,6 +4233,7 @@ export namespace User {
     dateGdprConsent?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     dateTosConsent?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     dateMarketingConsent?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    datePiiConsent?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
     emailAddressesList: Array<EmailAddress.AsObject>,
     isOrgAdmin: boolean,
@@ -4180,6 +4267,11 @@ export class UserDetail extends jspb.Message {
   setDateMarketingConsent(value?: google_protobuf_timestamp_pb.Timestamp): UserDetail;
   hasDateMarketingConsent(): boolean;
   clearDateMarketingConsent(): UserDetail;
+
+  getDatePiiConsent(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDatePiiConsent(value?: google_protobuf_timestamp_pb.Timestamp): UserDetail;
+  hasDatePiiConsent(): boolean;
+  clearDatePiiConsent(): UserDetail;
 
   getMetadata(): google_protobuf_struct_pb.Struct | undefined;
   setMetadata(value?: google_protobuf_struct_pb.Struct): UserDetail;
@@ -4221,6 +4313,7 @@ export namespace UserDetail {
     dateGdprConsent?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     dateTosConsent?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     dateMarketingConsent?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    datePiiConsent?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
     emailAddressesList: Array<EmailAddress.AsObject>,
     isOrgAdmin: boolean,
@@ -4488,6 +4581,11 @@ export class Workflow extends jspb.Message {
   clearUseCasesList(): Workflow;
   addUseCases(value: string, index?: number): Workflow;
 
+  getCheckConsentsList(): Array<string>;
+  setCheckConsentsList(value: Array<string>): Workflow;
+  clearCheckConsentsList(): Workflow;
+  addCheckConsents(value: string, index?: number): Workflow;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Workflow.AsObject;
   static toObject(includeInstance: boolean, msg: Workflow): Workflow.AsObject;
@@ -4512,6 +4610,7 @@ export namespace Workflow {
     description: string,
     notes: string,
     useCasesList: Array<string>,
+    checkConsentsList: Array<string>,
   }
 }
 
@@ -4959,6 +5058,9 @@ export class Task extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): Task;
 
+  getLabelOrderId(): string;
+  setLabelOrderId(value: string): Task;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Task.AsObject;
   static toObject(includeInstance: boolean, msg: Task): Task.AsObject;
@@ -4986,6 +5088,7 @@ export namespace Task {
     visibility?: Visibility.AsObject,
     appId: string,
     userId: string,
+    labelOrderId: string,
   }
 
   export enum TaskType { 
@@ -5624,6 +5727,28 @@ export namespace TrendingMetric {
   }
 }
 
+export class FullTag extends jspb.Message {
+  getName(): string;
+  setName(value: string): FullTag;
+
+  getId(): string;
+  setId(value: string): FullTag;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FullTag.AsObject;
+  static toObject(includeInstance: boolean, msg: FullTag): FullTag.AsObject;
+  static serializeBinaryToWriter(message: FullTag, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FullTag;
+  static deserializeBinaryFromReader(message: FullTag, reader: jspb.BinaryReader): FullTag;
+}
+
+export namespace FullTag {
+  export type AsObject = {
+    name: string,
+    id: string,
+  }
+}
+
 export class TimeSegment extends jspb.Message {
   getId(): string;
   setId(value: string): TimeSegment;
@@ -5677,6 +5802,242 @@ export namespace TimeInfo {
     numFrames: number,
     beginTime: number,
     endTime: number,
+  }
+}
+
+export class Module extends jspb.Message {
+  getId(): string;
+  setId(value: string): Module;
+
+  getDescription(): string;
+  setDescription(value: string): Module;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Module;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): Module;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): Module;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): Module;
+
+  getVisibility(): Visibility | undefined;
+  setVisibility(value?: Visibility): Module;
+  hasVisibility(): boolean;
+  clearVisibility(): Module;
+
+  getMetadata(): google_protobuf_struct_pb.Struct | undefined;
+  setMetadata(value?: google_protobuf_struct_pb.Struct): Module;
+  hasMetadata(): boolean;
+  clearMetadata(): Module;
+
+  getUserId(): string;
+  setUserId(value: string): Module;
+
+  getAppId(): string;
+  setAppId(value: string): Module;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Module.AsObject;
+  static toObject(includeInstance: boolean, msg: Module): Module.AsObject;
+  static serializeBinaryToWriter(message: Module, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Module;
+  static deserializeBinaryFromReader(message: Module, reader: jspb.BinaryReader): Module;
+}
+
+export namespace Module {
+  export type AsObject = {
+    id: string,
+    description: string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    visibility?: Visibility.AsObject,
+    metadata?: google_protobuf_struct_pb.Struct.AsObject,
+    userId: string,
+    appId: string,
+  }
+}
+
+export class ModuleVersion extends jspb.Message {
+  getId(): string;
+  setId(value: string): ModuleVersion;
+
+  getModuleId(): string;
+  setModuleId(value: string): ModuleVersion;
+
+  getAppId(): string;
+  setAppId(value: string): ModuleVersion;
+
+  getUserId(): string;
+  setUserId(value: string): ModuleVersion;
+
+  getDescription(): string;
+  setDescription(value: string): ModuleVersion;
+
+  getNotes(): string;
+  setNotes(value: string): ModuleVersion;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): ModuleVersion;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): ModuleVersion;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): ModuleVersion;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): ModuleVersion;
+
+  getGitCommitUrl(): string;
+  setGitCommitUrl(value: string): ModuleVersion;
+
+  getModuleNav(): ModuleVersion.ModuleNav | undefined;
+  setModuleNav(value?: ModuleVersion.ModuleNav): ModuleVersion;
+  hasModuleNav(): boolean;
+  clearModuleNav(): ModuleVersion;
+
+  getApproved(): boolean;
+  setApproved(value: boolean): ModuleVersion;
+
+  getVisibility(): Visibility | undefined;
+  setVisibility(value?: Visibility): ModuleVersion;
+  hasVisibility(): boolean;
+  clearVisibility(): ModuleVersion;
+
+  getMetadata(): google_protobuf_struct_pb.Struct | undefined;
+  setMetadata(value?: google_protobuf_struct_pb.Struct): ModuleVersion;
+  hasMetadata(): boolean;
+  clearMetadata(): ModuleVersion;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModuleVersion.AsObject;
+  static toObject(includeInstance: boolean, msg: ModuleVersion): ModuleVersion.AsObject;
+  static serializeBinaryToWriter(message: ModuleVersion, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModuleVersion;
+  static deserializeBinaryFromReader(message: ModuleVersion, reader: jspb.BinaryReader): ModuleVersion;
+}
+
+export namespace ModuleVersion {
+  export type AsObject = {
+    id: string,
+    moduleId: string,
+    appId: string,
+    userId: string,
+    description: string,
+    notes: string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    gitCommitUrl: string,
+    moduleNav?: ModuleVersion.ModuleNav.AsObject,
+    approved: boolean,
+    visibility?: Visibility.AsObject,
+    metadata?: google_protobuf_struct_pb.Struct.AsObject,
+  }
+
+  export class ModuleSubNav extends jspb.Message {
+    getTitle(): string;
+    setTitle(value: string): ModuleSubNav;
+
+    getQueryKey(): string;
+    setQueryKey(value: string): ModuleSubNav;
+
+    getQueryValue(): string;
+    setQueryValue(value: string): ModuleSubNav;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ModuleSubNav.AsObject;
+    static toObject(includeInstance: boolean, msg: ModuleSubNav): ModuleSubNav.AsObject;
+    static serializeBinaryToWriter(message: ModuleSubNav, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ModuleSubNav;
+    static deserializeBinaryFromReader(message: ModuleSubNav, reader: jspb.BinaryReader): ModuleSubNav;
+  }
+
+  export namespace ModuleSubNav {
+    export type AsObject = {
+      title: string,
+      queryKey: string,
+      queryValue: string,
+    }
+  }
+
+
+  export class ModuleNav extends jspb.Message {
+    getTitle(): string;
+    setTitle(value: string): ModuleNav;
+
+    getModuleSubNavsList(): Array<ModuleVersion.ModuleSubNav>;
+    setModuleSubNavsList(value: Array<ModuleVersion.ModuleSubNav>): ModuleNav;
+    clearModuleSubNavsList(): ModuleNav;
+    addModuleSubNavs(value?: ModuleVersion.ModuleSubNav, index?: number): ModuleVersion.ModuleSubNav;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ModuleNav.AsObject;
+    static toObject(includeInstance: boolean, msg: ModuleNav): ModuleNav.AsObject;
+    static serializeBinaryToWriter(message: ModuleNav, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ModuleNav;
+    static deserializeBinaryFromReader(message: ModuleNav, reader: jspb.BinaryReader): ModuleNav;
+  }
+
+  export namespace ModuleNav {
+    export type AsObject = {
+      title: string,
+      moduleSubNavsList: Array<ModuleVersion.ModuleSubNav.AsObject>,
+    }
+  }
+
+}
+
+export class InstalledModuleVersion extends jspb.Message {
+  getId(): string;
+  setId(value: string): InstalledModuleVersion;
+
+  getModuleVersion(): ModuleVersion | undefined;
+  setModuleVersion(value?: ModuleVersion): InstalledModuleVersion;
+  hasModuleVersion(): boolean;
+  clearModuleVersion(): InstalledModuleVersion;
+
+  getAppId(): string;
+  setAppId(value: string): InstalledModuleVersion;
+
+  getUserId(): string;
+  setUserId(value: string): InstalledModuleVersion;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): InstalledModuleVersion;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): InstalledModuleVersion;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): InstalledModuleVersion;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): InstalledModuleVersion;
+
+  getDeployUrl(): string;
+  setDeployUrl(value: string): InstalledModuleVersion;
+
+  getVisibility(): Visibility | undefined;
+  setVisibility(value?: Visibility): InstalledModuleVersion;
+  hasVisibility(): boolean;
+  clearVisibility(): InstalledModuleVersion;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InstalledModuleVersion.AsObject;
+  static toObject(includeInstance: boolean, msg: InstalledModuleVersion): InstalledModuleVersion.AsObject;
+  static serializeBinaryToWriter(message: InstalledModuleVersion, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InstalledModuleVersion;
+  static deserializeBinaryFromReader(message: InstalledModuleVersion, reader: jspb.BinaryReader): InstalledModuleVersion;
+}
+
+export namespace InstalledModuleVersion {
+  export type AsObject = {
+    id: string,
+    moduleVersion?: ModuleVersion.AsObject,
+    appId: string,
+    userId: string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    deployUrl: string,
+    visibility?: Visibility.AsObject,
   }
 }
 
