@@ -3197,6 +3197,40 @@ export namespace PatchModelToolkitsRequest {
   }
 }
 
+export class PatchModelCheckConsentsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchModelCheckConsentsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PatchModelCheckConsentsRequest;
+
+  getModelId(): string;
+  setModelId(value: string): PatchModelCheckConsentsRequest;
+
+  getCheckConsentsList(): Array<string>;
+  setCheckConsentsList(value: Array<string>): PatchModelCheckConsentsRequest;
+  clearCheckConsentsList(): PatchModelCheckConsentsRequest;
+  addCheckConsents(value: string, index?: number): PatchModelCheckConsentsRequest;
+
+  getAction(): string;
+  setAction(value: string): PatchModelCheckConsentsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PatchModelCheckConsentsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PatchModelCheckConsentsRequest): PatchModelCheckConsentsRequest.AsObject;
+  static serializeBinaryToWriter(message: PatchModelCheckConsentsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PatchModelCheckConsentsRequest;
+  static deserializeBinaryFromReader(message: PatchModelCheckConsentsRequest, reader: jspb.BinaryReader): PatchModelCheckConsentsRequest;
+}
+
+export namespace PatchModelCheckConsentsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    modelId: string,
+    checkConsentsList: Array<string>,
+    action: string,
+  }
+}
+
 export class PatchModelUseCasesRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
   setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchModelUseCasesRequest;
@@ -3288,6 +3322,32 @@ export namespace MultiModelToolkitResponse {
   export type AsObject = {
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     toolkitsList: Array<string>,
+  }
+}
+
+export class MultiModelCheckConsentResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiModelCheckConsentResponse;
+  hasStatus(): boolean;
+  clearStatus(): MultiModelCheckConsentResponse;
+
+  getCheckConsentsList(): Array<string>;
+  setCheckConsentsList(value: Array<string>): MultiModelCheckConsentResponse;
+  clearCheckConsentsList(): MultiModelCheckConsentResponse;
+  addCheckConsents(value: string, index?: number): MultiModelCheckConsentResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MultiModelCheckConsentResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiModelCheckConsentResponse): MultiModelCheckConsentResponse.AsObject;
+  static serializeBinaryToWriter(message: MultiModelCheckConsentResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiModelCheckConsentResponse;
+  static deserializeBinaryFromReader(message: MultiModelCheckConsentResponse, reader: jspb.BinaryReader): MultiModelCheckConsentResponse;
+}
+
+export namespace MultiModelCheckConsentResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    checkConsentsList: Array<string>,
   }
 }
 
@@ -6251,6 +6311,11 @@ export class ListTasksRequest extends jspb.Message {
   clearReviewUserIdsList(): ListTasksRequest;
   addReviewUserIds(value: string, index?: number): ListTasksRequest;
 
+  getLabelOrderIdsList(): Array<string>;
+  setLabelOrderIdsList(value: Array<string>): ListTasksRequest;
+  clearLabelOrderIdsList(): ListTasksRequest;
+  addLabelOrderIds(value: string, index?: number): ListTasksRequest;
+
   getIncludingLabelOrderTasks(): boolean;
   setIncludingLabelOrderTasks(value: boolean): ListTasksRequest;
 
@@ -6274,6 +6339,7 @@ export namespace ListTasksRequest {
     perPage: number,
     workerUserIdsList: Array<string>,
     reviewUserIdsList: Array<string>,
+    labelOrderIdsList: Array<string>,
     includingLabelOrderTasks: boolean,
     additionalFieldsList: Array<string>,
   }
@@ -7014,6 +7080,470 @@ export namespace MultiTrendingMetricsViewResponse {
   export type AsObject = {
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     metricsList: Array<proto_clarifai_api_resources_pb.TrendingMetric.AsObject>,
+  }
+}
+
+export class GetModuleRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetModuleRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): GetModuleRequest;
+
+  getModuleId(): string;
+  setModuleId(value: string): GetModuleRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetModuleRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetModuleRequest): GetModuleRequest.AsObject;
+  static serializeBinaryToWriter(message: GetModuleRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetModuleRequest;
+  static deserializeBinaryFromReader(message: GetModuleRequest, reader: jspb.BinaryReader): GetModuleRequest;
+}
+
+export namespace GetModuleRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    moduleId: string,
+  }
+}
+
+export class ListModulesRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListModulesRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): ListModulesRequest;
+
+  getPage(): number;
+  setPage(value: number): ListModulesRequest;
+
+  getPerPage(): number;
+  setPerPage(value: number): ListModulesRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListModulesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListModulesRequest): ListModulesRequest.AsObject;
+  static serializeBinaryToWriter(message: ListModulesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListModulesRequest;
+  static deserializeBinaryFromReader(message: ListModulesRequest, reader: jspb.BinaryReader): ListModulesRequest;
+}
+
+export namespace ListModulesRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    page: number,
+    perPage: number,
+  }
+}
+
+export class PostModulesRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostModulesRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostModulesRequest;
+
+  getModulesList(): Array<proto_clarifai_api_resources_pb.Module>;
+  setModulesList(value: Array<proto_clarifai_api_resources_pb.Module>): PostModulesRequest;
+  clearModulesList(): PostModulesRequest;
+  addModules(value?: proto_clarifai_api_resources_pb.Module, index?: number): proto_clarifai_api_resources_pb.Module;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostModulesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostModulesRequest): PostModulesRequest.AsObject;
+  static serializeBinaryToWriter(message: PostModulesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostModulesRequest;
+  static deserializeBinaryFromReader(message: PostModulesRequest, reader: jspb.BinaryReader): PostModulesRequest;
+}
+
+export namespace PostModulesRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    modulesList: Array<proto_clarifai_api_resources_pb.Module.AsObject>,
+  }
+}
+
+export class PatchModulesRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchModulesRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PatchModulesRequest;
+
+  getModulesList(): Array<proto_clarifai_api_resources_pb.Module>;
+  setModulesList(value: Array<proto_clarifai_api_resources_pb.Module>): PatchModulesRequest;
+  clearModulesList(): PatchModulesRequest;
+  addModules(value?: proto_clarifai_api_resources_pb.Module, index?: number): proto_clarifai_api_resources_pb.Module;
+
+  getAction(): string;
+  setAction(value: string): PatchModulesRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PatchModulesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PatchModulesRequest): PatchModulesRequest.AsObject;
+  static serializeBinaryToWriter(message: PatchModulesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PatchModulesRequest;
+  static deserializeBinaryFromReader(message: PatchModulesRequest, reader: jspb.BinaryReader): PatchModulesRequest;
+}
+
+export namespace PatchModulesRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    modulesList: Array<proto_clarifai_api_resources_pb.Module.AsObject>,
+    action: string,
+  }
+}
+
+export class DeleteModulesRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteModulesRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): DeleteModulesRequest;
+
+  getIdsList(): Array<string>;
+  setIdsList(value: Array<string>): DeleteModulesRequest;
+  clearIdsList(): DeleteModulesRequest;
+  addIds(value: string, index?: number): DeleteModulesRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteModulesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteModulesRequest): DeleteModulesRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteModulesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteModulesRequest;
+  static deserializeBinaryFromReader(message: DeleteModulesRequest, reader: jspb.BinaryReader): DeleteModulesRequest;
+}
+
+export namespace DeleteModulesRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    idsList: Array<string>,
+  }
+}
+
+export class SingleModuleResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleModuleResponse;
+  hasStatus(): boolean;
+  clearStatus(): SingleModuleResponse;
+
+  getModule(): proto_clarifai_api_resources_pb.Module | undefined;
+  setModule(value?: proto_clarifai_api_resources_pb.Module): SingleModuleResponse;
+  hasModule(): boolean;
+  clearModule(): SingleModuleResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SingleModuleResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SingleModuleResponse): SingleModuleResponse.AsObject;
+  static serializeBinaryToWriter(message: SingleModuleResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SingleModuleResponse;
+  static deserializeBinaryFromReader(message: SingleModuleResponse, reader: jspb.BinaryReader): SingleModuleResponse;
+}
+
+export namespace SingleModuleResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    module?: proto_clarifai_api_resources_pb.Module.AsObject,
+  }
+}
+
+export class MultiModuleResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiModuleResponse;
+  hasStatus(): boolean;
+  clearStatus(): MultiModuleResponse;
+
+  getModulesList(): Array<proto_clarifai_api_resources_pb.Module>;
+  setModulesList(value: Array<proto_clarifai_api_resources_pb.Module>): MultiModuleResponse;
+  clearModulesList(): MultiModuleResponse;
+  addModules(value?: proto_clarifai_api_resources_pb.Module, index?: number): proto_clarifai_api_resources_pb.Module;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MultiModuleResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiModuleResponse): MultiModuleResponse.AsObject;
+  static serializeBinaryToWriter(message: MultiModuleResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiModuleResponse;
+  static deserializeBinaryFromReader(message: MultiModuleResponse, reader: jspb.BinaryReader): MultiModuleResponse;
+}
+
+export namespace MultiModuleResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    modulesList: Array<proto_clarifai_api_resources_pb.Module.AsObject>,
+  }
+}
+
+export class GetModuleVersionRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetModuleVersionRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): GetModuleVersionRequest;
+
+  getModuleId(): string;
+  setModuleId(value: string): GetModuleVersionRequest;
+
+  getModuleVersionId(): string;
+  setModuleVersionId(value: string): GetModuleVersionRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetModuleVersionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetModuleVersionRequest): GetModuleVersionRequest.AsObject;
+  static serializeBinaryToWriter(message: GetModuleVersionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetModuleVersionRequest;
+  static deserializeBinaryFromReader(message: GetModuleVersionRequest, reader: jspb.BinaryReader): GetModuleVersionRequest;
+}
+
+export namespace GetModuleVersionRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    moduleId: string,
+    moduleVersionId: string,
+  }
+}
+
+export class ListModuleVersionsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListModuleVersionsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): ListModuleVersionsRequest;
+
+  getModuleId(): string;
+  setModuleId(value: string): ListModuleVersionsRequest;
+
+  getPage(): number;
+  setPage(value: number): ListModuleVersionsRequest;
+
+  getPerPage(): number;
+  setPerPage(value: number): ListModuleVersionsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListModuleVersionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListModuleVersionsRequest): ListModuleVersionsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListModuleVersionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListModuleVersionsRequest;
+  static deserializeBinaryFromReader(message: ListModuleVersionsRequest, reader: jspb.BinaryReader): ListModuleVersionsRequest;
+}
+
+export namespace ListModuleVersionsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    moduleId: string,
+    page: number,
+    perPage: number,
+  }
+}
+
+export class PostModuleVersionsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostModuleVersionsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostModuleVersionsRequest;
+
+  getModuleId(): string;
+  setModuleId(value: string): PostModuleVersionsRequest;
+
+  getModuleVersionsList(): Array<proto_clarifai_api_resources_pb.ModuleVersion>;
+  setModuleVersionsList(value: Array<proto_clarifai_api_resources_pb.ModuleVersion>): PostModuleVersionsRequest;
+  clearModuleVersionsList(): PostModuleVersionsRequest;
+  addModuleVersions(value?: proto_clarifai_api_resources_pb.ModuleVersion, index?: number): proto_clarifai_api_resources_pb.ModuleVersion;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostModuleVersionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostModuleVersionsRequest): PostModuleVersionsRequest.AsObject;
+  static serializeBinaryToWriter(message: PostModuleVersionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostModuleVersionsRequest;
+  static deserializeBinaryFromReader(message: PostModuleVersionsRequest, reader: jspb.BinaryReader): PostModuleVersionsRequest;
+}
+
+export namespace PostModuleVersionsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    moduleId: string,
+    moduleVersionsList: Array<proto_clarifai_api_resources_pb.ModuleVersion.AsObject>,
+  }
+}
+
+export class DeleteModuleVersionsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteModuleVersionsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): DeleteModuleVersionsRequest;
+
+  getModuleId(): string;
+  setModuleId(value: string): DeleteModuleVersionsRequest;
+
+  getIdsList(): Array<string>;
+  setIdsList(value: Array<string>): DeleteModuleVersionsRequest;
+  clearIdsList(): DeleteModuleVersionsRequest;
+  addIds(value: string, index?: number): DeleteModuleVersionsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteModuleVersionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteModuleVersionsRequest): DeleteModuleVersionsRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteModuleVersionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteModuleVersionsRequest;
+  static deserializeBinaryFromReader(message: DeleteModuleVersionsRequest, reader: jspb.BinaryReader): DeleteModuleVersionsRequest;
+}
+
+export namespace DeleteModuleVersionsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    moduleId: string,
+    idsList: Array<string>,
+  }
+}
+
+export class SingleModuleVersionResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleModuleVersionResponse;
+  hasStatus(): boolean;
+  clearStatus(): SingleModuleVersionResponse;
+
+  getModuleVersion(): proto_clarifai_api_resources_pb.ModuleVersion | undefined;
+  setModuleVersion(value?: proto_clarifai_api_resources_pb.ModuleVersion): SingleModuleVersionResponse;
+  hasModuleVersion(): boolean;
+  clearModuleVersion(): SingleModuleVersionResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SingleModuleVersionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SingleModuleVersionResponse): SingleModuleVersionResponse.AsObject;
+  static serializeBinaryToWriter(message: SingleModuleVersionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SingleModuleVersionResponse;
+  static deserializeBinaryFromReader(message: SingleModuleVersionResponse, reader: jspb.BinaryReader): SingleModuleVersionResponse;
+}
+
+export namespace SingleModuleVersionResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    moduleVersion?: proto_clarifai_api_resources_pb.ModuleVersion.AsObject,
+  }
+}
+
+export class MultiModuleVersionResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiModuleVersionResponse;
+  hasStatus(): boolean;
+  clearStatus(): MultiModuleVersionResponse;
+
+  getModuleVersionsList(): Array<proto_clarifai_api_resources_pb.ModuleVersion>;
+  setModuleVersionsList(value: Array<proto_clarifai_api_resources_pb.ModuleVersion>): MultiModuleVersionResponse;
+  clearModuleVersionsList(): MultiModuleVersionResponse;
+  addModuleVersions(value?: proto_clarifai_api_resources_pb.ModuleVersion, index?: number): proto_clarifai_api_resources_pb.ModuleVersion;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MultiModuleVersionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiModuleVersionResponse): MultiModuleVersionResponse.AsObject;
+  static serializeBinaryToWriter(message: MultiModuleVersionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiModuleVersionResponse;
+  static deserializeBinaryFromReader(message: MultiModuleVersionResponse, reader: jspb.BinaryReader): MultiModuleVersionResponse;
+}
+
+export namespace MultiModuleVersionResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    moduleVersionsList: Array<proto_clarifai_api_resources_pb.ModuleVersion.AsObject>,
+  }
+}
+
+export class ListInstalledModuleVersionsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListInstalledModuleVersionsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): ListInstalledModuleVersionsRequest;
+
+  getPage(): number;
+  setPage(value: number): ListInstalledModuleVersionsRequest;
+
+  getPerPage(): number;
+  setPerPage(value: number): ListInstalledModuleVersionsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListInstalledModuleVersionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListInstalledModuleVersionsRequest): ListInstalledModuleVersionsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListInstalledModuleVersionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListInstalledModuleVersionsRequest;
+  static deserializeBinaryFromReader(message: ListInstalledModuleVersionsRequest, reader: jspb.BinaryReader): ListInstalledModuleVersionsRequest;
+}
+
+export namespace ListInstalledModuleVersionsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    page: number,
+    perPage: number,
+  }
+}
+
+export class PostInstalledModuleVersionsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostInstalledModuleVersionsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostInstalledModuleVersionsRequest;
+
+  getInstalledModuleVersionsList(): Array<proto_clarifai_api_resources_pb.InstalledModuleVersion>;
+  setInstalledModuleVersionsList(value: Array<proto_clarifai_api_resources_pb.InstalledModuleVersion>): PostInstalledModuleVersionsRequest;
+  clearInstalledModuleVersionsList(): PostInstalledModuleVersionsRequest;
+  addInstalledModuleVersions(value?: proto_clarifai_api_resources_pb.InstalledModuleVersion, index?: number): proto_clarifai_api_resources_pb.InstalledModuleVersion;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostInstalledModuleVersionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostInstalledModuleVersionsRequest): PostInstalledModuleVersionsRequest.AsObject;
+  static serializeBinaryToWriter(message: PostInstalledModuleVersionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostInstalledModuleVersionsRequest;
+  static deserializeBinaryFromReader(message: PostInstalledModuleVersionsRequest, reader: jspb.BinaryReader): PostInstalledModuleVersionsRequest;
+}
+
+export namespace PostInstalledModuleVersionsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    installedModuleVersionsList: Array<proto_clarifai_api_resources_pb.InstalledModuleVersion.AsObject>,
+  }
+}
+
+export class DeleteInstalledModuleVersionsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteInstalledModuleVersionsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): DeleteInstalledModuleVersionsRequest;
+
+  getIdsList(): Array<string>;
+  setIdsList(value: Array<string>): DeleteInstalledModuleVersionsRequest;
+  clearIdsList(): DeleteInstalledModuleVersionsRequest;
+  addIds(value: string, index?: number): DeleteInstalledModuleVersionsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteInstalledModuleVersionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteInstalledModuleVersionsRequest): DeleteInstalledModuleVersionsRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteInstalledModuleVersionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteInstalledModuleVersionsRequest;
+  static deserializeBinaryFromReader(message: DeleteInstalledModuleVersionsRequest, reader: jspb.BinaryReader): DeleteInstalledModuleVersionsRequest;
+}
+
+export namespace DeleteInstalledModuleVersionsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    idsList: Array<string>,
+  }
+}
+
+export class MultiInstalledModuleVersionResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiInstalledModuleVersionResponse;
+  hasStatus(): boolean;
+  clearStatus(): MultiInstalledModuleVersionResponse;
+
+  getInstalledModuleVersionsList(): Array<proto_clarifai_api_resources_pb.InstalledModuleVersion>;
+  setInstalledModuleVersionsList(value: Array<proto_clarifai_api_resources_pb.InstalledModuleVersion>): MultiInstalledModuleVersionResponse;
+  clearInstalledModuleVersionsList(): MultiInstalledModuleVersionResponse;
+  addInstalledModuleVersions(value?: proto_clarifai_api_resources_pb.InstalledModuleVersion, index?: number): proto_clarifai_api_resources_pb.InstalledModuleVersion;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MultiInstalledModuleVersionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiInstalledModuleVersionResponse): MultiInstalledModuleVersionResponse.AsObject;
+  static serializeBinaryToWriter(message: MultiInstalledModuleVersionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiInstalledModuleVersionResponse;
+  static deserializeBinaryFromReader(message: MultiInstalledModuleVersionResponse, reader: jspb.BinaryReader): MultiInstalledModuleVersionResponse;
+}
+
+export namespace MultiInstalledModuleVersionResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    installedModuleVersionsList: Array<proto_clarifai_api_resources_pb.InstalledModuleVersion.AsObject>,
   }
 }
 

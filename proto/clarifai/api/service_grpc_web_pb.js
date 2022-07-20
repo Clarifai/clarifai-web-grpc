@@ -3998,6 +3998,67 @@ proto.clarifai.api.V2PromiseClient.prototype.deleteModels =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PatchModelCheckConsentsRequest,
+ *   !proto.clarifai.api.MultiModelCheckConsentResponse>}
+ */
+const methodDescriptor_V2_PatchModelCheckConsents = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PatchModelCheckConsents',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PatchModelCheckConsentsRequest,
+  proto.clarifai.api.MultiModelCheckConsentResponse,
+  /**
+   * @param {!proto.clarifai.api.PatchModelCheckConsentsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiModelCheckConsentResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PatchModelCheckConsentsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiModelCheckConsentResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiModelCheckConsentResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.patchModelCheckConsents =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PatchModelCheckConsents',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PatchModelCheckConsents,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PatchModelCheckConsentsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiModelCheckConsentResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.patchModelCheckConsents =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PatchModelCheckConsents',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PatchModelCheckConsents);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.PatchModelToolkitsRequest,
  *   !proto.clarifai.api.MultiModelToolkitResponse>}
  */
@@ -6743,67 +6804,6 @@ proto.clarifai.api.V2PromiseClient.prototype.patchApps =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.clarifai.api.PatchAppRequest,
- *   !proto.clarifai.api.SingleAppResponse>}
- */
-const methodDescriptor_V2_PatchApp = new grpc.web.MethodDescriptor(
-  '/clarifai.api.V2/PatchApp',
-  grpc.web.MethodType.UNARY,
-  proto.clarifai.api.PatchAppRequest,
-  proto.clarifai.api.SingleAppResponse,
-  /**
-   * @param {!proto.clarifai.api.PatchAppRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.clarifai.api.SingleAppResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.clarifai.api.PatchAppRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SingleAppResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleAppResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.clarifai.api.V2Client.prototype.patchApp =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/clarifai.api.V2/PatchApp',
-      request,
-      metadata || {},
-      methodDescriptor_V2_PatchApp,
-      callback);
-};
-
-
-/**
- * @param {!proto.clarifai.api.PatchAppRequest} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.clarifai.api.SingleAppResponse>}
- *     Promise that resolves to the response
- */
-proto.clarifai.api.V2PromiseClient.prototype.patchApp =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/clarifai.api.V2/PatchApp',
-      request,
-      metadata || {},
-      methodDescriptor_V2_PatchApp);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.PatchAppsIdsRequest,
  *   !proto.clarifai.api.MultiAppResponse>}
  */
@@ -6859,6 +6859,67 @@ proto.clarifai.api.V2PromiseClient.prototype.patchAppsIds =
       request,
       metadata || {},
       methodDescriptor_V2_PatchAppsIds);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PatchAppRequest,
+ *   !proto.clarifai.api.SingleAppResponse>}
+ */
+const methodDescriptor_V2_PatchApp = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PatchApp',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PatchAppRequest,
+  proto.clarifai.api.SingleAppResponse,
+  /**
+   * @param {!proto.clarifai.api.PatchAppRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SingleAppResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PatchAppRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SingleAppResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleAppResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.patchApp =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PatchApp',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PatchApp,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PatchAppRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.SingleAppResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.patchApp =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PatchApp',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PatchApp);
 };
 
 
@@ -9787,6 +9848,738 @@ proto.clarifai.api.V2PromiseClient.prototype.listTrendingMetricsViews =
       request,
       metadata || {},
       methodDescriptor_V2_ListTrendingMetricsViews);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.GetModuleRequest,
+ *   !proto.clarifai.api.SingleModuleResponse>}
+ */
+const methodDescriptor_V2_GetModule = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/GetModule',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.GetModuleRequest,
+  proto.clarifai.api.SingleModuleResponse,
+  /**
+   * @param {!proto.clarifai.api.GetModuleRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SingleModuleResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.GetModuleRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SingleModuleResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleModuleResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.getModule =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/GetModule',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetModule,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.GetModuleRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.SingleModuleResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.getModule =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/GetModule',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetModule);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListModulesRequest,
+ *   !proto.clarifai.api.MultiModuleResponse>}
+ */
+const methodDescriptor_V2_ListModules = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListModules',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListModulesRequest,
+  proto.clarifai.api.MultiModuleResponse,
+  /**
+   * @param {!proto.clarifai.api.ListModulesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiModuleResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListModulesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiModuleResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiModuleResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listModules =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListModules',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListModules,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListModulesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiModuleResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listModules =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListModules',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListModules);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostModulesRequest,
+ *   !proto.clarifai.api.MultiModuleResponse>}
+ */
+const methodDescriptor_V2_PostModules = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostModules',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostModulesRequest,
+  proto.clarifai.api.MultiModuleResponse,
+  /**
+   * @param {!proto.clarifai.api.PostModulesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiModuleResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostModulesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiModuleResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiModuleResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postModules =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostModules',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostModules,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostModulesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiModuleResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postModules =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostModules',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostModules);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PatchModulesRequest,
+ *   !proto.clarifai.api.MultiModuleResponse>}
+ */
+const methodDescriptor_V2_PatchModules = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PatchModules',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PatchModulesRequest,
+  proto.clarifai.api.MultiModuleResponse,
+  /**
+   * @param {!proto.clarifai.api.PatchModulesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiModuleResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PatchModulesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiModuleResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiModuleResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.patchModules =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PatchModules',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PatchModules,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PatchModulesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiModuleResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.patchModules =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PatchModules',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PatchModules);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.DeleteModulesRequest,
+ *   !proto.clarifai.api.status.BaseResponse>}
+ */
+const methodDescriptor_V2_DeleteModules = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/DeleteModules',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.DeleteModulesRequest,
+  proto_clarifai_api_status_status_pb.BaseResponse,
+  /**
+   * @param {!proto.clarifai.api.DeleteModulesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto_clarifai_api_status_status_pb.BaseResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.DeleteModulesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.status.BaseResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.status.BaseResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.deleteModules =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/DeleteModules',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeleteModules,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.DeleteModulesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.status.BaseResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.deleteModules =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/DeleteModules',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeleteModules);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.GetModuleVersionRequest,
+ *   !proto.clarifai.api.SingleModuleVersionResponse>}
+ */
+const methodDescriptor_V2_GetModuleVersion = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/GetModuleVersion',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.GetModuleVersionRequest,
+  proto.clarifai.api.SingleModuleVersionResponse,
+  /**
+   * @param {!proto.clarifai.api.GetModuleVersionRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SingleModuleVersionResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.GetModuleVersionRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SingleModuleVersionResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleModuleVersionResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.getModuleVersion =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/GetModuleVersion',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetModuleVersion,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.GetModuleVersionRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.SingleModuleVersionResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.getModuleVersion =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/GetModuleVersion',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetModuleVersion);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListModuleVersionsRequest,
+ *   !proto.clarifai.api.MultiModuleVersionResponse>}
+ */
+const methodDescriptor_V2_ListModuleVersions = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListModuleVersions',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListModuleVersionsRequest,
+  proto.clarifai.api.MultiModuleVersionResponse,
+  /**
+   * @param {!proto.clarifai.api.ListModuleVersionsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiModuleVersionResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListModuleVersionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiModuleVersionResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiModuleVersionResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listModuleVersions =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListModuleVersions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListModuleVersions,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListModuleVersionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiModuleVersionResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listModuleVersions =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListModuleVersions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListModuleVersions);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostModuleVersionsRequest,
+ *   !proto.clarifai.api.MultiModuleVersionResponse>}
+ */
+const methodDescriptor_V2_PostModuleVersions = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostModuleVersions',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostModuleVersionsRequest,
+  proto.clarifai.api.MultiModuleVersionResponse,
+  /**
+   * @param {!proto.clarifai.api.PostModuleVersionsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiModuleVersionResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostModuleVersionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiModuleVersionResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiModuleVersionResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postModuleVersions =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostModuleVersions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostModuleVersions,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostModuleVersionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiModuleVersionResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postModuleVersions =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostModuleVersions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostModuleVersions);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.DeleteModuleVersionsRequest,
+ *   !proto.clarifai.api.status.BaseResponse>}
+ */
+const methodDescriptor_V2_DeleteModuleVersions = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/DeleteModuleVersions',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.DeleteModuleVersionsRequest,
+  proto_clarifai_api_status_status_pb.BaseResponse,
+  /**
+   * @param {!proto.clarifai.api.DeleteModuleVersionsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto_clarifai_api_status_status_pb.BaseResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.DeleteModuleVersionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.status.BaseResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.status.BaseResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.deleteModuleVersions =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/DeleteModuleVersions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeleteModuleVersions,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.DeleteModuleVersionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.status.BaseResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.deleteModuleVersions =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/DeleteModuleVersions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeleteModuleVersions);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListInstalledModuleVersionsRequest,
+ *   !proto.clarifai.api.MultiInstalledModuleVersionResponse>}
+ */
+const methodDescriptor_V2_ListInstalledModuleVersions = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListInstalledModuleVersions',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListInstalledModuleVersionsRequest,
+  proto.clarifai.api.MultiInstalledModuleVersionResponse,
+  /**
+   * @param {!proto.clarifai.api.ListInstalledModuleVersionsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiInstalledModuleVersionResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListInstalledModuleVersionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiInstalledModuleVersionResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiInstalledModuleVersionResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listInstalledModuleVersions =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListInstalledModuleVersions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListInstalledModuleVersions,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListInstalledModuleVersionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiInstalledModuleVersionResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listInstalledModuleVersions =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListInstalledModuleVersions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListInstalledModuleVersions);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostInstalledModuleVersionsRequest,
+ *   !proto.clarifai.api.MultiInstalledModuleVersionResponse>}
+ */
+const methodDescriptor_V2_PostInstalledModuleVersions = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostInstalledModuleVersions',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostInstalledModuleVersionsRequest,
+  proto.clarifai.api.MultiInstalledModuleVersionResponse,
+  /**
+   * @param {!proto.clarifai.api.PostInstalledModuleVersionsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiInstalledModuleVersionResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostInstalledModuleVersionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiInstalledModuleVersionResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiInstalledModuleVersionResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postInstalledModuleVersions =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostInstalledModuleVersions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostInstalledModuleVersions,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostInstalledModuleVersionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiInstalledModuleVersionResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postInstalledModuleVersions =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostInstalledModuleVersions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostInstalledModuleVersions);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.DeleteInstalledModuleVersionsRequest,
+ *   !proto.clarifai.api.status.BaseResponse>}
+ */
+const methodDescriptor_V2_DeleteInstalledModuleVersions = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/DeleteInstalledModuleVersions',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.DeleteInstalledModuleVersionsRequest,
+  proto_clarifai_api_status_status_pb.BaseResponse,
+  /**
+   * @param {!proto.clarifai.api.DeleteInstalledModuleVersionsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto_clarifai_api_status_status_pb.BaseResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.DeleteInstalledModuleVersionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.status.BaseResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.status.BaseResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.deleteInstalledModuleVersions =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/DeleteInstalledModuleVersions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeleteInstalledModuleVersions,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.DeleteInstalledModuleVersionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.status.BaseResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.deleteInstalledModuleVersions =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/DeleteInstalledModuleVersions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeleteInstalledModuleVersions);
 };
 
 
