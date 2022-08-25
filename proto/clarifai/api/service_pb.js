@@ -66,6 +66,7 @@ goog.exportSymbol('proto.clarifai.api.DeleteModuleVersionsRequest', null, global
 goog.exportSymbol('proto.clarifai.api.DeleteModulesRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.DeleteSearchRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.DeleteTasksRequest', null, global);
+goog.exportSymbol('proto.clarifai.api.DeleteUploadsRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.DeleteWorkflowRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.DeleteWorkflowVersionsRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.DeleteWorkflowsRequest', null, global);
@@ -86,6 +87,7 @@ goog.exportSymbol('proto.clarifai.api.GetDatasetVersionRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.GetInputCountRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.GetInputRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.GetInputSamplesRequest', null, global);
+goog.exportSymbol('proto.clarifai.api.GetInstalledModuleVersionRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.GetKeyRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.GetLabelOrderRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.GetModelRequest', null, global);
@@ -99,6 +101,7 @@ goog.exportSymbol('proto.clarifai.api.GetSearchRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.GetStatusCodeRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.GetTaskCountRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.GetTaskRequest', null, global);
+goog.exportSymbol('proto.clarifai.api.GetUploadRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.GetWorkflowRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.GetWorkflowVersionRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.IdUpdateSource', null, global);
@@ -141,6 +144,7 @@ goog.exportSymbol('proto.clarifai.api.ListSearchesRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.ListStatusCodesRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.ListTasksRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.ListTrendingMetricsViewsRequest', null, global);
+goog.exportSymbol('proto.clarifai.api.ListUploadsRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.ListWorkflowVersionsRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.ListWorkflowsRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.ListWorkflowsRequest.SortByCase', null, global);
@@ -162,6 +166,7 @@ goog.exportSymbol('proto.clarifai.api.MultiConceptRelationResponse', null, globa
 goog.exportSymbol('proto.clarifai.api.MultiConceptResponse', null, global);
 goog.exportSymbol('proto.clarifai.api.MultiDatasetInputResponse', null, global);
 goog.exportSymbol('proto.clarifai.api.MultiDatasetResponse', null, global);
+goog.exportSymbol('proto.clarifai.api.MultiDatasetVersionExportResponse', null, global);
 goog.exportSymbol('proto.clarifai.api.MultiDatasetVersionMetricsGroupResponse', null, global);
 goog.exportSymbol('proto.clarifai.api.MultiDatasetVersionResponse', null, global);
 goog.exportSymbol('proto.clarifai.api.MultiInputAnnotationResponse', null, global);
@@ -192,6 +197,7 @@ goog.exportSymbol('proto.clarifai.api.MultiStatValueResponse', null, global);
 goog.exportSymbol('proto.clarifai.api.MultiStatusCodeResponse', null, global);
 goog.exportSymbol('proto.clarifai.api.MultiTaskResponse', null, global);
 goog.exportSymbol('proto.clarifai.api.MultiTrendingMetricsViewResponse', null, global);
+goog.exportSymbol('proto.clarifai.api.MultiUploadResponse', null, global);
 goog.exportSymbol('proto.clarifai.api.MultiWorkflowResponse', null, global);
 goog.exportSymbol('proto.clarifai.api.MultiWorkflowVersionResponse', null, global);
 goog.exportSymbol('proto.clarifai.api.MyScopesRequest', null, global);
@@ -249,6 +255,7 @@ goog.exportSymbol('proto.clarifai.api.PostDatasetVersionsRequest', null, global)
 goog.exportSymbol('proto.clarifai.api.PostDatasetsRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.PostInputsRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.PostInputsSearchesRequest', null, global);
+goog.exportSymbol('proto.clarifai.api.PostInstalledModuleVersionsKeyRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.PostInstalledModuleVersionsRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.PostKeysRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.PostKnowledgeGraphsRequest', null, global);
@@ -268,6 +275,7 @@ goog.exportSymbol('proto.clarifai.api.PostStatValuesAggregateRequest', null, glo
 goog.exportSymbol('proto.clarifai.api.PostStatValuesRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.PostTasksRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.PostTrendingMetricsViewRequest', null, global);
+goog.exportSymbol('proto.clarifai.api.PostUploadsRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.PostValidatePasswordRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.PostWorkflowResultsRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.PostWorkflowResultsResponse', null, global);
@@ -276,6 +284,8 @@ goog.exportSymbol('proto.clarifai.api.PostWorkflowResultsSimilarityResponse', nu
 goog.exportSymbol('proto.clarifai.api.PostWorkflowVersionsPublishRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.PostWorkflowVersionsUnPublishRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.PostWorkflowsRequest', null, global);
+goog.exportSymbol('proto.clarifai.api.PutDatasetVersionExportsRequest', null, global);
+goog.exportSymbol('proto.clarifai.api.PutUploadContentPartsRequest', null, global);
 goog.exportSymbol('proto.clarifai.api.SingleAnnotationFilterResponse', null, global);
 goog.exportSymbol('proto.clarifai.api.SingleAnnotationResponse', null, global);
 goog.exportSymbol('proto.clarifai.api.SingleAppDuplicationResponse', null, global);
@@ -290,6 +300,7 @@ goog.exportSymbol('proto.clarifai.api.SingleDatasetResponse', null, global);
 goog.exportSymbol('proto.clarifai.api.SingleDatasetVersionResponse', null, global);
 goog.exportSymbol('proto.clarifai.api.SingleInputCountResponse', null, global);
 goog.exportSymbol('proto.clarifai.api.SingleInputResponse', null, global);
+goog.exportSymbol('proto.clarifai.api.SingleInstalledModuleVersionResponse', null, global);
 goog.exportSymbol('proto.clarifai.api.SingleKeyResponse', null, global);
 goog.exportSymbol('proto.clarifai.api.SingleLabelOrderResponse', null, global);
 goog.exportSymbol('proto.clarifai.api.SingleModelResponse', null, global);
@@ -303,6 +314,7 @@ goog.exportSymbol('proto.clarifai.api.SingleSearchResponse', null, global);
 goog.exportSymbol('proto.clarifai.api.SingleStatusCodeResponse', null, global);
 goog.exportSymbol('proto.clarifai.api.SingleTaskCountResponse', null, global);
 goog.exportSymbol('proto.clarifai.api.SingleTaskResponse', null, global);
+goog.exportSymbol('proto.clarifai.api.SingleUploadResponse', null, global);
 goog.exportSymbol('proto.clarifai.api.SingleWorkflowResponse', null, global);
 goog.exportSymbol('proto.clarifai.api.SingleWorkflowVersionResponse', null, global);
 goog.exportSymbol('proto.clarifai.api.StreamInputsRequest', null, global);
@@ -2166,6 +2178,27 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.clarifai.api.PutDatasetVersionExportsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.clarifai.api.PutDatasetVersionExportsRequest.repeatedFields_, null);
+};
+goog.inherits(proto.clarifai.api.PutDatasetVersionExportsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.clarifai.api.PutDatasetVersionExportsRequest.displayName = 'proto.clarifai.api.PutDatasetVersionExportsRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.clarifai.api.MultiDatasetVersionResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.clarifai.api.MultiDatasetVersionResponse.repeatedFields_, null);
 };
@@ -2176,6 +2209,27 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.clarifai.api.MultiDatasetVersionResponse.displayName = 'proto.clarifai.api.MultiDatasetVersionResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.clarifai.api.MultiDatasetVersionExportResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.clarifai.api.MultiDatasetVersionExportResponse.repeatedFields_, null);
+};
+goog.inherits(proto.clarifai.api.MultiDatasetVersionExportResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.clarifai.api.MultiDatasetVersionExportResponse.displayName = 'proto.clarifai.api.MultiDatasetVersionExportResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -5610,6 +5664,27 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.clarifai.api.GetInstalledModuleVersionRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.clarifai.api.GetInstalledModuleVersionRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.clarifai.api.GetInstalledModuleVersionRequest.displayName = 'proto.clarifai.api.GetInstalledModuleVersionRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.clarifai.api.ListInstalledModuleVersionsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -5652,6 +5727,27 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.clarifai.api.PostInstalledModuleVersionsKeyRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.clarifai.api.PostInstalledModuleVersionsKeyRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.clarifai.api.PostInstalledModuleVersionsKeyRequest.displayName = 'proto.clarifai.api.PostInstalledModuleVersionsKeyRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.clarifai.api.DeleteInstalledModuleVersionsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.clarifai.api.DeleteInstalledModuleVersionsRequest.repeatedFields_, null);
 };
@@ -5662,6 +5758,27 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.clarifai.api.DeleteInstalledModuleVersionsRequest.displayName = 'proto.clarifai.api.DeleteInstalledModuleVersionsRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.clarifai.api.SingleInstalledModuleVersionResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.clarifai.api.SingleInstalledModuleVersionResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.clarifai.api.SingleInstalledModuleVersionResponse.displayName = 'proto.clarifai.api.SingleInstalledModuleVersionResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -5830,6 +5947,153 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.clarifai.api.MultiBulkOperationsResponse.displayName = 'proto.clarifai.api.MultiBulkOperationsResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.clarifai.api.PostUploadsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.clarifai.api.PostUploadsRequest.repeatedFields_, null);
+};
+goog.inherits(proto.clarifai.api.PostUploadsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.clarifai.api.PostUploadsRequest.displayName = 'proto.clarifai.api.PostUploadsRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.clarifai.api.DeleteUploadsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.clarifai.api.DeleteUploadsRequest.repeatedFields_, null);
+};
+goog.inherits(proto.clarifai.api.DeleteUploadsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.clarifai.api.DeleteUploadsRequest.displayName = 'proto.clarifai.api.DeleteUploadsRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.clarifai.api.ListUploadsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.clarifai.api.ListUploadsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.clarifai.api.ListUploadsRequest.displayName = 'proto.clarifai.api.ListUploadsRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.clarifai.api.GetUploadRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.clarifai.api.GetUploadRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.clarifai.api.GetUploadRequest.displayName = 'proto.clarifai.api.GetUploadRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.clarifai.api.SingleUploadResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.clarifai.api.SingleUploadResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.clarifai.api.SingleUploadResponse.displayName = 'proto.clarifai.api.SingleUploadResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.clarifai.api.MultiUploadResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.clarifai.api.MultiUploadResponse.repeatedFields_, null);
+};
+goog.inherits(proto.clarifai.api.MultiUploadResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.clarifai.api.MultiUploadResponse.displayName = 'proto.clarifai.api.MultiUploadResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.clarifai.api.PutUploadContentPartsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.clarifai.api.PutUploadContentPartsRequest.repeatedFields_, null);
+};
+goog.inherits(proto.clarifai.api.PutUploadContentPartsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.clarifai.api.PutUploadContentPartsRequest.displayName = 'proto.clarifai.api.PutUploadContentPartsRequest';
 }
 
 
@@ -26051,6 +26315,277 @@ proto.clarifai.api.DeleteDatasetVersionsRequest.prototype.clearDatasetVersionIds
  * @private {!Array<number>}
  * @const
  */
+proto.clarifai.api.PutDatasetVersionExportsRequest.repeatedFields_ = [4];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.clarifai.api.PutDatasetVersionExportsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.clarifai.api.PutDatasetVersionExportsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.clarifai.api.PutDatasetVersionExportsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.clarifai.api.PutDatasetVersionExportsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    userAppId: (f = msg.getUserAppId()) && proto_clarifai_api_resources_pb.UserAppIDSet.toObject(includeInstance, f),
+    datasetId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    datasetVersionId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    exportsList: jspb.Message.toObjectList(msg.getExportsList(),
+    proto_clarifai_api_resources_pb.DatasetVersionExport.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.clarifai.api.PutDatasetVersionExportsRequest}
+ */
+proto.clarifai.api.PutDatasetVersionExportsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.clarifai.api.PutDatasetVersionExportsRequest;
+  return proto.clarifai.api.PutDatasetVersionExportsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.clarifai.api.PutDatasetVersionExportsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.clarifai.api.PutDatasetVersionExportsRequest}
+ */
+proto.clarifai.api.PutDatasetVersionExportsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto_clarifai_api_resources_pb.UserAppIDSet;
+      reader.readMessage(value,proto_clarifai_api_resources_pb.UserAppIDSet.deserializeBinaryFromReader);
+      msg.setUserAppId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDatasetId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDatasetVersionId(value);
+      break;
+    case 4:
+      var value = new proto_clarifai_api_resources_pb.DatasetVersionExport;
+      reader.readMessage(value,proto_clarifai_api_resources_pb.DatasetVersionExport.deserializeBinaryFromReader);
+      msg.addExports(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.clarifai.api.PutDatasetVersionExportsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.clarifai.api.PutDatasetVersionExportsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.clarifai.api.PutDatasetVersionExportsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.clarifai.api.PutDatasetVersionExportsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getUserAppId();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto_clarifai_api_resources_pb.UserAppIDSet.serializeBinaryToWriter
+    );
+  }
+  f = message.getDatasetId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getDatasetVersionId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getExportsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      4,
+      f,
+      proto_clarifai_api_resources_pb.DatasetVersionExport.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional UserAppIDSet user_app_id = 1;
+ * @return {?proto.clarifai.api.UserAppIDSet}
+ */
+proto.clarifai.api.PutDatasetVersionExportsRequest.prototype.getUserAppId = function() {
+  return /** @type{?proto.clarifai.api.UserAppIDSet} */ (
+    jspb.Message.getWrapperField(this, proto_clarifai_api_resources_pb.UserAppIDSet, 1));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.UserAppIDSet|undefined} value
+ * @return {!proto.clarifai.api.PutDatasetVersionExportsRequest} returns this
+*/
+proto.clarifai.api.PutDatasetVersionExportsRequest.prototype.setUserAppId = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.PutDatasetVersionExportsRequest} returns this
+ */
+proto.clarifai.api.PutDatasetVersionExportsRequest.prototype.clearUserAppId = function() {
+  return this.setUserAppId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.PutDatasetVersionExportsRequest.prototype.hasUserAppId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string dataset_id = 2;
+ * @return {string}
+ */
+proto.clarifai.api.PutDatasetVersionExportsRequest.prototype.getDatasetId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.clarifai.api.PutDatasetVersionExportsRequest} returns this
+ */
+proto.clarifai.api.PutDatasetVersionExportsRequest.prototype.setDatasetId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string dataset_version_id = 3;
+ * @return {string}
+ */
+proto.clarifai.api.PutDatasetVersionExportsRequest.prototype.getDatasetVersionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.clarifai.api.PutDatasetVersionExportsRequest} returns this
+ */
+proto.clarifai.api.PutDatasetVersionExportsRequest.prototype.setDatasetVersionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * repeated DatasetVersionExport exports = 4;
+ * @return {!Array<!proto.clarifai.api.DatasetVersionExport>}
+ */
+proto.clarifai.api.PutDatasetVersionExportsRequest.prototype.getExportsList = function() {
+  return /** @type{!Array<!proto.clarifai.api.DatasetVersionExport>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto_clarifai_api_resources_pb.DatasetVersionExport, 4));
+};
+
+
+/**
+ * @param {!Array<!proto.clarifai.api.DatasetVersionExport>} value
+ * @return {!proto.clarifai.api.PutDatasetVersionExportsRequest} returns this
+*/
+proto.clarifai.api.PutDatasetVersionExportsRequest.prototype.setExportsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.DatasetVersionExport=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.clarifai.api.DatasetVersionExport}
+ */
+proto.clarifai.api.PutDatasetVersionExportsRequest.prototype.addExports = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.clarifai.api.DatasetVersionExport, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.clarifai.api.PutDatasetVersionExportsRequest} returns this
+ */
+proto.clarifai.api.PutDatasetVersionExportsRequest.prototype.clearExportsList = function() {
+  return this.setExportsList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
 proto.clarifai.api.MultiDatasetVersionResponse.repeatedFields_ = [2];
 
 
@@ -26253,6 +26788,217 @@ proto.clarifai.api.MultiDatasetVersionResponse.prototype.addDatasetVersions = fu
  */
 proto.clarifai.api.MultiDatasetVersionResponse.prototype.clearDatasetVersionsList = function() {
   return this.setDatasetVersionsList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.clarifai.api.MultiDatasetVersionExportResponse.repeatedFields_ = [2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.clarifai.api.MultiDatasetVersionExportResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.clarifai.api.MultiDatasetVersionExportResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.clarifai.api.MultiDatasetVersionExportResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.clarifai.api.MultiDatasetVersionExportResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    status: (f = msg.getStatus()) && proto_clarifai_api_status_status_pb.Status.toObject(includeInstance, f),
+    exportsList: jspb.Message.toObjectList(msg.getExportsList(),
+    proto_clarifai_api_resources_pb.DatasetVersionExport.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.clarifai.api.MultiDatasetVersionExportResponse}
+ */
+proto.clarifai.api.MultiDatasetVersionExportResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.clarifai.api.MultiDatasetVersionExportResponse;
+  return proto.clarifai.api.MultiDatasetVersionExportResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.clarifai.api.MultiDatasetVersionExportResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.clarifai.api.MultiDatasetVersionExportResponse}
+ */
+proto.clarifai.api.MultiDatasetVersionExportResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto_clarifai_api_status_status_pb.Status;
+      reader.readMessage(value,proto_clarifai_api_status_status_pb.Status.deserializeBinaryFromReader);
+      msg.setStatus(value);
+      break;
+    case 2:
+      var value = new proto_clarifai_api_resources_pb.DatasetVersionExport;
+      reader.readMessage(value,proto_clarifai_api_resources_pb.DatasetVersionExport.deserializeBinaryFromReader);
+      msg.addExports(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.clarifai.api.MultiDatasetVersionExportResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.clarifai.api.MultiDatasetVersionExportResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.clarifai.api.MultiDatasetVersionExportResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.clarifai.api.MultiDatasetVersionExportResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getStatus();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto_clarifai_api_status_status_pb.Status.serializeBinaryToWriter
+    );
+  }
+  f = message.getExportsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto_clarifai_api_resources_pb.DatasetVersionExport.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional status.Status status = 1;
+ * @return {?proto.clarifai.api.status.Status}
+ */
+proto.clarifai.api.MultiDatasetVersionExportResponse.prototype.getStatus = function() {
+  return /** @type{?proto.clarifai.api.status.Status} */ (
+    jspb.Message.getWrapperField(this, proto_clarifai_api_status_status_pb.Status, 1));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.status.Status|undefined} value
+ * @return {!proto.clarifai.api.MultiDatasetVersionExportResponse} returns this
+*/
+proto.clarifai.api.MultiDatasetVersionExportResponse.prototype.setStatus = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.MultiDatasetVersionExportResponse} returns this
+ */
+proto.clarifai.api.MultiDatasetVersionExportResponse.prototype.clearStatus = function() {
+  return this.setStatus(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.MultiDatasetVersionExportResponse.prototype.hasStatus = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated DatasetVersionExport exports = 2;
+ * @return {!Array<!proto.clarifai.api.DatasetVersionExport>}
+ */
+proto.clarifai.api.MultiDatasetVersionExportResponse.prototype.getExportsList = function() {
+  return /** @type{!Array<!proto.clarifai.api.DatasetVersionExport>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto_clarifai_api_resources_pb.DatasetVersionExport, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.clarifai.api.DatasetVersionExport>} value
+ * @return {!proto.clarifai.api.MultiDatasetVersionExportResponse} returns this
+*/
+proto.clarifai.api.MultiDatasetVersionExportResponse.prototype.setExportsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.DatasetVersionExport=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.clarifai.api.DatasetVersionExport}
+ */
+proto.clarifai.api.MultiDatasetVersionExportResponse.prototype.addExports = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.clarifai.api.DatasetVersionExport, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.clarifai.api.MultiDatasetVersionExportResponse} returns this
+ */
+proto.clarifai.api.MultiDatasetVersionExportResponse.prototype.clearExportsList = function() {
+  return this.setExportsList([]);
 };
 
 
@@ -64251,6 +64997,187 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
+proto.clarifai.api.GetInstalledModuleVersionRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.clarifai.api.GetInstalledModuleVersionRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.clarifai.api.GetInstalledModuleVersionRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.clarifai.api.GetInstalledModuleVersionRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    userAppId: (f = msg.getUserAppId()) && proto_clarifai_api_resources_pb.UserAppIDSet.toObject(includeInstance, f),
+    installedModuleVersionId: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.clarifai.api.GetInstalledModuleVersionRequest}
+ */
+proto.clarifai.api.GetInstalledModuleVersionRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.clarifai.api.GetInstalledModuleVersionRequest;
+  return proto.clarifai.api.GetInstalledModuleVersionRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.clarifai.api.GetInstalledModuleVersionRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.clarifai.api.GetInstalledModuleVersionRequest}
+ */
+proto.clarifai.api.GetInstalledModuleVersionRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto_clarifai_api_resources_pb.UserAppIDSet;
+      reader.readMessage(value,proto_clarifai_api_resources_pb.UserAppIDSet.deserializeBinaryFromReader);
+      msg.setUserAppId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInstalledModuleVersionId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.clarifai.api.GetInstalledModuleVersionRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.clarifai.api.GetInstalledModuleVersionRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.clarifai.api.GetInstalledModuleVersionRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.clarifai.api.GetInstalledModuleVersionRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getUserAppId();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto_clarifai_api_resources_pb.UserAppIDSet.serializeBinaryToWriter
+    );
+  }
+  f = message.getInstalledModuleVersionId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional UserAppIDSet user_app_id = 1;
+ * @return {?proto.clarifai.api.UserAppIDSet}
+ */
+proto.clarifai.api.GetInstalledModuleVersionRequest.prototype.getUserAppId = function() {
+  return /** @type{?proto.clarifai.api.UserAppIDSet} */ (
+    jspb.Message.getWrapperField(this, proto_clarifai_api_resources_pb.UserAppIDSet, 1));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.UserAppIDSet|undefined} value
+ * @return {!proto.clarifai.api.GetInstalledModuleVersionRequest} returns this
+*/
+proto.clarifai.api.GetInstalledModuleVersionRequest.prototype.setUserAppId = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.GetInstalledModuleVersionRequest} returns this
+ */
+proto.clarifai.api.GetInstalledModuleVersionRequest.prototype.clearUserAppId = function() {
+  return this.setUserAppId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.GetInstalledModuleVersionRequest.prototype.hasUserAppId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string installed_module_version_id = 2;
+ * @return {string}
+ */
+proto.clarifai.api.GetInstalledModuleVersionRequest.prototype.getInstalledModuleVersionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.clarifai.api.GetInstalledModuleVersionRequest} returns this
+ */
+proto.clarifai.api.GetInstalledModuleVersionRequest.prototype.setInstalledModuleVersionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
 proto.clarifai.api.ListInstalledModuleVersionsRequest.prototype.toObject = function(opt_includeInstance) {
   return proto.clarifai.api.ListInstalledModuleVersionsRequest.toObject(opt_includeInstance, this);
 };
@@ -64658,6 +65585,187 @@ proto.clarifai.api.PostInstalledModuleVersionsRequest.prototype.clearInstalledMo
 
 
 
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.clarifai.api.PostInstalledModuleVersionsKeyRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.clarifai.api.PostInstalledModuleVersionsKeyRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.clarifai.api.PostInstalledModuleVersionsKeyRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.clarifai.api.PostInstalledModuleVersionsKeyRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    userAppId: (f = msg.getUserAppId()) && proto_clarifai_api_resources_pb.UserAppIDSet.toObject(includeInstance, f),
+    installedModuleVersionId: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.clarifai.api.PostInstalledModuleVersionsKeyRequest}
+ */
+proto.clarifai.api.PostInstalledModuleVersionsKeyRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.clarifai.api.PostInstalledModuleVersionsKeyRequest;
+  return proto.clarifai.api.PostInstalledModuleVersionsKeyRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.clarifai.api.PostInstalledModuleVersionsKeyRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.clarifai.api.PostInstalledModuleVersionsKeyRequest}
+ */
+proto.clarifai.api.PostInstalledModuleVersionsKeyRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto_clarifai_api_resources_pb.UserAppIDSet;
+      reader.readMessage(value,proto_clarifai_api_resources_pb.UserAppIDSet.deserializeBinaryFromReader);
+      msg.setUserAppId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInstalledModuleVersionId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.clarifai.api.PostInstalledModuleVersionsKeyRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.clarifai.api.PostInstalledModuleVersionsKeyRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.clarifai.api.PostInstalledModuleVersionsKeyRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.clarifai.api.PostInstalledModuleVersionsKeyRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getUserAppId();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto_clarifai_api_resources_pb.UserAppIDSet.serializeBinaryToWriter
+    );
+  }
+  f = message.getInstalledModuleVersionId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional UserAppIDSet user_app_id = 1;
+ * @return {?proto.clarifai.api.UserAppIDSet}
+ */
+proto.clarifai.api.PostInstalledModuleVersionsKeyRequest.prototype.getUserAppId = function() {
+  return /** @type{?proto.clarifai.api.UserAppIDSet} */ (
+    jspb.Message.getWrapperField(this, proto_clarifai_api_resources_pb.UserAppIDSet, 1));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.UserAppIDSet|undefined} value
+ * @return {!proto.clarifai.api.PostInstalledModuleVersionsKeyRequest} returns this
+*/
+proto.clarifai.api.PostInstalledModuleVersionsKeyRequest.prototype.setUserAppId = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.PostInstalledModuleVersionsKeyRequest} returns this
+ */
+proto.clarifai.api.PostInstalledModuleVersionsKeyRequest.prototype.clearUserAppId = function() {
+  return this.setUserAppId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.PostInstalledModuleVersionsKeyRequest.prototype.hasUserAppId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string installed_module_version_id = 2;
+ * @return {string}
+ */
+proto.clarifai.api.PostInstalledModuleVersionsKeyRequest.prototype.getInstalledModuleVersionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.clarifai.api.PostInstalledModuleVersionsKeyRequest} returns this
+ */
+proto.clarifai.api.PostInstalledModuleVersionsKeyRequest.prototype.setInstalledModuleVersionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
@@ -64861,6 +65969,208 @@ proto.clarifai.api.DeleteInstalledModuleVersionsRequest.prototype.addIds = funct
  */
 proto.clarifai.api.DeleteInstalledModuleVersionsRequest.prototype.clearIdsList = function() {
   return this.setIdsList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.clarifai.api.SingleInstalledModuleVersionResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.clarifai.api.SingleInstalledModuleVersionResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.clarifai.api.SingleInstalledModuleVersionResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.clarifai.api.SingleInstalledModuleVersionResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    status: (f = msg.getStatus()) && proto_clarifai_api_status_status_pb.Status.toObject(includeInstance, f),
+    installedModuleVersion: (f = msg.getInstalledModuleVersion()) && proto_clarifai_api_resources_pb.InstalledModuleVersion.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.clarifai.api.SingleInstalledModuleVersionResponse}
+ */
+proto.clarifai.api.SingleInstalledModuleVersionResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.clarifai.api.SingleInstalledModuleVersionResponse;
+  return proto.clarifai.api.SingleInstalledModuleVersionResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.clarifai.api.SingleInstalledModuleVersionResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.clarifai.api.SingleInstalledModuleVersionResponse}
+ */
+proto.clarifai.api.SingleInstalledModuleVersionResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto_clarifai_api_status_status_pb.Status;
+      reader.readMessage(value,proto_clarifai_api_status_status_pb.Status.deserializeBinaryFromReader);
+      msg.setStatus(value);
+      break;
+    case 2:
+      var value = new proto_clarifai_api_resources_pb.InstalledModuleVersion;
+      reader.readMessage(value,proto_clarifai_api_resources_pb.InstalledModuleVersion.deserializeBinaryFromReader);
+      msg.setInstalledModuleVersion(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.clarifai.api.SingleInstalledModuleVersionResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.clarifai.api.SingleInstalledModuleVersionResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.clarifai.api.SingleInstalledModuleVersionResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.clarifai.api.SingleInstalledModuleVersionResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getStatus();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto_clarifai_api_status_status_pb.Status.serializeBinaryToWriter
+    );
+  }
+  f = message.getInstalledModuleVersion();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto_clarifai_api_resources_pb.InstalledModuleVersion.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional status.Status status = 1;
+ * @return {?proto.clarifai.api.status.Status}
+ */
+proto.clarifai.api.SingleInstalledModuleVersionResponse.prototype.getStatus = function() {
+  return /** @type{?proto.clarifai.api.status.Status} */ (
+    jspb.Message.getWrapperField(this, proto_clarifai_api_status_status_pb.Status, 1));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.status.Status|undefined} value
+ * @return {!proto.clarifai.api.SingleInstalledModuleVersionResponse} returns this
+*/
+proto.clarifai.api.SingleInstalledModuleVersionResponse.prototype.setStatus = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.SingleInstalledModuleVersionResponse} returns this
+ */
+proto.clarifai.api.SingleInstalledModuleVersionResponse.prototype.clearStatus = function() {
+  return this.setStatus(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.SingleInstalledModuleVersionResponse.prototype.hasStatus = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional InstalledModuleVersion installed_module_version = 2;
+ * @return {?proto.clarifai.api.InstalledModuleVersion}
+ */
+proto.clarifai.api.SingleInstalledModuleVersionResponse.prototype.getInstalledModuleVersion = function() {
+  return /** @type{?proto.clarifai.api.InstalledModuleVersion} */ (
+    jspb.Message.getWrapperField(this, proto_clarifai_api_resources_pb.InstalledModuleVersion, 2));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.InstalledModuleVersion|undefined} value
+ * @return {!proto.clarifai.api.SingleInstalledModuleVersionResponse} returns this
+*/
+proto.clarifai.api.SingleInstalledModuleVersionResponse.prototype.setInstalledModuleVersion = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.SingleInstalledModuleVersionResponse} returns this
+ */
+proto.clarifai.api.SingleInstalledModuleVersionResponse.prototype.clearInstalledModuleVersion = function() {
+  return this.setInstalledModuleVersion(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.SingleInstalledModuleVersionResponse.prototype.hasInstalledModuleVersion = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -66502,6 +67812,1470 @@ proto.clarifai.api.MultiBulkOperationsResponse.prototype.addBulkOperation = func
  */
 proto.clarifai.api.MultiBulkOperationsResponse.prototype.clearBulkOperationList = function() {
   return this.setBulkOperationList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.clarifai.api.PostUploadsRequest.repeatedFields_ = [2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.clarifai.api.PostUploadsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.clarifai.api.PostUploadsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.clarifai.api.PostUploadsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.clarifai.api.PostUploadsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    userAppId: (f = msg.getUserAppId()) && proto_clarifai_api_resources_pb.UserAppIDSet.toObject(includeInstance, f),
+    uploadsList: jspb.Message.toObjectList(msg.getUploadsList(),
+    proto_clarifai_api_resources_pb.Upload.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.clarifai.api.PostUploadsRequest}
+ */
+proto.clarifai.api.PostUploadsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.clarifai.api.PostUploadsRequest;
+  return proto.clarifai.api.PostUploadsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.clarifai.api.PostUploadsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.clarifai.api.PostUploadsRequest}
+ */
+proto.clarifai.api.PostUploadsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto_clarifai_api_resources_pb.UserAppIDSet;
+      reader.readMessage(value,proto_clarifai_api_resources_pb.UserAppIDSet.deserializeBinaryFromReader);
+      msg.setUserAppId(value);
+      break;
+    case 2:
+      var value = new proto_clarifai_api_resources_pb.Upload;
+      reader.readMessage(value,proto_clarifai_api_resources_pb.Upload.deserializeBinaryFromReader);
+      msg.addUploads(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.clarifai.api.PostUploadsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.clarifai.api.PostUploadsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.clarifai.api.PostUploadsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.clarifai.api.PostUploadsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getUserAppId();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto_clarifai_api_resources_pb.UserAppIDSet.serializeBinaryToWriter
+    );
+  }
+  f = message.getUploadsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto_clarifai_api_resources_pb.Upload.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional UserAppIDSet user_app_id = 1;
+ * @return {?proto.clarifai.api.UserAppIDSet}
+ */
+proto.clarifai.api.PostUploadsRequest.prototype.getUserAppId = function() {
+  return /** @type{?proto.clarifai.api.UserAppIDSet} */ (
+    jspb.Message.getWrapperField(this, proto_clarifai_api_resources_pb.UserAppIDSet, 1));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.UserAppIDSet|undefined} value
+ * @return {!proto.clarifai.api.PostUploadsRequest} returns this
+*/
+proto.clarifai.api.PostUploadsRequest.prototype.setUserAppId = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.PostUploadsRequest} returns this
+ */
+proto.clarifai.api.PostUploadsRequest.prototype.clearUserAppId = function() {
+  return this.setUserAppId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.PostUploadsRequest.prototype.hasUserAppId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated Upload uploads = 2;
+ * @return {!Array<!proto.clarifai.api.Upload>}
+ */
+proto.clarifai.api.PostUploadsRequest.prototype.getUploadsList = function() {
+  return /** @type{!Array<!proto.clarifai.api.Upload>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto_clarifai_api_resources_pb.Upload, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.clarifai.api.Upload>} value
+ * @return {!proto.clarifai.api.PostUploadsRequest} returns this
+*/
+proto.clarifai.api.PostUploadsRequest.prototype.setUploadsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.Upload=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.clarifai.api.Upload}
+ */
+proto.clarifai.api.PostUploadsRequest.prototype.addUploads = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.clarifai.api.Upload, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.clarifai.api.PostUploadsRequest} returns this
+ */
+proto.clarifai.api.PostUploadsRequest.prototype.clearUploadsList = function() {
+  return this.setUploadsList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.clarifai.api.DeleteUploadsRequest.repeatedFields_ = [2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.clarifai.api.DeleteUploadsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.clarifai.api.DeleteUploadsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.clarifai.api.DeleteUploadsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.clarifai.api.DeleteUploadsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    userAppId: (f = msg.getUserAppId()) && proto_clarifai_api_resources_pb.UserAppIDSet.toObject(includeInstance, f),
+    idsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.clarifai.api.DeleteUploadsRequest}
+ */
+proto.clarifai.api.DeleteUploadsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.clarifai.api.DeleteUploadsRequest;
+  return proto.clarifai.api.DeleteUploadsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.clarifai.api.DeleteUploadsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.clarifai.api.DeleteUploadsRequest}
+ */
+proto.clarifai.api.DeleteUploadsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto_clarifai_api_resources_pb.UserAppIDSet;
+      reader.readMessage(value,proto_clarifai_api_resources_pb.UserAppIDSet.deserializeBinaryFromReader);
+      msg.setUserAppId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addIds(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.clarifai.api.DeleteUploadsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.clarifai.api.DeleteUploadsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.clarifai.api.DeleteUploadsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.clarifai.api.DeleteUploadsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getUserAppId();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto_clarifai_api_resources_pb.UserAppIDSet.serializeBinaryToWriter
+    );
+  }
+  f = message.getIdsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional UserAppIDSet user_app_id = 1;
+ * @return {?proto.clarifai.api.UserAppIDSet}
+ */
+proto.clarifai.api.DeleteUploadsRequest.prototype.getUserAppId = function() {
+  return /** @type{?proto.clarifai.api.UserAppIDSet} */ (
+    jspb.Message.getWrapperField(this, proto_clarifai_api_resources_pb.UserAppIDSet, 1));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.UserAppIDSet|undefined} value
+ * @return {!proto.clarifai.api.DeleteUploadsRequest} returns this
+*/
+proto.clarifai.api.DeleteUploadsRequest.prototype.setUserAppId = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.DeleteUploadsRequest} returns this
+ */
+proto.clarifai.api.DeleteUploadsRequest.prototype.clearUserAppId = function() {
+  return this.setUserAppId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.DeleteUploadsRequest.prototype.hasUserAppId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated string ids = 2;
+ * @return {!Array<string>}
+ */
+proto.clarifai.api.DeleteUploadsRequest.prototype.getIdsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.clarifai.api.DeleteUploadsRequest} returns this
+ */
+proto.clarifai.api.DeleteUploadsRequest.prototype.setIdsList = function(value) {
+  return jspb.Message.setField(this, 2, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.clarifai.api.DeleteUploadsRequest} returns this
+ */
+proto.clarifai.api.DeleteUploadsRequest.prototype.addIds = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.clarifai.api.DeleteUploadsRequest} returns this
+ */
+proto.clarifai.api.DeleteUploadsRequest.prototype.clearIdsList = function() {
+  return this.setIdsList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.clarifai.api.ListUploadsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.clarifai.api.ListUploadsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.clarifai.api.ListUploadsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.clarifai.api.ListUploadsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    userAppId: (f = msg.getUserAppId()) && proto_clarifai_api_resources_pb.UserAppIDSet.toObject(includeInstance, f),
+    page: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    perPage: jspb.Message.getFieldWithDefault(msg, 3, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.clarifai.api.ListUploadsRequest}
+ */
+proto.clarifai.api.ListUploadsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.clarifai.api.ListUploadsRequest;
+  return proto.clarifai.api.ListUploadsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.clarifai.api.ListUploadsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.clarifai.api.ListUploadsRequest}
+ */
+proto.clarifai.api.ListUploadsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto_clarifai_api_resources_pb.UserAppIDSet;
+      reader.readMessage(value,proto_clarifai_api_resources_pb.UserAppIDSet.deserializeBinaryFromReader);
+      msg.setUserAppId(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setPage(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setPerPage(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.clarifai.api.ListUploadsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.clarifai.api.ListUploadsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.clarifai.api.ListUploadsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.clarifai.api.ListUploadsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getUserAppId();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto_clarifai_api_resources_pb.UserAppIDSet.serializeBinaryToWriter
+    );
+  }
+  f = message.getPage();
+  if (f !== 0) {
+    writer.writeUint32(
+      2,
+      f
+    );
+  }
+  f = message.getPerPage();
+  if (f !== 0) {
+    writer.writeUint32(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional UserAppIDSet user_app_id = 1;
+ * @return {?proto.clarifai.api.UserAppIDSet}
+ */
+proto.clarifai.api.ListUploadsRequest.prototype.getUserAppId = function() {
+  return /** @type{?proto.clarifai.api.UserAppIDSet} */ (
+    jspb.Message.getWrapperField(this, proto_clarifai_api_resources_pb.UserAppIDSet, 1));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.UserAppIDSet|undefined} value
+ * @return {!proto.clarifai.api.ListUploadsRequest} returns this
+*/
+proto.clarifai.api.ListUploadsRequest.prototype.setUserAppId = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.ListUploadsRequest} returns this
+ */
+proto.clarifai.api.ListUploadsRequest.prototype.clearUserAppId = function() {
+  return this.setUserAppId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.ListUploadsRequest.prototype.hasUserAppId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional uint32 page = 2;
+ * @return {number}
+ */
+proto.clarifai.api.ListUploadsRequest.prototype.getPage = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.clarifai.api.ListUploadsRequest} returns this
+ */
+proto.clarifai.api.ListUploadsRequest.prototype.setPage = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional uint32 per_page = 3;
+ * @return {number}
+ */
+proto.clarifai.api.ListUploadsRequest.prototype.getPerPage = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.clarifai.api.ListUploadsRequest} returns this
+ */
+proto.clarifai.api.ListUploadsRequest.prototype.setPerPage = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.clarifai.api.GetUploadRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.clarifai.api.GetUploadRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.clarifai.api.GetUploadRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.clarifai.api.GetUploadRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    userAppId: (f = msg.getUserAppId()) && proto_clarifai_api_resources_pb.UserAppIDSet.toObject(includeInstance, f),
+    uploadId: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.clarifai.api.GetUploadRequest}
+ */
+proto.clarifai.api.GetUploadRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.clarifai.api.GetUploadRequest;
+  return proto.clarifai.api.GetUploadRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.clarifai.api.GetUploadRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.clarifai.api.GetUploadRequest}
+ */
+proto.clarifai.api.GetUploadRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto_clarifai_api_resources_pb.UserAppIDSet;
+      reader.readMessage(value,proto_clarifai_api_resources_pb.UserAppIDSet.deserializeBinaryFromReader);
+      msg.setUserAppId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUploadId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.clarifai.api.GetUploadRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.clarifai.api.GetUploadRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.clarifai.api.GetUploadRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.clarifai.api.GetUploadRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getUserAppId();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto_clarifai_api_resources_pb.UserAppIDSet.serializeBinaryToWriter
+    );
+  }
+  f = message.getUploadId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional UserAppIDSet user_app_id = 1;
+ * @return {?proto.clarifai.api.UserAppIDSet}
+ */
+proto.clarifai.api.GetUploadRequest.prototype.getUserAppId = function() {
+  return /** @type{?proto.clarifai.api.UserAppIDSet} */ (
+    jspb.Message.getWrapperField(this, proto_clarifai_api_resources_pb.UserAppIDSet, 1));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.UserAppIDSet|undefined} value
+ * @return {!proto.clarifai.api.GetUploadRequest} returns this
+*/
+proto.clarifai.api.GetUploadRequest.prototype.setUserAppId = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.GetUploadRequest} returns this
+ */
+proto.clarifai.api.GetUploadRequest.prototype.clearUserAppId = function() {
+  return this.setUserAppId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.GetUploadRequest.prototype.hasUserAppId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string upload_id = 2;
+ * @return {string}
+ */
+proto.clarifai.api.GetUploadRequest.prototype.getUploadId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.clarifai.api.GetUploadRequest} returns this
+ */
+proto.clarifai.api.GetUploadRequest.prototype.setUploadId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.clarifai.api.SingleUploadResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.clarifai.api.SingleUploadResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.clarifai.api.SingleUploadResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.clarifai.api.SingleUploadResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    status: (f = msg.getStatus()) && proto_clarifai_api_status_status_pb.Status.toObject(includeInstance, f),
+    upload: (f = msg.getUpload()) && proto_clarifai_api_resources_pb.Upload.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.clarifai.api.SingleUploadResponse}
+ */
+proto.clarifai.api.SingleUploadResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.clarifai.api.SingleUploadResponse;
+  return proto.clarifai.api.SingleUploadResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.clarifai.api.SingleUploadResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.clarifai.api.SingleUploadResponse}
+ */
+proto.clarifai.api.SingleUploadResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto_clarifai_api_status_status_pb.Status;
+      reader.readMessage(value,proto_clarifai_api_status_status_pb.Status.deserializeBinaryFromReader);
+      msg.setStatus(value);
+      break;
+    case 2:
+      var value = new proto_clarifai_api_resources_pb.Upload;
+      reader.readMessage(value,proto_clarifai_api_resources_pb.Upload.deserializeBinaryFromReader);
+      msg.setUpload(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.clarifai.api.SingleUploadResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.clarifai.api.SingleUploadResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.clarifai.api.SingleUploadResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.clarifai.api.SingleUploadResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getStatus();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto_clarifai_api_status_status_pb.Status.serializeBinaryToWriter
+    );
+  }
+  f = message.getUpload();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto_clarifai_api_resources_pb.Upload.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional status.Status status = 1;
+ * @return {?proto.clarifai.api.status.Status}
+ */
+proto.clarifai.api.SingleUploadResponse.prototype.getStatus = function() {
+  return /** @type{?proto.clarifai.api.status.Status} */ (
+    jspb.Message.getWrapperField(this, proto_clarifai_api_status_status_pb.Status, 1));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.status.Status|undefined} value
+ * @return {!proto.clarifai.api.SingleUploadResponse} returns this
+*/
+proto.clarifai.api.SingleUploadResponse.prototype.setStatus = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.SingleUploadResponse} returns this
+ */
+proto.clarifai.api.SingleUploadResponse.prototype.clearStatus = function() {
+  return this.setStatus(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.SingleUploadResponse.prototype.hasStatus = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional Upload upload = 2;
+ * @return {?proto.clarifai.api.Upload}
+ */
+proto.clarifai.api.SingleUploadResponse.prototype.getUpload = function() {
+  return /** @type{?proto.clarifai.api.Upload} */ (
+    jspb.Message.getWrapperField(this, proto_clarifai_api_resources_pb.Upload, 2));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.Upload|undefined} value
+ * @return {!proto.clarifai.api.SingleUploadResponse} returns this
+*/
+proto.clarifai.api.SingleUploadResponse.prototype.setUpload = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.SingleUploadResponse} returns this
+ */
+proto.clarifai.api.SingleUploadResponse.prototype.clearUpload = function() {
+  return this.setUpload(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.SingleUploadResponse.prototype.hasUpload = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.clarifai.api.MultiUploadResponse.repeatedFields_ = [2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.clarifai.api.MultiUploadResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.clarifai.api.MultiUploadResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.clarifai.api.MultiUploadResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.clarifai.api.MultiUploadResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    status: (f = msg.getStatus()) && proto_clarifai_api_status_status_pb.Status.toObject(includeInstance, f),
+    uploadsList: jspb.Message.toObjectList(msg.getUploadsList(),
+    proto_clarifai_api_resources_pb.Upload.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.clarifai.api.MultiUploadResponse}
+ */
+proto.clarifai.api.MultiUploadResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.clarifai.api.MultiUploadResponse;
+  return proto.clarifai.api.MultiUploadResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.clarifai.api.MultiUploadResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.clarifai.api.MultiUploadResponse}
+ */
+proto.clarifai.api.MultiUploadResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto_clarifai_api_status_status_pb.Status;
+      reader.readMessage(value,proto_clarifai_api_status_status_pb.Status.deserializeBinaryFromReader);
+      msg.setStatus(value);
+      break;
+    case 2:
+      var value = new proto_clarifai_api_resources_pb.Upload;
+      reader.readMessage(value,proto_clarifai_api_resources_pb.Upload.deserializeBinaryFromReader);
+      msg.addUploads(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.clarifai.api.MultiUploadResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.clarifai.api.MultiUploadResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.clarifai.api.MultiUploadResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.clarifai.api.MultiUploadResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getStatus();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto_clarifai_api_status_status_pb.Status.serializeBinaryToWriter
+    );
+  }
+  f = message.getUploadsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto_clarifai_api_resources_pb.Upload.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional status.Status status = 1;
+ * @return {?proto.clarifai.api.status.Status}
+ */
+proto.clarifai.api.MultiUploadResponse.prototype.getStatus = function() {
+  return /** @type{?proto.clarifai.api.status.Status} */ (
+    jspb.Message.getWrapperField(this, proto_clarifai_api_status_status_pb.Status, 1));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.status.Status|undefined} value
+ * @return {!proto.clarifai.api.MultiUploadResponse} returns this
+*/
+proto.clarifai.api.MultiUploadResponse.prototype.setStatus = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.MultiUploadResponse} returns this
+ */
+proto.clarifai.api.MultiUploadResponse.prototype.clearStatus = function() {
+  return this.setStatus(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.MultiUploadResponse.prototype.hasStatus = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated Upload uploads = 2;
+ * @return {!Array<!proto.clarifai.api.Upload>}
+ */
+proto.clarifai.api.MultiUploadResponse.prototype.getUploadsList = function() {
+  return /** @type{!Array<!proto.clarifai.api.Upload>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto_clarifai_api_resources_pb.Upload, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.clarifai.api.Upload>} value
+ * @return {!proto.clarifai.api.MultiUploadResponse} returns this
+*/
+proto.clarifai.api.MultiUploadResponse.prototype.setUploadsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.Upload=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.clarifai.api.Upload}
+ */
+proto.clarifai.api.MultiUploadResponse.prototype.addUploads = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.clarifai.api.Upload, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.clarifai.api.MultiUploadResponse} returns this
+ */
+proto.clarifai.api.MultiUploadResponse.prototype.clearUploadsList = function() {
+  return this.setUploadsList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.clarifai.api.PutUploadContentPartsRequest.repeatedFields_ = [3];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.clarifai.api.PutUploadContentPartsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.clarifai.api.PutUploadContentPartsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.clarifai.api.PutUploadContentPartsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.clarifai.api.PutUploadContentPartsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    userAppId: (f = msg.getUserAppId()) && proto_clarifai_api_resources_pb.UserAppIDSet.toObject(includeInstance, f),
+    uploadId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    contentPartsList: jspb.Message.toObjectList(msg.getContentPartsList(),
+    proto_clarifai_api_resources_pb.UploadContentPart.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.clarifai.api.PutUploadContentPartsRequest}
+ */
+proto.clarifai.api.PutUploadContentPartsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.clarifai.api.PutUploadContentPartsRequest;
+  return proto.clarifai.api.PutUploadContentPartsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.clarifai.api.PutUploadContentPartsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.clarifai.api.PutUploadContentPartsRequest}
+ */
+proto.clarifai.api.PutUploadContentPartsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto_clarifai_api_resources_pb.UserAppIDSet;
+      reader.readMessage(value,proto_clarifai_api_resources_pb.UserAppIDSet.deserializeBinaryFromReader);
+      msg.setUserAppId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUploadId(value);
+      break;
+    case 3:
+      var value = new proto_clarifai_api_resources_pb.UploadContentPart;
+      reader.readMessage(value,proto_clarifai_api_resources_pb.UploadContentPart.deserializeBinaryFromReader);
+      msg.addContentParts(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.clarifai.api.PutUploadContentPartsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.clarifai.api.PutUploadContentPartsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.clarifai.api.PutUploadContentPartsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.clarifai.api.PutUploadContentPartsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getUserAppId();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto_clarifai_api_resources_pb.UserAppIDSet.serializeBinaryToWriter
+    );
+  }
+  f = message.getUploadId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getContentPartsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      3,
+      f,
+      proto_clarifai_api_resources_pb.UploadContentPart.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional UserAppIDSet user_app_id = 1;
+ * @return {?proto.clarifai.api.UserAppIDSet}
+ */
+proto.clarifai.api.PutUploadContentPartsRequest.prototype.getUserAppId = function() {
+  return /** @type{?proto.clarifai.api.UserAppIDSet} */ (
+    jspb.Message.getWrapperField(this, proto_clarifai_api_resources_pb.UserAppIDSet, 1));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.UserAppIDSet|undefined} value
+ * @return {!proto.clarifai.api.PutUploadContentPartsRequest} returns this
+*/
+proto.clarifai.api.PutUploadContentPartsRequest.prototype.setUserAppId = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.PutUploadContentPartsRequest} returns this
+ */
+proto.clarifai.api.PutUploadContentPartsRequest.prototype.clearUserAppId = function() {
+  return this.setUserAppId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.PutUploadContentPartsRequest.prototype.hasUserAppId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string upload_id = 2;
+ * @return {string}
+ */
+proto.clarifai.api.PutUploadContentPartsRequest.prototype.getUploadId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.clarifai.api.PutUploadContentPartsRequest} returns this
+ */
+proto.clarifai.api.PutUploadContentPartsRequest.prototype.setUploadId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * repeated UploadContentPart content_parts = 3;
+ * @return {!Array<!proto.clarifai.api.UploadContentPart>}
+ */
+proto.clarifai.api.PutUploadContentPartsRequest.prototype.getContentPartsList = function() {
+  return /** @type{!Array<!proto.clarifai.api.UploadContentPart>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto_clarifai_api_resources_pb.UploadContentPart, 3));
+};
+
+
+/**
+ * @param {!Array<!proto.clarifai.api.UploadContentPart>} value
+ * @return {!proto.clarifai.api.PutUploadContentPartsRequest} returns this
+*/
+proto.clarifai.api.PutUploadContentPartsRequest.prototype.setContentPartsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.UploadContentPart=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.clarifai.api.UploadContentPart}
+ */
+proto.clarifai.api.PutUploadContentPartsRequest.prototype.addContentParts = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.clarifai.api.UploadContentPart, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.clarifai.api.PutUploadContentPartsRequest} returns this
+ */
+proto.clarifai.api.PutUploadContentPartsRequest.prototype.clearContentPartsList = function() {
+  return this.setContentPartsList([]);
 };
 
 

@@ -609,10 +609,10 @@ export class KeypointInfo extends jspb.Message {
   clearKeypointNamesList(): KeypointInfo;
   addKeypointNames(value: string, index?: number): KeypointInfo;
 
-  getSkeletonList(): Array<ListOfFloat>;
-  setSkeletonList(value: Array<ListOfFloat>): KeypointInfo;
+  getSkeletonList(): Array<KeypointEdge>;
+  setSkeletonList(value: Array<KeypointEdge>): KeypointInfo;
   clearSkeletonList(): KeypointInfo;
-  addSkeleton(value?: ListOfFloat, index?: number): ListOfFloat;
+  addSkeleton(value?: KeypointEdge, index?: number): KeypointEdge;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): KeypointInfo.AsObject;
@@ -625,27 +625,29 @@ export class KeypointInfo extends jspb.Message {
 export namespace KeypointInfo {
   export type AsObject = {
     keypointNamesList: Array<string>,
-    skeletonList: Array<ListOfFloat.AsObject>,
+    skeletonList: Array<KeypointEdge.AsObject>,
   }
 }
 
-export class ListOfFloat extends jspb.Message {
-  getValuesList(): Array<number>;
-  setValuesList(value: Array<number>): ListOfFloat;
-  clearValuesList(): ListOfFloat;
-  addValues(value: number, index?: number): ListOfFloat;
+export class KeypointEdge extends jspb.Message {
+  getK1(): number;
+  setK1(value: number): KeypointEdge;
+
+  getK2(): number;
+  setK2(value: number): KeypointEdge;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListOfFloat.AsObject;
-  static toObject(includeInstance: boolean, msg: ListOfFloat): ListOfFloat.AsObject;
-  static serializeBinaryToWriter(message: ListOfFloat, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListOfFloat;
-  static deserializeBinaryFromReader(message: ListOfFloat, reader: jspb.BinaryReader): ListOfFloat;
+  toObject(includeInstance?: boolean): KeypointEdge.AsObject;
+  static toObject(includeInstance: boolean, msg: KeypointEdge): KeypointEdge.AsObject;
+  static serializeBinaryToWriter(message: KeypointEdge, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): KeypointEdge;
+  static deserializeBinaryFromReader(message: KeypointEdge, reader: jspb.BinaryReader): KeypointEdge;
 }
 
-export namespace ListOfFloat {
+export namespace KeypointEdge {
   export type AsObject = {
-    valuesList: Array<number>,
+    k1: number,
+    k2: number,
   }
 }
 
@@ -1253,9 +1255,10 @@ export namespace Point {
   }
 
   export enum Visibility { 
-    NOT_PRESENT = 0,
-    NOT_VISIBLE = 1,
-    VISIBLE = 2,
+    NOT_SET = 0,
+    VISIBLE = 1,
+    NOT_VISIBLE = 2,
+    NOT_PRESENT = 3,
   }
 }
 
@@ -1806,6 +1809,11 @@ export class DatasetVersion extends jspb.Message {
   getMetricsMap(): jspb.Map<string, DatasetVersionMetrics>;
   clearMetricsMap(): DatasetVersion;
 
+  getExportInfo(): DatasetVersionExportInfo | undefined;
+  setExportInfo(value?: DatasetVersionExportInfo): DatasetVersion;
+  hasExportInfo(): boolean;
+  clearExportInfo(): DatasetVersion;
+
   getMetadata(): google_protobuf_struct_pb.Struct | undefined;
   setMetadata(value?: google_protobuf_struct_pb.Struct): DatasetVersion;
   hasMetadata(): boolean;
@@ -1843,6 +1851,7 @@ export namespace DatasetVersion {
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     description: string,
     metricsMap: Array<[string, DatasetVersionMetrics.AsObject]>,
+    exportInfo?: DatasetVersionExportInfo.AsObject,
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
     visibility?: Visibility.AsObject,
     embedModelVersionIdsList: Array<string>,
@@ -2027,6 +2036,58 @@ export namespace DatasetVersionMetricsGroup {
     type: DatasetVersionMetricsGroupType,
     value?: google_protobuf_struct_pb.Value.AsObject,
     metrics?: DatasetVersionMetrics.AsObject,
+  }
+}
+
+export class DatasetVersionExportInfo extends jspb.Message {
+  getClarifaiDataExample(): DatasetVersionExport | undefined;
+  setClarifaiDataExample(value?: DatasetVersionExport): DatasetVersionExportInfo;
+  hasClarifaiDataExample(): boolean;
+  clearClarifaiDataExample(): DatasetVersionExportInfo;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DatasetVersionExportInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: DatasetVersionExportInfo): DatasetVersionExportInfo.AsObject;
+  static serializeBinaryToWriter(message: DatasetVersionExportInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DatasetVersionExportInfo;
+  static deserializeBinaryFromReader(message: DatasetVersionExportInfo, reader: jspb.BinaryReader): DatasetVersionExportInfo;
+}
+
+export namespace DatasetVersionExportInfo {
+  export type AsObject = {
+    clarifaiDataExample?: DatasetVersionExport.AsObject,
+  }
+}
+
+export class DatasetVersionExport extends jspb.Message {
+  getFormat(): DatasetVersionExportFormat;
+  setFormat(value: DatasetVersionExportFormat): DatasetVersionExport;
+
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): DatasetVersionExport;
+  hasStatus(): boolean;
+  clearStatus(): DatasetVersionExport;
+
+  getUrl(): string;
+  setUrl(value: string): DatasetVersionExport;
+
+  getSize(): number;
+  setSize(value: number): DatasetVersionExport;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DatasetVersionExport.AsObject;
+  static toObject(includeInstance: boolean, msg: DatasetVersionExport): DatasetVersionExport.AsObject;
+  static serializeBinaryToWriter(message: DatasetVersionExport, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DatasetVersionExport;
+  static deserializeBinaryFromReader(message: DatasetVersionExport, reader: jspb.BinaryReader): DatasetVersionExport;
+}
+
+export namespace DatasetVersionExport {
+  export type AsObject = {
+    format: DatasetVersionExportFormat,
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    url: string,
+    size: number,
   }
 }
 
@@ -2844,6 +2905,9 @@ export class ModelTypeEnumOptionAlias extends jspb.Message {
   getIdInt(): number;
   setIdInt(value: number): ModelTypeEnumOptionAlias;
 
+  getWildcardString(): string;
+  setWildcardString(value: string): ModelTypeEnumOptionAlias;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelTypeEnumOptionAlias.AsObject;
   static toObject(includeInstance: boolean, msg: ModelTypeEnumOptionAlias): ModelTypeEnumOptionAlias.AsObject;
@@ -2855,6 +2919,7 @@ export class ModelTypeEnumOptionAlias extends jspb.Message {
 export namespace ModelTypeEnumOptionAlias {
   export type AsObject = {
     idInt: number,
+    wildcardString: string,
   }
 }
 
@@ -6020,6 +6085,9 @@ export class InstalledModuleVersion extends jspb.Message {
   hasVisibility(): boolean;
   clearVisibility(): InstalledModuleVersion;
 
+  getKeyId(): string;
+  setKeyId(value: string): InstalledModuleVersion;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InstalledModuleVersion.AsObject;
   static toObject(includeInstance: boolean, msg: InstalledModuleVersion): InstalledModuleVersion.AsObject;
@@ -6038,6 +6106,7 @@ export namespace InstalledModuleVersion {
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     deployUrl: string,
     visibility?: Visibility.AsObject,
+    keyId: string,
   }
 }
 
@@ -6335,6 +6404,84 @@ export namespace DeleteGeo {
   }
 }
 
+export class Upload extends jspb.Message {
+  getId(): string;
+  setId(value: string): Upload;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Upload;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): Upload;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): Upload;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): Upload;
+
+  getExpiresAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setExpiresAt(value?: google_protobuf_timestamp_pb.Timestamp): Upload;
+  hasExpiresAt(): boolean;
+  clearExpiresAt(): Upload;
+
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): Upload;
+  hasStatus(): boolean;
+  clearStatus(): Upload;
+
+  getContentLength(): number;
+  setContentLength(value: number): Upload;
+
+  getContentUrl(): string;
+  setContentUrl(value: string): Upload;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Upload.AsObject;
+  static toObject(includeInstance: boolean, msg: Upload): Upload.AsObject;
+  static serializeBinaryToWriter(message: Upload, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Upload;
+  static deserializeBinaryFromReader(message: Upload, reader: jspb.BinaryReader): Upload;
+}
+
+export namespace Upload {
+  export type AsObject = {
+    id: string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    expiresAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    contentLength: number,
+    contentUrl: string,
+  }
+}
+
+export class UploadContentPart extends jspb.Message {
+  getRangeStart(): number;
+  setRangeStart(value: number): UploadContentPart;
+
+  getPartNumber(): number;
+  setPartNumber(value: number): UploadContentPart;
+
+  getData(): Uint8Array | string;
+  getData_asU8(): Uint8Array;
+  getData_asB64(): string;
+  setData(value: Uint8Array | string): UploadContentPart;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UploadContentPart.AsObject;
+  static toObject(includeInstance: boolean, msg: UploadContentPart): UploadContentPart.AsObject;
+  static serializeBinaryToWriter(message: UploadContentPart, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UploadContentPart;
+  static deserializeBinaryFromReader(message: UploadContentPart, reader: jspb.BinaryReader): UploadContentPart;
+}
+
+export namespace UploadContentPart {
+  export type AsObject = {
+    rangeStart: number,
+    partNumber: number,
+    data: Uint8Array | string,
+  }
+}
+
 export enum DatasetVersionMetricsGroupType { 
   DATASET_VERSION_METRICS_GROUP_TYPE_NOT_SET = 0,
   INPUT_TYPE = 2,
@@ -6346,6 +6493,10 @@ export enum DatasetVersionMetricsGroupType {
   MASKS_COUNT = 23,
   PIXELS_COUNT = 30,
   ASPECT_RATIO = 31,
+}
+export enum DatasetVersionExportFormat { 
+  DATASET_VERSION_EXPORT_FORMAT_NOT_SET = 0,
+  CLARIFAI_DATA_EXAMPLE = 1,
 }
 export enum ExpirationAction { 
   EXPIRATION_ACTION_NOT_SET = 0,
