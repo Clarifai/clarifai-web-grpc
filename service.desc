@@ -1,10 +1,0 @@
-
-à
-(proto/clarifai/auth/util/extension.protoclarifai.auth.util%proto/clarifai/auth/scope/scope.proto%proto/clarifai/auth/types/types.proto google/protobuf/descriptor.proto:I
-cl_private_field.google.protobuf.FieldOptions¿Û (RclPrivateField:F
-cl_private_rpc.google.protobuf.MethodOptions¡Û (RclPrivateRpc:h
-cl_depending_scopes.google.protobuf.MethodOptions¬Û (2.clarifai.auth.scope.SRclDependingScopes:a
-cl_auth_type.google.protobuf.MethodOptions√Û (2.clarifai.auth.types.AuthTypeR
-clAuthType:O
-cl_private_message.google.protobuf.MessageOptionsƒÛ (RclPrivateMessageBû
-com.clarifai.grpc.auth.utilPZvgithub.com/Clarifai/clarifai-go-grpc/proto/clarifai/auth/github.com/Clarifai/clarifai-go-grpc/proto/clarifai/auth/util¢CAIPbproto3

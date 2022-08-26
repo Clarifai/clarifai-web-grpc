@@ -23,6 +23,49 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
+"@bufbuild/connect-web@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@bufbuild/connect-web/-/connect-web-0.1.0.tgz#0640020e61ecc469e708af7d9c48bbd150d3ea8f"
+  integrity sha512-2f9f5p1eDGBF+xHWkwI8JSK5k1aOfe9ZgKoT6fPBREDrEW8m2e/yMSnSuHAcFyoFA9jwG4DzrQBfWSkqSFgzIw==
+
+"@bufbuild/protobuf@0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@bufbuild/protobuf/-/protobuf-0.0.10.tgz#9678de76e39b026af9418afc93c5494eab575b54"
+  integrity sha512-KAIMq9+zgRms902o6Cwyv9q4+rf1cOlF41QpEPU8lWbyj+QViD7JjG4370Ev9JFJtJr1qO3ZMdjUhglH0gsDrg==
+
+"@bufbuild/protobuf@0.1.0", "@bufbuild/protobuf@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@bufbuild/protobuf/-/protobuf-0.1.0.tgz#101b2b027e28067a7b0991716dd9aac1307bb814"
+  integrity sha512-LY29YLjJBh6K2Ao2yxaRohQh0HSVsNaKfp19QPcHHUUTV60eiOmD3j9YofOCCoDskooeLLlefBBKzNUYwUHcBg==
+
+"@bufbuild/protoc-gen-connect-web@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@bufbuild/protoc-gen-connect-web/-/protoc-gen-connect-web-0.1.0.tgz#28db89b855806eceb1e3ca2036ff5bd31d81d33d"
+  integrity sha512-vcKLX2ZtSRCoNJMM0lgNTqZjWT2tWEdIS/8/gnWOV3i34FF5kuSINjlfPjl/7nbS5kSDvnjxupmVByMe7+rw8A==
+  dependencies:
+    "@bufbuild/protoplugin" "0.0.10"
+
+"@bufbuild/protoc-gen-es@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@bufbuild/protoc-gen-es/-/protoc-gen-es-0.1.0.tgz#9b902c1b33e9b288cca50d851485b4e38c35e78a"
+  integrity sha512-uZw3A/qSaSHab3tlWtQICV+xXMyoE63GiWJJNoLtvdMlSVU3VhiXQ8OBUsxMffMVccJ303ogmJdZECQwZqm+xQ==
+  dependencies:
+    "@bufbuild/protoplugin" "0.1.0"
+
+"@bufbuild/protoplugin@0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@bufbuild/protoplugin/-/protoplugin-0.0.10.tgz#c3bffddadd2cb290dccfc6504e662fb888cd0564"
+  integrity sha512-cfC5ODqmkVpNNU8zXhZNSwXQgPZcG6Sqbe4d/UqiOyDh1kH6hYVEuqNKXNBRDzQXjwRAeBEi2m4Zp8MpCoP5Ug==
+  dependencies:
+    "@bufbuild/protobuf" "0.0.10"
+
+"@bufbuild/protoplugin@0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@bufbuild/protoplugin/-/protoplugin-0.1.0.tgz#7221500f8172a5a9bac5d963323ab0d62cbffad9"
+  integrity sha512-WvaR1J4mxe1KDmAkWK5YPR5LMKhqld/UGqP32zGE+I0lLE9Bj7b6a0nCk8dmmfMt2aLQvocy1Pyv23dfUaYZtg==
+  dependencies:
+    "@bufbuild/protobuf" "0.1.0"
+
 "@commitlint/cli@^16.0.1":
   version "16.0.1"
   resolved "https://registry.npmjs.org/@commitlint/cli/-/cli-16.0.1.tgz"
