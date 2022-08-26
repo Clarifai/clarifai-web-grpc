@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+import "google/protobuf/descriptor.proto";
+
+package clarifai.auth.scope;
+
+option go_package = "clarifai/auth/feature_flags";
+
+message FlagList {
+  // These are the list of low-level flags to check from the enum below.
+  repeated Flag flags = 1;
+}
+
+enum FlagID {
+  // introduce undef so that the zero (default/unset) value of the enum is not a real
+  // permission. undef is only present for this purpose and should not be used
+  // to indicate any "real" value.
+  undef = 0;
+
+  All = 1;
+
+  // this is a special value used only for tests
+  Test = 2;
+
+  // features
+  DatastoreAppReindexing = 3;
+  DatastoreAppDuplication = 4;
+  DatastoreDataCollector = 5;
+  LabelerVideoInterpolation = 6;
+  LabelerMultiPointPolygon = 7;
+  // unused, kept for historic reasons
+  // appears to be a duplicate of LabelerAIAssistedLabeling
+  LabelerLabelSuggestion = 8;
+  LabelerAIAssistedLabeling = 9;
+  LabelerLabelingTasks = 10;
+  LabelerLabelingAsAService = 11;
+  LabelerTaskAssignmentRule = 12;
+  LabelerOptimizedTaskReview = 13;
+  TrainingDeepTraining = 14;
+  TrainingCustomFacialRecognition = 15;
+  ModelConceptThresholder = 16;
+  ModelAnnotationWriter = 17;
+  ModelVisualClassifier = 18;
+  ModelVisualEmbedder = 19;
+  ModelVisualDetector = 20;
+  ModelRandomSample = 21;
+  LabelerConsensusReview = 22;
+  AppAddCollaborators = 23;
+  OrgCreateOrganization = 24;
+  AccessPortalV2 = 25;
+  ModelUpload = 26;
+}
+
+message Flag {
+  FlagID flag_id = 1;
+  uint32 value = 2;
+}

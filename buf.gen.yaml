@@ -1,6 +1,8 @@
 # buf.gen.yaml defines a local generation template.
 # For details, see https://docs.buf.build/configuration/v1/buf-gen-yaml
 version: v1
+deps:
+  - buf.build/beta/googleapis
 plugins:
   - name: es
     path: node_modules/.bin/protoc-gen-es
