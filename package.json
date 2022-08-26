@@ -29,7 +29,6 @@
     "@commitlint/cli": "^16.0.1",
     "@commitlint/config-conventional": "^16.0.0",
     "@semantic-release/changelog": "^6.0.1",
-    "@types/google-protobuf": "~3.7.0",
     "@types/node": "~10.17.0",
     "husky": "^7.0.4",
     "semantic-release": "^18.0.1",
