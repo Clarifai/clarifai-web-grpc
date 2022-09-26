@@ -296,6 +296,13 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiDatasetResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiDatasetResponse>;
 
+  patchDatasetIds(
+    request: proto_clarifai_api_service_pb.PatchDatasetIdsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiDatasetResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiDatasetResponse>;
+
   deleteDatasets(
     request: proto_clarifai_api_service_pb.DeleteDatasetsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -620,6 +627,13 @@ export class V2Client {
 
   patchWorkflows(
     request: proto_clarifai_api_service_pb.PatchWorkflowsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiWorkflowResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiWorkflowResponse>;
+
+  patchWorkflowIds(
+    request: proto_clarifai_api_service_pb.PatchWorkflowIdsRequest,
     metadata: grpcWeb.Metadata | undefined,
     callback: (err: grpcWeb.RpcError,
                response: proto_clarifai_api_service_pb.MultiWorkflowResponse) => void
@@ -1276,6 +1290,20 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.SingleDatasetInputsSearchAddJobResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleDatasetInputsSearchAddJobResponse>;
 
+  listInputsAddJobs(
+    request: proto_clarifai_api_service_pb.ListInputsAddJobsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiInputsAddJobResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiInputsAddJobResponse>;
+
+  getInputsAddJob(
+    request: proto_clarifai_api_service_pb.GetInputsAddJobRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleInputsAddJobResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleInputsAddJobResponse>;
+
   postUploads(
     request: proto_clarifai_api_service_pb.PostUploadsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -1523,6 +1551,11 @@ export class V2PromiseClient {
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiDatasetResponse>;
 
+  patchDatasetIds(
+    request: proto_clarifai_api_service_pb.PatchDatasetIdsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiDatasetResponse>;
+
   deleteDatasets(
     request: proto_clarifai_api_service_pb.DeleteDatasetsRequest,
     metadata?: grpcWeb.Metadata
@@ -1755,6 +1788,11 @@ export class V2PromiseClient {
 
   patchWorkflows(
     request: proto_clarifai_api_service_pb.PatchWorkflowsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiWorkflowResponse>;
+
+  patchWorkflowIds(
+    request: proto_clarifai_api_service_pb.PatchWorkflowIdsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiWorkflowResponse>;
 
@@ -2222,6 +2260,16 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.GetDatasetInputsSearchAddJobRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.SingleDatasetInputsSearchAddJobResponse>;
+
+  listInputsAddJobs(
+    request: proto_clarifai_api_service_pb.ListInputsAddJobsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiInputsAddJobResponse>;
+
+  getInputsAddJob(
+    request: proto_clarifai_api_service_pb.GetInputsAddJobRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleInputsAddJobResponse>;
 
   postUploads(
     request: proto_clarifai_api_service_pb.PostUploadsRequest,
