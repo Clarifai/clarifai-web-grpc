@@ -1798,6 +1798,11 @@ export class DatasetVersion extends jspb.Message {
   hasAnnotationFilterConfig(): boolean;
   clearAnnotationFilterConfig(): DatasetVersion;
 
+  getModelPredictConfig(): ModelPredictConfig | undefined;
+  setModelPredictConfig(value?: ModelPredictConfig): DatasetVersion;
+  hasModelPredictConfig(): boolean;
+  clearModelPredictConfig(): DatasetVersion;
+
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
   setStatus(value?: proto_clarifai_api_status_status_pb.Status): DatasetVersion;
   hasStatus(): boolean;
@@ -1848,6 +1853,7 @@ export namespace DatasetVersion {
     userId: string,
     datasetId: string,
     annotationFilterConfig?: AnnotationFilterConfig.AsObject,
+    modelPredictConfig?: ModelPredictConfig.AsObject,
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     description: string,
     metricsMap: Array<[string, DatasetVersionMetrics.AsObject]>,
@@ -1860,6 +1866,7 @@ export namespace DatasetVersion {
   export enum DataConfigCase { 
     DATA_CONFIG_NOT_SET = 0,
     ANNOTATION_FILTER_CONFIG = 15,
+    MODEL_PREDICT_CONFIG = 18,
   }
 }
 
@@ -1880,6 +1887,26 @@ export class AnnotationFilterConfig extends jspb.Message {
 export namespace AnnotationFilterConfig {
   export type AsObject = {
     annotationFilter?: AnnotationFilter.AsObject,
+  }
+}
+
+export class ModelPredictConfig extends jspb.Message {
+  getModel(): Model | undefined;
+  setModel(value?: Model): ModelPredictConfig;
+  hasModel(): boolean;
+  clearModel(): ModelPredictConfig;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelPredictConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelPredictConfig): ModelPredictConfig.AsObject;
+  static serializeBinaryToWriter(message: ModelPredictConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelPredictConfig;
+  static deserializeBinaryFromReader(message: ModelPredictConfig, reader: jspb.BinaryReader): ModelPredictConfig;
+}
+
+export namespace ModelPredictConfig {
+  export type AsObject = {
+    model?: Model.AsObject,
   }
 }
 
@@ -2045,6 +2072,11 @@ export class DatasetVersionExportInfo extends jspb.Message {
   hasClarifaiDataExample(): boolean;
   clearClarifaiDataExample(): DatasetVersionExportInfo;
 
+  getCoco(): DatasetVersionExport | undefined;
+  setCoco(value?: DatasetVersionExport): DatasetVersionExportInfo;
+  hasCoco(): boolean;
+  clearCoco(): DatasetVersionExportInfo;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetVersionExportInfo.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetVersionExportInfo): DatasetVersionExportInfo.AsObject;
@@ -2056,6 +2088,7 @@ export class DatasetVersionExportInfo extends jspb.Message {
 export namespace DatasetVersionExportInfo {
   export type AsObject = {
     clarifaiDataExample?: DatasetVersionExport.AsObject,
+    coco?: DatasetVersionExport.AsObject,
   }
 }
 
@@ -6404,6 +6437,84 @@ export namespace DeleteGeo {
   }
 }
 
+export class InputsAddJob extends jspb.Message {
+  getId(): string;
+  setId(value: string): InputsAddJob;
+
+  getCloudStorageUrl(): string;
+  setCloudStorageUrl(value: string): InputsAddJob;
+
+  getCallBackUrl(): string;
+  setCallBackUrl(value: string): InputsAddJob;
+
+  getAppPat(): string;
+  setAppPat(value: string): InputsAddJob;
+
+  getProgress(): InputsAddJobProgress | undefined;
+  setProgress(value?: InputsAddJobProgress): InputsAddJob;
+  hasProgress(): boolean;
+  clearProgress(): InputsAddJob;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): InputsAddJob;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): InputsAddJob;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): InputsAddJob;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): InputsAddJob;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InputsAddJob.AsObject;
+  static toObject(includeInstance: boolean, msg: InputsAddJob): InputsAddJob.AsObject;
+  static serializeBinaryToWriter(message: InputsAddJob, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InputsAddJob;
+  static deserializeBinaryFromReader(message: InputsAddJob, reader: jspb.BinaryReader): InputsAddJob;
+}
+
+export namespace InputsAddJob {
+  export type AsObject = {
+    id: string,
+    cloudStorageUrl: string,
+    callBackUrl: string,
+    appPat: string,
+    progress?: InputsAddJobProgress.AsObject,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class InputsAddJobProgress extends jspb.Message {
+  getPendingCount(): number;
+  setPendingCount(value: number): InputsAddJobProgress;
+
+  getInProgressCount(): number;
+  setInProgressCount(value: number): InputsAddJobProgress;
+
+  getSuccessCount(): number;
+  setSuccessCount(value: number): InputsAddJobProgress;
+
+  getFailedCount(): number;
+  setFailedCount(value: number): InputsAddJobProgress;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InputsAddJobProgress.AsObject;
+  static toObject(includeInstance: boolean, msg: InputsAddJobProgress): InputsAddJobProgress.AsObject;
+  static serializeBinaryToWriter(message: InputsAddJobProgress, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InputsAddJobProgress;
+  static deserializeBinaryFromReader(message: InputsAddJobProgress, reader: jspb.BinaryReader): InputsAddJobProgress;
+}
+
+export namespace InputsAddJobProgress {
+  export type AsObject = {
+    pendingCount: number,
+    inProgressCount: number,
+    successCount: number,
+    failedCount: number,
+  }
+}
+
 export class Upload extends jspb.Message {
   getId(): string;
   setId(value: string): Upload;
@@ -6497,6 +6608,7 @@ export enum DatasetVersionMetricsGroupType {
 export enum DatasetVersionExportFormat { 
   DATASET_VERSION_EXPORT_FORMAT_NOT_SET = 0,
   CLARIFAI_DATA_EXAMPLE = 1,
+  COCO = 2,
 }
 export enum ExpirationAction { 
   EXPIRATION_ACTION_NOT_SET = 0,
