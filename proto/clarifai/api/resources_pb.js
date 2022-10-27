@@ -19701,7 +19701,8 @@ proto.clarifai.api.DatasetVersionExportInfo.prototype.toObject = function(opt_in
  */
 proto.clarifai.api.DatasetVersionExportInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
-    clarifaiDataExample: (f = msg.getClarifaiDataExample()) && proto.clarifai.api.DatasetVersionExport.toObject(includeInstance, f),
+    clarifaiDataProtobuf: (f = msg.getClarifaiDataProtobuf()) && proto.clarifai.api.DatasetVersionExport.toObject(includeInstance, f),
+    clarifaiDataJson: (f = msg.getClarifaiDataJson()) && proto.clarifai.api.DatasetVersionExport.toObject(includeInstance, f),
     coco: (f = msg.getCoco()) && proto.clarifai.api.DatasetVersionExport.toObject(includeInstance, f)
   };
 
@@ -19742,7 +19743,12 @@ proto.clarifai.api.DatasetVersionExportInfo.deserializeBinaryFromReader = functi
     case 1:
       var value = new proto.clarifai.api.DatasetVersionExport;
       reader.readMessage(value,proto.clarifai.api.DatasetVersionExport.deserializeBinaryFromReader);
-      msg.setClarifaiDataExample(value);
+      msg.setClarifaiDataProtobuf(value);
+      break;
+    case 3:
+      var value = new proto.clarifai.api.DatasetVersionExport;
+      reader.readMessage(value,proto.clarifai.api.DatasetVersionExport.deserializeBinaryFromReader);
+      msg.setClarifaiDataJson(value);
       break;
     case 2:
       var value = new proto.clarifai.api.DatasetVersionExport;
@@ -19778,10 +19784,18 @@ proto.clarifai.api.DatasetVersionExportInfo.prototype.serializeBinary = function
  */
 proto.clarifai.api.DatasetVersionExportInfo.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getClarifaiDataExample();
+  f = message.getClarifaiDataProtobuf();
   if (f != null) {
     writer.writeMessage(
       1,
+      f,
+      proto.clarifai.api.DatasetVersionExport.serializeBinaryToWriter
+    );
+  }
+  f = message.getClarifaiDataJson();
+  if (f != null) {
+    writer.writeMessage(
+      3,
       f,
       proto.clarifai.api.DatasetVersionExport.serializeBinaryToWriter
     );
@@ -19798,10 +19812,10 @@ proto.clarifai.api.DatasetVersionExportInfo.serializeBinaryToWriter = function(m
 
 
 /**
- * optional DatasetVersionExport clarifai_data_example = 1;
+ * optional DatasetVersionExport clarifai_data_protobuf = 1;
  * @return {?proto.clarifai.api.DatasetVersionExport}
  */
-proto.clarifai.api.DatasetVersionExportInfo.prototype.getClarifaiDataExample = function() {
+proto.clarifai.api.DatasetVersionExportInfo.prototype.getClarifaiDataProtobuf = function() {
   return /** @type{?proto.clarifai.api.DatasetVersionExport} */ (
     jspb.Message.getWrapperField(this, proto.clarifai.api.DatasetVersionExport, 1));
 };
@@ -19811,7 +19825,7 @@ proto.clarifai.api.DatasetVersionExportInfo.prototype.getClarifaiDataExample = f
  * @param {?proto.clarifai.api.DatasetVersionExport|undefined} value
  * @return {!proto.clarifai.api.DatasetVersionExportInfo} returns this
 */
-proto.clarifai.api.DatasetVersionExportInfo.prototype.setClarifaiDataExample = function(value) {
+proto.clarifai.api.DatasetVersionExportInfo.prototype.setClarifaiDataProtobuf = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -19820,8 +19834,8 @@ proto.clarifai.api.DatasetVersionExportInfo.prototype.setClarifaiDataExample = f
  * Clears the message field making it undefined.
  * @return {!proto.clarifai.api.DatasetVersionExportInfo} returns this
  */
-proto.clarifai.api.DatasetVersionExportInfo.prototype.clearClarifaiDataExample = function() {
-  return this.setClarifaiDataExample(undefined);
+proto.clarifai.api.DatasetVersionExportInfo.prototype.clearClarifaiDataProtobuf = function() {
+  return this.setClarifaiDataProtobuf(undefined);
 };
 
 
@@ -19829,8 +19843,45 @@ proto.clarifai.api.DatasetVersionExportInfo.prototype.clearClarifaiDataExample =
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.clarifai.api.DatasetVersionExportInfo.prototype.hasClarifaiDataExample = function() {
+proto.clarifai.api.DatasetVersionExportInfo.prototype.hasClarifaiDataProtobuf = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional DatasetVersionExport clarifai_data_json = 3;
+ * @return {?proto.clarifai.api.DatasetVersionExport}
+ */
+proto.clarifai.api.DatasetVersionExportInfo.prototype.getClarifaiDataJson = function() {
+  return /** @type{?proto.clarifai.api.DatasetVersionExport} */ (
+    jspb.Message.getWrapperField(this, proto.clarifai.api.DatasetVersionExport, 3));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.DatasetVersionExport|undefined} value
+ * @return {!proto.clarifai.api.DatasetVersionExportInfo} returns this
+*/
+proto.clarifai.api.DatasetVersionExportInfo.prototype.setClarifaiDataJson = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.DatasetVersionExportInfo} returns this
+ */
+proto.clarifai.api.DatasetVersionExportInfo.prototype.clearClarifaiDataJson = function() {
+  return this.setClarifaiDataJson(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.DatasetVersionExportInfo.prototype.hasClarifaiDataJson = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -36482,7 +36533,6 @@ proto.clarifai.api.User.toObject = function(includeInstance, msg) {
     metadata: (f = msg.getMetadata()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f),
     emailAddressesList: jspb.Message.toObjectList(msg.getEmailAddressesList(),
     proto.clarifai.api.EmailAddress.toObject, includeInstance),
-    isOrgAdmin: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
     twoFactorAuthEnabled: jspb.Message.getBooleanFieldWithDefault(msg, 15, false),
     teamsCount: jspb.Message.getFieldWithDefault(msg, 16, 0),
     isStarred: jspb.Message.getBooleanFieldWithDefault(msg, 21, false),
@@ -36591,10 +36641,6 @@ proto.clarifai.api.User.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.clarifai.api.EmailAddress;
       reader.readMessage(value,proto.clarifai.api.EmailAddress.deserializeBinaryFromReader);
       msg.addEmailAddresses(value);
-      break;
-    case 14:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsOrgAdmin(value);
       break;
     case 15:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -36761,13 +36807,6 @@ proto.clarifai.api.User.serializeBinaryToWriter = function(message, writer) {
       12,
       f,
       proto.clarifai.api.EmailAddress.serializeBinaryToWriter
-    );
-  }
-  f = message.getIsOrgAdmin();
-  if (f) {
-    writer.writeBool(
-      14,
-      f
     );
   }
   f = message.getTwoFactorAuthEnabled();
@@ -37222,24 +37261,6 @@ proto.clarifai.api.User.prototype.clearEmailAddressesList = function() {
 
 
 /**
- * optional bool is_org_admin = 14;
- * @return {boolean}
- */
-proto.clarifai.api.User.prototype.getIsOrgAdmin = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.clarifai.api.User} returns this
- */
-proto.clarifai.api.User.prototype.setIsOrgAdmin = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 14, value);
-};
-
-
-/**
  * optional bool two_factor_auth_enabled = 15;
  * @return {boolean}
  */
@@ -37433,7 +37454,6 @@ proto.clarifai.api.UserDetail.toObject = function(includeInstance, msg) {
     metadata: (f = msg.getMetadata()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f),
     emailAddressesList: jspb.Message.toObjectList(msg.getEmailAddressesList(),
     proto.clarifai.api.EmailAddress.toObject, includeInstance),
-    isOrgAdmin: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
     twoFactorAuthEnabled: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
     teamsCount: jspb.Message.getFieldWithDefault(msg, 10, 0),
     country: jspb.Message.getFieldWithDefault(msg, 11, ""),
@@ -37511,10 +37531,6 @@ proto.clarifai.api.UserDetail.deserializeBinaryFromReader = function(msg, reader
       var value = new proto.clarifai.api.EmailAddress;
       reader.readMessage(value,proto.clarifai.api.EmailAddress.deserializeBinaryFromReader);
       msg.addEmailAddresses(value);
-      break;
-    case 8:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsOrgAdmin(value);
       break;
     case 9:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -37621,13 +37637,6 @@ proto.clarifai.api.UserDetail.serializeBinaryToWriter = function(message, writer
       7,
       f,
       proto.clarifai.api.EmailAddress.serializeBinaryToWriter
-    );
-  }
-  f = message.getIsOrgAdmin();
-  if (f) {
-    writer.writeBool(
-      8,
-      f
     );
   }
   f = message.getTwoFactorAuthEnabled();
@@ -37917,24 +37926,6 @@ proto.clarifai.api.UserDetail.prototype.addEmailAddresses = function(opt_value, 
  */
 proto.clarifai.api.UserDetail.prototype.clearEmailAddressesList = function() {
   return this.setEmailAddressesList([]);
-};
-
-
-/**
- * optional bool is_org_admin = 8;
- * @return {boolean}
- */
-proto.clarifai.api.UserDetail.prototype.getIsOrgAdmin = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.clarifai.api.UserDetail} returns this
- */
-proto.clarifai.api.UserDetail.prototype.setIsOrgAdmin = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 8, value);
 };
 
 
@@ -53834,6 +53825,7 @@ proto.clarifai.api.Upload.toObject = function(includeInstance, msg) {
     modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     expiresAt: (f = msg.getExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     status: (f = msg.getStatus()) && proto_clarifai_api_status_status_pb.Status.toObject(includeInstance, f),
+    contentName: jspb.Message.getFieldWithDefault(msg, 8, ""),
     contentLength: jspb.Message.getFieldWithDefault(msg, 6, 0),
     contentUrl: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
@@ -53895,6 +53887,10 @@ proto.clarifai.api.Upload.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto_clarifai_api_status_status_pb.Status;
       reader.readMessage(value,proto_clarifai_api_status_status_pb.Status.deserializeBinaryFromReader);
       msg.setStatus(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setContentName(value);
       break;
     case 6:
       var value = /** @type {number} */ (reader.readUint64());
@@ -53970,6 +53966,13 @@ proto.clarifai.api.Upload.serializeBinaryToWriter = function(message, writer) {
       5,
       f,
       proto_clarifai_api_status_status_pb.Status.serializeBinaryToWriter
+    );
+  }
+  f = message.getContentName();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
     );
   }
   f = message.getContentLength();
@@ -54152,6 +54155,24 @@ proto.clarifai.api.Upload.prototype.clearStatus = function() {
  */
 proto.clarifai.api.Upload.prototype.hasStatus = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string content_name = 8;
+ * @return {string}
+ */
+proto.clarifai.api.Upload.prototype.getContentName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.clarifai.api.Upload} returns this
+ */
+proto.clarifai.api.Upload.prototype.setContentName = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
@@ -54426,7 +54447,8 @@ proto.clarifai.api.DatasetVersionMetricsGroupType = {
  */
 proto.clarifai.api.DatasetVersionExportFormat = {
   DATASET_VERSION_EXPORT_FORMAT_NOT_SET: 0,
-  CLARIFAI_DATA_EXAMPLE: 1,
+  CLARIFAI_DATA_PROTOBUF: 1,
+  CLARIFAI_DATA_JSON: 3,
   COCO: 2
 };
 

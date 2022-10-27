@@ -51,6 +51,13 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiConceptResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiConceptResponse>;
 
+  listModelConcepts(
+    request: proto_clarifai_api_service_pb.ListModelConceptsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiConceptResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiConceptResponse>;
+
   postConceptsSearches(
     request: proto_clarifai_api_service_pb.PostConceptsSearchesRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -1373,6 +1380,11 @@ export class V2PromiseClient {
 
   listConcepts(
     request: proto_clarifai_api_service_pb.ListConceptsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiConceptResponse>;
+
+  listModelConcepts(
+    request: proto_clarifai_api_service_pb.ListModelConceptsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiConceptResponse>;
 

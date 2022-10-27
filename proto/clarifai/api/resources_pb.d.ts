@@ -2067,10 +2067,15 @@ export namespace DatasetVersionMetricsGroup {
 }
 
 export class DatasetVersionExportInfo extends jspb.Message {
-  getClarifaiDataExample(): DatasetVersionExport | undefined;
-  setClarifaiDataExample(value?: DatasetVersionExport): DatasetVersionExportInfo;
-  hasClarifaiDataExample(): boolean;
-  clearClarifaiDataExample(): DatasetVersionExportInfo;
+  getClarifaiDataProtobuf(): DatasetVersionExport | undefined;
+  setClarifaiDataProtobuf(value?: DatasetVersionExport): DatasetVersionExportInfo;
+  hasClarifaiDataProtobuf(): boolean;
+  clearClarifaiDataProtobuf(): DatasetVersionExportInfo;
+
+  getClarifaiDataJson(): DatasetVersionExport | undefined;
+  setClarifaiDataJson(value?: DatasetVersionExport): DatasetVersionExportInfo;
+  hasClarifaiDataJson(): boolean;
+  clearClarifaiDataJson(): DatasetVersionExportInfo;
 
   getCoco(): DatasetVersionExport | undefined;
   setCoco(value?: DatasetVersionExport): DatasetVersionExportInfo;
@@ -2087,7 +2092,8 @@ export class DatasetVersionExportInfo extends jspb.Message {
 
 export namespace DatasetVersionExportInfo {
   export type AsObject = {
-    clarifaiDataExample?: DatasetVersionExport.AsObject,
+    clarifaiDataProtobuf?: DatasetVersionExport.AsObject,
+    clarifaiDataJson?: DatasetVersionExport.AsObject,
     coco?: DatasetVersionExport.AsObject,
   }
 }
@@ -4284,9 +4290,6 @@ export class User extends jspb.Message {
   clearEmailAddressesList(): User;
   addEmailAddresses(value?: EmailAddress, index?: number): EmailAddress;
 
-  getIsOrgAdmin(): boolean;
-  setIsOrgAdmin(value: boolean): User;
-
   getTwoFactorAuthEnabled(): boolean;
   setTwoFactorAuthEnabled(value: boolean): User;
 
@@ -4334,7 +4337,6 @@ export namespace User {
     datePiiConsent?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
     emailAddressesList: Array<EmailAddress.AsObject>,
-    isOrgAdmin: boolean,
     twoFactorAuthEnabled: boolean,
     teamsCount: number,
     isStarred: boolean,
@@ -4381,9 +4383,6 @@ export class UserDetail extends jspb.Message {
   clearEmailAddressesList(): UserDetail;
   addEmailAddresses(value?: EmailAddress, index?: number): EmailAddress;
 
-  getIsOrgAdmin(): boolean;
-  setIsOrgAdmin(value: boolean): UserDetail;
-
   getTwoFactorAuthEnabled(): boolean;
   setTwoFactorAuthEnabled(value: boolean): UserDetail;
 
@@ -4414,7 +4413,6 @@ export namespace UserDetail {
     datePiiConsent?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
     emailAddressesList: Array<EmailAddress.AsObject>,
-    isOrgAdmin: boolean,
     twoFactorAuthEnabled: boolean,
     teamsCount: number,
     country: string,
@@ -6539,6 +6537,9 @@ export class Upload extends jspb.Message {
   hasStatus(): boolean;
   clearStatus(): Upload;
 
+  getContentName(): string;
+  setContentName(value: string): Upload;
+
   getContentLength(): number;
   setContentLength(value: number): Upload;
 
@@ -6560,6 +6561,7 @@ export namespace Upload {
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     expiresAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    contentName: string,
     contentLength: number,
     contentUrl: string,
   }
@@ -6607,7 +6609,8 @@ export enum DatasetVersionMetricsGroupType {
 }
 export enum DatasetVersionExportFormat { 
   DATASET_VERSION_EXPORT_FORMAT_NOT_SET = 0,
-  CLARIFAI_DATA_EXAMPLE = 1,
+  CLARIFAI_DATA_PROTOBUF = 1,
+  CLARIFAI_DATA_JSON = 3,
   COCO = 2,
 }
 export enum ExpirationAction { 
