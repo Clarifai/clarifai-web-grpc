@@ -1026,6 +1026,42 @@ export namespace ListConceptsRequest {
   }
 }
 
+export class ListModelConceptsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListModelConceptsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): ListModelConceptsRequest;
+
+  getModelId(): string;
+  setModelId(value: string): ListModelConceptsRequest;
+
+  getVersionId(): string;
+  setVersionId(value: string): ListModelConceptsRequest;
+
+  getPage(): number;
+  setPage(value: number): ListModelConceptsRequest;
+
+  getPerPage(): number;
+  setPerPage(value: number): ListModelConceptsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListModelConceptsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListModelConceptsRequest): ListModelConceptsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListModelConceptsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListModelConceptsRequest;
+  static deserializeBinaryFromReader(message: ListModelConceptsRequest, reader: jspb.BinaryReader): ListModelConceptsRequest;
+}
+
+export namespace ListModelConceptsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    modelId: string,
+    versionId: string,
+    page: number,
+    perPage: number,
+  }
+}
+
 export class PostConceptsSearchesRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
   setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostConceptsSearchesRequest;
@@ -1787,6 +1823,9 @@ export class PostInputsRequest extends jspb.Message {
   clearInputsList(): PostInputsRequest;
   addInputs(value?: proto_clarifai_api_resources_pb.Input, index?: number): proto_clarifai_api_resources_pb.Input;
 
+  getInputsAddJobId(): string;
+  setInputsAddJobId(value: string): PostInputsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostInputsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: PostInputsRequest): PostInputsRequest.AsObject;
@@ -1799,6 +1838,7 @@ export namespace PostInputsRequest {
   export type AsObject = {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
     inputsList: Array<proto_clarifai_api_resources_pb.Input.AsObject>,
+    inputsAddJobId: string,
   }
 }
 
@@ -5667,6 +5707,9 @@ export class ListWorkflowsRequest extends jspb.Message {
   clearAdditionalFieldsList(): ListWorkflowsRequest;
   addAdditionalFields(value: string, index?: number): ListWorkflowsRequest;
 
+  getSearchTerm(): string;
+  setSearchTerm(value: string): ListWorkflowsRequest;
+
   getSortByCase(): ListWorkflowsRequest.SortByCase;
 
   serializeBinary(): Uint8Array;
@@ -5690,6 +5733,7 @@ export namespace ListWorkflowsRequest {
     featuredOnly: boolean,
     starredOnly: boolean,
     additionalFieldsList: Array<string>,
+    searchTerm: string,
   }
 
   export enum SortByCase { 
