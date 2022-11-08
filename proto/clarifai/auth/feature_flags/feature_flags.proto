@@ -2,7 +2,7 @@ syntax = "proto3";
 
 import "google/protobuf/descriptor.proto";
 
-package clarifai.auth.scope;
+package clarifai.auth.feature_flags;
 
 option go_package = "clarifai/auth/feature_flags";
 
