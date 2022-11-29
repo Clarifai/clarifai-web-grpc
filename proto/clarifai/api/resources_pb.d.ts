@@ -403,6 +403,108 @@ export namespace Track {
   }
 }
 
+export class BillingCycle extends jspb.Message {
+  getStartDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartDate(value?: google_protobuf_timestamp_pb.Timestamp): BillingCycle;
+  hasStartDate(): boolean;
+  clearStartDate(): BillingCycle;
+
+  getEndDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEndDate(value?: google_protobuf_timestamp_pb.Timestamp): BillingCycle;
+  hasEndDate(): boolean;
+  clearEndDate(): BillingCycle;
+
+  getCycleId(): number;
+  setCycleId(value: number): BillingCycle;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BillingCycle.AsObject;
+  static toObject(includeInstance: boolean, msg: BillingCycle): BillingCycle.AsObject;
+  static serializeBinaryToWriter(message: BillingCycle, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BillingCycle;
+  static deserializeBinaryFromReader(message: BillingCycle, reader: jspb.BinaryReader): BillingCycle;
+}
+
+export namespace BillingCycle {
+  export type AsObject = {
+    startDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    endDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    cycleId: number,
+  }
+}
+
+export class UsageCycle extends jspb.Message {
+  getStartDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartDate(value?: google_protobuf_timestamp_pb.Timestamp): UsageCycle;
+  hasStartDate(): boolean;
+  clearStartDate(): UsageCycle;
+
+  getEndDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEndDate(value?: google_protobuf_timestamp_pb.Timestamp): UsageCycle;
+  hasEndDate(): boolean;
+  clearEndDate(): UsageCycle;
+
+  getCycleId(): string;
+  setCycleId(value: string): UsageCycle;
+
+  getCycleEpoch(): number;
+  setCycleEpoch(value: number): UsageCycle;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UsageCycle.AsObject;
+  static toObject(includeInstance: boolean, msg: UsageCycle): UsageCycle.AsObject;
+  static serializeBinaryToWriter(message: UsageCycle, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UsageCycle;
+  static deserializeBinaryFromReader(message: UsageCycle, reader: jspb.BinaryReader): UsageCycle;
+}
+
+export namespace UsageCycle {
+  export type AsObject = {
+    startDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    endDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    cycleId: string,
+    cycleEpoch: number,
+  }
+}
+
+export class InvoiceItem extends jspb.Message {
+  getOpType(): string;
+  setOpType(value: string): InvoiceItem;
+
+  getBillType(): string;
+  setBillType(value: string): InvoiceItem;
+
+  getPricePerOp(): number;
+  setPricePerOp(value: number): InvoiceItem;
+
+  getCount(): number;
+  setCount(value: number): InvoiceItem;
+
+  getDollars(): number;
+  setDollars(value: number): InvoiceItem;
+
+  getNotes(): string;
+  setNotes(value: string): InvoiceItem;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InvoiceItem.AsObject;
+  static toObject(includeInstance: boolean, msg: InvoiceItem): InvoiceItem.AsObject;
+  static serializeBinaryToWriter(message: InvoiceItem, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InvoiceItem;
+  static deserializeBinaryFromReader(message: InvoiceItem, reader: jspb.BinaryReader): InvoiceItem;
+}
+
+export namespace InvoiceItem {
+  export type AsObject = {
+    opType: string,
+    billType: string,
+    pricePerOp: number,
+    count: number,
+    dollars: number,
+    notes: string,
+  }
+}
+
 export class Cluster extends jspb.Message {
   getId(): string;
   setId(value: string): Cluster;
@@ -849,6 +951,42 @@ export namespace KnowledgeGraph {
   }
 }
 
+export class ConceptMapping extends jspb.Message {
+  getConcept(): Concept | undefined;
+  setConcept(value?: Concept): ConceptMapping;
+  hasConcept(): boolean;
+  clearConcept(): ConceptMapping;
+
+  getSuggestedConcept(): Concept | undefined;
+  setSuggestedConcept(value?: Concept): ConceptMapping;
+  hasSuggestedConcept(): boolean;
+  clearSuggestedConcept(): ConceptMapping;
+
+  getCustomerConfirmed(): boolean;
+  setCustomerConfirmed(value: boolean): ConceptMapping;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): ConceptMapping;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): ConceptMapping;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConceptMapping.AsObject;
+  static toObject(includeInstance: boolean, msg: ConceptMapping): ConceptMapping.AsObject;
+  static serializeBinaryToWriter(message: ConceptMapping, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConceptMapping;
+  static deserializeBinaryFromReader(message: ConceptMapping, reader: jspb.BinaryReader): ConceptMapping;
+}
+
+export namespace ConceptMapping {
+  export type AsObject = {
+    concept?: Concept.AsObject,
+    suggestedConcept?: Concept.AsObject,
+    customerConfirmed: boolean,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
 export class ConceptMappingJob extends jspb.Message {
   getKnowledgeGraphId(): string;
   setKnowledgeGraphId(value: string): ConceptMappingJob;
@@ -896,6 +1034,42 @@ export namespace ConceptLanguage {
     id: string,
     name: string,
     definition: string,
+  }
+}
+
+export class ConceptReference extends jspb.Message {
+  getId(): string;
+  setId(value: string): ConceptReference;
+
+  getSource(): string;
+  setSource(value: string): ConceptReference;
+
+  getSourceId(): string;
+  setSourceId(value: string): ConceptReference;
+
+  getSourceUrl(): string;
+  setSourceUrl(value: string): ConceptReference;
+
+  getVisibility(): Visibility | undefined;
+  setVisibility(value?: Visibility): ConceptReference;
+  hasVisibility(): boolean;
+  clearVisibility(): ConceptReference;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConceptReference.AsObject;
+  static toObject(includeInstance: boolean, msg: ConceptReference): ConceptReference.AsObject;
+  static serializeBinaryToWriter(message: ConceptReference, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConceptReference;
+  static deserializeBinaryFromReader(message: ConceptReference, reader: jspb.BinaryReader): ConceptReference;
+}
+
+export namespace ConceptReference {
+  export type AsObject = {
+    id: string,
+    source: string,
+    sourceId: string,
+    sourceUrl: string,
+    visibility?: Visibility.AsObject,
   }
 }
 
@@ -1006,6 +1180,26 @@ export namespace Data {
     timeSegmentsList: Array<TimeSegment.AsObject>,
     hitsList: Array<Hit.AsObject>,
     heatmapsList: Array<Image.AsObject>,
+  }
+}
+
+export class DataBatch extends jspb.Message {
+  getDataList(): Array<Data>;
+  setDataList(value: Array<Data>): DataBatch;
+  clearDataList(): DataBatch;
+  addData(value?: Data, index?: number): Data;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DataBatch.AsObject;
+  static toObject(includeInstance: boolean, msg: DataBatch): DataBatch.AsObject;
+  static serializeBinaryToWriter(message: DataBatch, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DataBatch;
+  static deserializeBinaryFromReader(message: DataBatch, reader: jspb.BinaryReader): DataBatch;
+}
+
+export namespace DataBatch {
+  export type AsObject = {
+    dataList: Array<Data.AsObject>,
   }
 }
 
@@ -2218,6 +2412,90 @@ export namespace Key {
   }
 }
 
+export class LicenseLimit extends jspb.Message {
+  getModel(): Model | undefined;
+  setModel(value?: Model): LicenseLimit;
+  hasModel(): boolean;
+  clearModel(): LicenseLimit;
+
+  getExpiresAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setExpiresAt(value?: google_protobuf_timestamp_pb.Timestamp): LicenseLimit;
+  hasExpiresAt(): boolean;
+  clearExpiresAt(): LicenseLimit;
+
+  getMaxOperationCount(): number;
+  setMaxOperationCount(value: number): LicenseLimit;
+
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): LicenseLimit;
+  hasStatus(): boolean;
+  clearStatus(): LicenseLimit;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LicenseLimit.AsObject;
+  static toObject(includeInstance: boolean, msg: LicenseLimit): LicenseLimit.AsObject;
+  static serializeBinaryToWriter(message: LicenseLimit, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LicenseLimit;
+  static deserializeBinaryFromReader(message: LicenseLimit, reader: jspb.BinaryReader): LicenseLimit;
+}
+
+export namespace LicenseLimit {
+  export type AsObject = {
+    model?: Model.AsObject,
+    expiresAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    maxOperationCount: number,
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+  }
+}
+
+export class License extends jspb.Message {
+  getId(): string;
+  setId(value: string): License;
+
+  getScope(): LicenseScope;
+  setScope(value: LicenseScope): License;
+
+  getExpiresAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setExpiresAt(value?: google_protobuf_timestamp_pb.Timestamp): License;
+  hasExpiresAt(): boolean;
+  clearExpiresAt(): License;
+
+  getExpirationAction(): ExpirationAction;
+  setExpirationAction(value: ExpirationAction): License;
+
+  getLimitsList(): Array<LicenseLimit>;
+  setLimitsList(value: Array<LicenseLimit>): License;
+  clearLimitsList(): License;
+  addLimits(value?: LicenseLimit, index?: number): LicenseLimit;
+
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): License;
+  hasStatus(): boolean;
+  clearStatus(): License;
+
+  getIsOffline(): boolean;
+  setIsOffline(value: boolean): License;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): License.AsObject;
+  static toObject(includeInstance: boolean, msg: License): License.AsObject;
+  static serializeBinaryToWriter(message: License, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): License;
+  static deserializeBinaryFromReader(message: License, reader: jspb.BinaryReader): License;
+}
+
+export namespace License {
+  export type AsObject = {
+    id: string,
+    scope: LicenseScope,
+    expiresAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    expirationAction: ExpirationAction,
+    limitsList: Array<LicenseLimit.AsObject>,
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    isOffline: boolean,
+  }
+}
+
 export class Model extends jspb.Message {
   getId(): string;
   setId(value: string): Model;
@@ -3014,6 +3292,11 @@ export class ModelVersion extends jspb.Message {
   hasPretrainedModelConfig(): boolean;
   clearPretrainedModelConfig(): ModelVersion;
 
+  getTrainStats(): TrainStats | undefined;
+  setTrainStats(value?: TrainStats): ModelVersion;
+  hasTrainStats(): boolean;
+  clearTrainStats(): ModelVersion;
+
   getCompletedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setCompletedAt(value?: google_protobuf_timestamp_pb.Timestamp): ModelVersion;
   hasCompletedAt(): boolean;
@@ -3051,6 +3334,26 @@ export class ModelVersion extends jspb.Message {
   hasDatasetVersion(): boolean;
   clearDatasetVersion(): ModelVersion;
 
+  getOutputInfo(): OutputInfo | undefined;
+  setOutputInfo(value?: OutputInfo): ModelVersion;
+  hasOutputInfo(): boolean;
+  clearOutputInfo(): ModelVersion;
+
+  getInputInfo(): InputInfo | undefined;
+  setInputInfo(value?: InputInfo): ModelVersion;
+  hasInputInfo(): boolean;
+  clearInputInfo(): ModelVersion;
+
+  getTrainInfo(): TrainInfo | undefined;
+  setTrainInfo(value?: TrainInfo): ModelVersion;
+  hasTrainInfo(): boolean;
+  clearTrainInfo(): ModelVersion;
+
+  getImportInfo(): ImportInfo | undefined;
+  setImportInfo(value?: ImportInfo): ModelVersion;
+  hasImportInfo(): boolean;
+  clearImportInfo(): ModelVersion;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelVersion.AsObject;
   static toObject(includeInstance: boolean, msg: ModelVersion): ModelVersion.AsObject;
@@ -3068,6 +3371,7 @@ export namespace ModelVersion {
     metrics?: EvalMetrics.AsObject,
     totalInputCount: number,
     pretrainedModelConfig?: PretrainedModelConfig.AsObject,
+    trainStats?: TrainStats.AsObject,
     completedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     description: string,
     visibility?: Visibility.AsObject,
@@ -3077,10 +3381,17 @@ export namespace ModelVersion {
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
     license: string,
     datasetVersion?: DatasetVersion.AsObject,
+    outputInfo?: OutputInfo.AsObject,
+    inputInfo?: InputInfo.AsObject,
+    trainInfo?: TrainInfo.AsObject,
+    importInfo?: ImportInfo.AsObject,
   }
 }
 
 export class PretrainedModelConfig extends jspb.Message {
+  getId(): string;
+  setId(value: string): PretrainedModelConfig;
+
   getInputFieldsMap(): google_protobuf_struct_pb.Struct | undefined;
   setInputFieldsMap(value?: google_protobuf_struct_pb.Struct): PretrainedModelConfig;
   hasInputFieldsMap(): boolean;
@@ -3094,6 +3405,9 @@ export class PretrainedModelConfig extends jspb.Message {
   getModelZipUrl(): string;
   setModelZipUrl(value: string): PretrainedModelConfig;
 
+  getOverwrite(): boolean;
+  setOverwrite(value: boolean): PretrainedModelConfig;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PretrainedModelConfig.AsObject;
   static toObject(includeInstance: boolean, msg: PretrainedModelConfig): PretrainedModelConfig.AsObject;
@@ -3104,9 +3418,11 @@ export class PretrainedModelConfig extends jspb.Message {
 
 export namespace PretrainedModelConfig {
   export type AsObject = {
+    id: string,
     inputFieldsMap?: google_protobuf_struct_pb.Struct.AsObject,
     outputFieldsMap?: google_protobuf_struct_pb.Struct.AsObject,
     modelZipUrl: string,
+    overwrite: boolean,
   }
 }
 
@@ -3928,6 +4244,60 @@ export namespace And {
   }
 }
 
+export class AttributeMixIn extends jspb.Message {
+  getVersionId(): string;
+  setVersionId(value: string): AttributeMixIn;
+
+  getMixInCoefficient(): number;
+  setMixInCoefficient(value: number): AttributeMixIn;
+
+  getConceptOverride(): Concept | undefined;
+  setConceptOverride(value?: Concept): AttributeMixIn;
+  hasConceptOverride(): boolean;
+  clearConceptOverride(): AttributeMixIn;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AttributeMixIn.AsObject;
+  static toObject(includeInstance: boolean, msg: AttributeMixIn): AttributeMixIn.AsObject;
+  static serializeBinaryToWriter(message: AttributeMixIn, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AttributeMixIn;
+  static deserializeBinaryFromReader(message: AttributeMixIn, reader: jspb.BinaryReader): AttributeMixIn;
+}
+
+export namespace AttributeMixIn {
+  export type AsObject = {
+    versionId: string,
+    mixInCoefficient: number,
+    conceptOverride?: Concept.AsObject,
+  }
+}
+
+export class AttributeQuery extends jspb.Message {
+  getInput(): Input | undefined;
+  setInput(value?: Input): AttributeQuery;
+  hasInput(): boolean;
+  clearInput(): AttributeQuery;
+
+  getAttributeMixInList(): Array<AttributeMixIn>;
+  setAttributeMixInList(value: Array<AttributeMixIn>): AttributeQuery;
+  clearAttributeMixInList(): AttributeQuery;
+  addAttributeMixIn(value?: AttributeMixIn, index?: number): AttributeMixIn;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AttributeQuery.AsObject;
+  static toObject(includeInstance: boolean, msg: AttributeQuery): AttributeQuery.AsObject;
+  static serializeBinaryToWriter(message: AttributeQuery, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AttributeQuery;
+  static deserializeBinaryFromReader(message: AttributeQuery, reader: jspb.BinaryReader): AttributeQuery;
+}
+
+export namespace AttributeQuery {
+  export type AsObject = {
+    input?: Input.AsObject,
+    attributeMixInList: Array<AttributeMixIn.AsObject>,
+  }
+}
+
 export class Query extends jspb.Message {
   getAndsList(): Array<And>;
   setAndsList(value: Array<And>): Query;
@@ -4170,6 +4540,152 @@ export namespace AnnotationSearchMetrics {
   }
 }
 
+export class Plan extends jspb.Message {
+  getName(): string;
+  setName(value: string): Plan;
+
+  getId(): string;
+  setId(value: string): Plan;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Plan.AsObject;
+  static toObject(includeInstance: boolean, msg: Plan): Plan.AsObject;
+  static serializeBinaryToWriter(message: Plan, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Plan;
+  static deserializeBinaryFromReader(message: Plan, reader: jspb.BinaryReader): Plan;
+}
+
+export namespace Plan {
+  export type AsObject = {
+    name: string,
+    id: string,
+  }
+}
+
+export class CreditCard extends jspb.Message {
+  getNumber(): string;
+  setNumber(value: string): CreditCard;
+
+  getFourDigits(): string;
+  setFourDigits(value: string): CreditCard;
+
+  getExpMonth(): string;
+  setExpMonth(value: string): CreditCard;
+
+  getExpYear(): string;
+  setExpYear(value: string): CreditCard;
+
+  getCvc(): string;
+  setCvc(value: string): CreditCard;
+
+  getName(): string;
+  setName(value: string): CreditCard;
+
+  getAddressLine1(): string;
+  setAddressLine1(value: string): CreditCard;
+
+  getAddressLine2(): string;
+  setAddressLine2(value: string): CreditCard;
+
+  getAddressZip(): string;
+  setAddressZip(value: string): CreditCard;
+
+  getAddressCountry(): string;
+  setAddressCountry(value: string): CreditCard;
+
+  getAddressCity(): string;
+  setAddressCity(value: string): CreditCard;
+
+  getAddressState(): string;
+  setAddressState(value: string): CreditCard;
+
+  getId(): string;
+  setId(value: string): CreditCard;
+
+  getBrand(): string;
+  setBrand(value: string): CreditCard;
+
+  getFunding(): string;
+  setFunding(value: string): CreditCard;
+
+  getDefault(): boolean;
+  setDefault(value: boolean): CreditCard;
+
+  getCvcCheck(): string;
+  setCvcCheck(value: string): CreditCard;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreditCard.AsObject;
+  static toObject(includeInstance: boolean, msg: CreditCard): CreditCard.AsObject;
+  static serializeBinaryToWriter(message: CreditCard, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreditCard;
+  static deserializeBinaryFromReader(message: CreditCard, reader: jspb.BinaryReader): CreditCard;
+}
+
+export namespace CreditCard {
+  export type AsObject = {
+    number: string,
+    fourDigits: string,
+    expMonth: string,
+    expYear: string,
+    cvc: string,
+    name: string,
+    addressLine1: string,
+    addressLine2: string,
+    addressZip: string,
+    addressCountry: string,
+    addressCity: string,
+    addressState: string,
+    id: string,
+    brand: string,
+    funding: string,
+    pb_default: boolean,
+    cvcCheck: string,
+  }
+}
+
+export class ShippingAddress extends jspb.Message {
+  getShippingAddressLine1(): string;
+  setShippingAddressLine1(value: string): ShippingAddress;
+
+  getShippingAddressLine2(): string;
+  setShippingAddressLine2(value: string): ShippingAddress;
+
+  getShippingAddressZip(): string;
+  setShippingAddressZip(value: string): ShippingAddress;
+
+  getShippingAddressCountry(): string;
+  setShippingAddressCountry(value: string): ShippingAddress;
+
+  getShippingAddressCity(): string;
+  setShippingAddressCity(value: string): ShippingAddress;
+
+  getShippingAddressState(): string;
+  setShippingAddressState(value: string): ShippingAddress;
+
+  getShippingName(): string;
+  setShippingName(value: string): ShippingAddress;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ShippingAddress.AsObject;
+  static toObject(includeInstance: boolean, msg: ShippingAddress): ShippingAddress.AsObject;
+  static serializeBinaryToWriter(message: ShippingAddress, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ShippingAddress;
+  static deserializeBinaryFromReader(message: ShippingAddress, reader: jspb.BinaryReader): ShippingAddress;
+}
+
+export namespace ShippingAddress {
+  export type AsObject = {
+    shippingAddressLine1: string,
+    shippingAddressLine2: string,
+    shippingAddressZip: string,
+    shippingAddressCountry: string,
+    shippingAddressCity: string,
+    shippingAddressState: string,
+    shippingName: string,
+  }
+}
+
 export class Text extends jspb.Message {
   getRaw(): string;
   setRaw(value: string): Text;
@@ -4227,6 +4743,190 @@ export namespace TextInfo {
   export type AsObject = {
     charCount: number,
     encoding: string,
+  }
+}
+
+export class OpCountByDate extends jspb.Message {
+  getDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDate(value?: google_protobuf_timestamp_pb.Timestamp): OpCountByDate;
+  hasDate(): boolean;
+  clearDate(): OpCountByDate;
+
+  getSection(): string;
+  setSection(value: string): OpCountByDate;
+
+  getCallerUserId(): string;
+  setCallerUserId(value: string): OpCountByDate;
+
+  getAppId(): string;
+  setAppId(value: string): OpCountByDate;
+
+  getModelId(): string;
+  setModelId(value: string): OpCountByDate;
+
+  getCategoryId(): string;
+  setCategoryId(value: string): OpCountByDate;
+
+  getValue(): number;
+  setValue(value: number): OpCountByDate;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OpCountByDate.AsObject;
+  static toObject(includeInstance: boolean, msg: OpCountByDate): OpCountByDate.AsObject;
+  static serializeBinaryToWriter(message: OpCountByDate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OpCountByDate;
+  static deserializeBinaryFromReader(message: OpCountByDate, reader: jspb.BinaryReader): OpCountByDate;
+}
+
+export namespace OpCountByDate {
+  export type AsObject = {
+    date?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    section: string,
+    callerUserId: string,
+    appId: string,
+    modelId: string,
+    categoryId: string,
+    value: number,
+  }
+}
+
+export class DimensionList extends jspb.Message {
+  getDimensionMap(): jspb.Map<string, string>;
+  clearDimensionMap(): DimensionList;
+
+  getIntValueListList(): Array<number>;
+  setIntValueListList(value: Array<number>): DimensionList;
+  clearIntValueListList(): DimensionList;
+  addIntValueList(value: number, index?: number): DimensionList;
+
+  getStartDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartDate(value?: google_protobuf_timestamp_pb.Timestamp): DimensionList;
+  hasStartDate(): boolean;
+  clearStartDate(): DimensionList;
+
+  getEndDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEndDate(value?: google_protobuf_timestamp_pb.Timestamp): DimensionList;
+  hasEndDate(): boolean;
+  clearEndDate(): DimensionList;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DimensionList.AsObject;
+  static toObject(includeInstance: boolean, msg: DimensionList): DimensionList.AsObject;
+  static serializeBinaryToWriter(message: DimensionList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DimensionList;
+  static deserializeBinaryFromReader(message: DimensionList, reader: jspb.BinaryReader): DimensionList;
+}
+
+export namespace DimensionList {
+  export type AsObject = {
+    dimensionMap: Array<[string, string]>,
+    intValueListList: Array<number>,
+    startDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    endDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class UsageInterval extends jspb.Message {
+  getInterval(): string;
+  setInterval(value: string): UsageInterval;
+
+  getRange(): number;
+  setRange(value: number): UsageInterval;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UsageInterval.AsObject;
+  static toObject(includeInstance: boolean, msg: UsageInterval): UsageInterval.AsObject;
+  static serializeBinaryToWriter(message: UsageInterval, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UsageInterval;
+  static deserializeBinaryFromReader(message: UsageInterval, reader: jspb.BinaryReader): UsageInterval;
+}
+
+export namespace UsageInterval {
+  export type AsObject = {
+    interval: string,
+    range: number,
+  }
+}
+
+export class RealtimeCount extends jspb.Message {
+  getOpType(): string;
+  setOpType(value: string): RealtimeCount;
+
+  getCount(): number;
+  setCount(value: number): RealtimeCount;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RealtimeCount.AsObject;
+  static toObject(includeInstance: boolean, msg: RealtimeCount): RealtimeCount.AsObject;
+  static serializeBinaryToWriter(message: RealtimeCount, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RealtimeCount;
+  static deserializeBinaryFromReader(message: RealtimeCount, reader: jspb.BinaryReader): RealtimeCount;
+}
+
+export namespace RealtimeCount {
+  export type AsObject = {
+    opType: string,
+    count: number,
+  }
+}
+
+export class EventSummary extends jspb.Message {
+  getEventType(): APIEventType;
+  setEventType(value: APIEventType): EventSummary;
+
+  getModel(): Model | undefined;
+  setModel(value?: Model): EventSummary;
+  hasModel(): boolean;
+  clearModel(): EventSummary;
+
+  getCount(): number;
+  setCount(value: number): EventSummary;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EventSummary.AsObject;
+  static toObject(includeInstance: boolean, msg: EventSummary): EventSummary.AsObject;
+  static serializeBinaryToWriter(message: EventSummary, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EventSummary;
+  static deserializeBinaryFromReader(message: EventSummary, reader: jspb.BinaryReader): EventSummary;
+}
+
+export namespace EventSummary {
+  export type AsObject = {
+    eventType: APIEventType,
+    model?: Model.AsObject,
+    count: number,
+  }
+}
+
+export class EventsCollection extends jspb.Message {
+  getStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): EventsCollection;
+  hasStartTime(): boolean;
+  clearStartTime(): EventsCollection;
+
+  getEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): EventsCollection;
+  hasEndTime(): boolean;
+  clearEndTime(): EventsCollection;
+
+  getEventSummariesList(): Array<EventSummary>;
+  setEventSummariesList(value: Array<EventSummary>): EventsCollection;
+  clearEventSummariesList(): EventsCollection;
+  addEventSummaries(value?: EventSummary, index?: number): EventSummary;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EventsCollection.AsObject;
+  static toObject(includeInstance: boolean, msg: EventsCollection): EventsCollection.AsObject;
+  static serializeBinaryToWriter(message: EventsCollection, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EventsCollection;
+  static deserializeBinaryFromReader(message: EventsCollection, reader: jspb.BinaryReader): EventsCollection;
+}
+
+export namespace EventsCollection {
+  export type AsObject = {
+    startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    eventSummariesList: Array<EventSummary.AsObject>,
   }
 }
 
@@ -4446,6 +5146,80 @@ export namespace EmailAddress {
   }
 }
 
+export class UserPassword extends jspb.Message {
+  getOldPassword(): string;
+  setOldPassword(value: string): UserPassword;
+
+  getPassword(): string;
+  setPassword(value: string): UserPassword;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UserPassword.AsObject;
+  static toObject(includeInstance: boolean, msg: UserPassword): UserPassword.AsObject;
+  static serializeBinaryToWriter(message: UserPassword, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UserPassword;
+  static deserializeBinaryFromReader(message: UserPassword, reader: jspb.BinaryReader): UserPassword;
+}
+
+export namespace UserPassword {
+  export type AsObject = {
+    oldPassword: string,
+    password: string,
+  }
+}
+
+export class UserInfo extends jspb.Message {
+  getCompanyName(): string;
+  setCompanyName(value: string): UserInfo;
+
+  getFirstName(): string;
+  setFirstName(value: string): UserInfo;
+
+  getLastName(): string;
+  setLastName(value: string): UserInfo;
+
+  getUserId(): string;
+  setUserId(value: string): UserInfo;
+
+  getVisibility(): Visibility | undefined;
+  setVisibility(value?: Visibility): UserInfo;
+  hasVisibility(): boolean;
+  clearVisibility(): UserInfo;
+
+  getJobTitle(): string;
+  setJobTitle(value: string): UserInfo;
+
+  getJobRole(): string;
+  setJobRole(value: string): UserInfo;
+
+  getCountry(): string;
+  setCountry(value: string): UserInfo;
+
+  getState(): string;
+  setState(value: string): UserInfo;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UserInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: UserInfo): UserInfo.AsObject;
+  static serializeBinaryToWriter(message: UserInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UserInfo;
+  static deserializeBinaryFromReader(message: UserInfo, reader: jspb.BinaryReader): UserInfo;
+}
+
+export namespace UserInfo {
+  export type AsObject = {
+    companyName: string,
+    firstName: string,
+    lastName: string,
+    userId: string,
+    visibility?: Visibility.AsObject,
+    jobTitle: string,
+    jobRole: string,
+    country: string,
+    state: string,
+  }
+}
+
 export class Password extends jspb.Message {
   getPlaintext(): string;
   setPlaintext(value: string): Password;
@@ -4461,6 +5235,118 @@ export class Password extends jspb.Message {
 export namespace Password {
   export type AsObject = {
     plaintext: string,
+  }
+}
+
+export class UserAccess extends jspb.Message {
+  getUserId(): string;
+  setUserId(value: string): UserAccess;
+
+  getV2PortalRequested(): boolean;
+  setV2PortalRequested(value: boolean): UserAccess;
+
+  getV2PortalGranted(): boolean;
+  setV2PortalGranted(value: boolean): UserAccess;
+
+  getId(): string;
+  setId(value: string): UserAccess;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UserAccess.AsObject;
+  static toObject(includeInstance: boolean, msg: UserAccess): UserAccess.AsObject;
+  static serializeBinaryToWriter(message: UserAccess, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UserAccess;
+  static deserializeBinaryFromReader(message: UserAccess, reader: jspb.BinaryReader): UserAccess;
+}
+
+export namespace UserAccess {
+  export type AsObject = {
+    userId: string,
+    v2PortalRequested: boolean,
+    v2PortalGranted: boolean,
+    id: string,
+  }
+}
+
+export class PasswordPolicy extends jspb.Message {
+  getId(): string;
+  setId(value: string): PasswordPolicy;
+
+  getUserId(): string;
+  setUserId(value: string): PasswordPolicy;
+
+  getOrganizationId(): string;
+  setOrganizationId(value: string): PasswordPolicy;
+
+  getMinimumLength(): number;
+  setMinimumLength(value: number): PasswordPolicy;
+
+  getMaximumLength(): number;
+  setMaximumLength(value: number): PasswordPolicy;
+
+  getUpperCaseNeeded(): boolean;
+  setUpperCaseNeeded(value: boolean): PasswordPolicy;
+
+  getLowerCaseNeeded(): boolean;
+  setLowerCaseNeeded(value: boolean): PasswordPolicy;
+
+  getNumericNeeded(): boolean;
+  setNumericNeeded(value: boolean): PasswordPolicy;
+
+  getNonAlphanumericNeeded(): boolean;
+  setNonAlphanumericNeeded(value: boolean): PasswordPolicy;
+
+  getPasswordLifeSpanDays(): number;
+  setPasswordLifeSpanDays(value: number): PasswordPolicy;
+
+  getPasswordReuseEpoch(): number;
+  setPasswordReuseEpoch(value: number): PasswordPolicy;
+
+  getExcludeNames(): boolean;
+  setExcludeNames(value: boolean): PasswordPolicy;
+
+  getExcludeEmail(): boolean;
+  setExcludeEmail(value: boolean): PasswordPolicy;
+
+  getNoConfusingLetters(): boolean;
+  setNoConfusingLetters(value: boolean): PasswordPolicy;
+
+  getNoSimplePasswords(): boolean;
+  setNoSimplePasswords(value: boolean): PasswordPolicy;
+
+  getNoCommonVocabs(): boolean;
+  setNoCommonVocabs(value: boolean): PasswordPolicy;
+
+  getNoOverlapWithOld(): boolean;
+  setNoOverlapWithOld(value: boolean): PasswordPolicy;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PasswordPolicy.AsObject;
+  static toObject(includeInstance: boolean, msg: PasswordPolicy): PasswordPolicy.AsObject;
+  static serializeBinaryToWriter(message: PasswordPolicy, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PasswordPolicy;
+  static deserializeBinaryFromReader(message: PasswordPolicy, reader: jspb.BinaryReader): PasswordPolicy;
+}
+
+export namespace PasswordPolicy {
+  export type AsObject = {
+    id: string,
+    userId: string,
+    organizationId: string,
+    minimumLength: number,
+    maximumLength: number,
+    upperCaseNeeded: boolean,
+    lowerCaseNeeded: boolean,
+    numericNeeded: boolean,
+    nonAlphanumericNeeded: boolean,
+    passwordLifeSpanDays: number,
+    passwordReuseEpoch: number,
+    excludeNames: boolean,
+    excludeEmail: boolean,
+    noConfusingLetters: boolean,
+    noSimplePasswords: boolean,
+    noCommonVocabs: boolean,
+    noOverlapWithOld: boolean,
   }
 }
 
@@ -4617,6 +5503,48 @@ export namespace VideoInfo {
     bitRate: number,
     frameCount: number,
     durationSeconds: number,
+  }
+}
+
+export class Vocab extends jspb.Message {
+  getId(): string;
+  setId(value: string): Vocab;
+
+  getName(): string;
+  setName(value: string): Vocab;
+
+  getDescription(): string;
+  setDescription(value: string): Vocab;
+
+  getAppId(): string;
+  setAppId(value: string): Vocab;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Vocab;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): Vocab;
+
+  getVisibility(): Visibility | undefined;
+  setVisibility(value?: Visibility): Vocab;
+  hasVisibility(): boolean;
+  clearVisibility(): Vocab;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Vocab.AsObject;
+  static toObject(includeInstance: boolean, msg: Vocab): Vocab.AsObject;
+  static serializeBinaryToWriter(message: Vocab, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Vocab;
+  static deserializeBinaryFromReader(message: Vocab, reader: jspb.BinaryReader): Vocab;
+}
+
+export namespace Vocab {
+  export type AsObject = {
+    id: string,
+    name: string,
+    description: string,
+    appId: string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    visibility?: Visibility.AsObject,
   }
 }
 
@@ -4879,6 +5807,68 @@ export namespace WorkflowResult {
     input?: Input.AsObject,
     outputsList: Array<Output.AsObject>,
     suppressOutput: boolean,
+  }
+}
+
+export class WorkflowMetrics extends jspb.Message {
+  getId(): string;
+  setId(value: string): WorkflowMetrics;
+
+  getWorkflowId(): string;
+  setWorkflowId(value: string): WorkflowMetrics;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): WorkflowMetrics;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): WorkflowMetrics;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): WorkflowMetrics;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): WorkflowMetrics;
+
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): WorkflowMetrics;
+  hasStatus(): boolean;
+  clearStatus(): WorkflowMetrics;
+
+  getData(): Data | undefined;
+  setData(value?: Data): WorkflowMetrics;
+  hasData(): boolean;
+  clearData(): WorkflowMetrics;
+
+  getNodeMetricsMap(): jspb.Map<string, EvalMetrics>;
+  clearNodeMetricsMap(): WorkflowMetrics;
+
+  getGroundTruth(): Search | undefined;
+  setGroundTruth(value?: Search): WorkflowMetrics;
+  hasGroundTruth(): boolean;
+  clearGroundTruth(): WorkflowMetrics;
+
+  getVisibility(): Visibility | undefined;
+  setVisibility(value?: Visibility): WorkflowMetrics;
+  hasVisibility(): boolean;
+  clearVisibility(): WorkflowMetrics;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WorkflowMetrics.AsObject;
+  static toObject(includeInstance: boolean, msg: WorkflowMetrics): WorkflowMetrics.AsObject;
+  static serializeBinaryToWriter(message: WorkflowMetrics, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WorkflowMetrics;
+  static deserializeBinaryFromReader(message: WorkflowMetrics, reader: jspb.BinaryReader): WorkflowMetrics;
+}
+
+export namespace WorkflowMetrics {
+  export type AsObject = {
+    id: string,
+    workflowId: string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    data?: Data.AsObject,
+    nodeMetricsMap: Array<[string, EvalMetrics.AsObject]>,
+    groundTruth?: Search.AsObject,
+    visibility?: Visibility.AsObject,
   }
 }
 
@@ -5484,6 +6474,332 @@ export namespace TaskStatusCountPerUser {
   }
 }
 
+export class Role extends jspb.Message {
+  getId(): string;
+  setId(value: string): Role;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Role;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): Role;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): Role;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): Role;
+
+  getName(): string;
+  setName(value: string): Role;
+
+  getDescription(): string;
+  setDescription(value: string): Role;
+
+  getScopesList(): Array<string>;
+  setScopesList(value: Array<string>): Role;
+  clearScopesList(): Role;
+  addScopes(value: string, index?: number): Role;
+
+  getEndpointsList(): Array<string>;
+  setEndpointsList(value: Array<string>): Role;
+  clearEndpointsList(): Role;
+  addEndpoints(value: string, index?: number): Role;
+
+  getType(): RoleType;
+  setType(value: RoleType): Role;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Role.AsObject;
+  static toObject(includeInstance: boolean, msg: Role): Role.AsObject;
+  static serializeBinaryToWriter(message: Role, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Role;
+  static deserializeBinaryFromReader(message: Role, reader: jspb.BinaryReader): Role;
+}
+
+export namespace Role {
+  export type AsObject = {
+    id: string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    name: string,
+    description: string,
+    scopesList: Array<string>,
+    endpointsList: Array<string>,
+    type: RoleType,
+  }
+}
+
+export class Organization extends jspb.Message {
+  getId(): string;
+  setId(value: string): Organization;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Organization;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): Organization;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): Organization;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): Organization;
+
+  getName(): string;
+  setName(value: string): Organization;
+
+  getBillingEmail(): string;
+  setBillingEmail(value: string): Organization;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Organization.AsObject;
+  static toObject(includeInstance: boolean, msg: Organization): Organization.AsObject;
+  static serializeBinaryToWriter(message: Organization, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Organization;
+  static deserializeBinaryFromReader(message: Organization, reader: jspb.BinaryReader): Organization;
+}
+
+export namespace Organization {
+  export type AsObject = {
+    id: string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    name: string,
+    billingEmail: string,
+  }
+}
+
+export class OrganizationMember extends jspb.Message {
+  getUser(): User | undefined;
+  setUser(value?: User): OrganizationMember;
+  hasUser(): boolean;
+  clearUser(): OrganizationMember;
+
+  getRole(): Role | undefined;
+  setRole(value?: Role): OrganizationMember;
+  hasRole(): boolean;
+  clearRole(): OrganizationMember;
+
+  getNotBefore(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setNotBefore(value?: google_protobuf_timestamp_pb.Timestamp): OrganizationMember;
+  hasNotBefore(): boolean;
+  clearNotBefore(): OrganizationMember;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OrganizationMember.AsObject;
+  static toObject(includeInstance: boolean, msg: OrganizationMember): OrganizationMember.AsObject;
+  static serializeBinaryToWriter(message: OrganizationMember, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OrganizationMember;
+  static deserializeBinaryFromReader(message: OrganizationMember, reader: jspb.BinaryReader): OrganizationMember;
+}
+
+export namespace OrganizationMember {
+  export type AsObject = {
+    user?: User.AsObject,
+    role?: Role.AsObject,
+    notBefore?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class IdentityProvider extends jspb.Message {
+  getId(): string;
+  setId(value: string): IdentityProvider;
+
+  getName(): string;
+  setName(value: string): IdentityProvider;
+
+  getEnabled(): boolean;
+  setEnabled(value: boolean): IdentityProvider;
+
+  getSamlMetadataUrl(): string;
+  setSamlMetadataUrl(value: string): IdentityProvider;
+
+  getBackgroundColor(): string;
+  setBackgroundColor(value: string): IdentityProvider;
+
+  getIcon(): string;
+  setIcon(value: string): IdentityProvider;
+
+  getTextColor(): string;
+  setTextColor(value: string): IdentityProvider;
+
+  getType(): string;
+  setType(value: string): IdentityProvider;
+
+  getOauthProvider(): string;
+  setOauthProvider(value: string): IdentityProvider;
+
+  getOauthClientId(): string;
+  setOauthClientId(value: string): IdentityProvider;
+
+  getOauthClientSecret(): string;
+  setOauthClientSecret(value: string): IdentityProvider;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): IdentityProvider;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): IdentityProvider;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): IdentityProvider;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): IdentityProvider;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): IdentityProvider.AsObject;
+  static toObject(includeInstance: boolean, msg: IdentityProvider): IdentityProvider.AsObject;
+  static serializeBinaryToWriter(message: IdentityProvider, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): IdentityProvider;
+  static deserializeBinaryFromReader(message: IdentityProvider, reader: jspb.BinaryReader): IdentityProvider;
+}
+
+export namespace IdentityProvider {
+  export type AsObject = {
+    id: string,
+    name: string,
+    enabled: boolean,
+    samlMetadataUrl: string,
+    backgroundColor: string,
+    icon: string,
+    textColor: string,
+    type: string,
+    oauthProvider: string,
+    oauthClientId: string,
+    oauthClientSecret: string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class Team extends jspb.Message {
+  getId(): string;
+  setId(value: string): Team;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Team;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): Team;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): Team;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): Team;
+
+  getName(): string;
+  setName(value: string): Team;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Team.AsObject;
+  static toObject(includeInstance: boolean, msg: Team): Team.AsObject;
+  static serializeBinaryToWriter(message: Team, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Team;
+  static deserializeBinaryFromReader(message: Team, reader: jspb.BinaryReader): Team;
+}
+
+export namespace Team {
+  export type AsObject = {
+    id: string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    name: string,
+  }
+}
+
+export class TeamUser extends jspb.Message {
+  getTeamId(): string;
+  setTeamId(value: string): TeamUser;
+
+  getUserId(): string;
+  setUserId(value: string): TeamUser;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): TeamUser;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): TeamUser;
+
+  getFirstName(): string;
+  setFirstName(value: string): TeamUser;
+
+  getLastName(): string;
+  setLastName(value: string): TeamUser;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TeamUser.AsObject;
+  static toObject(includeInstance: boolean, msg: TeamUser): TeamUser.AsObject;
+  static serializeBinaryToWriter(message: TeamUser, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TeamUser;
+  static deserializeBinaryFromReader(message: TeamUser, reader: jspb.BinaryReader): TeamUser;
+}
+
+export namespace TeamUser {
+  export type AsObject = {
+    teamId: string,
+    userId: string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    firstName: string,
+    lastName: string,
+  }
+}
+
+export class OrganizationInvitation extends jspb.Message {
+  getId(): string;
+  setId(value: string): OrganizationInvitation;
+
+  getInviteeEmail(): string;
+  setInviteeEmail(value: string): OrganizationInvitation;
+
+  getRole(): Role | undefined;
+  setRole(value?: Role): OrganizationInvitation;
+  hasRole(): boolean;
+  clearRole(): OrganizationInvitation;
+
+  getOrganization(): Organization | undefined;
+  setOrganization(value?: Organization): OrganizationInvitation;
+  hasOrganization(): boolean;
+  clearOrganization(): OrganizationInvitation;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): OrganizationInvitation;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): OrganizationInvitation;
+
+  getCancelledAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCancelledAt(value?: google_protobuf_timestamp_pb.Timestamp): OrganizationInvitation;
+  hasCancelledAt(): boolean;
+  clearCancelledAt(): OrganizationInvitation;
+
+  getDeclinedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDeclinedAt(value?: google_protobuf_timestamp_pb.Timestamp): OrganizationInvitation;
+  hasDeclinedAt(): boolean;
+  clearDeclinedAt(): OrganizationInvitation;
+
+  getAcceptedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setAcceptedAt(value?: google_protobuf_timestamp_pb.Timestamp): OrganizationInvitation;
+  hasAcceptedAt(): boolean;
+  clearAcceptedAt(): OrganizationInvitation;
+
+  getPrimaryEmailExists(): boolean;
+  setPrimaryEmailExists(value: boolean): OrganizationInvitation;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OrganizationInvitation.AsObject;
+  static toObject(includeInstance: boolean, msg: OrganizationInvitation): OrganizationInvitation.AsObject;
+  static serializeBinaryToWriter(message: OrganizationInvitation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OrganizationInvitation;
+  static deserializeBinaryFromReader(message: OrganizationInvitation, reader: jspb.BinaryReader): OrganizationInvitation;
+}
+
+export namespace OrganizationInvitation {
+  export type AsObject = {
+    id: string,
+    inviteeEmail: string,
+    role?: Role.AsObject,
+    organization?: Organization.AsObject,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    cancelledAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    declinedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    acceptedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    primaryEmailExists: boolean,
+  }
+}
+
 export class Collector extends jspb.Message {
   getId(): string;
   setId(value: string): Collector;
@@ -5568,6 +6884,9 @@ export class APIPostModelOutputsCollectorSource extends jspb.Message {
   getPostInputsKeyId(): string;
   setPostInputsKeyId(value: string): APIPostModelOutputsCollectorSource;
 
+  getCallerUserId(): string;
+  setCallerUserId(value: string): APIPostModelOutputsCollectorSource;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): APIPostModelOutputsCollectorSource.AsObject;
   static toObject(includeInstance: boolean, msg: APIPostModelOutputsCollectorSource): APIPostModelOutputsCollectorSource.AsObject;
@@ -5583,6 +6902,7 @@ export namespace APIPostModelOutputsCollectorSource {
     modelId: string,
     modelVersionId: string,
     postInputsKeyId: string,
+    callerUserId: string,
   }
 }
 
@@ -5722,6 +7042,409 @@ export namespace StatValueAggregateQuery {
   }
 }
 
+export class AuthMethod extends jspb.Message {
+  getId(): string;
+  setId(value: string): AuthMethod;
+
+  getType(): AuthMethod.AuthMethodType;
+  setType(value: AuthMethod.AuthMethodType): AuthMethod;
+
+  getName(): string;
+  setName(value: string): AuthMethod;
+
+  getEnabled(): boolean;
+  setEnabled(value: boolean): AuthMethod;
+
+  getAuthLink(): string;
+  setAuthLink(value: string): AuthMethod;
+
+  getBackgroundColor(): string;
+  setBackgroundColor(value: string): AuthMethod;
+
+  getIcon(): string;
+  setIcon(value: string): AuthMethod;
+
+  getTextColor(): string;
+  setTextColor(value: string): AuthMethod;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AuthMethod.AsObject;
+  static toObject(includeInstance: boolean, msg: AuthMethod): AuthMethod.AsObject;
+  static serializeBinaryToWriter(message: AuthMethod, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AuthMethod;
+  static deserializeBinaryFromReader(message: AuthMethod, reader: jspb.BinaryReader): AuthMethod;
+}
+
+export namespace AuthMethod {
+  export type AsObject = {
+    id: string,
+    type: AuthMethod.AuthMethodType,
+    name: string,
+    enabled: boolean,
+    authLink: string,
+    backgroundColor: string,
+    icon: string,
+    textColor: string,
+  }
+
+  export enum AuthMethodType { 
+    AUTH_METHOD_TYPE_NOT_SET = 0,
+    PASSWORD = 1,
+    SAML = 2,
+    OAUTH = 3,
+  }
+}
+
+export class TwoFactorAuthMethod extends jspb.Message {
+  getId(): string;
+  setId(value: string): TwoFactorAuthMethod;
+
+  getType(): TwoFactorAuthMethod.AuthMethodType;
+  setType(value: TwoFactorAuthMethod.AuthMethodType): TwoFactorAuthMethod;
+
+  getName(): string;
+  setName(value: string): TwoFactorAuthMethod;
+
+  getEnabled(): boolean;
+  setEnabled(value: boolean): TwoFactorAuthMethod;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TwoFactorAuthMethod.AsObject;
+  static toObject(includeInstance: boolean, msg: TwoFactorAuthMethod): TwoFactorAuthMethod.AsObject;
+  static serializeBinaryToWriter(message: TwoFactorAuthMethod, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TwoFactorAuthMethod;
+  static deserializeBinaryFromReader(message: TwoFactorAuthMethod, reader: jspb.BinaryReader): TwoFactorAuthMethod;
+}
+
+export namespace TwoFactorAuthMethod {
+  export type AsObject = {
+    id: string,
+    type: TwoFactorAuthMethod.AuthMethodType,
+    name: string,
+    enabled: boolean,
+  }
+
+  export enum AuthMethodType { 
+    AUTH_METHOD_TYPE_NOT_SET = 0,
+    TOTP = 1,
+  }
+}
+
+export class SDKBillingCycle extends jspb.Message {
+  getYear(): number;
+  setYear(value: number): SDKBillingCycle;
+
+  getMonth(): number;
+  setMonth(value: number): SDKBillingCycle;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SDKBillingCycle.AsObject;
+  static toObject(includeInstance: boolean, msg: SDKBillingCycle): SDKBillingCycle.AsObject;
+  static serializeBinaryToWriter(message: SDKBillingCycle, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SDKBillingCycle;
+  static deserializeBinaryFromReader(message: SDKBillingCycle, reader: jspb.BinaryReader): SDKBillingCycle;
+}
+
+export namespace SDKBillingCycle {
+  export type AsObject = {
+    year: number,
+    month: number,
+  }
+}
+
+export class DeviceInfo extends jspb.Message {
+  getBrand(): string;
+  setBrand(value: string): DeviceInfo;
+
+  getModel(): string;
+  setModel(value: string): DeviceInfo;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeviceInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: DeviceInfo): DeviceInfo.AsObject;
+  static serializeBinaryToWriter(message: DeviceInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeviceInfo;
+  static deserializeBinaryFromReader(message: DeviceInfo, reader: jspb.BinaryReader): DeviceInfo;
+}
+
+export namespace DeviceInfo {
+  export type AsObject = {
+    brand: string,
+    model: string,
+  }
+}
+
+export class SDKEventSummary extends jspb.Message {
+  getCount(): number;
+  setCount(value: number): SDKEventSummary;
+
+  getName(): string;
+  setName(value: string): SDKEventSummary;
+
+  getEventType(): SDKEventSummary.AnalyticsEventType;
+  setEventType(value: SDKEventSummary.AnalyticsEventType): SDKEventSummary;
+
+  getNetworkConnectivity(): SDKEventSummary.NetworkConnectivity;
+  setNetworkConnectivity(value: SDKEventSummary.NetworkConnectivity): SDKEventSummary;
+
+  getRunningMode(): SDKEventSummary.RunningMode;
+  setRunningMode(value: SDKEventSummary.RunningMode): SDKEventSummary;
+
+  getModelId(): string;
+  setModelId(value: string): SDKEventSummary;
+
+  getModelVersionId(): string;
+  setModelVersionId(value: string): SDKEventSummary;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SDKEventSummary.AsObject;
+  static toObject(includeInstance: boolean, msg: SDKEventSummary): SDKEventSummary.AsObject;
+  static serializeBinaryToWriter(message: SDKEventSummary, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SDKEventSummary;
+  static deserializeBinaryFromReader(message: SDKEventSummary, reader: jspb.BinaryReader): SDKEventSummary;
+}
+
+export namespace SDKEventSummary {
+  export type AsObject = {
+    count: number,
+    name: string,
+    eventType: SDKEventSummary.AnalyticsEventType,
+    networkConnectivity: SDKEventSummary.NetworkConnectivity,
+    runningMode: SDKEventSummary.RunningMode,
+    modelId: string,
+    modelVersionId: string,
+  }
+
+  export enum RunningMode { 
+    UNKNOWN_RUNNING_MODE = 0,
+    LOCAL = 1,
+    REMOTE = 2,
+  }
+
+  export enum NetworkConnectivity { 
+    NO_CONNECTIVITY = 0,
+    WIFI = 1,
+    CELLULAR = 2,
+    WIRED = 3,
+  }
+
+  export enum AnalyticsEventType { 
+    UNKNOWN_EVENT_TYPE = 0,
+    SAVE_MODEL = 1,
+    TRAIN = 2,
+    PREDICT = 3,
+    SAVE_CONCEPT = 4,
+    DELETE_CONCEPT = 5,
+    SAVE_INPUT = 6,
+    LOAD_INPUT = 7,
+    VISUAL_SIMILARITY = 8,
+    LOAD_CONCEPT = 9,
+    DELETE_INPUT = 10,
+    DELETE_MODEL = 11,
+    LOAD_MODEL = 12,
+    WARNING = 13,
+    ERROR = 14,
+    LAUNCH = 15,
+    FOREGROUND = 16,
+    BACKGROUND = 17,
+    TERMINATION = 18,
+    AUTHENTICATION_GRANTED = 19,
+    AUTHENTICATION_DENIED = 20,
+    MODEL_DOWNLOAD = 21,
+  }
+}
+
+export class SDKEventsCollection extends jspb.Message {
+  getTimeRangeBegin(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setTimeRangeBegin(value?: google_protobuf_timestamp_pb.Timestamp): SDKEventsCollection;
+  hasTimeRangeBegin(): boolean;
+  clearTimeRangeBegin(): SDKEventsCollection;
+
+  getTimeRangeEnd(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setTimeRangeEnd(value?: google_protobuf_timestamp_pb.Timestamp): SDKEventsCollection;
+  hasTimeRangeEnd(): boolean;
+  clearTimeRangeEnd(): SDKEventsCollection;
+
+  getEventSummaryList(): Array<SDKEventSummary>;
+  setEventSummaryList(value: Array<SDKEventSummary>): SDKEventsCollection;
+  clearEventSummaryList(): SDKEventsCollection;
+  addEventSummary(value?: SDKEventSummary, index?: number): SDKEventSummary;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SDKEventsCollection.AsObject;
+  static toObject(includeInstance: boolean, msg: SDKEventsCollection): SDKEventsCollection.AsObject;
+  static serializeBinaryToWriter(message: SDKEventsCollection, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SDKEventsCollection;
+  static deserializeBinaryFromReader(message: SDKEventsCollection, reader: jspb.BinaryReader): SDKEventsCollection;
+}
+
+export namespace SDKEventsCollection {
+  export type AsObject = {
+    timeRangeBegin?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    timeRangeEnd?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    eventSummaryList: Array<SDKEventSummary.AsObject>,
+  }
+}
+
+export class HostAppInfo extends jspb.Message {
+  getBuildNumber(): string;
+  setBuildNumber(value: string): HostAppInfo;
+
+  getApiKey(): string;
+  setApiKey(value: string): HostAppInfo;
+
+  getVersion(): string;
+  setVersion(value: string): HostAppInfo;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): HostAppInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: HostAppInfo): HostAppInfo.AsObject;
+  static serializeBinaryToWriter(message: HostAppInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HostAppInfo;
+  static deserializeBinaryFromReader(message: HostAppInfo, reader: jspb.BinaryReader): HostAppInfo;
+}
+
+export namespace HostAppInfo {
+  export type AsObject = {
+    buildNumber: string,
+    apiKey: string,
+    version: string,
+  }
+}
+
+export class OperatingSystem extends jspb.Message {
+  getName(): string;
+  setName(value: string): OperatingSystem;
+
+  getVersion(): string;
+  setVersion(value: string): OperatingSystem;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OperatingSystem.AsObject;
+  static toObject(includeInstance: boolean, msg: OperatingSystem): OperatingSystem.AsObject;
+  static serializeBinaryToWriter(message: OperatingSystem, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OperatingSystem;
+  static deserializeBinaryFromReader(message: OperatingSystem, reader: jspb.BinaryReader): OperatingSystem;
+}
+
+export namespace OperatingSystem {
+  export type AsObject = {
+    name: string,
+    version: string,
+  }
+}
+
+export class SDK extends jspb.Message {
+  getVersion(): string;
+  setVersion(value: string): SDK;
+
+  getBuild(): string;
+  setBuild(value: string): SDK;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SDK.AsObject;
+  static toObject(includeInstance: boolean, msg: SDK): SDK.AsObject;
+  static serializeBinaryToWriter(message: SDK, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SDK;
+  static deserializeBinaryFromReader(message: SDK, reader: jspb.BinaryReader): SDK;
+}
+
+export namespace SDK {
+  export type AsObject = {
+    version: string,
+    build: string,
+  }
+}
+
+export class State extends jspb.Message {
+  getCountryCode(): string;
+  setCountryCode(value: string): State;
+
+  getLaunchCount(): number;
+  setLaunchCount(value: number): State;
+
+  getLanguageCode(): string;
+  setLanguageCode(value: string): State;
+
+  getTokenCount(): number;
+  setTokenCount(value: number): State;
+
+  getTimeZoneOffset(): number;
+  setTimeZoneOffset(value: number): State;
+
+  getTimeZoneAbbreviation(): string;
+  setTimeZoneAbbreviation(value: string): State;
+
+  getRunningEnvironment(): State.RunningEnvironment;
+  setRunningEnvironment(value: State.RunningEnvironment): State;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): State.AsObject;
+  static toObject(includeInstance: boolean, msg: State): State.AsObject;
+  static serializeBinaryToWriter(message: State, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): State;
+  static deserializeBinaryFromReader(message: State, reader: jspb.BinaryReader): State;
+}
+
+export namespace State {
+  export type AsObject = {
+    countryCode: string,
+    launchCount: number,
+    languageCode: string,
+    tokenCount: number,
+    timeZoneOffset: number,
+    timeZoneAbbreviation: string,
+    runningEnvironment: State.RunningEnvironment,
+  }
+
+  export enum RunningEnvironment { 
+    UNKNOWN_RUNNING_ENVIRONMENT = 0,
+    DEVELOPMENT = 1,
+    PRODUCTION = 2,
+  }
+}
+
+export class FindDuplicateAnnotationsJob extends jspb.Message {
+  getId(): string;
+  setId(value: string): FindDuplicateAnnotationsJob;
+
+  getPcaProjectionComparator(): PCAProjectionComparator | undefined;
+  setPcaProjectionComparator(value?: PCAProjectionComparator): FindDuplicateAnnotationsJob;
+  hasPcaProjectionComparator(): boolean;
+  clearPcaProjectionComparator(): FindDuplicateAnnotationsJob;
+
+  getUrl(): string;
+  setUrl(value: string): FindDuplicateAnnotationsJob;
+
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): FindDuplicateAnnotationsJob;
+  hasStatus(): boolean;
+  clearStatus(): FindDuplicateAnnotationsJob;
+
+  getComparisonAttributeCase(): FindDuplicateAnnotationsJob.ComparisonAttributeCase;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FindDuplicateAnnotationsJob.AsObject;
+  static toObject(includeInstance: boolean, msg: FindDuplicateAnnotationsJob): FindDuplicateAnnotationsJob.AsObject;
+  static serializeBinaryToWriter(message: FindDuplicateAnnotationsJob, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FindDuplicateAnnotationsJob;
+  static deserializeBinaryFromReader(message: FindDuplicateAnnotationsJob, reader: jspb.BinaryReader): FindDuplicateAnnotationsJob;
+}
+
+export namespace FindDuplicateAnnotationsJob {
+  export type AsObject = {
+    id: string,
+    pcaProjectionComparator?: PCAProjectionComparator.AsObject,
+    url: string,
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+  }
+
+  export enum ComparisonAttributeCase { 
+    COMPARISON_ATTRIBUTE_NOT_SET = 0,
+    PCA_PROJECTION_COMPARATOR = 2,
+  }
+}
+
 export class DatasetInputsSearchAddJob extends jspb.Message {
   getId(): string;
   setId(value: string): DatasetInputsSearchAddJob;
@@ -5765,6 +7488,52 @@ export namespace DatasetInputsSearchAddJob {
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     datasetId: string,
     search?: Search.AsObject,
+  }
+}
+
+export class PCAProjectionComparator extends jspb.Message {
+  getDistanceThreshold(): number;
+  setDistanceThreshold(value: number): PCAProjectionComparator;
+
+  getModelVersionId(): string;
+  setModelVersionId(value: string): PCAProjectionComparator;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PCAProjectionComparator.AsObject;
+  static toObject(includeInstance: boolean, msg: PCAProjectionComparator): PCAProjectionComparator.AsObject;
+  static serializeBinaryToWriter(message: PCAProjectionComparator, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PCAProjectionComparator;
+  static deserializeBinaryFromReader(message: PCAProjectionComparator, reader: jspb.BinaryReader): PCAProjectionComparator;
+}
+
+export namespace PCAProjectionComparator {
+  export type AsObject = {
+    distanceThreshold: number,
+    modelVersionId: string,
+  }
+}
+
+export class DuplicateAnnotationsResults extends jspb.Message {
+  getDuplicateCfidList(): Array<string>;
+  setDuplicateCfidList(value: Array<string>): DuplicateAnnotationsResults;
+  clearDuplicateCfidList(): DuplicateAnnotationsResults;
+  addDuplicateCfid(value: string, index?: number): DuplicateAnnotationsResults;
+
+  getUniqueCount(): number;
+  setUniqueCount(value: number): DuplicateAnnotationsResults;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DuplicateAnnotationsResults.AsObject;
+  static toObject(includeInstance: boolean, msg: DuplicateAnnotationsResults): DuplicateAnnotationsResults.AsObject;
+  static serializeBinaryToWriter(message: DuplicateAnnotationsResults, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DuplicateAnnotationsResults;
+  static deserializeBinaryFromReader(message: DuplicateAnnotationsResults, reader: jspb.BinaryReader): DuplicateAnnotationsResults;
+}
+
+export namespace DuplicateAnnotationsResults {
+  export type AsObject = {
+    duplicateCfidList: Array<string>,
+    uniqueCount: number,
   }
 }
 
@@ -5820,6 +7589,128 @@ export namespace TrendingMetric {
     appId: string,
     objectId: string,
     viewCount: number,
+  }
+}
+
+export class ValidationError extends jspb.Message {
+  getType(): ValidationErrorType;
+  setType(value: ValidationErrorType): ValidationError;
+
+  getText(): string;
+  setText(value: string): ValidationError;
+
+  getDescription(): string;
+  setDescription(value: string): ValidationError;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ValidationError.AsObject;
+  static toObject(includeInstance: boolean, msg: ValidationError): ValidationError.AsObject;
+  static serializeBinaryToWriter(message: ValidationError, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ValidationError;
+  static deserializeBinaryFromReader(message: ValidationError, reader: jspb.BinaryReader): ValidationError;
+}
+
+export namespace ValidationError {
+  export type AsObject = {
+    type: ValidationErrorType,
+    text: string,
+    description: string,
+  }
+}
+
+export class Validation extends jspb.Message {
+  getUserId(): string;
+  setUserId(value: string): Validation;
+
+  getObjectType(): string;
+  setObjectType(value: string): Validation;
+
+  getObjectId(): string;
+  setObjectId(value: string): Validation;
+
+  getAppId(): string;
+  setAppId(value: string): Validation;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Validation.AsObject;
+  static toObject(includeInstance: boolean, msg: Validation): Validation.AsObject;
+  static serializeBinaryToWriter(message: Validation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Validation;
+  static deserializeBinaryFromReader(message: Validation, reader: jspb.BinaryReader): Validation;
+}
+
+export namespace Validation {
+  export type AsObject = {
+    userId: string,
+    objectType: string,
+    objectId: string,
+    appId: string,
+  }
+}
+
+export class ValidationResult extends jspb.Message {
+  getValidation(): Validation | undefined;
+  setValidation(value?: Validation): ValidationResult;
+  hasValidation(): boolean;
+  clearValidation(): ValidationResult;
+
+  getErrorsList(): Array<ValidationError>;
+  setErrorsList(value: Array<ValidationError>): ValidationResult;
+  clearErrorsList(): ValidationResult;
+  addErrors(value?: ValidationError, index?: number): ValidationError;
+
+  getRecommendedIdsList(): Array<string>;
+  setRecommendedIdsList(value: Array<string>): ValidationResult;
+  clearRecommendedIdsList(): ValidationResult;
+  addRecommendedIds(value: string, index?: number): ValidationResult;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ValidationResult.AsObject;
+  static toObject(includeInstance: boolean, msg: ValidationResult): ValidationResult.AsObject;
+  static serializeBinaryToWriter(message: ValidationResult, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ValidationResult;
+  static deserializeBinaryFromReader(message: ValidationResult, reader: jspb.BinaryReader): ValidationResult;
+}
+
+export namespace ValidationResult {
+  export type AsObject = {
+    validation?: Validation.AsObject,
+    errorsList: Array<ValidationError.AsObject>,
+    recommendedIdsList: Array<string>,
+  }
+}
+
+export class TagCategory extends jspb.Message {
+  getName(): string;
+  setName(value: string): TagCategory;
+
+  getTagsList(): Array<string>;
+  setTagsList(value: Array<string>): TagCategory;
+  clearTagsList(): TagCategory;
+  addTags(value: string, index?: number): TagCategory;
+
+  getFullTagsList(): Array<FullTag>;
+  setFullTagsList(value: Array<FullTag>): TagCategory;
+  clearFullTagsList(): TagCategory;
+  addFullTags(value?: FullTag, index?: number): FullTag;
+
+  getSupportsMultiple(): boolean;
+  setSupportsMultiple(value: boolean): TagCategory;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TagCategory.AsObject;
+  static toObject(includeInstance: boolean, msg: TagCategory): TagCategory.AsObject;
+  static serializeBinaryToWriter(message: TagCategory, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TagCategory;
+  static deserializeBinaryFromReader(message: TagCategory, reader: jspb.BinaryReader): TagCategory;
+}
+
+export namespace TagCategory {
+  export type AsObject = {
+    name: string,
+    tagsList: Array<string>,
+    fullTagsList: Array<FullTag.AsObject>,
+    supportsMultiple: boolean,
   }
 }
 
@@ -5901,6 +7792,142 @@ export namespace TimeInfo {
   }
 }
 
+export class ModelStar extends jspb.Message {
+  getModelId(): string;
+  setModelId(value: string): ModelStar;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelStar.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelStar): ModelStar.AsObject;
+  static serializeBinaryToWriter(message: ModelStar, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelStar;
+  static deserializeBinaryFromReader(message: ModelStar, reader: jspb.BinaryReader): ModelStar;
+}
+
+export namespace ModelStar {
+  export type AsObject = {
+    modelId: string,
+  }
+}
+
+export class UserStar extends jspb.Message {
+  getUserId(): string;
+  setUserId(value: string): UserStar;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UserStar.AsObject;
+  static toObject(includeInstance: boolean, msg: UserStar): UserStar.AsObject;
+  static serializeBinaryToWriter(message: UserStar, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UserStar;
+  static deserializeBinaryFromReader(message: UserStar, reader: jspb.BinaryReader): UserStar;
+}
+
+export namespace UserStar {
+  export type AsObject = {
+    userId: string,
+  }
+}
+
+export class AppStar extends jspb.Message {
+  getAppId(): string;
+  setAppId(value: string): AppStar;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AppStar.AsObject;
+  static toObject(includeInstance: boolean, msg: AppStar): AppStar.AsObject;
+  static serializeBinaryToWriter(message: AppStar, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AppStar;
+  static deserializeBinaryFromReader(message: AppStar, reader: jspb.BinaryReader): AppStar;
+}
+
+export namespace AppStar {
+  export type AsObject = {
+    appId: string,
+  }
+}
+
+export class WorkflowStar extends jspb.Message {
+  getWorkflowId(): string;
+  setWorkflowId(value: string): WorkflowStar;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WorkflowStar.AsObject;
+  static toObject(includeInstance: boolean, msg: WorkflowStar): WorkflowStar.AsObject;
+  static serializeBinaryToWriter(message: WorkflowStar, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WorkflowStar;
+  static deserializeBinaryFromReader(message: WorkflowStar, reader: jspb.BinaryReader): WorkflowStar;
+}
+
+export namespace WorkflowStar {
+  export type AsObject = {
+    workflowId: string,
+  }
+}
+
+export class WebNotification extends jspb.Message {
+  getId(): string;
+  setId(value: string): WebNotification;
+
+  getDescription(): string;
+  setDescription(value: string): WebNotification;
+
+  getSummary(): string;
+  setSummary(value: string): WebNotification;
+
+  getTitle(): string;
+  setTitle(value: string): WebNotification;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): WebNotification;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): WebNotification;
+
+  getReadAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setReadAt(value?: google_protobuf_timestamp_pb.Timestamp): WebNotification;
+  hasReadAt(): boolean;
+  clearReadAt(): WebNotification;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WebNotification.AsObject;
+  static toObject(includeInstance: boolean, msg: WebNotification): WebNotification.AsObject;
+  static serializeBinaryToWriter(message: WebNotification, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WebNotification;
+  static deserializeBinaryFromReader(message: WebNotification, reader: jspb.BinaryReader): WebNotification;
+}
+
+export namespace WebNotification {
+  export type AsObject = {
+    id: string,
+    description: string,
+    summary: string,
+    title: string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    readAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class PatchWebNotification extends jspb.Message {
+  getId(): string;
+  setId(value: string): PatchWebNotification;
+
+  getIsRead(): boolean;
+  setIsRead(value: boolean): PatchWebNotification;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PatchWebNotification.AsObject;
+  static toObject(includeInstance: boolean, msg: PatchWebNotification): PatchWebNotification.AsObject;
+  static serializeBinaryToWriter(message: PatchWebNotification, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PatchWebNotification;
+  static deserializeBinaryFromReader(message: PatchWebNotification, reader: jspb.BinaryReader): PatchWebNotification;
+}
+
+export namespace PatchWebNotification {
+  export type AsObject = {
+    id: string,
+    isRead: boolean,
+  }
+}
+
 export class Module extends jspb.Message {
   getId(): string;
   setId(value: string): Module;
@@ -5934,6 +7961,11 @@ export class Module extends jspb.Message {
   getAppId(): string;
   setAppId(value: string): Module;
 
+  getModuleVersion(): ModuleVersion | undefined;
+  setModuleVersion(value?: ModuleVersion): Module;
+  hasModuleVersion(): boolean;
+  clearModuleVersion(): Module;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Module.AsObject;
   static toObject(includeInstance: boolean, msg: Module): Module.AsObject;
@@ -5952,6 +7984,7 @@ export namespace Module {
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
     userId: string,
     appId: string,
+    moduleVersion?: ModuleVersion.AsObject,
   }
 }
 
@@ -6435,6 +8468,24 @@ export namespace DeleteGeo {
   }
 }
 
+export class WaitlistEmail extends jspb.Message {
+  getEmail(): string;
+  setEmail(value: string): WaitlistEmail;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WaitlistEmail.AsObject;
+  static toObject(includeInstance: boolean, msg: WaitlistEmail): WaitlistEmail.AsObject;
+  static serializeBinaryToWriter(message: WaitlistEmail, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WaitlistEmail;
+  static deserializeBinaryFromReader(message: WaitlistEmail, reader: jspb.BinaryReader): WaitlistEmail;
+}
+
+export namespace WaitlistEmail {
+  export type AsObject = {
+    email: string,
+  }
+}
+
 export class InputsAddJob extends jspb.Message {
   getId(): string;
   setId(value: string): InputsAddJob;
@@ -6592,6 +8643,32 @@ export namespace UploadContentPart {
     rangeStart: number,
     partNumber: number,
     data: Uint8Array | string,
+  }
+}
+
+export class CustomCodeOperatorRequest extends jspb.Message {
+  getInputsList(): Array<Input>;
+  setInputsList(value: Array<Input>): CustomCodeOperatorRequest;
+  clearInputsList(): CustomCodeOperatorRequest;
+  addInputs(value?: Input, index?: number): Input;
+
+  getMetadata(): google_protobuf_struct_pb.Struct | undefined;
+  setMetadata(value?: google_protobuf_struct_pb.Struct): CustomCodeOperatorRequest;
+  hasMetadata(): boolean;
+  clearMetadata(): CustomCodeOperatorRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CustomCodeOperatorRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CustomCodeOperatorRequest): CustomCodeOperatorRequest.AsObject;
+  static serializeBinaryToWriter(message: CustomCodeOperatorRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CustomCodeOperatorRequest;
+  static deserializeBinaryFromReader(message: CustomCodeOperatorRequest, reader: jspb.BinaryReader): CustomCodeOperatorRequest;
+}
+
+export namespace CustomCodeOperatorRequest {
+  export type AsObject = {
+    inputsList: Array<Input.AsObject>,
+    metadata?: google_protobuf_struct_pb.Struct.AsObject,
   }
 }
 

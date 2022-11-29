@@ -9,6 +9,13 @@ export class V2Client {
                credentials?: null | { [index: string]: string; },
                options?: null | { [index: string]: any; });
 
+  echo(
+    request: proto_clarifai_api_service_pb.TestMessage,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.TestMessage) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.TestMessage>;
+
   listConceptRelations(
     request: proto_clarifai_api_service_pb.ListConceptRelationsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -79,6 +86,76 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiConceptResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiConceptResponse>;
 
+  getVocab(
+    request: proto_clarifai_api_service_pb.GetVocabRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleVocabResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleVocabResponse>;
+
+  listVocabs(
+    request: proto_clarifai_api_service_pb.ListVocabsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiVocabResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiVocabResponse>;
+
+  postVocabs(
+    request: proto_clarifai_api_service_pb.PostVocabsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiVocabResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiVocabResponse>;
+
+  patchVocabs(
+    request: proto_clarifai_api_service_pb.PatchVocabsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiVocabResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiVocabResponse>;
+
+  deleteVocab(
+    request: proto_clarifai_api_service_pb.DeleteVocabRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  deleteVocabs(
+    request: proto_clarifai_api_service_pb.DeleteVocabsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  listVocabConcepts(
+    request: proto_clarifai_api_service_pb.ListVocabConceptsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiConceptResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiConceptResponse>;
+
+  postVocabConcepts(
+    request: proto_clarifai_api_service_pb.PostVocabConceptsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiConceptResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiConceptResponse>;
+
+  deleteVocabConcept(
+    request: proto_clarifai_api_service_pb.DeleteVocabConceptRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  deleteVocabConcepts(
+    request: proto_clarifai_api_service_pb.DeleteVocabConceptsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
   getConceptLanguage(
     request: proto_clarifai_api_service_pb.GetConceptLanguageRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -107,6 +184,13 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiConceptLanguageResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiConceptLanguageResponse>;
 
+  listConceptReferences(
+    request: proto_clarifai_api_service_pb.ListConceptReferencesRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiConceptReferenceResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiConceptReferenceResponse>;
+
   listKnowledgeGraphs(
     request: proto_clarifai_api_service_pb.ListKnowledgeGraphsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -127,6 +211,20 @@ export class V2Client {
     callback: (err: grpcWeb.RpcError,
                response: proto_clarifai_api_service_pb.MultiConceptMappingJobResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiConceptMappingJobResponse>;
+
+  listConceptMappings(
+    request: proto_clarifai_api_service_pb.ListConceptMappingsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiConceptMappingResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiConceptMappingResponse>;
+
+  postConceptMappings(
+    request: proto_clarifai_api_service_pb.PostConceptMappingsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiConceptMappingResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiConceptMappingResponse>;
 
   getAnnotation(
     request: proto_clarifai_api_service_pb.GetAnnotationRequest,
@@ -228,6 +326,27 @@ export class V2Client {
 
   postInputs(
     request: proto_clarifai_api_service_pb.PostInputsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiInputResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiInputResponse>;
+
+  postInputsFile(
+    request: proto_clarifai_api_service_pb.PostInputsFileRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiInputResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiInputResponse>;
+
+  postInputsNiFi(
+    request: proto_clarifai_api_service_pb.PostInputsNiFiRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiInputResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiInputResponse>;
+
+  postInputsDocument(
+    request: proto_clarifai_api_service_pb.PostInputsDocumentRequest,
     metadata: grpcWeb.Metadata | undefined,
     callback: (err: grpcWeb.RpcError,
                response: proto_clarifai_api_service_pb.MultiInputResponse) => void
@@ -597,6 +716,20 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiModelReferenceResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiModelReferenceResponse>;
 
+  postModelReferences(
+    request: proto_clarifai_api_service_pb.PostModelReferencesRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiModelReferenceResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiModelReferenceResponse>;
+
+  deleteModelReferences(
+    request: proto_clarifai_api_service_pb.DeleteModelReferencesRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
   getModelVersionInputExample(
     request: proto_clarifai_api_service_pb.GetModelVersionInputExampleRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -611,6 +744,76 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiModelVersionInputExampleResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiModelVersionInputExampleResponse>;
 
+  postModelVersionInputExamples(
+    request: proto_clarifai_api_service_pb.PostModelVersionInputExamplesRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiModelVersionInputExampleResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiModelVersionInputExampleResponse>;
+
+  deleteModelVersionInputExamples(
+    request: proto_clarifai_api_service_pb.DeleteModelVersionInputExamplesRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postModelStars(
+    request: proto_clarifai_api_service_pb.PostModelStarsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiModelStarResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiModelStarResponse>;
+
+  deleteModelStars(
+    request: proto_clarifai_api_service_pb.DeleteModelStarsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.DeleteModelStarsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.DeleteModelStarsResponse>;
+
+  postUserStars(
+    request: proto_clarifai_api_service_pb.PostUserStarsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiUserStarResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiUserStarResponse>;
+
+  deleteUserStars(
+    request: proto_clarifai_api_service_pb.DeleteUserStarsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.DeleteUserStarsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.DeleteUserStarsResponse>;
+
+  postWorkflowStars(
+    request: proto_clarifai_api_service_pb.PostWorkflowStarsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiWorkflowStarResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiWorkflowStarResponse>;
+
+  deleteWorkflowStars(
+    request: proto_clarifai_api_service_pb.DeleteWorkflowStarsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.DeleteWorkflowStarsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.DeleteWorkflowStarsResponse>;
+
+  postAppStars(
+    request: proto_clarifai_api_service_pb.PostAppStarsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiAppStarResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiAppStarResponse>;
+
+  deleteAppStars(
+    request: proto_clarifai_api_service_pb.DeleteAppStarsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.DeleteAppStarsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.DeleteAppStarsResponse>;
+
   getWorkflow(
     request: proto_clarifai_api_service_pb.GetWorkflowRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -620,6 +823,13 @@ export class V2Client {
 
   listWorkflows(
     request: proto_clarifai_api_service_pb.ListWorkflowsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiWorkflowResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiWorkflowResponse>;
+
+  listPublicWorkflows(
+    request: proto_clarifai_api_service_pb.ListPublicWorkflowsRequest,
     metadata: grpcWeb.Metadata | undefined,
     callback: (err: grpcWeb.RpcError,
                response: proto_clarifai_api_service_pb.MultiWorkflowResponse) => void
@@ -701,6 +911,41 @@ export class V2Client {
     callback: (err: grpcWeb.RpcError,
                response: proto_clarifai_api_service_pb.MultiWorkflowVersionResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiWorkflowVersionResponse>;
+
+  postWorkflowMetrics(
+    request: proto_clarifai_api_service_pb.PostWorkflowMetricsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiWorkflowMetricsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiWorkflowMetricsResponse>;
+
+  getWorkflowMetrics(
+    request: proto_clarifai_api_service_pb.GetWorkflowMetricsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleWorkflowMetricsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleWorkflowMetricsResponse>;
+
+  getWorkflowNodeMetrics(
+    request: proto_clarifai_api_service_pb.GetWorkflowNodeMetricsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleWorkflowNodeMetricsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleWorkflowNodeMetricsResponse>;
+
+  listWorkflowMetrics(
+    request: proto_clarifai_api_service_pb.ListWorkflowMetricsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiWorkflowMetricsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiWorkflowMetricsResponse>;
+
+  deleteWorkflowMetrics(
+    request: proto_clarifai_api_service_pb.DeleteWorkflowMetricsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
 
   getKey(
     request: proto_clarifai_api_service_pb.GetKeyRequest,
@@ -821,6 +1066,13 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.SingleAppResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleAppResponse>;
 
+  patchAppOwner(
+    request: proto_clarifai_api_service_pb.PatchAppOwnerRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
   postAppsSearches(
     request: proto_clarifai_api_service_pb.PostAppsSearchesRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -828,12 +1080,390 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiAppResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiAppResponse>;
 
+  getUser(
+    request: proto_clarifai_api_service_pb.GetUserRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleUserResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleUserResponse>;
+
+  listUsers(
+    request: proto_clarifai_api_service_pb.ListUsersRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiUserResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiUserResponse>;
+
+  postUserConsent(
+    request: proto_clarifai_api_service_pb.PostUserConsentRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleUserResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleUserResponse>;
+
+  patchUser(
+    request: proto_clarifai_api_service_pb.PatchUserRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleUserResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleUserResponse>;
+
+  postUserAccess(
+    request: proto_clarifai_api_service_pb.PostUserAccessRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiUserAccessResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiUserAccessResponse>;
+
+  getUserAccess(
+    request: proto_clarifai_api_service_pb.GetUserAccessRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleUserAccessResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleUserAccessResponse>;
+
+  postEmails(
+    request: proto_clarifai_api_service_pb.PostEmailsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultipleEmailResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultipleEmailResponse>;
+
+  listEmails(
+    request: proto_clarifai_api_service_pb.ListEmailsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultipleEmailResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultipleEmailResponse>;
+
+  postResendVerifyEmail(
+    request: proto_clarifai_api_service_pb.PostResendVerifyRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleResendVerifyResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleResendVerifyResponse>;
+
+  deleteEmail(
+    request: proto_clarifai_api_service_pb.DeleteEmailRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postPrimaryEmail(
+    request: proto_clarifai_api_service_pb.PostPrimaryEmailRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleEmailResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleEmailResponse>;
+
   postValidatePassword(
     request: proto_clarifai_api_service_pb.PostValidatePasswordRequest,
     metadata: grpcWeb.Metadata | undefined,
     callback: (err: grpcWeb.RpcError,
                response: proto_clarifai_api_service_pb.SinglePasswordValidationResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SinglePasswordValidationResponse>;
+
+  listGlobalPasswordPolicies(
+    request: proto_clarifai_api_service_pb.ListGlobalPasswordPoliciesRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiplePasswordPoliciesResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiplePasswordPoliciesResponse>;
+
+  listPasswordPolicies(
+    request: proto_clarifai_api_service_pb.ListPasswordPoliciesRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiplePasswordPoliciesResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiplePasswordPoliciesResponse>;
+
+  postPasswordPolicies(
+    request: proto_clarifai_api_service_pb.PostPasswordPoliciesRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiplePasswordPoliciesResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiplePasswordPoliciesResponse>;
+
+  patchPasswordPolicies(
+    request: proto_clarifai_api_service_pb.PatchPasswordPoliciesRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiplePasswordPoliciesResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiplePasswordPoliciesResponse>;
+
+  deletePasswordPolicies(
+    request: proto_clarifai_api_service_pb.DeletePasswordPoliciesRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  getUserFeatureConfig(
+    request: proto_clarifai_api_service_pb.UserFeatureConfigRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleUserFeatureConfigResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleUserFeatureConfigResponse>;
+
+  postOrganizations(
+    request: proto_clarifai_api_service_pb.PostOrganizationsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiOrganizationResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiOrganizationResponse>;
+
+  listUsersOrganizations(
+    request: proto_clarifai_api_service_pb.ListUsersOrganizationsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiUsersOrganizationsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiUsersOrganizationsResponse>;
+
+  listOrganizations(
+    request: proto_clarifai_api_service_pb.ListOrganizationsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiOrganizationResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiOrganizationResponse>;
+
+  getOrganization(
+    request: proto_clarifai_api_service_pb.GetOrganizationRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleOrganizationResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleOrganizationResponse>;
+
+  patchOrganization(
+    request: proto_clarifai_api_service_pb.PatchOrganizationRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleOrganizationResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleOrganizationResponse>;
+
+  deleteOrganization(
+    request: proto_clarifai_api_service_pb.DeleteOrganizationRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  listOrganizationMembers(
+    request: proto_clarifai_api_service_pb.ListOrganizationMembersRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiOrganizationMemberResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiOrganizationMemberResponse>;
+
+  listOrganizationAppMembers(
+    request: proto_clarifai_api_service_pb.ListOrganizationAppMembersRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiOrganizationMemberResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiOrganizationMemberResponse>;
+
+  postOrganizationMember(
+    request: proto_clarifai_api_service_pb.PostOrganizationMemberRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  patchOrganizationMember(
+    request: proto_clarifai_api_service_pb.PatchOrganizationMembersRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  deleteOrganizationMember(
+    request: proto_clarifai_api_service_pb.DeleteOrganizationMemberRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postOrganizationInvitations(
+    request: proto_clarifai_api_service_pb.PostOrganizationInvitationsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiOrganizationInvitationResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiOrganizationInvitationResponse>;
+
+  patchOrganizationInvitations(
+    request: proto_clarifai_api_service_pb.PatchOrganizationInvitationsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiOrganizationInvitationResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiOrganizationInvitationResponse>;
+
+  listOrganizationInvitations(
+    request: proto_clarifai_api_service_pb.ListOrganizationInvitationsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiOrganizationInvitationResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiOrganizationInvitationResponse>;
+
+  getOrganizationInvitation(
+    request: proto_clarifai_api_service_pb.GetOrganizationInvitationRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleOrganizationInvitationResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleOrganizationInvitationResponse>;
+
+  postDeclineOrganizationInvitation(
+    request: proto_clarifai_api_service_pb.PostDeclineOrganizationInvitationRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postAcceptOrganizationInvitation(
+    request: proto_clarifai_api_service_pb.PostAcceptOrganizationInvitationRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  getOrganizationInvitationPublic(
+    request: proto_clarifai_api_service_pb.GetOrganizationInvitationPublicRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleOrganizationInvitationResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleOrganizationInvitationResponse>;
+
+  deleteRequestingUserFromOrganization(
+    request: proto_clarifai_api_service_pb.DeleteRequestingUserFromOrganizationRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postIdentityProviders(
+    request: proto_clarifai_api_service_pb.PostIdentityProvidersRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiIdentityProviderResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiIdentityProviderResponse>;
+
+  listIdentityProviders(
+    request: proto_clarifai_api_service_pb.ListIdentityProvidersRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiIdentityProviderResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiIdentityProviderResponse>;
+
+  getIdentityProvider(
+    request: proto_clarifai_api_service_pb.GetIdentityProviderRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleIdentityProviderResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleIdentityProviderResponse>;
+
+  patchIdentityProviders(
+    request: proto_clarifai_api_service_pb.PatchIdentityProvidersRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiIdentityProviderResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiIdentityProviderResponse>;
+
+  deleteIdentityProviders(
+    request: proto_clarifai_api_service_pb.DeleteIdentityProvidersRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postTeams(
+    request: proto_clarifai_api_service_pb.PostTeamsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiTeamResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiTeamResponse>;
+
+  listTeams(
+    request: proto_clarifai_api_service_pb.ListTeamsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiTeamResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiTeamResponse>;
+
+  getTeam(
+    request: proto_clarifai_api_service_pb.GetTeamRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleTeamResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleTeamResponse>;
+
+  patchTeams(
+    request: proto_clarifai_api_service_pb.PatchTeamsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiTeamResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiTeamResponse>;
+
+  deleteTeams(
+    request: proto_clarifai_api_service_pb.DeleteTeamsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postTeamUsers(
+    request: proto_clarifai_api_service_pb.PostTeamUsersRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiTeamUserResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiTeamUserResponse>;
+
+  listTeamUsers(
+    request: proto_clarifai_api_service_pb.ListTeamUsersRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiTeamUserResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiTeamUserResponse>;
+
+  deleteTeamUsers(
+    request: proto_clarifai_api_service_pb.DeleteTeamUsersRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postTeamApps(
+    request: proto_clarifai_api_service_pb.PostTeamAppsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  listTeamApps(
+    request: proto_clarifai_api_service_pb.ListTeamAppsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiTeamAppsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiTeamAppsResponse>;
+
+  deleteTeamApps(
+    request: proto_clarifai_api_service_pb.DeleteTeamAppsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  listRoles(
+    request: proto_clarifai_api_service_pb.ListRolesRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiRoleResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiRoleResponse>;
+
+  getRole(
+    request: proto_clarifai_api_service_pb.GetRoleRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleRoleResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleRoleResponse>;
 
   getSearch(
     request: proto_clarifai_api_service_pb.GetSearchRequest,
@@ -905,6 +1535,13 @@ export class V2Client {
                response: proto_clarifai_api_status_status_pb.BaseResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
 
+  postAttributeSearch(
+    request: proto_clarifai_api_service_pb.PostAttributeSearchRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiSearchResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiSearchResponse>;
+
   listAnnotationFilters(
     request: proto_clarifai_api_service_pb.ListAnnotationFiltersRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -940,6 +1577,216 @@ export class V2Client {
                response: proto_clarifai_api_status_status_pb.BaseResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
 
+  listClusters(
+    request: proto_clarifai_api_service_pb.ListClustersRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiClusterResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiClusterResponse>;
+
+  listAnnotationsForCluster(
+    request: proto_clarifai_api_service_pb.ListAnnotationsForClusterRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiAnnotationResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiAnnotationResponse>;
+
+  postClustersSearches(
+    request: proto_clarifai_api_service_pb.PostClustersSearchesRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiClusterResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiClusterResponse>;
+
+  postVerifyEmail(
+    request: proto_clarifai_api_service_pb.PostVerifyEmailRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleVerifyEmailResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleVerifyEmailResponse>;
+
+  postRequestResetPassword(
+    request: proto_clarifai_api_service_pb.RequestResetPasswordRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postCompleteResetPassword(
+    request: proto_clarifai_api_service_pb.CompleteResetPasswordRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postLogin(
+    request: proto_clarifai_api_service_pb.PostLoginRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleLoginResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleLoginResponse>;
+
+  postSignup(
+    request: proto_clarifai_api_service_pb.PostSignupRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleLoginResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleLoginResponse>;
+
+  postLogout(
+    request: proto_clarifai_api_service_pb.PostLogoutRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleLogoutResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleLogoutResponse>;
+
+  listAuthMethods(
+    request: proto_clarifai_api_service_pb.ListAuthMethodsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.ListAuthMethodsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.ListAuthMethodsResponse>;
+
+  listOrgAuthMethods(
+    request: proto_clarifai_api_service_pb.ListAuthMethodsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.ListAuthMethodsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.ListAuthMethodsResponse>;
+
+  postIdLoginFinalizer(
+    request: proto_clarifai_api_service_pb.PostIdLoginFinalizerRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.PostIdLoginFinalizerResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.PostIdLoginFinalizerResponse>;
+
+  postLinkIdpUser(
+    request: proto_clarifai_api_service_pb.PostLinkIdpUserRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.PostLinkIdpUserResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.PostLinkIdpUserResponse>;
+
+  getLoginInfo(
+    request: proto_clarifai_api_service_pb.GetLoginInfoRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.GetLoginInfoResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.GetLoginInfoResponse>;
+
+  listAuth2FAMethods(
+    request: proto_clarifai_api_service_pb.List2FAMethodsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.List2FAMethodsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.List2FAMethodsResponse>;
+
+  postAuth2FATotpRegisterEnable(
+    request: proto_clarifai_api_service_pb.PostAuth2FATotpRegisterEnableRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.PostAuth2FATotpRegisterEnableResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.PostAuth2FATotpRegisterEnableResponse>;
+
+  postAuth2FATotpRegisterVerify(
+    request: proto_clarifai_api_service_pb.PostAuth2FATotpRegisterVerifyRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.PostAuth2FATotpRegisterVerifyResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.PostAuth2FATotpRegisterVerifyResponse>;
+
+  postAuth2FATotpDisable(
+    request: proto_clarifai_api_service_pb.PostAuth2FATotpDisableRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.PostAuth2FATotpDisableResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.PostAuth2FATotpDisableResponse>;
+
+  postAuth2FATotpLogin(
+    request: proto_clarifai_api_service_pb.PostAuth2FATotpLoginRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleLoginResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleLoginResponse>;
+
+  postAuth2FATotpRecover(
+    request: proto_clarifai_api_service_pb.PostAuth2FATotpRecoverRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.PostAuth2FATotpRecoverResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.PostAuth2FATotpRecoverResponse>;
+
+  getAuth2FATotpRecoverConfirm(
+    request: proto_clarifai_api_service_pb.GetAuth2FATotpRecoverConfirmRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.GetAuth2FATotpRecoverConfirmResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.GetAuth2FATotpRecoverConfirmResponse>;
+
+  getSubscription(
+    request: proto_clarifai_api_service_pb.GetSubscriptionRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleSubscriptionResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleSubscriptionResponse>;
+
+  postSubscription(
+    request: proto_clarifai_api_service_pb.PostSubscriptionRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleSubscriptionResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleSubscriptionResponse>;
+
+  listCreditCards(
+    request: proto_clarifai_api_service_pb.ListCreditCardsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultipleCreditCardResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultipleCreditCardResponse>;
+
+  postCreditCard(
+    request: proto_clarifai_api_service_pb.PostCreditCardRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleCreditCardResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleCreditCardResponse>;
+
+  deleteCreditCard(
+    request: proto_clarifai_api_service_pb.DeleteCreditCardRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  patchCreditCards(
+    request: proto_clarifai_api_service_pb.PatchCreditCardsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultipleCreditCardResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultipleCreditCardResponse>;
+
+  getShippingAddress(
+    request: proto_clarifai_api_service_pb.GetShippingAddressRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleShippingAddressResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleShippingAddressResponse>;
+
+  putShippingAddress(
+    request: proto_clarifai_api_service_pb.PutShippingAddressRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleShippingAddressResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleShippingAddressResponse>;
+
+  listPlans(
+    request: proto_clarifai_api_service_pb.ListPlansRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiPlanResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiPlanResponse>;
+
   listStatusCodes(
     request: proto_clarifai_api_service_pb.ListStatusCodesRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -953,6 +1800,69 @@ export class V2Client {
     callback: (err: grpcWeb.RpcError,
                response: proto_clarifai_api_service_pb.SingleStatusCodeResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleStatusCodeResponse>;
+
+  getHealthz(
+    request: proto_clarifai_api_service_pb.GetHealthzRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.GetHealthzResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.GetHealthzResponse>;
+
+  listUserBillingCycles(
+    request: proto_clarifai_api_service_pb.ListUserBillingCyclesRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.ListUserBillingCyclesResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.ListUserBillingCyclesResponse>;
+
+  listUserCycles(
+    request: proto_clarifai_api_service_pb.ListUserCyclesRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.ListUserCyclesResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.ListUserCyclesResponse>;
+
+  getBillingUsage(
+    request: proto_clarifai_api_service_pb.GetBillingUsageRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.GetBillingUsageResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.GetBillingUsageResponse>;
+
+  postHistoricalUsage(
+    request: proto_clarifai_api_service_pb.PostHistoricalUsageRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.PostHistoricalUsageResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.PostHistoricalUsageResponse>;
+
+  getHistoricalUsage(
+    request: proto_clarifai_api_service_pb.GetHistoricalUsageRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.GetHistoricalUsageResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.GetHistoricalUsageResponse>;
+
+  listUsageIntervals(
+    request: proto_clarifai_api_service_pb.ListUsageIntervalsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.ListUsageIntervalsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.ListUsageIntervalsResponse>;
+
+  getRealtimeUsage(
+    request: proto_clarifai_api_service_pb.GetRealtimeUsageRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.GetRealtimeUsageResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.GetRealtimeUsageResponse>;
+
+  postUsage(
+    request: proto_clarifai_api_service_pb.PostUsageRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.PostUsageResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.PostUsageResponse>;
 
   listCollaborators(
     request: proto_clarifai_api_service_pb.ListCollaboratorsRequest,
@@ -988,6 +1898,34 @@ export class V2Client {
     callback: (err: grpcWeb.RpcError,
                response: proto_clarifai_api_service_pb.MultiCollaborationsResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiCollaborationsResponse>;
+
+  fetchLicense(
+    request: proto_clarifai_api_service_pb.FetchLicenseRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.FetchLicenseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.FetchLicenseResponse>;
+
+  listLicenses(
+    request: proto_clarifai_api_service_pb.ListLicensesRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultipleLicensesResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultipleLicensesResponse>;
+
+  getLicense(
+    request: proto_clarifai_api_service_pb.GetLicenseRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleLicenseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleLicenseResponse>;
+
+  validateLicense(
+    request: proto_clarifai_api_service_pb.ValidateLicenseRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.ValidateLicenseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.ValidateLicenseResponse>;
 
   postAppDuplications(
     request: proto_clarifai_api_service_pb.PostAppDuplicationsRequest,
@@ -1054,6 +1992,13 @@ export class V2Client {
 
   deleteTasks(
     request: proto_clarifai_api_service_pb.DeleteTasksRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  patchAnnotationCountsRollup(
+    request: proto_clarifai_api_service_pb.PatchAnnotationCountsRollupRequest,
     metadata: grpcWeb.Metadata | undefined,
     callback: (err: grpcWeb.RpcError,
                response: proto_clarifai_api_status_status_pb.BaseResponse) => void
@@ -1143,6 +2088,48 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiStatValueAggregateResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiStatValueAggregateResponse>;
 
+  postAnalytics(
+    request: proto_clarifai_api_service_pb.PostAnalyticsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.PostAnalyticsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.PostAnalyticsResponse>;
+
+  postSDKBilling(
+    request: proto_clarifai_api_service_pb.PostSDKBillingRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.PostSDKBillingResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.PostSDKBillingResponse>;
+
+  postFindDuplicateAnnotationsJobs(
+    request: proto_clarifai_api_service_pb.PostFindDuplicateAnnotationsJobsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiFindDuplicateAnnotationsJobResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiFindDuplicateAnnotationsJobResponse>;
+
+  getFindDuplicateAnnotationsJob(
+    request: proto_clarifai_api_service_pb.GetFindDuplicateAnnotationsJobRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleFindDuplicateAnnotationsJobResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleFindDuplicateAnnotationsJobResponse>;
+
+  listFindDuplicateAnnotationsJobs(
+    request: proto_clarifai_api_service_pb.ListFindDuplicateAnnotationsJobsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiFindDuplicateAnnotationsJobResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiFindDuplicateAnnotationsJobResponse>;
+
+  deleteFindDuplicateAnnotationsJobs(
+    request: proto_clarifai_api_service_pb.DeleteFindDuplicateAnnotationsJobsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
   postTrendingMetricsView(
     request: proto_clarifai_api_service_pb.PostTrendingMetricsViewRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -1156,6 +2143,48 @@ export class V2Client {
     callback: (err: grpcWeb.RpcError,
                response: proto_clarifai_api_service_pb.MultiTrendingMetricsViewResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiTrendingMetricsViewResponse>;
+
+  postIdValidation(
+    request: proto_clarifai_api_service_pb.PostIdValidationRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiIdValidationResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiIdValidationResponse>;
+
+  listTagCategories(
+    request: proto_clarifai_api_service_pb.ListTagCategoriesRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiTagCategoryResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiTagCategoryResponse>;
+
+  listWebNotifications(
+    request: proto_clarifai_api_service_pb.ListWebNotificationsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiWebNotificationResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiWebNotificationResponse>;
+
+  getWebNotification(
+    request: proto_clarifai_api_service_pb.GetWebNotificationRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleWebNotificationResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleWebNotificationResponse>;
+
+  patchWebNotifications(
+    request: proto_clarifai_api_service_pb.PatchWebNotificationsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiWebNotificationResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiWebNotificationResponse>;
+
+  deleteWebNotifications(
+    request: proto_clarifai_api_service_pb.DeleteWebNotificationsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
 
   getModule(
     request: proto_clarifai_api_service_pb.GetModuleRequest,
@@ -1297,6 +2326,41 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.SingleDatasetInputsSearchAddJobResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleDatasetInputsSearchAddJobResponse>;
 
+  listNextTaskAssignments(
+    request: proto_clarifai_api_service_pb.ListNextTaskAssignmentsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiInputResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiInputResponse>;
+
+  putTaskAssignments(
+    request: proto_clarifai_api_service_pb.PutTaskAssignmentsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postWaitlistEmails(
+    request: proto_clarifai_api_service_pb.PostWaitlistEmailsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiWaitlistEmailResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiWaitlistEmailResponse>;
+
+  getSampledPredictMetrics(
+    request: proto_clarifai_api_service_pb.GetSampledPredictMetricsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiSampledPredictMetricsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiSampledPredictMetricsResponse>;
+
+  postInputsAddJobs(
+    request: proto_clarifai_api_service_pb.PostInputsAddJobsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiInputsAddJobResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiInputsAddJobResponse>;
+
   listInputsAddJobs(
     request: proto_clarifai_api_service_pb.ListInputsAddJobsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -1306,6 +2370,13 @@ export class V2Client {
 
   getInputsAddJob(
     request: proto_clarifai_api_service_pb.GetInputsAddJobRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleInputsAddJobResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleInputsAddJobResponse>;
+
+  cancelInputsAddJob(
+    request: proto_clarifai_api_service_pb.CancelInputsAddJobRequest,
     metadata: grpcWeb.Metadata | undefined,
     callback: (err: grpcWeb.RpcError,
                response: proto_clarifai_api_service_pb.SingleInputsAddJobResponse) => void
@@ -1352,6 +2423,11 @@ export class V2PromiseClient {
   constructor (hostname: string,
                credentials?: null | { [index: string]: string; },
                options?: null | { [index: string]: any; });
+
+  echo(
+    request: proto_clarifai_api_service_pb.TestMessage,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.TestMessage>;
 
   listConceptRelations(
     request: proto_clarifai_api_service_pb.ListConceptRelationsRequest,
@@ -1403,6 +2479,56 @@ export class V2PromiseClient {
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiConceptResponse>;
 
+  getVocab(
+    request: proto_clarifai_api_service_pb.GetVocabRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleVocabResponse>;
+
+  listVocabs(
+    request: proto_clarifai_api_service_pb.ListVocabsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiVocabResponse>;
+
+  postVocabs(
+    request: proto_clarifai_api_service_pb.PostVocabsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiVocabResponse>;
+
+  patchVocabs(
+    request: proto_clarifai_api_service_pb.PatchVocabsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiVocabResponse>;
+
+  deleteVocab(
+    request: proto_clarifai_api_service_pb.DeleteVocabRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  deleteVocabs(
+    request: proto_clarifai_api_service_pb.DeleteVocabsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  listVocabConcepts(
+    request: proto_clarifai_api_service_pb.ListVocabConceptsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiConceptResponse>;
+
+  postVocabConcepts(
+    request: proto_clarifai_api_service_pb.PostVocabConceptsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiConceptResponse>;
+
+  deleteVocabConcept(
+    request: proto_clarifai_api_service_pb.DeleteVocabConceptRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  deleteVocabConcepts(
+    request: proto_clarifai_api_service_pb.DeleteVocabConceptsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
   getConceptLanguage(
     request: proto_clarifai_api_service_pb.GetConceptLanguageRequest,
     metadata?: grpcWeb.Metadata
@@ -1423,6 +2549,11 @@ export class V2PromiseClient {
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiConceptLanguageResponse>;
 
+  listConceptReferences(
+    request: proto_clarifai_api_service_pb.ListConceptReferencesRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiConceptReferenceResponse>;
+
   listKnowledgeGraphs(
     request: proto_clarifai_api_service_pb.ListKnowledgeGraphsRequest,
     metadata?: grpcWeb.Metadata
@@ -1437,6 +2568,16 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.PostConceptMappingJobsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiConceptMappingJobResponse>;
+
+  listConceptMappings(
+    request: proto_clarifai_api_service_pb.ListConceptMappingsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiConceptMappingResponse>;
+
+  postConceptMappings(
+    request: proto_clarifai_api_service_pb.PostConceptMappingsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiConceptMappingResponse>;
 
   getAnnotation(
     request: proto_clarifai_api_service_pb.GetAnnotationRequest,
@@ -1510,6 +2651,21 @@ export class V2PromiseClient {
 
   postInputs(
     request: proto_clarifai_api_service_pb.PostInputsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiInputResponse>;
+
+  postInputsFile(
+    request: proto_clarifai_api_service_pb.PostInputsFileRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiInputResponse>;
+
+  postInputsNiFi(
+    request: proto_clarifai_api_service_pb.PostInputsNiFiRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiInputResponse>;
+
+  postInputsDocument(
+    request: proto_clarifai_api_service_pb.PostInputsDocumentRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiInputResponse>;
 
@@ -1773,6 +2929,16 @@ export class V2PromiseClient {
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiModelReferenceResponse>;
 
+  postModelReferences(
+    request: proto_clarifai_api_service_pb.PostModelReferencesRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiModelReferenceResponse>;
+
+  deleteModelReferences(
+    request: proto_clarifai_api_service_pb.DeleteModelReferencesRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
   getModelVersionInputExample(
     request: proto_clarifai_api_service_pb.GetModelVersionInputExampleRequest,
     metadata?: grpcWeb.Metadata
@@ -1783,6 +2949,56 @@ export class V2PromiseClient {
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiModelVersionInputExampleResponse>;
 
+  postModelVersionInputExamples(
+    request: proto_clarifai_api_service_pb.PostModelVersionInputExamplesRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiModelVersionInputExampleResponse>;
+
+  deleteModelVersionInputExamples(
+    request: proto_clarifai_api_service_pb.DeleteModelVersionInputExamplesRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postModelStars(
+    request: proto_clarifai_api_service_pb.PostModelStarsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiModelStarResponse>;
+
+  deleteModelStars(
+    request: proto_clarifai_api_service_pb.DeleteModelStarsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.DeleteModelStarsResponse>;
+
+  postUserStars(
+    request: proto_clarifai_api_service_pb.PostUserStarsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiUserStarResponse>;
+
+  deleteUserStars(
+    request: proto_clarifai_api_service_pb.DeleteUserStarsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.DeleteUserStarsResponse>;
+
+  postWorkflowStars(
+    request: proto_clarifai_api_service_pb.PostWorkflowStarsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiWorkflowStarResponse>;
+
+  deleteWorkflowStars(
+    request: proto_clarifai_api_service_pb.DeleteWorkflowStarsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.DeleteWorkflowStarsResponse>;
+
+  postAppStars(
+    request: proto_clarifai_api_service_pb.PostAppStarsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiAppStarResponse>;
+
+  deleteAppStars(
+    request: proto_clarifai_api_service_pb.DeleteAppStarsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.DeleteAppStarsResponse>;
+
   getWorkflow(
     request: proto_clarifai_api_service_pb.GetWorkflowRequest,
     metadata?: grpcWeb.Metadata
@@ -1790,6 +3006,11 @@ export class V2PromiseClient {
 
   listWorkflows(
     request: proto_clarifai_api_service_pb.ListWorkflowsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiWorkflowResponse>;
+
+  listPublicWorkflows(
+    request: proto_clarifai_api_service_pb.ListPublicWorkflowsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiWorkflowResponse>;
 
@@ -1847,6 +3068,31 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.PatchWorkflowVersionsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiWorkflowVersionResponse>;
+
+  postWorkflowMetrics(
+    request: proto_clarifai_api_service_pb.PostWorkflowMetricsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiWorkflowMetricsResponse>;
+
+  getWorkflowMetrics(
+    request: proto_clarifai_api_service_pb.GetWorkflowMetricsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleWorkflowMetricsResponse>;
+
+  getWorkflowNodeMetrics(
+    request: proto_clarifai_api_service_pb.GetWorkflowNodeMetricsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleWorkflowNodeMetricsResponse>;
+
+  listWorkflowMetrics(
+    request: proto_clarifai_api_service_pb.ListWorkflowMetricsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiWorkflowMetricsResponse>;
+
+  deleteWorkflowMetrics(
+    request: proto_clarifai_api_service_pb.DeleteWorkflowMetricsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
 
   getKey(
     request: proto_clarifai_api_service_pb.GetKeyRequest,
@@ -1933,15 +3179,290 @@ export class V2PromiseClient {
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.SingleAppResponse>;
 
+  patchAppOwner(
+    request: proto_clarifai_api_service_pb.PatchAppOwnerRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
   postAppsSearches(
     request: proto_clarifai_api_service_pb.PostAppsSearchesRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiAppResponse>;
 
+  getUser(
+    request: proto_clarifai_api_service_pb.GetUserRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleUserResponse>;
+
+  listUsers(
+    request: proto_clarifai_api_service_pb.ListUsersRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiUserResponse>;
+
+  postUserConsent(
+    request: proto_clarifai_api_service_pb.PostUserConsentRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleUserResponse>;
+
+  patchUser(
+    request: proto_clarifai_api_service_pb.PatchUserRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleUserResponse>;
+
+  postUserAccess(
+    request: proto_clarifai_api_service_pb.PostUserAccessRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiUserAccessResponse>;
+
+  getUserAccess(
+    request: proto_clarifai_api_service_pb.GetUserAccessRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleUserAccessResponse>;
+
+  postEmails(
+    request: proto_clarifai_api_service_pb.PostEmailsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultipleEmailResponse>;
+
+  listEmails(
+    request: proto_clarifai_api_service_pb.ListEmailsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultipleEmailResponse>;
+
+  postResendVerifyEmail(
+    request: proto_clarifai_api_service_pb.PostResendVerifyRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleResendVerifyResponse>;
+
+  deleteEmail(
+    request: proto_clarifai_api_service_pb.DeleteEmailRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postPrimaryEmail(
+    request: proto_clarifai_api_service_pb.PostPrimaryEmailRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleEmailResponse>;
+
   postValidatePassword(
     request: proto_clarifai_api_service_pb.PostValidatePasswordRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.SinglePasswordValidationResponse>;
+
+  listGlobalPasswordPolicies(
+    request: proto_clarifai_api_service_pb.ListGlobalPasswordPoliciesRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiplePasswordPoliciesResponse>;
+
+  listPasswordPolicies(
+    request: proto_clarifai_api_service_pb.ListPasswordPoliciesRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiplePasswordPoliciesResponse>;
+
+  postPasswordPolicies(
+    request: proto_clarifai_api_service_pb.PostPasswordPoliciesRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiplePasswordPoliciesResponse>;
+
+  patchPasswordPolicies(
+    request: proto_clarifai_api_service_pb.PatchPasswordPoliciesRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiplePasswordPoliciesResponse>;
+
+  deletePasswordPolicies(
+    request: proto_clarifai_api_service_pb.DeletePasswordPoliciesRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  getUserFeatureConfig(
+    request: proto_clarifai_api_service_pb.UserFeatureConfigRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleUserFeatureConfigResponse>;
+
+  postOrganizations(
+    request: proto_clarifai_api_service_pb.PostOrganizationsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiOrganizationResponse>;
+
+  listUsersOrganizations(
+    request: proto_clarifai_api_service_pb.ListUsersOrganizationsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiUsersOrganizationsResponse>;
+
+  listOrganizations(
+    request: proto_clarifai_api_service_pb.ListOrganizationsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiOrganizationResponse>;
+
+  getOrganization(
+    request: proto_clarifai_api_service_pb.GetOrganizationRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleOrganizationResponse>;
+
+  patchOrganization(
+    request: proto_clarifai_api_service_pb.PatchOrganizationRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleOrganizationResponse>;
+
+  deleteOrganization(
+    request: proto_clarifai_api_service_pb.DeleteOrganizationRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  listOrganizationMembers(
+    request: proto_clarifai_api_service_pb.ListOrganizationMembersRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiOrganizationMemberResponse>;
+
+  listOrganizationAppMembers(
+    request: proto_clarifai_api_service_pb.ListOrganizationAppMembersRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiOrganizationMemberResponse>;
+
+  postOrganizationMember(
+    request: proto_clarifai_api_service_pb.PostOrganizationMemberRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  patchOrganizationMember(
+    request: proto_clarifai_api_service_pb.PatchOrganizationMembersRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  deleteOrganizationMember(
+    request: proto_clarifai_api_service_pb.DeleteOrganizationMemberRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postOrganizationInvitations(
+    request: proto_clarifai_api_service_pb.PostOrganizationInvitationsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiOrganizationInvitationResponse>;
+
+  patchOrganizationInvitations(
+    request: proto_clarifai_api_service_pb.PatchOrganizationInvitationsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiOrganizationInvitationResponse>;
+
+  listOrganizationInvitations(
+    request: proto_clarifai_api_service_pb.ListOrganizationInvitationsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiOrganizationInvitationResponse>;
+
+  getOrganizationInvitation(
+    request: proto_clarifai_api_service_pb.GetOrganizationInvitationRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleOrganizationInvitationResponse>;
+
+  postDeclineOrganizationInvitation(
+    request: proto_clarifai_api_service_pb.PostDeclineOrganizationInvitationRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postAcceptOrganizationInvitation(
+    request: proto_clarifai_api_service_pb.PostAcceptOrganizationInvitationRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  getOrganizationInvitationPublic(
+    request: proto_clarifai_api_service_pb.GetOrganizationInvitationPublicRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleOrganizationInvitationResponse>;
+
+  deleteRequestingUserFromOrganization(
+    request: proto_clarifai_api_service_pb.DeleteRequestingUserFromOrganizationRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postIdentityProviders(
+    request: proto_clarifai_api_service_pb.PostIdentityProvidersRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiIdentityProviderResponse>;
+
+  listIdentityProviders(
+    request: proto_clarifai_api_service_pb.ListIdentityProvidersRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiIdentityProviderResponse>;
+
+  getIdentityProvider(
+    request: proto_clarifai_api_service_pb.GetIdentityProviderRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleIdentityProviderResponse>;
+
+  patchIdentityProviders(
+    request: proto_clarifai_api_service_pb.PatchIdentityProvidersRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiIdentityProviderResponse>;
+
+  deleteIdentityProviders(
+    request: proto_clarifai_api_service_pb.DeleteIdentityProvidersRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postTeams(
+    request: proto_clarifai_api_service_pb.PostTeamsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiTeamResponse>;
+
+  listTeams(
+    request: proto_clarifai_api_service_pb.ListTeamsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiTeamResponse>;
+
+  getTeam(
+    request: proto_clarifai_api_service_pb.GetTeamRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleTeamResponse>;
+
+  patchTeams(
+    request: proto_clarifai_api_service_pb.PatchTeamsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiTeamResponse>;
+
+  deleteTeams(
+    request: proto_clarifai_api_service_pb.DeleteTeamsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postTeamUsers(
+    request: proto_clarifai_api_service_pb.PostTeamUsersRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiTeamUserResponse>;
+
+  listTeamUsers(
+    request: proto_clarifai_api_service_pb.ListTeamUsersRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiTeamUserResponse>;
+
+  deleteTeamUsers(
+    request: proto_clarifai_api_service_pb.DeleteTeamUsersRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postTeamApps(
+    request: proto_clarifai_api_service_pb.PostTeamAppsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  listTeamApps(
+    request: proto_clarifai_api_service_pb.ListTeamAppsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiTeamAppsResponse>;
+
+  deleteTeamApps(
+    request: proto_clarifai_api_service_pb.DeleteTeamAppsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  listRoles(
+    request: proto_clarifai_api_service_pb.ListRolesRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiRoleResponse>;
+
+  getRole(
+    request: proto_clarifai_api_service_pb.GetRoleRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleRoleResponse>;
 
   getSearch(
     request: proto_clarifai_api_service_pb.GetSearchRequest,
@@ -1993,6 +3514,11 @@ export class V2PromiseClient {
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
 
+  postAttributeSearch(
+    request: proto_clarifai_api_service_pb.PostAttributeSearchRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiSearchResponse>;
+
   listAnnotationFilters(
     request: proto_clarifai_api_service_pb.ListAnnotationFiltersRequest,
     metadata?: grpcWeb.Metadata
@@ -2018,6 +3544,156 @@ export class V2PromiseClient {
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
 
+  listClusters(
+    request: proto_clarifai_api_service_pb.ListClustersRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiClusterResponse>;
+
+  listAnnotationsForCluster(
+    request: proto_clarifai_api_service_pb.ListAnnotationsForClusterRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiAnnotationResponse>;
+
+  postClustersSearches(
+    request: proto_clarifai_api_service_pb.PostClustersSearchesRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiClusterResponse>;
+
+  postVerifyEmail(
+    request: proto_clarifai_api_service_pb.PostVerifyEmailRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleVerifyEmailResponse>;
+
+  postRequestResetPassword(
+    request: proto_clarifai_api_service_pb.RequestResetPasswordRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postCompleteResetPassword(
+    request: proto_clarifai_api_service_pb.CompleteResetPasswordRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postLogin(
+    request: proto_clarifai_api_service_pb.PostLoginRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleLoginResponse>;
+
+  postSignup(
+    request: proto_clarifai_api_service_pb.PostSignupRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleLoginResponse>;
+
+  postLogout(
+    request: proto_clarifai_api_service_pb.PostLogoutRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleLogoutResponse>;
+
+  listAuthMethods(
+    request: proto_clarifai_api_service_pb.ListAuthMethodsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.ListAuthMethodsResponse>;
+
+  listOrgAuthMethods(
+    request: proto_clarifai_api_service_pb.ListAuthMethodsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.ListAuthMethodsResponse>;
+
+  postIdLoginFinalizer(
+    request: proto_clarifai_api_service_pb.PostIdLoginFinalizerRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.PostIdLoginFinalizerResponse>;
+
+  postLinkIdpUser(
+    request: proto_clarifai_api_service_pb.PostLinkIdpUserRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.PostLinkIdpUserResponse>;
+
+  getLoginInfo(
+    request: proto_clarifai_api_service_pb.GetLoginInfoRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.GetLoginInfoResponse>;
+
+  listAuth2FAMethods(
+    request: proto_clarifai_api_service_pb.List2FAMethodsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.List2FAMethodsResponse>;
+
+  postAuth2FATotpRegisterEnable(
+    request: proto_clarifai_api_service_pb.PostAuth2FATotpRegisterEnableRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.PostAuth2FATotpRegisterEnableResponse>;
+
+  postAuth2FATotpRegisterVerify(
+    request: proto_clarifai_api_service_pb.PostAuth2FATotpRegisterVerifyRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.PostAuth2FATotpRegisterVerifyResponse>;
+
+  postAuth2FATotpDisable(
+    request: proto_clarifai_api_service_pb.PostAuth2FATotpDisableRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.PostAuth2FATotpDisableResponse>;
+
+  postAuth2FATotpLogin(
+    request: proto_clarifai_api_service_pb.PostAuth2FATotpLoginRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleLoginResponse>;
+
+  postAuth2FATotpRecover(
+    request: proto_clarifai_api_service_pb.PostAuth2FATotpRecoverRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.PostAuth2FATotpRecoverResponse>;
+
+  getAuth2FATotpRecoverConfirm(
+    request: proto_clarifai_api_service_pb.GetAuth2FATotpRecoverConfirmRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.GetAuth2FATotpRecoverConfirmResponse>;
+
+  getSubscription(
+    request: proto_clarifai_api_service_pb.GetSubscriptionRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleSubscriptionResponse>;
+
+  postSubscription(
+    request: proto_clarifai_api_service_pb.PostSubscriptionRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleSubscriptionResponse>;
+
+  listCreditCards(
+    request: proto_clarifai_api_service_pb.ListCreditCardsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultipleCreditCardResponse>;
+
+  postCreditCard(
+    request: proto_clarifai_api_service_pb.PostCreditCardRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleCreditCardResponse>;
+
+  deleteCreditCard(
+    request: proto_clarifai_api_service_pb.DeleteCreditCardRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  patchCreditCards(
+    request: proto_clarifai_api_service_pb.PatchCreditCardsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultipleCreditCardResponse>;
+
+  getShippingAddress(
+    request: proto_clarifai_api_service_pb.GetShippingAddressRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleShippingAddressResponse>;
+
+  putShippingAddress(
+    request: proto_clarifai_api_service_pb.PutShippingAddressRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleShippingAddressResponse>;
+
+  listPlans(
+    request: proto_clarifai_api_service_pb.ListPlansRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiPlanResponse>;
+
   listStatusCodes(
     request: proto_clarifai_api_service_pb.ListStatusCodesRequest,
     metadata?: grpcWeb.Metadata
@@ -2027,6 +3703,51 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.GetStatusCodeRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.SingleStatusCodeResponse>;
+
+  getHealthz(
+    request: proto_clarifai_api_service_pb.GetHealthzRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.GetHealthzResponse>;
+
+  listUserBillingCycles(
+    request: proto_clarifai_api_service_pb.ListUserBillingCyclesRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.ListUserBillingCyclesResponse>;
+
+  listUserCycles(
+    request: proto_clarifai_api_service_pb.ListUserCyclesRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.ListUserCyclesResponse>;
+
+  getBillingUsage(
+    request: proto_clarifai_api_service_pb.GetBillingUsageRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.GetBillingUsageResponse>;
+
+  postHistoricalUsage(
+    request: proto_clarifai_api_service_pb.PostHistoricalUsageRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.PostHistoricalUsageResponse>;
+
+  getHistoricalUsage(
+    request: proto_clarifai_api_service_pb.GetHistoricalUsageRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.GetHistoricalUsageResponse>;
+
+  listUsageIntervals(
+    request: proto_clarifai_api_service_pb.ListUsageIntervalsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.ListUsageIntervalsResponse>;
+
+  getRealtimeUsage(
+    request: proto_clarifai_api_service_pb.GetRealtimeUsageRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.GetRealtimeUsageResponse>;
+
+  postUsage(
+    request: proto_clarifai_api_service_pb.PostUsageRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.PostUsageResponse>;
 
   listCollaborators(
     request: proto_clarifai_api_service_pb.ListCollaboratorsRequest,
@@ -2052,6 +3773,26 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.ListCollaborationsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiCollaborationsResponse>;
+
+  fetchLicense(
+    request: proto_clarifai_api_service_pb.FetchLicenseRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.FetchLicenseResponse>;
+
+  listLicenses(
+    request: proto_clarifai_api_service_pb.ListLicensesRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultipleLicensesResponse>;
+
+  getLicense(
+    request: proto_clarifai_api_service_pb.GetLicenseRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleLicenseResponse>;
+
+  validateLicense(
+    request: proto_clarifai_api_service_pb.ValidateLicenseRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.ValidateLicenseResponse>;
 
   postAppDuplications(
     request: proto_clarifai_api_service_pb.PostAppDuplicationsRequest,
@@ -2100,6 +3841,11 @@ export class V2PromiseClient {
 
   deleteTasks(
     request: proto_clarifai_api_service_pb.DeleteTasksRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  patchAnnotationCountsRollup(
+    request: proto_clarifai_api_service_pb.PatchAnnotationCountsRollupRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
 
@@ -2163,6 +3909,36 @@ export class V2PromiseClient {
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiStatValueAggregateResponse>;
 
+  postAnalytics(
+    request: proto_clarifai_api_service_pb.PostAnalyticsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.PostAnalyticsResponse>;
+
+  postSDKBilling(
+    request: proto_clarifai_api_service_pb.PostSDKBillingRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.PostSDKBillingResponse>;
+
+  postFindDuplicateAnnotationsJobs(
+    request: proto_clarifai_api_service_pb.PostFindDuplicateAnnotationsJobsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiFindDuplicateAnnotationsJobResponse>;
+
+  getFindDuplicateAnnotationsJob(
+    request: proto_clarifai_api_service_pb.GetFindDuplicateAnnotationsJobRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleFindDuplicateAnnotationsJobResponse>;
+
+  listFindDuplicateAnnotationsJobs(
+    request: proto_clarifai_api_service_pb.ListFindDuplicateAnnotationsJobsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiFindDuplicateAnnotationsJobResponse>;
+
+  deleteFindDuplicateAnnotationsJobs(
+    request: proto_clarifai_api_service_pb.DeleteFindDuplicateAnnotationsJobsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
   postTrendingMetricsView(
     request: proto_clarifai_api_service_pb.PostTrendingMetricsViewRequest,
     metadata?: grpcWeb.Metadata
@@ -2172,6 +3948,36 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.ListTrendingMetricsViewsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiTrendingMetricsViewResponse>;
+
+  postIdValidation(
+    request: proto_clarifai_api_service_pb.PostIdValidationRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiIdValidationResponse>;
+
+  listTagCategories(
+    request: proto_clarifai_api_service_pb.ListTagCategoriesRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiTagCategoryResponse>;
+
+  listWebNotifications(
+    request: proto_clarifai_api_service_pb.ListWebNotificationsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiWebNotificationResponse>;
+
+  getWebNotification(
+    request: proto_clarifai_api_service_pb.GetWebNotificationRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleWebNotificationResponse>;
+
+  patchWebNotifications(
+    request: proto_clarifai_api_service_pb.PatchWebNotificationsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiWebNotificationResponse>;
+
+  deleteWebNotifications(
+    request: proto_clarifai_api_service_pb.DeleteWebNotificationsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
 
   getModule(
     request: proto_clarifai_api_service_pb.GetModuleRequest,
@@ -2273,6 +4079,31 @@ export class V2PromiseClient {
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.SingleDatasetInputsSearchAddJobResponse>;
 
+  listNextTaskAssignments(
+    request: proto_clarifai_api_service_pb.ListNextTaskAssignmentsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiInputResponse>;
+
+  putTaskAssignments(
+    request: proto_clarifai_api_service_pb.PutTaskAssignmentsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postWaitlistEmails(
+    request: proto_clarifai_api_service_pb.PostWaitlistEmailsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiWaitlistEmailResponse>;
+
+  getSampledPredictMetrics(
+    request: proto_clarifai_api_service_pb.GetSampledPredictMetricsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiSampledPredictMetricsResponse>;
+
+  postInputsAddJobs(
+    request: proto_clarifai_api_service_pb.PostInputsAddJobsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiInputsAddJobResponse>;
+
   listInputsAddJobs(
     request: proto_clarifai_api_service_pb.ListInputsAddJobsRequest,
     metadata?: grpcWeb.Metadata
@@ -2280,6 +4111,11 @@ export class V2PromiseClient {
 
   getInputsAddJob(
     request: proto_clarifai_api_service_pb.GetInputsAddJobRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleInputsAddJobResponse>;
+
+  cancelInputsAddJob(
+    request: proto_clarifai_api_service_pb.CancelInputsAddJobRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.SingleInputsAddJobResponse>;
 
