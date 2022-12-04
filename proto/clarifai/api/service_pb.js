@@ -11726,7 +11726,9 @@ proto.clarifai.api.ListCollaboratorsRequest.prototype.toObject = function(opt_in
 proto.clarifai.api.ListCollaboratorsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     userAppId: (f = msg.getUserAppId()) && proto_clarifai_api_resources_pb.UserAppIDSet.toObject(includeInstance, f),
-    listAllCollaborators: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+    listAllCollaborators: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+    page: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    perPage: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -11772,6 +11774,14 @@ proto.clarifai.api.ListCollaboratorsRequest.deserializeBinaryFromReader = functi
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setListAllCollaborators(value);
       break;
+    case 3:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setPage(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setPerPage(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -11813,6 +11823,20 @@ proto.clarifai.api.ListCollaboratorsRequest.serializeBinaryToWriter = function(m
   if (f) {
     writer.writeBool(
       2,
+      f
+    );
+  }
+  f = message.getPage();
+  if (f !== 0) {
+    writer.writeUint32(
+      3,
+      f
+    );
+  }
+  f = message.getPerPage();
+  if (f !== 0) {
+    writer.writeUint32(
+      4,
       f
     );
   }
@@ -11871,6 +11895,42 @@ proto.clarifai.api.ListCollaboratorsRequest.prototype.getListAllCollaborators = 
  */
 proto.clarifai.api.ListCollaboratorsRequest.prototype.setListAllCollaborators = function(value) {
   return jspb.Message.setProto3BooleanField(this, 2, value);
+};
+
+
+/**
+ * optional uint32 page = 3;
+ * @return {number}
+ */
+proto.clarifai.api.ListCollaboratorsRequest.prototype.getPage = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.clarifai.api.ListCollaboratorsRequest} returns this
+ */
+proto.clarifai.api.ListCollaboratorsRequest.prototype.setPage = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional uint32 per_page = 4;
+ * @return {number}
+ */
+proto.clarifai.api.ListCollaboratorsRequest.prototype.getPerPage = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.clarifai.api.ListCollaboratorsRequest} returns this
+ */
+proto.clarifai.api.ListCollaboratorsRequest.prototype.setPerPage = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 

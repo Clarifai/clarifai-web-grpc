@@ -26772,7 +26772,11 @@ proto.clarifai.api.ModelVersion.toObject = function(includeInstance, msg) {
     modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     metadata: (f = msg.getMetadata()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f),
     license: jspb.Message.getFieldWithDefault(msg, 17, ""),
-    datasetVersion: (f = msg.getDatasetVersion()) && proto.clarifai.api.DatasetVersion.toObject(includeInstance, f)
+    datasetVersion: (f = msg.getDatasetVersion()) && proto.clarifai.api.DatasetVersion.toObject(includeInstance, f),
+    outputInfo: (f = msg.getOutputInfo()) && proto.clarifai.api.OutputInfo.toObject(includeInstance, f),
+    inputInfo: (f = msg.getInputInfo()) && proto.clarifai.api.InputInfo.toObject(includeInstance, f),
+    trainInfo: (f = msg.getTrainInfo()) && proto.clarifai.api.TrainInfo.toObject(includeInstance, f),
+    importInfo: (f = msg.getImportInfo()) && proto.clarifai.api.ImportInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -26881,6 +26885,26 @@ proto.clarifai.api.ModelVersion.deserializeBinaryFromReader = function(msg, read
       var value = new proto.clarifai.api.DatasetVersion;
       reader.readMessage(value,proto.clarifai.api.DatasetVersion.deserializeBinaryFromReader);
       msg.setDatasetVersion(value);
+      break;
+    case 19:
+      var value = new proto.clarifai.api.OutputInfo;
+      reader.readMessage(value,proto.clarifai.api.OutputInfo.deserializeBinaryFromReader);
+      msg.setOutputInfo(value);
+      break;
+    case 20:
+      var value = new proto.clarifai.api.InputInfo;
+      reader.readMessage(value,proto.clarifai.api.InputInfo.deserializeBinaryFromReader);
+      msg.setInputInfo(value);
+      break;
+    case 21:
+      var value = new proto.clarifai.api.TrainInfo;
+      reader.readMessage(value,proto.clarifai.api.TrainInfo.deserializeBinaryFromReader);
+      msg.setTrainInfo(value);
+      break;
+    case 22:
+      var value = new proto.clarifai.api.ImportInfo;
+      reader.readMessage(value,proto.clarifai.api.ImportInfo.deserializeBinaryFromReader);
+      msg.setImportInfo(value);
       break;
     default:
       reader.skipField();
@@ -27030,6 +27054,38 @@ proto.clarifai.api.ModelVersion.serializeBinaryToWriter = function(message, writ
       18,
       f,
       proto.clarifai.api.DatasetVersion.serializeBinaryToWriter
+    );
+  }
+  f = message.getOutputInfo();
+  if (f != null) {
+    writer.writeMessage(
+      19,
+      f,
+      proto.clarifai.api.OutputInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getInputInfo();
+  if (f != null) {
+    writer.writeMessage(
+      20,
+      f,
+      proto.clarifai.api.InputInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getTrainInfo();
+  if (f != null) {
+    writer.writeMessage(
+      21,
+      f,
+      proto.clarifai.api.TrainInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getImportInfo();
+  if (f != null) {
+    writer.writeMessage(
+      22,
+      f,
+      proto.clarifai.api.ImportInfo.serializeBinaryToWriter
     );
   }
 };
@@ -27491,6 +27547,154 @@ proto.clarifai.api.ModelVersion.prototype.clearDatasetVersion = function() {
  */
 proto.clarifai.api.ModelVersion.prototype.hasDatasetVersion = function() {
   return jspb.Message.getField(this, 18) != null;
+};
+
+
+/**
+ * optional OutputInfo output_info = 19;
+ * @return {?proto.clarifai.api.OutputInfo}
+ */
+proto.clarifai.api.ModelVersion.prototype.getOutputInfo = function() {
+  return /** @type{?proto.clarifai.api.OutputInfo} */ (
+    jspb.Message.getWrapperField(this, proto.clarifai.api.OutputInfo, 19));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.OutputInfo|undefined} value
+ * @return {!proto.clarifai.api.ModelVersion} returns this
+*/
+proto.clarifai.api.ModelVersion.prototype.setOutputInfo = function(value) {
+  return jspb.Message.setWrapperField(this, 19, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.ModelVersion} returns this
+ */
+proto.clarifai.api.ModelVersion.prototype.clearOutputInfo = function() {
+  return this.setOutputInfo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.ModelVersion.prototype.hasOutputInfo = function() {
+  return jspb.Message.getField(this, 19) != null;
+};
+
+
+/**
+ * optional InputInfo input_info = 20;
+ * @return {?proto.clarifai.api.InputInfo}
+ */
+proto.clarifai.api.ModelVersion.prototype.getInputInfo = function() {
+  return /** @type{?proto.clarifai.api.InputInfo} */ (
+    jspb.Message.getWrapperField(this, proto.clarifai.api.InputInfo, 20));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.InputInfo|undefined} value
+ * @return {!proto.clarifai.api.ModelVersion} returns this
+*/
+proto.clarifai.api.ModelVersion.prototype.setInputInfo = function(value) {
+  return jspb.Message.setWrapperField(this, 20, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.ModelVersion} returns this
+ */
+proto.clarifai.api.ModelVersion.prototype.clearInputInfo = function() {
+  return this.setInputInfo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.ModelVersion.prototype.hasInputInfo = function() {
+  return jspb.Message.getField(this, 20) != null;
+};
+
+
+/**
+ * optional TrainInfo train_info = 21;
+ * @return {?proto.clarifai.api.TrainInfo}
+ */
+proto.clarifai.api.ModelVersion.prototype.getTrainInfo = function() {
+  return /** @type{?proto.clarifai.api.TrainInfo} */ (
+    jspb.Message.getWrapperField(this, proto.clarifai.api.TrainInfo, 21));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.TrainInfo|undefined} value
+ * @return {!proto.clarifai.api.ModelVersion} returns this
+*/
+proto.clarifai.api.ModelVersion.prototype.setTrainInfo = function(value) {
+  return jspb.Message.setWrapperField(this, 21, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.ModelVersion} returns this
+ */
+proto.clarifai.api.ModelVersion.prototype.clearTrainInfo = function() {
+  return this.setTrainInfo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.ModelVersion.prototype.hasTrainInfo = function() {
+  return jspb.Message.getField(this, 21) != null;
+};
+
+
+/**
+ * optional ImportInfo import_info = 22;
+ * @return {?proto.clarifai.api.ImportInfo}
+ */
+proto.clarifai.api.ModelVersion.prototype.getImportInfo = function() {
+  return /** @type{?proto.clarifai.api.ImportInfo} */ (
+    jspb.Message.getWrapperField(this, proto.clarifai.api.ImportInfo, 22));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.ImportInfo|undefined} value
+ * @return {!proto.clarifai.api.ModelVersion} returns this
+*/
+proto.clarifai.api.ModelVersion.prototype.setImportInfo = function(value) {
+  return jspb.Message.setWrapperField(this, 22, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.ModelVersion} returns this
+ */
+proto.clarifai.api.ModelVersion.prototype.clearImportInfo = function() {
+  return this.setImportInfo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.ModelVersion.prototype.hasImportInfo = function() {
+  return jspb.Message.getField(this, 22) != null;
 };
 
 
@@ -49182,7 +49386,8 @@ proto.clarifai.api.Module.toObject = function(includeInstance, msg) {
     visibility: (f = msg.getVisibility()) && proto.clarifai.api.Visibility.toObject(includeInstance, f),
     metadata: (f = msg.getMetadata()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f),
     userId: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    appId: jspb.Message.getFieldWithDefault(msg, 10, "")
+    appId: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    moduleVersion: (f = msg.getModuleVersion()) && proto.clarifai.api.ModuleVersion.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -49254,6 +49459,11 @@ proto.clarifai.api.Module.deserializeBinaryFromReader = function(msg, reader) {
     case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setAppId(value);
+      break;
+    case 11:
+      var value = new proto.clarifai.api.ModuleVersion;
+      reader.readMessage(value,proto.clarifai.api.ModuleVersion.deserializeBinaryFromReader);
+      msg.setModuleVersion(value);
       break;
     default:
       reader.skipField();
@@ -49342,6 +49552,14 @@ proto.clarifai.api.Module.serializeBinaryToWriter = function(message, writer) {
     writer.writeString(
       10,
       f
+    );
+  }
+  f = message.getModuleVersion();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      proto.clarifai.api.ModuleVersion.serializeBinaryToWriter
     );
   }
 };
@@ -49564,6 +49782,43 @@ proto.clarifai.api.Module.prototype.getAppId = function() {
  */
 proto.clarifai.api.Module.prototype.setAppId = function(value) {
   return jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * optional ModuleVersion module_version = 11;
+ * @return {?proto.clarifai.api.ModuleVersion}
+ */
+proto.clarifai.api.Module.prototype.getModuleVersion = function() {
+  return /** @type{?proto.clarifai.api.ModuleVersion} */ (
+    jspb.Message.getWrapperField(this, proto.clarifai.api.ModuleVersion, 11));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.ModuleVersion|undefined} value
+ * @return {!proto.clarifai.api.Module} returns this
+*/
+proto.clarifai.api.Module.prototype.setModuleVersion = function(value) {
+  return jspb.Message.setWrapperField(this, 11, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.Module} returns this
+ */
+proto.clarifai.api.Module.prototype.clearModuleVersion = function() {
+  return this.setModuleVersion(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.Module.prototype.hasModuleVersion = function() {
+  return jspb.Message.getField(this, 11) != null;
 };
 
 
