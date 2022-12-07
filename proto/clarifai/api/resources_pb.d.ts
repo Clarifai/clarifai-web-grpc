@@ -3051,6 +3051,26 @@ export class ModelVersion extends jspb.Message {
   hasDatasetVersion(): boolean;
   clearDatasetVersion(): ModelVersion;
 
+  getOutputInfo(): OutputInfo | undefined;
+  setOutputInfo(value?: OutputInfo): ModelVersion;
+  hasOutputInfo(): boolean;
+  clearOutputInfo(): ModelVersion;
+
+  getInputInfo(): InputInfo | undefined;
+  setInputInfo(value?: InputInfo): ModelVersion;
+  hasInputInfo(): boolean;
+  clearInputInfo(): ModelVersion;
+
+  getTrainInfo(): TrainInfo | undefined;
+  setTrainInfo(value?: TrainInfo): ModelVersion;
+  hasTrainInfo(): boolean;
+  clearTrainInfo(): ModelVersion;
+
+  getImportInfo(): ImportInfo | undefined;
+  setImportInfo(value?: ImportInfo): ModelVersion;
+  hasImportInfo(): boolean;
+  clearImportInfo(): ModelVersion;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelVersion.AsObject;
   static toObject(includeInstance: boolean, msg: ModelVersion): ModelVersion.AsObject;
@@ -3077,6 +3097,10 @@ export namespace ModelVersion {
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
     license: string,
     datasetVersion?: DatasetVersion.AsObject,
+    outputInfo?: OutputInfo.AsObject,
+    inputInfo?: InputInfo.AsObject,
+    trainInfo?: TrainInfo.AsObject,
+    importInfo?: ImportInfo.AsObject,
   }
 }
 
@@ -5934,6 +5958,11 @@ export class Module extends jspb.Message {
   getAppId(): string;
   setAppId(value: string): Module;
 
+  getModuleVersion(): ModuleVersion | undefined;
+  setModuleVersion(value?: ModuleVersion): Module;
+  hasModuleVersion(): boolean;
+  clearModuleVersion(): Module;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Module.AsObject;
   static toObject(includeInstance: boolean, msg: Module): Module.AsObject;
@@ -5952,6 +5981,7 @@ export namespace Module {
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
     userId: string,
     appId: string,
+    moduleVersion?: ModuleVersion.AsObject,
   }
 }
 

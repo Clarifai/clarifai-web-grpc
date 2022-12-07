@@ -713,6 +713,12 @@ export class ListCollaboratorsRequest extends jspb.Message {
   getListAllCollaborators(): boolean;
   setListAllCollaborators(value: boolean): ListCollaboratorsRequest;
 
+  getPage(): number;
+  setPage(value: number): ListCollaboratorsRequest;
+
+  getPerPage(): number;
+  setPerPage(value: number): ListCollaboratorsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListCollaboratorsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListCollaboratorsRequest): ListCollaboratorsRequest.AsObject;
@@ -725,6 +731,8 @@ export namespace ListCollaboratorsRequest {
   export type AsObject = {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
     listAllCollaborators: boolean,
+    page: number,
+    perPage: number,
   }
 }
 
