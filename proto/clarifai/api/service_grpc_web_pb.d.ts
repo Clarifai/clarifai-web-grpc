@@ -1346,6 +1346,27 @@ export class V2Client {
                response: proto_clarifai_api_status_status_pb.BaseResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
 
+  postInputsDataSources(
+    request: proto_clarifai_api_service_pb.PostInputsDataSourcesRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiInputsAddJobResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiInputsAddJobResponse>;
+
+  getInputsExtractionJob(
+    request: proto_clarifai_api_service_pb.GetInputsExtractionJobRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleInputsExtractionJobResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleInputsExtractionJobResponse>;
+
+  listInputsExtractionJobs(
+    request: proto_clarifai_api_service_pb.ListInputsExtractionJobsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiInputsExtractionJobResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiInputsExtractionJobResponse>;
+
 }
 
 export class V2PromiseClient {
@@ -2307,6 +2328,21 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.DeleteUploadsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postInputsDataSources(
+    request: proto_clarifai_api_service_pb.PostInputsDataSourcesRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiInputsAddJobResponse>;
+
+  getInputsExtractionJob(
+    request: proto_clarifai_api_service_pb.GetInputsExtractionJobRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleInputsExtractionJobResponse>;
+
+  listInputsExtractionJobs(
+    request: proto_clarifai_api_service_pb.ListInputsExtractionJobsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiInputsExtractionJobResponse>;
 
 }
 
