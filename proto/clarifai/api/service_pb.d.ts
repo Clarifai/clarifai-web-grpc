@@ -3264,6 +3264,9 @@ export class ListModelsRequest extends jspb.Message {
   clearAdditionalFieldsList(): ListModelsRequest;
   addAdditionalFields(value: string, index?: number): ListModelsRequest;
 
+  getDontFetchFromMain(): boolean;
+  setDontFetchFromMain(value: boolean): ListModelsRequest;
+
   getSortByCase(): ListModelsRequest.SortByCase;
 
   serializeBinary(): Uint8Array;
@@ -3297,6 +3300,7 @@ export namespace ListModelsRequest {
     useCasesList: Array<string>,
     languagesList: Array<string>,
     additionalFieldsList: Array<string>,
+    dontFetchFromMain: boolean,
   }
 
   export enum SortByCase { 
@@ -4008,9 +4012,6 @@ export class PostModelVersionsRequest extends jspb.Message {
   hasTestSearch(): boolean;
   clearTestSearch(): PostModelVersionsRequest;
 
-  getEvaluateAfterTraining(): boolean;
-  setEvaluateAfterTraining(value: boolean): PostModelVersionsRequest;
-
   getDescription(): string;
   setDescription(value: string): PostModelVersionsRequest;
 
@@ -4040,7 +4041,6 @@ export namespace PostModelVersionsRequest {
     search?: proto_clarifai_api_resources_pb.Search.AsObject,
     trainSearch?: proto_clarifai_api_resources_pb.Search.AsObject,
     testSearch?: proto_clarifai_api_resources_pb.Search.AsObject,
-    evaluateAfterTraining: boolean,
     description: string,
     datasetVersion?: proto_clarifai_api_resources_pb.DatasetVersion.AsObject,
     evalInfo?: proto_clarifai_api_resources_pb.EvalInfo.AsObject,
@@ -4251,9 +4251,6 @@ export class PostModelVersionMetricsRequest extends jspb.Message {
   getVersionId(): string;
   setVersionId(value: string): PostModelVersionMetricsRequest;
 
-  getMaxExamples(): number;
-  setMaxExamples(value: number): PostModelVersionMetricsRequest;
-
   getTestSearch(): proto_clarifai_api_resources_pb.Search | undefined;
   setTestSearch(value?: proto_clarifai_api_resources_pb.Search): PostModelVersionMetricsRequest;
   hasTestSearch(): boolean;
@@ -4277,7 +4274,6 @@ export namespace PostModelVersionMetricsRequest {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
     modelId: string,
     versionId: string,
-    maxExamples: number,
     testSearch?: proto_clarifai_api_resources_pb.Search.AsObject,
     evalInfo?: proto_clarifai_api_resources_pb.EvalInfo.AsObject,
   }
@@ -8268,6 +8264,144 @@ export namespace PutUploadContentPartsRequest {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
     uploadId: string,
     contentPartsList: Array<proto_clarifai_api_resources_pb.UploadContentPart.AsObject>,
+  }
+}
+
+export class PostInputsDataSourcesRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostInputsDataSourcesRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostInputsDataSourcesRequest;
+
+  getDataSourcesList(): Array<proto_clarifai_api_resources_pb.InputsDataSource>;
+  setDataSourcesList(value: Array<proto_clarifai_api_resources_pb.InputsDataSource>): PostInputsDataSourcesRequest;
+  clearDataSourcesList(): PostInputsDataSourcesRequest;
+  addDataSources(value?: proto_clarifai_api_resources_pb.InputsDataSource, index?: number): proto_clarifai_api_resources_pb.InputsDataSource;
+
+  getCallBackUrl(): string;
+  setCallBackUrl(value: string): PostInputsDataSourcesRequest;
+
+  getAppPat(): string;
+  setAppPat(value: string): PostInputsDataSourcesRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostInputsDataSourcesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostInputsDataSourcesRequest): PostInputsDataSourcesRequest.AsObject;
+  static serializeBinaryToWriter(message: PostInputsDataSourcesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostInputsDataSourcesRequest;
+  static deserializeBinaryFromReader(message: PostInputsDataSourcesRequest, reader: jspb.BinaryReader): PostInputsDataSourcesRequest;
+}
+
+export namespace PostInputsDataSourcesRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    dataSourcesList: Array<proto_clarifai_api_resources_pb.InputsDataSource.AsObject>,
+    callBackUrl: string,
+    appPat: string,
+  }
+}
+
+export class GetInputsExtractionJobRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetInputsExtractionJobRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): GetInputsExtractionJobRequest;
+
+  getInputsExtractionJobId(): string;
+  setInputsExtractionJobId(value: string): GetInputsExtractionJobRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetInputsExtractionJobRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetInputsExtractionJobRequest): GetInputsExtractionJobRequest.AsObject;
+  static serializeBinaryToWriter(message: GetInputsExtractionJobRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetInputsExtractionJobRequest;
+  static deserializeBinaryFromReader(message: GetInputsExtractionJobRequest, reader: jspb.BinaryReader): GetInputsExtractionJobRequest;
+}
+
+export namespace GetInputsExtractionJobRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    inputsExtractionJobId: string,
+  }
+}
+
+export class ListInputsExtractionJobsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListInputsExtractionJobsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): ListInputsExtractionJobsRequest;
+
+  getPage(): number;
+  setPage(value: number): ListInputsExtractionJobsRequest;
+
+  getPerPage(): number;
+  setPerPage(value: number): ListInputsExtractionJobsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListInputsExtractionJobsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListInputsExtractionJobsRequest): ListInputsExtractionJobsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListInputsExtractionJobsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListInputsExtractionJobsRequest;
+  static deserializeBinaryFromReader(message: ListInputsExtractionJobsRequest, reader: jspb.BinaryReader): ListInputsExtractionJobsRequest;
+}
+
+export namespace ListInputsExtractionJobsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    page: number,
+    perPage: number,
+  }
+}
+
+export class SingleInputsExtractionJobResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleInputsExtractionJobResponse;
+  hasStatus(): boolean;
+  clearStatus(): SingleInputsExtractionJobResponse;
+
+  getInputsExtractionJob(): proto_clarifai_api_resources_pb.InputsExtractionJob | undefined;
+  setInputsExtractionJob(value?: proto_clarifai_api_resources_pb.InputsExtractionJob): SingleInputsExtractionJobResponse;
+  hasInputsExtractionJob(): boolean;
+  clearInputsExtractionJob(): SingleInputsExtractionJobResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SingleInputsExtractionJobResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SingleInputsExtractionJobResponse): SingleInputsExtractionJobResponse.AsObject;
+  static serializeBinaryToWriter(message: SingleInputsExtractionJobResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SingleInputsExtractionJobResponse;
+  static deserializeBinaryFromReader(message: SingleInputsExtractionJobResponse, reader: jspb.BinaryReader): SingleInputsExtractionJobResponse;
+}
+
+export namespace SingleInputsExtractionJobResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    inputsExtractionJob?: proto_clarifai_api_resources_pb.InputsExtractionJob.AsObject,
+  }
+}
+
+export class MultiInputsExtractionJobResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiInputsExtractionJobResponse;
+  hasStatus(): boolean;
+  clearStatus(): MultiInputsExtractionJobResponse;
+
+  getInputsExtractionJobsList(): Array<proto_clarifai_api_resources_pb.InputsExtractionJob>;
+  setInputsExtractionJobsList(value: Array<proto_clarifai_api_resources_pb.InputsExtractionJob>): MultiInputsExtractionJobResponse;
+  clearInputsExtractionJobsList(): MultiInputsExtractionJobResponse;
+  addInputsExtractionJobs(value?: proto_clarifai_api_resources_pb.InputsExtractionJob, index?: number): proto_clarifai_api_resources_pb.InputsExtractionJob;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MultiInputsExtractionJobResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiInputsExtractionJobResponse): MultiInputsExtractionJobResponse.AsObject;
+  static serializeBinaryToWriter(message: MultiInputsExtractionJobResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiInputsExtractionJobResponse;
+  static deserializeBinaryFromReader(message: MultiInputsExtractionJobResponse, reader: jspb.BinaryReader): MultiInputsExtractionJobResponse;
+}
+
+export namespace MultiInputsExtractionJobResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    inputsExtractionJobsList: Array<proto_clarifai_api_resources_pb.InputsExtractionJob.AsObject>,
   }
 }
 

@@ -148,6 +148,11 @@ export class App extends jspb.Message {
   getNotes(): string;
   setNotes(value: string): App;
 
+  getImage(): Image | undefined;
+  setImage(value?: Image): App;
+  hasImage(): boolean;
+  clearImage(): App;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): App.AsObject;
   static toObject(includeInstance: boolean, msg: App): App.AsObject;
@@ -174,6 +179,7 @@ export namespace App {
     isStarred: boolean,
     starCount: number,
     notes: string,
+    image?: Image.AsObject,
   }
 }
 
@@ -2695,9 +2701,6 @@ export class ModelType extends jspb.Message {
   getRequiresSequentialFrames(): boolean;
   setRequiresSequentialFrames(value: boolean): ModelType;
 
-  getEvaluable(): boolean;
-  setEvaluable(value: boolean): ModelType;
-
   getExpectedInputLayersList(): Array<ModelLayerInfo>;
   setExpectedInputLayersList(value: Array<ModelLayerInfo>): ModelType;
   clearExpectedInputLayersList(): ModelType;
@@ -2707,6 +2710,9 @@ export class ModelType extends jspb.Message {
   setExpectedOutputLayersList(value: Array<ModelLayerInfo>): ModelType;
   clearExpectedOutputLayersList(): ModelType;
   addExpectedOutputLayers(value?: ModelLayerInfo, index?: number): ModelLayerInfo;
+
+  getEvaluationType(): EvaluationType;
+  setEvaluationType(value: EvaluationType): ModelType;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelType.AsObject;
@@ -2728,9 +2734,9 @@ export namespace ModelType {
     internalOnly: boolean,
     modelTypeFieldsList: Array<ModelTypeField.AsObject>,
     requiresSequentialFrames: boolean,
-    evaluable: boolean,
     expectedInputLayersList: Array<ModelLayerInfo.AsObject>,
     expectedOutputLayersList: Array<ModelLayerInfo.AsObject>,
+    evaluationType: EvaluationType,
   }
 }
 
@@ -2922,6 +2928,9 @@ export class ModelTypeEnumOption extends jspb.Message {
   getInternalOnly(): boolean;
   setInternalOnly(value: boolean): ModelTypeEnumOption;
 
+  getRecommended(): boolean;
+  setRecommended(value: boolean): ModelTypeEnumOption;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelTypeEnumOption.AsObject;
   static toObject(includeInstance: boolean, msg: ModelTypeEnumOption): ModelTypeEnumOption.AsObject;
@@ -2937,6 +2946,7 @@ export namespace ModelTypeEnumOption {
     description: string,
     modelTypeFieldsList: Array<ModelTypeField.AsObject>,
     internalOnly: boolean,
+    recommended: boolean,
   }
 }
 
@@ -6377,6 +6387,11 @@ export class DeleteConcepts extends jspb.Message {
   clearConceptsList(): DeleteConcepts;
   addConcepts(value?: Concept, index?: number): Concept;
 
+  getUserIdsList(): Array<string>;
+  setUserIdsList(value: Array<string>): DeleteConcepts;
+  clearUserIdsList(): DeleteConcepts;
+  addUserIds(value: string, index?: number): DeleteConcepts;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteConcepts.AsObject;
   static toObject(includeInstance: boolean, msg: DeleteConcepts): DeleteConcepts.AsObject;
@@ -6388,6 +6403,7 @@ export class DeleteConcepts extends jspb.Message {
 export namespace DeleteConcepts {
   export type AsObject = {
     conceptsList: Array<Concept.AsObject>,
+    userIdsList: Array<string>,
   }
 }
 
@@ -6493,6 +6509,11 @@ export class InputsAddJob extends jspb.Message {
   hasModifiedAt(): boolean;
   clearModifiedAt(): InputsAddJob;
 
+  getExtractionJobsList(): Array<InputsExtractionJob>;
+  setExtractionJobsList(value: Array<InputsExtractionJob>): InputsAddJob;
+  clearExtractionJobsList(): InputsAddJob;
+  addExtractionJobs(value?: InputsExtractionJob, index?: number): InputsExtractionJob;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InputsAddJob.AsObject;
   static toObject(includeInstance: boolean, msg: InputsAddJob): InputsAddJob.AsObject;
@@ -6510,6 +6531,7 @@ export namespace InputsAddJob {
     progress?: InputsAddJobProgress.AsObject,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    extractionJobsList: Array<InputsExtractionJob.AsObject>,
   }
 }
 
@@ -6625,6 +6647,195 @@ export namespace UploadContentPart {
   }
 }
 
+export class InputsExtractionJob extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): InputsExtractionJob;
+  hasStatus(): boolean;
+  clearStatus(): InputsExtractionJob;
+
+  getId(): string;
+  setId(value: string): InputsExtractionJob;
+
+  getUrl(): string;
+  setUrl(value: string): InputsExtractionJob;
+
+  getProgress(): InputsExtractionJobProgress | undefined;
+  setProgress(value?: InputsExtractionJobProgress): InputsExtractionJob;
+  hasProgress(): boolean;
+  clearProgress(): InputsExtractionJob;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): InputsExtractionJob;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): InputsExtractionJob;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): InputsExtractionJob;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): InputsExtractionJob;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InputsExtractionJob.AsObject;
+  static toObject(includeInstance: boolean, msg: InputsExtractionJob): InputsExtractionJob.AsObject;
+  static serializeBinaryToWriter(message: InputsExtractionJob, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InputsExtractionJob;
+  static deserializeBinaryFromReader(message: InputsExtractionJob, reader: jspb.BinaryReader): InputsExtractionJob;
+}
+
+export namespace InputsExtractionJob {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    id: string,
+    url: string,
+    progress?: InputsExtractionJobProgress.AsObject,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class InputsExtractionJobProgress extends jspb.Message {
+  getReadObjectsCount(): number;
+  setReadObjectsCount(value: number): InputsExtractionJobProgress;
+
+  getAudioInputsCount(): number;
+  setAudioInputsCount(value: number): InputsExtractionJobProgress;
+
+  getImageInputsCount(): number;
+  setImageInputsCount(value: number): InputsExtractionJobProgress;
+
+  getVideoInputsCount(): number;
+  setVideoInputsCount(value: number): InputsExtractionJobProgress;
+
+  getTextInputsCount(): number;
+  setTextInputsCount(value: number): InputsExtractionJobProgress;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InputsExtractionJobProgress.AsObject;
+  static toObject(includeInstance: boolean, msg: InputsExtractionJobProgress): InputsExtractionJobProgress.AsObject;
+  static serializeBinaryToWriter(message: InputsExtractionJobProgress, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InputsExtractionJobProgress;
+  static deserializeBinaryFromReader(message: InputsExtractionJobProgress, reader: jspb.BinaryReader): InputsExtractionJobProgress;
+}
+
+export namespace InputsExtractionJobProgress {
+  export type AsObject = {
+    readObjectsCount: number,
+    audioInputsCount: number,
+    imageInputsCount: number,
+    videoInputsCount: number,
+    textInputsCount: number,
+  }
+}
+
+export class InputsDataSource extends jspb.Message {
+  getInputsAddJobId(): string;
+  setInputsAddJobId(value: string): InputsDataSource;
+
+  getUrl(): DataSourceURL | undefined;
+  setUrl(value?: DataSourceURL): InputsDataSource;
+  hasUrl(): boolean;
+  clearUrl(): InputsDataSource;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InputsDataSource.AsObject;
+  static toObject(includeInstance: boolean, msg: InputsDataSource): InputsDataSource.AsObject;
+  static serializeBinaryToWriter(message: InputsDataSource, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InputsDataSource;
+  static deserializeBinaryFromReader(message: InputsDataSource, reader: jspb.BinaryReader): InputsDataSource;
+}
+
+export namespace InputsDataSource {
+  export type AsObject = {
+    inputsAddJobId: string,
+    url?: DataSourceURL.AsObject,
+  }
+}
+
+export class DataSourceURL extends jspb.Message {
+  getUrl(): string;
+  setUrl(value: string): DataSourceURL;
+
+  getCredentials(): DataSourceCredentials | undefined;
+  setCredentials(value?: DataSourceCredentials): DataSourceURL;
+  hasCredentials(): boolean;
+  clearCredentials(): DataSourceURL;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DataSourceURL.AsObject;
+  static toObject(includeInstance: boolean, msg: DataSourceURL): DataSourceURL.AsObject;
+  static serializeBinaryToWriter(message: DataSourceURL, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DataSourceURL;
+  static deserializeBinaryFromReader(message: DataSourceURL, reader: jspb.BinaryReader): DataSourceURL;
+}
+
+export namespace DataSourceURL {
+  export type AsObject = {
+    url: string,
+    credentials?: DataSourceCredentials.AsObject,
+  }
+}
+
+export class DataSourceCredentials extends jspb.Message {
+  getS3Creds(): AWSCreds | undefined;
+  setS3Creds(value?: AWSCreds): DataSourceCredentials;
+  hasS3Creds(): boolean;
+  clearS3Creds(): DataSourceCredentials;
+
+  getGcpCreds(): Uint8Array | string;
+  getGcpCreds_asU8(): Uint8Array;
+  getGcpCreds_asB64(): string;
+  setGcpCreds(value: Uint8Array | string): DataSourceCredentials;
+
+  getAzureBlobCreds(): string;
+  setAzureBlobCreds(value: string): DataSourceCredentials;
+
+  getCredentialsCase(): DataSourceCredentials.CredentialsCase;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DataSourceCredentials.AsObject;
+  static toObject(includeInstance: boolean, msg: DataSourceCredentials): DataSourceCredentials.AsObject;
+  static serializeBinaryToWriter(message: DataSourceCredentials, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DataSourceCredentials;
+  static deserializeBinaryFromReader(message: DataSourceCredentials, reader: jspb.BinaryReader): DataSourceCredentials;
+}
+
+export namespace DataSourceCredentials {
+  export type AsObject = {
+    s3Creds?: AWSCreds.AsObject,
+    gcpCreds: Uint8Array | string,
+    azureBlobCreds: string,
+  }
+
+  export enum CredentialsCase { 
+    CREDENTIALS_NOT_SET = 0,
+    S3_CREDS = 1,
+    GCP_CREDS = 2,
+    AZURE_BLOB_CREDS = 3,
+  }
+}
+
+export class AWSCreds extends jspb.Message {
+  getCreds(): string;
+  setCreds(value: string): AWSCreds;
+
+  getRegion(): string;
+  setRegion(value: string): AWSCreds;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AWSCreds.AsObject;
+  static toObject(includeInstance: boolean, msg: AWSCreds): AWSCreds.AsObject;
+  static serializeBinaryToWriter(message: AWSCreds, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AWSCreds;
+  static deserializeBinaryFromReader(message: AWSCreds, reader: jspb.BinaryReader): AWSCreds;
+}
+
+export namespace AWSCreds {
+  export type AsObject = {
+    creds: string,
+    region: string,
+  }
+}
+
 export enum DatasetVersionMetricsGroupType { 
   DATASET_VERSION_METRICS_GROUP_TYPE_NOT_SET = 0,
   INPUT_TYPE = 2,
@@ -6671,8 +6882,12 @@ export enum ValueComparator {
   EQUAL = 5,
 }
 export enum EvaluationType { 
-  CLASSIFICATION = 0,
-  DETECTION = 1,
+  UNDEFINED = 0,
+  CLASSIFICATION = 1,
+  DETECTION = 2,
+  SEGMENTATION = 3,
+  CLUSTERING = 4,
+  TRACKER = 5,
 }
 export enum APIEventType { 
   API_EVENT_TYPE_NOT_SET = 0,

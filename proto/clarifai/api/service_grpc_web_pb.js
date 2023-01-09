@@ -11742,5 +11742,188 @@ proto.clarifai.api.V2PromiseClient.prototype.deleteUploads =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostInputsDataSourcesRequest,
+ *   !proto.clarifai.api.MultiInputsAddJobResponse>}
+ */
+const methodDescriptor_V2_PostInputsDataSources = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostInputsDataSources',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostInputsDataSourcesRequest,
+  proto.clarifai.api.MultiInputsAddJobResponse,
+  /**
+   * @param {!proto.clarifai.api.PostInputsDataSourcesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiInputsAddJobResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostInputsDataSourcesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiInputsAddJobResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiInputsAddJobResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postInputsDataSources =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostInputsDataSources',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostInputsDataSources,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostInputsDataSourcesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiInputsAddJobResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postInputsDataSources =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostInputsDataSources',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostInputsDataSources);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.GetInputsExtractionJobRequest,
+ *   !proto.clarifai.api.SingleInputsExtractionJobResponse>}
+ */
+const methodDescriptor_V2_GetInputsExtractionJob = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/GetInputsExtractionJob',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.GetInputsExtractionJobRequest,
+  proto.clarifai.api.SingleInputsExtractionJobResponse,
+  /**
+   * @param {!proto.clarifai.api.GetInputsExtractionJobRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SingleInputsExtractionJobResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.GetInputsExtractionJobRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SingleInputsExtractionJobResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleInputsExtractionJobResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.getInputsExtractionJob =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/GetInputsExtractionJob',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetInputsExtractionJob,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.GetInputsExtractionJobRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.SingleInputsExtractionJobResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.getInputsExtractionJob =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/GetInputsExtractionJob',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetInputsExtractionJob);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListInputsExtractionJobsRequest,
+ *   !proto.clarifai.api.MultiInputsExtractionJobResponse>}
+ */
+const methodDescriptor_V2_ListInputsExtractionJobs = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListInputsExtractionJobs',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListInputsExtractionJobsRequest,
+  proto.clarifai.api.MultiInputsExtractionJobResponse,
+  /**
+   * @param {!proto.clarifai.api.ListInputsExtractionJobsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiInputsExtractionJobResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListInputsExtractionJobsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiInputsExtractionJobResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiInputsExtractionJobResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listInputsExtractionJobs =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListInputsExtractionJobs',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListInputsExtractionJobs,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListInputsExtractionJobsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiInputsExtractionJobResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listInputsExtractionJobs =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListInputsExtractionJobs',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListInputsExtractionJobs);
+};
+
+
 module.exports = proto.clarifai.api;
 
