@@ -23,7 +23,7 @@ const client = ClarifaiStub.grpc();
 const app = new App();
 app.setId("cat-app");
 app.setDefaultWorkflowId("General-Detection");
-app.setDescription("An app for cats");
+app.setDescription("An app for some cats");
 
 const req = new PostAppsRequest();
 req.setAppsList([app]);
