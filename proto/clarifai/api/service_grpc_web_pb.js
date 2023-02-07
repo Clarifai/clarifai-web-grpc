@@ -5161,6 +5161,189 @@ proto.clarifai.api.V2PromiseClient.prototype.postModelVersionMetrics =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostModelVersionEvaluationsRequest,
+ *   !proto.clarifai.api.MultiEvalMetricsResponse>}
+ */
+const methodDescriptor_V2_PostModelVersionEvaluations = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostModelVersionEvaluations',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostModelVersionEvaluationsRequest,
+  proto.clarifai.api.MultiEvalMetricsResponse,
+  /**
+   * @param {!proto.clarifai.api.PostModelVersionEvaluationsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiEvalMetricsResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostModelVersionEvaluationsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiEvalMetricsResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiEvalMetricsResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postModelVersionEvaluations =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostModelVersionEvaluations',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostModelVersionEvaluations,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostModelVersionEvaluationsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiEvalMetricsResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postModelVersionEvaluations =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostModelVersionEvaluations',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostModelVersionEvaluations);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListModelVersionEvaluationsRequest,
+ *   !proto.clarifai.api.MultiEvalMetricsResponse>}
+ */
+const methodDescriptor_V2_ListModelVersionEvaluations = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListModelVersionEvaluations',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListModelVersionEvaluationsRequest,
+  proto.clarifai.api.MultiEvalMetricsResponse,
+  /**
+   * @param {!proto.clarifai.api.ListModelVersionEvaluationsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiEvalMetricsResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListModelVersionEvaluationsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiEvalMetricsResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiEvalMetricsResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listModelVersionEvaluations =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListModelVersionEvaluations',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListModelVersionEvaluations,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListModelVersionEvaluationsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiEvalMetricsResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listModelVersionEvaluations =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListModelVersionEvaluations',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListModelVersionEvaluations);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.GetModelVersionEvaluationRequest,
+ *   !proto.clarifai.api.SingleEvalMetricsResponse>}
+ */
+const methodDescriptor_V2_GetModelVersionEvaluation = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/GetModelVersionEvaluation',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.GetModelVersionEvaluationRequest,
+  proto.clarifai.api.SingleEvalMetricsResponse,
+  /**
+   * @param {!proto.clarifai.api.GetModelVersionEvaluationRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SingleEvalMetricsResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.GetModelVersionEvaluationRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SingleEvalMetricsResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleEvalMetricsResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.getModelVersionEvaluation =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/GetModelVersionEvaluation',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetModelVersionEvaluation,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.GetModelVersionEvaluationRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.SingleEvalMetricsResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.getModelVersionEvaluation =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/GetModelVersionEvaluation',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetModelVersionEvaluation);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.ListModelReferencesRequest,
  *   !proto.clarifai.api.MultiModelReferenceResponse>}
  */

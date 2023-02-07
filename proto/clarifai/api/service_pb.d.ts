@@ -4239,6 +4239,166 @@ export namespace PostModelVersionsUnPublishRequest {
   }
 }
 
+export class PostModelVersionEvaluationsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostModelVersionEvaluationsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostModelVersionEvaluationsRequest;
+
+  getModelId(): string;
+  setModelId(value: string): PostModelVersionEvaluationsRequest;
+
+  getModelVersionId(): string;
+  setModelVersionId(value: string): PostModelVersionEvaluationsRequest;
+
+  getEvalMetricsList(): Array<proto_clarifai_api_resources_pb.EvalMetrics>;
+  setEvalMetricsList(value: Array<proto_clarifai_api_resources_pb.EvalMetrics>): PostModelVersionEvaluationsRequest;
+  clearEvalMetricsList(): PostModelVersionEvaluationsRequest;
+  addEvalMetrics(value?: proto_clarifai_api_resources_pb.EvalMetrics, index?: number): proto_clarifai_api_resources_pb.EvalMetrics;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostModelVersionEvaluationsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostModelVersionEvaluationsRequest): PostModelVersionEvaluationsRequest.AsObject;
+  static serializeBinaryToWriter(message: PostModelVersionEvaluationsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostModelVersionEvaluationsRequest;
+  static deserializeBinaryFromReader(message: PostModelVersionEvaluationsRequest, reader: jspb.BinaryReader): PostModelVersionEvaluationsRequest;
+}
+
+export namespace PostModelVersionEvaluationsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    modelId: string,
+    modelVersionId: string,
+    evalMetricsList: Array<proto_clarifai_api_resources_pb.EvalMetrics.AsObject>,
+  }
+}
+
+export class ListModelVersionEvaluationsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListModelVersionEvaluationsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): ListModelVersionEvaluationsRequest;
+
+  getModelId(): string;
+  setModelId(value: string): ListModelVersionEvaluationsRequest;
+
+  getModelVersionId(): string;
+  setModelVersionId(value: string): ListModelVersionEvaluationsRequest;
+
+  getPage(): number;
+  setPage(value: number): ListModelVersionEvaluationsRequest;
+
+  getPerPage(): number;
+  setPerPage(value: number): ListModelVersionEvaluationsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListModelVersionEvaluationsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListModelVersionEvaluationsRequest): ListModelVersionEvaluationsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListModelVersionEvaluationsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListModelVersionEvaluationsRequest;
+  static deserializeBinaryFromReader(message: ListModelVersionEvaluationsRequest, reader: jspb.BinaryReader): ListModelVersionEvaluationsRequest;
+}
+
+export namespace ListModelVersionEvaluationsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    modelId: string,
+    modelVersionId: string,
+    page: number,
+    perPage: number,
+  }
+}
+
+export class GetModelVersionEvaluationRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetModelVersionEvaluationRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): GetModelVersionEvaluationRequest;
+
+  getModelId(): string;
+  setModelId(value: string): GetModelVersionEvaluationRequest;
+
+  getModelVersionId(): string;
+  setModelVersionId(value: string): GetModelVersionEvaluationRequest;
+
+  getEvaluationId(): string;
+  setEvaluationId(value: string): GetModelVersionEvaluationRequest;
+
+  getFields(): proto_clarifai_api_resources_pb.FieldsValue | undefined;
+  setFields(value?: proto_clarifai_api_resources_pb.FieldsValue): GetModelVersionEvaluationRequest;
+  hasFields(): boolean;
+  clearFields(): GetModelVersionEvaluationRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetModelVersionEvaluationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetModelVersionEvaluationRequest): GetModelVersionEvaluationRequest.AsObject;
+  static serializeBinaryToWriter(message: GetModelVersionEvaluationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetModelVersionEvaluationRequest;
+  static deserializeBinaryFromReader(message: GetModelVersionEvaluationRequest, reader: jspb.BinaryReader): GetModelVersionEvaluationRequest;
+}
+
+export namespace GetModelVersionEvaluationRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    modelId: string,
+    modelVersionId: string,
+    evaluationId: string,
+    fields?: proto_clarifai_api_resources_pb.FieldsValue.AsObject,
+  }
+}
+
+export class SingleEvalMetricsResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleEvalMetricsResponse;
+  hasStatus(): boolean;
+  clearStatus(): SingleEvalMetricsResponse;
+
+  getEvalMetrics(): proto_clarifai_api_resources_pb.EvalMetrics | undefined;
+  setEvalMetrics(value?: proto_clarifai_api_resources_pb.EvalMetrics): SingleEvalMetricsResponse;
+  hasEvalMetrics(): boolean;
+  clearEvalMetrics(): SingleEvalMetricsResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SingleEvalMetricsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SingleEvalMetricsResponse): SingleEvalMetricsResponse.AsObject;
+  static serializeBinaryToWriter(message: SingleEvalMetricsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SingleEvalMetricsResponse;
+  static deserializeBinaryFromReader(message: SingleEvalMetricsResponse, reader: jspb.BinaryReader): SingleEvalMetricsResponse;
+}
+
+export namespace SingleEvalMetricsResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    evalMetrics?: proto_clarifai_api_resources_pb.EvalMetrics.AsObject,
+  }
+}
+
+export class MultiEvalMetricsResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiEvalMetricsResponse;
+  hasStatus(): boolean;
+  clearStatus(): MultiEvalMetricsResponse;
+
+  getEvalMetricsList(): Array<proto_clarifai_api_resources_pb.EvalMetrics>;
+  setEvalMetricsList(value: Array<proto_clarifai_api_resources_pb.EvalMetrics>): MultiEvalMetricsResponse;
+  clearEvalMetricsList(): MultiEvalMetricsResponse;
+  addEvalMetrics(value?: proto_clarifai_api_resources_pb.EvalMetrics, index?: number): proto_clarifai_api_resources_pb.EvalMetrics;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MultiEvalMetricsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiEvalMetricsResponse): MultiEvalMetricsResponse.AsObject;
+  static serializeBinaryToWriter(message: MultiEvalMetricsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiEvalMetricsResponse;
+  static deserializeBinaryFromReader(message: MultiEvalMetricsResponse, reader: jspb.BinaryReader): MultiEvalMetricsResponse;
+}
+
+export namespace MultiEvalMetricsResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    evalMetricsList: Array<proto_clarifai_api_resources_pb.EvalMetrics.AsObject>,
+  }
+}
+
 export class PostModelVersionMetricsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
   setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostModelVersionMetricsRequest;

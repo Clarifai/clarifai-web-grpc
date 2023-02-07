@@ -1590,6 +1590,26 @@ export namespace Input {
   }
 }
 
+export class InputBatch extends jspb.Message {
+  getInputsList(): Array<Input>;
+  setInputsList(value: Array<Input>): InputBatch;
+  clearInputsList(): InputBatch;
+  addInputs(value?: Input, index?: number): Input;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InputBatch.AsObject;
+  static toObject(includeInstance: boolean, msg: InputBatch): InputBatch.AsObject;
+  static serializeBinaryToWriter(message: InputBatch, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InputBatch;
+  static deserializeBinaryFromReader(message: InputBatch, reader: jspb.BinaryReader): InputBatch;
+}
+
+export namespace InputBatch {
+  export type AsObject = {
+    inputsList: Array<Input.AsObject>,
+  }
+}
+
 export class InputCount extends jspb.Message {
   getProcessed(): number;
   setProcessed(value: number): InputCount;
@@ -5802,6 +5822,30 @@ export namespace DatasetInputsSearchAddJob {
   }
 }
 
+export class DuplicateAnnotationsResults extends jspb.Message {
+  getDuplicateCfidList(): Array<string>;
+  setDuplicateCfidList(value: Array<string>): DuplicateAnnotationsResults;
+  clearDuplicateCfidList(): DuplicateAnnotationsResults;
+  addDuplicateCfid(value: string, index?: number): DuplicateAnnotationsResults;
+
+  getUniqueCount(): number;
+  setUniqueCount(value: number): DuplicateAnnotationsResults;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DuplicateAnnotationsResults.AsObject;
+  static toObject(includeInstance: boolean, msg: DuplicateAnnotationsResults): DuplicateAnnotationsResults.AsObject;
+  static serializeBinaryToWriter(message: DuplicateAnnotationsResults, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DuplicateAnnotationsResults;
+  static deserializeBinaryFromReader(message: DuplicateAnnotationsResults, reader: jspb.BinaryReader): DuplicateAnnotationsResults;
+}
+
+export namespace DuplicateAnnotationsResults {
+  export type AsObject = {
+    duplicateCfidList: Array<string>,
+    uniqueCount: number,
+  }
+}
+
 export class Visibility extends jspb.Message {
   getGettable(): Visibility.Gettable;
   setGettable(value: Visibility.Gettable): Visibility;
@@ -6644,6 +6688,32 @@ export namespace UploadContentPart {
     rangeStart: number,
     partNumber: number,
     data: Uint8Array | string,
+  }
+}
+
+export class CustomCodeOperatorRequest extends jspb.Message {
+  getInputsList(): Array<Input>;
+  setInputsList(value: Array<Input>): CustomCodeOperatorRequest;
+  clearInputsList(): CustomCodeOperatorRequest;
+  addInputs(value?: Input, index?: number): Input;
+
+  getMetadata(): google_protobuf_struct_pb.Struct | undefined;
+  setMetadata(value?: google_protobuf_struct_pb.Struct): CustomCodeOperatorRequest;
+  hasMetadata(): boolean;
+  clearMetadata(): CustomCodeOperatorRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CustomCodeOperatorRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CustomCodeOperatorRequest): CustomCodeOperatorRequest.AsObject;
+  static serializeBinaryToWriter(message: CustomCodeOperatorRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CustomCodeOperatorRequest;
+  static deserializeBinaryFromReader(message: CustomCodeOperatorRequest, reader: jspb.BinaryReader): CustomCodeOperatorRequest;
+}
+
+export namespace CustomCodeOperatorRequest {
+  export type AsObject = {
+    inputsList: Array<Input.AsObject>,
+    metadata?: google_protobuf_struct_pb.Struct.AsObject,
   }
 }
 
