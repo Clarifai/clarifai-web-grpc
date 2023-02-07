@@ -590,6 +590,27 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.SingleModelVersionResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleModelVersionResponse>;
 
+  postModelVersionEvaluations(
+    request: proto_clarifai_api_service_pb.PostModelVersionEvaluationsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiEvalMetricsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiEvalMetricsResponse>;
+
+  listModelVersionEvaluations(
+    request: proto_clarifai_api_service_pb.ListModelVersionEvaluationsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiEvalMetricsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiEvalMetricsResponse>;
+
+  getModelVersionEvaluation(
+    request: proto_clarifai_api_service_pb.GetModelVersionEvaluationRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleEvalMetricsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleEvalMetricsResponse>;
+
   listModelReferences(
     request: proto_clarifai_api_service_pb.ListModelReferencesRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -1788,6 +1809,21 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.PostModelVersionMetricsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.SingleModelVersionResponse>;
+
+  postModelVersionEvaluations(
+    request: proto_clarifai_api_service_pb.PostModelVersionEvaluationsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiEvalMetricsResponse>;
+
+  listModelVersionEvaluations(
+    request: proto_clarifai_api_service_pb.ListModelVersionEvaluationsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiEvalMetricsResponse>;
+
+  getModelVersionEvaluation(
+    request: proto_clarifai_api_service_pb.GetModelVersionEvaluationRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleEvalMetricsResponse>;
 
   listModelReferences(
     request: proto_clarifai_api_service_pb.ListModelReferencesRequest,
