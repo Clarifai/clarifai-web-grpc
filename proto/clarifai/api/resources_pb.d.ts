@@ -1902,6 +1902,9 @@ export class AnnotationFilterConfig extends jspb.Message {
   hasAnnotationFilter(): boolean;
   clearAnnotationFilter(): AnnotationFilterConfig;
 
+  getIgnoreEmptyInputs(): boolean;
+  setIgnoreEmptyInputs(value: boolean): AnnotationFilterConfig;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AnnotationFilterConfig.AsObject;
   static toObject(includeInstance: boolean, msg: AnnotationFilterConfig): AnnotationFilterConfig.AsObject;
@@ -1913,6 +1916,7 @@ export class AnnotationFilterConfig extends jspb.Message {
 export namespace AnnotationFilterConfig {
   export type AsObject = {
     annotationFilter?: AnnotationFilter.AsObject,
+    ignoreEmptyInputs: boolean,
   }
 }
 
@@ -3101,6 +3105,9 @@ export class ModelVersion extends jspb.Message {
   hasImportInfo(): boolean;
   clearImportInfo(): ModelVersion;
 
+  getTrainLog(): string;
+  setTrainLog(value: string): ModelVersion;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelVersion.AsObject;
   static toObject(includeInstance: boolean, msg: ModelVersion): ModelVersion.AsObject;
@@ -3131,6 +3138,7 @@ export namespace ModelVersion {
     inputInfo?: InputInfo.AsObject,
     trainInfo?: TrainInfo.AsObject,
     importInfo?: ImportInfo.AsObject,
+    trainLog: string,
   }
 }
 
@@ -4065,6 +4073,9 @@ export class Search extends jspb.Message {
   hasVisibility(): boolean;
   clearVisibility(): Search;
 
+  getMetric(): Search.Metric;
+  setMetric(value: Search.Metric): Search;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Search.AsObject;
   static toObject(includeInstance: boolean, msg: Search): Search.AsObject;
@@ -4087,6 +4098,13 @@ export namespace Search {
     save: boolean,
     minValue: number,
     visibility?: Visibility.AsObject,
+    metric: Search.Metric,
+  }
+
+  export enum Metric { 
+    METRIC_NOT_SET = 0,
+    EUCLIDEAN_DISTANCE = 1,
+    COSINE_DISTANCE = 2,
   }
 }
 
@@ -5822,6 +5840,28 @@ export namespace DatasetInputsSearchAddJob {
   }
 }
 
+export class PCAProjectionComparator extends jspb.Message {
+  getDistanceThreshold(): number;
+  setDistanceThreshold(value: number): PCAProjectionComparator;
+
+  getModelVersionId(): string;
+  setModelVersionId(value: string): PCAProjectionComparator;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PCAProjectionComparator.AsObject;
+  static toObject(includeInstance: boolean, msg: PCAProjectionComparator): PCAProjectionComparator.AsObject;
+  static serializeBinaryToWriter(message: PCAProjectionComparator, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PCAProjectionComparator;
+  static deserializeBinaryFromReader(message: PCAProjectionComparator, reader: jspb.BinaryReader): PCAProjectionComparator;
+}
+
+export namespace PCAProjectionComparator {
+  export type AsObject = {
+    distanceThreshold: number,
+    modelVersionId: string,
+  }
+}
+
 export class DuplicateAnnotationsResults extends jspb.Message {
   getDuplicateCfidList(): Array<string>;
   setDuplicateCfidList(value: Array<string>): DuplicateAnnotationsResults;
@@ -6525,6 +6565,24 @@ export namespace DeleteGeo {
   }
 }
 
+export class WaitlistEmail extends jspb.Message {
+  getEmail(): string;
+  setEmail(value: string): WaitlistEmail;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WaitlistEmail.AsObject;
+  static toObject(includeInstance: boolean, msg: WaitlistEmail): WaitlistEmail.AsObject;
+  static serializeBinaryToWriter(message: WaitlistEmail, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WaitlistEmail;
+  static deserializeBinaryFromReader(message: WaitlistEmail, reader: jspb.BinaryReader): WaitlistEmail;
+}
+
+export namespace WaitlistEmail {
+  export type AsObject = {
+    email: string,
+  }
+}
+
 export class InputsAddJob extends jspb.Message {
   getId(): string;
   setId(value: string): InputsAddJob;
@@ -6558,6 +6616,11 @@ export class InputsAddJob extends jspb.Message {
   clearExtractionJobsList(): InputsAddJob;
   addExtractionJobs(value?: InputsExtractionJob, index?: number): InputsExtractionJob;
 
+  getUploadsList(): Array<Upload>;
+  setUploadsList(value: Array<Upload>): InputsAddJob;
+  clearUploadsList(): InputsAddJob;
+  addUploads(value?: Upload, index?: number): Upload;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InputsAddJob.AsObject;
   static toObject(includeInstance: boolean, msg: InputsAddJob): InputsAddJob.AsObject;
@@ -6576,6 +6639,7 @@ export namespace InputsAddJob {
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     extractionJobsList: Array<InputsExtractionJob.AsObject>,
+    uploadsList: Array<Upload.AsObject>,
   }
 }
 
@@ -6903,6 +6967,34 @@ export namespace AWSCreds {
   export type AsObject = {
     creds: string,
     region: string,
+  }
+}
+
+export class InputsUpload extends jspb.Message {
+  getInputsAddJobId(): string;
+  setInputsAddJobId(value: string): InputsUpload;
+
+  getAppPat(): string;
+  setAppPat(value: string): InputsUpload;
+
+  getUpload(): Upload | undefined;
+  setUpload(value?: Upload): InputsUpload;
+  hasUpload(): boolean;
+  clearUpload(): InputsUpload;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InputsUpload.AsObject;
+  static toObject(includeInstance: boolean, msg: InputsUpload): InputsUpload.AsObject;
+  static serializeBinaryToWriter(message: InputsUpload, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InputsUpload;
+  static deserializeBinaryFromReader(message: InputsUpload, reader: jspb.BinaryReader): InputsUpload;
+}
+
+export namespace InputsUpload {
+  export type AsObject = {
+    inputsAddJobId: string,
+    appPat: string,
+    upload?: Upload.AsObject,
   }
 }
 
