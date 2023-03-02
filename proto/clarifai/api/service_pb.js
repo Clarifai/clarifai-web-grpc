@@ -2450,7 +2450,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.clarifai.api.ListKeysRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.clarifai.api.ListKeysRequest.repeatedFields_, null);
 };
 goog.inherits(proto.clarifai.api.ListKeysRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -29644,6 +29644,13 @@ proto.clarifai.api.GetKeyRequest.prototype.setKeyId = function(value) {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.clarifai.api.ListKeysRequest.repeatedFields_ = [5,6];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -29677,7 +29684,10 @@ proto.clarifai.api.ListKeysRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     userAppId: (f = msg.getUserAppId()) && proto_clarifai_api_resources_pb.UserAppIDSet.toObject(includeInstance, f),
     page: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    perPage: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    perPage: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    notExpired: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+    scopesList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+    endpointsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -29727,6 +29737,18 @@ proto.clarifai.api.ListKeysRequest.deserializeBinaryFromReader = function(msg, r
       var value = /** @type {number} */ (reader.readUint32());
       msg.setPerPage(value);
       break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setNotExpired(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addScopes(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addEndpoints(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -29775,6 +29797,27 @@ proto.clarifai.api.ListKeysRequest.serializeBinaryToWriter = function(message, w
   if (f !== 0) {
     writer.writeUint32(
       3,
+      f
+    );
+  }
+  f = message.getNotExpired();
+  if (f) {
+    writer.writeBool(
+      4,
+      f
+    );
+  }
+  f = message.getScopesList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      5,
+      f
+    );
+  }
+  f = message.getEndpointsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      6,
       f
     );
   }
@@ -29851,6 +29894,98 @@ proto.clarifai.api.ListKeysRequest.prototype.getPerPage = function() {
  */
 proto.clarifai.api.ListKeysRequest.prototype.setPerPage = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional bool not_expired = 4;
+ * @return {boolean}
+ */
+proto.clarifai.api.ListKeysRequest.prototype.getNotExpired = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.clarifai.api.ListKeysRequest} returns this
+ */
+proto.clarifai.api.ListKeysRequest.prototype.setNotExpired = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 4, value);
+};
+
+
+/**
+ * repeated string scopes = 5;
+ * @return {!Array<string>}
+ */
+proto.clarifai.api.ListKeysRequest.prototype.getScopesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.clarifai.api.ListKeysRequest} returns this
+ */
+proto.clarifai.api.ListKeysRequest.prototype.setScopesList = function(value) {
+  return jspb.Message.setField(this, 5, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.clarifai.api.ListKeysRequest} returns this
+ */
+proto.clarifai.api.ListKeysRequest.prototype.addScopes = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.clarifai.api.ListKeysRequest} returns this
+ */
+proto.clarifai.api.ListKeysRequest.prototype.clearScopesList = function() {
+  return this.setScopesList([]);
+};
+
+
+/**
+ * repeated string endpoints = 6;
+ * @return {!Array<string>}
+ */
+proto.clarifai.api.ListKeysRequest.prototype.getEndpointsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.clarifai.api.ListKeysRequest} returns this
+ */
+proto.clarifai.api.ListKeysRequest.prototype.setEndpointsList = function(value) {
+  return jspb.Message.setField(this, 6, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.clarifai.api.ListKeysRequest} returns this
+ */
+proto.clarifai.api.ListKeysRequest.prototype.addEndpoints = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.clarifai.api.ListKeysRequest} returns this
+ */
+proto.clarifai.api.ListKeysRequest.prototype.clearEndpointsList = function() {
+  return this.setEndpointsList([]);
 };
 
 

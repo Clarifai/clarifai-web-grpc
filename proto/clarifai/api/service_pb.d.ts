@@ -2968,6 +2968,19 @@ export class ListKeysRequest extends jspb.Message {
   getPerPage(): number;
   setPerPage(value: number): ListKeysRequest;
 
+  getNotExpired(): boolean;
+  setNotExpired(value: boolean): ListKeysRequest;
+
+  getScopesList(): Array<string>;
+  setScopesList(value: Array<string>): ListKeysRequest;
+  clearScopesList(): ListKeysRequest;
+  addScopes(value: string, index?: number): ListKeysRequest;
+
+  getEndpointsList(): Array<string>;
+  setEndpointsList(value: Array<string>): ListKeysRequest;
+  clearEndpointsList(): ListKeysRequest;
+  addEndpoints(value: string, index?: number): ListKeysRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListKeysRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListKeysRequest): ListKeysRequest.AsObject;
@@ -2981,6 +2994,9 @@ export namespace ListKeysRequest {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
     page: number,
     perPage: number,
+    notExpired: boolean,
+    scopesList: Array<string>,
+    endpointsList: Array<string>,
   }
 }
 

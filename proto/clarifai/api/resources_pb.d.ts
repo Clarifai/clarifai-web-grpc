@@ -4867,6 +4867,11 @@ export class WorkflowNode extends jspb.Message {
   getSuppressOutput(): boolean;
   setSuppressOutput(value: boolean): WorkflowNode;
 
+  getOutputInfoOverride(): OutputInfo | undefined;
+  setOutputInfoOverride(value?: OutputInfo): WorkflowNode;
+  hasOutputInfoOverride(): boolean;
+  clearOutputInfoOverride(): WorkflowNode;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WorkflowNode.AsObject;
   static toObject(includeInstance: boolean, msg: WorkflowNode): WorkflowNode.AsObject;
@@ -4881,6 +4886,7 @@ export namespace WorkflowNode {
     model?: Model.AsObject,
     nodeInputsList: Array<NodeInput.AsObject>,
     suppressOutput: boolean,
+    outputInfoOverride?: OutputInfo.AsObject,
   }
 }
 
@@ -6587,9 +6593,6 @@ export class InputsAddJob extends jspb.Message {
   getId(): string;
   setId(value: string): InputsAddJob;
 
-  getCloudStorageUrl(): string;
-  setCloudStorageUrl(value: string): InputsAddJob;
-
   getCallBackUrl(): string;
   setCallBackUrl(value: string): InputsAddJob;
 
@@ -6632,7 +6635,6 @@ export class InputsAddJob extends jspb.Message {
 export namespace InputsAddJob {
   export type AsObject = {
     id: string,
-    cloudStorageUrl: string,
     callBackUrl: string,
     appPat: string,
     progress?: InputsAddJobProgress.AsObject,

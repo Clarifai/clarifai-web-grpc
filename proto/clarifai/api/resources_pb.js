@@ -41618,7 +41618,8 @@ proto.clarifai.api.WorkflowNode.toObject = function(includeInstance, msg) {
     model: (f = msg.getModel()) && proto.clarifai.api.Model.toObject(includeInstance, f),
     nodeInputsList: jspb.Message.toObjectList(msg.getNodeInputsList(),
     proto.clarifai.api.NodeInput.toObject, includeInstance),
-    suppressOutput: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
+    suppressOutput: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+    outputInfoOverride: (f = msg.getOutputInfoOverride()) && proto.clarifai.api.OutputInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -41672,6 +41673,11 @@ proto.clarifai.api.WorkflowNode.deserializeBinaryFromReader = function(msg, read
     case 4:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setSuppressOutput(value);
+      break;
+    case 5:
+      var value = new proto.clarifai.api.OutputInfo;
+      reader.readMessage(value,proto.clarifai.api.OutputInfo.deserializeBinaryFromReader);
+      msg.setOutputInfoOverride(value);
       break;
     default:
       reader.skipField();
@@ -41730,6 +41736,14 @@ proto.clarifai.api.WorkflowNode.serializeBinaryToWriter = function(message, writ
     writer.writeBool(
       4,
       f
+    );
+  }
+  f = message.getOutputInfoOverride();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      proto.clarifai.api.OutputInfo.serializeBinaryToWriter
     );
   }
 };
@@ -41843,6 +41857,43 @@ proto.clarifai.api.WorkflowNode.prototype.getSuppressOutput = function() {
  */
 proto.clarifai.api.WorkflowNode.prototype.setSuppressOutput = function(value) {
   return jspb.Message.setProto3BooleanField(this, 4, value);
+};
+
+
+/**
+ * optional OutputInfo output_info_override = 5;
+ * @return {?proto.clarifai.api.OutputInfo}
+ */
+proto.clarifai.api.WorkflowNode.prototype.getOutputInfoOverride = function() {
+  return /** @type{?proto.clarifai.api.OutputInfo} */ (
+    jspb.Message.getWrapperField(this, proto.clarifai.api.OutputInfo, 5));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.OutputInfo|undefined} value
+ * @return {!proto.clarifai.api.WorkflowNode} returns this
+*/
+proto.clarifai.api.WorkflowNode.prototype.setOutputInfoOverride = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.WorkflowNode} returns this
+ */
+proto.clarifai.api.WorkflowNode.prototype.clearOutputInfoOverride = function() {
+  return this.setOutputInfoOverride(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.WorkflowNode.prototype.hasOutputInfoOverride = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -54622,7 +54673,6 @@ proto.clarifai.api.InputsAddJob.prototype.toObject = function(opt_includeInstanc
 proto.clarifai.api.InputsAddJob.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    cloudStorageUrl: jspb.Message.getFieldWithDefault(msg, 2, ""),
     callBackUrl: jspb.Message.getFieldWithDefault(msg, 3, ""),
     appPat: jspb.Message.getFieldWithDefault(msg, 4, ""),
     progress: (f = msg.getProgress()) && proto.clarifai.api.InputsAddJobProgress.toObject(includeInstance, f),
@@ -54671,10 +54721,6 @@ proto.clarifai.api.InputsAddJob.deserializeBinaryFromReader = function(msg, read
     case 1:
       var value = /** @type {string} */ (reader.readString());
       msg.setId(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCloudStorageUrl(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -54742,13 +54788,6 @@ proto.clarifai.api.InputsAddJob.serializeBinaryToWriter = function(message, writ
   if (f.length > 0) {
     writer.writeString(
       1,
-      f
-    );
-  }
-  f = message.getCloudStorageUrl();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
       f
     );
   }
@@ -54824,24 +54863,6 @@ proto.clarifai.api.InputsAddJob.prototype.getId = function() {
  */
 proto.clarifai.api.InputsAddJob.prototype.setId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string cloud_storage_url = 2;
- * @return {string}
- */
-proto.clarifai.api.InputsAddJob.prototype.getCloudStorageUrl = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.clarifai.api.InputsAddJob} returns this
- */
-proto.clarifai.api.InputsAddJob.prototype.setCloudStorageUrl = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
