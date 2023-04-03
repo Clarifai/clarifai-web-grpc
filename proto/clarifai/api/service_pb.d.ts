@@ -2968,6 +2968,19 @@ export class ListKeysRequest extends jspb.Message {
   getPerPage(): number;
   setPerPage(value: number): ListKeysRequest;
 
+  getNotExpired(): boolean;
+  setNotExpired(value: boolean): ListKeysRequest;
+
+  getScopesList(): Array<string>;
+  setScopesList(value: Array<string>): ListKeysRequest;
+  clearScopesList(): ListKeysRequest;
+  addScopes(value: string, index?: number): ListKeysRequest;
+
+  getEndpointsList(): Array<string>;
+  setEndpointsList(value: Array<string>): ListKeysRequest;
+  clearEndpointsList(): ListKeysRequest;
+  addEndpoints(value: string, index?: number): ListKeysRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListKeysRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListKeysRequest): ListKeysRequest.AsObject;
@@ -2981,6 +2994,9 @@ export namespace ListKeysRequest {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
     page: number,
     perPage: number,
+    notExpired: boolean,
+    scopesList: Array<string>,
+    endpointsList: Array<string>,
   }
 }
 
@@ -3997,28 +4013,8 @@ export class PostModelVersionsRequest extends jspb.Message {
   clearModelVersionsList(): PostModelVersionsRequest;
   addModelVersions(value?: proto_clarifai_api_resources_pb.ModelVersion, index?: number): proto_clarifai_api_resources_pb.ModelVersion;
 
-  getSearch(): proto_clarifai_api_resources_pb.Search | undefined;
-  setSearch(value?: proto_clarifai_api_resources_pb.Search): PostModelVersionsRequest;
-  hasSearch(): boolean;
-  clearSearch(): PostModelVersionsRequest;
-
-  getTrainSearch(): proto_clarifai_api_resources_pb.Search | undefined;
-  setTrainSearch(value?: proto_clarifai_api_resources_pb.Search): PostModelVersionsRequest;
-  hasTrainSearch(): boolean;
-  clearTrainSearch(): PostModelVersionsRequest;
-
-  getTestSearch(): proto_clarifai_api_resources_pb.Search | undefined;
-  setTestSearch(value?: proto_clarifai_api_resources_pb.Search): PostModelVersionsRequest;
-  hasTestSearch(): boolean;
-  clearTestSearch(): PostModelVersionsRequest;
-
   getDescription(): string;
   setDescription(value: string): PostModelVersionsRequest;
-
-  getDatasetVersion(): proto_clarifai_api_resources_pb.DatasetVersion | undefined;
-  setDatasetVersion(value?: proto_clarifai_api_resources_pb.DatasetVersion): PostModelVersionsRequest;
-  hasDatasetVersion(): boolean;
-  clearDatasetVersion(): PostModelVersionsRequest;
 
   getEvalInfo(): proto_clarifai_api_resources_pb.EvalInfo | undefined;
   setEvalInfo(value?: proto_clarifai_api_resources_pb.EvalInfo): PostModelVersionsRequest;
@@ -4038,11 +4034,7 @@ export namespace PostModelVersionsRequest {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
     modelId: string,
     modelVersionsList: Array<proto_clarifai_api_resources_pb.ModelVersion.AsObject>,
-    search?: proto_clarifai_api_resources_pb.Search.AsObject,
-    trainSearch?: proto_clarifai_api_resources_pb.Search.AsObject,
-    testSearch?: proto_clarifai_api_resources_pb.Search.AsObject,
     description: string,
-    datasetVersion?: proto_clarifai_api_resources_pb.DatasetVersion.AsObject,
     evalInfo?: proto_clarifai_api_resources_pb.EvalInfo.AsObject,
   }
 }
@@ -4607,6 +4599,11 @@ export class MultiModelTypeResponse extends jspb.Message {
   hasModelImporters(): boolean;
   clearModelImporters(): MultiModelTypeResponse;
 
+  getTritonCondaEnvsInfoList(): Array<proto_clarifai_api_resources_pb.TritonCondaEnvInfo>;
+  setTritonCondaEnvsInfoList(value: Array<proto_clarifai_api_resources_pb.TritonCondaEnvInfo>): MultiModelTypeResponse;
+  clearTritonCondaEnvsInfoList(): MultiModelTypeResponse;
+  addTritonCondaEnvsInfo(value?: proto_clarifai_api_resources_pb.TritonCondaEnvInfo, index?: number): proto_clarifai_api_resources_pb.TritonCondaEnvInfo;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MultiModelTypeResponse.AsObject;
   static toObject(includeInstance: boolean, msg: MultiModelTypeResponse): MultiModelTypeResponse.AsObject;
@@ -4620,6 +4617,7 @@ export namespace MultiModelTypeResponse {
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     modelTypesList: Array<proto_clarifai_api_resources_pb.ModelType.AsObject>,
     modelImporters?: proto_clarifai_api_resources_pb.ModelTypeField.AsObject,
+    tritonCondaEnvsInfoList: Array<proto_clarifai_api_resources_pb.TritonCondaEnvInfo.AsObject>,
   }
 }
 

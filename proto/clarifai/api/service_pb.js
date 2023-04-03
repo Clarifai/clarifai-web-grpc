@@ -2450,7 +2450,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.clarifai.api.ListKeysRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.clarifai.api.ListKeysRequest.repeatedFields_, null);
 };
 goog.inherits(proto.clarifai.api.ListKeysRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -29644,6 +29644,13 @@ proto.clarifai.api.GetKeyRequest.prototype.setKeyId = function(value) {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.clarifai.api.ListKeysRequest.repeatedFields_ = [5,6];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -29677,7 +29684,10 @@ proto.clarifai.api.ListKeysRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     userAppId: (f = msg.getUserAppId()) && proto_clarifai_api_resources_pb.UserAppIDSet.toObject(includeInstance, f),
     page: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    perPage: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    perPage: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    notExpired: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+    scopesList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+    endpointsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -29727,6 +29737,18 @@ proto.clarifai.api.ListKeysRequest.deserializeBinaryFromReader = function(msg, r
       var value = /** @type {number} */ (reader.readUint32());
       msg.setPerPage(value);
       break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setNotExpired(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addScopes(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addEndpoints(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -29775,6 +29797,27 @@ proto.clarifai.api.ListKeysRequest.serializeBinaryToWriter = function(message, w
   if (f !== 0) {
     writer.writeUint32(
       3,
+      f
+    );
+  }
+  f = message.getNotExpired();
+  if (f) {
+    writer.writeBool(
+      4,
+      f
+    );
+  }
+  f = message.getScopesList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      5,
+      f
+    );
+  }
+  f = message.getEndpointsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      6,
       f
     );
   }
@@ -29851,6 +29894,98 @@ proto.clarifai.api.ListKeysRequest.prototype.getPerPage = function() {
  */
 proto.clarifai.api.ListKeysRequest.prototype.setPerPage = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional bool not_expired = 4;
+ * @return {boolean}
+ */
+proto.clarifai.api.ListKeysRequest.prototype.getNotExpired = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.clarifai.api.ListKeysRequest} returns this
+ */
+proto.clarifai.api.ListKeysRequest.prototype.setNotExpired = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 4, value);
+};
+
+
+/**
+ * repeated string scopes = 5;
+ * @return {!Array<string>}
+ */
+proto.clarifai.api.ListKeysRequest.prototype.getScopesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.clarifai.api.ListKeysRequest} returns this
+ */
+proto.clarifai.api.ListKeysRequest.prototype.setScopesList = function(value) {
+  return jspb.Message.setField(this, 5, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.clarifai.api.ListKeysRequest} returns this
+ */
+proto.clarifai.api.ListKeysRequest.prototype.addScopes = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.clarifai.api.ListKeysRequest} returns this
+ */
+proto.clarifai.api.ListKeysRequest.prototype.clearScopesList = function() {
+  return this.setScopesList([]);
+};
+
+
+/**
+ * repeated string endpoints = 6;
+ * @return {!Array<string>}
+ */
+proto.clarifai.api.ListKeysRequest.prototype.getEndpointsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.clarifai.api.ListKeysRequest} returns this
+ */
+proto.clarifai.api.ListKeysRequest.prototype.setEndpointsList = function(value) {
+  return jspb.Message.setField(this, 6, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.clarifai.api.ListKeysRequest} returns this
+ */
+proto.clarifai.api.ListKeysRequest.prototype.addEndpoints = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.clarifai.api.ListKeysRequest} returns this
+ */
+proto.clarifai.api.ListKeysRequest.prototype.clearEndpointsList = function() {
+  return this.setEndpointsList([]);
 };
 
 
@@ -37751,11 +37886,7 @@ proto.clarifai.api.PostModelVersionsRequest.toObject = function(includeInstance,
     modelId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     modelVersionsList: jspb.Message.toObjectList(msg.getModelVersionsList(),
     proto_clarifai_api_resources_pb.ModelVersion.toObject, includeInstance),
-    search: (f = msg.getSearch()) && proto_clarifai_api_resources_pb.Search.toObject(includeInstance, f),
-    trainSearch: (f = msg.getTrainSearch()) && proto_clarifai_api_resources_pb.Search.toObject(includeInstance, f),
-    testSearch: (f = msg.getTestSearch()) && proto_clarifai_api_resources_pb.Search.toObject(includeInstance, f),
     description: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    datasetVersion: (f = msg.getDatasetVersion()) && proto_clarifai_api_resources_pb.DatasetVersion.toObject(includeInstance, f),
     evalInfo: (f = msg.getEvalInfo()) && proto_clarifai_api_resources_pb.EvalInfo.toObject(includeInstance, f)
   };
 
@@ -37807,29 +37938,9 @@ proto.clarifai.api.PostModelVersionsRequest.deserializeBinaryFromReader = functi
       reader.readMessage(value,proto_clarifai_api_resources_pb.ModelVersion.deserializeBinaryFromReader);
       msg.addModelVersions(value);
       break;
-    case 4:
-      var value = new proto_clarifai_api_resources_pb.Search;
-      reader.readMessage(value,proto_clarifai_api_resources_pb.Search.deserializeBinaryFromReader);
-      msg.setSearch(value);
-      break;
-    case 5:
-      var value = new proto_clarifai_api_resources_pb.Search;
-      reader.readMessage(value,proto_clarifai_api_resources_pb.Search.deserializeBinaryFromReader);
-      msg.setTrainSearch(value);
-      break;
-    case 6:
-      var value = new proto_clarifai_api_resources_pb.Search;
-      reader.readMessage(value,proto_clarifai_api_resources_pb.Search.deserializeBinaryFromReader);
-      msg.setTestSearch(value);
-      break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
-      break;
-    case 9:
-      var value = new proto_clarifai_api_resources_pb.DatasetVersion;
-      reader.readMessage(value,proto_clarifai_api_resources_pb.DatasetVersion.deserializeBinaryFromReader);
-      msg.setDatasetVersion(value);
       break;
     case 10:
       var value = new proto_clarifai_api_resources_pb.EvalInfo;
@@ -37888,43 +37999,11 @@ proto.clarifai.api.PostModelVersionsRequest.serializeBinaryToWriter = function(m
       proto_clarifai_api_resources_pb.ModelVersion.serializeBinaryToWriter
     );
   }
-  f = message.getSearch();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      proto_clarifai_api_resources_pb.Search.serializeBinaryToWriter
-    );
-  }
-  f = message.getTrainSearch();
-  if (f != null) {
-    writer.writeMessage(
-      5,
-      f,
-      proto_clarifai_api_resources_pb.Search.serializeBinaryToWriter
-    );
-  }
-  f = message.getTestSearch();
-  if (f != null) {
-    writer.writeMessage(
-      6,
-      f,
-      proto_clarifai_api_resources_pb.Search.serializeBinaryToWriter
-    );
-  }
   f = message.getDescription();
   if (f.length > 0) {
     writer.writeString(
       8,
       f
-    );
-  }
-  f = message.getDatasetVersion();
-  if (f != null) {
-    writer.writeMessage(
-      9,
-      f,
-      proto_clarifai_api_resources_pb.DatasetVersion.serializeBinaryToWriter
     );
   }
   f = message.getEvalInfo();
@@ -38032,117 +38111,6 @@ proto.clarifai.api.PostModelVersionsRequest.prototype.clearModelVersionsList = f
 
 
 /**
- * optional Search search = 4;
- * @return {?proto.clarifai.api.Search}
- */
-proto.clarifai.api.PostModelVersionsRequest.prototype.getSearch = function() {
-  return /** @type{?proto.clarifai.api.Search} */ (
-    jspb.Message.getWrapperField(this, proto_clarifai_api_resources_pb.Search, 4));
-};
-
-
-/**
- * @param {?proto.clarifai.api.Search|undefined} value
- * @return {!proto.clarifai.api.PostModelVersionsRequest} returns this
-*/
-proto.clarifai.api.PostModelVersionsRequest.prototype.setSearch = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.clarifai.api.PostModelVersionsRequest} returns this
- */
-proto.clarifai.api.PostModelVersionsRequest.prototype.clearSearch = function() {
-  return this.setSearch(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.clarifai.api.PostModelVersionsRequest.prototype.hasSearch = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional Search train_search = 5;
- * @return {?proto.clarifai.api.Search}
- */
-proto.clarifai.api.PostModelVersionsRequest.prototype.getTrainSearch = function() {
-  return /** @type{?proto.clarifai.api.Search} */ (
-    jspb.Message.getWrapperField(this, proto_clarifai_api_resources_pb.Search, 5));
-};
-
-
-/**
- * @param {?proto.clarifai.api.Search|undefined} value
- * @return {!proto.clarifai.api.PostModelVersionsRequest} returns this
-*/
-proto.clarifai.api.PostModelVersionsRequest.prototype.setTrainSearch = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.clarifai.api.PostModelVersionsRequest} returns this
- */
-proto.clarifai.api.PostModelVersionsRequest.prototype.clearTrainSearch = function() {
-  return this.setTrainSearch(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.clarifai.api.PostModelVersionsRequest.prototype.hasTrainSearch = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional Search test_search = 6;
- * @return {?proto.clarifai.api.Search}
- */
-proto.clarifai.api.PostModelVersionsRequest.prototype.getTestSearch = function() {
-  return /** @type{?proto.clarifai.api.Search} */ (
-    jspb.Message.getWrapperField(this, proto_clarifai_api_resources_pb.Search, 6));
-};
-
-
-/**
- * @param {?proto.clarifai.api.Search|undefined} value
- * @return {!proto.clarifai.api.PostModelVersionsRequest} returns this
-*/
-proto.clarifai.api.PostModelVersionsRequest.prototype.setTestSearch = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.clarifai.api.PostModelVersionsRequest} returns this
- */
-proto.clarifai.api.PostModelVersionsRequest.prototype.clearTestSearch = function() {
-  return this.setTestSearch(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.clarifai.api.PostModelVersionsRequest.prototype.hasTestSearch = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
  * optional string description = 8;
  * @return {string}
  */
@@ -38157,43 +38125,6 @@ proto.clarifai.api.PostModelVersionsRequest.prototype.getDescription = function(
  */
 proto.clarifai.api.PostModelVersionsRequest.prototype.setDescription = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
-};
-
-
-/**
- * optional DatasetVersion dataset_version = 9;
- * @return {?proto.clarifai.api.DatasetVersion}
- */
-proto.clarifai.api.PostModelVersionsRequest.prototype.getDatasetVersion = function() {
-  return /** @type{?proto.clarifai.api.DatasetVersion} */ (
-    jspb.Message.getWrapperField(this, proto_clarifai_api_resources_pb.DatasetVersion, 9));
-};
-
-
-/**
- * @param {?proto.clarifai.api.DatasetVersion|undefined} value
- * @return {!proto.clarifai.api.PostModelVersionsRequest} returns this
-*/
-proto.clarifai.api.PostModelVersionsRequest.prototype.setDatasetVersion = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.clarifai.api.PostModelVersionsRequest} returns this
- */
-proto.clarifai.api.PostModelVersionsRequest.prototype.clearDatasetVersion = function() {
-  return this.setDatasetVersion(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.clarifai.api.PostModelVersionsRequest.prototype.hasDatasetVersion = function() {
-  return jspb.Message.getField(this, 9) != null;
 };
 
 
@@ -42448,7 +42379,7 @@ proto.clarifai.api.SingleModelTypeResponse.prototype.hasModelType = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.clarifai.api.MultiModelTypeResponse.repeatedFields_ = [2];
+proto.clarifai.api.MultiModelTypeResponse.repeatedFields_ = [2,4];
 
 
 
@@ -42484,7 +42415,9 @@ proto.clarifai.api.MultiModelTypeResponse.toObject = function(includeInstance, m
     status: (f = msg.getStatus()) && proto_clarifai_api_status_status_pb.Status.toObject(includeInstance, f),
     modelTypesList: jspb.Message.toObjectList(msg.getModelTypesList(),
     proto_clarifai_api_resources_pb.ModelType.toObject, includeInstance),
-    modelImporters: (f = msg.getModelImporters()) && proto_clarifai_api_resources_pb.ModelTypeField.toObject(includeInstance, f)
+    modelImporters: (f = msg.getModelImporters()) && proto_clarifai_api_resources_pb.ModelTypeField.toObject(includeInstance, f),
+    tritonCondaEnvsInfoList: jspb.Message.toObjectList(msg.getTritonCondaEnvsInfoList(),
+    proto_clarifai_api_resources_pb.TritonCondaEnvInfo.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -42535,6 +42468,11 @@ proto.clarifai.api.MultiModelTypeResponse.deserializeBinaryFromReader = function
       var value = new proto_clarifai_api_resources_pb.ModelTypeField;
       reader.readMessage(value,proto_clarifai_api_resources_pb.ModelTypeField.deserializeBinaryFromReader);
       msg.setModelImporters(value);
+      break;
+    case 4:
+      var value = new proto_clarifai_api_resources_pb.TritonCondaEnvInfo;
+      reader.readMessage(value,proto_clarifai_api_resources_pb.TritonCondaEnvInfo.deserializeBinaryFromReader);
+      msg.addTritonCondaEnvsInfo(value);
       break;
     default:
       reader.skipField();
@@ -42587,6 +42525,14 @@ proto.clarifai.api.MultiModelTypeResponse.serializeBinaryToWriter = function(mes
       3,
       f,
       proto_clarifai_api_resources_pb.ModelTypeField.serializeBinaryToWriter
+    );
+  }
+  f = message.getTritonCondaEnvsInfoList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      4,
+      f,
+      proto_clarifai_api_resources_pb.TritonCondaEnvInfo.serializeBinaryToWriter
     );
   }
 };
@@ -42701,6 +42647,44 @@ proto.clarifai.api.MultiModelTypeResponse.prototype.clearModelImporters = functi
  */
 proto.clarifai.api.MultiModelTypeResponse.prototype.hasModelImporters = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * repeated TritonCondaEnvInfo triton_conda_envs_info = 4;
+ * @return {!Array<!proto.clarifai.api.TritonCondaEnvInfo>}
+ */
+proto.clarifai.api.MultiModelTypeResponse.prototype.getTritonCondaEnvsInfoList = function() {
+  return /** @type{!Array<!proto.clarifai.api.TritonCondaEnvInfo>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto_clarifai_api_resources_pb.TritonCondaEnvInfo, 4));
+};
+
+
+/**
+ * @param {!Array<!proto.clarifai.api.TritonCondaEnvInfo>} value
+ * @return {!proto.clarifai.api.MultiModelTypeResponse} returns this
+*/
+proto.clarifai.api.MultiModelTypeResponse.prototype.setTritonCondaEnvsInfoList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.TritonCondaEnvInfo=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.clarifai.api.TritonCondaEnvInfo}
+ */
+proto.clarifai.api.MultiModelTypeResponse.prototype.addTritonCondaEnvsInfo = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.clarifai.api.TritonCondaEnvInfo, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.clarifai.api.MultiModelTypeResponse} returns this
+ */
+proto.clarifai.api.MultiModelTypeResponse.prototype.clearTritonCondaEnvsInfoList = function() {
+  return this.setTritonCondaEnvsInfoList([]);
 };
 
 
