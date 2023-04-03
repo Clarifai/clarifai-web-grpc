@@ -2143,6 +2143,9 @@ export class DatasetVersionExport extends jspb.Message {
   getSize(): number;
   setSize(value: number): DatasetVersionExport;
 
+  getIncludeEmbeddings(): boolean;
+  setIncludeEmbeddings(value: boolean): DatasetVersionExport;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetVersionExport.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetVersionExport): DatasetVersionExport.AsObject;
@@ -2157,6 +2160,7 @@ export namespace DatasetVersionExport {
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     url: string,
     size: number,
+    includeEmbeddings: boolean,
   }
 }
 
@@ -2796,6 +2800,28 @@ export namespace ModelLayerInfo {
   }
 }
 
+export class TritonCondaEnvInfo extends jspb.Message {
+  getCondaPackUrl(): string;
+  setCondaPackUrl(value: string): TritonCondaEnvInfo;
+
+  getCondaYamlUrl(): string;
+  setCondaYamlUrl(value: string): TritonCondaEnvInfo;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TritonCondaEnvInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: TritonCondaEnvInfo): TritonCondaEnvInfo.AsObject;
+  static serializeBinaryToWriter(message: TritonCondaEnvInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TritonCondaEnvInfo;
+  static deserializeBinaryFromReader(message: TritonCondaEnvInfo, reader: jspb.BinaryReader): TritonCondaEnvInfo;
+}
+
+export namespace TritonCondaEnvInfo {
+  export type AsObject = {
+    condaPackUrl: string,
+    condaYamlUrl: string,
+  }
+}
+
 export class LayerShape extends jspb.Message {
   getDimsList(): Array<number>;
   setDimsList(value: Array<number>): LayerShape;
@@ -3080,11 +3106,6 @@ export class ModelVersion extends jspb.Message {
   getLicense(): string;
   setLicense(value: string): ModelVersion;
 
-  getDatasetVersion(): DatasetVersion | undefined;
-  setDatasetVersion(value?: DatasetVersion): ModelVersion;
-  hasDatasetVersion(): boolean;
-  clearDatasetVersion(): ModelVersion;
-
   getOutputInfo(): OutputInfo | undefined;
   setOutputInfo(value?: OutputInfo): ModelVersion;
   hasOutputInfo(): boolean;
@@ -3133,7 +3154,6 @@ export namespace ModelVersion {
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
     license: string,
-    datasetVersion?: DatasetVersion.AsObject,
     outputInfo?: OutputInfo.AsObject,
     inputInfo?: InputInfo.AsObject,
     trainInfo?: TrainInfo.AsObject,
@@ -4867,6 +4887,11 @@ export class WorkflowNode extends jspb.Message {
   getSuppressOutput(): boolean;
   setSuppressOutput(value: boolean): WorkflowNode;
 
+  getOutputInfoOverride(): OutputInfo | undefined;
+  setOutputInfoOverride(value?: OutputInfo): WorkflowNode;
+  hasOutputInfoOverride(): boolean;
+  clearOutputInfoOverride(): WorkflowNode;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WorkflowNode.AsObject;
   static toObject(includeInstance: boolean, msg: WorkflowNode): WorkflowNode.AsObject;
@@ -4881,6 +4906,7 @@ export namespace WorkflowNode {
     model?: Model.AsObject,
     nodeInputsList: Array<NodeInput.AsObject>,
     suppressOutput: boolean,
+    outputInfoOverride?: OutputInfo.AsObject,
   }
 }
 
@@ -6414,6 +6440,11 @@ export class Operation extends jspb.Message {
   hasDeleteGeo(): boolean;
   clearDeleteGeo(): Operation;
 
+  getDeleteFromDataset(): DeleteFromDataset | undefined;
+  setDeleteFromDataset(value?: DeleteFromDataset): Operation;
+  hasDeleteFromDataset(): boolean;
+  clearDeleteFromDataset(): Operation;
+
   getOperationCase(): Operation.OperationCase;
 
   serializeBinary(): Uint8Array;
@@ -6432,6 +6463,7 @@ export namespace Operation {
     deleteMetadata?: DeleteMetadata.AsObject,
     overwriteGeo?: OverwriteGeo.AsObject,
     deleteGeo?: DeleteGeo.AsObject,
+    deleteFromDataset?: DeleteFromDataset.AsObject,
   }
 
   export enum OperationCase { 
@@ -6442,6 +6474,7 @@ export namespace Operation {
     DELETE_METADATA = 4,
     OVERWRITE_GEO = 5,
     DELETE_GEO = 6,
+    DELETE_FROM_DATASET = 7,
   }
 }
 
@@ -6565,30 +6598,27 @@ export namespace DeleteGeo {
   }
 }
 
-export class WaitlistEmail extends jspb.Message {
-  getEmail(): string;
-  setEmail(value: string): WaitlistEmail;
+export class DeleteFromDataset extends jspb.Message {
+  getDatasetId(): string;
+  setDatasetId(value: string): DeleteFromDataset;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): WaitlistEmail.AsObject;
-  static toObject(includeInstance: boolean, msg: WaitlistEmail): WaitlistEmail.AsObject;
-  static serializeBinaryToWriter(message: WaitlistEmail, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): WaitlistEmail;
-  static deserializeBinaryFromReader(message: WaitlistEmail, reader: jspb.BinaryReader): WaitlistEmail;
+  toObject(includeInstance?: boolean): DeleteFromDataset.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteFromDataset): DeleteFromDataset.AsObject;
+  static serializeBinaryToWriter(message: DeleteFromDataset, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteFromDataset;
+  static deserializeBinaryFromReader(message: DeleteFromDataset, reader: jspb.BinaryReader): DeleteFromDataset;
 }
 
-export namespace WaitlistEmail {
+export namespace DeleteFromDataset {
   export type AsObject = {
-    email: string,
+    datasetId: string,
   }
 }
 
 export class InputsAddJob extends jspb.Message {
   getId(): string;
   setId(value: string): InputsAddJob;
-
-  getCloudStorageUrl(): string;
-  setCloudStorageUrl(value: string): InputsAddJob;
 
   getCallBackUrl(): string;
   setCallBackUrl(value: string): InputsAddJob;
@@ -6632,7 +6662,6 @@ export class InputsAddJob extends jspb.Message {
 export namespace InputsAddJob {
   export type AsObject = {
     id: string,
-    cloudStorageUrl: string,
     callBackUrl: string,
     appPat: string,
     progress?: InputsAddJobProgress.AsObject,
@@ -6920,8 +6949,10 @@ export class DataSourceCredentials extends jspb.Message {
   getGcpCreds_asB64(): string;
   setGcpCreds(value: Uint8Array | string): DataSourceCredentials;
 
-  getAzureBlobCreds(): string;
-  setAzureBlobCreds(value: string): DataSourceCredentials;
+  getAzureBlobCreds(): AzureBlobCreds | undefined;
+  setAzureBlobCreds(value?: AzureBlobCreds): DataSourceCredentials;
+  hasAzureBlobCreds(): boolean;
+  clearAzureBlobCreds(): DataSourceCredentials;
 
   getCredentialsCase(): DataSourceCredentials.CredentialsCase;
 
@@ -6937,23 +6968,29 @@ export namespace DataSourceCredentials {
   export type AsObject = {
     s3Creds?: AWSCreds.AsObject,
     gcpCreds: Uint8Array | string,
-    azureBlobCreds: string,
+    azureBlobCreds?: AzureBlobCreds.AsObject,
   }
 
   export enum CredentialsCase { 
     CREDENTIALS_NOT_SET = 0,
     S3_CREDS = 1,
     GCP_CREDS = 2,
-    AZURE_BLOB_CREDS = 3,
+    AZURE_BLOB_CREDS = 4,
   }
 }
 
 export class AWSCreds extends jspb.Message {
-  getCreds(): string;
-  setCreds(value: string): AWSCreds;
-
   getRegion(): string;
   setRegion(value: string): AWSCreds;
+
+  getId(): string;
+  setId(value: string): AWSCreds;
+
+  getSecret(): string;
+  setSecret(value: string): AWSCreds;
+
+  getToken(): string;
+  setToken(value: string): AWSCreds;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AWSCreds.AsObject;
@@ -6965,8 +7002,32 @@ export class AWSCreds extends jspb.Message {
 
 export namespace AWSCreds {
   export type AsObject = {
-    creds: string,
     region: string,
+    id: string,
+    secret: string,
+    token: string,
+  }
+}
+
+export class AzureBlobCreds extends jspb.Message {
+  getAccountName(): string;
+  setAccountName(value: string): AzureBlobCreds;
+
+  getAccountKey(): string;
+  setAccountKey(value: string): AzureBlobCreds;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AzureBlobCreds.AsObject;
+  static toObject(includeInstance: boolean, msg: AzureBlobCreds): AzureBlobCreds.AsObject;
+  static serializeBinaryToWriter(message: AzureBlobCreds, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AzureBlobCreds;
+  static deserializeBinaryFromReader(message: AzureBlobCreds, reader: jspb.BinaryReader): AzureBlobCreds;
+}
+
+export namespace AzureBlobCreds {
+  export type AsObject = {
+    accountName: string,
+    accountKey: string,
   }
 }
 
