@@ -104,6 +104,11 @@ export class App extends jspb.Message {
   getDefaultWorkflowId(): string;
   setDefaultWorkflowId(value: string): App;
 
+  getDefaultWorkflow(): Workflow | undefined;
+  setDefaultWorkflow(value?: Workflow): App;
+  hasDefaultWorkflow(): boolean;
+  clearDefaultWorkflow(): App;
+
   getUserId(): string;
   setUserId(value: string): App;
 
@@ -167,6 +172,7 @@ export namespace App {
     name: string,
     defaultLanguage: string,
     defaultWorkflowId: string,
+    defaultWorkflow?: Workflow.AsObject,
     userId: string,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -3974,6 +3980,24 @@ export namespace Hit {
   }
 }
 
+export class HitCount extends jspb.Message {
+  getEstimatedTotal(): number;
+  setEstimatedTotal(value: number): HitCount;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): HitCount.AsObject;
+  static toObject(includeInstance: boolean, msg: HitCount): HitCount.AsObject;
+  static serializeBinaryToWriter(message: HitCount, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HitCount;
+  static deserializeBinaryFromReader(message: HitCount, reader: jspb.BinaryReader): HitCount;
+}
+
+export namespace HitCount {
+  export type AsObject = {
+    estimatedTotal: number,
+  }
+}
+
 export class And extends jspb.Message {
   getInput(): Input | undefined;
   setInput(value?: Input): And;
@@ -6616,6 +6640,24 @@ export namespace DeleteFromDataset {
   }
 }
 
+export class WaitlistEmail extends jspb.Message {
+  getEmail(): string;
+  setEmail(value: string): WaitlistEmail;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WaitlistEmail.AsObject;
+  static toObject(includeInstance: boolean, msg: WaitlistEmail): WaitlistEmail.AsObject;
+  static serializeBinaryToWriter(message: WaitlistEmail, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WaitlistEmail;
+  static deserializeBinaryFromReader(message: WaitlistEmail, reader: jspb.BinaryReader): WaitlistEmail;
+}
+
+export namespace WaitlistEmail {
+  export type AsObject = {
+    email: string,
+  }
+}
+
 export class InputsAddJob extends jspb.Message {
   getId(): string;
   setId(value: string): InputsAddJob;
@@ -6872,6 +6914,18 @@ export class InputsExtractionJobProgress extends jspb.Message {
   getTextInputsCount(): number;
   setTextInputsCount(value: number): InputsExtractionJobProgress;
 
+  getPendingArchivesCount(): number;
+  setPendingArchivesCount(value: number): InputsExtractionJobProgress;
+
+  getInProgressArchivesCount(): number;
+  setInProgressArchivesCount(value: number): InputsExtractionJobProgress;
+
+  getCompletedArchivesCount(): number;
+  setCompletedArchivesCount(value: number): InputsExtractionJobProgress;
+
+  getFailedArchivesCount(): number;
+  setFailedArchivesCount(value: number): InputsExtractionJobProgress;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InputsExtractionJobProgress.AsObject;
   static toObject(includeInstance: boolean, msg: InputsExtractionJobProgress): InputsExtractionJobProgress.AsObject;
@@ -6887,6 +6941,10 @@ export namespace InputsExtractionJobProgress {
     imageInputsCount: number,
     videoInputsCount: number,
     textInputsCount: number,
+    pendingArchivesCount: number,
+    inProgressArchivesCount: number,
+    completedArchivesCount: number,
+    failedArchivesCount: number,
   }
 }
 
