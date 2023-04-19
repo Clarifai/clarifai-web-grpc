@@ -11505,6 +11505,128 @@ proto.clarifai.api.V2PromiseClient.prototype.getDatasetInputsSearchAddJob =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListNextTaskAssignmentsRequest,
+ *   !proto.clarifai.api.MultiInputResponse>}
+ */
+const methodDescriptor_V2_ListNextTaskAssignments = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListNextTaskAssignments',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListNextTaskAssignmentsRequest,
+  proto.clarifai.api.MultiInputResponse,
+  /**
+   * @param {!proto.clarifai.api.ListNextTaskAssignmentsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiInputResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListNextTaskAssignmentsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiInputResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiInputResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listNextTaskAssignments =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListNextTaskAssignments',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListNextTaskAssignments,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListNextTaskAssignmentsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiInputResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listNextTaskAssignments =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListNextTaskAssignments',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListNextTaskAssignments);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PutTaskAssignmentsRequest,
+ *   !proto.clarifai.api.status.BaseResponse>}
+ */
+const methodDescriptor_V2_PutTaskAssignments = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PutTaskAssignments',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PutTaskAssignmentsRequest,
+  proto_clarifai_api_status_status_pb.BaseResponse,
+  /**
+   * @param {!proto.clarifai.api.PutTaskAssignmentsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto_clarifai_api_status_status_pb.BaseResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PutTaskAssignmentsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.status.BaseResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.status.BaseResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.putTaskAssignments =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PutTaskAssignments',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PutTaskAssignments,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PutTaskAssignmentsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.status.BaseResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.putTaskAssignments =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PutTaskAssignments',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PutTaskAssignments);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.ListInputsAddJobsRequest,
  *   !proto.clarifai.api.MultiInputsAddJobResponse>}
  */

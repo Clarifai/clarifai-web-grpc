@@ -5355,6 +5355,9 @@ export class PostInputsSearchesRequest extends jspb.Message {
   hasPagination(): boolean;
   clearPagination(): PostInputsSearchesRequest;
 
+  getOnlyCount(): boolean;
+  setOnlyCount(value: boolean): PostInputsSearchesRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostInputsSearchesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: PostInputsSearchesRequest): PostInputsSearchesRequest.AsObject;
@@ -5368,6 +5371,7 @@ export namespace PostInputsSearchesRequest {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
     searchesList: Array<proto_clarifai_api_resources_pb.Search.AsObject>,
     pagination?: Pagination.AsObject,
+    onlyCount: boolean,
   }
 }
 
@@ -5421,6 +5425,11 @@ export class MultiSearchResponse extends jspb.Message {
   clearSearchesList(): MultiSearchResponse;
   addSearches(value?: proto_clarifai_api_resources_pb.Search, index?: number): proto_clarifai_api_resources_pb.Search;
 
+  getHitCountsList(): Array<proto_clarifai_api_resources_pb.HitCount>;
+  setHitCountsList(value: Array<proto_clarifai_api_resources_pb.HitCount>): MultiSearchResponse;
+  clearHitCountsList(): MultiSearchResponse;
+  addHitCounts(value?: proto_clarifai_api_resources_pb.HitCount, index?: number): proto_clarifai_api_resources_pb.HitCount;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MultiSearchResponse.AsObject;
   static toObject(includeInstance: boolean, msg: MultiSearchResponse): MultiSearchResponse.AsObject;
@@ -5436,6 +5445,7 @@ export namespace MultiSearchResponse {
     hitsList: Array<proto_clarifai_api_resources_pb.Hit.AsObject>,
     query?: proto_clarifai_api_resources_pb.Query.AsObject,
     searchesList: Array<proto_clarifai_api_resources_pb.Search.AsObject>,
+    hitCountsList: Array<proto_clarifai_api_resources_pb.HitCount.AsObject>,
   }
 }
 
@@ -7953,6 +7963,30 @@ export namespace MultiInstalledModuleVersionResponse {
   }
 }
 
+export class ListNextTaskAssignmentsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListNextTaskAssignmentsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): ListNextTaskAssignmentsRequest;
+
+  getTaskId(): string;
+  setTaskId(value: string): ListNextTaskAssignmentsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListNextTaskAssignmentsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListNextTaskAssignmentsRequest): ListNextTaskAssignmentsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListNextTaskAssignmentsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListNextTaskAssignmentsRequest;
+  static deserializeBinaryFromReader(message: ListNextTaskAssignmentsRequest, reader: jspb.BinaryReader): ListNextTaskAssignmentsRequest;
+}
+
+export namespace ListNextTaskAssignmentsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    taskId: string,
+  }
+}
+
 export class PostBulkOperationsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
   setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostBulkOperationsRequest;
@@ -8132,6 +8166,34 @@ export namespace MultiBulkOperationsResponse {
   export type AsObject = {
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     bulkOperationList: Array<proto_clarifai_api_resources_pb.BulkOperation.AsObject>,
+  }
+}
+
+export class PutTaskAssignmentsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PutTaskAssignmentsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PutTaskAssignmentsRequest;
+
+  getTaskId(): string;
+  setTaskId(value: string): PutTaskAssignmentsRequest;
+
+  getInputId(): string;
+  setInputId(value: string): PutTaskAssignmentsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PutTaskAssignmentsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PutTaskAssignmentsRequest): PutTaskAssignmentsRequest.AsObject;
+  static serializeBinaryToWriter(message: PutTaskAssignmentsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PutTaskAssignmentsRequest;
+  static deserializeBinaryFromReader(message: PutTaskAssignmentsRequest, reader: jspb.BinaryReader): PutTaskAssignmentsRequest;
+}
+
+export namespace PutTaskAssignmentsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    taskId: string,
+    inputId: string,
   }
 }
 

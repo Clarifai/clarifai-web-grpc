@@ -1318,6 +1318,20 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.SingleDatasetInputsSearchAddJobResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleDatasetInputsSearchAddJobResponse>;
 
+  listNextTaskAssignments(
+    request: proto_clarifai_api_service_pb.ListNextTaskAssignmentsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiInputResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiInputResponse>;
+
+  putTaskAssignments(
+    request: proto_clarifai_api_service_pb.PutTaskAssignmentsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
   listInputsAddJobs(
     request: proto_clarifai_api_service_pb.ListInputsAddJobsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -2343,6 +2357,16 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.GetDatasetInputsSearchAddJobRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.SingleDatasetInputsSearchAddJobResponse>;
+
+  listNextTaskAssignments(
+    request: proto_clarifai_api_service_pb.ListNextTaskAssignmentsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiInputResponse>;
+
+  putTaskAssignments(
+    request: proto_clarifai_api_service_pb.PutTaskAssignmentsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
 
   listInputsAddJobs(
     request: proto_clarifai_api_service_pb.ListInputsAddJobsRequest,
