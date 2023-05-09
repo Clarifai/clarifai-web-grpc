@@ -3901,6 +3901,26 @@ export class ListModelVersionsRequest extends jspb.Message {
   clearConceptIdsList(): ListModelVersionsRequest;
   addConceptIds(value: string, index?: number): ListModelVersionsRequest;
 
+  getTrainedOnly(): boolean;
+  setTrainedOnly(value: boolean): ListModelVersionsRequest;
+
+  getSortAscending(): boolean;
+  setSortAscending(value: boolean): ListModelVersionsRequest;
+
+  getSortByStatusCode(): boolean;
+  setSortByStatusCode(value: boolean): ListModelVersionsRequest;
+
+  getSortByNumInputs(): boolean;
+  setSortByNumInputs(value: boolean): ListModelVersionsRequest;
+
+  getSortByDescription(): boolean;
+  setSortByDescription(value: boolean): ListModelVersionsRequest;
+
+  getSortByCreatedAt(): boolean;
+  setSortByCreatedAt(value: boolean): ListModelVersionsRequest;
+
+  getSortByCase(): ListModelVersionsRequest.SortByCase;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListModelVersionsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListModelVersionsRequest): ListModelVersionsRequest.AsObject;
@@ -3916,6 +3936,20 @@ export namespace ListModelVersionsRequest {
     page: number,
     perPage: number,
     conceptIdsList: Array<string>,
+    trainedOnly: boolean,
+    sortAscending: boolean,
+    sortByStatusCode: boolean,
+    sortByNumInputs: boolean,
+    sortByDescription: boolean,
+    sortByCreatedAt: boolean,
+  }
+
+  export enum SortByCase { 
+    SORT_BY_NOT_SET = 0,
+    SORT_BY_STATUS_CODE = 8,
+    SORT_BY_NUM_INPUTS = 9,
+    SORT_BY_DESCRIPTION = 10,
+    SORT_BY_CREATED_AT = 11,
   }
 }
 
@@ -5748,6 +5782,58 @@ export namespace SingleAnnotationFilterResponse {
   export type AsObject = {
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     annotationFilter?: proto_clarifai_api_resources_pb.AnnotationFilter.AsObject,
+  }
+}
+
+export class GetUserRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetUserRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): GetUserRequest;
+
+  getAdditionalFieldsList(): Array<string>;
+  setAdditionalFieldsList(value: Array<string>): GetUserRequest;
+  clearAdditionalFieldsList(): GetUserRequest;
+  addAdditionalFields(value: string, index?: number): GetUserRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetUserRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetUserRequest): GetUserRequest.AsObject;
+  static serializeBinaryToWriter(message: GetUserRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetUserRequest;
+  static deserializeBinaryFromReader(message: GetUserRequest, reader: jspb.BinaryReader): GetUserRequest;
+}
+
+export namespace GetUserRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    additionalFieldsList: Array<string>,
+  }
+}
+
+export class SingleUserResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleUserResponse;
+  hasStatus(): boolean;
+  clearStatus(): SingleUserResponse;
+
+  getUser(): proto_clarifai_api_resources_pb.User | undefined;
+  setUser(value?: proto_clarifai_api_resources_pb.User): SingleUserResponse;
+  hasUser(): boolean;
+  clearUser(): SingleUserResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SingleUserResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SingleUserResponse): SingleUserResponse.AsObject;
+  static serializeBinaryToWriter(message: SingleUserResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SingleUserResponse;
+  static deserializeBinaryFromReader(message: SingleUserResponse, reader: jspb.BinaryReader): SingleUserResponse;
+}
+
+export namespace SingleUserResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    user?: proto_clarifai_api_resources_pb.User.AsObject,
   }
 }
 

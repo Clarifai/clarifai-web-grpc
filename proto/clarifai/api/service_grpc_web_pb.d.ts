@@ -849,6 +849,13 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiAppResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiAppResponse>;
 
+  getUser(
+    request: proto_clarifai_api_service_pb.GetUserRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleUserResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleUserResponse>;
+
   postValidatePassword(
     request: proto_clarifai_api_service_pb.PostValidatePasswordRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -2022,6 +2029,11 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.PostAppsSearchesRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiAppResponse>;
+
+  getUser(
+    request: proto_clarifai_api_service_pb.GetUserRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleUserResponse>;
 
   postValidatePassword(
     request: proto_clarifai_api_service_pb.PostValidatePasswordRequest,
