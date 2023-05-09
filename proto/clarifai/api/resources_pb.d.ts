@@ -6469,6 +6469,11 @@ export class Operation extends jspb.Message {
   hasDeleteFromDataset(): boolean;
   clearDeleteFromDataset(): Operation;
 
+  getAddToDataset(): AddToDataset | undefined;
+  setAddToDataset(value?: AddToDataset): Operation;
+  hasAddToDataset(): boolean;
+  clearAddToDataset(): Operation;
+
   getOperationCase(): Operation.OperationCase;
 
   serializeBinary(): Uint8Array;
@@ -6488,6 +6493,7 @@ export namespace Operation {
     overwriteGeo?: OverwriteGeo.AsObject,
     deleteGeo?: DeleteGeo.AsObject,
     deleteFromDataset?: DeleteFromDataset.AsObject,
+    addToDataset?: AddToDataset.AsObject,
   }
 
   export enum OperationCase { 
@@ -6499,6 +6505,7 @@ export namespace Operation {
     OVERWRITE_GEO = 5,
     DELETE_GEO = 6,
     DELETE_FROM_DATASET = 7,
+    ADD_TO_DATASET = 8,
   }
 }
 
@@ -6622,6 +6629,24 @@ export namespace DeleteGeo {
   }
 }
 
+export class AddToDataset extends jspb.Message {
+  getDatasetId(): string;
+  setDatasetId(value: string): AddToDataset;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AddToDataset.AsObject;
+  static toObject(includeInstance: boolean, msg: AddToDataset): AddToDataset.AsObject;
+  static serializeBinaryToWriter(message: AddToDataset, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AddToDataset;
+  static deserializeBinaryFromReader(message: AddToDataset, reader: jspb.BinaryReader): AddToDataset;
+}
+
+export namespace AddToDataset {
+  export type AsObject = {
+    datasetId: string,
+  }
+}
+
 export class DeleteFromDataset extends jspb.Message {
   getDatasetId(): string;
   setDatasetId(value: string): DeleteFromDataset;
@@ -6637,24 +6662,6 @@ export class DeleteFromDataset extends jspb.Message {
 export namespace DeleteFromDataset {
   export type AsObject = {
     datasetId: string,
-  }
-}
-
-export class WaitlistEmail extends jspb.Message {
-  getEmail(): string;
-  setEmail(value: string): WaitlistEmail;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): WaitlistEmail.AsObject;
-  static toObject(includeInstance: boolean, msg: WaitlistEmail): WaitlistEmail.AsObject;
-  static serializeBinaryToWriter(message: WaitlistEmail, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): WaitlistEmail;
-  static deserializeBinaryFromReader(message: WaitlistEmail, reader: jspb.BinaryReader): WaitlistEmail;
-}
-
-export namespace WaitlistEmail {
-  export type AsObject = {
-    email: string,
   }
 }
 
