@@ -1714,6 +1714,30 @@ export namespace GetInputRequest {
   }
 }
 
+export class GetVideoManifestRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetVideoManifestRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): GetVideoManifestRequest;
+
+  getInputId(): string;
+  setInputId(value: string): GetVideoManifestRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetVideoManifestRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetVideoManifestRequest): GetVideoManifestRequest.AsObject;
+  static serializeBinaryToWriter(message: GetVideoManifestRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetVideoManifestRequest;
+  static deserializeBinaryFromReader(message: GetVideoManifestRequest, reader: jspb.BinaryReader): GetVideoManifestRequest;
+}
+
+export namespace GetVideoManifestRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    inputId: string,
+  }
+}
+
 export class GetInputSamplesRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
   setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetInputSamplesRequest;
@@ -1956,6 +1980,30 @@ export namespace SingleInputResponse {
   }
 }
 
+export class GetVideoManifestResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): GetVideoManifestResponse;
+  hasStatus(): boolean;
+  clearStatus(): GetVideoManifestResponse;
+
+  getManifestUrl(): string;
+  setManifestUrl(value: string): GetVideoManifestResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetVideoManifestResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetVideoManifestResponse): GetVideoManifestResponse.AsObject;
+  static serializeBinaryToWriter(message: GetVideoManifestResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetVideoManifestResponse;
+  static deserializeBinaryFromReader(message: GetVideoManifestResponse, reader: jspb.BinaryReader): GetVideoManifestResponse;
+}
+
+export namespace GetVideoManifestResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    manifestUrl: string,
+  }
+}
+
 export class MultiInputResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
   setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiInputResponse;
@@ -2072,6 +2120,14 @@ export class ListDatasetsRequest extends jspb.Message {
   getPerPage(): number;
   setPerPage(value: number): ListDatasetsRequest;
 
+  getStarredOnly(): boolean;
+  setStarredOnly(value: boolean): ListDatasetsRequest;
+
+  getAdditionalFieldsList(): Array<string>;
+  setAdditionalFieldsList(value: Array<string>): ListDatasetsRequest;
+  clearAdditionalFieldsList(): ListDatasetsRequest;
+  addAdditionalFields(value: string, index?: number): ListDatasetsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListDatasetsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListDatasetsRequest): ListDatasetsRequest.AsObject;
@@ -2085,6 +2141,8 @@ export namespace ListDatasetsRequest {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
     page: number,
     perPage: number,
+    starredOnly: boolean,
+    additionalFieldsList: Array<string>,
   }
 }
 
@@ -2096,6 +2154,11 @@ export class GetDatasetRequest extends jspb.Message {
 
   getDatasetId(): string;
   setDatasetId(value: string): GetDatasetRequest;
+
+  getAdditionalFieldsList(): Array<string>;
+  setAdditionalFieldsList(value: Array<string>): GetDatasetRequest;
+  clearAdditionalFieldsList(): GetDatasetRequest;
+  addAdditionalFields(value: string, index?: number): GetDatasetRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetDatasetRequest.AsObject;
@@ -2109,6 +2172,7 @@ export namespace GetDatasetRequest {
   export type AsObject = {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
     datasetId: string,
+    additionalFieldsList: Array<string>,
   }
 }
 
@@ -7520,6 +7584,11 @@ export class GetModuleRequest extends jspb.Message {
   getModuleId(): string;
   setModuleId(value: string): GetModuleRequest;
 
+  getAdditionalFieldsList(): Array<string>;
+  setAdditionalFieldsList(value: Array<string>): GetModuleRequest;
+  clearAdditionalFieldsList(): GetModuleRequest;
+  addAdditionalFields(value: string, index?: number): GetModuleRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetModuleRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetModuleRequest): GetModuleRequest.AsObject;
@@ -7532,6 +7601,7 @@ export namespace GetModuleRequest {
   export type AsObject = {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
     moduleId: string,
+    additionalFieldsList: Array<string>,
   }
 }
 
@@ -7547,6 +7617,14 @@ export class ListModulesRequest extends jspb.Message {
   getPerPage(): number;
   setPerPage(value: number): ListModulesRequest;
 
+  getStarredOnly(): boolean;
+  setStarredOnly(value: boolean): ListModulesRequest;
+
+  getAdditionalFieldsList(): Array<string>;
+  setAdditionalFieldsList(value: Array<string>): ListModulesRequest;
+  clearAdditionalFieldsList(): ListModulesRequest;
+  addAdditionalFields(value: string, index?: number): ListModulesRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListModulesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListModulesRequest): ListModulesRequest.AsObject;
@@ -7560,6 +7638,8 @@ export namespace ListModulesRequest {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
     page: number,
     perPage: number,
+    starredOnly: boolean,
+    additionalFieldsList: Array<string>,
   }
 }
 
