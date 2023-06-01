@@ -219,6 +219,13 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.SingleInputResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleInputResponse>;
 
+  getInputVideoManifest(
+    request: proto_clarifai_api_service_pb.GetVideoManifestRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.GetVideoManifestResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.GetVideoManifestResponse>;
+
   listInputs(
     request: proto_clarifai_api_service_pb.ListInputsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -1579,6 +1586,11 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.GetInputRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.SingleInputResponse>;
+
+  getInputVideoManifest(
+    request: proto_clarifai_api_service_pb.GetVideoManifestRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.GetVideoManifestResponse>;
 
   listInputs(
     request: proto_clarifai_api_service_pb.ListInputsRequest,

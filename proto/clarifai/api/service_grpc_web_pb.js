@@ -1928,6 +1928,67 @@ proto.clarifai.api.V2PromiseClient.prototype.getInput =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.GetVideoManifestRequest,
+ *   !proto.clarifai.api.GetVideoManifestResponse>}
+ */
+const methodDescriptor_V2_GetInputVideoManifest = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/GetInputVideoManifest',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.GetVideoManifestRequest,
+  proto.clarifai.api.GetVideoManifestResponse,
+  /**
+   * @param {!proto.clarifai.api.GetVideoManifestRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.GetVideoManifestResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.GetVideoManifestRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.GetVideoManifestResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.GetVideoManifestResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.getInputVideoManifest =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/GetInputVideoManifest',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetInputVideoManifest,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.GetVideoManifestRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.GetVideoManifestResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.getInputVideoManifest =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/GetInputVideoManifest',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetInputVideoManifest);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.ListInputsRequest,
  *   !proto.clarifai.api.MultiInputResponse>}
  */

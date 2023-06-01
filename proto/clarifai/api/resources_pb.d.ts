@@ -1,6 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as proto_clarifai_api_status_status_pb from '../../../proto/clarifai/api/status/status_pb';
+import * as proto_clarifai_api_status_status_code_pb from '../../../proto/clarifai/api/status/status_code_pb';
 import * as proto_clarifai_api_utils_extensions_pb from '../../../proto/clarifai/api/utils/extensions_pb';
 import * as proto_clarifai_api_utils_matrix_pb from '../../../proto/clarifai/api/utils/matrix_pb';
 import * as proto_clarifai_auth_util_extension_pb from '../../../proto/clarifai/auth/util/extension_pb';
@@ -1708,6 +1709,12 @@ export class Dataset extends jspb.Message {
   hasVersion(): boolean;
   clearVersion(): Dataset;
 
+  getIsStarred(): boolean;
+  setIsStarred(value: boolean): Dataset;
+
+  getStarCount(): number;
+  setStarCount(value: number): Dataset;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Dataset.AsObject;
   static toObject(includeInstance: boolean, msg: Dataset): Dataset.AsObject;
@@ -1729,6 +1736,8 @@ export namespace Dataset {
     defaultAnnotationFilter?: AnnotationFilter.AsObject,
     notes: string,
     version?: DatasetVersion.AsObject,
+    isStarred: boolean,
+    starCount: number,
   }
 }
 
@@ -3577,12 +3586,6 @@ export namespace TrackerMetrics {
 }
 
 export class EvalTestSetEntry extends jspb.Message {
-  getId(): string;
-  setId(value: string): EvalTestSetEntry;
-
-  getUrl(): string;
-  setUrl(value: string): EvalTestSetEntry;
-
   getInput(): Input | undefined;
   setInput(value?: Input): EvalTestSetEntry;
   hasInput(): boolean;
@@ -3613,8 +3616,6 @@ export class EvalTestSetEntry extends jspb.Message {
 
 export namespace EvalTestSetEntry {
   export type AsObject = {
-    id: string,
-    url: string,
     input?: Input.AsObject,
     predictedConceptsList: Array<Concept.AsObject>,
     groundTruthConceptsList: Array<Concept.AsObject>,
@@ -5279,6 +5280,14 @@ export class Task extends jspb.Message {
   getLabelOrderId(): string;
   setLabelOrderId(value: string): Task;
 
+  getConceptsList(): Array<TaskConcept>;
+  setConceptsList(value: Array<TaskConcept>): Task;
+  clearConceptsList(): Task;
+  addConcepts(value?: TaskConcept, index?: number): TaskConcept;
+
+  getDeletePreviousAnnotations(): boolean;
+  setDeletePreviousAnnotations(value: boolean): Task;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Task.AsObject;
   static toObject(includeInstance: boolean, msg: Task): Task.AsObject;
@@ -5307,6 +5316,8 @@ export namespace Task {
     appId: string,
     userId: string,
     labelOrderId: string,
+    conceptsList: Array<TaskConcept.AsObject>,
+    deletePreviousAnnotations: boolean,
   }
 
   export enum TaskType { 
@@ -5359,6 +5370,16 @@ export class TaskWorker extends jspb.Message {
   clearUsersList(): TaskWorker;
   addUsers(value?: User, index?: number): User;
 
+  getModelsList(): Array<Model>;
+  setModelsList(value: Array<Model>): TaskWorker;
+  clearModelsList(): TaskWorker;
+  addModels(value?: Model, index?: number): Model;
+
+  getWorkflowsList(): Array<Workflow>;
+  setWorkflowsList(value: Array<Workflow>): TaskWorker;
+  clearWorkflowsList(): TaskWorker;
+  addWorkflows(value?: Workflow, index?: number): Workflow;
+
   getPartitionedStrategyInfo(): TaskWorkerPartitionedStrategyInfo | undefined;
   setPartitionedStrategyInfo(value?: TaskWorkerPartitionedStrategyInfo): TaskWorker;
   hasPartitionedStrategyInfo(): boolean;
@@ -5379,6 +5400,8 @@ export namespace TaskWorker {
     strategy: TaskWorker.TaskWorkerStrategy,
     userIdsList: Array<string>,
     usersList: Array<User.AsObject>,
+    modelsList: Array<Model.AsObject>,
+    workflowsList: Array<Workflow.AsObject>,
     partitionedStrategyInfo?: TaskWorkerPartitionedStrategyInfo.AsObject,
   }
 
@@ -5603,6 +5626,90 @@ export namespace TaskStatusCountPerUser {
     success: number,
     reviewDenied: number,
     awaitingConsensusReview: number,
+  }
+}
+
+export class ThresholdRange extends jspb.Message {
+  getIsLowerInclusive(): boolean;
+  setIsLowerInclusive(value: boolean): ThresholdRange;
+
+  getIsUpperInclusive(): boolean;
+  setIsUpperInclusive(value: boolean): ThresholdRange;
+
+  getLower(): number;
+  setLower(value: number): ThresholdRange;
+
+  getUpper(): number;
+  setUpper(value: number): ThresholdRange;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ThresholdRange.AsObject;
+  static toObject(includeInstance: boolean, msg: ThresholdRange): ThresholdRange.AsObject;
+  static serializeBinaryToWriter(message: ThresholdRange, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ThresholdRange;
+  static deserializeBinaryFromReader(message: ThresholdRange, reader: jspb.BinaryReader): ThresholdRange;
+}
+
+export namespace ThresholdRange {
+  export type AsObject = {
+    isLowerInclusive: boolean,
+    isUpperInclusive: boolean,
+    lower: number,
+    upper: number,
+  }
+}
+
+export class TaskConceptAutoAnnotationConfig extends jspb.Message {
+  getAnnotationDataTypes(): number;
+  setAnnotationDataTypes(value: number): TaskConceptAutoAnnotationConfig;
+
+  getThresholdRange(): ThresholdRange | undefined;
+  setThresholdRange(value?: ThresholdRange): TaskConceptAutoAnnotationConfig;
+  hasThresholdRange(): boolean;
+  clearThresholdRange(): TaskConceptAutoAnnotationConfig;
+
+  getStatusCode(): proto_clarifai_api_status_status_code_pb.StatusCode;
+  setStatusCode(value: proto_clarifai_api_status_status_code_pb.StatusCode): TaskConceptAutoAnnotationConfig;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TaskConceptAutoAnnotationConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: TaskConceptAutoAnnotationConfig): TaskConceptAutoAnnotationConfig.AsObject;
+  static serializeBinaryToWriter(message: TaskConceptAutoAnnotationConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TaskConceptAutoAnnotationConfig;
+  static deserializeBinaryFromReader(message: TaskConceptAutoAnnotationConfig, reader: jspb.BinaryReader): TaskConceptAutoAnnotationConfig;
+}
+
+export namespace TaskConceptAutoAnnotationConfig {
+  export type AsObject = {
+    annotationDataTypes: number,
+    thresholdRange?: ThresholdRange.AsObject,
+    statusCode: proto_clarifai_api_status_status_code_pb.StatusCode,
+  }
+}
+
+export class TaskConcept extends jspb.Message {
+  getConcept(): Concept | undefined;
+  setConcept(value?: Concept): TaskConcept;
+  hasConcept(): boolean;
+  clearConcept(): TaskConcept;
+
+  getAutoAnnotationConfig(): TaskConceptAutoAnnotationConfig | undefined;
+  setAutoAnnotationConfig(value?: TaskConceptAutoAnnotationConfig): TaskConcept;
+  hasAutoAnnotationConfig(): boolean;
+  clearAutoAnnotationConfig(): TaskConcept;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TaskConcept.AsObject;
+  static toObject(includeInstance: boolean, msg: TaskConcept): TaskConcept.AsObject;
+  static serializeBinaryToWriter(message: TaskConcept, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TaskConcept;
+  static deserializeBinaryFromReader(message: TaskConcept, reader: jspb.BinaryReader): TaskConcept;
+}
+
+export namespace TaskConcept {
+  export type AsObject = {
+    concept?: Concept.AsObject,
+    autoAnnotationConfig?: TaskConceptAutoAnnotationConfig.AsObject,
   }
 }
 
@@ -6069,6 +6176,42 @@ export namespace TimeInfo {
   }
 }
 
+export class DatasetStar extends jspb.Message {
+  getDatasetId(): string;
+  setDatasetId(value: string): DatasetStar;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DatasetStar.AsObject;
+  static toObject(includeInstance: boolean, msg: DatasetStar): DatasetStar.AsObject;
+  static serializeBinaryToWriter(message: DatasetStar, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DatasetStar;
+  static deserializeBinaryFromReader(message: DatasetStar, reader: jspb.BinaryReader): DatasetStar;
+}
+
+export namespace DatasetStar {
+  export type AsObject = {
+    datasetId: string,
+  }
+}
+
+export class ModuleStar extends jspb.Message {
+  getModuleId(): string;
+  setModuleId(value: string): ModuleStar;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModuleStar.AsObject;
+  static toObject(includeInstance: boolean, msg: ModuleStar): ModuleStar.AsObject;
+  static serializeBinaryToWriter(message: ModuleStar, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModuleStar;
+  static deserializeBinaryFromReader(message: ModuleStar, reader: jspb.BinaryReader): ModuleStar;
+}
+
+export namespace ModuleStar {
+  export type AsObject = {
+    moduleId: string,
+  }
+}
+
 export class Module extends jspb.Message {
   getId(): string;
   setId(value: string): Module;
@@ -6107,6 +6250,12 @@ export class Module extends jspb.Message {
   hasModuleVersion(): boolean;
   clearModuleVersion(): Module;
 
+  getIsStarred(): boolean;
+  setIsStarred(value: boolean): Module;
+
+  getStarCount(): number;
+  setStarCount(value: number): Module;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Module.AsObject;
   static toObject(includeInstance: boolean, msg: Module): Module.AsObject;
@@ -6126,6 +6275,8 @@ export namespace Module {
     userId: string,
     appId: string,
     moduleVersion?: ModuleVersion.AsObject,
+    isStarred: boolean,
+    starCount: number,
   }
 }
 
@@ -6329,6 +6480,11 @@ export class BulkOperation extends jspb.Message {
   hasSearch(): boolean;
   clearSearch(): BulkOperation;
 
+  getDataset(): Dataset | undefined;
+  setDataset(value?: Dataset): BulkOperation;
+  hasDataset(): boolean;
+  clearDataset(): BulkOperation;
+
   getOperation(): Operation | undefined;
   setOperation(value?: Operation): BulkOperation;
   hasOperation(): boolean;
@@ -6375,6 +6531,7 @@ export namespace BulkOperation {
     id: string,
     inputIds?: InputIDs.AsObject,
     search?: Search.AsObject,
+    dataset?: Dataset.AsObject,
     operation?: Operation.AsObject,
     appId: string,
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
@@ -6388,6 +6545,7 @@ export namespace BulkOperation {
     INPUT_SOURCE_NOT_SET = 0,
     INPUT_IDS = 2,
     SEARCH = 10,
+    DATASET = 11,
   }
 }
 
@@ -6474,6 +6632,11 @@ export class Operation extends jspb.Message {
   hasAddToDataset(): boolean;
   clearAddToDataset(): Operation;
 
+  getSplitIntoDatasets(): SplitIntoDatasets | undefined;
+  setSplitIntoDatasets(value?: SplitIntoDatasets): Operation;
+  hasSplitIntoDatasets(): boolean;
+  clearSplitIntoDatasets(): Operation;
+
   getOperationCase(): Operation.OperationCase;
 
   serializeBinary(): Uint8Array;
@@ -6494,6 +6657,7 @@ export namespace Operation {
     deleteGeo?: DeleteGeo.AsObject,
     deleteFromDataset?: DeleteFromDataset.AsObject,
     addToDataset?: AddToDataset.AsObject,
+    splitIntoDatasets?: SplitIntoDatasets.AsObject,
   }
 
   export enum OperationCase { 
@@ -6506,6 +6670,7 @@ export namespace Operation {
     DELETE_GEO = 6,
     DELETE_FROM_DATASET = 7,
     ADD_TO_DATASET = 8,
+    SPLIT_INTO_DATASETS = 9,
   }
 }
 
@@ -6662,6 +6827,66 @@ export class DeleteFromDataset extends jspb.Message {
 export namespace DeleteFromDataset {
   export type AsObject = {
     datasetId: string,
+  }
+}
+
+export class SplitIntoDatasets extends jspb.Message {
+  getDatasetSplitsList(): Array<DatasetSplit>;
+  setDatasetSplitsList(value: Array<DatasetSplit>): SplitIntoDatasets;
+  clearDatasetSplitsList(): SplitIntoDatasets;
+  addDatasetSplits(value?: DatasetSplit, index?: number): DatasetSplit;
+
+  getMethod(): SplitIntoDatasets.DatasetSplitMethod;
+  setMethod(value: SplitIntoDatasets.DatasetSplitMethod): SplitIntoDatasets;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SplitIntoDatasets.AsObject;
+  static toObject(includeInstance: boolean, msg: SplitIntoDatasets): SplitIntoDatasets.AsObject;
+  static serializeBinaryToWriter(message: SplitIntoDatasets, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SplitIntoDatasets;
+  static deserializeBinaryFromReader(message: SplitIntoDatasets, reader: jspb.BinaryReader): SplitIntoDatasets;
+}
+
+export namespace SplitIntoDatasets {
+  export type AsObject = {
+    datasetSplitsList: Array<DatasetSplit.AsObject>,
+    method: SplitIntoDatasets.DatasetSplitMethod,
+  }
+
+  export enum DatasetSplitMethod { 
+    NOT_SET = 0,
+    RANDOM_PERCENTAGE_SPLIT = 1,
+  }
+}
+
+export class DatasetSplit extends jspb.Message {
+  getDataset(): Dataset | undefined;
+  setDataset(value?: Dataset): DatasetSplit;
+  hasDataset(): boolean;
+  clearDataset(): DatasetSplit;
+
+  getPercentage(): number;
+  setPercentage(value: number): DatasetSplit;
+
+  getMethodInfoCase(): DatasetSplit.MethodInfoCase;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DatasetSplit.AsObject;
+  static toObject(includeInstance: boolean, msg: DatasetSplit): DatasetSplit.AsObject;
+  static serializeBinaryToWriter(message: DatasetSplit, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DatasetSplit;
+  static deserializeBinaryFromReader(message: DatasetSplit, reader: jspb.BinaryReader): DatasetSplit;
+}
+
+export namespace DatasetSplit {
+  export type AsObject = {
+    dataset?: Dataset.AsObject,
+    percentage: number,
+  }
+
+  export enum MethodInfoCase { 
+    METHOD_INFO_NOT_SET = 0,
+    PERCENTAGE = 2,
   }
 }
 
@@ -7188,6 +7413,14 @@ export enum UsageIntervalType {
   DAY = 1,
   MONTH = 2,
   YEAR = 3,
+}
+export enum AnnotationDataType { 
+  ANNOTATION_DATA_TYPE_NOT_SET = 0,
+  BOUNDING_BOX = 1,
+  POLYGON = 2,
+  POINT = 4,
+  SPAN = 8,
+  MASK = 16,
 }
 export enum RoleType { 
   TEAM = 0,
