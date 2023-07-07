@@ -1852,6 +1852,11 @@ export class DatasetVersion extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): DatasetVersion;
 
+  getProcessingInfo(): DatasetVersionProcessingInfo | undefined;
+  setProcessingInfo(value?: DatasetVersionProcessingInfo): DatasetVersion;
+  hasProcessingInfo(): boolean;
+  clearProcessingInfo(): DatasetVersion;
+
   getMetricsMap(): jspb.Map<string, DatasetVersionMetrics>;
   clearMetricsMap(): DatasetVersion;
 
@@ -1897,6 +1902,7 @@ export namespace DatasetVersion {
     modelPredictConfig?: ModelPredictConfig.AsObject,
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     description: string,
+    processingInfo?: DatasetVersionProcessingInfo.AsObject,
     metricsMap: Array<[string, DatasetVersionMetrics.AsObject]>,
     exportInfo?: DatasetVersionExportInfo.AsObject,
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
@@ -2176,6 +2182,44 @@ export namespace DatasetVersionExport {
     url: string,
     size: number,
     includeEmbeddings: boolean,
+  }
+}
+
+export class DatasetVersionProcessingInfo extends jspb.Message {
+  getFrameInterpolationInfo(): FrameInterpolationInfo | undefined;
+  setFrameInterpolationInfo(value?: FrameInterpolationInfo): DatasetVersionProcessingInfo;
+  hasFrameInterpolationInfo(): boolean;
+  clearFrameInterpolationInfo(): DatasetVersionProcessingInfo;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DatasetVersionProcessingInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: DatasetVersionProcessingInfo): DatasetVersionProcessingInfo.AsObject;
+  static serializeBinaryToWriter(message: DatasetVersionProcessingInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DatasetVersionProcessingInfo;
+  static deserializeBinaryFromReader(message: DatasetVersionProcessingInfo, reader: jspb.BinaryReader): DatasetVersionProcessingInfo;
+}
+
+export namespace DatasetVersionProcessingInfo {
+  export type AsObject = {
+    frameInterpolationInfo?: FrameInterpolationInfo.AsObject,
+  }
+}
+
+export class FrameInterpolationInfo extends jspb.Message {
+  getSampleMs(): number;
+  setSampleMs(value: number): FrameInterpolationInfo;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FrameInterpolationInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: FrameInterpolationInfo): FrameInterpolationInfo.AsObject;
+  static serializeBinaryToWriter(message: FrameInterpolationInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FrameInterpolationInfo;
+  static deserializeBinaryFromReader(message: FrameInterpolationInfo, reader: jspb.BinaryReader): FrameInterpolationInfo;
+}
+
+export namespace FrameInterpolationInfo {
+  export type AsObject = {
+    sampleMs: number,
   }
 }
 
@@ -2635,9 +2679,6 @@ export class OutputConfig extends jspb.Message {
   getConceptsMutuallyExclusive(): boolean;
   setConceptsMutuallyExclusive(value: boolean): OutputConfig;
 
-  getClosedEnvironment(): boolean;
-  setClosedEnvironment(value: boolean): OutputConfig;
-
   getExistingModelId(): string;
   setExistingModelId(value: string): OutputConfig;
 
@@ -2691,7 +2732,6 @@ export class OutputConfig extends jspb.Message {
 export namespace OutputConfig {
   export type AsObject = {
     conceptsMutuallyExclusive: boolean,
-    closedEnvironment: boolean,
     existingModelId: string,
     language: string,
     hyperParameters: string,
@@ -3727,8 +3767,24 @@ export class EvalMetrics extends jspb.Message {
   hasStatus(): boolean;
   clearStatus(): EvalMetrics;
 
+  getUserId(): string;
+  setUserId(value: string): EvalMetrics;
+
+  getAppId(): string;
+  setAppId(value: string): EvalMetrics;
+
   getId(): string;
   setId(value: string): EvalMetrics;
+
+  getModel(): Model | undefined;
+  setModel(value?: Model): EvalMetrics;
+  hasModel(): boolean;
+  clearModel(): EvalMetrics;
+
+  getGroundTruthDataset(): Dataset | undefined;
+  setGroundTruthDataset(value?: Dataset): EvalMetrics;
+  hasGroundTruthDataset(): boolean;
+  clearGroundTruthDataset(): EvalMetrics;
 
   getSummary(): MetricsSummary | undefined;
   setSummary(value?: MetricsSummary): EvalMetrics;
@@ -3791,7 +3847,11 @@ export class EvalMetrics extends jspb.Message {
 export namespace EvalMetrics {
   export type AsObject = {
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    userId: string,
+    appId: string,
     id: string,
+    model?: Model.AsObject,
+    groundTruthDataset?: Dataset.AsObject,
     summary?: MetricsSummary.AsObject,
     confusionMatrix?: ConfusionMatrix.AsObject,
     cooccurrenceMatrix?: CooccurrenceMatrix.AsObject,
@@ -6925,6 +6985,11 @@ export class InputsAddJob extends jspb.Message {
   clearUploadsList(): InputsAddJob;
   addUploads(value?: Upload, index?: number): Upload;
 
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): InputsAddJob;
+  hasStatus(): boolean;
+  clearStatus(): InputsAddJob;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InputsAddJob.AsObject;
   static toObject(includeInstance: boolean, msg: InputsAddJob): InputsAddJob.AsObject;
@@ -6943,6 +7008,7 @@ export namespace InputsAddJob {
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     extractionJobsList: Array<InputsExtractionJob.AsObject>,
     uploadsList: Array<Upload.AsObject>,
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
   }
 }
 
@@ -7111,6 +7177,9 @@ export class InputsExtractionJob extends jspb.Message {
   hasModifiedAt(): boolean;
   clearModifiedAt(): InputsExtractionJob;
 
+  getInputIdConflictResolution(): InputIDConflictResolution;
+  setInputIdConflictResolution(value: InputIDConflictResolution): InputsExtractionJob;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InputsExtractionJob.AsObject;
   static toObject(includeInstance: boolean, msg: InputsExtractionJob): InputsExtractionJob.AsObject;
@@ -7127,13 +7196,11 @@ export namespace InputsExtractionJob {
     progress?: InputsExtractionJobProgress.AsObject,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    inputIdConflictResolution: InputIDConflictResolution,
   }
 }
 
 export class InputsExtractionJobProgress extends jspb.Message {
-  getReadObjectsCount(): number;
-  setReadObjectsCount(value: number): InputsExtractionJobProgress;
-
   getAudioInputsCount(): number;
   setAudioInputsCount(value: number): InputsExtractionJobProgress;
 
@@ -7168,7 +7235,6 @@ export class InputsExtractionJobProgress extends jspb.Message {
 
 export namespace InputsExtractionJobProgress {
   export type AsObject = {
-    readObjectsCount: number,
     audioInputsCount: number,
     imageInputsCount: number,
     videoInputsCount: number,
@@ -7189,6 +7255,9 @@ export class InputsDataSource extends jspb.Message {
   hasUrl(): boolean;
   clearUrl(): InputsDataSource;
 
+  getInputIdConflictResolution(): InputIDConflictResolution;
+  setInputIdConflictResolution(value: InputIDConflictResolution): InputsDataSource;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InputsDataSource.AsObject;
   static toObject(includeInstance: boolean, msg: InputsDataSource): InputsDataSource.AsObject;
@@ -7201,6 +7270,7 @@ export namespace InputsDataSource {
   export type AsObject = {
     inputsAddJobId: string,
     url?: DataSourceURL.AsObject,
+    inputIdConflictResolution: InputIDConflictResolution,
   }
 }
 
@@ -7333,6 +7403,9 @@ export class InputsUpload extends jspb.Message {
   hasUpload(): boolean;
   clearUpload(): InputsUpload;
 
+  getInputIdConflictResolution(): InputIDConflictResolution;
+  setInputIdConflictResolution(value: InputIDConflictResolution): InputsUpload;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InputsUpload.AsObject;
   static toObject(includeInstance: boolean, msg: InputsUpload): InputsUpload.AsObject;
@@ -7346,6 +7419,7 @@ export namespace InputsUpload {
     inputsAddJobId: string,
     appPat: string,
     upload?: Upload.AsObject,
+    inputIdConflictResolution: InputIDConflictResolution,
   }
 }
 
@@ -7416,11 +7490,12 @@ export enum UsageIntervalType {
 }
 export enum AnnotationDataType { 
   ANNOTATION_DATA_TYPE_NOT_SET = 0,
-  BOUNDING_BOX = 1,
-  POLYGON = 2,
-  POINT = 4,
-  SPAN = 8,
-  MASK = 16,
+  TAG = 1,
+  BOUNDING_BOX = 2,
+  POLYGON = 4,
+  POINT = 8,
+  SPAN = 16,
+  MASK = 32,
 }
 export enum RoleType { 
   TEAM = 0,
@@ -7444,4 +7519,9 @@ export enum ValidationErrorType {
   RESTRICTED = 1,
   DATABASE = 2,
   FORMAT = 3,
+}
+export enum InputIDConflictResolution { 
+  INPUT_ID_CONFLICT_RESOLUTION_NOT_SET = 0,
+  SKIP = 1,
+  SUFFIX = 2,
 }

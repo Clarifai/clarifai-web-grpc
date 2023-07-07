@@ -310,13 +310,6 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiDatasetResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiDatasetResponse>;
 
-  patchDatasetIds(
-    request: proto_clarifai_api_service_pb.PatchDatasetIdsRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.MultiDatasetResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiDatasetResponse>;
-
   deleteDatasets(
     request: proto_clarifai_api_service_pb.DeleteDatasetsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -442,6 +435,13 @@ export class V2Client {
     callback: (err: grpcWeb.RpcError,
                response: proto_clarifai_api_service_pb.MultiModelResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiModelResponse>;
+
+  getResourceCounts(
+    request: proto_clarifai_api_service_pb.GetResourceCountsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.GetResourceCountsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.GetResourceCountsResponse>;
 
   postModelsSearches(
     request: proto_clarifai_api_service_pb.PostModelsSearchesRequest,
@@ -613,6 +613,27 @@ export class V2Client {
 
   getModelVersionEvaluation(
     request: proto_clarifai_api_service_pb.GetModelVersionEvaluationRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleEvalMetricsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleEvalMetricsResponse>;
+
+  postEvaluations(
+    request: proto_clarifai_api_service_pb.PostEvaluationsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiEvalMetricsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiEvalMetricsResponse>;
+
+  listEvaluations(
+    request: proto_clarifai_api_service_pb.ListEvaluationsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiEvalMetricsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiEvalMetricsResponse>;
+
+  getEvaluation(
+    request: proto_clarifai_api_service_pb.GetEvaluationRequest,
     metadata: grpcWeb.Metadata | undefined,
     callback: (err: grpcWeb.RpcError,
                response: proto_clarifai_api_service_pb.SingleEvalMetricsResponse) => void
@@ -1360,6 +1381,13 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.SingleInputsAddJobResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleInputsAddJobResponse>;
 
+  cancelInputsAddJob(
+    request: proto_clarifai_api_service_pb.CancelInputsAddJobRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleInputsAddJobResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleInputsAddJobResponse>;
+
   postUploads(
     request: proto_clarifai_api_service_pb.PostUploadsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -1652,11 +1680,6 @@ export class V2PromiseClient {
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiDatasetResponse>;
 
-  patchDatasetIds(
-    request: proto_clarifai_api_service_pb.PatchDatasetIdsRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.MultiDatasetResponse>;
-
   deleteDatasets(
     request: proto_clarifai_api_service_pb.DeleteDatasetsRequest,
     metadata?: grpcWeb.Metadata
@@ -1746,6 +1769,11 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.ListModelsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiModelResponse>;
+
+  getResourceCounts(
+    request: proto_clarifai_api_service_pb.GetResourceCountsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.GetResourceCountsResponse>;
 
   postModelsSearches(
     request: proto_clarifai_api_service_pb.PostModelsSearchesRequest,
@@ -1869,6 +1897,21 @@ export class V2PromiseClient {
 
   getModelVersionEvaluation(
     request: proto_clarifai_api_service_pb.GetModelVersionEvaluationRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleEvalMetricsResponse>;
+
+  postEvaluations(
+    request: proto_clarifai_api_service_pb.PostEvaluationsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiEvalMetricsResponse>;
+
+  listEvaluations(
+    request: proto_clarifai_api_service_pb.ListEvaluationsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiEvalMetricsResponse>;
+
+  getEvaluation(
+    request: proto_clarifai_api_service_pb.GetEvaluationRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.SingleEvalMetricsResponse>;
 
@@ -2399,6 +2442,11 @@ export class V2PromiseClient {
 
   getInputsAddJob(
     request: proto_clarifai_api_service_pb.GetInputsAddJobRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleInputsAddJobResponse>;
+
+  cancelInputsAddJob(
+    request: proto_clarifai_api_service_pb.CancelInputsAddJobRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.SingleInputsAddJobResponse>;
 
