@@ -2721,67 +2721,6 @@ proto.clarifai.api.V2PromiseClient.prototype.patchDatasets =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.clarifai.api.PatchDatasetIdsRequest,
- *   !proto.clarifai.api.MultiDatasetResponse>}
- */
-const methodDescriptor_V2_PatchDatasetIds = new grpc.web.MethodDescriptor(
-  '/clarifai.api.V2/PatchDatasetIds',
-  grpc.web.MethodType.UNARY,
-  proto.clarifai.api.PatchDatasetIdsRequest,
-  proto.clarifai.api.MultiDatasetResponse,
-  /**
-   * @param {!proto.clarifai.api.PatchDatasetIdsRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.clarifai.api.MultiDatasetResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.clarifai.api.PatchDatasetIdsRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiDatasetResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiDatasetResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.clarifai.api.V2Client.prototype.patchDatasetIds =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/clarifai.api.V2/PatchDatasetIds',
-      request,
-      metadata || {},
-      methodDescriptor_V2_PatchDatasetIds,
-      callback);
-};
-
-
-/**
- * @param {!proto.clarifai.api.PatchDatasetIdsRequest} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.clarifai.api.MultiDatasetResponse>}
- *     Promise that resolves to the response
- */
-proto.clarifai.api.V2PromiseClient.prototype.patchDatasetIds =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/clarifai.api.V2/PatchDatasetIds',
-      request,
-      metadata || {},
-      methodDescriptor_V2_PatchDatasetIds);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.DeleteDatasetsRequest,
  *   !proto.clarifai.api.status.BaseResponse>}
  */
@@ -3874,6 +3813,67 @@ proto.clarifai.api.V2PromiseClient.prototype.listModels =
       request,
       metadata || {},
       methodDescriptor_V2_ListModels);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.GetResourceCountsRequest,
+ *   !proto.clarifai.api.GetResourceCountsResponse>}
+ */
+const methodDescriptor_V2_GetResourceCounts = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/GetResourceCounts',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.GetResourceCountsRequest,
+  proto.clarifai.api.GetResourceCountsResponse,
+  /**
+   * @param {!proto.clarifai.api.GetResourceCountsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.GetResourceCountsResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.GetResourceCountsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.GetResourceCountsResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.GetResourceCountsResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.getResourceCounts =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/GetResourceCounts',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetResourceCounts,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.GetResourceCountsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.GetResourceCountsResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.getResourceCounts =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/GetResourceCounts',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetResourceCounts);
 };
 
 
@@ -5399,6 +5399,189 @@ proto.clarifai.api.V2PromiseClient.prototype.getModelVersionEvaluation =
       request,
       metadata || {},
       methodDescriptor_V2_GetModelVersionEvaluation);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostEvaluationsRequest,
+ *   !proto.clarifai.api.MultiEvalMetricsResponse>}
+ */
+const methodDescriptor_V2_PostEvaluations = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostEvaluations',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostEvaluationsRequest,
+  proto.clarifai.api.MultiEvalMetricsResponse,
+  /**
+   * @param {!proto.clarifai.api.PostEvaluationsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiEvalMetricsResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostEvaluationsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiEvalMetricsResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiEvalMetricsResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postEvaluations =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostEvaluations',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostEvaluations,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostEvaluationsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiEvalMetricsResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postEvaluations =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostEvaluations',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostEvaluations);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListEvaluationsRequest,
+ *   !proto.clarifai.api.MultiEvalMetricsResponse>}
+ */
+const methodDescriptor_V2_ListEvaluations = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListEvaluations',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListEvaluationsRequest,
+  proto.clarifai.api.MultiEvalMetricsResponse,
+  /**
+   * @param {!proto.clarifai.api.ListEvaluationsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiEvalMetricsResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListEvaluationsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiEvalMetricsResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiEvalMetricsResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listEvaluations =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListEvaluations',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListEvaluations,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListEvaluationsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiEvalMetricsResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listEvaluations =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListEvaluations',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListEvaluations);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.GetEvaluationRequest,
+ *   !proto.clarifai.api.SingleEvalMetricsResponse>}
+ */
+const methodDescriptor_V2_GetEvaluation = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/GetEvaluation',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.GetEvaluationRequest,
+  proto.clarifai.api.SingleEvalMetricsResponse,
+  /**
+   * @param {!proto.clarifai.api.GetEvaluationRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SingleEvalMetricsResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.GetEvaluationRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SingleEvalMetricsResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleEvalMetricsResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.getEvaluation =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/GetEvaluation',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetEvaluation,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.GetEvaluationRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.SingleEvalMetricsResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.getEvaluation =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/GetEvaluation',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetEvaluation);
 };
 
 
@@ -11865,6 +12048,67 @@ proto.clarifai.api.V2PromiseClient.prototype.getInputsAddJob =
       request,
       metadata || {},
       methodDescriptor_V2_GetInputsAddJob);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.CancelInputsAddJobRequest,
+ *   !proto.clarifai.api.SingleInputsAddJobResponse>}
+ */
+const methodDescriptor_V2_CancelInputsAddJob = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/CancelInputsAddJob',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.CancelInputsAddJobRequest,
+  proto.clarifai.api.SingleInputsAddJobResponse,
+  /**
+   * @param {!proto.clarifai.api.CancelInputsAddJobRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SingleInputsAddJobResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.CancelInputsAddJobRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SingleInputsAddJobResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleInputsAddJobResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.cancelInputsAddJob =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/CancelInputsAddJob',
+      request,
+      metadata || {},
+      methodDescriptor_V2_CancelInputsAddJob,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.CancelInputsAddJobRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.SingleInputsAddJobResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.cancelInputsAddJob =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/CancelInputsAddJob',
+      request,
+      metadata || {},
+      methodDescriptor_V2_CancelInputsAddJob);
 };
 
 
