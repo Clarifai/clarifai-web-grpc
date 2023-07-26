@@ -33,7 +33,8 @@ jobs:
           node-version: 16
       - name: Install deps
         run: yarn install
-      - name: Publish if version has been updated
+      - name: Publish to NPM
+        if: ${{ github.event_name != 'pull_request' }}
         uses: pascalgn/npm-publish-action@1.3.9
         with:
           tag_name: "v%s"
