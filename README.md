@@ -40,3 +40,9 @@ client.postApps(req, auth, (err, resp) => {
   }
 });
 ```
+
+## Publishing to NPM
+
+Publishing the client to NPM involves merging a PR with 2 things:
+1. Updates the `version` field in `package.json` to the appropriate version.
+2. Commit message should begin with `"Release"` eg `"Release 9.4.0"`.
