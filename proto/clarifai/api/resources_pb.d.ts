@@ -65,6 +65,9 @@ export class Annotation extends jspb.Message {
   getTaskId(): string;
   setTaskId(value: string): Annotation;
 
+  getWorkflowVersionId(): string;
+  setWorkflowVersionId(value: string): Annotation;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Annotation.AsObject;
   static toObject(includeInstance: boolean, msg: Annotation): Annotation.AsObject;
@@ -89,6 +92,7 @@ export namespace Annotation {
     inputLevel: boolean,
     consensusInfo?: google_protobuf_struct_pb.Struct.AsObject,
     taskId: string,
+    workflowVersionId: string,
   }
 }
 
@@ -1701,6 +1705,11 @@ export class Dataset extends jspb.Message {
   hasDefaultAnnotationFilter(): boolean;
   clearDefaultAnnotationFilter(): Dataset;
 
+  getDefaultProcessingInfo(): DatasetVersionProcessingInfo | undefined;
+  setDefaultProcessingInfo(value?: DatasetVersionProcessingInfo): Dataset;
+  hasDefaultProcessingInfo(): boolean;
+  clearDefaultProcessingInfo(): Dataset;
+
   getNotes(): string;
   setNotes(value: string): Dataset;
 
@@ -1714,6 +1723,11 @@ export class Dataset extends jspb.Message {
 
   getStarCount(): number;
   setStarCount(value: number): Dataset;
+
+  getBookmarkOrigin(): BookmarkOrigin | undefined;
+  setBookmarkOrigin(value?: BookmarkOrigin): Dataset;
+  hasBookmarkOrigin(): boolean;
+  clearBookmarkOrigin(): Dataset;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Dataset.AsObject;
@@ -1734,10 +1748,12 @@ export namespace Dataset {
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
     visibility?: Visibility.AsObject,
     defaultAnnotationFilter?: AnnotationFilter.AsObject,
+    defaultProcessingInfo?: DatasetVersionProcessingInfo.AsObject,
     notes: string,
     version?: DatasetVersion.AsObject,
     isStarred: boolean,
     starCount: number,
+    bookmarkOrigin?: BookmarkOrigin.AsObject,
   }
 }
 
@@ -2347,16 +2363,6 @@ export class Model extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): Model;
 
-  getInputInfo(): InputInfo | undefined;
-  setInputInfo(value?: InputInfo): Model;
-  hasInputInfo(): boolean;
-  clearInputInfo(): Model;
-
-  getTrainInfo(): TrainInfo | undefined;
-  setTrainInfo(value?: TrainInfo): Model;
-  hasTrainInfo(): boolean;
-  clearTrainInfo(): Model;
-
   getDefaultEvalInfo(): EvalInfo | undefined;
   setDefaultEvalInfo(value?: EvalInfo): Model;
   hasDefaultEvalInfo(): boolean;
@@ -2420,15 +2426,15 @@ export class Model extends jspb.Message {
   getStarCount(): number;
   setStarCount(value: number): Model;
 
-  getImportInfo(): ImportInfo | undefined;
-  setImportInfo(value?: ImportInfo): Model;
-  hasImportInfo(): boolean;
-  clearImportInfo(): Model;
-
   getWorkflowRecommended(): google_protobuf_wrappers_pb.BoolValue | undefined;
   setWorkflowRecommended(value?: google_protobuf_wrappers_pb.BoolValue): Model;
   hasWorkflowRecommended(): boolean;
   clearWorkflowRecommended(): Model;
+
+  getBookmarkOrigin(): BookmarkOrigin | undefined;
+  setBookmarkOrigin(value?: BookmarkOrigin): Model;
+  hasBookmarkOrigin(): boolean;
+  clearBookmarkOrigin(): Model;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Model.AsObject;
@@ -2449,8 +2455,6 @@ export namespace Model {
     modelVersion?: ModelVersion.AsObject,
     displayName: string,
     userId: string,
-    inputInfo?: InputInfo.AsObject,
-    trainInfo?: TrainInfo.AsObject,
     defaultEvalInfo?: EvalInfo.AsObject,
     modelTypeId: string,
     task: string,
@@ -2466,8 +2470,8 @@ export namespace Model {
     checkConsentsList: Array<string>,
     isStarred: boolean,
     starCount: number,
-    importInfo?: ImportInfo.AsObject,
     workflowRecommended?: google_protobuf_wrappers_pb.BoolValue.AsObject,
+    bookmarkOrigin?: BookmarkOrigin.AsObject,
   }
 }
 
@@ -2600,6 +2604,11 @@ export class InputInfo extends jspb.Message {
   hasParams(): boolean;
   clearParams(): InputInfo;
 
+  getBaseEmbedModel(): Model | undefined;
+  setBaseEmbedModel(value?: Model): InputInfo;
+  hasBaseEmbedModel(): boolean;
+  clearBaseEmbedModel(): InputInfo;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InputInfo.AsObject;
   static toObject(includeInstance: boolean, msg: InputInfo): InputInfo.AsObject;
@@ -2612,6 +2621,7 @@ export namespace InputInfo {
   export type AsObject = {
     fieldsMap?: google_protobuf_struct_pb.Struct.AsObject,
     params?: google_protobuf_struct_pb.Struct.AsObject,
+    baseEmbedModel?: Model.AsObject,
   }
 }
 
@@ -2984,6 +2994,7 @@ export namespace ModelTypeField {
     PYTHON_CODE = 15,
     DATASET_ID = 16,
     DATASET_VERSION_ID = 17,
+    ARRAY_OF_MODEL_CONCEPTS = 18,
   }
 }
 
@@ -4859,6 +4870,11 @@ export class Workflow extends jspb.Message {
   clearCheckConsentsList(): Workflow;
   addCheckConsents(value: string, index?: number): Workflow;
 
+  getBookmarkOrigin(): BookmarkOrigin | undefined;
+  setBookmarkOrigin(value?: BookmarkOrigin): Workflow;
+  hasBookmarkOrigin(): boolean;
+  clearBookmarkOrigin(): Workflow;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Workflow.AsObject;
   static toObject(includeInstance: boolean, msg: Workflow): Workflow.AsObject;
@@ -4884,6 +4900,7 @@ export namespace Workflow {
     notes: string,
     useCasesList: Array<string>,
     checkConsentsList: Array<string>,
+    bookmarkOrigin?: BookmarkOrigin.AsObject,
   }
 }
 
@@ -6316,6 +6333,11 @@ export class Module extends jspb.Message {
   getStarCount(): number;
   setStarCount(value: number): Module;
 
+  getBookmarkOrigin(): BookmarkOrigin | undefined;
+  setBookmarkOrigin(value?: BookmarkOrigin): Module;
+  hasBookmarkOrigin(): boolean;
+  clearBookmarkOrigin(): Module;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Module.AsObject;
   static toObject(includeInstance: boolean, msg: Module): Module.AsObject;
@@ -6337,6 +6359,7 @@ export namespace Module {
     moduleVersion?: ModuleVersion.AsObject,
     isStarred: boolean,
     starCount: number,
+    bookmarkOrigin?: BookmarkOrigin.AsObject,
   }
 }
 
@@ -7420,6 +7443,94 @@ export namespace InputsUpload {
     appPat: string,
     upload?: Upload.AsObject,
     inputIdConflictResolution: InputIDConflictResolution,
+  }
+}
+
+export class BookmarkOrigin extends jspb.Message {
+  getId(): string;
+  setId(value: string): BookmarkOrigin;
+
+  getAppId(): string;
+  setAppId(value: string): BookmarkOrigin;
+
+  getUserId(): string;
+  setUserId(value: string): BookmarkOrigin;
+
+  getResourceType(): BookmarkOrigin.BookmarkType;
+  setResourceType(value: BookmarkOrigin.BookmarkType): BookmarkOrigin;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BookmarkOrigin.AsObject;
+  static toObject(includeInstance: boolean, msg: BookmarkOrigin): BookmarkOrigin.AsObject;
+  static serializeBinaryToWriter(message: BookmarkOrigin, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BookmarkOrigin;
+  static deserializeBinaryFromReader(message: BookmarkOrigin, reader: jspb.BinaryReader): BookmarkOrigin;
+}
+
+export namespace BookmarkOrigin {
+  export type AsObject = {
+    id: string,
+    appId: string,
+    userId: string,
+    resourceType: BookmarkOrigin.BookmarkType,
+  }
+
+  export enum BookmarkType { 
+    UNKNOWN = 0,
+    MODEL = 1,
+    WORKFLOW = 2,
+    DATASET = 3,
+    MODULE = 4,
+  }
+}
+
+export class Runner extends jspb.Message {
+  getId(): string;
+  setId(value: string): Runner;
+
+  getDescription(): string;
+  setDescription(value: string): Runner;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Runner;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): Runner;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): Runner;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): Runner;
+
+  getMetadata(): google_protobuf_struct_pb.Struct | undefined;
+  setMetadata(value?: google_protobuf_struct_pb.Struct): Runner;
+  hasMetadata(): boolean;
+  clearMetadata(): Runner;
+
+  getUserId(): string;
+  setUserId(value: string): Runner;
+
+  getLabelsList(): Array<string>;
+  setLabelsList(value: Array<string>): Runner;
+  clearLabelsList(): Runner;
+  addLabels(value: string, index?: number): Runner;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Runner.AsObject;
+  static toObject(includeInstance: boolean, msg: Runner): Runner.AsObject;
+  static serializeBinaryToWriter(message: Runner, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Runner;
+  static deserializeBinaryFromReader(message: Runner, reader: jspb.BinaryReader): Runner;
+}
+
+export namespace Runner {
+  export type AsObject = {
+    id: string,
+    description: string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    metadata?: google_protobuf_struct_pb.Struct.AsObject,
+    userId: string,
+    labelsList: Array<string>,
   }
 }
 

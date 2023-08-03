@@ -12722,5 +12722,371 @@ proto.clarifai.api.V2PromiseClient.prototype.postInputsUploads =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.GetRunnerRequest,
+ *   !proto.clarifai.api.SingleRunnerResponse>}
+ */
+const methodDescriptor_V2_GetRunner = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/GetRunner',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.GetRunnerRequest,
+  proto.clarifai.api.SingleRunnerResponse,
+  /**
+   * @param {!proto.clarifai.api.GetRunnerRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SingleRunnerResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.GetRunnerRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SingleRunnerResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleRunnerResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.getRunner =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/GetRunner',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetRunner,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.GetRunnerRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.SingleRunnerResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.getRunner =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/GetRunner',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetRunner);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListRunnersRequest,
+ *   !proto.clarifai.api.MultiRunnerResponse>}
+ */
+const methodDescriptor_V2_ListRunners = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListRunners',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListRunnersRequest,
+  proto.clarifai.api.MultiRunnerResponse,
+  /**
+   * @param {!proto.clarifai.api.ListRunnersRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiRunnerResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListRunnersRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiRunnerResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiRunnerResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listRunners =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListRunners',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListRunners,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListRunnersRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiRunnerResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listRunners =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListRunners',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListRunners);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostRunnersRequest,
+ *   !proto.clarifai.api.MultiRunnerResponse>}
+ */
+const methodDescriptor_V2_PostRunners = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostRunners',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostRunnersRequest,
+  proto.clarifai.api.MultiRunnerResponse,
+  /**
+   * @param {!proto.clarifai.api.PostRunnersRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiRunnerResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostRunnersRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiRunnerResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiRunnerResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postRunners =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostRunners',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostRunners,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostRunnersRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiRunnerResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postRunners =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostRunners',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostRunners);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.DeleteRunnersRequest,
+ *   !proto.clarifai.api.status.BaseResponse>}
+ */
+const methodDescriptor_V2_DeleteRunners = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/DeleteRunners',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.DeleteRunnersRequest,
+  proto_clarifai_api_status_status_pb.BaseResponse,
+  /**
+   * @param {!proto.clarifai.api.DeleteRunnersRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto_clarifai_api_status_status_pb.BaseResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.DeleteRunnersRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.status.BaseResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.status.BaseResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.deleteRunners =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/DeleteRunners',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeleteRunners,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.DeleteRunnersRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.status.BaseResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.deleteRunners =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/DeleteRunners',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeleteRunners);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListRunnerItemsRequest,
+ *   !proto.clarifai.api.MultiRunnerItemResponse>}
+ */
+const methodDescriptor_V2_ListRunnerItems = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListRunnerItems',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListRunnerItemsRequest,
+  proto.clarifai.api.MultiRunnerItemResponse,
+  /**
+   * @param {!proto.clarifai.api.ListRunnerItemsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiRunnerItemResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListRunnerItemsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiRunnerItemResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiRunnerItemResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listRunnerItems =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListRunnerItems',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListRunnerItems,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListRunnerItemsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiRunnerItemResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listRunnerItems =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListRunnerItems',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListRunnerItems);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostRunnerItemOutputsRequest,
+ *   !proto.clarifai.api.MultiRunnerItemOutputResponse>}
+ */
+const methodDescriptor_V2_PostRunnerItemOutputs = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostRunnerItemOutputs',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostRunnerItemOutputsRequest,
+  proto.clarifai.api.MultiRunnerItemOutputResponse,
+  /**
+   * @param {!proto.clarifai.api.PostRunnerItemOutputsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiRunnerItemOutputResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostRunnerItemOutputsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiRunnerItemOutputResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiRunnerItemOutputResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postRunnerItemOutputs =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostRunnerItemOutputs',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostRunnerItemOutputs,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostRunnerItemOutputsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiRunnerItemOutputResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postRunnerItemOutputs =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostRunnerItemOutputs',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostRunnerItemOutputs);
+};
+
+
 module.exports = proto.clarifai.api;
 
