@@ -1458,6 +1458,48 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiInputsAddJobResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiInputsAddJobResponse>;
 
+  getRunner(
+    request: proto_clarifai_api_service_pb.GetRunnerRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleRunnerResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleRunnerResponse>;
+
+  listRunners(
+    request: proto_clarifai_api_service_pb.ListRunnersRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiRunnerResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiRunnerResponse>;
+
+  postRunners(
+    request: proto_clarifai_api_service_pb.PostRunnersRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiRunnerResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiRunnerResponse>;
+
+  deleteRunners(
+    request: proto_clarifai_api_service_pb.DeleteRunnersRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  listRunnerItems(
+    request: proto_clarifai_api_service_pb.ListRunnerItemsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiRunnerItemResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiRunnerItemResponse>;
+
+  postRunnerItemOutputs(
+    request: proto_clarifai_api_service_pb.PostRunnerItemOutputsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiRunnerItemOutputResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiRunnerItemOutputResponse>;
+
 }
 
 export class V2PromiseClient {
@@ -2499,6 +2541,36 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.PostInputsUploadsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiInputsAddJobResponse>;
+
+  getRunner(
+    request: proto_clarifai_api_service_pb.GetRunnerRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleRunnerResponse>;
+
+  listRunners(
+    request: proto_clarifai_api_service_pb.ListRunnersRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiRunnerResponse>;
+
+  postRunners(
+    request: proto_clarifai_api_service_pb.PostRunnersRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiRunnerResponse>;
+
+  deleteRunners(
+    request: proto_clarifai_api_service_pb.DeleteRunnersRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  listRunnerItems(
+    request: proto_clarifai_api_service_pb.ListRunnerItemsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiRunnerItemResponse>;
+
+  postRunnerItemOutputs(
+    request: proto_clarifai_api_service_pb.PostRunnerItemOutputsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiRunnerItemOutputResponse>;
 
 }
 

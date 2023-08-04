@@ -419,6 +419,12 @@ export class ListAppsRequest extends jspb.Message {
   getSortByModifiedAt(): boolean;
   setSortByModifiedAt(value: boolean): ListAppsRequest;
 
+  getSortByCreatedAt(): boolean;
+  setSortByCreatedAt(value: boolean): ListAppsRequest;
+
+  getSortByStarCount(): boolean;
+  setSortByStarCount(value: boolean): ListAppsRequest;
+
   getQuery(): string;
   setQuery(value: string): ListAppsRequest;
 
@@ -454,6 +460,8 @@ export namespace ListAppsRequest {
     sortAscending: boolean,
     sortByName: boolean,
     sortByModifiedAt: boolean,
+    sortByCreatedAt: boolean,
+    sortByStarCount: boolean,
     query: string,
     name: string,
     featuredOnly: boolean,
@@ -465,6 +473,8 @@ export namespace ListAppsRequest {
     SORT_BY_NOT_SET = 0,
     SORT_BY_NAME = 6,
     SORT_BY_MODIFIED_AT = 7,
+    SORT_BY_CREATED_AT = 12,
+    SORT_BY_STAR_COUNT = 13,
   }
 }
 
@@ -2136,6 +2146,23 @@ export class ListDatasetsRequest extends jspb.Message {
   clearAdditionalFieldsList(): ListDatasetsRequest;
   addAdditionalFields(value: string, index?: number): ListDatasetsRequest;
 
+  getSortAscending(): boolean;
+  setSortAscending(value: boolean): ListDatasetsRequest;
+
+  getSortByCreatedAt(): boolean;
+  setSortByCreatedAt(value: boolean): ListDatasetsRequest;
+
+  getSortByStarCount(): boolean;
+  setSortByStarCount(value: boolean): ListDatasetsRequest;
+
+  getSortByModifiedAt(): boolean;
+  setSortByModifiedAt(value: boolean): ListDatasetsRequest;
+
+  getBookmark(): boolean;
+  setBookmark(value: boolean): ListDatasetsRequest;
+
+  getSortByCase(): ListDatasetsRequest.SortByCase;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListDatasetsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListDatasetsRequest): ListDatasetsRequest.AsObject;
@@ -2151,6 +2178,18 @@ export namespace ListDatasetsRequest {
     perPage: number,
     starredOnly: boolean,
     additionalFieldsList: Array<string>,
+    sortAscending: boolean,
+    sortByCreatedAt: boolean,
+    sortByStarCount: boolean,
+    sortByModifiedAt: boolean,
+    bookmark: boolean,
+  }
+
+  export enum SortByCase { 
+    SORT_BY_NOT_SET = 0,
+    SORT_BY_CREATED_AT = 7,
+    SORT_BY_STAR_COUNT = 8,
+    SORT_BY_MODIFIED_AT = 9,
   }
 }
 
@@ -3268,6 +3307,12 @@ export class ListModelsRequest extends jspb.Message {
   getSortByModifiedAt(): boolean;
   setSortByModifiedAt(value: boolean): ListModelsRequest;
 
+  getSortByCreatedAt(): boolean;
+  setSortByCreatedAt(value: boolean): ListModelsRequest;
+
+  getSortByStarCount(): boolean;
+  setSortByStarCount(value: boolean): ListModelsRequest;
+
   getQuery(): string;
   setQuery(value: string): ListModelsRequest;
 
@@ -3325,6 +3370,9 @@ export class ListModelsRequest extends jspb.Message {
   getDontFetchFromMain(): boolean;
   setDontFetchFromMain(value: boolean): ListModelsRequest;
 
+  getBookmark(): boolean;
+  setBookmark(value: boolean): ListModelsRequest;
+
   getSortByCase(): ListModelsRequest.SortByCase;
 
   serializeBinary(): Uint8Array;
@@ -3344,6 +3392,8 @@ export namespace ListModelsRequest {
     sortByName: boolean,
     sortByNumInputs: boolean,
     sortByModifiedAt: boolean,
+    sortByCreatedAt: boolean,
+    sortByStarCount: boolean,
     query: string,
     name: string,
     filterByUserId: boolean,
@@ -3359,6 +3409,7 @@ export namespace ListModelsRequest {
     languagesList: Array<string>,
     additionalFieldsList: Array<string>,
     dontFetchFromMain: boolean,
+    bookmark: boolean,
   }
 
   export enum SortByCase { 
@@ -3366,6 +3417,8 @@ export namespace ListModelsRequest {
     SORT_BY_NAME = 11,
     SORT_BY_NUM_INPUTS = 12,
     SORT_BY_MODIFIED_AT = 13,
+    SORT_BY_CREATED_AT = 24,
+    SORT_BY_STAR_COUNT = 25,
   }
 }
 
@@ -4401,6 +4454,32 @@ export class ListEvaluationsRequest extends jspb.Message {
   getPerPage(): number;
   setPerPage(value: number): ListEvaluationsRequest;
 
+  getSortAscending(): boolean;
+  setSortAscending(value: boolean): ListEvaluationsRequest;
+
+  getSortByAppId(): boolean;
+  setSortByAppId(value: boolean): ListEvaluationsRequest;
+
+  getSortByRocAuc(): boolean;
+  setSortByRocAuc(value: boolean): ListEvaluationsRequest;
+
+  getSortByF1(): boolean;
+  setSortByF1(value: boolean): ListEvaluationsRequest;
+
+  getSortByCreatedAt(): boolean;
+  setSortByCreatedAt(value: boolean): ListEvaluationsRequest;
+
+  getSortByMeanAvgPrecision(): boolean;
+  setSortByMeanAvgPrecision(value: boolean): ListEvaluationsRequest;
+
+  getSortByPrecision(): boolean;
+  setSortByPrecision(value: boolean): ListEvaluationsRequest;
+
+  getSortByRecall(): boolean;
+  setSortByRecall(value: boolean): ListEvaluationsRequest;
+
+  getSortByCase(): ListEvaluationsRequest.SortByCase;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListEvaluationsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListEvaluationsRequest): ListEvaluationsRequest.AsObject;
@@ -4414,6 +4493,25 @@ export namespace ListEvaluationsRequest {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
     page: number,
     perPage: number,
+    sortAscending: boolean,
+    sortByAppId: boolean,
+    sortByRocAuc: boolean,
+    sortByF1: boolean,
+    sortByCreatedAt: boolean,
+    sortByMeanAvgPrecision: boolean,
+    sortByPrecision: boolean,
+    sortByRecall: boolean,
+  }
+
+  export enum SortByCase { 
+    SORT_BY_NOT_SET = 0,
+    SORT_BY_APP_ID = 5,
+    SORT_BY_ROC_AUC = 6,
+    SORT_BY_F1 = 7,
+    SORT_BY_CREATED_AT = 8,
+    SORT_BY_MEAN_AVG_PRECISION = 9,
+    SORT_BY_PRECISION = 10,
+    SORT_BY_RECALL = 11,
   }
 }
 
@@ -6130,6 +6228,12 @@ export class ListWorkflowsRequest extends jspb.Message {
   getSortByModifiedAt(): boolean;
   setSortByModifiedAt(value: boolean): ListWorkflowsRequest;
 
+  getSortByCreatedAt(): boolean;
+  setSortByCreatedAt(value: boolean): ListWorkflowsRequest;
+
+  getSortByStarCount(): boolean;
+  setSortByStarCount(value: boolean): ListWorkflowsRequest;
+
   getQuery(): string;
   setQuery(value: string): ListWorkflowsRequest;
 
@@ -6150,6 +6254,9 @@ export class ListWorkflowsRequest extends jspb.Message {
   getSearchTerm(): string;
   setSearchTerm(value: string): ListWorkflowsRequest;
 
+  getBookmark(): boolean;
+  setBookmark(value: boolean): ListWorkflowsRequest;
+
   getSortByCase(): ListWorkflowsRequest.SortByCase;
 
   serializeBinary(): Uint8Array;
@@ -6168,18 +6275,23 @@ export namespace ListWorkflowsRequest {
     sortAscending: boolean,
     sortById: boolean,
     sortByModifiedAt: boolean,
+    sortByCreatedAt: boolean,
+    sortByStarCount: boolean,
     query: string,
     id: string,
     featuredOnly: boolean,
     starredOnly: boolean,
     additionalFieldsList: Array<string>,
     searchTerm: string,
+    bookmark: boolean,
   }
 
   export enum SortByCase { 
     SORT_BY_NOT_SET = 0,
     SORT_BY_ID = 6,
     SORT_BY_MODIFIED_AT = 7,
+    SORT_BY_CREATED_AT = 13,
+    SORT_BY_STAR_COUNT = 14,
   }
 }
 
@@ -7743,6 +7855,23 @@ export class ListModulesRequest extends jspb.Message {
   clearAdditionalFieldsList(): ListModulesRequest;
   addAdditionalFields(value: string, index?: number): ListModulesRequest;
 
+  getSortAscending(): boolean;
+  setSortAscending(value: boolean): ListModulesRequest;
+
+  getSortByCreatedAt(): boolean;
+  setSortByCreatedAt(value: boolean): ListModulesRequest;
+
+  getSortByStarCount(): boolean;
+  setSortByStarCount(value: boolean): ListModulesRequest;
+
+  getSortByModifiedAt(): boolean;
+  setSortByModifiedAt(value: boolean): ListModulesRequest;
+
+  getBookmark(): boolean;
+  setBookmark(value: boolean): ListModulesRequest;
+
+  getSortByCase(): ListModulesRequest.SortByCase;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListModulesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListModulesRequest): ListModulesRequest.AsObject;
@@ -7758,6 +7887,18 @@ export namespace ListModulesRequest {
     perPage: number,
     starredOnly: boolean,
     additionalFieldsList: Array<string>,
+    sortAscending: boolean,
+    sortByCreatedAt: boolean,
+    sortByStarCount: boolean,
+    sortByModifiedAt: boolean,
+    bookmark: boolean,
+  }
+
+  export enum SortByCase { 
+    SORT_BY_NOT_SET = 0,
+    SORT_BY_CREATED_AT = 7,
+    SORT_BY_STAR_COUNT = 8,
+    SORT_BY_MODIFIED_AT = 9,
   }
 }
 
@@ -8982,6 +9123,320 @@ export namespace PostInputsUploadsRequest {
   export type AsObject = {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
     inputsUploadsList: Array<proto_clarifai_api_resources_pb.InputsUpload.AsObject>,
+  }
+}
+
+export class GetRunnerRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetRunnerRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): GetRunnerRequest;
+
+  getRunnerId(): string;
+  setRunnerId(value: string): GetRunnerRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetRunnerRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetRunnerRequest): GetRunnerRequest.AsObject;
+  static serializeBinaryToWriter(message: GetRunnerRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetRunnerRequest;
+  static deserializeBinaryFromReader(message: GetRunnerRequest, reader: jspb.BinaryReader): GetRunnerRequest;
+}
+
+export namespace GetRunnerRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    runnerId: string,
+  }
+}
+
+export class ListRunnersRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListRunnersRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): ListRunnersRequest;
+
+  getPage(): number;
+  setPage(value: number): ListRunnersRequest;
+
+  getPerPage(): number;
+  setPerPage(value: number): ListRunnersRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListRunnersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListRunnersRequest): ListRunnersRequest.AsObject;
+  static serializeBinaryToWriter(message: ListRunnersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListRunnersRequest;
+  static deserializeBinaryFromReader(message: ListRunnersRequest, reader: jspb.BinaryReader): ListRunnersRequest;
+}
+
+export namespace ListRunnersRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    page: number,
+    perPage: number,
+  }
+}
+
+export class PostRunnersRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostRunnersRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostRunnersRequest;
+
+  getRunnersList(): Array<proto_clarifai_api_resources_pb.Runner>;
+  setRunnersList(value: Array<proto_clarifai_api_resources_pb.Runner>): PostRunnersRequest;
+  clearRunnersList(): PostRunnersRequest;
+  addRunners(value?: proto_clarifai_api_resources_pb.Runner, index?: number): proto_clarifai_api_resources_pb.Runner;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostRunnersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostRunnersRequest): PostRunnersRequest.AsObject;
+  static serializeBinaryToWriter(message: PostRunnersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostRunnersRequest;
+  static deserializeBinaryFromReader(message: PostRunnersRequest, reader: jspb.BinaryReader): PostRunnersRequest;
+}
+
+export namespace PostRunnersRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    runnersList: Array<proto_clarifai_api_resources_pb.Runner.AsObject>,
+  }
+}
+
+export class DeleteRunnersRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteRunnersRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): DeleteRunnersRequest;
+
+  getIdsList(): Array<string>;
+  setIdsList(value: Array<string>): DeleteRunnersRequest;
+  clearIdsList(): DeleteRunnersRequest;
+  addIds(value: string, index?: number): DeleteRunnersRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteRunnersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteRunnersRequest): DeleteRunnersRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteRunnersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteRunnersRequest;
+  static deserializeBinaryFromReader(message: DeleteRunnersRequest, reader: jspb.BinaryReader): DeleteRunnersRequest;
+}
+
+export namespace DeleteRunnersRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    idsList: Array<string>,
+  }
+}
+
+export class SingleRunnerResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleRunnerResponse;
+  hasStatus(): boolean;
+  clearStatus(): SingleRunnerResponse;
+
+  getRunner(): proto_clarifai_api_resources_pb.Runner | undefined;
+  setRunner(value?: proto_clarifai_api_resources_pb.Runner): SingleRunnerResponse;
+  hasRunner(): boolean;
+  clearRunner(): SingleRunnerResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SingleRunnerResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SingleRunnerResponse): SingleRunnerResponse.AsObject;
+  static serializeBinaryToWriter(message: SingleRunnerResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SingleRunnerResponse;
+  static deserializeBinaryFromReader(message: SingleRunnerResponse, reader: jspb.BinaryReader): SingleRunnerResponse;
+}
+
+export namespace SingleRunnerResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    runner?: proto_clarifai_api_resources_pb.Runner.AsObject,
+  }
+}
+
+export class MultiRunnerResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiRunnerResponse;
+  hasStatus(): boolean;
+  clearStatus(): MultiRunnerResponse;
+
+  getRunnersList(): Array<proto_clarifai_api_resources_pb.Runner>;
+  setRunnersList(value: Array<proto_clarifai_api_resources_pb.Runner>): MultiRunnerResponse;
+  clearRunnersList(): MultiRunnerResponse;
+  addRunners(value?: proto_clarifai_api_resources_pb.Runner, index?: number): proto_clarifai_api_resources_pb.Runner;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MultiRunnerResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiRunnerResponse): MultiRunnerResponse.AsObject;
+  static serializeBinaryToWriter(message: MultiRunnerResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiRunnerResponse;
+  static deserializeBinaryFromReader(message: MultiRunnerResponse, reader: jspb.BinaryReader): MultiRunnerResponse;
+}
+
+export namespace MultiRunnerResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    runnersList: Array<proto_clarifai_api_resources_pb.Runner.AsObject>,
+  }
+}
+
+export class ListRunnerItemsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListRunnerItemsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): ListRunnerItemsRequest;
+
+  getRunnerId(): string;
+  setRunnerId(value: string): ListRunnerItemsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListRunnerItemsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListRunnerItemsRequest): ListRunnerItemsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListRunnerItemsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListRunnerItemsRequest;
+  static deserializeBinaryFromReader(message: ListRunnerItemsRequest, reader: jspb.BinaryReader): ListRunnerItemsRequest;
+}
+
+export namespace ListRunnerItemsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    runnerId: string,
+  }
+}
+
+export class PostRunnerItemOutputsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostRunnerItemOutputsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostRunnerItemOutputsRequest;
+
+  getRunnerId(): string;
+  setRunnerId(value: string): PostRunnerItemOutputsRequest;
+
+  getItemId(): string;
+  setItemId(value: string): PostRunnerItemOutputsRequest;
+
+  getRunnerItemOutputsList(): Array<RunnerItemOutput>;
+  setRunnerItemOutputsList(value: Array<RunnerItemOutput>): PostRunnerItemOutputsRequest;
+  clearRunnerItemOutputsList(): PostRunnerItemOutputsRequest;
+  addRunnerItemOutputs(value?: RunnerItemOutput, index?: number): RunnerItemOutput;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostRunnerItemOutputsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostRunnerItemOutputsRequest): PostRunnerItemOutputsRequest.AsObject;
+  static serializeBinaryToWriter(message: PostRunnerItemOutputsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostRunnerItemOutputsRequest;
+  static deserializeBinaryFromReader(message: PostRunnerItemOutputsRequest, reader: jspb.BinaryReader): PostRunnerItemOutputsRequest;
+}
+
+export namespace PostRunnerItemOutputsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    runnerId: string,
+    itemId: string,
+    runnerItemOutputsList: Array<RunnerItemOutput.AsObject>,
+  }
+}
+
+export class MultiRunnerItemResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiRunnerItemResponse;
+  hasStatus(): boolean;
+  clearStatus(): MultiRunnerItemResponse;
+
+  getItemsList(): Array<RunnerItem>;
+  setItemsList(value: Array<RunnerItem>): MultiRunnerItemResponse;
+  clearItemsList(): MultiRunnerItemResponse;
+  addItems(value?: RunnerItem, index?: number): RunnerItem;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MultiRunnerItemResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiRunnerItemResponse): MultiRunnerItemResponse.AsObject;
+  static serializeBinaryToWriter(message: MultiRunnerItemResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiRunnerItemResponse;
+  static deserializeBinaryFromReader(message: MultiRunnerItemResponse, reader: jspb.BinaryReader): MultiRunnerItemResponse;
+}
+
+export namespace MultiRunnerItemResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    itemsList: Array<RunnerItem.AsObject>,
+  }
+}
+
+export class RunnerItem extends jspb.Message {
+  getId(): string;
+  setId(value: string): RunnerItem;
+
+  getDescription(): string;
+  setDescription(value: string): RunnerItem;
+
+  getPostModelOutputsRequest(): PostModelOutputsRequest | undefined;
+  setPostModelOutputsRequest(value?: PostModelOutputsRequest): RunnerItem;
+  hasPostModelOutputsRequest(): boolean;
+  clearPostModelOutputsRequest(): RunnerItem;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RunnerItem.AsObject;
+  static toObject(includeInstance: boolean, msg: RunnerItem): RunnerItem.AsObject;
+  static serializeBinaryToWriter(message: RunnerItem, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RunnerItem;
+  static deserializeBinaryFromReader(message: RunnerItem, reader: jspb.BinaryReader): RunnerItem;
+}
+
+export namespace RunnerItem {
+  export type AsObject = {
+    id: string,
+    description: string,
+    postModelOutputsRequest?: PostModelOutputsRequest.AsObject,
+  }
+}
+
+export class RunnerItemOutput extends jspb.Message {
+  getMultiOutputResponse(): MultiOutputResponse | undefined;
+  setMultiOutputResponse(value?: MultiOutputResponse): RunnerItemOutput;
+  hasMultiOutputResponse(): boolean;
+  clearMultiOutputResponse(): RunnerItemOutput;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RunnerItemOutput.AsObject;
+  static toObject(includeInstance: boolean, msg: RunnerItemOutput): RunnerItemOutput.AsObject;
+  static serializeBinaryToWriter(message: RunnerItemOutput, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RunnerItemOutput;
+  static deserializeBinaryFromReader(message: RunnerItemOutput, reader: jspb.BinaryReader): RunnerItemOutput;
+}
+
+export namespace RunnerItemOutput {
+  export type AsObject = {
+    multiOutputResponse?: MultiOutputResponse.AsObject,
+  }
+}
+
+export class MultiRunnerItemOutputResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiRunnerItemOutputResponse;
+  hasStatus(): boolean;
+  clearStatus(): MultiRunnerItemOutputResponse;
+
+  getRunnerItemOutputsList(): Array<RunnerItemOutput>;
+  setRunnerItemOutputsList(value: Array<RunnerItemOutput>): MultiRunnerItemOutputResponse;
+  clearRunnerItemOutputsList(): MultiRunnerItemOutputResponse;
+  addRunnerItemOutputs(value?: RunnerItemOutput, index?: number): RunnerItemOutput;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MultiRunnerItemOutputResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiRunnerItemOutputResponse): MultiRunnerItemOutputResponse.AsObject;
+  static serializeBinaryToWriter(message: MultiRunnerItemOutputResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiRunnerItemOutputResponse;
+  static deserializeBinaryFromReader(message: MultiRunnerItemOutputResponse, reader: jspb.BinaryReader): MultiRunnerItemOutputResponse;
+}
+
+export namespace MultiRunnerItemOutputResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    runnerItemOutputsList: Array<RunnerItemOutput.AsObject>,
   }
 }
 
