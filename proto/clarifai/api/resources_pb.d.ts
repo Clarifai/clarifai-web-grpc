@@ -3311,6 +3311,11 @@ export class LabelCount extends jspb.Message {
   getCount(): number;
   setCount(value: number): LabelCount;
 
+  getConcept(): Concept | undefined;
+  setConcept(value?: Concept): LabelCount;
+  hasConcept(): boolean;
+  clearConcept(): LabelCount;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LabelCount.AsObject;
   static toObject(includeInstance: boolean, msg: LabelCount): LabelCount.AsObject;
@@ -3323,6 +3328,7 @@ export namespace LabelCount {
   export type AsObject = {
     conceptName: string,
     count: number,
+    concept?: Concept.AsObject,
   }
 }
 
@@ -3408,6 +3414,16 @@ export class ConfusionMatrixEntry extends jspb.Message {
   getValue(): number;
   setValue(value: number): ConfusionMatrixEntry;
 
+  getPredictedConcept(): Concept | undefined;
+  setPredictedConcept(value?: Concept): ConfusionMatrixEntry;
+  hasPredictedConcept(): boolean;
+  clearPredictedConcept(): ConfusionMatrixEntry;
+
+  getActualConcept(): Concept | undefined;
+  setActualConcept(value?: Concept): ConfusionMatrixEntry;
+  hasActualConcept(): boolean;
+  clearActualConcept(): ConfusionMatrixEntry;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConfusionMatrixEntry.AsObject;
   static toObject(includeInstance: boolean, msg: ConfusionMatrixEntry): ConfusionMatrixEntry.AsObject;
@@ -3421,6 +3437,8 @@ export namespace ConfusionMatrixEntry {
     predicted: string,
     actual: string,
     value: number,
+    predictedConcept?: Concept.AsObject,
+    actualConcept?: Concept.AsObject,
   }
 }
 

@@ -3422,7 +3422,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.clarifai.api.ListEvaluationsRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.clarifai.api.ListEvaluationsRequest.oneofGroups_);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.clarifai.api.ListEvaluationsRequest.repeatedFields_, proto.clarifai.api.ListEvaluationsRequest.oneofGroups_);
 };
 goog.inherits(proto.clarifai.api.ListEvaluationsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -41854,6 +41854,13 @@ proto.clarifai.api.PostEvaluationsRequest.prototype.clearEvalMetricsList = funct
 
 
 /**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.clarifai.api.ListEvaluationsRequest.repeatedFields_ = [13,14,15];
+
+/**
  * Oneof group definitions for this message. Each group defines the field
  * numbers belonging to that group. When of these fields' value is set, all
  * other fields in the group are cleared. During deserialization, if multiple
@@ -41861,7 +41868,7 @@ proto.clarifai.api.PostEvaluationsRequest.prototype.clearEvalMetricsList = funct
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.clarifai.api.ListEvaluationsRequest.oneofGroups_ = [[5,6,7,8,9,10,11]];
+proto.clarifai.api.ListEvaluationsRequest.oneofGroups_ = [[5,6,7,8,9,10,11,16,17,18]];
 
 /**
  * @enum {number}
@@ -41874,7 +41881,10 @@ proto.clarifai.api.ListEvaluationsRequest.SortByCase = {
   SORT_BY_CREATED_AT: 8,
   SORT_BY_MEAN_AVG_PRECISION: 9,
   SORT_BY_PRECISION: 10,
-  SORT_BY_RECALL: 11
+  SORT_BY_RECALL: 11,
+  SORT_BY_MODEL_ID: 16,
+  SORT_BY_EVAL_DATASET_ID: 17,
+  SORT_BY_TRAIN_DATASET_ID: 18
 };
 
 /**
@@ -41925,7 +41935,14 @@ proto.clarifai.api.ListEvaluationsRequest.toObject = function(includeInstance, m
     sortByCreatedAt: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
     sortByMeanAvgPrecision: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
     sortByPrecision: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
-    sortByRecall: jspb.Message.getBooleanFieldWithDefault(msg, 11, false)
+    sortByRecall: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
+    sortByModelId: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
+    sortByEvalDatasetId: jspb.Message.getBooleanFieldWithDefault(msg, 17, false),
+    sortByTrainDatasetId: jspb.Message.getBooleanFieldWithDefault(msg, 18, false),
+    modelTypeId: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    evalDatasetIdsList: (f = jspb.Message.getRepeatedField(msg, 13)) == null ? undefined : f,
+    trainDatasetIdsList: (f = jspb.Message.getRepeatedField(msg, 14)) == null ? undefined : f,
+    conceptIdsList: (f = jspb.Message.getRepeatedField(msg, 15)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -42006,6 +42023,34 @@ proto.clarifai.api.ListEvaluationsRequest.deserializeBinaryFromReader = function
     case 11:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setSortByRecall(value);
+      break;
+    case 16:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setSortByModelId(value);
+      break;
+    case 17:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setSortByEvalDatasetId(value);
+      break;
+    case 18:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setSortByTrainDatasetId(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setModelTypeId(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addEvalDatasetIds(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addTrainDatasetIds(value);
+      break;
+    case 15:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addConceptIds(value);
       break;
     default:
       reader.skipField();
@@ -42111,6 +42156,55 @@ proto.clarifai.api.ListEvaluationsRequest.serializeBinaryToWriter = function(mes
   if (f != null) {
     writer.writeBool(
       11,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 16));
+  if (f != null) {
+    writer.writeBool(
+      16,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 17));
+  if (f != null) {
+    writer.writeBool(
+      17,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 18));
+  if (f != null) {
+    writer.writeBool(
+      18,
+      f
+    );
+  }
+  f = message.getModelTypeId();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
+      f
+    );
+  }
+  f = message.getEvalDatasetIdsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      13,
+      f
+    );
+  }
+  f = message.getTrainDatasetIdsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      14,
+      f
+    );
+  }
+  f = message.getConceptIdsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      15,
       f
     );
   }
@@ -42457,6 +42551,243 @@ proto.clarifai.api.ListEvaluationsRequest.prototype.clearSortByRecall = function
  */
 proto.clarifai.api.ListEvaluationsRequest.prototype.hasSortByRecall = function() {
   return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional bool sort_by_model_id = 16;
+ * @return {boolean}
+ */
+proto.clarifai.api.ListEvaluationsRequest.prototype.getSortByModelId = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 16, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.clarifai.api.ListEvaluationsRequest} returns this
+ */
+proto.clarifai.api.ListEvaluationsRequest.prototype.setSortByModelId = function(value) {
+  return jspb.Message.setOneofField(this, 16, proto.clarifai.api.ListEvaluationsRequest.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.clarifai.api.ListEvaluationsRequest} returns this
+ */
+proto.clarifai.api.ListEvaluationsRequest.prototype.clearSortByModelId = function() {
+  return jspb.Message.setOneofField(this, 16, proto.clarifai.api.ListEvaluationsRequest.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.ListEvaluationsRequest.prototype.hasSortByModelId = function() {
+  return jspb.Message.getField(this, 16) != null;
+};
+
+
+/**
+ * optional bool sort_by_eval_dataset_id = 17;
+ * @return {boolean}
+ */
+proto.clarifai.api.ListEvaluationsRequest.prototype.getSortByEvalDatasetId = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 17, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.clarifai.api.ListEvaluationsRequest} returns this
+ */
+proto.clarifai.api.ListEvaluationsRequest.prototype.setSortByEvalDatasetId = function(value) {
+  return jspb.Message.setOneofField(this, 17, proto.clarifai.api.ListEvaluationsRequest.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.clarifai.api.ListEvaluationsRequest} returns this
+ */
+proto.clarifai.api.ListEvaluationsRequest.prototype.clearSortByEvalDatasetId = function() {
+  return jspb.Message.setOneofField(this, 17, proto.clarifai.api.ListEvaluationsRequest.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.ListEvaluationsRequest.prototype.hasSortByEvalDatasetId = function() {
+  return jspb.Message.getField(this, 17) != null;
+};
+
+
+/**
+ * optional bool sort_by_train_dataset_id = 18;
+ * @return {boolean}
+ */
+proto.clarifai.api.ListEvaluationsRequest.prototype.getSortByTrainDatasetId = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 18, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.clarifai.api.ListEvaluationsRequest} returns this
+ */
+proto.clarifai.api.ListEvaluationsRequest.prototype.setSortByTrainDatasetId = function(value) {
+  return jspb.Message.setOneofField(this, 18, proto.clarifai.api.ListEvaluationsRequest.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.clarifai.api.ListEvaluationsRequest} returns this
+ */
+proto.clarifai.api.ListEvaluationsRequest.prototype.clearSortByTrainDatasetId = function() {
+  return jspb.Message.setOneofField(this, 18, proto.clarifai.api.ListEvaluationsRequest.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.ListEvaluationsRequest.prototype.hasSortByTrainDatasetId = function() {
+  return jspb.Message.getField(this, 18) != null;
+};
+
+
+/**
+ * optional string model_type_id = 12;
+ * @return {string}
+ */
+proto.clarifai.api.ListEvaluationsRequest.prototype.getModelTypeId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.clarifai.api.ListEvaluationsRequest} returns this
+ */
+proto.clarifai.api.ListEvaluationsRequest.prototype.setModelTypeId = function(value) {
+  return jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
+/**
+ * repeated string eval_dataset_ids = 13;
+ * @return {!Array<string>}
+ */
+proto.clarifai.api.ListEvaluationsRequest.prototype.getEvalDatasetIdsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 13));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.clarifai.api.ListEvaluationsRequest} returns this
+ */
+proto.clarifai.api.ListEvaluationsRequest.prototype.setEvalDatasetIdsList = function(value) {
+  return jspb.Message.setField(this, 13, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.clarifai.api.ListEvaluationsRequest} returns this
+ */
+proto.clarifai.api.ListEvaluationsRequest.prototype.addEvalDatasetIds = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 13, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.clarifai.api.ListEvaluationsRequest} returns this
+ */
+proto.clarifai.api.ListEvaluationsRequest.prototype.clearEvalDatasetIdsList = function() {
+  return this.setEvalDatasetIdsList([]);
+};
+
+
+/**
+ * repeated string train_dataset_ids = 14;
+ * @return {!Array<string>}
+ */
+proto.clarifai.api.ListEvaluationsRequest.prototype.getTrainDatasetIdsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 14));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.clarifai.api.ListEvaluationsRequest} returns this
+ */
+proto.clarifai.api.ListEvaluationsRequest.prototype.setTrainDatasetIdsList = function(value) {
+  return jspb.Message.setField(this, 14, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.clarifai.api.ListEvaluationsRequest} returns this
+ */
+proto.clarifai.api.ListEvaluationsRequest.prototype.addTrainDatasetIds = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 14, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.clarifai.api.ListEvaluationsRequest} returns this
+ */
+proto.clarifai.api.ListEvaluationsRequest.prototype.clearTrainDatasetIdsList = function() {
+  return this.setTrainDatasetIdsList([]);
+};
+
+
+/**
+ * repeated string concept_ids = 15;
+ * @return {!Array<string>}
+ */
+proto.clarifai.api.ListEvaluationsRequest.prototype.getConceptIdsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 15));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.clarifai.api.ListEvaluationsRequest} returns this
+ */
+proto.clarifai.api.ListEvaluationsRequest.prototype.setConceptIdsList = function(value) {
+  return jspb.Message.setField(this, 15, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.clarifai.api.ListEvaluationsRequest} returns this
+ */
+proto.clarifai.api.ListEvaluationsRequest.prototype.addConceptIds = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 15, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.clarifai.api.ListEvaluationsRequest} returns this
+ */
+proto.clarifai.api.ListEvaluationsRequest.prototype.clearConceptIdsList = function() {
+  return this.setConceptIdsList([]);
 };
 
 

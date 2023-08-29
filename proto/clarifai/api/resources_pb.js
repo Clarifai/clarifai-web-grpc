@@ -29852,7 +29852,8 @@ proto.clarifai.api.LabelCount.prototype.toObject = function(opt_includeInstance)
 proto.clarifai.api.LabelCount.toObject = function(includeInstance, msg) {
   var f, obj = {
     conceptName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    count: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    count: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    concept: (f = msg.getConcept()) && proto.clarifai.api.Concept.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -29897,6 +29898,11 @@ proto.clarifai.api.LabelCount.deserializeBinaryFromReader = function(msg, reader
       var value = /** @type {number} */ (reader.readUint32());
       msg.setCount(value);
       break;
+    case 3:
+      var value = new proto.clarifai.api.Concept;
+      reader.readMessage(value,proto.clarifai.api.Concept.deserializeBinaryFromReader);
+      msg.setConcept(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -29940,6 +29946,14 @@ proto.clarifai.api.LabelCount.serializeBinaryToWriter = function(message, writer
       f
     );
   }
+  f = message.getConcept();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.clarifai.api.Concept.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -29976,6 +29990,43 @@ proto.clarifai.api.LabelCount.prototype.getCount = function() {
  */
 proto.clarifai.api.LabelCount.prototype.setCount = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional Concept concept = 3;
+ * @return {?proto.clarifai.api.Concept}
+ */
+proto.clarifai.api.LabelCount.prototype.getConcept = function() {
+  return /** @type{?proto.clarifai.api.Concept} */ (
+    jspb.Message.getWrapperField(this, proto.clarifai.api.Concept, 3));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.Concept|undefined} value
+ * @return {!proto.clarifai.api.LabelCount} returns this
+*/
+proto.clarifai.api.LabelCount.prototype.setConcept = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.LabelCount} returns this
+ */
+proto.clarifai.api.LabelCount.prototype.clearConcept = function() {
+  return this.setConcept(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.LabelCount.prototype.hasConcept = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -30572,7 +30623,9 @@ proto.clarifai.api.ConfusionMatrixEntry.toObject = function(includeInstance, msg
   var f, obj = {
     predicted: jspb.Message.getFieldWithDefault(msg, 1, ""),
     actual: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    value: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0)
+    value: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+    predictedConcept: (f = msg.getPredictedConcept()) && proto.clarifai.api.Concept.toObject(includeInstance, f),
+    actualConcept: (f = msg.getActualConcept()) && proto.clarifai.api.Concept.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -30620,6 +30673,16 @@ proto.clarifai.api.ConfusionMatrixEntry.deserializeBinaryFromReader = function(m
     case 4:
       var value = /** @type {number} */ (reader.readFloat());
       msg.setValue(value);
+      break;
+    case 5:
+      var value = new proto.clarifai.api.Concept;
+      reader.readMessage(value,proto.clarifai.api.Concept.deserializeBinaryFromReader);
+      msg.setPredictedConcept(value);
+      break;
+    case 6:
+      var value = new proto.clarifai.api.Concept;
+      reader.readMessage(value,proto.clarifai.api.Concept.deserializeBinaryFromReader);
+      msg.setActualConcept(value);
       break;
     default:
       reader.skipField();
@@ -30669,6 +30732,22 @@ proto.clarifai.api.ConfusionMatrixEntry.serializeBinaryToWriter = function(messa
     writer.writeFloat(
       4,
       f
+    );
+  }
+  f = message.getPredictedConcept();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      proto.clarifai.api.Concept.serializeBinaryToWriter
+    );
+  }
+  f = message.getActualConcept();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      proto.clarifai.api.Concept.serializeBinaryToWriter
     );
   }
 };
@@ -30725,6 +30804,80 @@ proto.clarifai.api.ConfusionMatrixEntry.prototype.getValue = function() {
  */
 proto.clarifai.api.ConfusionMatrixEntry.prototype.setValue = function(value) {
   return jspb.Message.setProto3FloatField(this, 4, value);
+};
+
+
+/**
+ * optional Concept predicted_concept = 5;
+ * @return {?proto.clarifai.api.Concept}
+ */
+proto.clarifai.api.ConfusionMatrixEntry.prototype.getPredictedConcept = function() {
+  return /** @type{?proto.clarifai.api.Concept} */ (
+    jspb.Message.getWrapperField(this, proto.clarifai.api.Concept, 5));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.Concept|undefined} value
+ * @return {!proto.clarifai.api.ConfusionMatrixEntry} returns this
+*/
+proto.clarifai.api.ConfusionMatrixEntry.prototype.setPredictedConcept = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.ConfusionMatrixEntry} returns this
+ */
+proto.clarifai.api.ConfusionMatrixEntry.prototype.clearPredictedConcept = function() {
+  return this.setPredictedConcept(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.ConfusionMatrixEntry.prototype.hasPredictedConcept = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional Concept actual_concept = 6;
+ * @return {?proto.clarifai.api.Concept}
+ */
+proto.clarifai.api.ConfusionMatrixEntry.prototype.getActualConcept = function() {
+  return /** @type{?proto.clarifai.api.Concept} */ (
+    jspb.Message.getWrapperField(this, proto.clarifai.api.Concept, 6));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.Concept|undefined} value
+ * @return {!proto.clarifai.api.ConfusionMatrixEntry} returns this
+*/
+proto.clarifai.api.ConfusionMatrixEntry.prototype.setActualConcept = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.ConfusionMatrixEntry} returns this
+ */
+proto.clarifai.api.ConfusionMatrixEntry.prototype.clearActualConcept = function() {
+  return this.setActualConcept(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.ConfusionMatrixEntry.prototype.hasActualConcept = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

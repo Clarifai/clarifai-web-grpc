@@ -4478,6 +4478,33 @@ export class ListEvaluationsRequest extends jspb.Message {
   getSortByRecall(): boolean;
   setSortByRecall(value: boolean): ListEvaluationsRequest;
 
+  getSortByModelId(): boolean;
+  setSortByModelId(value: boolean): ListEvaluationsRequest;
+
+  getSortByEvalDatasetId(): boolean;
+  setSortByEvalDatasetId(value: boolean): ListEvaluationsRequest;
+
+  getSortByTrainDatasetId(): boolean;
+  setSortByTrainDatasetId(value: boolean): ListEvaluationsRequest;
+
+  getModelTypeId(): string;
+  setModelTypeId(value: string): ListEvaluationsRequest;
+
+  getEvalDatasetIdsList(): Array<string>;
+  setEvalDatasetIdsList(value: Array<string>): ListEvaluationsRequest;
+  clearEvalDatasetIdsList(): ListEvaluationsRequest;
+  addEvalDatasetIds(value: string, index?: number): ListEvaluationsRequest;
+
+  getTrainDatasetIdsList(): Array<string>;
+  setTrainDatasetIdsList(value: Array<string>): ListEvaluationsRequest;
+  clearTrainDatasetIdsList(): ListEvaluationsRequest;
+  addTrainDatasetIds(value: string, index?: number): ListEvaluationsRequest;
+
+  getConceptIdsList(): Array<string>;
+  setConceptIdsList(value: Array<string>): ListEvaluationsRequest;
+  clearConceptIdsList(): ListEvaluationsRequest;
+  addConceptIds(value: string, index?: number): ListEvaluationsRequest;
+
   getSortByCase(): ListEvaluationsRequest.SortByCase;
 
   serializeBinary(): Uint8Array;
@@ -4501,6 +4528,13 @@ export namespace ListEvaluationsRequest {
     sortByMeanAvgPrecision: boolean,
     sortByPrecision: boolean,
     sortByRecall: boolean,
+    sortByModelId: boolean,
+    sortByEvalDatasetId: boolean,
+    sortByTrainDatasetId: boolean,
+    modelTypeId: string,
+    evalDatasetIdsList: Array<string>,
+    trainDatasetIdsList: Array<string>,
+    conceptIdsList: Array<string>,
   }
 
   export enum SortByCase { 
@@ -4512,6 +4546,9 @@ export namespace ListEvaluationsRequest {
     SORT_BY_MEAN_AVG_PRECISION = 9,
     SORT_BY_PRECISION = 10,
     SORT_BY_RECALL = 11,
+    SORT_BY_MODEL_ID = 16,
+    SORT_BY_EVAL_DATASET_ID = 17,
+    SORT_BY_TRAIN_DATASET_ID = 18,
   }
 }
 
