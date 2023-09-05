@@ -596,6 +596,11 @@ export class Concept extends jspb.Message {
   hasKeypointInfo(): boolean;
   clearKeypointInfo(): Concept;
 
+  getExtraInfo(): ConceptExtraInfo | undefined;
+  setExtraInfo(value?: ConceptExtraInfo): Concept;
+  hasExtraInfo(): boolean;
+  clearExtraInfo(): Concept;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Concept.AsObject;
   static toObject(includeInstance: boolean, msg: Concept): Concept.AsObject;
@@ -617,6 +622,7 @@ export namespace Concept {
     visibility?: Visibility.AsObject,
     userId: string,
     keypointInfo?: KeypointInfo.AsObject,
+    extraInfo?: ConceptExtraInfo.AsObject,
   }
 }
 
@@ -665,6 +671,24 @@ export namespace KeypointEdge {
   export type AsObject = {
     k1: number,
     k2: number,
+  }
+}
+
+export class ConceptExtraInfo extends jspb.Message {
+  getIsRankable(): boolean;
+  setIsRankable(value: boolean): ConceptExtraInfo;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConceptExtraInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: ConceptExtraInfo): ConceptExtraInfo.AsObject;
+  static serializeBinaryToWriter(message: ConceptExtraInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConceptExtraInfo;
+  static deserializeBinaryFromReader(message: ConceptExtraInfo, reader: jspb.BinaryReader): ConceptExtraInfo;
+}
+
+export namespace ConceptExtraInfo {
+  export type AsObject = {
+    isRankable: boolean,
   }
 }
 

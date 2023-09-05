@@ -431,6 +431,9 @@ export class ListAppsRequest extends jspb.Message {
   getName(): string;
   setName(value: string): ListAppsRequest;
 
+  getId(): string;
+  setId(value: string): ListAppsRequest;
+
   getFeaturedOnly(): boolean;
   setFeaturedOnly(value: boolean): ListAppsRequest;
 
@@ -464,6 +467,7 @@ export namespace ListAppsRequest {
     sortByStarCount: boolean,
     query: string,
     name: string,
+    id: string,
     featuredOnly: boolean,
     starredOnly: boolean,
     additionalFieldsList: Array<string>,
@@ -1095,6 +1099,11 @@ export class PostConceptsSearchesRequest extends jspb.Message {
   hasConceptQuery(): boolean;
   clearConceptQuery(): PostConceptsSearchesRequest;
 
+  getExtraInfo(): ConceptExtraInfoRequest | undefined;
+  setExtraInfo(value?: ConceptExtraInfoRequest): PostConceptsSearchesRequest;
+  hasExtraInfo(): boolean;
+  clearExtraInfo(): PostConceptsSearchesRequest;
+
   getPagination(): Pagination | undefined;
   setPagination(value?: Pagination): PostConceptsSearchesRequest;
   hasPagination(): boolean;
@@ -1112,7 +1121,28 @@ export namespace PostConceptsSearchesRequest {
   export type AsObject = {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
     conceptQuery?: proto_clarifai_api_resources_pb.ConceptQuery.AsObject,
+    extraInfo?: ConceptExtraInfoRequest.AsObject,
     pagination?: Pagination.AsObject,
+  }
+}
+
+export class ConceptExtraInfoRequest extends jspb.Message {
+  getRankableModel(): proto_clarifai_api_resources_pb.Model | undefined;
+  setRankableModel(value?: proto_clarifai_api_resources_pb.Model): ConceptExtraInfoRequest;
+  hasRankableModel(): boolean;
+  clearRankableModel(): ConceptExtraInfoRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConceptExtraInfoRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ConceptExtraInfoRequest): ConceptExtraInfoRequest.AsObject;
+  static serializeBinaryToWriter(message: ConceptExtraInfoRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConceptExtraInfoRequest;
+  static deserializeBinaryFromReader(message: ConceptExtraInfoRequest, reader: jspb.BinaryReader): ConceptExtraInfoRequest;
+}
+
+export namespace ConceptExtraInfoRequest {
+  export type AsObject = {
+    rankableModel?: proto_clarifai_api_resources_pb.Model.AsObject,
   }
 }
 
@@ -2158,6 +2188,9 @@ export class ListDatasetsRequest extends jspb.Message {
   getSortByModifiedAt(): boolean;
   setSortByModifiedAt(value: boolean): ListDatasetsRequest;
 
+  getSortById(): boolean;
+  setSortById(value: boolean): ListDatasetsRequest;
+
   getBookmark(): boolean;
   setBookmark(value: boolean): ListDatasetsRequest;
 
@@ -2182,6 +2215,7 @@ export namespace ListDatasetsRequest {
     sortByCreatedAt: boolean,
     sortByStarCount: boolean,
     sortByModifiedAt: boolean,
+    sortById: boolean,
     bookmark: boolean,
   }
 
@@ -2190,6 +2224,7 @@ export namespace ListDatasetsRequest {
     SORT_BY_CREATED_AT = 7,
     SORT_BY_STAR_COUNT = 8,
     SORT_BY_MODIFIED_AT = 9,
+    SORT_BY_ID = 11,
   }
 }
 
@@ -7904,6 +7939,9 @@ export class ListModulesRequest extends jspb.Message {
   getSortByModifiedAt(): boolean;
   setSortByModifiedAt(value: boolean): ListModulesRequest;
 
+  getSortById(): boolean;
+  setSortById(value: boolean): ListModulesRequest;
+
   getBookmark(): boolean;
   setBookmark(value: boolean): ListModulesRequest;
 
@@ -7928,6 +7966,7 @@ export namespace ListModulesRequest {
     sortByCreatedAt: boolean,
     sortByStarCount: boolean,
     sortByModifiedAt: boolean,
+    sortById: boolean,
     bookmark: boolean,
   }
 
@@ -7936,6 +7975,7 @@ export namespace ListModulesRequest {
     SORT_BY_CREATED_AT = 7,
     SORT_BY_STAR_COUNT = 8,
     SORT_BY_MODIFIED_AT = 9,
+    SORT_BY_ID = 11,
   }
 }
 
