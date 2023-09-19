@@ -191,6 +191,13 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiSearchResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiSearchResponse>;
 
+  listAnnotationWorkers(
+    request: proto_clarifai_api_service_pb.ListAnnotationWorkersRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiWorkerResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiWorkerResponse>;
+
   getInputCount(
     request: proto_clarifai_api_service_pb.GetInputCountRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -1636,6 +1643,11 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.PostAnnotationsSearchesRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiSearchResponse>;
+
+  listAnnotationWorkers(
+    request: proto_clarifai_api_service_pb.ListAnnotationWorkersRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiWorkerResponse>;
 
   getInputCount(
     request: proto_clarifai_api_service_pb.GetInputCountRequest,

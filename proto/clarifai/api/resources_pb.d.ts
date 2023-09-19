@@ -96,6 +96,47 @@ export namespace Annotation {
   }
 }
 
+export class Worker extends jspb.Message {
+  getUser(): User | undefined;
+  setUser(value?: User): Worker;
+  hasUser(): boolean;
+  clearUser(): Worker;
+
+  getModel(): Model | undefined;
+  setModel(value?: Model): Worker;
+  hasModel(): boolean;
+  clearModel(): Worker;
+
+  getWorkflow(): Workflow | undefined;
+  setWorkflow(value?: Workflow): Worker;
+  hasWorkflow(): boolean;
+  clearWorkflow(): Worker;
+
+  getWorkerCase(): Worker.WorkerCase;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Worker.AsObject;
+  static toObject(includeInstance: boolean, msg: Worker): Worker.AsObject;
+  static serializeBinaryToWriter(message: Worker, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Worker;
+  static deserializeBinaryFromReader(message: Worker, reader: jspb.BinaryReader): Worker;
+}
+
+export namespace Worker {
+  export type AsObject = {
+    user?: User.AsObject,
+    model?: Model.AsObject,
+    workflow?: Workflow.AsObject,
+  }
+
+  export enum WorkerCase { 
+    WORKER_NOT_SET = 0,
+    USER = 1,
+    MODEL = 2,
+    WORKFLOW = 3,
+  }
+}
+
 export class App extends jspb.Message {
   getId(): string;
   setId(value: string): App;
@@ -7257,6 +7298,11 @@ export class InputsExtractionJob extends jspb.Message {
   getInputIdConflictResolution(): InputIDConflictResolution;
   setInputIdConflictResolution(value: InputIDConflictResolution): InputsExtractionJob;
 
+  getInputTemplate(): Input | undefined;
+  setInputTemplate(value?: Input): InputsExtractionJob;
+  hasInputTemplate(): boolean;
+  clearInputTemplate(): InputsExtractionJob;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InputsExtractionJob.AsObject;
   static toObject(includeInstance: boolean, msg: InputsExtractionJob): InputsExtractionJob.AsObject;
@@ -7274,6 +7320,7 @@ export namespace InputsExtractionJob {
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     inputIdConflictResolution: InputIDConflictResolution,
+    inputTemplate?: Input.AsObject,
   }
 }
 
@@ -7335,6 +7382,11 @@ export class InputsDataSource extends jspb.Message {
   getInputIdConflictResolution(): InputIDConflictResolution;
   setInputIdConflictResolution(value: InputIDConflictResolution): InputsDataSource;
 
+  getInputTemplate(): Input | undefined;
+  setInputTemplate(value?: Input): InputsDataSource;
+  hasInputTemplate(): boolean;
+  clearInputTemplate(): InputsDataSource;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InputsDataSource.AsObject;
   static toObject(includeInstance: boolean, msg: InputsDataSource): InputsDataSource.AsObject;
@@ -7348,6 +7400,7 @@ export namespace InputsDataSource {
     inputsAddJobId: string,
     url?: DataSourceURL.AsObject,
     inputIdConflictResolution: InputIDConflictResolution,
+    inputTemplate?: Input.AsObject,
   }
 }
 
@@ -7483,6 +7536,11 @@ export class InputsUpload extends jspb.Message {
   getInputIdConflictResolution(): InputIDConflictResolution;
   setInputIdConflictResolution(value: InputIDConflictResolution): InputsUpload;
 
+  getInputTemplate(): Input | undefined;
+  setInputTemplate(value?: Input): InputsUpload;
+  hasInputTemplate(): boolean;
+  clearInputTemplate(): InputsUpload;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InputsUpload.AsObject;
   static toObject(includeInstance: boolean, msg: InputsUpload): InputsUpload.AsObject;
@@ -7497,6 +7555,7 @@ export namespace InputsUpload {
     appPat: string,
     upload?: Upload.AsObject,
     inputIdConflictResolution: InputIDConflictResolution,
+    inputTemplate?: Input.AsObject,
   }
 }
 

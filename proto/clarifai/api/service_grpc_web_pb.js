@@ -1684,6 +1684,67 @@ proto.clarifai.api.V2PromiseClient.prototype.postAnnotationsSearches =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListAnnotationWorkersRequest,
+ *   !proto.clarifai.api.MultiWorkerResponse>}
+ */
+const methodDescriptor_V2_ListAnnotationWorkers = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListAnnotationWorkers',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListAnnotationWorkersRequest,
+  proto.clarifai.api.MultiWorkerResponse,
+  /**
+   * @param {!proto.clarifai.api.ListAnnotationWorkersRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiWorkerResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListAnnotationWorkersRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiWorkerResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiWorkerResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listAnnotationWorkers =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListAnnotationWorkers',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListAnnotationWorkers,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListAnnotationWorkersRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiWorkerResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listAnnotationWorkers =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListAnnotationWorkers',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListAnnotationWorkers);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.GetInputCountRequest,
  *   !proto.clarifai.api.SingleInputCountResponse>}
  */
