@@ -8021,6 +8021,12 @@ export class ListModulesRequest extends jspb.Message {
   getBookmark(): boolean;
   setBookmark(value: boolean): ListModulesRequest;
 
+  getName(): string;
+  setName(value: string): ListModulesRequest;
+
+  getFilterByUserId(): boolean;
+  setFilterByUserId(value: boolean): ListModulesRequest;
+
   getSortByCase(): ListModulesRequest.SortByCase;
 
   serializeBinary(): Uint8Array;
@@ -8044,6 +8050,8 @@ export namespace ListModulesRequest {
     sortByModifiedAt: boolean,
     sortById: boolean,
     bookmark: boolean,
+    name: string,
+    filterByUserId: boolean,
   }
 
   export enum SortByCase { 
