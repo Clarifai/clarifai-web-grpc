@@ -40,7 +40,7 @@ jobs:
           tag_name: "v%s"
           tag_message: "v%s"
           create_tag: "true"
-          commit_pattern: "^Release (\\S+)"
+          commit_pattern: "^GRPC clients version (\\S+)"
           publish_command: "yarn"
           publish_args: "--non-interactive"
         env:
