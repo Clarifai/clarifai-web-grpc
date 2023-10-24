@@ -474,6 +474,11 @@ export class ListAppsRequest extends jspb.Message {
   getPerPage(): number;
   setPerPage(value: number): ListAppsRequest;
 
+  getAdditionalFieldsList(): Array<string>;
+  setAdditionalFieldsList(value: Array<string>): ListAppsRequest;
+  clearAdditionalFieldsList(): ListAppsRequest;
+  addAdditionalFields(value: string, index?: number): ListAppsRequest;
+
   getSortAscending(): boolean;
   setSortAscending(value: boolean): ListAppsRequest;
 
@@ -489,6 +494,15 @@ export class ListAppsRequest extends jspb.Message {
   getSortByStarCount(): boolean;
   setSortByStarCount(value: boolean): ListAppsRequest;
 
+  getFeaturedOnly(): boolean;
+  setFeaturedOnly(value: boolean): ListAppsRequest;
+
+  getStarredOnly(): boolean;
+  setStarredOnly(value: boolean): ListAppsRequest;
+
+  getSearch(): string;
+  setSearch(value: string): ListAppsRequest;
+
   getQuery(): string;
   setQuery(value: string): ListAppsRequest;
 
@@ -497,17 +511,6 @@ export class ListAppsRequest extends jspb.Message {
 
   getId(): string;
   setId(value: string): ListAppsRequest;
-
-  getFeaturedOnly(): boolean;
-  setFeaturedOnly(value: boolean): ListAppsRequest;
-
-  getStarredOnly(): boolean;
-  setStarredOnly(value: boolean): ListAppsRequest;
-
-  getAdditionalFieldsList(): Array<string>;
-  setAdditionalFieldsList(value: Array<string>): ListAppsRequest;
-  clearAdditionalFieldsList(): ListAppsRequest;
-  addAdditionalFields(value: string, index?: number): ListAppsRequest;
 
   getSortByCase(): ListAppsRequest.SortByCase;
 
@@ -524,17 +527,18 @@ export namespace ListAppsRequest {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
     page: number,
     perPage: number,
+    additionalFieldsList: Array<string>,
     sortAscending: boolean,
     sortByName: boolean,
     sortByModifiedAt: boolean,
     sortByCreatedAt: boolean,
     sortByStarCount: boolean,
+    featuredOnly: boolean,
+    starredOnly: boolean,
+    search: string,
     query: string,
     name: string,
     id: string,
-    featuredOnly: boolean,
-    starredOnly: boolean,
-    additionalFieldsList: Array<string>,
   }
 
   export enum SortByCase { 
@@ -2236,9 +2240,6 @@ export class ListDatasetsRequest extends jspb.Message {
   getPerPage(): number;
   setPerPage(value: number): ListDatasetsRequest;
 
-  getStarredOnly(): boolean;
-  setStarredOnly(value: boolean): ListDatasetsRequest;
-
   getAdditionalFieldsList(): Array<string>;
   setAdditionalFieldsList(value: Array<string>): ListDatasetsRequest;
   clearAdditionalFieldsList(): ListDatasetsRequest;
@@ -2259,8 +2260,14 @@ export class ListDatasetsRequest extends jspb.Message {
   getSortById(): boolean;
   setSortById(value: boolean): ListDatasetsRequest;
 
+  getStarredOnly(): boolean;
+  setStarredOnly(value: boolean): ListDatasetsRequest;
+
   getBookmark(): boolean;
   setBookmark(value: boolean): ListDatasetsRequest;
+
+  getSearch(): string;
+  setSearch(value: string): ListDatasetsRequest;
 
   getId(): string;
   setId(value: string): ListDatasetsRequest;
@@ -2280,14 +2287,15 @@ export namespace ListDatasetsRequest {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
     page: number,
     perPage: number,
-    starredOnly: boolean,
     additionalFieldsList: Array<string>,
     sortAscending: boolean,
     sortByCreatedAt: boolean,
     sortByStarCount: boolean,
     sortByModifiedAt: boolean,
     sortById: boolean,
+    starredOnly: boolean,
     bookmark: boolean,
+    search: string,
     id: string,
   }
 
@@ -3402,6 +3410,11 @@ export class ListModelsRequest extends jspb.Message {
   getPerPage(): number;
   setPerPage(value: number): ListModelsRequest;
 
+  getAdditionalFieldsList(): Array<string>;
+  setAdditionalFieldsList(value: Array<string>): ListModelsRequest;
+  clearAdditionalFieldsList(): ListModelsRequest;
+  addAdditionalFields(value: string, index?: number): ListModelsRequest;
+
   getSortAscending(): boolean;
   setSortAscending(value: boolean): ListModelsRequest;
 
@@ -3419,15 +3432,6 @@ export class ListModelsRequest extends jspb.Message {
 
   getSortByStarCount(): boolean;
   setSortByStarCount(value: boolean): ListModelsRequest;
-
-  getQuery(): string;
-  setQuery(value: string): ListModelsRequest;
-
-  getName(): string;
-  setName(value: string): ListModelsRequest;
-
-  getFilterByUserId(): boolean;
-  setFilterByUserId(value: boolean): ListModelsRequest;
 
   getModelTypeId(): string;
   setModelTypeId(value: string): ListModelsRequest;
@@ -3469,16 +3473,23 @@ export class ListModelsRequest extends jspb.Message {
   clearLanguagesList(): ListModelsRequest;
   addLanguages(value: string, index?: number): ListModelsRequest;
 
-  getAdditionalFieldsList(): Array<string>;
-  setAdditionalFieldsList(value: Array<string>): ListModelsRequest;
-  clearAdditionalFieldsList(): ListModelsRequest;
-  addAdditionalFields(value: string, index?: number): ListModelsRequest;
-
   getDontFetchFromMain(): boolean;
   setDontFetchFromMain(value: boolean): ListModelsRequest;
 
   getBookmark(): boolean;
   setBookmark(value: boolean): ListModelsRequest;
+
+  getSearch(): string;
+  setSearch(value: string): ListModelsRequest;
+
+  getQuery(): string;
+  setQuery(value: string): ListModelsRequest;
+
+  getName(): string;
+  setName(value: string): ListModelsRequest;
+
+  getFilterByUserId(): boolean;
+  setFilterByUserId(value: boolean): ListModelsRequest;
 
   getSortByCase(): ListModelsRequest.SortByCase;
 
@@ -3495,15 +3506,13 @@ export namespace ListModelsRequest {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
     page: number,
     perPage: number,
+    additionalFieldsList: Array<string>,
     sortAscending: boolean,
     sortByName: boolean,
     sortByNumInputs: boolean,
     sortByModifiedAt: boolean,
     sortByCreatedAt: boolean,
     sortByStarCount: boolean,
-    query: string,
-    name: string,
-    filterByUserId: boolean,
     modelTypeId: string,
     trainedOnly: boolean,
     inputFieldsList: Array<string>,
@@ -3514,9 +3523,12 @@ export namespace ListModelsRequest {
     toolkitsList: Array<string>,
     useCasesList: Array<string>,
     languagesList: Array<string>,
-    additionalFieldsList: Array<string>,
     dontFetchFromMain: boolean,
     bookmark: boolean,
+    search: string,
+    query: string,
+    name: string,
+    filterByUserId: boolean,
   }
 
   export enum SortByCase { 
@@ -6367,6 +6379,11 @@ export class ListWorkflowsRequest extends jspb.Message {
   getPerPage(): number;
   setPerPage(value: number): ListWorkflowsRequest;
 
+  getAdditionalFieldsList(): Array<string>;
+  setAdditionalFieldsList(value: Array<string>): ListWorkflowsRequest;
+  clearAdditionalFieldsList(): ListWorkflowsRequest;
+  addAdditionalFields(value: string, index?: number): ListWorkflowsRequest;
+
   getSortAscending(): boolean;
   setSortAscending(value: boolean): ListWorkflowsRequest;
 
@@ -6382,28 +6399,26 @@ export class ListWorkflowsRequest extends jspb.Message {
   getSortByStarCount(): boolean;
   setSortByStarCount(value: boolean): ListWorkflowsRequest;
 
-  getQuery(): string;
-  setQuery(value: string): ListWorkflowsRequest;
-
-  getId(): string;
-  setId(value: string): ListWorkflowsRequest;
-
   getFeaturedOnly(): boolean;
   setFeaturedOnly(value: boolean): ListWorkflowsRequest;
 
   getStarredOnly(): boolean;
   setStarredOnly(value: boolean): ListWorkflowsRequest;
 
-  getAdditionalFieldsList(): Array<string>;
-  setAdditionalFieldsList(value: Array<string>): ListWorkflowsRequest;
-  clearAdditionalFieldsList(): ListWorkflowsRequest;
-  addAdditionalFields(value: string, index?: number): ListWorkflowsRequest;
+  getBookmark(): boolean;
+  setBookmark(value: boolean): ListWorkflowsRequest;
+
+  getSearch(): string;
+  setSearch(value: string): ListWorkflowsRequest;
+
+  getQuery(): string;
+  setQuery(value: string): ListWorkflowsRequest;
+
+  getId(): string;
+  setId(value: string): ListWorkflowsRequest;
 
   getSearchTerm(): string;
   setSearchTerm(value: string): ListWorkflowsRequest;
-
-  getBookmark(): boolean;
-  setBookmark(value: boolean): ListWorkflowsRequest;
 
   getSortByCase(): ListWorkflowsRequest.SortByCase;
 
@@ -6420,18 +6435,19 @@ export namespace ListWorkflowsRequest {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
     page: number,
     perPage: number,
+    additionalFieldsList: Array<string>,
     sortAscending: boolean,
     sortById: boolean,
     sortByModifiedAt: boolean,
     sortByCreatedAt: boolean,
     sortByStarCount: boolean,
-    query: string,
-    id: string,
     featuredOnly: boolean,
     starredOnly: boolean,
-    additionalFieldsList: Array<string>,
-    searchTerm: string,
     bookmark: boolean,
+    search: string,
+    query: string,
+    id: string,
+    searchTerm: string,
   }
 
   export enum SortByCase { 
@@ -7995,9 +8011,6 @@ export class ListModulesRequest extends jspb.Message {
   getPerPage(): number;
   setPerPage(value: number): ListModulesRequest;
 
-  getStarredOnly(): boolean;
-  setStarredOnly(value: boolean): ListModulesRequest;
-
   getAdditionalFieldsList(): Array<string>;
   setAdditionalFieldsList(value: Array<string>): ListModulesRequest;
   clearAdditionalFieldsList(): ListModulesRequest;
@@ -8018,8 +8031,14 @@ export class ListModulesRequest extends jspb.Message {
   getSortById(): boolean;
   setSortById(value: boolean): ListModulesRequest;
 
+  getStarredOnly(): boolean;
+  setStarredOnly(value: boolean): ListModulesRequest;
+
   getBookmark(): boolean;
   setBookmark(value: boolean): ListModulesRequest;
+
+  getSearch(): string;
+  setSearch(value: string): ListModulesRequest;
 
   getName(): string;
   setName(value: string): ListModulesRequest;
@@ -8042,14 +8061,15 @@ export namespace ListModulesRequest {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
     page: number,
     perPage: number,
-    starredOnly: boolean,
     additionalFieldsList: Array<string>,
     sortAscending: boolean,
     sortByCreatedAt: boolean,
     sortByStarCount: boolean,
     sortByModifiedAt: boolean,
     sortById: boolean,
+    starredOnly: boolean,
     bookmark: boolean,
+    search: string,
     name: string,
     filterByUserId: boolean,
   }
@@ -9598,6 +9618,66 @@ export namespace MultiRunnerItemOutputResponse {
   export type AsObject = {
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     runnerItemOutputsList: Array<RunnerItemOutput.AsObject>,
+  }
+}
+
+export class PostModelVersionsTrainingTimeEstimateRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostModelVersionsTrainingTimeEstimateRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostModelVersionsTrainingTimeEstimateRequest;
+
+  getModelId(): string;
+  setModelId(value: string): PostModelVersionsTrainingTimeEstimateRequest;
+
+  getModelVersionsList(): Array<proto_clarifai_api_resources_pb.ModelVersion>;
+  setModelVersionsList(value: Array<proto_clarifai_api_resources_pb.ModelVersion>): PostModelVersionsTrainingTimeEstimateRequest;
+  clearModelVersionsList(): PostModelVersionsTrainingTimeEstimateRequest;
+  addModelVersions(value?: proto_clarifai_api_resources_pb.ModelVersion, index?: number): proto_clarifai_api_resources_pb.ModelVersion;
+
+  getEstimatedInputCount(): number;
+  setEstimatedInputCount(value: number): PostModelVersionsTrainingTimeEstimateRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostModelVersionsTrainingTimeEstimateRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostModelVersionsTrainingTimeEstimateRequest): PostModelVersionsTrainingTimeEstimateRequest.AsObject;
+  static serializeBinaryToWriter(message: PostModelVersionsTrainingTimeEstimateRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostModelVersionsTrainingTimeEstimateRequest;
+  static deserializeBinaryFromReader(message: PostModelVersionsTrainingTimeEstimateRequest, reader: jspb.BinaryReader): PostModelVersionsTrainingTimeEstimateRequest;
+}
+
+export namespace PostModelVersionsTrainingTimeEstimateRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    modelId: string,
+    modelVersionsList: Array<proto_clarifai_api_resources_pb.ModelVersion.AsObject>,
+    estimatedInputCount: number,
+  }
+}
+
+export class MultiTrainingTimeEstimateResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiTrainingTimeEstimateResponse;
+  hasStatus(): boolean;
+  clearStatus(): MultiTrainingTimeEstimateResponse;
+
+  getTrainingTimeEstimatesList(): Array<google_protobuf_duration_pb.Duration>;
+  setTrainingTimeEstimatesList(value: Array<google_protobuf_duration_pb.Duration>): MultiTrainingTimeEstimateResponse;
+  clearTrainingTimeEstimatesList(): MultiTrainingTimeEstimateResponse;
+  addTrainingTimeEstimates(value?: google_protobuf_duration_pb.Duration, index?: number): google_protobuf_duration_pb.Duration;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MultiTrainingTimeEstimateResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiTrainingTimeEstimateResponse): MultiTrainingTimeEstimateResponse.AsObject;
+  static serializeBinaryToWriter(message: MultiTrainingTimeEstimateResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiTrainingTimeEstimateResponse;
+  static deserializeBinaryFromReader(message: MultiTrainingTimeEstimateResponse, reader: jspb.BinaryReader): MultiTrainingTimeEstimateResponse;
+}
+
+export namespace MultiTrainingTimeEstimateResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    trainingTimeEstimatesList: Array<google_protobuf_duration_pb.Duration.AsObject>,
   }
 }
 

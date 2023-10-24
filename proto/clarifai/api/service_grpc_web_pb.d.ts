@@ -1507,6 +1507,13 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiRunnerItemOutputResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiRunnerItemOutputResponse>;
 
+  postModelVersionsTrainingTimeEstimate(
+    request: proto_clarifai_api_service_pb.PostModelVersionsTrainingTimeEstimateRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiTrainingTimeEstimateResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiTrainingTimeEstimateResponse>;
+
 }
 
 export class V2PromiseClient {
@@ -2583,6 +2590,11 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.PostRunnerItemOutputsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiRunnerItemOutputResponse>;
+
+  postModelVersionsTrainingTimeEstimate(
+    request: proto_clarifai_api_service_pb.PostModelVersionsTrainingTimeEstimateRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiTrainingTimeEstimateResponse>;
 
 }
 

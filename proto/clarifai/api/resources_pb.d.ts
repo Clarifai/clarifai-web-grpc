@@ -3981,6 +3981,11 @@ export class EvalMetrics extends jspb.Message {
   hasEvalInfo(): boolean;
   clearEvalInfo(): EvalMetrics;
 
+  getExtendedMetrics(): ExtendedMetrics | undefined;
+  setExtendedMetrics(value?: ExtendedMetrics): EvalMetrics;
+  hasExtendedMetrics(): boolean;
+  clearExtendedMetrics(): EvalMetrics;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EvalMetrics.AsObject;
   static toObject(includeInstance: boolean, msg: EvalMetrics): EvalMetrics.AsObject;
@@ -4007,6 +4012,27 @@ export namespace EvalMetrics {
     metricsByClassList: Array<BinaryMetrics.AsObject>,
     trackerMetricsList: Array<TrackerMetrics.AsObject>,
     evalInfo?: EvalInfo.AsObject,
+    extendedMetrics?: ExtendedMetrics.AsObject,
+  }
+}
+
+export class ExtendedMetrics extends jspb.Message {
+  getUserMetrics(): google_protobuf_struct_pb.Struct | undefined;
+  setUserMetrics(value?: google_protobuf_struct_pb.Struct): ExtendedMetrics;
+  hasUserMetrics(): boolean;
+  clearUserMetrics(): ExtendedMetrics;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExtendedMetrics.AsObject;
+  static toObject(includeInstance: boolean, msg: ExtendedMetrics): ExtendedMetrics.AsObject;
+  static serializeBinaryToWriter(message: ExtendedMetrics, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExtendedMetrics;
+  static deserializeBinaryFromReader(message: ExtendedMetrics, reader: jspb.BinaryReader): ExtendedMetrics;
+}
+
+export namespace ExtendedMetrics {
+  export type AsObject = {
+    userMetrics?: google_protobuf_struct_pb.Struct.AsObject,
   }
 }
 
