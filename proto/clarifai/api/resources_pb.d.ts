@@ -204,6 +204,11 @@ export class App extends jspb.Message {
   hasImage(): boolean;
   clearImage(): App;
 
+  getIsTemplate(): google_protobuf_wrappers_pb.BoolValue | undefined;
+  setIsTemplate(value?: google_protobuf_wrappers_pb.BoolValue): App;
+  hasIsTemplate(): boolean;
+  clearIsTemplate(): App;
+
   getExtraInfo(): AppExtraInfo | undefined;
   setExtraInfo(value?: AppExtraInfo): App;
   hasExtraInfo(): boolean;
@@ -237,6 +242,7 @@ export namespace App {
     starCount: number,
     notes: string,
     image?: Image.AsObject,
+    isTemplate?: google_protobuf_wrappers_pb.BoolValue.AsObject,
     extraInfo?: AppExtraInfo.AsObject,
   }
 }
@@ -1872,10 +1878,10 @@ export class AnnotationFilter extends jspb.Message {
   getAppId(): string;
   setAppId(value: string): AnnotationFilter;
 
-  getSavedSearch(): Search | undefined;
-  setSavedSearch(value?: Search): AnnotationFilter;
-  hasSavedSearch(): boolean;
-  clearSavedSearch(): AnnotationFilter;
+  getSearch(): Search | undefined;
+  setSearch(value?: Search): AnnotationFilter;
+  hasSearch(): boolean;
+  clearSearch(): AnnotationFilter;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AnnotationFilter.AsObject;
@@ -1892,7 +1898,7 @@ export namespace AnnotationFilter {
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     userId: string,
     appId: string,
-    savedSearch?: Search.AsObject,
+    search?: Search.AsObject,
   }
 }
 
@@ -5280,11 +5286,17 @@ export class AppDuplication extends jspb.Message {
   getId(): string;
   setId(value: string): AppDuplication;
 
+  getExistingAppId(): string;
+  setExistingAppId(value: string): AppDuplication;
+
   getNewAppId(): string;
   setNewAppId(value: string): AppDuplication;
 
   getNewAppName(): string;
   setNewAppName(value: string): AppDuplication;
+
+  getNewAppDescription(): string;
+  setNewAppDescription(value: string): AppDuplication;
 
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
   setStatus(value?: proto_clarifai_api_status_status_pb.Status): AppDuplication;
@@ -5306,9 +5318,6 @@ export class AppDuplication extends jspb.Message {
   hasFilter(): boolean;
   clearFilter(): AppDuplication;
 
-  getExistingAppId(): string;
-  setExistingAppId(value: string): AppDuplication;
-
   getProgressList(): Array<AppCopyProgress>;
   setProgressList(value: Array<AppCopyProgress>): AppDuplication;
   clearProgressList(): AppDuplication;
@@ -5325,13 +5334,14 @@ export class AppDuplication extends jspb.Message {
 export namespace AppDuplication {
   export type AsObject = {
     id: string,
+    existingAppId: string,
     newAppId: string,
     newAppName: string,
+    newAppDescription: string,
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     lastModifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     filter?: AppDuplicationFilters.AsObject,
-    existingAppId: string,
     progressList: Array<AppCopyProgress.AsObject>,
   }
 }
