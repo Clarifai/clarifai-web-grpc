@@ -38,7 +38,7 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - name: Install deps
-        run: yarn install
+        run: npm install
       - run: npm ci
       - run: npm publish
         env:
