@@ -36,6 +36,9 @@ export class Status extends jspb.Message {
   hasRedirectInfo(): boolean;
   clearRedirectInfo(): Status;
 
+  getDeveloperNotes(): string;
+  setDeveloperNotes(value: string): Status;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Status.AsObject;
   static toObject(includeInstance: boolean, msg: Status): Status.AsObject;
@@ -55,6 +58,7 @@ export namespace Status {
     reqId: string,
     internalDetails: string,
     redirectInfo?: RedirectInfo.AsObject,
+    developerNotes: string,
   }
 }
 
