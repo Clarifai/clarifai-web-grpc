@@ -6225,52 +6225,6 @@ export namespace StatValueAggregateQuery {
   }
 }
 
-export class DatasetInputsSearchAddJob extends jspb.Message {
-  getId(): string;
-  setId(value: string): DatasetInputsSearchAddJob;
-
-  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): DatasetInputsSearchAddJob;
-  hasCreatedAt(): boolean;
-  clearCreatedAt(): DatasetInputsSearchAddJob;
-
-  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): DatasetInputsSearchAddJob;
-  hasModifiedAt(): boolean;
-  clearModifiedAt(): DatasetInputsSearchAddJob;
-
-  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): DatasetInputsSearchAddJob;
-  hasStatus(): boolean;
-  clearStatus(): DatasetInputsSearchAddJob;
-
-  getDatasetId(): string;
-  setDatasetId(value: string): DatasetInputsSearchAddJob;
-
-  getSearch(): Search | undefined;
-  setSearch(value?: Search): DatasetInputsSearchAddJob;
-  hasSearch(): boolean;
-  clearSearch(): DatasetInputsSearchAddJob;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DatasetInputsSearchAddJob.AsObject;
-  static toObject(includeInstance: boolean, msg: DatasetInputsSearchAddJob): DatasetInputsSearchAddJob.AsObject;
-  static serializeBinaryToWriter(message: DatasetInputsSearchAddJob, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DatasetInputsSearchAddJob;
-  static deserializeBinaryFromReader(message: DatasetInputsSearchAddJob, reader: jspb.BinaryReader): DatasetInputsSearchAddJob;
-}
-
-export namespace DatasetInputsSearchAddJob {
-  export type AsObject = {
-    id: string,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
-    datasetId: string,
-    search?: Search.AsObject,
-  }
-}
-
 export class PCAProjectionComparator extends jspb.Message {
   getDistanceThreshold(): number;
   setDistanceThreshold(value: number): PCAProjectionComparator;

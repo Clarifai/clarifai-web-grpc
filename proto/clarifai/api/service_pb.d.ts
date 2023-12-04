@@ -2629,10 +2629,10 @@ export class MultiDatasetInputResponse extends jspb.Message {
   clearDatasetInputsList(): MultiDatasetInputResponse;
   addDatasetInputs(value?: proto_clarifai_api_resources_pb.DatasetInput, index?: number): proto_clarifai_api_resources_pb.DatasetInput;
 
-  getDatasetInputsSearchAddJob(): proto_clarifai_api_resources_pb.DatasetInputsSearchAddJob | undefined;
-  setDatasetInputsSearchAddJob(value?: proto_clarifai_api_resources_pb.DatasetInputsSearchAddJob): MultiDatasetInputResponse;
-  hasDatasetInputsSearchAddJob(): boolean;
-  clearDatasetInputsSearchAddJob(): MultiDatasetInputResponse;
+  getBulkOperation(): proto_clarifai_api_resources_pb.BulkOperation | undefined;
+  setBulkOperation(value?: proto_clarifai_api_resources_pb.BulkOperation): MultiDatasetInputResponse;
+  hasBulkOperation(): boolean;
+  clearBulkOperation(): MultiDatasetInputResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MultiDatasetInputResponse.AsObject;
@@ -2646,7 +2646,7 @@ export namespace MultiDatasetInputResponse {
   export type AsObject = {
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     datasetInputsList: Array<proto_clarifai_api_resources_pb.DatasetInput.AsObject>,
-    datasetInputsSearchAddJob?: proto_clarifai_api_resources_pb.DatasetInputsSearchAddJob.AsObject,
+    bulkOperation?: proto_clarifai_api_resources_pb.BulkOperation.AsObject,
   }
 }
 
@@ -3019,56 +3019,6 @@ export namespace SingleDatasetVersionResponse {
   export type AsObject = {
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     datasetVersion?: proto_clarifai_api_resources_pb.DatasetVersion.AsObject,
-  }
-}
-
-export class GetDatasetInputsSearchAddJobRequest extends jspb.Message {
-  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetDatasetInputsSearchAddJobRequest;
-  hasUserAppId(): boolean;
-  clearUserAppId(): GetDatasetInputsSearchAddJobRequest;
-
-  getJobId(): string;
-  setJobId(value: string): GetDatasetInputsSearchAddJobRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetDatasetInputsSearchAddJobRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetDatasetInputsSearchAddJobRequest): GetDatasetInputsSearchAddJobRequest.AsObject;
-  static serializeBinaryToWriter(message: GetDatasetInputsSearchAddJobRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetDatasetInputsSearchAddJobRequest;
-  static deserializeBinaryFromReader(message: GetDatasetInputsSearchAddJobRequest, reader: jspb.BinaryReader): GetDatasetInputsSearchAddJobRequest;
-}
-
-export namespace GetDatasetInputsSearchAddJobRequest {
-  export type AsObject = {
-    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
-    jobId: string,
-  }
-}
-
-export class SingleDatasetInputsSearchAddJobResponse extends jspb.Message {
-  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleDatasetInputsSearchAddJobResponse;
-  hasStatus(): boolean;
-  clearStatus(): SingleDatasetInputsSearchAddJobResponse;
-
-  getJob(): proto_clarifai_api_resources_pb.DatasetInputsSearchAddJob | undefined;
-  setJob(value?: proto_clarifai_api_resources_pb.DatasetInputsSearchAddJob): SingleDatasetInputsSearchAddJobResponse;
-  hasJob(): boolean;
-  clearJob(): SingleDatasetInputsSearchAddJobResponse;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SingleDatasetInputsSearchAddJobResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: SingleDatasetInputsSearchAddJobResponse): SingleDatasetInputsSearchAddJobResponse.AsObject;
-  static serializeBinaryToWriter(message: SingleDatasetInputsSearchAddJobResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SingleDatasetInputsSearchAddJobResponse;
-  static deserializeBinaryFromReader(message: SingleDatasetInputsSearchAddJobResponse, reader: jspb.BinaryReader): SingleDatasetInputsSearchAddJobResponse;
-}
-
-export namespace SingleDatasetInputsSearchAddJobResponse {
-  export type AsObject = {
-    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
-    job?: proto_clarifai_api_resources_pb.DatasetInputsSearchAddJob.AsObject,
   }
 }
 

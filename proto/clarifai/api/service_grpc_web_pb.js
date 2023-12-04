@@ -11810,67 +11810,6 @@ proto.clarifai.api.V2PromiseClient.prototype.deleteBulkOperations =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.clarifai.api.GetDatasetInputsSearchAddJobRequest,
- *   !proto.clarifai.api.SingleDatasetInputsSearchAddJobResponse>}
- */
-const methodDescriptor_V2_GetDatasetInputsSearchAddJob = new grpc.web.MethodDescriptor(
-  '/clarifai.api.V2/GetDatasetInputsSearchAddJob',
-  grpc.web.MethodType.UNARY,
-  proto.clarifai.api.GetDatasetInputsSearchAddJobRequest,
-  proto.clarifai.api.SingleDatasetInputsSearchAddJobResponse,
-  /**
-   * @param {!proto.clarifai.api.GetDatasetInputsSearchAddJobRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.clarifai.api.SingleDatasetInputsSearchAddJobResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.clarifai.api.GetDatasetInputsSearchAddJobRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SingleDatasetInputsSearchAddJobResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleDatasetInputsSearchAddJobResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.clarifai.api.V2Client.prototype.getDatasetInputsSearchAddJob =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/clarifai.api.V2/GetDatasetInputsSearchAddJob',
-      request,
-      metadata || {},
-      methodDescriptor_V2_GetDatasetInputsSearchAddJob,
-      callback);
-};
-
-
-/**
- * @param {!proto.clarifai.api.GetDatasetInputsSearchAddJobRequest} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.clarifai.api.SingleDatasetInputsSearchAddJobResponse>}
- *     Promise that resolves to the response
- */
-proto.clarifai.api.V2PromiseClient.prototype.getDatasetInputsSearchAddJob =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/clarifai.api.V2/GetDatasetInputsSearchAddJob',
-      request,
-      metadata || {},
-      methodDescriptor_V2_GetDatasetInputsSearchAddJob);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.ListNextTaskAssignmentsRequest,
  *   !proto.clarifai.api.MultiInputResponse>}
  */
