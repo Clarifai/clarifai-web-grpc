@@ -1162,6 +1162,9 @@ export class ListModelConceptsRequest extends jspb.Message {
   getPerPage(): number;
   setPerPage(value: number): ListModelConceptsRequest;
 
+  getSearch(): string;
+  setSearch(value: string): ListModelConceptsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListModelConceptsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListModelConceptsRequest): ListModelConceptsRequest.AsObject;
@@ -1177,6 +1180,7 @@ export namespace ListModelConceptsRequest {
     versionId: string,
     page: number,
     perPage: number,
+    search: string,
   }
 }
 
