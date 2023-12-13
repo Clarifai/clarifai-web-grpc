@@ -5293,6 +5293,11 @@ export class AppDuplication extends jspb.Message {
   getId(): string;
   setId(value: string): AppDuplication;
 
+  getDestinationApp(): App | undefined;
+  setDestinationApp(value?: App): AppDuplication;
+  hasDestinationApp(): boolean;
+  clearDestinationApp(): AppDuplication;
+
   getExistingAppId(): string;
   setExistingAppId(value: string): AppDuplication;
 
@@ -5301,9 +5306,6 @@ export class AppDuplication extends jspb.Message {
 
   getNewAppName(): string;
   setNewAppName(value: string): AppDuplication;
-
-  getNewAppDescription(): string;
-  setNewAppDescription(value: string): AppDuplication;
 
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
   setStatus(value?: proto_clarifai_api_status_status_pb.Status): AppDuplication;
@@ -5341,10 +5343,10 @@ export class AppDuplication extends jspb.Message {
 export namespace AppDuplication {
   export type AsObject = {
     id: string,
+    destinationApp?: App.AsObject,
     existingAppId: string,
     newAppId: string,
     newAppName: string,
-    newAppDescription: string,
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     lastModifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
