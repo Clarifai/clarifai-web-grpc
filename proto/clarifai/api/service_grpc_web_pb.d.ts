@@ -1283,6 +1283,13 @@ export class V2Client {
                response: proto_clarifai_api_status_status_pb.BaseResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
 
+  getModuleVersionUsageCount(
+    request: proto_clarifai_api_service_pb.GetModuleVersionUsageCountRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleModuleVersionUsageCountResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleModuleVersionUsageCountResponse>;
+
   getInstalledModuleVersion(
     request: proto_clarifai_api_service_pb.GetInstalledModuleVersionRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -2423,6 +2430,11 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.DeleteModuleVersionsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  getModuleVersionUsageCount(
+    request: proto_clarifai_api_service_pb.GetModuleVersionUsageCountRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleModuleVersionUsageCountResponse>;
 
   getInstalledModuleVersion(
     request: proto_clarifai_api_service_pb.GetInstalledModuleVersionRequest,

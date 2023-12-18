@@ -11200,6 +11200,67 @@ proto.clarifai.api.V2PromiseClient.prototype.deleteModuleVersions =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.GetModuleVersionUsageCountRequest,
+ *   !proto.clarifai.api.SingleModuleVersionUsageCountResponse>}
+ */
+const methodDescriptor_V2_GetModuleVersionUsageCount = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/GetModuleVersionUsageCount',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.GetModuleVersionUsageCountRequest,
+  proto.clarifai.api.SingleModuleVersionUsageCountResponse,
+  /**
+   * @param {!proto.clarifai.api.GetModuleVersionUsageCountRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SingleModuleVersionUsageCountResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.GetModuleVersionUsageCountRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SingleModuleVersionUsageCountResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleModuleVersionUsageCountResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.getModuleVersionUsageCount =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/GetModuleVersionUsageCount',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetModuleVersionUsageCount,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.GetModuleVersionUsageCountRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.SingleModuleVersionUsageCountResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.getModuleVersionUsageCount =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/GetModuleVersionUsageCount',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetModuleVersionUsageCount);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.GetInstalledModuleVersionRequest,
  *   !proto.clarifai.api.SingleInstalledModuleVersionResponse>}
  */

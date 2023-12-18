@@ -8315,6 +8315,34 @@ export namespace DeleteModuleVersionsRequest {
   }
 }
 
+export class GetModuleVersionUsageCountRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetModuleVersionUsageCountRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): GetModuleVersionUsageCountRequest;
+
+  getModuleId(): string;
+  setModuleId(value: string): GetModuleVersionUsageCountRequest;
+
+  getModuleVersionId(): string;
+  setModuleVersionId(value: string): GetModuleVersionUsageCountRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetModuleVersionUsageCountRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetModuleVersionUsageCountRequest): GetModuleVersionUsageCountRequest.AsObject;
+  static serializeBinaryToWriter(message: GetModuleVersionUsageCountRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetModuleVersionUsageCountRequest;
+  static deserializeBinaryFromReader(message: GetModuleVersionUsageCountRequest, reader: jspb.BinaryReader): GetModuleVersionUsageCountRequest;
+}
+
+export namespace GetModuleVersionUsageCountRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    moduleId: string,
+    moduleVersionId: string,
+  }
+}
+
 export class SingleModuleVersionResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
   setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleModuleVersionResponse;
@@ -8364,6 +8392,30 @@ export namespace MultiModuleVersionResponse {
   export type AsObject = {
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     moduleVersionsList: Array<proto_clarifai_api_resources_pb.ModuleVersion.AsObject>,
+  }
+}
+
+export class SingleModuleVersionUsageCountResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleModuleVersionUsageCountResponse;
+  hasStatus(): boolean;
+  clearStatus(): SingleModuleVersionUsageCountResponse;
+
+  getUsageCount(): number;
+  setUsageCount(value: number): SingleModuleVersionUsageCountResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SingleModuleVersionUsageCountResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SingleModuleVersionUsageCountResponse): SingleModuleVersionUsageCountResponse.AsObject;
+  static serializeBinaryToWriter(message: SingleModuleVersionUsageCountResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SingleModuleVersionUsageCountResponse;
+  static deserializeBinaryFromReader(message: SingleModuleVersionUsageCountResponse, reader: jspb.BinaryReader): SingleModuleVersionUsageCountResponse;
+}
+
+export namespace SingleModuleVersionUsageCountResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    usageCount: number,
   }
 }
 
