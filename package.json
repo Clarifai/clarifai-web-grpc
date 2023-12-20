@@ -1,6 +1,6 @@
 {
   "name": "clarifai-web-grpc",
-  "version": "9.11.3",
+  "version": "9.11.4",
   "description": "The official Clarifai gRPC-web client",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
