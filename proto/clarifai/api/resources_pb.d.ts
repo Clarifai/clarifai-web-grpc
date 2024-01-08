@@ -6016,6 +6016,9 @@ export class Collector extends jspb.Message {
   hasStatus(): boolean;
   clearStatus(): Collector;
 
+  getCollectOutputs(): boolean;
+  setCollectOutputs(value: boolean): Collector;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Collector.AsObject;
   static toObject(includeInstance: boolean, msg: Collector): Collector.AsObject;
@@ -6034,6 +6037,7 @@ export namespace Collector {
     postQueueWorkflowId: string,
     collectorSource?: CollectorSource.AsObject,
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    collectOutputs: boolean,
   }
 }
 
