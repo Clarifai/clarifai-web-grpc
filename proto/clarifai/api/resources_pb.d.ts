@@ -3944,6 +3944,11 @@ export class EvalMetrics extends jspb.Message {
   hasGroundTruthDataset(): boolean;
   clearGroundTruthDataset(): EvalMetrics;
 
+  getPredictionsDataset(): Dataset | undefined;
+  setPredictionsDataset(value?: Dataset): EvalMetrics;
+  hasPredictionsDataset(): boolean;
+  clearPredictionsDataset(): EvalMetrics;
+
   getSummary(): MetricsSummary | undefined;
   setSummary(value?: MetricsSummary): EvalMetrics;
   hasSummary(): boolean;
@@ -4015,6 +4020,7 @@ export namespace EvalMetrics {
     id: string,
     model?: Model.AsObject,
     groundTruthDataset?: Dataset.AsObject,
+    predictionsDataset?: Dataset.AsObject,
     summary?: MetricsSummary.AsObject,
     confusionMatrix?: ConfusionMatrix.AsObject,
     cooccurrenceMatrix?: CooccurrenceMatrix.AsObject,
