@@ -8285,6 +8285,40 @@ export namespace PostModuleVersionsRequest {
   }
 }
 
+export class PatchModuleVersionsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchModuleVersionsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PatchModuleVersionsRequest;
+
+  getModuleId(): string;
+  setModuleId(value: string): PatchModuleVersionsRequest;
+
+  getModuleVersionsList(): Array<proto_clarifai_api_resources_pb.ModuleVersion>;
+  setModuleVersionsList(value: Array<proto_clarifai_api_resources_pb.ModuleVersion>): PatchModuleVersionsRequest;
+  clearModuleVersionsList(): PatchModuleVersionsRequest;
+  addModuleVersions(value?: proto_clarifai_api_resources_pb.ModuleVersion, index?: number): proto_clarifai_api_resources_pb.ModuleVersion;
+
+  getAction(): string;
+  setAction(value: string): PatchModuleVersionsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PatchModuleVersionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PatchModuleVersionsRequest): PatchModuleVersionsRequest.AsObject;
+  static serializeBinaryToWriter(message: PatchModuleVersionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PatchModuleVersionsRequest;
+  static deserializeBinaryFromReader(message: PatchModuleVersionsRequest, reader: jspb.BinaryReader): PatchModuleVersionsRequest;
+}
+
+export namespace PatchModuleVersionsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    moduleId: string,
+    moduleVersionsList: Array<proto_clarifai_api_resources_pb.ModuleVersion.AsObject>,
+    action: string,
+  }
+}
+
 export class DeleteModuleVersionsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
   setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteModuleVersionsRequest;

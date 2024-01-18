@@ -11139,6 +11139,67 @@ proto.clarifai.api.V2PromiseClient.prototype.postModuleVersions =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PatchModuleVersionsRequest,
+ *   !proto.clarifai.api.MultiModuleVersionResponse>}
+ */
+const methodDescriptor_V2_PatchModuleVersions = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PatchModuleVersions',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PatchModuleVersionsRequest,
+  proto.clarifai.api.MultiModuleVersionResponse,
+  /**
+   * @param {!proto.clarifai.api.PatchModuleVersionsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiModuleVersionResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PatchModuleVersionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiModuleVersionResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiModuleVersionResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.patchModuleVersions =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PatchModuleVersions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PatchModuleVersions,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PatchModuleVersionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiModuleVersionResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.patchModuleVersions =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PatchModuleVersions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PatchModuleVersions);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.DeleteModuleVersionsRequest,
  *   !proto.clarifai.api.status.BaseResponse>}
  */

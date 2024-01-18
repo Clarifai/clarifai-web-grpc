@@ -1276,6 +1276,13 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiModuleVersionResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiModuleVersionResponse>;
 
+  patchModuleVersions(
+    request: proto_clarifai_api_service_pb.PatchModuleVersionsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiModuleVersionResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiModuleVersionResponse>;
+
   deleteModuleVersions(
     request: proto_clarifai_api_service_pb.DeleteModuleVersionsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -2423,6 +2430,11 @@ export class V2PromiseClient {
 
   postModuleVersions(
     request: proto_clarifai_api_service_pb.PostModuleVersionsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiModuleVersionResponse>;
+
+  patchModuleVersions(
+    request: proto_clarifai_api_service_pb.PatchModuleVersionsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiModuleVersionResponse>;
 
