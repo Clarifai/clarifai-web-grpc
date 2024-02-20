@@ -5576,6 +5576,11 @@ export class Task extends jspb.Message {
   getDeletePreviousAnnotations(): boolean;
   setDeletePreviousAnnotations(value: boolean): Task;
 
+  getMetrics(): TaskMetrics | undefined;
+  setMetrics(value?: TaskMetrics): Task;
+  hasMetrics(): boolean;
+  clearMetrics(): Task;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Task.AsObject;
   static toObject(includeInstance: boolean, msg: Task): Task.AsObject;
@@ -5606,6 +5611,7 @@ export namespace Task {
     labelOrderId: string,
     conceptsList: Array<TaskConcept.AsObject>,
     deletePreviousAnnotations: boolean,
+    metrics?: TaskMetrics.AsObject,
   }
 
   export enum TaskType { 
@@ -5998,6 +6004,24 @@ export namespace TaskConcept {
   export type AsObject = {
     concept?: Concept.AsObject,
     autoAnnotationConfig?: TaskConceptAutoAnnotationConfig.AsObject,
+  }
+}
+
+export class TaskMetrics extends jspb.Message {
+  getEstimatedLabeledInputsCount(): number;
+  setEstimatedLabeledInputsCount(value: number): TaskMetrics;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TaskMetrics.AsObject;
+  static toObject(includeInstance: boolean, msg: TaskMetrics): TaskMetrics.AsObject;
+  static serializeBinaryToWriter(message: TaskMetrics, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TaskMetrics;
+  static deserializeBinaryFromReader(message: TaskMetrics, reader: jspb.BinaryReader): TaskMetrics;
+}
+
+export namespace TaskMetrics {
+  export type AsObject = {
+    estimatedLabeledInputsCount: number,
   }
 }
 
@@ -7792,6 +7816,7 @@ export enum EvaluationType {
   SEGMENTATION = 3,
   CLUSTERING = 4,
   TRACKER = 5,
+  GENERATION = 6,
 }
 export enum APIEventType { 
   API_EVENT_TYPE_NOT_SET = 0,
