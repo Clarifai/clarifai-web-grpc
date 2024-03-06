@@ -5664,20 +5664,15 @@ export class TaskWorker extends jspb.Message {
   clearUsersList(): TaskWorker;
   addUsers(value?: User, index?: number): User;
 
-  getModelsList(): Array<Model>;
-  setModelsList(value: Array<Model>): TaskWorker;
-  clearModelsList(): TaskWorker;
-  addModels(value?: Model, index?: number): Model;
-
-  getWorkflowsList(): Array<Workflow>;
-  setWorkflowsList(value: Array<Workflow>): TaskWorker;
-  clearWorkflowsList(): TaskWorker;
-  addWorkflows(value?: Workflow, index?: number): Workflow;
-
   getPartitionedStrategyInfo(): TaskWorkerPartitionedStrategyInfo | undefined;
   setPartitionedStrategyInfo(value?: TaskWorkerPartitionedStrategyInfo): TaskWorker;
   hasPartitionedStrategyInfo(): boolean;
   clearPartitionedStrategyInfo(): TaskWorker;
+
+  getWorkersList(): Array<Worker>;
+  setWorkersList(value: Array<Worker>): TaskWorker;
+  clearWorkersList(): TaskWorker;
+  addWorkers(value?: Worker, index?: number): Worker;
 
   getStrategyInfoCase(): TaskWorker.StrategyInfoCase;
 
@@ -5694,9 +5689,8 @@ export namespace TaskWorker {
     strategy: TaskWorker.TaskWorkerStrategy,
     userIdsList: Array<string>,
     usersList: Array<User.AsObject>,
-    modelsList: Array<Model.AsObject>,
-    workflowsList: Array<Workflow.AsObject>,
     partitionedStrategyInfo?: TaskWorkerPartitionedStrategyInfo.AsObject,
+    workersList: Array<Worker.AsObject>,
   }
 
   export enum TaskWorkerStrategy { 

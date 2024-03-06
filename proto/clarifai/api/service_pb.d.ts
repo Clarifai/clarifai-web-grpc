@@ -1010,6 +1010,70 @@ export namespace MultiCollaborationsResponse {
   }
 }
 
+export class GetResourcePriceRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetResourcePriceRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): GetResourcePriceRequest;
+
+  getModel(): proto_clarifai_api_resources_pb.Model | undefined;
+  setModel(value?: proto_clarifai_api_resources_pb.Model): GetResourcePriceRequest;
+  hasModel(): boolean;
+  clearModel(): GetResourcePriceRequest;
+
+  getWorkflow(): proto_clarifai_api_resources_pb.Workflow | undefined;
+  setWorkflow(value?: proto_clarifai_api_resources_pb.Workflow): GetResourcePriceRequest;
+  hasWorkflow(): boolean;
+  clearWorkflow(): GetResourcePriceRequest;
+
+  getResourceCase(): GetResourcePriceRequest.ResourceCase;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetResourcePriceRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetResourcePriceRequest): GetResourcePriceRequest.AsObject;
+  static serializeBinaryToWriter(message: GetResourcePriceRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetResourcePriceRequest;
+  static deserializeBinaryFromReader(message: GetResourcePriceRequest, reader: jspb.BinaryReader): GetResourcePriceRequest;
+}
+
+export namespace GetResourcePriceRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    model?: proto_clarifai_api_resources_pb.Model.AsObject,
+    workflow?: proto_clarifai_api_resources_pb.Workflow.AsObject,
+  }
+
+  export enum ResourceCase { 
+    RESOURCE_NOT_SET = 0,
+    MODEL = 2,
+    WORKFLOW = 3,
+  }
+}
+
+export class GetResourcePriceResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): GetResourcePriceResponse;
+  hasStatus(): boolean;
+  clearStatus(): GetResourcePriceResponse;
+
+  getPrice(): number;
+  setPrice(value: number): GetResourcePriceResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetResourcePriceResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetResourcePriceResponse): GetResourcePriceResponse.AsObject;
+  static serializeBinaryToWriter(message: GetResourcePriceResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetResourcePriceResponse;
+  static deserializeBinaryFromReader(message: GetResourcePriceResponse, reader: jspb.BinaryReader): GetResourcePriceResponse;
+}
+
+export namespace GetResourcePriceResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    price: number,
+  }
+}
+
 export class GetStatusCodeRequest extends jspb.Message {
   getStatusCodeId(): string;
   setStatusCodeId(value: string): GetStatusCodeRequest;
@@ -4318,6 +4382,102 @@ export namespace PostModelVersionsRequest {
     modelVersionsList: Array<proto_clarifai_api_resources_pb.ModelVersion.AsObject>,
     description: string,
     evalInfo?: proto_clarifai_api_resources_pb.EvalInfo.AsObject,
+  }
+}
+
+export class PostModelVersionsUploadRequest extends jspb.Message {
+  getUploadConfig(): PostModelVersionsUploadConfig | undefined;
+  setUploadConfig(value?: PostModelVersionsUploadConfig): PostModelVersionsUploadRequest;
+  hasUploadConfig(): boolean;
+  clearUploadConfig(): PostModelVersionsUploadRequest;
+
+  getContentPart(): proto_clarifai_api_resources_pb.UploadContentPart | undefined;
+  setContentPart(value?: proto_clarifai_api_resources_pb.UploadContentPart): PostModelVersionsUploadRequest;
+  hasContentPart(): boolean;
+  clearContentPart(): PostModelVersionsUploadRequest;
+
+  getUploadDataCase(): PostModelVersionsUploadRequest.UploadDataCase;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostModelVersionsUploadRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostModelVersionsUploadRequest): PostModelVersionsUploadRequest.AsObject;
+  static serializeBinaryToWriter(message: PostModelVersionsUploadRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostModelVersionsUploadRequest;
+  static deserializeBinaryFromReader(message: PostModelVersionsUploadRequest, reader: jspb.BinaryReader): PostModelVersionsUploadRequest;
+}
+
+export namespace PostModelVersionsUploadRequest {
+  export type AsObject = {
+    uploadConfig?: PostModelVersionsUploadConfig.AsObject,
+    contentPart?: proto_clarifai_api_resources_pb.UploadContentPart.AsObject,
+  }
+
+  export enum UploadDataCase { 
+    UPLOAD_DATA_NOT_SET = 0,
+    UPLOAD_CONFIG = 1,
+    CONTENT_PART = 2,
+  }
+}
+
+export class PostModelVersionsUploadResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): PostModelVersionsUploadResponse;
+  hasStatus(): boolean;
+  clearStatus(): PostModelVersionsUploadResponse;
+
+  getBytesRemaining(): number;
+  setBytesRemaining(value: number): PostModelVersionsUploadResponse;
+
+  getModelVersionId(): string;
+  setModelVersionId(value: string): PostModelVersionsUploadResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostModelVersionsUploadResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PostModelVersionsUploadResponse): PostModelVersionsUploadResponse.AsObject;
+  static serializeBinaryToWriter(message: PostModelVersionsUploadResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostModelVersionsUploadResponse;
+  static deserializeBinaryFromReader(message: PostModelVersionsUploadResponse, reader: jspb.BinaryReader): PostModelVersionsUploadResponse;
+}
+
+export namespace PostModelVersionsUploadResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    bytesRemaining: number,
+    modelVersionId: string,
+  }
+}
+
+export class PostModelVersionsUploadConfig extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostModelVersionsUploadConfig;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostModelVersionsUploadConfig;
+
+  getModelId(): string;
+  setModelId(value: string): PostModelVersionsUploadConfig;
+
+  getModelVersion(): proto_clarifai_api_resources_pb.ModelVersion | undefined;
+  setModelVersion(value?: proto_clarifai_api_resources_pb.ModelVersion): PostModelVersionsUploadConfig;
+  hasModelVersion(): boolean;
+  clearModelVersion(): PostModelVersionsUploadConfig;
+
+  getTotalSize(): number;
+  setTotalSize(value: number): PostModelVersionsUploadConfig;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostModelVersionsUploadConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: PostModelVersionsUploadConfig): PostModelVersionsUploadConfig.AsObject;
+  static serializeBinaryToWriter(message: PostModelVersionsUploadConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostModelVersionsUploadConfig;
+  static deserializeBinaryFromReader(message: PostModelVersionsUploadConfig, reader: jspb.BinaryReader): PostModelVersionsUploadConfig;
+}
+
+export namespace PostModelVersionsUploadConfig {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    modelId: string,
+    modelVersion?: proto_clarifai_api_resources_pb.ModelVersion.AsObject,
+    totalSize: number,
   }
 }
 
