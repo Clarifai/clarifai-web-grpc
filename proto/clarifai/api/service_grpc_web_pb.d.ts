@@ -590,6 +590,20 @@ export class V2Client {
                response: proto_clarifai_api_status_status_pb.BaseResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
 
+  putModelVersionExports(
+    request: proto_clarifai_api_service_pb.PutModelVersionExportsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleModelVersionExportResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleModelVersionExportResponse>;
+
+  getModelVersionExport(
+    request: proto_clarifai_api_service_pb.GetModelVersionExportRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleModelVersionExportResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleModelVersionExportResponse>;
+
   getModelVersionMetrics(
     request: proto_clarifai_api_service_pb.GetModelVersionMetricsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -1017,6 +1031,13 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.SingleStatusCodeResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleStatusCodeResponse>;
 
+  getResourcePrice(
+    request: proto_clarifai_api_service_pb.GetResourcePriceRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.GetResourcePriceResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.GetResourcePriceResponse>;
+
   listCollaborators(
     request: proto_clarifai_api_service_pb.ListCollaboratorsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -1378,8 +1399,8 @@ export class V2Client {
     request: proto_clarifai_api_service_pb.PutTaskAssignmentsRequest,
     metadata: grpcWeb.Metadata | undefined,
     callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+               response: proto_clarifai_api_service_pb.MultiTaskAssignmentResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiTaskAssignmentResponse>;
 
   listInputsAddJobs(
     request: proto_clarifai_api_service_pb.ListInputsAddJobsRequest,
@@ -1943,6 +1964,16 @@ export class V2PromiseClient {
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
 
+  putModelVersionExports(
+    request: proto_clarifai_api_service_pb.PutModelVersionExportsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleModelVersionExportResponse>;
+
+  getModelVersionExport(
+    request: proto_clarifai_api_service_pb.GetModelVersionExportRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleModelVersionExportResponse>;
+
   getModelVersionMetrics(
     request: proto_clarifai_api_service_pb.GetModelVersionMetricsRequest,
     metadata?: grpcWeb.Metadata
@@ -2248,6 +2279,11 @@ export class V2PromiseClient {
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.SingleStatusCodeResponse>;
 
+  getResourcePrice(
+    request: proto_clarifai_api_service_pb.GetResourcePriceRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.GetResourcePriceResponse>;
+
   listCollaborators(
     request: proto_clarifai_api_service_pb.ListCollaboratorsRequest,
     metadata?: grpcWeb.Metadata
@@ -2506,7 +2542,7 @@ export class V2PromiseClient {
   putTaskAssignments(
     request: proto_clarifai_api_service_pb.PutTaskAssignmentsRequest,
     metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+  ): Promise<proto_clarifai_api_service_pb.MultiTaskAssignmentResponse>;
 
   listInputsAddJobs(
     request: proto_clarifai_api_service_pb.ListInputsAddJobsRequest,

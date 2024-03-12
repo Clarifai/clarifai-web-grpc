@@ -5161,6 +5161,128 @@ proto.clarifai.api.V2PromiseClient.prototype.deleteModelVersion =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PutModelVersionExportsRequest,
+ *   !proto.clarifai.api.SingleModelVersionExportResponse>}
+ */
+const methodDescriptor_V2_PutModelVersionExports = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PutModelVersionExports',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PutModelVersionExportsRequest,
+  proto.clarifai.api.SingleModelVersionExportResponse,
+  /**
+   * @param {!proto.clarifai.api.PutModelVersionExportsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SingleModelVersionExportResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PutModelVersionExportsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SingleModelVersionExportResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleModelVersionExportResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.putModelVersionExports =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PutModelVersionExports',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PutModelVersionExports,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PutModelVersionExportsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.SingleModelVersionExportResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.putModelVersionExports =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PutModelVersionExports',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PutModelVersionExports);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.GetModelVersionExportRequest,
+ *   !proto.clarifai.api.SingleModelVersionExportResponse>}
+ */
+const methodDescriptor_V2_GetModelVersionExport = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/GetModelVersionExport',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.GetModelVersionExportRequest,
+  proto.clarifai.api.SingleModelVersionExportResponse,
+  /**
+   * @param {!proto.clarifai.api.GetModelVersionExportRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SingleModelVersionExportResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.GetModelVersionExportRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SingleModelVersionExportResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleModelVersionExportResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.getModelVersionExport =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/GetModelVersionExport',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetModelVersionExport,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.GetModelVersionExportRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.SingleModelVersionExportResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.getModelVersionExport =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/GetModelVersionExport',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetModelVersionExport);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.GetModelVersionMetricsRequest,
  *   !proto.clarifai.api.SingleModelVersionResponse>}
  */
@@ -8882,6 +9004,67 @@ proto.clarifai.api.V2PromiseClient.prototype.getStatusCode =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.GetResourcePriceRequest,
+ *   !proto.clarifai.api.GetResourcePriceResponse>}
+ */
+const methodDescriptor_V2_GetResourcePrice = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/GetResourcePrice',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.GetResourcePriceRequest,
+  proto.clarifai.api.GetResourcePriceResponse,
+  /**
+   * @param {!proto.clarifai.api.GetResourcePriceRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.GetResourcePriceResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.GetResourcePriceRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.GetResourcePriceResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.GetResourcePriceResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.getResourcePrice =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/GetResourcePrice',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetResourcePrice,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.GetResourcePriceRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.GetResourcePriceResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.getResourcePrice =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/GetResourcePrice',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetResourcePrice);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.ListCollaboratorsRequest,
  *   !proto.clarifai.api.MultiCollaboratorsResponse>}
  */
@@ -11994,13 +12177,13 @@ proto.clarifai.api.V2PromiseClient.prototype.listNextTaskAssignments =
  * @const
  * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.PutTaskAssignmentsRequest,
- *   !proto.clarifai.api.status.BaseResponse>}
+ *   !proto.clarifai.api.MultiTaskAssignmentResponse>}
  */
 const methodDescriptor_V2_PutTaskAssignments = new grpc.web.MethodDescriptor(
   '/clarifai.api.V2/PutTaskAssignments',
   grpc.web.MethodType.UNARY,
   proto.clarifai.api.PutTaskAssignmentsRequest,
-  proto_clarifai_api_status_status_pb.BaseResponse,
+  proto.clarifai.api.MultiTaskAssignmentResponse,
   /**
    * @param {!proto.clarifai.api.PutTaskAssignmentsRequest} request
    * @return {!Uint8Array}
@@ -12008,7 +12191,7 @@ const methodDescriptor_V2_PutTaskAssignments = new grpc.web.MethodDescriptor(
   function(request) {
     return request.serializeBinary();
   },
-  proto_clarifai_api_status_status_pb.BaseResponse.deserializeBinary
+  proto.clarifai.api.MultiTaskAssignmentResponse.deserializeBinary
 );
 
 
@@ -12017,9 +12200,9 @@ const methodDescriptor_V2_PutTaskAssignments = new grpc.web.MethodDescriptor(
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.status.BaseResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiTaskAssignmentResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.status.BaseResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiTaskAssignmentResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.clarifai.api.V2Client.prototype.putTaskAssignments =
@@ -12038,7 +12221,7 @@ proto.clarifai.api.V2Client.prototype.putTaskAssignments =
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.clarifai.api.status.BaseResponse>}
+ * @return {!Promise<!proto.clarifai.api.MultiTaskAssignmentResponse>}
  *     Promise that resolves to the response
  */
 proto.clarifai.api.V2PromiseClient.prototype.putTaskAssignments =
