@@ -1,7 +1,6 @@
-import { Struct } from 'google-protobuf/google/protobuf/struct_pb';
 import { ClarifaiStub } from '../index'
-import { Data, Input, Text } from '../proto/clarifai/api/resources_pb'
-import { PostInputsRequest } from '../proto/clarifai/api/service_pb'
+import { Struct, Data, Input, Text } from '../resources'
+import { PostInputsRequest } from '../service'
 
 export async function createAnInput() {
   // create an input with some text. In a real app, this might come
@@ -34,7 +33,7 @@ export async function createAnInput() {
 
   // send the request
   const auth = {
-    "authorization": `Key ${process.env.CLARIFAI_TOKEN}`,
+    authorization: `Key ${process.env.CLARIFAI_TOKEN}`,
   };
   const resp = await client.postInputs(req, auth);
 

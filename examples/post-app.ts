@@ -1,6 +1,6 @@
 import { ClarifaiStub } from '../index'
-import { App } from '../proto/clarifai/api/resources_pb'
-import { PostAppsRequest } from '../proto/clarifai/api/service_pb'
+import { App } from '../resources'
+import { PostAppsRequest } from '../service'
 
 export async function createAnApp() {
   // get a client object
@@ -8,9 +8,9 @@ export async function createAnApp() {
 
   // create an app
   const app = new App();
-  app.setId("cat-app");
-  app.setDefaultWorkflowId("General-Detection");
-  app.setDescription("An app for some cats");
+  app.setId('cat-app');
+  app.setDefaultWorkflowId('General-Detection');
+  app.setDescription('An app for some cats');
 
   // create a request
   const req = new PostAppsRequest();
@@ -18,7 +18,7 @@ export async function createAnApp() {
 
   // send the request
   const auth = {
-    "authorization": `Key ${process.env.CLARIFAI_TOKEN}`,
+    authorization: `Key ${process.env.CLARIFAI_TOKEN}`,
   };
   const resp = await client.postApps(req, auth);
 
