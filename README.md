@@ -17,32 +17,34 @@ import { ClarifaiStub } from "clarifai-web-grpc";
 import { App } from "clarifai-web-grpc/proto/clarifai/api/resources_pb";
 import { PostAppsRequest } from "clarifai-web-grpc/proto/clarifai/api/service_pb";
 
-const client = ClarifaiStub.grpc();
-// use client to create an App
+// get a client object
+const client = ClarifaiStub.promise()
 
+// create an app
 const app = new App();
 app.setId("cat-app");
 app.setDefaultWorkflowId("General-Detection");
 app.setDescription("An app for some cats");
 
+// create a request
 const req = new PostAppsRequest();
 req.setAppsList([app]);
 
+// send the request
 const auth = {
-  "X-Clarifai-Session-Token": "MY-CLARIFAI-PERSONAL-ACCESS-TOKEN",
+  "authorization": `Key ${process.env.CLARIFAI_TOKEN}`,
 };
+const resp = await client.postApps(req, auth);
 
-client.postApps(req, auth, (err, resp) => {
-  if (err) {
-    console.error(err);
-  } else {
-    console.log(resp.getAppsList()[0].getId()); // logs "cat-app"
-  }
-});
+// log the app id
+console.log(resp.getAppsList()[0].getId());
 ```
 
-## Publishing to NPM
+## Examples
 
+See the examples directory for more examples of how to use the clarifai API client
+
+## Publishing to NPM
 Publishing the client to NPM involves merging a PR with 2 things:
 1. Updates the `version` field in `package.json` to the appropriate version.
 2. Commit message should begin with `"GRPC clients version"` eg `"GRPC clients version 9.4.0"`.
