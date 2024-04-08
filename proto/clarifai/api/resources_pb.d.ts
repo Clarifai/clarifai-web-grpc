@@ -3330,6 +3330,16 @@ export class ModelVersion extends jspb.Message {
   getTrainLog(): string;
   setTrainLog(value: string): ModelVersion;
 
+  getInferenceComputeInfo(): ComputeInfo | undefined;
+  setInferenceComputeInfo(value?: ComputeInfo): ModelVersion;
+  hasInferenceComputeInfo(): boolean;
+  clearInferenceComputeInfo(): ModelVersion;
+
+  getBuildInfo(): BuildInfo | undefined;
+  setBuildInfo(value?: BuildInfo): ModelVersion;
+  hasBuildInfo(): boolean;
+  clearBuildInfo(): ModelVersion;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelVersion.AsObject;
   static toObject(includeInstance: boolean, msg: ModelVersion): ModelVersion.AsObject;
@@ -3360,6 +3370,34 @@ export namespace ModelVersion {
     trainInfo?: TrainInfo.AsObject,
     importInfo?: ImportInfo.AsObject,
     trainLog: string,
+    inferenceComputeInfo?: ComputeInfo.AsObject,
+    buildInfo?: BuildInfo.AsObject,
+  }
+}
+
+export class BuildInfo extends jspb.Message {
+  getDockerImageName(): string;
+  setDockerImageName(value: string): BuildInfo;
+
+  getDockerImageTag(): string;
+  setDockerImageTag(value: string): BuildInfo;
+
+  getDockerImageDigest(): string;
+  setDockerImageDigest(value: string): BuildInfo;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BuildInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: BuildInfo): BuildInfo.AsObject;
+  static serializeBinaryToWriter(message: BuildInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BuildInfo;
+  static deserializeBinaryFromReader(message: BuildInfo, reader: jspb.BinaryReader): BuildInfo;
+}
+
+export namespace BuildInfo {
+  export type AsObject = {
+    dockerImageName: string,
+    dockerImageTag: string,
+    dockerImageDigest: string,
   }
 }
 
@@ -3838,6 +3876,16 @@ export class EvalTestSetEntry extends jspb.Message {
   hasAnnotation(): boolean;
   clearAnnotation(): EvalTestSetEntry;
 
+  getPredictedAnnotation(): Annotation | undefined;
+  setPredictedAnnotation(value?: Annotation): EvalTestSetEntry;
+  hasPredictedAnnotation(): boolean;
+  clearPredictedAnnotation(): EvalTestSetEntry;
+
+  getGroundTruthAnnotation(): Annotation | undefined;
+  setGroundTruthAnnotation(value?: Annotation): EvalTestSetEntry;
+  hasGroundTruthAnnotation(): boolean;
+  clearGroundTruthAnnotation(): EvalTestSetEntry;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EvalTestSetEntry.AsObject;
   static toObject(includeInstance: boolean, msg: EvalTestSetEntry): EvalTestSetEntry.AsObject;
@@ -3852,6 +3900,8 @@ export namespace EvalTestSetEntry {
     predictedConceptsList: Array<Concept.AsObject>,
     groundTruthConceptsList: Array<Concept.AsObject>,
     annotation?: Annotation.AsObject,
+    predictedAnnotation?: Annotation.AsObject,
+    groundTruthAnnotation?: Annotation.AsObject,
   }
 }
 
@@ -7833,6 +7883,28 @@ export class Runner extends jspb.Message {
   clearLabelsList(): Runner;
   addLabels(value: string, index?: number): Runner;
 
+  getModel(): Model | undefined;
+  setModel(value?: Model): Runner;
+  hasModel(): boolean;
+  clearModel(): Runner;
+
+  getWorkflow(): Workflow | undefined;
+  setWorkflow(value?: Workflow): Runner;
+  hasWorkflow(): boolean;
+  clearWorkflow(): Runner;
+
+  getNodepool(): Nodepool | undefined;
+  setNodepool(value?: Nodepool): Runner;
+  hasNodepool(): boolean;
+  clearNodepool(): Runner;
+
+  getComputeInfo(): ComputeInfo | undefined;
+  setComputeInfo(value?: ComputeInfo): Runner;
+  hasComputeInfo(): boolean;
+  clearComputeInfo(): Runner;
+
+  getObjectCase(): Runner.ObjectCase;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Runner.AsObject;
   static toObject(includeInstance: boolean, msg: Runner): Runner.AsObject;
@@ -7850,6 +7922,281 @@ export namespace Runner {
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
     userId: string,
     labelsList: Array<string>,
+    model?: Model.AsObject,
+    workflow?: Workflow.AsObject,
+    nodepool?: Nodepool.AsObject,
+    computeInfo?: ComputeInfo.AsObject,
+  }
+
+  export enum ObjectCase { 
+    OBJECT_NOT_SET = 0,
+    MODEL = 9,
+    WORKFLOW = 10,
+  }
+}
+
+export class Nodepool extends jspb.Message {
+  getId(): string;
+  setId(value: string): Nodepool;
+
+  getUserId(): string;
+  setUserId(value: string): Nodepool;
+
+  getCloudRegion(): CloudRegion | undefined;
+  setCloudRegion(value?: CloudRegion): Nodepool;
+  hasCloudRegion(): boolean;
+  clearCloudRegion(): Nodepool;
+
+  getCapacityTypesList(): Array<Nodepool.CapacityType>;
+  setCapacityTypesList(value: Array<Nodepool.CapacityType>): Nodepool;
+  clearCapacityTypesList(): Nodepool;
+  addCapacityTypes(value: Nodepool.CapacityType, index?: number): Nodepool;
+
+  getInstanceTypesList(): Array<string>;
+  setInstanceTypesList(value: Array<string>): Nodepool;
+  clearInstanceTypesList(): Nodepool;
+  addInstanceTypes(value: string, index?: number): Nodepool;
+
+  getMinInstances(): number;
+  setMinInstances(value: number): Nodepool;
+
+  getMaxInstances(): number;
+  setMaxInstances(value: number): Nodepool;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Nodepool.AsObject;
+  static toObject(includeInstance: boolean, msg: Nodepool): Nodepool.AsObject;
+  static serializeBinaryToWriter(message: Nodepool, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Nodepool;
+  static deserializeBinaryFromReader(message: Nodepool, reader: jspb.BinaryReader): Nodepool;
+}
+
+export namespace Nodepool {
+  export type AsObject = {
+    id: string,
+    userId: string,
+    cloudRegion?: CloudRegion.AsObject,
+    capacityTypesList: Array<Nodepool.CapacityType>,
+    instanceTypesList: Array<string>,
+    minInstances: number,
+    maxInstances: number,
+  }
+
+  export enum CapacityType { 
+    UKNOWN_CAPACITY_TYPE = 0,
+    ONDEMAND_TYPE = 1,
+    SPOT_TYPE = 2,
+  }
+}
+
+export class CloudRegion extends jspb.Message {
+  getId(): string;
+  setId(value: string): CloudRegion;
+
+  getCloud(): CloudRegion.Cloud;
+  setCloud(value: CloudRegion.Cloud): CloudRegion;
+
+  getRegion(): string;
+  setRegion(value: string): CloudRegion;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CloudRegion.AsObject;
+  static toObject(includeInstance: boolean, msg: CloudRegion): CloudRegion.AsObject;
+  static serializeBinaryToWriter(message: CloudRegion, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CloudRegion;
+  static deserializeBinaryFromReader(message: CloudRegion, reader: jspb.BinaryReader): CloudRegion;
+}
+
+export namespace CloudRegion {
+  export type AsObject = {
+    id: string,
+    cloud: CloudRegion.Cloud,
+    region: string,
+  }
+
+  export enum Cloud { 
+    UNKOWN_CLOUD = 0,
+    SELF_HOSTED = 1,
+    AWS = 2,
+    GCP = 3,
+    AZURE = 4,
+    LAMBDA = 5,
+  }
+}
+
+export class ComputeInfo extends jspb.Message {
+  getNumCpus(): number;
+  setNumCpus(value: number): ComputeInfo;
+
+  getCpuMemory(): string;
+  setCpuMemory(value: string): ComputeInfo;
+
+  getNumAccelerators(): number;
+  setNumAccelerators(value: number): ComputeInfo;
+
+  getAcceleratorMemory(): string;
+  setAcceleratorMemory(value: string): ComputeInfo;
+
+  getAcceleratorTypeList(): Array<string>;
+  setAcceleratorTypeList(value: Array<string>): ComputeInfo;
+  clearAcceleratorTypeList(): ComputeInfo;
+  addAcceleratorType(value: string, index?: number): ComputeInfo;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ComputeInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: ComputeInfo): ComputeInfo.AsObject;
+  static serializeBinaryToWriter(message: ComputeInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ComputeInfo;
+  static deserializeBinaryFromReader(message: ComputeInfo, reader: jspb.BinaryReader): ComputeInfo;
+}
+
+export namespace ComputeInfo {
+  export type AsObject = {
+    numCpus: number,
+    cpuMemory: string,
+    numAccelerators: number,
+    acceleratorMemory: string,
+    acceleratorTypeList: Array<string>,
+  }
+}
+
+export class AutoscaleConfig extends jspb.Message {
+  getMinReplicas(): number;
+  setMinReplicas(value: number): AutoscaleConfig;
+
+  getMaxReplicas(): number;
+  setMaxReplicas(value: number): AutoscaleConfig;
+
+  getTrafficHistorySeconds(): number;
+  setTrafficHistorySeconds(value: number): AutoscaleConfig;
+
+  getScaleDownDelaySeconds(): number;
+  setScaleDownDelaySeconds(value: number): AutoscaleConfig;
+
+  getScaleUpDelaySeconds(): number;
+  setScaleUpDelaySeconds(value: number): AutoscaleConfig;
+
+  getEnablePacking(): boolean;
+  setEnablePacking(value: boolean): AutoscaleConfig;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AutoscaleConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: AutoscaleConfig): AutoscaleConfig.AsObject;
+  static serializeBinaryToWriter(message: AutoscaleConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AutoscaleConfig;
+  static deserializeBinaryFromReader(message: AutoscaleConfig, reader: jspb.BinaryReader): AutoscaleConfig;
+}
+
+export namespace AutoscaleConfig {
+  export type AsObject = {
+    minReplicas: number,
+    maxReplicas: number,
+    trafficHistorySeconds: number,
+    scaleDownDelaySeconds: number,
+    scaleUpDelaySeconds: number,
+    enablePacking: boolean,
+  }
+}
+
+export class Deployment extends jspb.Message {
+  getId(): string;
+  setId(value: string): Deployment;
+
+  getUserId(): string;
+  setUserId(value: string): Deployment;
+
+  getAutoscaleConfig(): AutoscaleConfig | undefined;
+  setAutoscaleConfig(value?: AutoscaleConfig): Deployment;
+  hasAutoscaleConfig(): boolean;
+  clearAutoscaleConfig(): Deployment;
+
+  getNodepoolsList(): Array<Nodepool>;
+  setNodepoolsList(value: Array<Nodepool>): Deployment;
+  clearNodepoolsList(): Deployment;
+  addNodepools(value?: Nodepool, index?: number): Nodepool;
+
+  getModel(): Model | undefined;
+  setModel(value?: Model): Deployment;
+  hasModel(): boolean;
+  clearModel(): Deployment;
+
+  getWorkflow(): Workflow | undefined;
+  setWorkflow(value?: Workflow): Deployment;
+  hasWorkflow(): boolean;
+  clearWorkflow(): Deployment;
+
+  getSchedulingChoice(): Deployment.SchedulingChoice;
+  setSchedulingChoice(value: Deployment.SchedulingChoice): Deployment;
+
+  getObjectCase(): Deployment.ObjectCase;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Deployment.AsObject;
+  static toObject(includeInstance: boolean, msg: Deployment): Deployment.AsObject;
+  static serializeBinaryToWriter(message: Deployment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Deployment;
+  static deserializeBinaryFromReader(message: Deployment, reader: jspb.BinaryReader): Deployment;
+}
+
+export namespace Deployment {
+  export type AsObject = {
+    id: string,
+    userId: string,
+    autoscaleConfig?: AutoscaleConfig.AsObject,
+    nodepoolsList: Array<Nodepool.AsObject>,
+    model?: Model.AsObject,
+    workflow?: Workflow.AsObject,
+    schedulingChoice: Deployment.SchedulingChoice,
+  }
+
+  export enum SchedulingChoice { 
+    UNKNOWN_SCHEDULING_CHOICE = 0,
+    FAIL = 1,
+    RANDOM = 2,
+    PRICE = 3,
+    PERFORMANCE = 4,
+    NETWORK = 5,
+    UTILIZATION = 6,
+    PREFER_SPOT = 7,
+    PREFER_ONDEMAND = 8,
+  }
+
+  export enum ObjectCase { 
+    OBJECT_NOT_SET = 0,
+    MODEL = 5,
+    WORKFLOW = 6,
+  }
+}
+
+export class RunnerSelector extends jspb.Message {
+  getNodepool(): Nodepool | undefined;
+  setNodepool(value?: Nodepool): RunnerSelector;
+  hasNodepool(): boolean;
+  clearNodepool(): RunnerSelector;
+
+  getRunner(): Runner | undefined;
+  setRunner(value?: Runner): RunnerSelector;
+  hasRunner(): boolean;
+  clearRunner(): RunnerSelector;
+
+  getDeployment(): Deployment | undefined;
+  setDeployment(value?: Deployment): RunnerSelector;
+  hasDeployment(): boolean;
+  clearDeployment(): RunnerSelector;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RunnerSelector.AsObject;
+  static toObject(includeInstance: boolean, msg: RunnerSelector): RunnerSelector.AsObject;
+  static serializeBinaryToWriter(message: RunnerSelector, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RunnerSelector;
+  static deserializeBinaryFromReader(message: RunnerSelector, reader: jspb.BinaryReader): RunnerSelector;
+}
+
+export namespace RunnerSelector {
+  export type AsObject = {
+    nodepool?: Nodepool.AsObject,
+    runner?: Runner.AsObject,
+    deployment?: Deployment.AsObject,
   }
 }
 

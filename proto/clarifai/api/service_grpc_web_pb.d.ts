@@ -1031,13 +1031,6 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.SingleStatusCodeResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleStatusCodeResponse>;
 
-  getResourcePrice(
-    request: proto_clarifai_api_service_pb.GetResourcePriceRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.GetResourcePriceResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.GetResourcePriceResponse>;
-
   listCollaborators(
     request: proto_clarifai_api_service_pb.ListCollaboratorsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -2278,11 +2271,6 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.GetStatusCodeRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.SingleStatusCodeResponse>;
-
-  getResourcePrice(
-    request: proto_clarifai_api_service_pb.GetResourcePriceRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.GetResourcePriceResponse>;
 
   listCollaborators(
     request: proto_clarifai_api_service_pb.ListCollaboratorsRequest,

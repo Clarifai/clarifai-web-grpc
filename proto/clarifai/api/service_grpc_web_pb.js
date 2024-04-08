@@ -9004,67 +9004,6 @@ proto.clarifai.api.V2PromiseClient.prototype.getStatusCode =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.clarifai.api.GetResourcePriceRequest,
- *   !proto.clarifai.api.GetResourcePriceResponse>}
- */
-const methodDescriptor_V2_GetResourcePrice = new grpc.web.MethodDescriptor(
-  '/clarifai.api.V2/GetResourcePrice',
-  grpc.web.MethodType.UNARY,
-  proto.clarifai.api.GetResourcePriceRequest,
-  proto.clarifai.api.GetResourcePriceResponse,
-  /**
-   * @param {!proto.clarifai.api.GetResourcePriceRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.clarifai.api.GetResourcePriceResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.clarifai.api.GetResourcePriceRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.GetResourcePriceResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.GetResourcePriceResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.clarifai.api.V2Client.prototype.getResourcePrice =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/clarifai.api.V2/GetResourcePrice',
-      request,
-      metadata || {},
-      methodDescriptor_V2_GetResourcePrice,
-      callback);
-};
-
-
-/**
- * @param {!proto.clarifai.api.GetResourcePriceRequest} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.clarifai.api.GetResourcePriceResponse>}
- *     Promise that resolves to the response
- */
-proto.clarifai.api.V2PromiseClient.prototype.getResourcePrice =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/clarifai.api.V2/GetResourcePrice',
-      request,
-      metadata || {},
-      methodDescriptor_V2_GetResourcePrice);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.ListCollaboratorsRequest,
  *   !proto.clarifai.api.MultiCollaboratorsResponse>}
  */
