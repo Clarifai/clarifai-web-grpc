@@ -289,6 +289,11 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiOutputResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiOutputResponse>;
 
+  generateModelOutputs(
+    request: proto_clarifai_api_service_pb.PostModelOutputsRequest,
+    metadata?: grpcWeb.Metadata
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiOutputResponse>;
+
   listDatasets(
     request: proto_clarifai_api_service_pb.ListDatasetsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -1741,6 +1746,11 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.PostModelOutputsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiOutputResponse>;
+
+  generateModelOutputs(
+    request: proto_clarifai_api_service_pb.PostModelOutputsRequest,
+    metadata?: grpcWeb.Metadata
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiOutputResponse>;
 
   listDatasets(
     request: proto_clarifai_api_service_pb.ListDatasetsRequest,
