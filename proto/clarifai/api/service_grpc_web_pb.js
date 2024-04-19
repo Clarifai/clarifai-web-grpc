@@ -2538,6 +2538,62 @@ proto.clarifai.api.V2PromiseClient.prototype.postModelOutputs =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostModelOutputsRequest,
+ *   !proto.clarifai.api.MultiOutputResponse>}
+ */
+const methodDescriptor_V2_GenerateModelOutputs = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/GenerateModelOutputs',
+  grpc.web.MethodType.SERVER_STREAMING,
+  proto.clarifai.api.PostModelOutputsRequest,
+  proto.clarifai.api.MultiOutputResponse,
+  /**
+   * @param {!proto.clarifai.api.PostModelOutputsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiOutputResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostModelOutputsRequest} request The request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiOutputResponse>}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.generateModelOutputs =
+    function(request, metadata) {
+  return this.client_.serverStreaming(this.hostname_ +
+      '/clarifai.api.V2/GenerateModelOutputs',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GenerateModelOutputs);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostModelOutputsRequest} request The request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiOutputResponse>}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2PromiseClient.prototype.generateModelOutputs =
+    function(request, metadata) {
+  return this.client_.serverStreaming(this.hostname_ +
+      '/clarifai.api.V2/GenerateModelOutputs',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GenerateModelOutputs);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.ListDatasetsRequest,
  *   !proto.clarifai.api.MultiDatasetResponse>}
  */
