@@ -65,8 +65,10 @@ export class Annotation extends jspb.Message {
   getTaskId(): string;
   setTaskId(value: string): Annotation;
 
-  getWorkflowVersionId(): string;
-  setWorkflowVersionId(value: string): Annotation;
+  getWorker(): Worker | undefined;
+  setWorker(value?: Worker): Annotation;
+  hasWorker(): boolean;
+  clearWorker(): Annotation;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Annotation.AsObject;
@@ -92,7 +94,7 @@ export namespace Annotation {
     inputLevel: boolean,
     consensusInfo?: google_protobuf_struct_pb.Struct.AsObject,
     taskId: string,
-    workflowVersionId: string,
+    worker?: Worker.AsObject,
   }
 }
 
