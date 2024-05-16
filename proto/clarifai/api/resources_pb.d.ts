@@ -914,6 +914,18 @@ export class ConceptQuery extends jspb.Message {
   clearUseCasesList(): ConceptQuery;
   addUseCases(value: WorkflowModelUseCase, index?: number): ConceptQuery;
 
+  getModel(): Model | undefined;
+  setModel(value?: Model): ConceptQuery;
+  hasModel(): boolean;
+  clearModel(): ConceptQuery;
+
+  getWorkflow(): Workflow | undefined;
+  setWorkflow(value?: Workflow): ConceptQuery;
+  hasWorkflow(): boolean;
+  clearWorkflow(): ConceptQuery;
+
+  getSourceCase(): ConceptQuery.SourceCase;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConceptQuery.AsObject;
   static toObject(includeInstance: boolean, msg: ConceptQuery): ConceptQuery.AsObject;
@@ -928,6 +940,14 @@ export namespace ConceptQuery {
     language: string,
     workflowId: string,
     useCasesList: Array<WorkflowModelUseCase>,
+    model?: Model.AsObject,
+    workflow?: Workflow.AsObject,
+  }
+
+  export enum SourceCase { 
+    SOURCE_NOT_SET = 0,
+    MODEL = 5,
+    WORKFLOW = 6,
   }
 }
 
@@ -6185,6 +6205,11 @@ export class TaskMetrics extends jspb.Message {
   hasWork(): boolean;
   clearWork(): TaskMetrics;
 
+  getReview(): TaskReviewMetrics | undefined;
+  setReview(value?: TaskReviewMetrics): TaskMetrics;
+  hasReview(): boolean;
+  clearReview(): TaskMetrics;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TaskMetrics.AsObject;
   static toObject(includeInstance: boolean, msg: TaskMetrics): TaskMetrics.AsObject;
@@ -6196,6 +6221,7 @@ export class TaskMetrics extends jspb.Message {
 export namespace TaskMetrics {
   export type AsObject = {
     work?: TaskWorkMetrics.AsObject,
+    review?: TaskReviewMetrics.AsObject,
   }
 }
 
@@ -6215,6 +6241,28 @@ export class TaskWorkMetrics extends jspb.Message {
 }
 
 export namespace TaskWorkMetrics {
+  export type AsObject = {
+    inputsCountEstimated: number,
+    inputsPercentEstimated: number,
+  }
+}
+
+export class TaskReviewMetrics extends jspb.Message {
+  getInputsCountEstimated(): number;
+  setInputsCountEstimated(value: number): TaskReviewMetrics;
+
+  getInputsPercentEstimated(): number;
+  setInputsPercentEstimated(value: number): TaskReviewMetrics;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TaskReviewMetrics.AsObject;
+  static toObject(includeInstance: boolean, msg: TaskReviewMetrics): TaskReviewMetrics.AsObject;
+  static serializeBinaryToWriter(message: TaskReviewMetrics, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TaskReviewMetrics;
+  static deserializeBinaryFromReader(message: TaskReviewMetrics, reader: jspb.BinaryReader): TaskReviewMetrics;
+}
+
+export namespace TaskReviewMetrics {
   export type AsObject = {
     inputsCountEstimated: number,
     inputsPercentEstimated: number,
@@ -7991,29 +8039,52 @@ export class Nodepool extends jspb.Message {
   getId(): string;
   setId(value: string): Nodepool;
 
+  getDescription(): string;
+  setDescription(value: string): Nodepool;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Nodepool;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): Nodepool;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): Nodepool;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): Nodepool;
+
   getUserId(): string;
   setUserId(value: string): Nodepool;
 
-  getCloudRegion(): CloudRegion | undefined;
-  setCloudRegion(value?: CloudRegion): Nodepool;
-  hasCloudRegion(): boolean;
-  clearCloudRegion(): Nodepool;
+  getComputeCluster(): ComputeCluster | undefined;
+  setComputeCluster(value?: ComputeCluster): Nodepool;
+  hasComputeCluster(): boolean;
+  clearComputeCluster(): Nodepool;
 
-  getCapacityTypesList(): Array<Nodepool.CapacityType>;
-  setCapacityTypesList(value: Array<Nodepool.CapacityType>): Nodepool;
-  clearCapacityTypesList(): Nodepool;
-  addCapacityTypes(value: Nodepool.CapacityType, index?: number): Nodepool;
+  getNodeCapacityType(): NodeCapacityType | undefined;
+  setNodeCapacityType(value?: NodeCapacityType): Nodepool;
+  hasNodeCapacityType(): boolean;
+  clearNodeCapacityType(): Nodepool;
 
-  getInstanceTypesList(): Array<string>;
-  setInstanceTypesList(value: Array<string>): Nodepool;
+  getInstanceTypesList(): Array<InstanceType>;
+  setInstanceTypesList(value: Array<InstanceType>): Nodepool;
   clearInstanceTypesList(): Nodepool;
-  addInstanceTypes(value: string, index?: number): Nodepool;
+  addInstanceTypes(value?: InstanceType, index?: number): InstanceType;
 
   getMinInstances(): number;
   setMinInstances(value: number): Nodepool;
 
   getMaxInstances(): number;
   setMaxInstances(value: number): Nodepool;
+
+  getVisibility(): Visibility | undefined;
+  setVisibility(value?: Visibility): Nodepool;
+  hasVisibility(): boolean;
+  clearVisibility(): Nodepool;
+
+  getMetadata(): google_protobuf_struct_pb.Struct | undefined;
+  setMetadata(value?: google_protobuf_struct_pb.Struct): Nodepool;
+  hasMetadata(): boolean;
+  clearMetadata(): Nodepool;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Nodepool.AsObject;
@@ -8026,53 +8097,125 @@ export class Nodepool extends jspb.Message {
 export namespace Nodepool {
   export type AsObject = {
     id: string,
+    description: string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     userId: string,
-    cloudRegion?: CloudRegion.AsObject,
-    capacityTypesList: Array<Nodepool.CapacityType>,
-    instanceTypesList: Array<string>,
+    computeCluster?: ComputeCluster.AsObject,
+    nodeCapacityType?: NodeCapacityType.AsObject,
+    instanceTypesList: Array<InstanceType.AsObject>,
     minInstances: number,
     maxInstances: number,
+    visibility?: Visibility.AsObject,
+    metadata?: google_protobuf_struct_pb.Struct.AsObject,
+  }
+}
+
+export class NodeCapacityType extends jspb.Message {
+  getCapacityTypesList(): Array<NodeCapacityType.CapacityType>;
+  setCapacityTypesList(value: Array<NodeCapacityType.CapacityType>): NodeCapacityType;
+  clearCapacityTypesList(): NodeCapacityType;
+  addCapacityTypes(value: NodeCapacityType.CapacityType, index?: number): NodeCapacityType;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): NodeCapacityType.AsObject;
+  static toObject(includeInstance: boolean, msg: NodeCapacityType): NodeCapacityType.AsObject;
+  static serializeBinaryToWriter(message: NodeCapacityType, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): NodeCapacityType;
+  static deserializeBinaryFromReader(message: NodeCapacityType, reader: jspb.BinaryReader): NodeCapacityType;
+}
+
+export namespace NodeCapacityType {
+  export type AsObject = {
+    capacityTypesList: Array<NodeCapacityType.CapacityType>,
   }
 
   export enum CapacityType { 
     UKNOWN_CAPACITY_TYPE = 0,
-    ONDEMAND_TYPE = 1,
+    ON_DEMAND_TYPE = 1,
     SPOT_TYPE = 2,
   }
 }
 
-export class CloudRegion extends jspb.Message {
+export class InstanceType extends jspb.Message {
   getId(): string;
-  setId(value: string): CloudRegion;
+  setId(value: string): InstanceType;
 
-  getCloud(): CloudRegion.Cloud;
-  setCloud(value: CloudRegion.Cloud): CloudRegion;
+  getDescription(): string;
+  setDescription(value: string): InstanceType;
 
-  getRegion(): string;
-  setRegion(value: string): CloudRegion;
+  getComputeInfo(): ComputeInfo | undefined;
+  setComputeInfo(value?: ComputeInfo): InstanceType;
+  hasComputeInfo(): boolean;
+  clearComputeInfo(): InstanceType;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CloudRegion.AsObject;
-  static toObject(includeInstance: boolean, msg: CloudRegion): CloudRegion.AsObject;
-  static serializeBinaryToWriter(message: CloudRegion, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CloudRegion;
-  static deserializeBinaryFromReader(message: CloudRegion, reader: jspb.BinaryReader): CloudRegion;
+  toObject(includeInstance?: boolean): InstanceType.AsObject;
+  static toObject(includeInstance: boolean, msg: InstanceType): InstanceType.AsObject;
+  static serializeBinaryToWriter(message: InstanceType, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InstanceType;
+  static deserializeBinaryFromReader(message: InstanceType, reader: jspb.BinaryReader): InstanceType;
 }
 
-export namespace CloudRegion {
+export namespace InstanceType {
   export type AsObject = {
     id: string,
-    cloud: CloudRegion.Cloud,
-    region: string,
+    description: string,
+    computeInfo?: ComputeInfo.AsObject,
   }
+}
 
-  export enum Cloud { 
-    UNKOWN_CLOUD = 0,
-    SELF_HOSTED = 1,
-    AWS = 2,
-    GCP = 3,
-    AZURE = 4,
-    LAMBDA = 5,
+export class CloudProvider extends jspb.Message {
+  getId(): string;
+  setId(value: string): CloudProvider;
+
+  getName(): string;
+  setName(value: string): CloudProvider;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CloudProvider.AsObject;
+  static toObject(includeInstance: boolean, msg: CloudProvider): CloudProvider.AsObject;
+  static serializeBinaryToWriter(message: CloudProvider, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CloudProvider;
+  static deserializeBinaryFromReader(message: CloudProvider, reader: jspb.BinaryReader): CloudProvider;
+}
+
+export namespace CloudProvider {
+  export type AsObject = {
+    id: string,
+    name: string,
+  }
+}
+
+export class ComputeCluster extends jspb.Message {
+  getId(): string;
+  setId(value: string): ComputeCluster;
+
+  getDescription(): string;
+  setDescription(value: string): ComputeCluster;
+
+  getCloudProvider(): CloudProvider | undefined;
+  setCloudProvider(value?: CloudProvider): ComputeCluster;
+  hasCloudProvider(): boolean;
+  clearCloudProvider(): ComputeCluster;
+
+  getRegion(): string;
+  setRegion(value: string): ComputeCluster;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ComputeCluster.AsObject;
+  static toObject(includeInstance: boolean, msg: ComputeCluster): ComputeCluster.AsObject;
+  static serializeBinaryToWriter(message: ComputeCluster, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ComputeCluster;
+  static deserializeBinaryFromReader(message: ComputeCluster, reader: jspb.BinaryReader): ComputeCluster;
+}
+
+export namespace ComputeCluster {
+  export type AsObject = {
+    id: string,
+    description: string,
+    cloudProvider?: CloudProvider.AsObject,
+    region: string,
   }
 }
 
@@ -8180,6 +8323,16 @@ export class Deployment extends jspb.Message {
   getSchedulingChoice(): Deployment.SchedulingChoice;
   setSchedulingChoice(value: Deployment.SchedulingChoice): Deployment;
 
+  getVisibility(): Visibility | undefined;
+  setVisibility(value?: Visibility): Deployment;
+  hasVisibility(): boolean;
+  clearVisibility(): Deployment;
+
+  getMetadata(): google_protobuf_struct_pb.Struct | undefined;
+  setMetadata(value?: google_protobuf_struct_pb.Struct): Deployment;
+  hasMetadata(): boolean;
+  clearMetadata(): Deployment;
+
   getObjectCase(): Deployment.ObjectCase;
 
   serializeBinary(): Uint8Array;
@@ -8199,6 +8352,8 @@ export namespace Deployment {
     model?: Model.AsObject,
     workflow?: Workflow.AsObject,
     schedulingChoice: Deployment.SchedulingChoice,
+    visibility?: Visibility.AsObject,
+    metadata?: google_protobuf_struct_pb.Struct.AsObject,
   }
 
   export enum SchedulingChoice { 
