@@ -13449,5 +13449,310 @@ proto.clarifai.api.V2PromiseClient.prototype.postModelVersionsTrainingTimeEstima
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.GetNodepoolRequest,
+ *   !proto.clarifai.api.SingleNodepoolResponse>}
+ */
+const methodDescriptor_V2_GetNodepool = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/GetNodepool',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.GetNodepoolRequest,
+  proto.clarifai.api.SingleNodepoolResponse,
+  /**
+   * @param {!proto.clarifai.api.GetNodepoolRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SingleNodepoolResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.GetNodepoolRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SingleNodepoolResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleNodepoolResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.getNodepool =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/GetNodepool',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetNodepool,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.GetNodepoolRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.SingleNodepoolResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.getNodepool =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/GetNodepool',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetNodepool);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListNodepoolsRequest,
+ *   !proto.clarifai.api.MultiNodepoolResponse>}
+ */
+const methodDescriptor_V2_ListNodepools = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListNodepools',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListNodepoolsRequest,
+  proto.clarifai.api.MultiNodepoolResponse,
+  /**
+   * @param {!proto.clarifai.api.ListNodepoolsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiNodepoolResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListNodepoolsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiNodepoolResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiNodepoolResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listNodepools =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListNodepools',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListNodepools,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListNodepoolsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiNodepoolResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listNodepools =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListNodepools',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListNodepools);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostNodepoolsRequest,
+ *   !proto.clarifai.api.MultiNodepoolResponse>}
+ */
+const methodDescriptor_V2_PostNodepools = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostNodepools',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostNodepoolsRequest,
+  proto.clarifai.api.MultiNodepoolResponse,
+  /**
+   * @param {!proto.clarifai.api.PostNodepoolsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiNodepoolResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostNodepoolsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiNodepoolResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiNodepoolResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postNodepools =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostNodepools',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostNodepools,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostNodepoolsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiNodepoolResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postNodepools =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostNodepools',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostNodepools);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PatchNodepoolsRequest,
+ *   !proto.clarifai.api.MultiNodepoolResponse>}
+ */
+const methodDescriptor_V2_PatchNodepools = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PatchNodepools',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PatchNodepoolsRequest,
+  proto.clarifai.api.MultiNodepoolResponse,
+  /**
+   * @param {!proto.clarifai.api.PatchNodepoolsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiNodepoolResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PatchNodepoolsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiNodepoolResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiNodepoolResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.patchNodepools =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PatchNodepools',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PatchNodepools,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PatchNodepoolsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiNodepoolResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.patchNodepools =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PatchNodepools',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PatchNodepools);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.DeleteNodepoolsRequest,
+ *   !proto.clarifai.api.status.BaseResponse>}
+ */
+const methodDescriptor_V2_DeleteNodepools = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/DeleteNodepools',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.DeleteNodepoolsRequest,
+  proto_clarifai_api_status_status_pb.BaseResponse,
+  /**
+   * @param {!proto.clarifai.api.DeleteNodepoolsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto_clarifai_api_status_status_pb.BaseResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.DeleteNodepoolsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.status.BaseResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.status.BaseResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.deleteNodepools =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/DeleteNodepools',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeleteNodepools,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.DeleteNodepoolsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.status.BaseResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.deleteNodepools =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/DeleteNodepools',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeleteNodepools);
+};
+
+
 module.exports = proto.clarifai.api;
 

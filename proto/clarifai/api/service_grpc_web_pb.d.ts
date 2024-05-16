@@ -1540,6 +1540,41 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiTrainingTimeEstimateResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiTrainingTimeEstimateResponse>;
 
+  getNodepool(
+    request: proto_clarifai_api_service_pb.GetNodepoolRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleNodepoolResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleNodepoolResponse>;
+
+  listNodepools(
+    request: proto_clarifai_api_service_pb.ListNodepoolsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiNodepoolResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiNodepoolResponse>;
+
+  postNodepools(
+    request: proto_clarifai_api_service_pb.PostNodepoolsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiNodepoolResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiNodepoolResponse>;
+
+  patchNodepools(
+    request: proto_clarifai_api_service_pb.PatchNodepoolsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiNodepoolResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiNodepoolResponse>;
+
+  deleteNodepools(
+    request: proto_clarifai_api_service_pb.DeleteNodepoolsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
 }
 
 export class V2PromiseClient {
@@ -2641,6 +2676,31 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.PostModelVersionsTrainingTimeEstimateRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiTrainingTimeEstimateResponse>;
+
+  getNodepool(
+    request: proto_clarifai_api_service_pb.GetNodepoolRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleNodepoolResponse>;
+
+  listNodepools(
+    request: proto_clarifai_api_service_pb.ListNodepoolsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiNodepoolResponse>;
+
+  postNodepools(
+    request: proto_clarifai_api_service_pb.PostNodepoolsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiNodepoolResponse>;
+
+  patchNodepools(
+    request: proto_clarifai_api_service_pb.PatchNodepoolsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiNodepoolResponse>;
+
+  deleteNodepools(
+    request: proto_clarifai_api_service_pb.DeleteNodepoolsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
 
 }
 
