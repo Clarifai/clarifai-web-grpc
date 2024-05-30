@@ -219,7 +219,6 @@ goog.exportSymbol('proto.clarifai.api.Region', null, global);
 goog.exportSymbol('proto.clarifai.api.RegionInfo', null, global);
 goog.exportSymbol('proto.clarifai.api.RoleType', null, global);
 goog.exportSymbol('proto.clarifai.api.Runner', null, global);
-goog.exportSymbol('proto.clarifai.api.Runner.ObjectCase', null, global);
 goog.exportSymbol('proto.clarifai.api.RunnerMethodType', null, global);
 goog.exportSymbol('proto.clarifai.api.RunnerSelector', null, global);
 goog.exportSymbol('proto.clarifai.api.ScopeDeps', null, global);
@@ -4523,7 +4522,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.clarifai.api.Runner = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.clarifai.api.Runner.repeatedFields_, proto.clarifai.api.Runner.oneofGroups_);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.clarifai.api.Runner.repeatedFields_, null);
 };
 goog.inherits(proto.clarifai.api.Runner, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -41498,6 +41497,7 @@ proto.clarifai.api.User.toObject = function(includeInstance, msg) {
     jobTitle: jspb.Message.getFieldWithDefault(msg, 19, ""),
     jobRole: jspb.Message.getFieldWithDefault(msg, 20, ""),
     intention: jspb.Message.getFieldWithDefault(msg, 24, ""),
+    referralSource: jspb.Message.getFieldWithDefault(msg, 25, ""),
     billType: jspb.Message.getFieldWithDefault(msg, 7, ""),
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     dateGdprConsent: (f = msg.getDateGdprConsent()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -41580,6 +41580,10 @@ proto.clarifai.api.User.deserializeBinaryFromReader = function(msg, reader) {
     case 24:
       var value = /** @type {string} */ (reader.readString());
       msg.setIntention(value);
+      break;
+    case 25:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setReferralSource(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
@@ -41728,6 +41732,13 @@ proto.clarifai.api.User.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       24,
+      f
+    );
+  }
+  f = message.getReferralSource();
+  if (f.length > 0) {
+    writer.writeString(
+      25,
       f
     );
   }
@@ -41982,6 +41993,24 @@ proto.clarifai.api.User.prototype.getIntention = function() {
  */
 proto.clarifai.api.User.prototype.setIntention = function(value) {
   return jspb.Message.setProto3StringField(this, 24, value);
+};
+
+
+/**
+ * optional string referral_source = 25;
+ * @return {string}
+ */
+proto.clarifai.api.User.prototype.getReferralSource = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 25, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.clarifai.api.User} returns this
+ */
+proto.clarifai.api.User.prototype.setReferralSource = function(value) {
+  return jspb.Message.setProto3StringField(this, 25, value);
 };
 
 
@@ -65761,32 +65790,6 @@ proto.clarifai.api.BookmarkOrigin.prototype.setResourceType = function(value) {
  */
 proto.clarifai.api.Runner.repeatedFields_ = [7];
 
-/**
- * Oneof group definitions for this message. Each group defines the field
- * numbers belonging to that group. When of these fields' value is set, all
- * other fields in the group are cleared. During deserialization, if multiple
- * fields are encountered for a group, only the last value seen will be kept.
- * @private {!Array<!Array<number>>}
- * @const
- */
-proto.clarifai.api.Runner.oneofGroups_ = [[9,10]];
-
-/**
- * @enum {number}
- */
-proto.clarifai.api.Runner.ObjectCase = {
-  OBJECT_NOT_SET: 0,
-  MODEL: 9,
-  WORKFLOW: 10
-};
-
-/**
- * @return {proto.clarifai.api.Runner.ObjectCase}
- */
-proto.clarifai.api.Runner.prototype.getObjectCase = function() {
-  return /** @type {proto.clarifai.api.Runner.ObjectCase} */(jspb.Message.computeOneofCase(this, proto.clarifai.api.Runner.oneofGroups_[0]));
-};
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -65825,8 +65828,7 @@ proto.clarifai.api.Runner.toObject = function(includeInstance, msg) {
     metadata: (f = msg.getMetadata()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f),
     userId: jspb.Message.getFieldWithDefault(msg, 6, ""),
     labelsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
-    model: (f = msg.getModel()) && proto.clarifai.api.Model.toObject(includeInstance, f),
-    workflow: (f = msg.getWorkflow()) && proto.clarifai.api.Workflow.toObject(includeInstance, f),
+    worker: (f = msg.getWorker()) && proto.clarifai.api.Worker.toObject(includeInstance, f),
     nodepool: (f = msg.getNodepool()) && proto.clarifai.api.Nodepool.toObject(includeInstance, f),
     computeInfo: (f = msg.getComputeInfo()) && proto.clarifai.api.ComputeInfo.toObject(includeInstance, f)
   };
@@ -65896,22 +65898,17 @@ proto.clarifai.api.Runner.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {string} */ (reader.readString());
       msg.addLabels(value);
       break;
+    case 8:
+      var value = new proto.clarifai.api.Worker;
+      reader.readMessage(value,proto.clarifai.api.Worker.deserializeBinaryFromReader);
+      msg.setWorker(value);
+      break;
     case 9:
-      var value = new proto.clarifai.api.Model;
-      reader.readMessage(value,proto.clarifai.api.Model.deserializeBinaryFromReader);
-      msg.setModel(value);
-      break;
-    case 10:
-      var value = new proto.clarifai.api.Workflow;
-      reader.readMessage(value,proto.clarifai.api.Workflow.deserializeBinaryFromReader);
-      msg.setWorkflow(value);
-      break;
-    case 12:
       var value = new proto.clarifai.api.Nodepool;
       reader.readMessage(value,proto.clarifai.api.Nodepool.deserializeBinaryFromReader);
       msg.setNodepool(value);
       break;
-    case 13:
+    case 10:
       var value = new proto.clarifai.api.ComputeInfo;
       reader.readMessage(value,proto.clarifai.api.ComputeInfo.deserializeBinaryFromReader);
       msg.setComputeInfo(value);
@@ -65997,26 +65994,18 @@ proto.clarifai.api.Runner.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getModel();
+  f = message.getWorker();
   if (f != null) {
     writer.writeMessage(
-      9,
+      8,
       f,
-      proto.clarifai.api.Model.serializeBinaryToWriter
-    );
-  }
-  f = message.getWorkflow();
-  if (f != null) {
-    writer.writeMessage(
-      10,
-      f,
-      proto.clarifai.api.Workflow.serializeBinaryToWriter
+      proto.clarifai.api.Worker.serializeBinaryToWriter
     );
   }
   f = message.getNodepool();
   if (f != null) {
     writer.writeMessage(
-      12,
+      9,
       f,
       proto.clarifai.api.Nodepool.serializeBinaryToWriter
     );
@@ -66024,7 +66013,7 @@ proto.clarifai.api.Runner.serializeBinaryToWriter = function(message, writer) {
   f = message.getComputeInfo();
   if (f != null) {
     writer.writeMessage(
-      13,
+      10,
       f,
       proto.clarifai.api.ComputeInfo.serializeBinaryToWriter
     );
@@ -66235,21 +66224,21 @@ proto.clarifai.api.Runner.prototype.clearLabelsList = function() {
 
 
 /**
- * optional Model model = 9;
- * @return {?proto.clarifai.api.Model}
+ * optional Worker worker = 8;
+ * @return {?proto.clarifai.api.Worker}
  */
-proto.clarifai.api.Runner.prototype.getModel = function() {
-  return /** @type{?proto.clarifai.api.Model} */ (
-    jspb.Message.getWrapperField(this, proto.clarifai.api.Model, 9));
+proto.clarifai.api.Runner.prototype.getWorker = function() {
+  return /** @type{?proto.clarifai.api.Worker} */ (
+    jspb.Message.getWrapperField(this, proto.clarifai.api.Worker, 8));
 };
 
 
 /**
- * @param {?proto.clarifai.api.Model|undefined} value
+ * @param {?proto.clarifai.api.Worker|undefined} value
  * @return {!proto.clarifai.api.Runner} returns this
 */
-proto.clarifai.api.Runner.prototype.setModel = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 9, proto.clarifai.api.Runner.oneofGroups_[0], value);
+proto.clarifai.api.Runner.prototype.setWorker = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -66257,8 +66246,8 @@ proto.clarifai.api.Runner.prototype.setModel = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.clarifai.api.Runner} returns this
  */
-proto.clarifai.api.Runner.prototype.clearModel = function() {
-  return this.setModel(undefined);
+proto.clarifai.api.Runner.prototype.clearWorker = function() {
+  return this.setWorker(undefined);
 };
 
 
@@ -66266,55 +66255,18 @@ proto.clarifai.api.Runner.prototype.clearModel = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.clarifai.api.Runner.prototype.hasModel = function() {
-  return jspb.Message.getField(this, 9) != null;
+proto.clarifai.api.Runner.prototype.hasWorker = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional Workflow workflow = 10;
- * @return {?proto.clarifai.api.Workflow}
- */
-proto.clarifai.api.Runner.prototype.getWorkflow = function() {
-  return /** @type{?proto.clarifai.api.Workflow} */ (
-    jspb.Message.getWrapperField(this, proto.clarifai.api.Workflow, 10));
-};
-
-
-/**
- * @param {?proto.clarifai.api.Workflow|undefined} value
- * @return {!proto.clarifai.api.Runner} returns this
-*/
-proto.clarifai.api.Runner.prototype.setWorkflow = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 10, proto.clarifai.api.Runner.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.clarifai.api.Runner} returns this
- */
-proto.clarifai.api.Runner.prototype.clearWorkflow = function() {
-  return this.setWorkflow(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.clarifai.api.Runner.prototype.hasWorkflow = function() {
-  return jspb.Message.getField(this, 10) != null;
-};
-
-
-/**
- * optional Nodepool nodepool = 12;
+ * optional Nodepool nodepool = 9;
  * @return {?proto.clarifai.api.Nodepool}
  */
 proto.clarifai.api.Runner.prototype.getNodepool = function() {
   return /** @type{?proto.clarifai.api.Nodepool} */ (
-    jspb.Message.getWrapperField(this, proto.clarifai.api.Nodepool, 12));
+    jspb.Message.getWrapperField(this, proto.clarifai.api.Nodepool, 9));
 };
 
 
@@ -66323,7 +66275,7 @@ proto.clarifai.api.Runner.prototype.getNodepool = function() {
  * @return {!proto.clarifai.api.Runner} returns this
 */
 proto.clarifai.api.Runner.prototype.setNodepool = function(value) {
-  return jspb.Message.setWrapperField(this, 12, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -66341,17 +66293,17 @@ proto.clarifai.api.Runner.prototype.clearNodepool = function() {
  * @return {boolean}
  */
 proto.clarifai.api.Runner.prototype.hasNodepool = function() {
-  return jspb.Message.getField(this, 12) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional ComputeInfo compute_info = 13;
+ * optional ComputeInfo compute_info = 10;
  * @return {?proto.clarifai.api.ComputeInfo}
  */
 proto.clarifai.api.Runner.prototype.getComputeInfo = function() {
   return /** @type{?proto.clarifai.api.ComputeInfo} */ (
-    jspb.Message.getWrapperField(this, proto.clarifai.api.ComputeInfo, 13));
+    jspb.Message.getWrapperField(this, proto.clarifai.api.ComputeInfo, 10));
 };
 
 
@@ -66360,7 +66312,7 @@ proto.clarifai.api.Runner.prototype.getComputeInfo = function() {
  * @return {!proto.clarifai.api.Runner} returns this
 */
 proto.clarifai.api.Runner.prototype.setComputeInfo = function(value) {
-  return jspb.Message.setWrapperField(this, 13, value);
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -66378,7 +66330,7 @@ proto.clarifai.api.Runner.prototype.clearComputeInfo = function() {
  * @return {boolean}
  */
 proto.clarifai.api.Runner.prototype.hasComputeInfo = function() {
-  return jspb.Message.getField(this, 13) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
@@ -67571,7 +67523,10 @@ proto.clarifai.api.ComputeCluster.toObject = function(includeInstance, msg) {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     description: jspb.Message.getFieldWithDefault(msg, 2, ""),
     cloudProvider: (f = msg.getCloudProvider()) && proto.clarifai.api.CloudProvider.toObject(includeInstance, f),
-    region: jspb.Message.getFieldWithDefault(msg, 4, "")
+    region: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    userId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -67624,6 +67579,20 @@ proto.clarifai.api.ComputeCluster.deserializeBinaryFromReader = function(msg, re
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setRegion(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
+      break;
+    case 6:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setCreatedAt(value);
+      break;
+    case 7:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setModifiedAt(value);
       break;
     default:
       reader.skipField();
@@ -67681,6 +67650,29 @@ proto.clarifai.api.ComputeCluster.serializeBinaryToWriter = function(message, wr
     writer.writeString(
       4,
       f
+    );
+  }
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getCreatedAt();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getModifiedAt();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -67774,6 +67766,98 @@ proto.clarifai.api.ComputeCluster.prototype.getRegion = function() {
  */
 proto.clarifai.api.ComputeCluster.prototype.setRegion = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string user_id = 5;
+ * @return {string}
+ */
+proto.clarifai.api.ComputeCluster.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.clarifai.api.ComputeCluster} returns this
+ */
+proto.clarifai.api.ComputeCluster.prototype.setUserId = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp created_at = 6;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.clarifai.api.ComputeCluster.prototype.getCreatedAt = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 6));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.clarifai.api.ComputeCluster} returns this
+*/
+proto.clarifai.api.ComputeCluster.prototype.setCreatedAt = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.ComputeCluster} returns this
+ */
+proto.clarifai.api.ComputeCluster.prototype.clearCreatedAt = function() {
+  return this.setCreatedAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.ComputeCluster.prototype.hasCreatedAt = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp modified_at = 7;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.clarifai.api.ComputeCluster.prototype.getModifiedAt = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 7));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.clarifai.api.ComputeCluster} returns this
+*/
+proto.clarifai.api.ComputeCluster.prototype.setModifiedAt = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.ComputeCluster} returns this
+ */
+proto.clarifai.api.ComputeCluster.prototype.clearModifiedAt = function() {
+  return this.setModifiedAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.ComputeCluster.prototype.hasModifiedAt = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

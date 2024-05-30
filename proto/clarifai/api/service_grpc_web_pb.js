@@ -13452,6 +13452,250 @@ proto.clarifai.api.V2PromiseClient.prototype.postModelVersionsTrainingTimeEstima
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.GetComputeClusterRequest,
+ *   !proto.clarifai.api.SingleComputeClusterResponse>}
+ */
+const methodDescriptor_V2_GetComputeCluster = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/GetComputeCluster',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.GetComputeClusterRequest,
+  proto.clarifai.api.SingleComputeClusterResponse,
+  /**
+   * @param {!proto.clarifai.api.GetComputeClusterRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SingleComputeClusterResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.GetComputeClusterRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SingleComputeClusterResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleComputeClusterResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.getComputeCluster =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/GetComputeCluster',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetComputeCluster,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.GetComputeClusterRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.SingleComputeClusterResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.getComputeCluster =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/GetComputeCluster',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetComputeCluster);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListComputeClustersRequest,
+ *   !proto.clarifai.api.MultiComputeClusterResponse>}
+ */
+const methodDescriptor_V2_ListComputeClusters = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListComputeClusters',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListComputeClustersRequest,
+  proto.clarifai.api.MultiComputeClusterResponse,
+  /**
+   * @param {!proto.clarifai.api.ListComputeClustersRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiComputeClusterResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListComputeClustersRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiComputeClusterResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiComputeClusterResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listComputeClusters =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListComputeClusters',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListComputeClusters,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListComputeClustersRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiComputeClusterResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listComputeClusters =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListComputeClusters',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListComputeClusters);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostComputeClustersRequest,
+ *   !proto.clarifai.api.MultiComputeClusterResponse>}
+ */
+const methodDescriptor_V2_PostComputeClusters = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostComputeClusters',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostComputeClustersRequest,
+  proto.clarifai.api.MultiComputeClusterResponse,
+  /**
+   * @param {!proto.clarifai.api.PostComputeClustersRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiComputeClusterResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostComputeClustersRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiComputeClusterResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiComputeClusterResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postComputeClusters =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostComputeClusters',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostComputeClusters,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostComputeClustersRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiComputeClusterResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postComputeClusters =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostComputeClusters',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostComputeClusters);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.DeleteComputeClustersRequest,
+ *   !proto.clarifai.api.status.BaseResponse>}
+ */
+const methodDescriptor_V2_DeleteComputeClusters = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/DeleteComputeClusters',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.DeleteComputeClustersRequest,
+  proto_clarifai_api_status_status_pb.BaseResponse,
+  /**
+   * @param {!proto.clarifai.api.DeleteComputeClustersRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto_clarifai_api_status_status_pb.BaseResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.DeleteComputeClustersRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.status.BaseResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.status.BaseResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.deleteComputeClusters =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/DeleteComputeClusters',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeleteComputeClusters,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.DeleteComputeClustersRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.status.BaseResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.deleteComputeClusters =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/DeleteComputeClusters',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeleteComputeClusters);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.GetNodepoolRequest,
  *   !proto.clarifai.api.SingleNodepoolResponse>}
  */

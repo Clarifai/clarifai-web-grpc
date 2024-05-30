@@ -4772,6 +4772,9 @@ export class User extends jspb.Message {
   getIntention(): string;
   setIntention(value: string): User;
 
+  getReferralSource(): string;
+  setReferralSource(value: string): User;
+
   getBillType(): string;
   setBillType(value: string): User;
 
@@ -4850,6 +4853,7 @@ export namespace User {
     jobTitle: string,
     jobRole: string,
     intention: string,
+    referralSource: string,
     billType: string,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     dateGdprConsent?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -7983,15 +7987,10 @@ export class Runner extends jspb.Message {
   clearLabelsList(): Runner;
   addLabels(value: string, index?: number): Runner;
 
-  getModel(): Model | undefined;
-  setModel(value?: Model): Runner;
-  hasModel(): boolean;
-  clearModel(): Runner;
-
-  getWorkflow(): Workflow | undefined;
-  setWorkflow(value?: Workflow): Runner;
-  hasWorkflow(): boolean;
-  clearWorkflow(): Runner;
+  getWorker(): Worker | undefined;
+  setWorker(value?: Worker): Runner;
+  hasWorker(): boolean;
+  clearWorker(): Runner;
 
   getNodepool(): Nodepool | undefined;
   setNodepool(value?: Nodepool): Runner;
@@ -8002,8 +8001,6 @@ export class Runner extends jspb.Message {
   setComputeInfo(value?: ComputeInfo): Runner;
   hasComputeInfo(): boolean;
   clearComputeInfo(): Runner;
-
-  getObjectCase(): Runner.ObjectCase;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Runner.AsObject;
@@ -8022,16 +8019,9 @@ export namespace Runner {
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
     userId: string,
     labelsList: Array<string>,
-    model?: Model.AsObject,
-    workflow?: Workflow.AsObject,
+    worker?: Worker.AsObject,
     nodepool?: Nodepool.AsObject,
     computeInfo?: ComputeInfo.AsObject,
-  }
-
-  export enum ObjectCase { 
-    OBJECT_NOT_SET = 0,
-    MODEL = 9,
-    WORKFLOW = 10,
   }
 }
 
@@ -8202,6 +8192,19 @@ export class ComputeCluster extends jspb.Message {
   getRegion(): string;
   setRegion(value: string): ComputeCluster;
 
+  getUserId(): string;
+  setUserId(value: string): ComputeCluster;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): ComputeCluster;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): ComputeCluster;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): ComputeCluster;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): ComputeCluster;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ComputeCluster.AsObject;
   static toObject(includeInstance: boolean, msg: ComputeCluster): ComputeCluster.AsObject;
@@ -8216,6 +8219,9 @@ export namespace ComputeCluster {
     description: string,
     cloudProvider?: CloudProvider.AsObject,
     region: string,
+    userId: string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 

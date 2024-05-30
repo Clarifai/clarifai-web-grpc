@@ -9757,6 +9757,9 @@ export class GetRunnerRequest extends jspb.Message {
   hasUserAppId(): boolean;
   clearUserAppId(): GetRunnerRequest;
 
+  getNodepoolId(): string;
+  setNodepoolId(value: string): GetRunnerRequest;
+
   getRunnerId(): string;
   setRunnerId(value: string): GetRunnerRequest;
 
@@ -9771,6 +9774,7 @@ export class GetRunnerRequest extends jspb.Message {
 export namespace GetRunnerRequest {
   export type AsObject = {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    nodepoolId: string,
     runnerId: string,
   }
 }
@@ -9780,6 +9784,9 @@ export class ListRunnersRequest extends jspb.Message {
   setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListRunnersRequest;
   hasUserAppId(): boolean;
   clearUserAppId(): ListRunnersRequest;
+
+  getNodepoolId(): string;
+  setNodepoolId(value: string): ListRunnersRequest;
 
   getPage(): number;
   setPage(value: number): ListRunnersRequest;
@@ -9798,6 +9805,7 @@ export class ListRunnersRequest extends jspb.Message {
 export namespace ListRunnersRequest {
   export type AsObject = {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    nodepoolId: string,
     page: number,
     perPage: number,
   }
@@ -9808,6 +9816,9 @@ export class PostRunnersRequest extends jspb.Message {
   setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostRunnersRequest;
   hasUserAppId(): boolean;
   clearUserAppId(): PostRunnersRequest;
+
+  getNodepoolId(): string;
+  setNodepoolId(value: string): PostRunnersRequest;
 
   getRunnersList(): Array<proto_clarifai_api_resources_pb.Runner>;
   setRunnersList(value: Array<proto_clarifai_api_resources_pb.Runner>): PostRunnersRequest;
@@ -9825,6 +9836,7 @@ export class PostRunnersRequest extends jspb.Message {
 export namespace PostRunnersRequest {
   export type AsObject = {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    nodepoolId: string,
     runnersList: Array<proto_clarifai_api_resources_pb.Runner.AsObject>,
   }
 }
@@ -9834,6 +9846,9 @@ export class DeleteRunnersRequest extends jspb.Message {
   setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteRunnersRequest;
   hasUserAppId(): boolean;
   clearUserAppId(): DeleteRunnersRequest;
+
+  getNodepoolId(): string;
+  setNodepoolId(value: string): DeleteRunnersRequest;
 
   getIdsList(): Array<string>;
   setIdsList(value: Array<string>): DeleteRunnersRequest;
@@ -9851,6 +9866,7 @@ export class DeleteRunnersRequest extends jspb.Message {
 export namespace DeleteRunnersRequest {
   export type AsObject = {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    nodepoolId: string,
     idsList: Array<string>,
   }
 }
@@ -9913,6 +9929,9 @@ export class ListRunnerItemsRequest extends jspb.Message {
   hasUserAppId(): boolean;
   clearUserAppId(): ListRunnerItemsRequest;
 
+  getNodepoolId(): string;
+  setNodepoolId(value: string): ListRunnerItemsRequest;
+
   getRunnerId(): string;
   setRunnerId(value: string): ListRunnerItemsRequest;
 
@@ -9927,6 +9946,7 @@ export class ListRunnerItemsRequest extends jspb.Message {
 export namespace ListRunnerItemsRequest {
   export type AsObject = {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    nodepoolId: string,
     runnerId: string,
   }
 }
@@ -9936,6 +9956,9 @@ export class PostRunnerItemOutputsRequest extends jspb.Message {
   setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostRunnerItemOutputsRequest;
   hasUserAppId(): boolean;
   clearUserAppId(): PostRunnerItemOutputsRequest;
+
+  getNodepoolId(): string;
+  setNodepoolId(value: string): PostRunnerItemOutputsRequest;
 
   getRunnerId(): string;
   setRunnerId(value: string): PostRunnerItemOutputsRequest;
@@ -9964,6 +9987,7 @@ export class PostRunnerItemOutputsRequest extends jspb.Message {
 export namespace PostRunnerItemOutputsRequest {
   export type AsObject = {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    nodepoolId: string,
     runnerId: string,
     runnerItemId: string,
     runnerItemOutputsList: Array<RunnerItemOutput.AsObject>,
@@ -10151,11 +10175,170 @@ export namespace MultiTrainingTimeEstimateResponse {
   }
 }
 
+export class GetComputeClusterRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetComputeClusterRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): GetComputeClusterRequest;
+
+  getComputeClusterId(): string;
+  setComputeClusterId(value: string): GetComputeClusterRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetComputeClusterRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetComputeClusterRequest): GetComputeClusterRequest.AsObject;
+  static serializeBinaryToWriter(message: GetComputeClusterRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetComputeClusterRequest;
+  static deserializeBinaryFromReader(message: GetComputeClusterRequest, reader: jspb.BinaryReader): GetComputeClusterRequest;
+}
+
+export namespace GetComputeClusterRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    computeClusterId: string,
+  }
+}
+
+export class ListComputeClustersRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListComputeClustersRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): ListComputeClustersRequest;
+
+  getPage(): number;
+  setPage(value: number): ListComputeClustersRequest;
+
+  getPerPage(): number;
+  setPerPage(value: number): ListComputeClustersRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListComputeClustersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListComputeClustersRequest): ListComputeClustersRequest.AsObject;
+  static serializeBinaryToWriter(message: ListComputeClustersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListComputeClustersRequest;
+  static deserializeBinaryFromReader(message: ListComputeClustersRequest, reader: jspb.BinaryReader): ListComputeClustersRequest;
+}
+
+export namespace ListComputeClustersRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    page: number,
+    perPage: number,
+  }
+}
+
+export class PostComputeClustersRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostComputeClustersRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostComputeClustersRequest;
+
+  getComputeClustersList(): Array<proto_clarifai_api_resources_pb.ComputeCluster>;
+  setComputeClustersList(value: Array<proto_clarifai_api_resources_pb.ComputeCluster>): PostComputeClustersRequest;
+  clearComputeClustersList(): PostComputeClustersRequest;
+  addComputeClusters(value?: proto_clarifai_api_resources_pb.ComputeCluster, index?: number): proto_clarifai_api_resources_pb.ComputeCluster;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostComputeClustersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostComputeClustersRequest): PostComputeClustersRequest.AsObject;
+  static serializeBinaryToWriter(message: PostComputeClustersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostComputeClustersRequest;
+  static deserializeBinaryFromReader(message: PostComputeClustersRequest, reader: jspb.BinaryReader): PostComputeClustersRequest;
+}
+
+export namespace PostComputeClustersRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    computeClustersList: Array<proto_clarifai_api_resources_pb.ComputeCluster.AsObject>,
+  }
+}
+
+export class DeleteComputeClustersRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteComputeClustersRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): DeleteComputeClustersRequest;
+
+  getIdsList(): Array<string>;
+  setIdsList(value: Array<string>): DeleteComputeClustersRequest;
+  clearIdsList(): DeleteComputeClustersRequest;
+  addIds(value: string, index?: number): DeleteComputeClustersRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteComputeClustersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteComputeClustersRequest): DeleteComputeClustersRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteComputeClustersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteComputeClustersRequest;
+  static deserializeBinaryFromReader(message: DeleteComputeClustersRequest, reader: jspb.BinaryReader): DeleteComputeClustersRequest;
+}
+
+export namespace DeleteComputeClustersRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    idsList: Array<string>,
+  }
+}
+
+export class SingleComputeClusterResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleComputeClusterResponse;
+  hasStatus(): boolean;
+  clearStatus(): SingleComputeClusterResponse;
+
+  getComputeCluster(): proto_clarifai_api_resources_pb.ComputeCluster | undefined;
+  setComputeCluster(value?: proto_clarifai_api_resources_pb.ComputeCluster): SingleComputeClusterResponse;
+  hasComputeCluster(): boolean;
+  clearComputeCluster(): SingleComputeClusterResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SingleComputeClusterResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SingleComputeClusterResponse): SingleComputeClusterResponse.AsObject;
+  static serializeBinaryToWriter(message: SingleComputeClusterResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SingleComputeClusterResponse;
+  static deserializeBinaryFromReader(message: SingleComputeClusterResponse, reader: jspb.BinaryReader): SingleComputeClusterResponse;
+}
+
+export namespace SingleComputeClusterResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    computeCluster?: proto_clarifai_api_resources_pb.ComputeCluster.AsObject,
+  }
+}
+
+export class MultiComputeClusterResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiComputeClusterResponse;
+  hasStatus(): boolean;
+  clearStatus(): MultiComputeClusterResponse;
+
+  getComputeClustersList(): Array<proto_clarifai_api_resources_pb.ComputeCluster>;
+  setComputeClustersList(value: Array<proto_clarifai_api_resources_pb.ComputeCluster>): MultiComputeClusterResponse;
+  clearComputeClustersList(): MultiComputeClusterResponse;
+  addComputeClusters(value?: proto_clarifai_api_resources_pb.ComputeCluster, index?: number): proto_clarifai_api_resources_pb.ComputeCluster;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MultiComputeClusterResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiComputeClusterResponse): MultiComputeClusterResponse.AsObject;
+  static serializeBinaryToWriter(message: MultiComputeClusterResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiComputeClusterResponse;
+  static deserializeBinaryFromReader(message: MultiComputeClusterResponse, reader: jspb.BinaryReader): MultiComputeClusterResponse;
+}
+
+export namespace MultiComputeClusterResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    computeClustersList: Array<proto_clarifai_api_resources_pb.ComputeCluster.AsObject>,
+  }
+}
+
 export class GetNodepoolRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
   setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetNodepoolRequest;
   hasUserAppId(): boolean;
   clearUserAppId(): GetNodepoolRequest;
+
+  getComputeClusterId(): string;
+  setComputeClusterId(value: string): GetNodepoolRequest;
 
   getNodepoolId(): string;
   setNodepoolId(value: string): GetNodepoolRequest;
@@ -10171,6 +10354,7 @@ export class GetNodepoolRequest extends jspb.Message {
 export namespace GetNodepoolRequest {
   export type AsObject = {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    computeClusterId: string,
     nodepoolId: string,
   }
 }
@@ -10180,6 +10364,9 @@ export class ListNodepoolsRequest extends jspb.Message {
   setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListNodepoolsRequest;
   hasUserAppId(): boolean;
   clearUserAppId(): ListNodepoolsRequest;
+
+  getComputeClusterId(): string;
+  setComputeClusterId(value: string): ListNodepoolsRequest;
 
   getPage(): number;
   setPage(value: number): ListNodepoolsRequest;
@@ -10198,6 +10385,7 @@ export class ListNodepoolsRequest extends jspb.Message {
 export namespace ListNodepoolsRequest {
   export type AsObject = {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    computeClusterId: string,
     page: number,
     perPage: number,
   }
@@ -10208,6 +10396,9 @@ export class PostNodepoolsRequest extends jspb.Message {
   setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostNodepoolsRequest;
   hasUserAppId(): boolean;
   clearUserAppId(): PostNodepoolsRequest;
+
+  getComputeClusterId(): string;
+  setComputeClusterId(value: string): PostNodepoolsRequest;
 
   getNodepoolsList(): Array<proto_clarifai_api_resources_pb.Nodepool>;
   setNodepoolsList(value: Array<proto_clarifai_api_resources_pb.Nodepool>): PostNodepoolsRequest;
@@ -10225,6 +10416,7 @@ export class PostNodepoolsRequest extends jspb.Message {
 export namespace PostNodepoolsRequest {
   export type AsObject = {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    computeClusterId: string,
     nodepoolsList: Array<proto_clarifai_api_resources_pb.Nodepool.AsObject>,
   }
 }
@@ -10234,6 +10426,9 @@ export class PatchNodepoolsRequest extends jspb.Message {
   setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchNodepoolsRequest;
   hasUserAppId(): boolean;
   clearUserAppId(): PatchNodepoolsRequest;
+
+  getComputeClusterId(): string;
+  setComputeClusterId(value: string): PatchNodepoolsRequest;
 
   getNodepoolsList(): Array<proto_clarifai_api_resources_pb.Nodepool>;
   setNodepoolsList(value: Array<proto_clarifai_api_resources_pb.Nodepool>): PatchNodepoolsRequest;
@@ -10254,6 +10449,7 @@ export class PatchNodepoolsRequest extends jspb.Message {
 export namespace PatchNodepoolsRequest {
   export type AsObject = {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    computeClusterId: string,
     nodepoolsList: Array<proto_clarifai_api_resources_pb.Nodepool.AsObject>,
     action: string,
   }
@@ -10264,6 +10460,9 @@ export class DeleteNodepoolsRequest extends jspb.Message {
   setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteNodepoolsRequest;
   hasUserAppId(): boolean;
   clearUserAppId(): DeleteNodepoolsRequest;
+
+  getComputeClusterId(): string;
+  setComputeClusterId(value: string): DeleteNodepoolsRequest;
 
   getIdsList(): Array<string>;
   setIdsList(value: Array<string>): DeleteNodepoolsRequest;
@@ -10281,6 +10480,7 @@ export class DeleteNodepoolsRequest extends jspb.Message {
 export namespace DeleteNodepoolsRequest {
   export type AsObject = {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    computeClusterId: string,
     idsList: Array<string>,
   }
 }

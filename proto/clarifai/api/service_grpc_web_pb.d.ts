@@ -1540,6 +1540,34 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiTrainingTimeEstimateResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiTrainingTimeEstimateResponse>;
 
+  getComputeCluster(
+    request: proto_clarifai_api_service_pb.GetComputeClusterRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleComputeClusterResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleComputeClusterResponse>;
+
+  listComputeClusters(
+    request: proto_clarifai_api_service_pb.ListComputeClustersRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiComputeClusterResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiComputeClusterResponse>;
+
+  postComputeClusters(
+    request: proto_clarifai_api_service_pb.PostComputeClustersRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiComputeClusterResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiComputeClusterResponse>;
+
+  deleteComputeClusters(
+    request: proto_clarifai_api_service_pb.DeleteComputeClustersRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
   getNodepool(
     request: proto_clarifai_api_service_pb.GetNodepoolRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -2676,6 +2704,26 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.PostModelVersionsTrainingTimeEstimateRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiTrainingTimeEstimateResponse>;
+
+  getComputeCluster(
+    request: proto_clarifai_api_service_pb.GetComputeClusterRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleComputeClusterResponse>;
+
+  listComputeClusters(
+    request: proto_clarifai_api_service_pb.ListComputeClustersRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiComputeClusterResponse>;
+
+  postComputeClusters(
+    request: proto_clarifai_api_service_pb.PostComputeClustersRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiComputeClusterResponse>;
+
+  deleteComputeClusters(
+    request: proto_clarifai_api_service_pb.DeleteComputeClustersRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
 
   getNodepool(
     request: proto_clarifai_api_service_pb.GetNodepoolRequest,
