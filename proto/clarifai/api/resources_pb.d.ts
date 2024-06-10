@@ -1029,30 +1029,6 @@ export namespace KnowledgeGraph {
   }
 }
 
-export class ConceptMappingJob extends jspb.Message {
-  getKnowledgeGraphId(): string;
-  setKnowledgeGraphId(value: string): ConceptMappingJob;
-
-  getConceptIdsList(): Array<string>;
-  setConceptIdsList(value: Array<string>): ConceptMappingJob;
-  clearConceptIdsList(): ConceptMappingJob;
-  addConceptIds(value: string, index?: number): ConceptMappingJob;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ConceptMappingJob.AsObject;
-  static toObject(includeInstance: boolean, msg: ConceptMappingJob): ConceptMappingJob.AsObject;
-  static serializeBinaryToWriter(message: ConceptMappingJob, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ConceptMappingJob;
-  static deserializeBinaryFromReader(message: ConceptMappingJob, reader: jspb.BinaryReader): ConceptMappingJob;
-}
-
-export namespace ConceptMappingJob {
-  export type AsObject = {
-    knowledgeGraphId: string,
-    conceptIdsList: Array<string>,
-  }
-}
-
 export class ConceptLanguage extends jspb.Message {
   getId(): string;
   setId(value: string): ConceptLanguage;
@@ -6214,6 +6190,11 @@ export class TaskMetrics extends jspb.Message {
   hasReview(): boolean;
   clearReview(): TaskMetrics;
 
+  getInputSource(): TaskInputSourceMetrics | undefined;
+  setInputSource(value?: TaskInputSourceMetrics): TaskMetrics;
+  hasInputSource(): boolean;
+  clearInputSource(): TaskMetrics;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TaskMetrics.AsObject;
   static toObject(includeInstance: boolean, msg: TaskMetrics): TaskMetrics.AsObject;
@@ -6226,6 +6207,7 @@ export namespace TaskMetrics {
   export type AsObject = {
     work?: TaskWorkMetrics.AsObject,
     review?: TaskReviewMetrics.AsObject,
+    inputSource?: TaskInputSourceMetrics.AsObject,
   }
 }
 
@@ -6270,6 +6252,24 @@ export namespace TaskReviewMetrics {
   export type AsObject = {
     inputsCountEstimated: number,
     inputsPercentEstimated: number,
+  }
+}
+
+export class TaskInputSourceMetrics extends jspb.Message {
+  getInputsCountEstimated(): number;
+  setInputsCountEstimated(value: number): TaskInputSourceMetrics;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TaskInputSourceMetrics.AsObject;
+  static toObject(includeInstance: boolean, msg: TaskInputSourceMetrics): TaskInputSourceMetrics.AsObject;
+  static serializeBinaryToWriter(message: TaskInputSourceMetrics, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TaskInputSourceMetrics;
+  static deserializeBinaryFromReader(message: TaskInputSourceMetrics, reader: jspb.BinaryReader): TaskInputSourceMetrics;
+}
+
+export namespace TaskInputSourceMetrics {
+  export type AsObject = {
+    inputsCountEstimated: number,
   }
 }
 
@@ -8002,6 +8002,9 @@ export class Runner extends jspb.Message {
   hasComputeInfo(): boolean;
   clearComputeInfo(): Runner;
 
+  getNumReplicas(): number;
+  setNumReplicas(value: number): Runner;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Runner.AsObject;
   static toObject(includeInstance: boolean, msg: Runner): Runner.AsObject;
@@ -8022,6 +8025,7 @@ export namespace Runner {
     worker?: Worker.AsObject,
     nodepool?: Nodepool.AsObject,
     computeInfo?: ComputeInfo.AsObject,
+    numReplicas: number,
   }
 }
 
@@ -8316,16 +8320,6 @@ export class Deployment extends jspb.Message {
   clearNodepoolsList(): Deployment;
   addNodepools(value?: Nodepool, index?: number): Nodepool;
 
-  getModel(): Model | undefined;
-  setModel(value?: Model): Deployment;
-  hasModel(): boolean;
-  clearModel(): Deployment;
-
-  getWorkflow(): Workflow | undefined;
-  setWorkflow(value?: Workflow): Deployment;
-  hasWorkflow(): boolean;
-  clearWorkflow(): Deployment;
-
   getSchedulingChoice(): Deployment.SchedulingChoice;
   setSchedulingChoice(value: Deployment.SchedulingChoice): Deployment;
 
@@ -8339,7 +8333,23 @@ export class Deployment extends jspb.Message {
   hasMetadata(): boolean;
   clearMetadata(): Deployment;
 
-  getObjectCase(): Deployment.ObjectCase;
+  getDescription(): string;
+  setDescription(value: string): Deployment;
+
+  getWorker(): Worker | undefined;
+  setWorker(value?: Worker): Deployment;
+  hasWorker(): boolean;
+  clearWorker(): Deployment;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Deployment;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): Deployment;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): Deployment;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): Deployment;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Deployment.AsObject;
@@ -8355,11 +8365,13 @@ export namespace Deployment {
     userId: string,
     autoscaleConfig?: AutoscaleConfig.AsObject,
     nodepoolsList: Array<Nodepool.AsObject>,
-    model?: Model.AsObject,
-    workflow?: Workflow.AsObject,
     schedulingChoice: Deployment.SchedulingChoice,
     visibility?: Visibility.AsObject,
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
+    description: string,
+    worker?: Worker.AsObject,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 
   export enum SchedulingChoice { 
@@ -8372,12 +8384,6 @@ export namespace Deployment {
     UTILIZATION = 6,
     PREFER_SPOT = 7,
     PREFER_ONDEMAND = 8,
-  }
-
-  export enum ObjectCase { 
-    OBJECT_NOT_SET = 0,
-    MODEL = 5,
-    WORKFLOW = 6,
   }
 }
 

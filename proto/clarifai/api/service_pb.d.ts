@@ -1556,32 +1556,6 @@ export namespace PostKnowledgeGraphsRequest {
   }
 }
 
-export class PostConceptMappingJobsRequest extends jspb.Message {
-  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostConceptMappingJobsRequest;
-  hasUserAppId(): boolean;
-  clearUserAppId(): PostConceptMappingJobsRequest;
-
-  getConceptMappingJobsList(): Array<proto_clarifai_api_resources_pb.ConceptMappingJob>;
-  setConceptMappingJobsList(value: Array<proto_clarifai_api_resources_pb.ConceptMappingJob>): PostConceptMappingJobsRequest;
-  clearConceptMappingJobsList(): PostConceptMappingJobsRequest;
-  addConceptMappingJobs(value?: proto_clarifai_api_resources_pb.ConceptMappingJob, index?: number): proto_clarifai_api_resources_pb.ConceptMappingJob;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PostConceptMappingJobsRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: PostConceptMappingJobsRequest): PostConceptMappingJobsRequest.AsObject;
-  static serializeBinaryToWriter(message: PostConceptMappingJobsRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PostConceptMappingJobsRequest;
-  static deserializeBinaryFromReader(message: PostConceptMappingJobsRequest, reader: jspb.BinaryReader): PostConceptMappingJobsRequest;
-}
-
-export namespace PostConceptMappingJobsRequest {
-  export type AsObject = {
-    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
-    conceptMappingJobsList: Array<proto_clarifai_api_resources_pb.ConceptMappingJob.AsObject>,
-  }
-}
-
 export class MultiConceptRelationResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
   setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiConceptRelationResponse;
@@ -1631,32 +1605,6 @@ export namespace MultiKnowledgeGraphResponse {
   export type AsObject = {
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     knowledgeGraphsList: Array<proto_clarifai_api_resources_pb.KnowledgeGraph.AsObject>,
-  }
-}
-
-export class MultiConceptMappingJobResponse extends jspb.Message {
-  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiConceptMappingJobResponse;
-  hasStatus(): boolean;
-  clearStatus(): MultiConceptMappingJobResponse;
-
-  getIdsList(): Array<string>;
-  setIdsList(value: Array<string>): MultiConceptMappingJobResponse;
-  clearIdsList(): MultiConceptMappingJobResponse;
-  addIds(value: string, index?: number): MultiConceptMappingJobResponse;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): MultiConceptMappingJobResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: MultiConceptMappingJobResponse): MultiConceptMappingJobResponse.AsObject;
-  static serializeBinaryToWriter(message: MultiConceptMappingJobResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): MultiConceptMappingJobResponse;
-  static deserializeBinaryFromReader(message: MultiConceptMappingJobResponse, reader: jspb.BinaryReader): MultiConceptMappingJobResponse;
-}
-
-export namespace MultiConceptMappingJobResponse {
-  export type AsObject = {
-    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
-    idsList: Array<string>,
   }
 }
 
@@ -9976,6 +9924,9 @@ export class PostRunnerItemOutputsRequest extends jspb.Message {
   hasStatus(): boolean;
   clearStatus(): PostRunnerItemOutputsRequest;
 
+  getRunnerReplicaId(): string;
+  setRunnerReplicaId(value: string): PostRunnerItemOutputsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostRunnerItemOutputsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: PostRunnerItemOutputsRequest): PostRunnerItemOutputsRequest.AsObject;
@@ -9992,6 +9943,7 @@ export namespace PostRunnerItemOutputsRequest {
     runnerItemId: string,
     runnerItemOutputsList: Array<RunnerItemOutput.AsObject>,
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    runnerReplicaId: string,
   }
 }
 
@@ -10534,6 +10486,196 @@ export namespace MultiNodepoolResponse {
   export type AsObject = {
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     nodepoolsList: Array<proto_clarifai_api_resources_pb.Nodepool.AsObject>,
+  }
+}
+
+export class GetDeploymentRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetDeploymentRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): GetDeploymentRequest;
+
+  getDeploymentId(): string;
+  setDeploymentId(value: string): GetDeploymentRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDeploymentRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDeploymentRequest): GetDeploymentRequest.AsObject;
+  static serializeBinaryToWriter(message: GetDeploymentRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDeploymentRequest;
+  static deserializeBinaryFromReader(message: GetDeploymentRequest, reader: jspb.BinaryReader): GetDeploymentRequest;
+}
+
+export namespace GetDeploymentRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    deploymentId: string,
+  }
+}
+
+export class ListDeploymentsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListDeploymentsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): ListDeploymentsRequest;
+
+  getNodepoolId(): string;
+  setNodepoolId(value: string): ListDeploymentsRequest;
+
+  getPage(): number;
+  setPage(value: number): ListDeploymentsRequest;
+
+  getPerPage(): number;
+  setPerPage(value: number): ListDeploymentsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListDeploymentsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListDeploymentsRequest): ListDeploymentsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListDeploymentsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListDeploymentsRequest;
+  static deserializeBinaryFromReader(message: ListDeploymentsRequest, reader: jspb.BinaryReader): ListDeploymentsRequest;
+}
+
+export namespace ListDeploymentsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    nodepoolId: string,
+    page: number,
+    perPage: number,
+  }
+}
+
+export class PostDeploymentsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostDeploymentsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostDeploymentsRequest;
+
+  getDeploymentsList(): Array<proto_clarifai_api_resources_pb.Deployment>;
+  setDeploymentsList(value: Array<proto_clarifai_api_resources_pb.Deployment>): PostDeploymentsRequest;
+  clearDeploymentsList(): PostDeploymentsRequest;
+  addDeployments(value?: proto_clarifai_api_resources_pb.Deployment, index?: number): proto_clarifai_api_resources_pb.Deployment;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostDeploymentsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostDeploymentsRequest): PostDeploymentsRequest.AsObject;
+  static serializeBinaryToWriter(message: PostDeploymentsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostDeploymentsRequest;
+  static deserializeBinaryFromReader(message: PostDeploymentsRequest, reader: jspb.BinaryReader): PostDeploymentsRequest;
+}
+
+export namespace PostDeploymentsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    deploymentsList: Array<proto_clarifai_api_resources_pb.Deployment.AsObject>,
+  }
+}
+
+export class DeleteDeploymentsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteDeploymentsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): DeleteDeploymentsRequest;
+
+  getIdsList(): Array<string>;
+  setIdsList(value: Array<string>): DeleteDeploymentsRequest;
+  clearIdsList(): DeleteDeploymentsRequest;
+  addIds(value: string, index?: number): DeleteDeploymentsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteDeploymentsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteDeploymentsRequest): DeleteDeploymentsRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteDeploymentsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteDeploymentsRequest;
+  static deserializeBinaryFromReader(message: DeleteDeploymentsRequest, reader: jspb.BinaryReader): DeleteDeploymentsRequest;
+}
+
+export namespace DeleteDeploymentsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    idsList: Array<string>,
+  }
+}
+
+export class PatchDeploymentsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchDeploymentsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PatchDeploymentsRequest;
+
+  getDeploymentsList(): Array<proto_clarifai_api_resources_pb.Deployment>;
+  setDeploymentsList(value: Array<proto_clarifai_api_resources_pb.Deployment>): PatchDeploymentsRequest;
+  clearDeploymentsList(): PatchDeploymentsRequest;
+  addDeployments(value?: proto_clarifai_api_resources_pb.Deployment, index?: number): proto_clarifai_api_resources_pb.Deployment;
+
+  getAction(): string;
+  setAction(value: string): PatchDeploymentsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PatchDeploymentsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PatchDeploymentsRequest): PatchDeploymentsRequest.AsObject;
+  static serializeBinaryToWriter(message: PatchDeploymentsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PatchDeploymentsRequest;
+  static deserializeBinaryFromReader(message: PatchDeploymentsRequest, reader: jspb.BinaryReader): PatchDeploymentsRequest;
+}
+
+export namespace PatchDeploymentsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    deploymentsList: Array<proto_clarifai_api_resources_pb.Deployment.AsObject>,
+    action: string,
+  }
+}
+
+export class SingleDeploymentResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleDeploymentResponse;
+  hasStatus(): boolean;
+  clearStatus(): SingleDeploymentResponse;
+
+  getDeployment(): proto_clarifai_api_resources_pb.Deployment | undefined;
+  setDeployment(value?: proto_clarifai_api_resources_pb.Deployment): SingleDeploymentResponse;
+  hasDeployment(): boolean;
+  clearDeployment(): SingleDeploymentResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SingleDeploymentResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SingleDeploymentResponse): SingleDeploymentResponse.AsObject;
+  static serializeBinaryToWriter(message: SingleDeploymentResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SingleDeploymentResponse;
+  static deserializeBinaryFromReader(message: SingleDeploymentResponse, reader: jspb.BinaryReader): SingleDeploymentResponse;
+}
+
+export namespace SingleDeploymentResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    deployment?: proto_clarifai_api_resources_pb.Deployment.AsObject,
+  }
+}
+
+export class MultiDeploymentResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiDeploymentResponse;
+  hasStatus(): boolean;
+  clearStatus(): MultiDeploymentResponse;
+
+  getDeploymentsList(): Array<proto_clarifai_api_resources_pb.Deployment>;
+  setDeploymentsList(value: Array<proto_clarifai_api_resources_pb.Deployment>): MultiDeploymentResponse;
+  clearDeploymentsList(): MultiDeploymentResponse;
+  addDeployments(value?: proto_clarifai_api_resources_pb.Deployment, index?: number): proto_clarifai_api_resources_pb.Deployment;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MultiDeploymentResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiDeploymentResponse): MultiDeploymentResponse.AsObject;
+  static serializeBinaryToWriter(message: MultiDeploymentResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiDeploymentResponse;
+  static deserializeBinaryFromReader(message: MultiDeploymentResponse, reader: jspb.BinaryReader): MultiDeploymentResponse;
+}
+
+export namespace MultiDeploymentResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    deploymentsList: Array<proto_clarifai_api_resources_pb.Deployment.AsObject>,
   }
 }
 

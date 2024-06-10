@@ -121,13 +121,6 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiKnowledgeGraphResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiKnowledgeGraphResponse>;
 
-  postConceptMappingJobs(
-    request: proto_clarifai_api_service_pb.PostConceptMappingJobsRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.MultiConceptMappingJobResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiConceptMappingJobResponse>;
-
   getAnnotation(
     request: proto_clarifai_api_service_pb.GetAnnotationRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -1603,6 +1596,41 @@ export class V2Client {
                response: proto_clarifai_api_status_status_pb.BaseResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
 
+  getDeployment(
+    request: proto_clarifai_api_service_pb.GetDeploymentRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleDeploymentResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleDeploymentResponse>;
+
+  listDeployments(
+    request: proto_clarifai_api_service_pb.ListDeploymentsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiDeploymentResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiDeploymentResponse>;
+
+  postDeployments(
+    request: proto_clarifai_api_service_pb.PostDeploymentsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiDeploymentResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiDeploymentResponse>;
+
+  patchDeployments(
+    request: proto_clarifai_api_service_pb.PatchDeploymentsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiDeploymentResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiDeploymentResponse>;
+
+  deleteDeployments(
+    request: proto_clarifai_api_service_pb.DeleteDeploymentsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
 }
 
 export class V2PromiseClient {
@@ -1689,11 +1717,6 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.PostKnowledgeGraphsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiKnowledgeGraphResponse>;
-
-  postConceptMappingJobs(
-    request: proto_clarifai_api_service_pb.PostConceptMappingJobsRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.MultiConceptMappingJobResponse>;
 
   getAnnotation(
     request: proto_clarifai_api_service_pb.GetAnnotationRequest,
@@ -2747,6 +2770,31 @@ export class V2PromiseClient {
 
   deleteNodepools(
     request: proto_clarifai_api_service_pb.DeleteNodepoolsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  getDeployment(
+    request: proto_clarifai_api_service_pb.GetDeploymentRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleDeploymentResponse>;
+
+  listDeployments(
+    request: proto_clarifai_api_service_pb.ListDeploymentsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiDeploymentResponse>;
+
+  postDeployments(
+    request: proto_clarifai_api_service_pb.PostDeploymentsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiDeploymentResponse>;
+
+  patchDeployments(
+    request: proto_clarifai_api_service_pb.PatchDeploymentsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiDeploymentResponse>;
+
+  deleteDeployments(
+    request: proto_clarifai_api_service_pb.DeleteDeploymentsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
 

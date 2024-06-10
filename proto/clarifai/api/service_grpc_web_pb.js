@@ -1074,67 +1074,6 @@ proto.clarifai.api.V2PromiseClient.prototype.postKnowledgeGraphs =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.clarifai.api.PostConceptMappingJobsRequest,
- *   !proto.clarifai.api.MultiConceptMappingJobResponse>}
- */
-const methodDescriptor_V2_PostConceptMappingJobs = new grpc.web.MethodDescriptor(
-  '/clarifai.api.V2/PostConceptMappingJobs',
-  grpc.web.MethodType.UNARY,
-  proto.clarifai.api.PostConceptMappingJobsRequest,
-  proto.clarifai.api.MultiConceptMappingJobResponse,
-  /**
-   * @param {!proto.clarifai.api.PostConceptMappingJobsRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.clarifai.api.MultiConceptMappingJobResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.clarifai.api.PostConceptMappingJobsRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiConceptMappingJobResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiConceptMappingJobResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.clarifai.api.V2Client.prototype.postConceptMappingJobs =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/clarifai.api.V2/PostConceptMappingJobs',
-      request,
-      metadata || {},
-      methodDescriptor_V2_PostConceptMappingJobs,
-      callback);
-};
-
-
-/**
- * @param {!proto.clarifai.api.PostConceptMappingJobsRequest} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.clarifai.api.MultiConceptMappingJobResponse>}
- *     Promise that resolves to the response
- */
-proto.clarifai.api.V2PromiseClient.prototype.postConceptMappingJobs =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/clarifai.api.V2/PostConceptMappingJobs',
-      request,
-      metadata || {},
-      methodDescriptor_V2_PostConceptMappingJobs);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.GetAnnotationRequest,
  *   !proto.clarifai.api.SingleAnnotationResponse>}
  */
@@ -13995,6 +13934,311 @@ proto.clarifai.api.V2PromiseClient.prototype.deleteNodepools =
       request,
       metadata || {},
       methodDescriptor_V2_DeleteNodepools);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.GetDeploymentRequest,
+ *   !proto.clarifai.api.SingleDeploymentResponse>}
+ */
+const methodDescriptor_V2_GetDeployment = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/GetDeployment',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.GetDeploymentRequest,
+  proto.clarifai.api.SingleDeploymentResponse,
+  /**
+   * @param {!proto.clarifai.api.GetDeploymentRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SingleDeploymentResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.GetDeploymentRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SingleDeploymentResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleDeploymentResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.getDeployment =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/GetDeployment',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetDeployment,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.GetDeploymentRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.SingleDeploymentResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.getDeployment =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/GetDeployment',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetDeployment);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListDeploymentsRequest,
+ *   !proto.clarifai.api.MultiDeploymentResponse>}
+ */
+const methodDescriptor_V2_ListDeployments = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListDeployments',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListDeploymentsRequest,
+  proto.clarifai.api.MultiDeploymentResponse,
+  /**
+   * @param {!proto.clarifai.api.ListDeploymentsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiDeploymentResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListDeploymentsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiDeploymentResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiDeploymentResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listDeployments =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListDeployments',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListDeployments,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListDeploymentsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiDeploymentResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listDeployments =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListDeployments',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListDeployments);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostDeploymentsRequest,
+ *   !proto.clarifai.api.MultiDeploymentResponse>}
+ */
+const methodDescriptor_V2_PostDeployments = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostDeployments',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostDeploymentsRequest,
+  proto.clarifai.api.MultiDeploymentResponse,
+  /**
+   * @param {!proto.clarifai.api.PostDeploymentsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiDeploymentResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostDeploymentsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiDeploymentResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiDeploymentResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postDeployments =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostDeployments',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostDeployments,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostDeploymentsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiDeploymentResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postDeployments =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostDeployments',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostDeployments);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PatchDeploymentsRequest,
+ *   !proto.clarifai.api.MultiDeploymentResponse>}
+ */
+const methodDescriptor_V2_PatchDeployments = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PatchDeployments',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PatchDeploymentsRequest,
+  proto.clarifai.api.MultiDeploymentResponse,
+  /**
+   * @param {!proto.clarifai.api.PatchDeploymentsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiDeploymentResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PatchDeploymentsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiDeploymentResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiDeploymentResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.patchDeployments =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PatchDeployments',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PatchDeployments,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PatchDeploymentsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiDeploymentResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.patchDeployments =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PatchDeployments',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PatchDeployments);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.DeleteDeploymentsRequest,
+ *   !proto.clarifai.api.status.BaseResponse>}
+ */
+const methodDescriptor_V2_DeleteDeployments = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/DeleteDeployments',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.DeleteDeploymentsRequest,
+  proto_clarifai_api_status_status_pb.BaseResponse,
+  /**
+   * @param {!proto.clarifai.api.DeleteDeploymentsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto_clarifai_api_status_status_pb.BaseResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.DeleteDeploymentsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.status.BaseResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.status.BaseResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.deleteDeployments =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/DeleteDeployments',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeleteDeployments,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.DeleteDeploymentsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.status.BaseResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.deleteDeployments =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/DeleteDeployments',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeleteDeployments);
 };
 
 
