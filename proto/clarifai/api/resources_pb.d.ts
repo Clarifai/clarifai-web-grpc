@@ -7979,9 +7979,6 @@ export class Runner extends jspb.Message {
   hasMetadata(): boolean;
   clearMetadata(): Runner;
 
-  getUserId(): string;
-  setUserId(value: string): Runner;
-
   getLabelsList(): Array<string>;
   setLabelsList(value: Array<string>): Runner;
   clearLabelsList(): Runner;
@@ -8020,7 +8017,6 @@ export namespace Runner {
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
-    userId: string,
     labelsList: Array<string>,
     worker?: Worker.AsObject,
     nodepool?: Nodepool.AsObject,
@@ -8045,9 +8041,6 @@ export class Nodepool extends jspb.Message {
   setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): Nodepool;
   hasModifiedAt(): boolean;
   clearModifiedAt(): Nodepool;
-
-  getUserId(): string;
-  setUserId(value: string): Nodepool;
 
   getComputeCluster(): ComputeCluster | undefined;
   setComputeCluster(value?: ComputeCluster): Nodepool;
@@ -8094,7 +8087,6 @@ export namespace Nodepool {
     description: string,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    userId: string,
     computeCluster?: ComputeCluster.AsObject,
     nodeCapacityType?: NodeCapacityType.AsObject,
     instanceTypesList: Array<InstanceType.AsObject>,
@@ -8209,6 +8201,11 @@ export class ComputeCluster extends jspb.Message {
   hasModifiedAt(): boolean;
   clearModifiedAt(): ComputeCluster;
 
+  getVisibility(): Visibility | undefined;
+  setVisibility(value?: Visibility): ComputeCluster;
+  hasVisibility(): boolean;
+  clearVisibility(): ComputeCluster;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ComputeCluster.AsObject;
   static toObject(includeInstance: boolean, msg: ComputeCluster): ComputeCluster.AsObject;
@@ -8226,6 +8223,7 @@ export namespace ComputeCluster {
     userId: string,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    visibility?: Visibility.AsObject,
   }
 }
 

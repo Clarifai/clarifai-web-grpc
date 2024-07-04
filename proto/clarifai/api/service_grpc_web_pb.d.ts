@@ -875,6 +875,13 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiAppResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiAppResponse>;
 
+  patchAppsDetails(
+    request: proto_clarifai_api_service_pb.PatchAppsDetailsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiAppResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiAppResponse>;
+
   patchAppsIds(
     request: proto_clarifai_api_service_pb.PatchAppsIdsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -2255,6 +2262,11 @@ export class V2PromiseClient {
 
   patchApps(
     request: proto_clarifai_api_service_pb.PatchAppsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiAppResponse>;
+
+  patchAppsDetails(
+    request: proto_clarifai_api_service_pb.PatchAppsDetailsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiAppResponse>;
 
