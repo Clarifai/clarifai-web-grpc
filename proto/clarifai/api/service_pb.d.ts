@@ -10208,6 +10208,56 @@ export namespace MultiTrainingTimeEstimateResponse {
   }
 }
 
+export class ListInstanceTypesRequest extends jspb.Message {
+  getCloudProvider(): proto_clarifai_api_resources_pb.CloudProvider | undefined;
+  setCloudProvider(value?: proto_clarifai_api_resources_pb.CloudProvider): ListInstanceTypesRequest;
+  hasCloudProvider(): boolean;
+  clearCloudProvider(): ListInstanceTypesRequest;
+
+  getRegion(): string;
+  setRegion(value: string): ListInstanceTypesRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListInstanceTypesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListInstanceTypesRequest): ListInstanceTypesRequest.AsObject;
+  static serializeBinaryToWriter(message: ListInstanceTypesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListInstanceTypesRequest;
+  static deserializeBinaryFromReader(message: ListInstanceTypesRequest, reader: jspb.BinaryReader): ListInstanceTypesRequest;
+}
+
+export namespace ListInstanceTypesRequest {
+  export type AsObject = {
+    cloudProvider?: proto_clarifai_api_resources_pb.CloudProvider.AsObject,
+    region: string,
+  }
+}
+
+export class MultiInstanceTypeResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiInstanceTypeResponse;
+  hasStatus(): boolean;
+  clearStatus(): MultiInstanceTypeResponse;
+
+  getInstanceTypesList(): Array<proto_clarifai_api_resources_pb.InstanceType>;
+  setInstanceTypesList(value: Array<proto_clarifai_api_resources_pb.InstanceType>): MultiInstanceTypeResponse;
+  clearInstanceTypesList(): MultiInstanceTypeResponse;
+  addInstanceTypes(value?: proto_clarifai_api_resources_pb.InstanceType, index?: number): proto_clarifai_api_resources_pb.InstanceType;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MultiInstanceTypeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiInstanceTypeResponse): MultiInstanceTypeResponse.AsObject;
+  static serializeBinaryToWriter(message: MultiInstanceTypeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiInstanceTypeResponse;
+  static deserializeBinaryFromReader(message: MultiInstanceTypeResponse, reader: jspb.BinaryReader): MultiInstanceTypeResponse;
+}
+
+export namespace MultiInstanceTypeResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    instanceTypesList: Array<proto_clarifai_api_resources_pb.InstanceType.AsObject>,
+  }
+}
+
 export class GetComputeClusterRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
   setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetComputeClusterRequest;

@@ -1540,6 +1540,13 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiTrainingTimeEstimateResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiTrainingTimeEstimateResponse>;
 
+  listInstanceTypes(
+    request: proto_clarifai_api_service_pb.ListInstanceTypesRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiInstanceTypeResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiInstanceTypeResponse>;
+
   getComputeCluster(
     request: proto_clarifai_api_service_pb.GetComputeClusterRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -2739,6 +2746,11 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.PostModelVersionsTrainingTimeEstimateRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiTrainingTimeEstimateResponse>;
+
+  listInstanceTypes(
+    request: proto_clarifai_api_service_pb.ListInstanceTypesRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiInstanceTypeResponse>;
 
   getComputeCluster(
     request: proto_clarifai_api_service_pb.GetComputeClusterRequest,

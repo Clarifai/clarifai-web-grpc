@@ -13452,6 +13452,67 @@ proto.clarifai.api.V2PromiseClient.prototype.postModelVersionsTrainingTimeEstima
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListInstanceTypesRequest,
+ *   !proto.clarifai.api.MultiInstanceTypeResponse>}
+ */
+const methodDescriptor_V2_ListInstanceTypes = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListInstanceTypes',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListInstanceTypesRequest,
+  proto.clarifai.api.MultiInstanceTypeResponse,
+  /**
+   * @param {!proto.clarifai.api.ListInstanceTypesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiInstanceTypeResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListInstanceTypesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiInstanceTypeResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiInstanceTypeResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listInstanceTypes =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListInstanceTypes',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListInstanceTypes,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListInstanceTypesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiInstanceTypeResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listInstanceTypes =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListInstanceTypes',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListInstanceTypes);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.GetComputeClusterRequest,
  *   !proto.clarifai.api.SingleComputeClusterResponse>}
  */
