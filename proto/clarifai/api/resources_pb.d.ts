@@ -5825,6 +5825,7 @@ export namespace TaskWorker {
     WORKER_STRATEGY_NOT_SET = 0,
     PARTITIONED = 2,
     FULL = 3,
+    DYNAMIC = 4,
   }
 
   export enum StrategyInfoCase { 

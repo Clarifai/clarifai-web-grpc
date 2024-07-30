@@ -3461,6 +3461,11 @@ export class ListModelsRequest extends jspb.Message {
   getFilterByUserId(): boolean;
   setFilterByUserId(value: boolean): ListModelsRequest;
 
+  getModelVersionIdsList(): Array<string>;
+  setModelVersionIdsList(value: Array<string>): ListModelsRequest;
+  clearModelVersionIdsList(): ListModelsRequest;
+  addModelVersionIds(value: string, index?: number): ListModelsRequest;
+
   getSortByCase(): ListModelsRequest.SortByCase;
 
   serializeBinary(): Uint8Array;
@@ -3499,6 +3504,7 @@ export namespace ListModelsRequest {
     query: string,
     name: string,
     filterByUserId: boolean,
+    modelVersionIdsList: Array<string>,
   }
 
   export enum SortByCase { 
