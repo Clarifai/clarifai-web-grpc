@@ -14364,5 +14364,66 @@ proto.clarifai.api.V2PromiseClient.prototype.deleteDeployments =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostAuditLogSearchesRequest,
+ *   !proto.clarifai.api.MultiAuditLogSearchResponse>}
+ */
+const methodDescriptor_V2_PostAuditLogSearches = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostAuditLogSearches',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostAuditLogSearchesRequest,
+  proto.clarifai.api.MultiAuditLogSearchResponse,
+  /**
+   * @param {!proto.clarifai.api.PostAuditLogSearchesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiAuditLogSearchResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostAuditLogSearchesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiAuditLogSearchResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiAuditLogSearchResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postAuditLogSearches =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostAuditLogSearches',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostAuditLogSearches,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostAuditLogSearchesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiAuditLogSearchResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postAuditLogSearches =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostAuditLogSearches',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostAuditLogSearches);
+};
+
+
 module.exports = proto.clarifai.api;
 

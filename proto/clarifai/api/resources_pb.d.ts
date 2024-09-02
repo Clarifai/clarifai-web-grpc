@@ -2594,6 +2594,15 @@ export class Model extends jspb.Message {
   hasImage(): boolean;
   clearImage(): Model;
 
+  getLicenseType(): LicenseType;
+  setLicenseType(value: LicenseType): Model;
+
+  getSource(): Model.Source;
+  setSource(value: Model.Source): Model;
+
+  getCreator(): string;
+  setCreator(value: string): Model;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Model.AsObject;
   static toObject(includeInstance: boolean, msg: Model): Model.AsObject;
@@ -2631,6 +2640,15 @@ export namespace Model {
     workflowRecommended?: google_protobuf_wrappers_pb.BoolValue.AsObject,
     bookmarkOrigin?: BookmarkOrigin.AsObject,
     image?: Image.AsObject,
+    licenseType: LicenseType,
+    source: Model.Source,
+    creator: string,
+  }
+
+  export enum Source { 
+    UNKNOWN_SOURCE = 0,
+    HOSTED = 1,
+    WRAPPED = 2,
   }
 }
 
@@ -5646,6 +5664,9 @@ export class Task extends jspb.Message {
   hasWorker(): boolean;
   clearWorker(): Task;
 
+  getWorkerType(): Task.WorkerType;
+  setWorkerType(value: Task.WorkerType): Task;
+
   getConceptIdsList(): Array<string>;
   setConceptIdsList(value: Array<string>): Task;
   clearConceptIdsList(): Task;
@@ -5725,6 +5746,7 @@ export namespace Task {
     type: Task.TaskType,
     description: string,
     worker?: TaskWorker.AsObject,
+    workerType: Task.WorkerType,
     conceptIdsList: Array<string>,
     inputSource?: TaskInputSource.AsObject,
     sampleMs: number,
@@ -5740,6 +5762,12 @@ export namespace Task {
     conceptsList: Array<TaskConcept.AsObject>,
     deletePreviousAnnotations: boolean,
     metrics?: TaskMetrics.AsObject,
+  }
+
+  export enum WorkerType { 
+    WORKER_TYPE_NOT_SET = 0,
+    WORKER_HUMAN = 1,
+    WORKER_AUTO = 2,
   }
 
   export enum TaskType { 
@@ -8460,6 +8488,147 @@ export namespace ProcessingInfo {
   }
 }
 
+export class AuditLogTarget extends jspb.Message {
+  getMember(): User | undefined;
+  setMember(value?: User): AuditLogTarget;
+  hasMember(): boolean;
+  clearMember(): AuditLogTarget;
+
+  getTargetCase(): AuditLogTarget.TargetCase;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AuditLogTarget.AsObject;
+  static toObject(includeInstance: boolean, msg: AuditLogTarget): AuditLogTarget.AsObject;
+  static serializeBinaryToWriter(message: AuditLogTarget, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AuditLogTarget;
+  static deserializeBinaryFromReader(message: AuditLogTarget, reader: jspb.BinaryReader): AuditLogTarget;
+}
+
+export namespace AuditLogTarget {
+  export type AsObject = {
+    member?: User.AsObject,
+  }
+
+  export enum TargetCase { 
+    TARGET_NOT_SET = 0,
+    MEMBER = 1,
+  }
+}
+
+export class AuditLogEntry extends jspb.Message {
+  getTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): AuditLogEntry;
+  hasTimestamp(): boolean;
+  clearTimestamp(): AuditLogEntry;
+
+  getUser(): User | undefined;
+  setUser(value?: User): AuditLogEntry;
+  hasUser(): boolean;
+  clearUser(): AuditLogEntry;
+
+  getOperation(): EventType;
+  setOperation(value: EventType): AuditLogEntry;
+
+  getDescription(): string;
+  setDescription(value: string): AuditLogEntry;
+
+  getTargetsList(): Array<AuditLogTarget>;
+  setTargetsList(value: Array<AuditLogTarget>): AuditLogEntry;
+  clearTargetsList(): AuditLogEntry;
+  addTargets(value?: AuditLogTarget, index?: number): AuditLogTarget;
+
+  getDetailsList(): Array<string>;
+  setDetailsList(value: Array<string>): AuditLogEntry;
+  clearDetailsList(): AuditLogEntry;
+  addDetails(value: string, index?: number): AuditLogEntry;
+
+  getSuccess(): boolean;
+  setSuccess(value: boolean): AuditLogEntry;
+
+  getReqId(): string;
+  setReqId(value: string): AuditLogEntry;
+
+  getSourceIp(): string;
+  setSourceIp(value: string): AuditLogEntry;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AuditLogEntry.AsObject;
+  static toObject(includeInstance: boolean, msg: AuditLogEntry): AuditLogEntry.AsObject;
+  static serializeBinaryToWriter(message: AuditLogEntry, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AuditLogEntry;
+  static deserializeBinaryFromReader(message: AuditLogEntry, reader: jspb.BinaryReader): AuditLogEntry;
+}
+
+export namespace AuditLogEntry {
+  export type AsObject = {
+    timestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    user?: User.AsObject,
+    operation: EventType,
+    description: string,
+    targetsList: Array<AuditLogTarget.AsObject>,
+    detailsList: Array<string>,
+    success: boolean,
+    reqId: string,
+    sourceIp: string,
+  }
+}
+
+export class AuditLogQuery extends jspb.Message {
+  getTimestampFrom(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setTimestampFrom(value?: google_protobuf_timestamp_pb.Timestamp): AuditLogQuery;
+  hasTimestampFrom(): boolean;
+  clearTimestampFrom(): AuditLogQuery;
+
+  getTimestampTo(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setTimestampTo(value?: google_protobuf_timestamp_pb.Timestamp): AuditLogQuery;
+  hasTimestampTo(): boolean;
+  clearTimestampTo(): AuditLogQuery;
+
+  getUserIdsList(): Array<string>;
+  setUserIdsList(value: Array<string>): AuditLogQuery;
+  clearUserIdsList(): AuditLogQuery;
+  addUserIds(value: string, index?: number): AuditLogQuery;
+
+  getOperationsList(): Array<EventType>;
+  setOperationsList(value: Array<EventType>): AuditLogQuery;
+  clearOperationsList(): AuditLogQuery;
+  addOperations(value: EventType, index?: number): AuditLogQuery;
+
+  getTargetsList(): Array<AuditLogTarget>;
+  setTargetsList(value: Array<AuditLogTarget>): AuditLogQuery;
+  clearTargetsList(): AuditLogQuery;
+  addTargets(value?: AuditLogTarget, index?: number): AuditLogTarget;
+
+  getSuccess(): google_protobuf_wrappers_pb.BoolValue | undefined;
+  setSuccess(value?: google_protobuf_wrappers_pb.BoolValue): AuditLogQuery;
+  hasSuccess(): boolean;
+  clearSuccess(): AuditLogQuery;
+
+  getSourceIpsList(): Array<string>;
+  setSourceIpsList(value: Array<string>): AuditLogQuery;
+  clearSourceIpsList(): AuditLogQuery;
+  addSourceIps(value: string, index?: number): AuditLogQuery;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AuditLogQuery.AsObject;
+  static toObject(includeInstance: boolean, msg: AuditLogQuery): AuditLogQuery.AsObject;
+  static serializeBinaryToWriter(message: AuditLogQuery, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AuditLogQuery;
+  static deserializeBinaryFromReader(message: AuditLogQuery, reader: jspb.BinaryReader): AuditLogQuery;
+}
+
+export namespace AuditLogQuery {
+  export type AsObject = {
+    timestampFrom?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    timestampTo?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    userIdsList: Array<string>,
+    operationsList: Array<EventType>,
+    targetsList: Array<AuditLogTarget.AsObject>,
+    success?: google_protobuf_wrappers_pb.BoolValue.AsObject,
+    sourceIpsList: Array<string>,
+  }
+}
+
 export enum WorkflowModelUseCase { 
   WORKFLOW_MODEL_USE_CASE_NOT_SET = 0,
   CLASSIFICATION = 1,
@@ -8500,6 +8669,12 @@ export enum LicenseScope {
   PREDICT = 1,
   TRAIN = 2,
   SEARCH = 3,
+}
+export enum LicenseType { 
+  UNKNOWN_LICENSE_TYPE = 0,
+  FIRST_PARTY = 1,
+  OPEN_SOURCE = 2,
+  CLOSED_SOURCE = 3,
 }
 export enum DataType { 
   UNDEFINED = 0,
@@ -8582,7 +8757,7 @@ export enum RunnerMethodType {
   STREAMING_UNARY = 3,
   STREAMING_STREAMING = 4,
 }
-export enum AuditOperationType { 
-  AUDIT_OPERATION_TYPE_NOT_SET = 0,
+export enum EventType { 
+  EVENT_TYPE_NOT_SET = 0,
   APPLICATION_CREATE = 100,
 }

@@ -3466,6 +3466,15 @@ export class ListModelsRequest extends jspb.Message {
   clearModelVersionIdsList(): ListModelsRequest;
   addModelVersionIds(value: string, index?: number): ListModelsRequest;
 
+  getLicenseType(): proto_clarifai_api_resources_pb.LicenseType;
+  setLicenseType(value: proto_clarifai_api_resources_pb.LicenseType): ListModelsRequest;
+
+  getSource(): number;
+  setSource(value: number): ListModelsRequest;
+
+  getCreator(): string;
+  setCreator(value: string): ListModelsRequest;
+
   getSortByCase(): ListModelsRequest.SortByCase;
 
   serializeBinary(): Uint8Array;
@@ -3505,6 +3514,9 @@ export namespace ListModelsRequest {
     name: string,
     filterByUserId: boolean,
     modelVersionIdsList: Array<string>,
+    licenseType: proto_clarifai_api_resources_pb.LicenseType,
+    source: number,
+    creator: string,
   }
 
   export enum SortByCase { 
@@ -10731,6 +10743,68 @@ export namespace DeleteDeploymentsRequest {
   export type AsObject = {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
     idsList: Array<string>,
+  }
+}
+
+export class PostAuditLogSearchesRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostAuditLogSearchesRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostAuditLogSearchesRequest;
+
+  getAuditLogQuery(): proto_clarifai_api_resources_pb.AuditLogQuery | undefined;
+  setAuditLogQuery(value?: proto_clarifai_api_resources_pb.AuditLogQuery): PostAuditLogSearchesRequest;
+  hasAuditLogQuery(): boolean;
+  clearAuditLogQuery(): PostAuditLogSearchesRequest;
+
+  getSortAscending(): boolean;
+  setSortAscending(value: boolean): PostAuditLogSearchesRequest;
+
+  getPagination(): Pagination | undefined;
+  setPagination(value?: Pagination): PostAuditLogSearchesRequest;
+  hasPagination(): boolean;
+  clearPagination(): PostAuditLogSearchesRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostAuditLogSearchesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostAuditLogSearchesRequest): PostAuditLogSearchesRequest.AsObject;
+  static serializeBinaryToWriter(message: PostAuditLogSearchesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostAuditLogSearchesRequest;
+  static deserializeBinaryFromReader(message: PostAuditLogSearchesRequest, reader: jspb.BinaryReader): PostAuditLogSearchesRequest;
+}
+
+export namespace PostAuditLogSearchesRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    auditLogQuery?: proto_clarifai_api_resources_pb.AuditLogQuery.AsObject,
+    sortAscending: boolean,
+    pagination?: Pagination.AsObject,
+  }
+}
+
+export class MultiAuditLogSearchResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiAuditLogSearchResponse;
+  hasStatus(): boolean;
+  clearStatus(): MultiAuditLogSearchResponse;
+
+  getEntriesList(): Array<proto_clarifai_api_resources_pb.AuditLogEntry>;
+  setEntriesList(value: Array<proto_clarifai_api_resources_pb.AuditLogEntry>): MultiAuditLogSearchResponse;
+  clearEntriesList(): MultiAuditLogSearchResponse;
+  addEntries(value?: proto_clarifai_api_resources_pb.AuditLogEntry, index?: number): proto_clarifai_api_resources_pb.AuditLogEntry;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MultiAuditLogSearchResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiAuditLogSearchResponse): MultiAuditLogSearchResponse.AsObject;
+  static serializeBinaryToWriter(message: MultiAuditLogSearchResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiAuditLogSearchResponse;
+  static deserializeBinaryFromReader(message: MultiAuditLogSearchResponse, reader: jspb.BinaryReader): MultiAuditLogSearchResponse;
+}
+
+export namespace MultiAuditLogSearchResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    entriesList: Array<proto_clarifai_api_resources_pb.AuditLogEntry.AsObject>,
   }
 }
 

@@ -1645,6 +1645,13 @@ export class V2Client {
                response: proto_clarifai_api_status_status_pb.BaseResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
 
+  postAuditLogSearches(
+    request: proto_clarifai_api_service_pb.PostAuditLogSearchesRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiAuditLogSearchResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiAuditLogSearchResponse>;
+
 }
 
 export class V2PromiseClient {
@@ -2821,6 +2828,11 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.DeleteDeploymentsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postAuditLogSearches(
+    request: proto_clarifai_api_service_pb.PostAuditLogSearchesRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiAuditLogSearchResponse>;
 
 }
 
