@@ -6437,67 +6437,6 @@ proto.clarifai.api.V2PromiseClient.prototype.postWorkflowResults =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.clarifai.api.PostWorkflowResultsSimilarityRequest,
- *   !proto.clarifai.api.PostWorkflowResultsSimilarityResponse>}
- */
-const methodDescriptor_V2_PostWorkflowResultsSimilarity = new grpc.web.MethodDescriptor(
-  '/clarifai.api.V2/PostWorkflowResultsSimilarity',
-  grpc.web.MethodType.UNARY,
-  proto.clarifai.api.PostWorkflowResultsSimilarityRequest,
-  proto.clarifai.api.PostWorkflowResultsSimilarityResponse,
-  /**
-   * @param {!proto.clarifai.api.PostWorkflowResultsSimilarityRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.clarifai.api.PostWorkflowResultsSimilarityResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.clarifai.api.PostWorkflowResultsSimilarityRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.PostWorkflowResultsSimilarityResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.PostWorkflowResultsSimilarityResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.clarifai.api.V2Client.prototype.postWorkflowResultsSimilarity =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/clarifai.api.V2/PostWorkflowResultsSimilarity',
-      request,
-      metadata || {},
-      methodDescriptor_V2_PostWorkflowResultsSimilarity,
-      callback);
-};
-
-
-/**
- * @param {!proto.clarifai.api.PostWorkflowResultsSimilarityRequest} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.clarifai.api.PostWorkflowResultsSimilarityResponse>}
- *     Promise that resolves to the response
- */
-proto.clarifai.api.V2PromiseClient.prototype.postWorkflowResultsSimilarity =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/clarifai.api.V2/PostWorkflowResultsSimilarity',
-      request,
-      metadata || {},
-      methodDescriptor_V2_PostWorkflowResultsSimilarity);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.ListWorkflowVersionsRequest,
  *   !proto.clarifai.api.MultiWorkflowVersionResponse>}
  */
@@ -14368,13 +14307,13 @@ proto.clarifai.api.V2PromiseClient.prototype.deleteDeployments =
  * @const
  * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.PostAuditLogSearchesRequest,
- *   !proto.clarifai.api.MultiAuditLogSearchResponse>}
+ *   !proto.clarifai.api.MultiAuditLogEntryResponse>}
  */
 const methodDescriptor_V2_PostAuditLogSearches = new grpc.web.MethodDescriptor(
   '/clarifai.api.V2/PostAuditLogSearches',
   grpc.web.MethodType.UNARY,
   proto.clarifai.api.PostAuditLogSearchesRequest,
-  proto.clarifai.api.MultiAuditLogSearchResponse,
+  proto.clarifai.api.MultiAuditLogEntryResponse,
   /**
    * @param {!proto.clarifai.api.PostAuditLogSearchesRequest} request
    * @return {!Uint8Array}
@@ -14382,7 +14321,7 @@ const methodDescriptor_V2_PostAuditLogSearches = new grpc.web.MethodDescriptor(
   function(request) {
     return request.serializeBinary();
   },
-  proto.clarifai.api.MultiAuditLogSearchResponse.deserializeBinary
+  proto.clarifai.api.MultiAuditLogEntryResponse.deserializeBinary
 );
 
 
@@ -14391,9 +14330,9 @@ const methodDescriptor_V2_PostAuditLogSearches = new grpc.web.MethodDescriptor(
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiAuditLogSearchResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiAuditLogEntryResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiAuditLogSearchResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiAuditLogEntryResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.clarifai.api.V2Client.prototype.postAuditLogSearches =
@@ -14412,7 +14351,7 @@ proto.clarifai.api.V2Client.prototype.postAuditLogSearches =
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.clarifai.api.MultiAuditLogSearchResponse>}
+ * @return {!Promise<!proto.clarifai.api.MultiAuditLogEntryResponse>}
  *     Promise that resolves to the response
  */
 proto.clarifai.api.V2PromiseClient.prototype.postAuditLogSearches =

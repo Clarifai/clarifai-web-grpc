@@ -735,13 +735,6 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.PostWorkflowResultsResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.PostWorkflowResultsResponse>;
 
-  postWorkflowResultsSimilarity(
-    request: proto_clarifai_api_service_pb.PostWorkflowResultsSimilarityRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.PostWorkflowResultsSimilarityResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.PostWorkflowResultsSimilarityResponse>;
-
   listWorkflowVersions(
     request: proto_clarifai_api_service_pb.ListWorkflowVersionsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -1649,8 +1642,8 @@ export class V2Client {
     request: proto_clarifai_api_service_pb.PostAuditLogSearchesRequest,
     metadata: grpcWeb.Metadata | undefined,
     callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.MultiAuditLogSearchResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiAuditLogSearchResponse>;
+               response: proto_clarifai_api_service_pb.MultiAuditLogEntryResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiAuditLogEntryResponse>;
 
 }
 
@@ -2178,11 +2171,6 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.PostWorkflowResultsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.PostWorkflowResultsResponse>;
-
-  postWorkflowResultsSimilarity(
-    request: proto_clarifai_api_service_pb.PostWorkflowResultsSimilarityRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.PostWorkflowResultsSimilarityResponse>;
 
   listWorkflowVersions(
     request: proto_clarifai_api_service_pb.ListWorkflowVersionsRequest,
@@ -2832,7 +2820,7 @@ export class V2PromiseClient {
   postAuditLogSearches(
     request: proto_clarifai_api_service_pb.PostAuditLogSearchesRequest,
     metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.MultiAuditLogSearchResponse>;
+  ): Promise<proto_clarifai_api_service_pb.MultiAuditLogEntryResponse>;
 
 }
 
