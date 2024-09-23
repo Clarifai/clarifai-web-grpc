@@ -6855,6 +6855,9 @@ export class PostWorkflowResultsRequest extends jspb.Message {
   hasWorkflowState(): boolean;
   clearWorkflowState(): PostWorkflowResultsRequest;
 
+  getNodeRunnerSelectorsMap(): jspb.Map<string, proto_clarifai_api_resources_pb.RunnerSelector>;
+  clearNodeRunnerSelectorsMap(): PostWorkflowResultsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostWorkflowResultsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: PostWorkflowResultsRequest): PostWorkflowResultsRequest.AsObject;
@@ -6872,6 +6875,7 @@ export namespace PostWorkflowResultsRequest {
     outputConfig?: proto_clarifai_api_resources_pb.OutputConfig.AsObject,
     favorClarifaiWorkflows: boolean,
     workflowState?: proto_clarifai_api_resources_pb.WorkflowState.AsObject,
+    nodeRunnerSelectorsMap: Array<[string, proto_clarifai_api_resources_pb.RunnerSelector.AsObject]>,
   }
 }
 
