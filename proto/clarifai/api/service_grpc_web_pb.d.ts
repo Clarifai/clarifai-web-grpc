@@ -1645,6 +1645,13 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiAuditLogEntryResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiAuditLogEntryResponse>;
 
+  listWorkflowEvaluationTemplates(
+    request: proto_clarifai_api_service_pb.ListWorkflowEvaluationTemplatesRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiWorkflowEvaluationTemplateResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiWorkflowEvaluationTemplateResponse>;
+
 }
 
 export class V2PromiseClient {
@@ -2821,6 +2828,11 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.PostAuditLogSearchesRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiAuditLogEntryResponse>;
+
+  listWorkflowEvaluationTemplates(
+    request: proto_clarifai_api_service_pb.ListWorkflowEvaluationTemplatesRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiWorkflowEvaluationTemplateResponse>;
 
 }
 

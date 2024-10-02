@@ -719,6 +719,11 @@ export class Concept extends jspb.Message {
   hasMetadata(): boolean;
   clearMetadata(): Concept;
 
+  getImage(): Image | undefined;
+  setImage(value?: Image): Concept;
+  hasImage(): boolean;
+  clearImage(): Concept;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Concept.AsObject;
   static toObject(includeInstance: boolean, msg: Concept): Concept.AsObject;
@@ -742,6 +747,7 @@ export namespace Concept {
     keypointInfo?: KeypointInfo.AsObject,
     extraInfo?: ConceptExtraInfo.AsObject,
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
+    image?: Image.AsObject,
   }
 }
 
@@ -5644,9 +5650,6 @@ export class Task extends jspb.Message {
   hasWorker(): boolean;
   clearWorker(): Task;
 
-  getWorkerType(): Task.WorkerType;
-  setWorkerType(value: Task.WorkerType): Task;
-
   getConceptIdsList(): Array<string>;
   setConceptIdsList(value: Array<string>): Task;
   clearConceptIdsList(): Task;
@@ -5729,7 +5732,6 @@ export namespace Task {
     type: Task.TaskType,
     description: string,
     worker?: TaskWorker.AsObject,
-    workerType: Task.WorkerType,
     conceptIdsList: Array<string>,
     inputSource?: TaskInputSource.AsObject,
     sampleMs: number,
@@ -5746,12 +5748,6 @@ export namespace Task {
     deletePreviousAnnotations: boolean,
     metrics?: TaskMetrics.AsObject,
     priority: Task.TaskPriority,
-  }
-
-  export enum WorkerType { 
-    WORKER_TYPE_NOT_SET = 0,
-    WORKER_HUMAN = 1,
-    WORKER_AUTO = 2,
   }
 
   export enum TaskType { 
@@ -5821,6 +5817,9 @@ export class TaskWorker extends jspb.Message {
   clearWorkersList(): TaskWorker;
   addWorkers(value?: Worker, index?: number): Worker;
 
+  getType(): TaskWorker.WorkerType;
+  setType(value: TaskWorker.WorkerType): TaskWorker;
+
   getStrategyInfoCase(): TaskWorker.StrategyInfoCase;
 
   serializeBinary(): Uint8Array;
@@ -5838,6 +5837,7 @@ export namespace TaskWorker {
     usersList: Array<User.AsObject>,
     partitionedStrategyInfo?: TaskWorkerPartitionedStrategyInfo.AsObject,
     workersList: Array<Worker.AsObject>,
+    type: TaskWorker.WorkerType,
   }
 
   export enum TaskWorkerStrategy { 
@@ -5845,6 +5845,12 @@ export namespace TaskWorker {
     PARTITIONED = 2,
     FULL = 3,
     DYNAMIC = 4,
+  }
+
+  export enum WorkerType { 
+    WORKER_TYPE_NOT_SET = 0,
+    WORKER_HUMAN = 1,
+    WORKER_AUTO = 2,
   }
 
   export enum StrategyInfoCase { 
@@ -5977,6 +5983,9 @@ export class TaskReviewManualStrategyInfo extends jspb.Message {
   getSamplePercentage(): number;
   setSamplePercentage(value: number): TaskReviewManualStrategyInfo;
 
+  getApprovalThreshold(): number;
+  setApprovalThreshold(value: number): TaskReviewManualStrategyInfo;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TaskReviewManualStrategyInfo.AsObject;
   static toObject(includeInstance: boolean, msg: TaskReviewManualStrategyInfo): TaskReviewManualStrategyInfo.AsObject;
@@ -5988,6 +5997,7 @@ export class TaskReviewManualStrategyInfo extends jspb.Message {
 export namespace TaskReviewManualStrategyInfo {
   export type AsObject = {
     samplePercentage: number,
+    approvalThreshold: number,
   }
 }
 
@@ -8591,6 +8601,91 @@ export namespace AuditLogQuery {
     targetsList: Array<AuditLogTarget.AsObject>,
     success?: google_protobuf_wrappers_pb.BoolValue.AsObject,
     sourceIpsList: Array<string>,
+  }
+}
+
+export class WorkflowVersionEvaluationMetric extends jspb.Message {
+  getId(): string;
+  setId(value: string): WorkflowVersionEvaluationMetric;
+
+  getSummary(): string;
+  setSummary(value: string): WorkflowVersionEvaluationMetric;
+
+  getDescription(): string;
+  setDescription(value: string): WorkflowVersionEvaluationMetric;
+
+  getDataType(): WorkflowVersionEvaluationMetric.DataType;
+  setDataType(value: WorkflowVersionEvaluationMetric.DataType): WorkflowVersionEvaluationMetric;
+
+  getVisualisationType(): WorkflowVersionEvaluationMetric.VisualisationType;
+  setVisualisationType(value: WorkflowVersionEvaluationMetric.VisualisationType): WorkflowVersionEvaluationMetric;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WorkflowVersionEvaluationMetric.AsObject;
+  static toObject(includeInstance: boolean, msg: WorkflowVersionEvaluationMetric): WorkflowVersionEvaluationMetric.AsObject;
+  static serializeBinaryToWriter(message: WorkflowVersionEvaluationMetric, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WorkflowVersionEvaluationMetric;
+  static deserializeBinaryFromReader(message: WorkflowVersionEvaluationMetric, reader: jspb.BinaryReader): WorkflowVersionEvaluationMetric;
+}
+
+export namespace WorkflowVersionEvaluationMetric {
+  export type AsObject = {
+    id: string,
+    summary: string,
+    description: string,
+    dataType: WorkflowVersionEvaluationMetric.DataType,
+    visualisationType: WorkflowVersionEvaluationMetric.VisualisationType,
+  }
+
+  export enum DataType { 
+    DATA_TYPE_NOT_SET = 0,
+    FLOAT = 1,
+  }
+
+  export enum VisualisationType { 
+    VISUALIZATION_TYPE_NOT_SET = 0,
+    CONFUSION_MATRIX = 1,
+    PRECISION_RECALL_CURVE = 2,
+    ROC_AUC_CURVE = 3,
+  }
+}
+
+export class WorkflowVersionEvaluationTemplate extends jspb.Message {
+  getId(): string;
+  setId(value: string): WorkflowVersionEvaluationTemplate;
+
+  getDescription(): string;
+  setDescription(value: string): WorkflowVersionEvaluationTemplate;
+
+  getTaskTypesList(): Array<WorkflowVersionEvaluationTemplate.TaskType>;
+  setTaskTypesList(value: Array<WorkflowVersionEvaluationTemplate.TaskType>): WorkflowVersionEvaluationTemplate;
+  clearTaskTypesList(): WorkflowVersionEvaluationTemplate;
+  addTaskTypes(value: WorkflowVersionEvaluationTemplate.TaskType, index?: number): WorkflowVersionEvaluationTemplate;
+
+  getWorkflowVersionEvaluationMetricsList(): Array<WorkflowVersionEvaluationMetric>;
+  setWorkflowVersionEvaluationMetricsList(value: Array<WorkflowVersionEvaluationMetric>): WorkflowVersionEvaluationTemplate;
+  clearWorkflowVersionEvaluationMetricsList(): WorkflowVersionEvaluationTemplate;
+  addWorkflowVersionEvaluationMetrics(value?: WorkflowVersionEvaluationMetric, index?: number): WorkflowVersionEvaluationMetric;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WorkflowVersionEvaluationTemplate.AsObject;
+  static toObject(includeInstance: boolean, msg: WorkflowVersionEvaluationTemplate): WorkflowVersionEvaluationTemplate.AsObject;
+  static serializeBinaryToWriter(message: WorkflowVersionEvaluationTemplate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WorkflowVersionEvaluationTemplate;
+  static deserializeBinaryFromReader(message: WorkflowVersionEvaluationTemplate, reader: jspb.BinaryReader): WorkflowVersionEvaluationTemplate;
+}
+
+export namespace WorkflowVersionEvaluationTemplate {
+  export type AsObject = {
+    id: string,
+    description: string,
+    taskTypesList: Array<WorkflowVersionEvaluationTemplate.TaskType>,
+    workflowVersionEvaluationMetricsList: Array<WorkflowVersionEvaluationMetric.AsObject>,
+  }
+
+  export enum TaskType { 
+    TASK_TYPE_NOT_SET = 0,
+    TEXT_CLASSIFICATION = 1,
   }
 }
 
