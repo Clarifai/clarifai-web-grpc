@@ -1148,6 +1148,11 @@ export class Data extends jspb.Message {
   clearHeatmapsList(): Data;
   addHeatmaps(value?: Image, index?: number): Image;
 
+  getPartsList(): Array<Part>;
+  setPartsList(value: Array<Part>): Data;
+  clearPartsList(): Data;
+  addParts(value?: Part, index?: number): Part;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Data.AsObject;
   static toObject(includeInstance: boolean, msg: Data): Data.AsObject;
@@ -1174,6 +1179,27 @@ export namespace Data {
     timeSegmentsList: Array<TimeSegment.AsObject>,
     hitsList: Array<Hit.AsObject>,
     heatmapsList: Array<Image.AsObject>,
+    partsList: Array<Part.AsObject>,
+  }
+}
+
+export class Part extends jspb.Message {
+  getData(): Data | undefined;
+  setData(value?: Data): Part;
+  hasData(): boolean;
+  clearData(): Part;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Part.AsObject;
+  static toObject(includeInstance: boolean, msg: Part): Part.AsObject;
+  static serializeBinaryToWriter(message: Part, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Part;
+  static deserializeBinaryFromReader(message: Part, reader: jspb.BinaryReader): Part;
+}
+
+export namespace Part {
+  export type AsObject = {
+    data?: Data.AsObject,
   }
 }
 
