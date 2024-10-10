@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/b028e4f1-e848-4b7b-92b5-b1312edd9def)
+
 # clarifai-web-grpc
 
 The official Clarifai gRPC client for use in client browser applications.
