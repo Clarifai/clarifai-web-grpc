@@ -1153,6 +1153,11 @@ export class Data extends jspb.Message {
   clearPartsList(): Data;
   addParts(value?: Part, index?: number): Part;
 
+  getNdarray(): NDArray | undefined;
+  setNdarray(value?: NDArray): Data;
+  hasNdarray(): boolean;
+  clearNdarray(): Data;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Data.AsObject;
   static toObject(includeInstance: boolean, msg: Data): Data.AsObject;
@@ -1180,6 +1185,7 @@ export namespace Data {
     hitsList: Array<Hit.AsObject>,
     heatmapsList: Array<Image.AsObject>,
     partsList: Array<Part.AsObject>,
+    ndarray?: NDArray.AsObject,
   }
 }
 
@@ -1376,6 +1382,36 @@ export namespace Frame {
     frameInfo?: FrameInfo.AsObject,
     data?: Data.AsObject,
     id: string,
+  }
+}
+
+export class NDArray extends jspb.Message {
+  getBuffer(): Uint8Array | string;
+  getBuffer_asU8(): Uint8Array;
+  getBuffer_asB64(): string;
+  setBuffer(value: Uint8Array | string): NDArray;
+
+  getShapeList(): Array<number>;
+  setShapeList(value: Array<number>): NDArray;
+  clearShapeList(): NDArray;
+  addShape(value: number, index?: number): NDArray;
+
+  getDtype(): string;
+  setDtype(value: string): NDArray;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): NDArray.AsObject;
+  static toObject(includeInstance: boolean, msg: NDArray): NDArray.AsObject;
+  static serializeBinaryToWriter(message: NDArray, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): NDArray;
+  static deserializeBinaryFromReader(message: NDArray, reader: jspb.BinaryReader): NDArray;
+}
+
+export namespace NDArray {
+  export type AsObject = {
+    buffer: Uint8Array | string,
+    shapeList: Array<number>,
+    dtype: string,
   }
 }
 
