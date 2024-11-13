@@ -1218,20 +1218,6 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiStatValueAggregateResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiStatValueAggregateResponse>;
 
-  postTrendingMetricsView(
-    request: proto_clarifai_api_service_pb.PostTrendingMetricsViewRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
-
-  listTrendingMetricsViews(
-    request: proto_clarifai_api_service_pb.ListTrendingMetricsViewsRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.MultiTrendingMetricsViewResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiTrendingMetricsViewResponse>;
-
   getModule(
     request: proto_clarifai_api_service_pb.GetModuleRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -2523,16 +2509,6 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.PostStatValuesAggregateRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiStatValueAggregateResponse>;
-
-  postTrendingMetricsView(
-    request: proto_clarifai_api_service_pb.PostTrendingMetricsViewRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
-
-  listTrendingMetricsViews(
-    request: proto_clarifai_api_service_pb.ListTrendingMetricsViewsRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.MultiTrendingMetricsViewResponse>;
 
   getModule(
     request: proto_clarifai_api_service_pb.GetModuleRequest,

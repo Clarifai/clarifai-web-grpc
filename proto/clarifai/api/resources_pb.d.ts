@@ -936,6 +936,9 @@ export class ConceptQuery extends jspb.Message {
   hasWorkflow(): boolean;
   clearWorkflow(): ConceptQuery;
 
+  getIgnoreAppConcepts(): boolean;
+  setIgnoreAppConcepts(value: boolean): ConceptQuery;
+
   getSourceCase(): ConceptQuery.SourceCase;
 
   serializeBinary(): Uint8Array;
@@ -954,6 +957,7 @@ export namespace ConceptQuery {
     useCasesList: Array<WorkflowModelUseCase>,
     model?: Model.AsObject,
     workflow?: Workflow.AsObject,
+    ignoreAppConcepts: boolean,
   }
 
   export enum SourceCase { 
@@ -4972,6 +4976,11 @@ export class UserDetail extends jspb.Message {
   getState(): string;
   setState(value: string): UserDetail;
 
+  getCommitmentValue(): CommitmentValue | undefined;
+  setCommitmentValue(value?: CommitmentValue): UserDetail;
+  hasCommitmentValue(): boolean;
+  clearCommitmentValue(): UserDetail;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UserDetail.AsObject;
   static toObject(includeInstance: boolean, msg: UserDetail): UserDetail.AsObject;
@@ -4994,6 +5003,7 @@ export namespace UserDetail {
     teamsCount: number,
     country: string,
     state: string,
+    commitmentValue?: CommitmentValue.AsObject,
   }
 }
 
@@ -5108,6 +5118,34 @@ export namespace PasswordViolations {
     noCommonVocabs: boolean,
     noOverlapWithOld: boolean,
     passwordLifespan: boolean,
+  }
+}
+
+export class CommitmentValue extends jspb.Message {
+  getValue(): number;
+  setValue(value: number): CommitmentValue;
+
+  getType(): CommitmentValue.CommitmentType;
+  setType(value: CommitmentValue.CommitmentType): CommitmentValue;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CommitmentValue.AsObject;
+  static toObject(includeInstance: boolean, msg: CommitmentValue): CommitmentValue.AsObject;
+  static serializeBinaryToWriter(message: CommitmentValue, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CommitmentValue;
+  static deserializeBinaryFromReader(message: CommitmentValue, reader: jspb.BinaryReader): CommitmentValue;
+}
+
+export namespace CommitmentValue {
+  export type AsObject = {
+    value: number,
+    type: CommitmentValue.CommitmentType,
+  }
+
+  export enum CommitmentType { 
+    TYPE_NOT_SET = 0,
+    MONTHLY = 1,
+    ANNUAL = 2,
   }
 }
 
@@ -6377,6 +6415,98 @@ export namespace TaskInputSourceMetrics {
   }
 }
 
+export class Role extends jspb.Message {
+  getId(): string;
+  setId(value: string): Role;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Role;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): Role;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): Role;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): Role;
+
+  getName(): string;
+  setName(value: string): Role;
+
+  getDescription(): string;
+  setDescription(value: string): Role;
+
+  getScopesList(): Array<string>;
+  setScopesList(value: Array<string>): Role;
+  clearScopesList(): Role;
+  addScopes(value: string, index?: number): Role;
+
+  getEndpointsList(): Array<string>;
+  setEndpointsList(value: Array<string>): Role;
+  clearEndpointsList(): Role;
+  addEndpoints(value: string, index?: number): Role;
+
+  getType(): RoleType;
+  setType(value: RoleType): Role;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Role.AsObject;
+  static toObject(includeInstance: boolean, msg: Role): Role.AsObject;
+  static serializeBinaryToWriter(message: Role, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Role;
+  static deserializeBinaryFromReader(message: Role, reader: jspb.BinaryReader): Role;
+}
+
+export namespace Role {
+  export type AsObject = {
+    id: string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    name: string,
+    description: string,
+    scopesList: Array<string>,
+    endpointsList: Array<string>,
+    type: RoleType,
+  }
+}
+
+export class Team extends jspb.Message {
+  getId(): string;
+  setId(value: string): Team;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Team;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): Team;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): Team;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): Team;
+
+  getName(): string;
+  setName(value: string): Team;
+
+  getDefaultRoleId(): string;
+  setDefaultRoleId(value: string): Team;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Team.AsObject;
+  static toObject(includeInstance: boolean, msg: Team): Team.AsObject;
+  static serializeBinaryToWriter(message: Team, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Team;
+  static deserializeBinaryFromReader(message: Team, reader: jspb.BinaryReader): Team;
+}
+
+export namespace Team {
+  export type AsObject = {
+    id: string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    name: string,
+    defaultRoleId: string,
+  }
+}
+
 export class Collector extends jspb.Message {
   getId(): string;
   setId(value: string): Collector;
@@ -6695,36 +6825,6 @@ export namespace Visibility {
     PRIVATE = 10,
     ORG = 30,
     PUBLIC = 50,
-  }
-}
-
-export class TrendingMetric extends jspb.Message {
-  getUserId(): string;
-  setUserId(value: string): TrendingMetric;
-
-  getAppId(): string;
-  setAppId(value: string): TrendingMetric;
-
-  getObjectId(): string;
-  setObjectId(value: string): TrendingMetric;
-
-  getViewCount(): number;
-  setViewCount(value: number): TrendingMetric;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TrendingMetric.AsObject;
-  static toObject(includeInstance: boolean, msg: TrendingMetric): TrendingMetric.AsObject;
-  static serializeBinaryToWriter(message: TrendingMetric, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TrendingMetric;
-  static deserializeBinaryFromReader(message: TrendingMetric, reader: jspb.BinaryReader): TrendingMetric;
-}
-
-export namespace TrendingMetric {
-  export type AsObject = {
-    userId: string,
-    appId: string,
-    objectId: string,
-    viewCount: number,
   }
 }
 
@@ -8371,8 +8471,8 @@ export class AutoscaleConfig extends jspb.Message {
   getScaleUpDelaySeconds(): number;
   setScaleUpDelaySeconds(value: number): AutoscaleConfig;
 
-  getEnablePacking(): boolean;
-  setEnablePacking(value: boolean): AutoscaleConfig;
+  getDisablePacking(): boolean;
+  setDisablePacking(value: boolean): AutoscaleConfig;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AutoscaleConfig.AsObject;
@@ -8389,7 +8489,7 @@ export namespace AutoscaleConfig {
     trafficHistorySeconds: number,
     scaleDownDelaySeconds: number,
     scaleUpDelaySeconds: number,
-    enablePacking: boolean,
+    disablePacking: boolean,
   }
 }
 
@@ -8534,10 +8634,20 @@ export namespace ProcessingInfo {
 }
 
 export class AuditLogTarget extends jspb.Message {
-  getMember(): User | undefined;
-  setMember(value?: User): AuditLogTarget;
-  hasMember(): boolean;
-  clearMember(): AuditLogTarget;
+  getUser(): User | undefined;
+  setUser(value?: User): AuditLogTarget;
+  hasUser(): boolean;
+  clearUser(): AuditLogTarget;
+
+  getRole(): Role | undefined;
+  setRole(value?: Role): AuditLogTarget;
+  hasRole(): boolean;
+  clearRole(): AuditLogTarget;
+
+  getTeam(): Team | undefined;
+  setTeam(value?: Team): AuditLogTarget;
+  hasTeam(): boolean;
+  clearTeam(): AuditLogTarget;
 
   getTargetCase(): AuditLogTarget.TargetCase;
 
@@ -8551,12 +8661,16 @@ export class AuditLogTarget extends jspb.Message {
 
 export namespace AuditLogTarget {
   export type AsObject = {
-    member?: User.AsObject,
+    user?: User.AsObject,
+    role?: Role.AsObject,
+    team?: Team.AsObject,
   }
 
   export enum TargetCase { 
     TARGET_NOT_SET = 0,
-    MEMBER = 1,
+    USER = 1,
+    ROLE = 2,
+    TEAM = 3,
   }
 }
 
@@ -8889,5 +9003,18 @@ export enum RunnerMethodType {
 }
 export enum EventType { 
   EVENT_TYPE_NOT_SET = 0,
-  APPLICATION_CREATE = 100,
+  ORGANIZATION_MEMBER_ADD = 100,
+  ORGANIZATION_MEMBER_CHANGE = 101,
+  ORGANIZATION_MEMBER_REMOVE = 102,
+  ORGANIZATION_MEMBER_INVITATION_CREATE = 103,
+  ORGANIZATION_MEMBER_INVITATION_CANCEL = 104,
+  ORGANIZATION_MEMBER_INVITATION_ACCEPT = 105,
+  ORGANIZATION_MEMBER_INVITATION_DECLINE = 106,
+  ORGANIZATION_TEAM_CREATE = 107,
+  ORGANIZATION_TEAM_UPDATE = 108,
+  ORGANIZATION_TEAM_DELETE = 109,
+  ORGANIZATION_TEAM_MEMBER_ADD = 110,
+  ORGANIZATION_TEAM_MEMBER_REMOVE = 111,
+  ORGANIZATION_TEAM_APP_ADD = 112,
+  ORGANIZATION_TEAM_APP_REMOVE = 113,
 }
