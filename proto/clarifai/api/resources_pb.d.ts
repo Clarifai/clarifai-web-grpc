@@ -216,6 +216,9 @@ export class App extends jspb.Message {
   hasExtraInfo(): boolean;
   clearExtraInfo(): App;
 
+  getEmbeddingsStorage(): App.EmbeddingsStorage;
+  setEmbeddingsStorage(value: App.EmbeddingsStorage): App;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): App.AsObject;
   static toObject(includeInstance: boolean, msg: App): App.AsObject;
@@ -246,6 +249,13 @@ export namespace App {
     image?: Image.AsObject,
     isTemplate?: google_protobuf_wrappers_pb.BoolValue.AsObject,
     extraInfo?: AppExtraInfo.AsObject,
+    embeddingsStorage: App.EmbeddingsStorage,
+  }
+
+  export enum EmbeddingsStorage { 
+    EMBEDDING_STORAGE_NOT_SET = 0,
+    POSTGRES = 1,
+    QDRANT = 2,
   }
 }
 
