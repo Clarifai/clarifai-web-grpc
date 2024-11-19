@@ -506,6 +506,9 @@ export class ListAppsRequest extends jspb.Message {
   getSortByStarCount(): boolean;
   setSortByStarCount(value: boolean): ListAppsRequest;
 
+  getSortById(): boolean;
+  setSortById(value: boolean): ListAppsRequest;
+
   getFeaturedOnly(): boolean;
   setFeaturedOnly(value: boolean): ListAppsRequest;
 
@@ -548,6 +551,7 @@ export namespace ListAppsRequest {
     sortByModifiedAt: boolean,
     sortByCreatedAt: boolean,
     sortByStarCount: boolean,
+    sortById: boolean,
     featuredOnly: boolean,
     starredOnly: boolean,
     templateOnly: boolean,
@@ -563,6 +567,7 @@ export namespace ListAppsRequest {
     SORT_BY_MODIFIED_AT = 7,
     SORT_BY_CREATED_AT = 12,
     SORT_BY_STAR_COUNT = 13,
+    SORT_BY_ID = 17,
   }
 }
 
@@ -8005,92 +8010,6 @@ export namespace MultiStatValueAggregateResponse {
   }
 }
 
-export class PostTrendingMetricsViewRequest extends jspb.Message {
-  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostTrendingMetricsViewRequest;
-  hasUserAppId(): boolean;
-  clearUserAppId(): PostTrendingMetricsViewRequest;
-
-  getViewType(): string;
-  setViewType(value: string): PostTrendingMetricsViewRequest;
-
-  getObjectId(): string;
-  setObjectId(value: string): PostTrendingMetricsViewRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PostTrendingMetricsViewRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: PostTrendingMetricsViewRequest): PostTrendingMetricsViewRequest.AsObject;
-  static serializeBinaryToWriter(message: PostTrendingMetricsViewRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PostTrendingMetricsViewRequest;
-  static deserializeBinaryFromReader(message: PostTrendingMetricsViewRequest, reader: jspb.BinaryReader): PostTrendingMetricsViewRequest;
-}
-
-export namespace PostTrendingMetricsViewRequest {
-  export type AsObject = {
-    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
-    viewType: string,
-    objectId: string,
-  }
-}
-
-export class ListTrendingMetricsViewsRequest extends jspb.Message {
-  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListTrendingMetricsViewsRequest;
-  hasUserAppId(): boolean;
-  clearUserAppId(): ListTrendingMetricsViewsRequest;
-
-  getViewType(): string;
-  setViewType(value: string): ListTrendingMetricsViewsRequest;
-
-  getPage(): number;
-  setPage(value: number): ListTrendingMetricsViewsRequest;
-
-  getPerPage(): number;
-  setPerPage(value: number): ListTrendingMetricsViewsRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListTrendingMetricsViewsRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListTrendingMetricsViewsRequest): ListTrendingMetricsViewsRequest.AsObject;
-  static serializeBinaryToWriter(message: ListTrendingMetricsViewsRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListTrendingMetricsViewsRequest;
-  static deserializeBinaryFromReader(message: ListTrendingMetricsViewsRequest, reader: jspb.BinaryReader): ListTrendingMetricsViewsRequest;
-}
-
-export namespace ListTrendingMetricsViewsRequest {
-  export type AsObject = {
-    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
-    viewType: string,
-    page: number,
-    perPage: number,
-  }
-}
-
-export class MultiTrendingMetricsViewResponse extends jspb.Message {
-  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiTrendingMetricsViewResponse;
-  hasStatus(): boolean;
-  clearStatus(): MultiTrendingMetricsViewResponse;
-
-  getMetricsList(): Array<proto_clarifai_api_resources_pb.TrendingMetric>;
-  setMetricsList(value: Array<proto_clarifai_api_resources_pb.TrendingMetric>): MultiTrendingMetricsViewResponse;
-  clearMetricsList(): MultiTrendingMetricsViewResponse;
-  addMetrics(value?: proto_clarifai_api_resources_pb.TrendingMetric, index?: number): proto_clarifai_api_resources_pb.TrendingMetric;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): MultiTrendingMetricsViewResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: MultiTrendingMetricsViewResponse): MultiTrendingMetricsViewResponse.AsObject;
-  static serializeBinaryToWriter(message: MultiTrendingMetricsViewResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): MultiTrendingMetricsViewResponse;
-  static deserializeBinaryFromReader(message: MultiTrendingMetricsViewResponse, reader: jspb.BinaryReader): MultiTrendingMetricsViewResponse;
-}
-
-export namespace MultiTrendingMetricsViewResponse {
-  export type AsObject = {
-    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
-    metricsList: Array<proto_clarifai_api_resources_pb.TrendingMetric.AsObject>,
-  }
-}
-
 export class GetModuleRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
   setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetModuleRequest;
@@ -9754,6 +9673,9 @@ export class ListRunnersRequest extends jspb.Message {
   getComputeClusterId(): string;
   setComputeClusterId(value: string): ListRunnersRequest;
 
+  getMinReplicas(): number;
+  setMinReplicas(value: number): ListRunnersRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListRunnersRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListRunnersRequest): ListRunnersRequest.AsObject;
@@ -9769,6 +9691,7 @@ export namespace ListRunnersRequest {
     page: number,
     perPage: number,
     computeClusterId: string,
+    minReplicas: number,
   }
 }
 
