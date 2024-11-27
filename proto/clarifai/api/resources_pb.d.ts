@@ -8634,6 +8634,9 @@ export class ProcessingInfo extends jspb.Message {
   hasStatus(): boolean;
   clearStatus(): ProcessingInfo;
 
+  getProcessingId(): string;
+  setProcessingId(value: string): ProcessingInfo;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProcessingInfo.AsObject;
   static toObject(includeInstance: boolean, msg: ProcessingInfo): ProcessingInfo.AsObject;
@@ -8646,6 +8649,7 @@ export namespace ProcessingInfo {
   export type AsObject = {
     runnerMethodType: RunnerMethodType,
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    processingId: string,
   }
 }
 
