@@ -3569,6 +3569,9 @@ export class PretrainedModelConfig extends jspb.Message {
   getModelZipUrl(): string;
   setModelZipUrl(value: string): PretrainedModelConfig;
 
+  getLocalDev(): boolean;
+  setLocalDev(value: boolean): PretrainedModelConfig;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PretrainedModelConfig.AsObject;
   static toObject(includeInstance: boolean, msg: PretrainedModelConfig): PretrainedModelConfig.AsObject;
@@ -3582,6 +3585,7 @@ export namespace PretrainedModelConfig {
     inputFieldsMap?: google_protobuf_struct_pb.Struct.AsObject,
     outputFieldsMap?: google_protobuf_struct_pb.Struct.AsObject,
     modelZipUrl: string,
+    localDev: boolean,
   }
 }
 
@@ -8669,6 +8673,21 @@ export class AuditLogTarget extends jspb.Message {
   hasTeam(): boolean;
   clearTeam(): AuditLogTarget;
 
+  getApp(): App | undefined;
+  setApp(value?: App): AuditLogTarget;
+  hasApp(): boolean;
+  clearApp(): AuditLogTarget;
+
+  getModule(): Module | undefined;
+  setModule(value?: Module): AuditLogTarget;
+  hasModule(): boolean;
+  clearModule(): AuditLogTarget;
+
+  getModuleVersion(): ModuleVersion | undefined;
+  setModuleVersion(value?: ModuleVersion): AuditLogTarget;
+  hasModuleVersion(): boolean;
+  clearModuleVersion(): AuditLogTarget;
+
   getTargetCase(): AuditLogTarget.TargetCase;
 
   serializeBinary(): Uint8Array;
@@ -8684,6 +8703,9 @@ export namespace AuditLogTarget {
     user?: User.AsObject,
     role?: Role.AsObject,
     team?: Team.AsObject,
+    app?: App.AsObject,
+    module?: Module.AsObject,
+    moduleVersion?: ModuleVersion.AsObject,
   }
 
   export enum TargetCase { 
@@ -8691,6 +8713,9 @@ export namespace AuditLogTarget {
     USER = 1,
     ROLE = 2,
     TEAM = 3,
+    APP = 4,
+    MODULE = 5,
+    MODULE_VERSION = 6,
   }
 }
 
@@ -8893,6 +8918,82 @@ export namespace WorkflowVersionEvaluationTemplate {
   }
 }
 
+export class LogEntry extends jspb.Message {
+  getMessage(): string;
+  setMessage(value: string): LogEntry;
+
+  getLogType(): string;
+  setLogType(value: string): LogEntry;
+
+  getUrl(): string;
+  setUrl(value: string): LogEntry;
+
+  getMeta(): ComputeSourceMetadata | undefined;
+  setMeta(value?: ComputeSourceMetadata): LogEntry;
+  hasMeta(): boolean;
+  clearMeta(): LogEntry;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LogEntry.AsObject;
+  static toObject(includeInstance: boolean, msg: LogEntry): LogEntry.AsObject;
+  static serializeBinaryToWriter(message: LogEntry, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LogEntry;
+  static deserializeBinaryFromReader(message: LogEntry, reader: jspb.BinaryReader): LogEntry;
+}
+
+export namespace LogEntry {
+  export type AsObject = {
+    message: string,
+    logType: string,
+    url: string,
+    meta?: ComputeSourceMetadata.AsObject,
+  }
+}
+
+export class ComputeSourceMetadata extends jspb.Message {
+  getUserAppId(): UserAppIDSet | undefined;
+  setUserAppId(value?: UserAppIDSet): ComputeSourceMetadata;
+  hasUserAppId(): boolean;
+  clearUserAppId(): ComputeSourceMetadata;
+
+  getModelId(): string;
+  setModelId(value: string): ComputeSourceMetadata;
+
+  getModelVersionId(): string;
+  setModelVersionId(value: string): ComputeSourceMetadata;
+
+  getWorkflowId(): string;
+  setWorkflowId(value: string): ComputeSourceMetadata;
+
+  getComputeClusterId(): string;
+  setComputeClusterId(value: string): ComputeSourceMetadata;
+
+  getNodepoolId(): string;
+  setNodepoolId(value: string): ComputeSourceMetadata;
+
+  getRunnerId(): string;
+  setRunnerId(value: string): ComputeSourceMetadata;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ComputeSourceMetadata.AsObject;
+  static toObject(includeInstance: boolean, msg: ComputeSourceMetadata): ComputeSourceMetadata.AsObject;
+  static serializeBinaryToWriter(message: ComputeSourceMetadata, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ComputeSourceMetadata;
+  static deserializeBinaryFromReader(message: ComputeSourceMetadata, reader: jspb.BinaryReader): ComputeSourceMetadata;
+}
+
+export namespace ComputeSourceMetadata {
+  export type AsObject = {
+    userAppId?: UserAppIDSet.AsObject,
+    modelId: string,
+    modelVersionId: string,
+    workflowId: string,
+    computeClusterId: string,
+    nodepoolId: string,
+    runnerId: string,
+  }
+}
+
 export enum WorkflowModelUseCase { 
   WORKFLOW_MODEL_USE_CASE_NOT_SET = 0,
   CLASSIFICATION = 1,
@@ -9037,4 +9138,10 @@ export enum EventType {
   ORGANIZATION_TEAM_MEMBER_REMOVE = 111,
   ORGANIZATION_TEAM_APP_ADD = 112,
   ORGANIZATION_TEAM_APP_REMOVE = 113,
+  MODULE_CREATE = 200,
+  MODULE_UPDATE = 201,
+  MODULE_DELETE = 202,
+  MODULE_VERSION_CREATE = 203,
+  MODULE_VERSION_UPDATE = 204,
+  MODULE_VERSION_DELETE = 205,
 }

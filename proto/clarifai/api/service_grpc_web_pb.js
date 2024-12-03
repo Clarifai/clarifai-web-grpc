@@ -13269,6 +13269,128 @@ proto.clarifai.api.V2PromiseClient.prototype.postModelVersionsTrainingTimeEstima
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListCloudProvidersRequest,
+ *   !proto.clarifai.api.MultiCloudProviderResponse>}
+ */
+const methodDescriptor_V2_ListCloudProviders = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListCloudProviders',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListCloudProvidersRequest,
+  proto.clarifai.api.MultiCloudProviderResponse,
+  /**
+   * @param {!proto.clarifai.api.ListCloudProvidersRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiCloudProviderResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListCloudProvidersRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiCloudProviderResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiCloudProviderResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listCloudProviders =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListCloudProviders',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListCloudProviders,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListCloudProvidersRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiCloudProviderResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listCloudProviders =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListCloudProviders',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListCloudProviders);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListCloudRegionsRequest,
+ *   !proto.clarifai.api.MultiCloudRegionResponse>}
+ */
+const methodDescriptor_V2_ListCloudRegions = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListCloudRegions',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListCloudRegionsRequest,
+  proto.clarifai.api.MultiCloudRegionResponse,
+  /**
+   * @param {!proto.clarifai.api.ListCloudRegionsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiCloudRegionResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListCloudRegionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiCloudRegionResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiCloudRegionResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listCloudRegions =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListCloudRegions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListCloudRegions,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListCloudRegionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiCloudRegionResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listCloudRegions =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListCloudRegions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListCloudRegions);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.ListInstanceTypesRequest,
  *   !proto.clarifai.api.MultiInstanceTypeResponse>}
  */
@@ -14300,6 +14422,67 @@ proto.clarifai.api.V2PromiseClient.prototype.listWorkflowEvaluationTemplates =
       request,
       metadata || {},
       methodDescriptor_V2_ListWorkflowEvaluationTemplates);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListLogEntriesRequest,
+ *   !proto.clarifai.api.MultiLogEntryResponse>}
+ */
+const methodDescriptor_V2_ListLogEntries = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListLogEntries',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListLogEntriesRequest,
+  proto.clarifai.api.MultiLogEntryResponse,
+  /**
+   * @param {!proto.clarifai.api.ListLogEntriesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiLogEntryResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListLogEntriesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiLogEntryResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiLogEntryResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listLogEntries =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListLogEntries',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListLogEntries,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListLogEntriesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiLogEntryResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listLogEntries =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListLogEntries',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListLogEntries);
 };
 
 
