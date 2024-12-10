@@ -1519,6 +1519,20 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiTrainingTimeEstimateResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiTrainingTimeEstimateResponse>;
 
+  listCloudProviders(
+    request: proto_clarifai_api_service_pb.ListCloudProvidersRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiCloudProviderResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiCloudProviderResponse>;
+
+  listCloudRegions(
+    request: proto_clarifai_api_service_pb.ListCloudRegionsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiCloudRegionResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiCloudRegionResponse>;
+
   listInstanceTypes(
     request: proto_clarifai_api_service_pb.ListInstanceTypesRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -1637,6 +1651,13 @@ export class V2Client {
     callback: (err: grpcWeb.RpcError,
                response: proto_clarifai_api_service_pb.MultiWorkflowEvaluationTemplateResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiWorkflowEvaluationTemplateResponse>;
+
+  listLogEntries(
+    request: proto_clarifai_api_service_pb.ListLogEntriesRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiLogEntryResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiLogEntryResponse>;
 
 }
 
@@ -2725,6 +2746,16 @@ export class V2PromiseClient {
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiTrainingTimeEstimateResponse>;
 
+  listCloudProviders(
+    request: proto_clarifai_api_service_pb.ListCloudProvidersRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiCloudProviderResponse>;
+
+  listCloudRegions(
+    request: proto_clarifai_api_service_pb.ListCloudRegionsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiCloudRegionResponse>;
+
   listInstanceTypes(
     request: proto_clarifai_api_service_pb.ListInstanceTypesRequest,
     metadata?: grpcWeb.Metadata
@@ -2809,6 +2840,11 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.ListWorkflowEvaluationTemplatesRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiWorkflowEvaluationTemplateResponse>;
+
+  listLogEntries(
+    request: proto_clarifai_api_service_pb.ListLogEntriesRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiLogEntryResponse>;
 
 }
 
