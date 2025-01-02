@@ -6403,6 +6403,11 @@ export class TaskReviewMetrics extends jspb.Message {
   getInputsCountEstimated(): number;
   setInputsCountEstimated(value: number): TaskReviewMetrics;
 
+  getInputsCountEstimatedPerReviewerList(): Array<number>;
+  setInputsCountEstimatedPerReviewerList(value: Array<number>): TaskReviewMetrics;
+  clearInputsCountEstimatedPerReviewerList(): TaskReviewMetrics;
+  addInputsCountEstimatedPerReviewer(value: number, index?: number): TaskReviewMetrics;
+
   getInputsPercentEstimated(): number;
   setInputsPercentEstimated(value: number): TaskReviewMetrics;
 
@@ -6417,6 +6422,7 @@ export class TaskReviewMetrics extends jspb.Message {
 export namespace TaskReviewMetrics {
   export type AsObject = {
     inputsCountEstimated: number,
+    inputsCountEstimatedPerReviewerList: Array<number>,
     inputsPercentEstimated: number,
   }
 }
@@ -7416,7 +7422,14 @@ export class Operation extends jspb.Message {
   hasSplitIntoDatasets(): boolean;
   clearSplitIntoDatasets(): Operation;
 
+  getDeleteAnnotations(): DeleteAnnotations | undefined;
+  setDeleteAnnotations(value?: DeleteAnnotations): Operation;
+  hasDeleteAnnotations(): boolean;
+  clearDeleteAnnotations(): Operation;
+
   getOperationCase(): Operation.OperationCase;
+
+  getAnnotationOperationCase(): Operation.AnnotationOperationCase;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Operation.AsObject;
@@ -7437,6 +7450,7 @@ export namespace Operation {
     deleteFromDataset?: DeleteFromDataset.AsObject,
     addToDataset?: AddToDataset.AsObject,
     splitIntoDatasets?: SplitIntoDatasets.AsObject,
+    deleteAnnotations?: DeleteAnnotations.AsObject,
   }
 
   export enum OperationCase { 
@@ -7450,6 +7464,11 @@ export namespace Operation {
     DELETE_FROM_DATASET = 7,
     ADD_TO_DATASET = 8,
     SPLIT_INTO_DATASETS = 9,
+  }
+
+  export enum AnnotationOperationCase { 
+    ANNOTATION_OPERATION_NOT_SET = 0,
+    DELETE_ANNOTATIONS = 10,
   }
 }
 
@@ -7666,6 +7685,20 @@ export namespace DatasetSplit {
   export enum MethodInfoCase { 
     METHOD_INFO_NOT_SET = 0,
     PERCENTAGE = 2,
+  }
+}
+
+export class DeleteAnnotations extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteAnnotations.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteAnnotations): DeleteAnnotations.AsObject;
+  static serializeBinaryToWriter(message: DeleteAnnotations, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteAnnotations;
+  static deserializeBinaryFromReader(message: DeleteAnnotations, reader: jspb.BinaryReader): DeleteAnnotations;
+}
+
+export namespace DeleteAnnotations {
+  export type AsObject = {
   }
 }
 
@@ -9211,6 +9244,9 @@ export enum EventType {
   WORKFLOW_VERSION_CREATE = 403,
   WORKFLOW_VERSION_UPDATE = 404,
   WORKFLOW_VERSION_DELETE = 405,
+  APPLICATION_CREATE = 600,
+  APPLICATION_UPDATE = 601,
+  APPLICATION_DELETE = 602,
   COLLABORATOR_ADD = 700,
   COLLABORATOR_UPDATE = 701,
   COLLABORATOR_REMOVE = 702,
