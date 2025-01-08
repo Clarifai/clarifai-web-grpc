@@ -8758,6 +8758,16 @@ export class AuditLogTarget extends jspb.Message {
   hasWorkflowVersion(): boolean;
   clearWorkflowVersion(): AuditLogTarget;
 
+  getModel(): Model | undefined;
+  setModel(value?: Model): AuditLogTarget;
+  hasModel(): boolean;
+  clearModel(): AuditLogTarget;
+
+  getModelVersion(): ModelVersion | undefined;
+  setModelVersion(value?: ModelVersion): AuditLogTarget;
+  hasModelVersion(): boolean;
+  clearModelVersion(): AuditLogTarget;
+
   getTargetCase(): AuditLogTarget.TargetCase;
 
   serializeBinary(): Uint8Array;
@@ -8778,6 +8788,8 @@ export namespace AuditLogTarget {
     moduleVersion?: ModuleVersion.AsObject,
     workflow?: Workflow.AsObject,
     workflowVersion?: WorkflowVersion.AsObject,
+    model?: Model.AsObject,
+    modelVersion?: ModelVersion.AsObject,
   }
 
   export enum TargetCase { 
@@ -8790,6 +8802,8 @@ export namespace AuditLogTarget {
     MODULE_VERSION = 6,
     WORKFLOW = 7,
     WORKFLOW_VERSION = 8,
+    MODEL = 9,
+    MODEL_VERSION = 10,
   }
 }
 
@@ -9218,6 +9232,12 @@ export enum EventType {
   MODULE_VERSION_CREATE = 203,
   MODULE_VERSION_UPDATE = 204,
   MODULE_VERSION_DELETE = 205,
+  MODEL_CREATE = 300,
+  MODEL_UPDATE = 301,
+  MODEL_DELETE = 302,
+  MODEL_VERSION_CREATE = 303,
+  MODEL_VERSION_UPDATE = 304,
+  MODEL_VERSION_DELETE = 305,
   WORKFLOW_CREATE = 400,
   WORKFLOW_UPDATE = 401,
   WORKFLOW_DELETE = 402,
@@ -9230,4 +9250,5 @@ export enum EventType {
   COLLABORATOR_ADD = 700,
   COLLABORATOR_UPDATE = 701,
   COLLABORATOR_REMOVE = 702,
+  USER_UPDATE = 800,
 }
