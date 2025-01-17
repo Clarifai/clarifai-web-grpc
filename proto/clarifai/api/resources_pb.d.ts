@@ -4354,6 +4354,12 @@ export class Output extends jspb.Message {
   hasData(): boolean;
   clearData(): Output;
 
+  getPromptTokens(): number;
+  setPromptTokens(value: number): Output;
+
+  getCompletionTokens(): number;
+  setCompletionTokens(value: number): Output;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Output.AsObject;
   static toObject(includeInstance: boolean, msg: Output): Output.AsObject;
@@ -4370,6 +4376,8 @@ export namespace Output {
     model?: Model.AsObject,
     input?: Input.AsObject,
     data?: Data.AsObject,
+    promptTokens: number,
+    completionTokens: number,
   }
 }
 
