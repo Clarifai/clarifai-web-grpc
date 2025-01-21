@@ -4478,6 +4478,9 @@ export class PostModelVersionsUploadConfig extends jspb.Message {
   getIsV3(): boolean;
   setIsV3(value: boolean): PostModelVersionsUploadConfig;
 
+  getStorageRequestSize(): number;
+  setStorageRequestSize(value: number): PostModelVersionsUploadConfig;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostModelVersionsUploadConfig.AsObject;
   static toObject(includeInstance: boolean, msg: PostModelVersionsUploadConfig): PostModelVersionsUploadConfig.AsObject;
@@ -4493,6 +4496,7 @@ export namespace PostModelVersionsUploadConfig {
     modelVersion?: proto_clarifai_api_resources_pb.ModelVersion.AsObject,
     totalSize: number,
     isV3: boolean,
+    storageRequestSize: number,
   }
 }
 
