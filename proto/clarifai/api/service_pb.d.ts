@@ -3048,6 +3048,9 @@ export class PostModelOutputsRequest extends jspb.Message {
   hasRunnerSelector(): boolean;
   clearRunnerSelector(): PostModelOutputsRequest;
 
+  getUsePredictCache(): boolean;
+  setUsePredictCache(value: boolean): PostModelOutputsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostModelOutputsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: PostModelOutputsRequest): PostModelOutputsRequest.AsObject;
@@ -3064,6 +3067,7 @@ export namespace PostModelOutputsRequest {
     inputsList: Array<proto_clarifai_api_resources_pb.Input.AsObject>,
     model?: proto_clarifai_api_resources_pb.Model.AsObject,
     runnerSelector?: proto_clarifai_api_resources_pb.RunnerSelector.AsObject,
+    usePredictCache: boolean,
   }
 }
 
