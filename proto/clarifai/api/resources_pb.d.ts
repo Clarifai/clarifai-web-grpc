@@ -8401,6 +8401,9 @@ export class InstanceType extends jspb.Message {
   hasComputeInfo(): boolean;
   clearComputeInfo(): InstanceType;
 
+  getPrice(): string;
+  setPrice(value: string): InstanceType;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InstanceType.AsObject;
   static toObject(includeInstance: boolean, msg: InstanceType): InstanceType.AsObject;
@@ -8414,6 +8417,7 @@ export namespace InstanceType {
     id: string,
     description: string,
     computeInfo?: ComputeInfo.AsObject,
+    price: string,
   }
 }
 
