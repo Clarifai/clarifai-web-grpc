@@ -1659,6 +1659,11 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiLogEntryResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiLogEntryResponse>;
 
+  streamLogEntries(
+    request: proto_clarifai_api_service_pb.StreamLogEntriesRequest,
+    metadata?: grpcWeb.Metadata
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiLogEntryResponse>;
+
 }
 
 export class V2PromiseClient {
@@ -2845,6 +2850,11 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.ListLogEntriesRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiLogEntryResponse>;
+
+  streamLogEntries(
+    request: proto_clarifai_api_service_pb.StreamLogEntriesRequest,
+    metadata?: grpcWeb.Metadata
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiLogEntryResponse>;
 
 }
 
