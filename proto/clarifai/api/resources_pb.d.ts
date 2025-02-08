@@ -9018,6 +9018,104 @@ export namespace WorkflowVersionEvaluationTemplate {
   }
 }
 
+export class ComputePlaneMetrics extends jspb.Message {
+  getMeta(): ComputeSourceMetadata | undefined;
+  setMeta(value?: ComputeSourceMetadata): ComputePlaneMetrics;
+  hasMeta(): boolean;
+  clearMeta(): ComputePlaneMetrics;
+
+  getCloud(): string;
+  setCloud(value: string): ComputePlaneMetrics;
+
+  getRegion(): string;
+  setRegion(value: string): ComputePlaneMetrics;
+
+  getInstanceType(): string;
+  setInstanceType(value: string): ComputePlaneMetrics;
+
+  getReservationType(): string;
+  setReservationType(value: string): ComputePlaneMetrics;
+
+  getReservationPrice(): number;
+  setReservationPrice(value: number): ComputePlaneMetrics;
+
+  getRuntimeS(): number;
+  setRuntimeS(value: number): ComputePlaneMetrics;
+
+  getTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): ComputePlaneMetrics;
+  hasTimestamp(): boolean;
+  clearTimestamp(): ComputePlaneMetrics;
+
+  getEventType(): string;
+  setEventType(value: string): ComputePlaneMetrics;
+
+  getGpuMetricsList(): Array<GpuMetrics>;
+  setGpuMetricsList(value: Array<GpuMetrics>): ComputePlaneMetrics;
+  clearGpuMetricsList(): ComputePlaneMetrics;
+  addGpuMetrics(value?: GpuMetrics, index?: number): GpuMetrics;
+
+  getHostname(): string;
+  setHostname(value: string): ComputePlaneMetrics;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ComputePlaneMetrics.AsObject;
+  static toObject(includeInstance: boolean, msg: ComputePlaneMetrics): ComputePlaneMetrics.AsObject;
+  static serializeBinaryToWriter(message: ComputePlaneMetrics, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ComputePlaneMetrics;
+  static deserializeBinaryFromReader(message: ComputePlaneMetrics, reader: jspb.BinaryReader): ComputePlaneMetrics;
+}
+
+export namespace ComputePlaneMetrics {
+  export type AsObject = {
+    meta?: ComputeSourceMetadata.AsObject,
+    cloud: string,
+    region: string,
+    instanceType: string,
+    reservationType: string,
+    reservationPrice: number,
+    runtimeS: number,
+    timestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    eventType: string,
+    gpuMetricsList: Array<GpuMetrics.AsObject>,
+    hostname: string,
+  }
+}
+
+export class GpuMetrics extends jspb.Message {
+  getUuid(): string;
+  setUuid(value: string): GpuMetrics;
+
+  getModelName(): string;
+  setModelName(value: string): GpuMetrics;
+
+  getUtilizationPct(): number;
+  setUtilizationPct(value: number): GpuMetrics;
+
+  getTensorUtilizationPct(): number;
+  setTensorUtilizationPct(value: number): GpuMetrics;
+
+  getMemoryUtilizationPct(): number;
+  setMemoryUtilizationPct(value: number): GpuMetrics;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GpuMetrics.AsObject;
+  static toObject(includeInstance: boolean, msg: GpuMetrics): GpuMetrics.AsObject;
+  static serializeBinaryToWriter(message: GpuMetrics, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GpuMetrics;
+  static deserializeBinaryFromReader(message: GpuMetrics, reader: jspb.BinaryReader): GpuMetrics;
+}
+
+export namespace GpuMetrics {
+  export type AsObject = {
+    uuid: string,
+    modelName: string,
+    utilizationPct: number,
+    tensorUtilizationPct: number,
+    memoryUtilizationPct: number,
+  }
+}
+
 export class LogEntry extends jspb.Message {
   getMessage(): string;
   setMessage(value: string): LogEntry;
