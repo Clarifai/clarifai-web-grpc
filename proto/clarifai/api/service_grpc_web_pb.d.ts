@@ -1652,13 +1652,6 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiWorkflowEvaluationTemplateResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiWorkflowEvaluationTemplateResponse>;
 
-  postLogEntries(
-    request: proto_clarifai_api_service_pb.PostLogEntriesRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
-
   listLogEntries(
     request: proto_clarifai_api_service_pb.ListLogEntriesRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -1670,13 +1663,6 @@ export class V2Client {
     request: proto_clarifai_api_service_pb.StreamLogEntriesRequest,
     metadata?: grpcWeb.Metadata
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiLogEntryResponse>;
-
-  postComputePlaneMetrics(
-    request: proto_clarifai_api_service_pb.PostComputePlaneMetricsRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
 
 }
 
@@ -2860,11 +2846,6 @@ export class V2PromiseClient {
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiWorkflowEvaluationTemplateResponse>;
 
-  postLogEntries(
-    request: proto_clarifai_api_service_pb.PostLogEntriesRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
-
   listLogEntries(
     request: proto_clarifai_api_service_pb.ListLogEntriesRequest,
     metadata?: grpcWeb.Metadata
@@ -2874,11 +2855,6 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.StreamLogEntriesRequest,
     metadata?: grpcWeb.Metadata
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiLogEntryResponse>;
-
-  postComputePlaneMetrics(
-    request: proto_clarifai_api_service_pb.PostComputePlaneMetricsRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
 
 }
 
