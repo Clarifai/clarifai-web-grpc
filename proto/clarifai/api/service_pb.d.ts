@@ -3107,6 +3107,46 @@ export namespace ListModelInputsRequest {
   }
 }
 
+export class PostComputePlaneMetricsRequest extends jspb.Message {
+  getComputePlaneMetricsList(): Array<proto_clarifai_api_resources_pb.ComputePlaneMetrics>;
+  setComputePlaneMetricsList(value: Array<proto_clarifai_api_resources_pb.ComputePlaneMetrics>): PostComputePlaneMetricsRequest;
+  clearComputePlaneMetricsList(): PostComputePlaneMetricsRequest;
+  addComputePlaneMetrics(value?: proto_clarifai_api_resources_pb.ComputePlaneMetrics, index?: number): proto_clarifai_api_resources_pb.ComputePlaneMetrics;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostComputePlaneMetricsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostComputePlaneMetricsRequest): PostComputePlaneMetricsRequest.AsObject;
+  static serializeBinaryToWriter(message: PostComputePlaneMetricsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostComputePlaneMetricsRequest;
+  static deserializeBinaryFromReader(message: PostComputePlaneMetricsRequest, reader: jspb.BinaryReader): PostComputePlaneMetricsRequest;
+}
+
+export namespace PostComputePlaneMetricsRequest {
+  export type AsObject = {
+    computePlaneMetricsList: Array<proto_clarifai_api_resources_pb.ComputePlaneMetrics.AsObject>,
+  }
+}
+
+export class PostLogEntriesRequest extends jspb.Message {
+  getLogEntriesList(): Array<proto_clarifai_api_resources_pb.LogEntry>;
+  setLogEntriesList(value: Array<proto_clarifai_api_resources_pb.LogEntry>): PostLogEntriesRequest;
+  clearLogEntriesList(): PostLogEntriesRequest;
+  addLogEntries(value?: proto_clarifai_api_resources_pb.LogEntry, index?: number): proto_clarifai_api_resources_pb.LogEntry;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostLogEntriesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostLogEntriesRequest): PostLogEntriesRequest.AsObject;
+  static serializeBinaryToWriter(message: PostLogEntriesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostLogEntriesRequest;
+  static deserializeBinaryFromReader(message: PostLogEntriesRequest, reader: jspb.BinaryReader): PostLogEntriesRequest;
+}
+
+export namespace PostLogEntriesRequest {
+  export type AsObject = {
+    logEntriesList: Array<proto_clarifai_api_resources_pb.LogEntry.AsObject>,
+  }
+}
+
 export class ListLogEntriesRequest extends jspb.Message {
   getPage(): number;
   setPage(value: number): ListLogEntriesRequest;
@@ -10570,6 +10610,9 @@ export class ListNodepoolsRequest extends jspb.Message {
   getPerPage(): number;
   setPerPage(value: number): ListNodepoolsRequest;
 
+  getMinRunnerReplicas(): number;
+  setMinRunnerReplicas(value: number): ListNodepoolsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListNodepoolsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListNodepoolsRequest): ListNodepoolsRequest.AsObject;
@@ -10584,6 +10627,7 @@ export namespace ListNodepoolsRequest {
     computeClusterId: string,
     page: number,
     perPage: number,
+    minRunnerReplicas: number,
   }
 }
 
