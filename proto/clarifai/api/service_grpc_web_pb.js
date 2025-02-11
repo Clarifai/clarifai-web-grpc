@@ -14428,6 +14428,67 @@ proto.clarifai.api.V2PromiseClient.prototype.listWorkflowEvaluationTemplates =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostLogEntriesRequest,
+ *   !proto.clarifai.api.status.BaseResponse>}
+ */
+const methodDescriptor_V2_PostLogEntries = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostLogEntries',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostLogEntriesRequest,
+  proto_clarifai_api_status_status_pb.BaseResponse,
+  /**
+   * @param {!proto.clarifai.api.PostLogEntriesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto_clarifai_api_status_status_pb.BaseResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostLogEntriesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.status.BaseResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.status.BaseResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postLogEntries =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostLogEntries',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostLogEntries,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostLogEntriesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.status.BaseResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postLogEntries =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostLogEntries',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostLogEntries);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.ListLogEntriesRequest,
  *   !proto.clarifai.api.MultiLogEntryResponse>}
  */
@@ -14483,6 +14544,123 @@ proto.clarifai.api.V2PromiseClient.prototype.listLogEntries =
       request,
       metadata || {},
       methodDescriptor_V2_ListLogEntries);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.StreamLogEntriesRequest,
+ *   !proto.clarifai.api.MultiLogEntryResponse>}
+ */
+const methodDescriptor_V2_StreamLogEntries = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/StreamLogEntries',
+  grpc.web.MethodType.SERVER_STREAMING,
+  proto.clarifai.api.StreamLogEntriesRequest,
+  proto.clarifai.api.MultiLogEntryResponse,
+  /**
+   * @param {!proto.clarifai.api.StreamLogEntriesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiLogEntryResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.StreamLogEntriesRequest} request The request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiLogEntryResponse>}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.streamLogEntries =
+    function(request, metadata) {
+  return this.client_.serverStreaming(this.hostname_ +
+      '/clarifai.api.V2/StreamLogEntries',
+      request,
+      metadata || {},
+      methodDescriptor_V2_StreamLogEntries);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.StreamLogEntriesRequest} request The request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiLogEntryResponse>}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2PromiseClient.prototype.streamLogEntries =
+    function(request, metadata) {
+  return this.client_.serverStreaming(this.hostname_ +
+      '/clarifai.api.V2/StreamLogEntries',
+      request,
+      metadata || {},
+      methodDescriptor_V2_StreamLogEntries);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostComputePlaneMetricsRequest,
+ *   !proto.clarifai.api.status.BaseResponse>}
+ */
+const methodDescriptor_V2_PostComputePlaneMetrics = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostComputePlaneMetrics',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostComputePlaneMetricsRequest,
+  proto_clarifai_api_status_status_pb.BaseResponse,
+  /**
+   * @param {!proto.clarifai.api.PostComputePlaneMetricsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto_clarifai_api_status_status_pb.BaseResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostComputePlaneMetricsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.status.BaseResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.status.BaseResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postComputePlaneMetrics =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostComputePlaneMetrics',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostComputePlaneMetrics,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostComputePlaneMetricsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.status.BaseResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postComputePlaneMetrics =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostComputePlaneMetrics',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostComputePlaneMetrics);
 };
 
 
