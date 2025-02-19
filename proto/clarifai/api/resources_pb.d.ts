@@ -2704,6 +2704,9 @@ export class Model extends jspb.Message {
   getVersionCount(): number;
   setVersionCount(value: number): Model;
 
+  getUsesTokens(): boolean;
+  setUsesTokens(value: boolean): Model;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Model.AsObject;
   static toObject(includeInstance: boolean, msg: Model): Model.AsObject;
@@ -2745,6 +2748,7 @@ export namespace Model {
     source: Model.Source,
     creator: string,
     versionCount: number,
+    usesTokens: boolean,
   }
 
   export enum Source { 
