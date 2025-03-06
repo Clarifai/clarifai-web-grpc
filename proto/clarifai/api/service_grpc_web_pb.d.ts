@@ -588,6 +588,13 @@ export class V2Client {
                response: proto_clarifai_api_status_status_pb.BaseResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
 
+  postModelMigration(
+    request: proto_clarifai_api_service_pb.PostModelMigrationRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleModelResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleModelResponse>;
+
   putModelVersionExports(
     request: proto_clarifai_api_service_pb.PutModelVersionExportsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -1678,6 +1685,34 @@ export class V2Client {
                response: proto_clarifai_api_status_status_pb.BaseResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
 
+  postWorkflowVersionEvaluations(
+    request: proto_clarifai_api_service_pb.PostWorkflowVersionEvaluationsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiWorkflowVersionEvaluationResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiWorkflowVersionEvaluationResponse>;
+
+  getWorkflowVersionEvaluation(
+    request: proto_clarifai_api_service_pb.GetWorkflowVersionEvaluationRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleWorkflowVersionEvaluationResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleWorkflowVersionEvaluationResponse>;
+
+  listWorkflowVersionEvaluations(
+    request: proto_clarifai_api_service_pb.ListWorkflowVersionEvaluationsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiWorkflowVersionEvaluationResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiWorkflowVersionEvaluationResponse>;
+
+  patchWorkflowVersionEvaluations(
+    request: proto_clarifai_api_service_pb.PatchWorkflowVersionEvaluationsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiWorkflowVersionEvaluationResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiWorkflowVersionEvaluationResponse>;
+
 }
 
 export class V2PromiseClient {
@@ -2099,6 +2134,11 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.DeleteModelVersionRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postModelMigration(
+    request: proto_clarifai_api_service_pb.PostModelMigrationRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleModelResponse>;
 
   putModelVersionExports(
     request: proto_clarifai_api_service_pb.PutModelVersionExportsRequest,
@@ -2879,6 +2919,26 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.PostComputePlaneMetricsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postWorkflowVersionEvaluations(
+    request: proto_clarifai_api_service_pb.PostWorkflowVersionEvaluationsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiWorkflowVersionEvaluationResponse>;
+
+  getWorkflowVersionEvaluation(
+    request: proto_clarifai_api_service_pb.GetWorkflowVersionEvaluationRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleWorkflowVersionEvaluationResponse>;
+
+  listWorkflowVersionEvaluations(
+    request: proto_clarifai_api_service_pb.ListWorkflowVersionEvaluationsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiWorkflowVersionEvaluationResponse>;
+
+  patchWorkflowVersionEvaluations(
+    request: proto_clarifai_api_service_pb.PatchWorkflowVersionEvaluationsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiWorkflowVersionEvaluationResponse>;
 
 }
 

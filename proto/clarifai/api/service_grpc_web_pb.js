@@ -5156,6 +5156,67 @@ proto.clarifai.api.V2PromiseClient.prototype.deleteModelVersion =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostModelMigrationRequest,
+ *   !proto.clarifai.api.SingleModelResponse>}
+ */
+const methodDescriptor_V2_PostModelMigration = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostModelMigration',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostModelMigrationRequest,
+  proto.clarifai.api.SingleModelResponse,
+  /**
+   * @param {!proto.clarifai.api.PostModelMigrationRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SingleModelResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostModelMigrationRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SingleModelResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleModelResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postModelMigration =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostModelMigration',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostModelMigration,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostModelMigrationRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.SingleModelResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postModelMigration =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostModelMigration',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostModelMigration);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.PutModelVersionExportsRequest,
  *   !proto.clarifai.api.SingleModelVersionExportResponse>}
  */
@@ -14661,6 +14722,250 @@ proto.clarifai.api.V2PromiseClient.prototype.postComputePlaneMetrics =
       request,
       metadata || {},
       methodDescriptor_V2_PostComputePlaneMetrics);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostWorkflowVersionEvaluationsRequest,
+ *   !proto.clarifai.api.MultiWorkflowVersionEvaluationResponse>}
+ */
+const methodDescriptor_V2_PostWorkflowVersionEvaluations = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostWorkflowVersionEvaluations',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostWorkflowVersionEvaluationsRequest,
+  proto.clarifai.api.MultiWorkflowVersionEvaluationResponse,
+  /**
+   * @param {!proto.clarifai.api.PostWorkflowVersionEvaluationsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiWorkflowVersionEvaluationResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostWorkflowVersionEvaluationsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiWorkflowVersionEvaluationResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiWorkflowVersionEvaluationResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postWorkflowVersionEvaluations =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostWorkflowVersionEvaluations',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostWorkflowVersionEvaluations,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostWorkflowVersionEvaluationsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiWorkflowVersionEvaluationResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postWorkflowVersionEvaluations =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostWorkflowVersionEvaluations',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostWorkflowVersionEvaluations);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.GetWorkflowVersionEvaluationRequest,
+ *   !proto.clarifai.api.SingleWorkflowVersionEvaluationResponse>}
+ */
+const methodDescriptor_V2_GetWorkflowVersionEvaluation = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/GetWorkflowVersionEvaluation',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.GetWorkflowVersionEvaluationRequest,
+  proto.clarifai.api.SingleWorkflowVersionEvaluationResponse,
+  /**
+   * @param {!proto.clarifai.api.GetWorkflowVersionEvaluationRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SingleWorkflowVersionEvaluationResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.GetWorkflowVersionEvaluationRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SingleWorkflowVersionEvaluationResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleWorkflowVersionEvaluationResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.getWorkflowVersionEvaluation =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/GetWorkflowVersionEvaluation',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetWorkflowVersionEvaluation,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.GetWorkflowVersionEvaluationRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.SingleWorkflowVersionEvaluationResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.getWorkflowVersionEvaluation =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/GetWorkflowVersionEvaluation',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetWorkflowVersionEvaluation);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListWorkflowVersionEvaluationsRequest,
+ *   !proto.clarifai.api.MultiWorkflowVersionEvaluationResponse>}
+ */
+const methodDescriptor_V2_ListWorkflowVersionEvaluations = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListWorkflowVersionEvaluations',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListWorkflowVersionEvaluationsRequest,
+  proto.clarifai.api.MultiWorkflowVersionEvaluationResponse,
+  /**
+   * @param {!proto.clarifai.api.ListWorkflowVersionEvaluationsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiWorkflowVersionEvaluationResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListWorkflowVersionEvaluationsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiWorkflowVersionEvaluationResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiWorkflowVersionEvaluationResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listWorkflowVersionEvaluations =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListWorkflowVersionEvaluations',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListWorkflowVersionEvaluations,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListWorkflowVersionEvaluationsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiWorkflowVersionEvaluationResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listWorkflowVersionEvaluations =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListWorkflowVersionEvaluations',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListWorkflowVersionEvaluations);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PatchWorkflowVersionEvaluationsRequest,
+ *   !proto.clarifai.api.MultiWorkflowVersionEvaluationResponse>}
+ */
+const methodDescriptor_V2_PatchWorkflowVersionEvaluations = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PatchWorkflowVersionEvaluations',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PatchWorkflowVersionEvaluationsRequest,
+  proto.clarifai.api.MultiWorkflowVersionEvaluationResponse,
+  /**
+   * @param {!proto.clarifai.api.PatchWorkflowVersionEvaluationsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiWorkflowVersionEvaluationResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PatchWorkflowVersionEvaluationsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiWorkflowVersionEvaluationResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiWorkflowVersionEvaluationResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.patchWorkflowVersionEvaluations =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PatchWorkflowVersionEvaluations',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PatchWorkflowVersionEvaluations,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PatchWorkflowVersionEvaluationsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiWorkflowVersionEvaluationResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.patchWorkflowVersionEvaluations =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PatchWorkflowVersionEvaluations',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PatchWorkflowVersionEvaluations);
 };
 
 
