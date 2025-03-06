@@ -9098,6 +9098,11 @@ export class ComputePlaneMetrics extends jspb.Message {
   getHostname(): string;
   setHostname(value: string): ComputePlaneMetrics;
 
+  getCpuMetricsList(): Array<CpuMetrics>;
+  setCpuMetricsList(value: Array<CpuMetrics>): ComputePlaneMetrics;
+  clearCpuMetricsList(): ComputePlaneMetrics;
+  addCpuMetrics(value?: CpuMetrics, index?: number): CpuMetrics;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ComputePlaneMetrics.AsObject;
   static toObject(includeInstance: boolean, msg: ComputePlaneMetrics): ComputePlaneMetrics.AsObject;
@@ -9119,6 +9124,7 @@ export namespace ComputePlaneMetrics {
     eventType: string,
     gpuMetricsList: Array<GpuMetrics.AsObject>,
     hostname: string,
+    cpuMetricsList: Array<CpuMetrics.AsObject>,
   }
 }
 
@@ -9153,6 +9159,42 @@ export namespace GpuMetrics {
     utilizationPct: number,
     tensorUtilizationPct: number,
     memoryUtilizationPct: number,
+  }
+}
+
+export class CpuMetrics extends jspb.Message {
+  getTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): CpuMetrics;
+  hasTimestamp(): boolean;
+  clearTimestamp(): CpuMetrics;
+
+  getCpuUtilizationPct(): number;
+  setCpuUtilizationPct(value: number): CpuMetrics;
+
+  getMemoryUtilizationPct(): number;
+  setMemoryUtilizationPct(value: number): CpuMetrics;
+
+  getMillicores(): number;
+  setMillicores(value: number): CpuMetrics;
+
+  getMemoryBytes(): number;
+  setMemoryBytes(value: number): CpuMetrics;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CpuMetrics.AsObject;
+  static toObject(includeInstance: boolean, msg: CpuMetrics): CpuMetrics.AsObject;
+  static serializeBinaryToWriter(message: CpuMetrics, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CpuMetrics;
+  static deserializeBinaryFromReader(message: CpuMetrics, reader: jspb.BinaryReader): CpuMetrics;
+}
+
+export namespace CpuMetrics {
+  export type AsObject = {
+    timestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    cpuUtilizationPct: number,
+    memoryUtilizationPct: number,
+    millicores: number,
+    memoryBytes: number,
   }
 }
 
