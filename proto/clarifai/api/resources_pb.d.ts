@@ -9266,6 +9266,15 @@ export class ComputeSourceMetadata extends jspb.Message {
   getRunnerId(): string;
   setRunnerId(value: string): ComputeSourceMetadata;
 
+  getPipelineId(): string;
+  setPipelineId(value: string): ComputeSourceMetadata;
+
+  getPipelineVersionId(): string;
+  setPipelineVersionId(value: string): ComputeSourceMetadata;
+
+  getPipelineVersionRunId(): string;
+  setPipelineVersionRunId(value: string): ComputeSourceMetadata;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ComputeSourceMetadata.AsObject;
   static toObject(includeInstance: boolean, msg: ComputeSourceMetadata): ComputeSourceMetadata.AsObject;
@@ -9283,6 +9292,9 @@ export namespace ComputeSourceMetadata {
     computeClusterId: string,
     nodepoolId: string,
     runnerId: string,
+    pipelineId: string,
+    pipelineVersionId: string,
+    pipelineVersionRunId: string,
   }
 }
 
