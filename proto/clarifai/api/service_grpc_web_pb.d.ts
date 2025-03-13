@@ -1498,6 +1498,13 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiRunnerResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiRunnerResponse>;
 
+  patchRunners(
+    request: proto_clarifai_api_service_pb.PatchRunnersRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiRunnerResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiRunnerResponse>;
+
   deleteRunners(
     request: proto_clarifai_api_service_pb.DeleteRunnersRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -2782,6 +2789,11 @@ export class V2PromiseClient {
 
   postRunners(
     request: proto_clarifai_api_service_pb.PostRunnersRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiRunnerResponse>;
+
+  patchRunners(
+    request: proto_clarifai_api_service_pb.PatchRunnersRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiRunnerResponse>;
 
