@@ -3565,10 +3565,10 @@ export class ModelVersion extends jspb.Message {
   hasBuildInfo(): boolean;
   clearBuildInfo(): ModelVersion;
 
-  getMethodSignatureList(): Array<MethodSignature>;
-  setMethodSignatureList(value: Array<MethodSignature>): ModelVersion;
-  clearMethodSignatureList(): ModelVersion;
-  addMethodSignature(value?: MethodSignature, index?: number): MethodSignature;
+  getMethodSignaturesList(): Array<MethodSignature>;
+  setMethodSignaturesList(value: Array<MethodSignature>): ModelVersion;
+  clearMethodSignaturesList(): ModelVersion;
+  addMethodSignatures(value?: MethodSignature, index?: number): MethodSignature;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelVersion.AsObject;
@@ -3602,7 +3602,7 @@ export namespace ModelVersion {
     trainLog: string,
     inferenceComputeInfo?: ComputeInfo.AsObject,
     buildInfo?: BuildInfo.AsObject,
-    methodSignatureList: Array<MethodSignature.AsObject>,
+    methodSignaturesList: Array<MethodSignature.AsObject>,
   }
 }
 
