@@ -4,6 +4,8 @@
 
 The official Clarifai gRPC client for use in client browser applications.
 
+NB! You cannot access Clarifai API directly from browser due to cross-origin restrictions that is put in place for security reasons (to prevent API token leaks). Please use a proxy server on your backend to have `FE -> BE -> Clarifai` chain of requests instead.
+
 [![NPM](https://nodei.co/npm/clarifai-web-grpc.png?downloads=true)](https://www.npmjs.com/package/clarifai-web-grpc)
 
 ## Installation
