@@ -9444,6 +9444,9 @@ export class WorkflowVersionEvaluation extends jspb.Message {
   hasModifiedAt(): boolean;
   clearModifiedAt(): WorkflowVersionEvaluation;
 
+  getTargetNodeId(): string;
+  setTargetNodeId(value: string): WorkflowVersionEvaluation;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WorkflowVersionEvaluation.AsObject;
   static toObject(includeInstance: boolean, msg: WorkflowVersionEvaluation): WorkflowVersionEvaluation.AsObject;
@@ -9466,6 +9469,7 @@ export namespace WorkflowVersionEvaluation {
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    targetNodeId: string,
   }
 }
 
