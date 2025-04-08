@@ -11217,6 +11217,11 @@ export class PostWorkflowVersionEvaluationsRequest extends jspb.Message {
   clearWorkflowVersionEvaluationsList(): PostWorkflowVersionEvaluationsRequest;
   addWorkflowVersionEvaluations(value?: proto_clarifai_api_resources_pb.WorkflowVersionEvaluation, index?: number): proto_clarifai_api_resources_pb.WorkflowVersionEvaluation;
 
+  getRunnerSelectorsList(): Array<proto_clarifai_api_resources_pb.RunnerSelector>;
+  setRunnerSelectorsList(value: Array<proto_clarifai_api_resources_pb.RunnerSelector>): PostWorkflowVersionEvaluationsRequest;
+  clearRunnerSelectorsList(): PostWorkflowVersionEvaluationsRequest;
+  addRunnerSelectors(value?: proto_clarifai_api_resources_pb.RunnerSelector, index?: number): proto_clarifai_api_resources_pb.RunnerSelector;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostWorkflowVersionEvaluationsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: PostWorkflowVersionEvaluationsRequest): PostWorkflowVersionEvaluationsRequest.AsObject;
@@ -11231,6 +11236,7 @@ export namespace PostWorkflowVersionEvaluationsRequest {
     workflowId: string,
     workflowVersionId: string,
     workflowVersionEvaluationsList: Array<proto_clarifai_api_resources_pb.WorkflowVersionEvaluation.AsObject>,
+    runnerSelectorsList: Array<proto_clarifai_api_resources_pb.RunnerSelector.AsObject>,
   }
 }
 
