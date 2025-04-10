@@ -10733,6 +10733,9 @@ export class ListNodepoolsRequest extends jspb.Message {
   getPerPage(): number;
   setPerPage(value: number): ListNodepoolsRequest;
 
+  getActiveUsage(): boolean;
+  setActiveUsage(value: boolean): ListNodepoolsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListNodepoolsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListNodepoolsRequest): ListNodepoolsRequest.AsObject;
@@ -10747,6 +10750,7 @@ export namespace ListNodepoolsRequest {
     computeClusterId: string,
     page: number,
     perPage: number,
+    activeUsage: boolean,
   }
 }
 
