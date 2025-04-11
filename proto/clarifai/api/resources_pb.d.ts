@@ -2707,6 +2707,11 @@ export class Model extends jspb.Message {
   getBillingType(): Model.BillingType;
   setBillingType(value: Model.BillingType): Model;
 
+  getFeaturedOrder(): google_protobuf_wrappers_pb.Int32Value | undefined;
+  setFeaturedOrder(value?: google_protobuf_wrappers_pb.Int32Value): Model;
+  hasFeaturedOrder(): boolean;
+  clearFeaturedOrder(): Model;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Model.AsObject;
   static toObject(includeInstance: boolean, msg: Model): Model.AsObject;
@@ -2749,6 +2754,7 @@ export namespace Model {
     creator: string,
     versionCount: number,
     billingType: Model.BillingType,
+    featuredOrder?: google_protobuf_wrappers_pb.Int32Value.AsObject,
   }
 
   export enum Source { 
