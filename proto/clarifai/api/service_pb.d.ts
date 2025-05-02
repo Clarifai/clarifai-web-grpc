@@ -6747,10 +6747,16 @@ export class GetWorkflowRequest extends jspb.Message {
   getWorkflowId(): string;
   setWorkflowId(value: string): GetWorkflowRequest;
 
+  getFavorClarifaiWorkflows(): boolean;
+  setFavorClarifaiWorkflows(value: boolean): GetWorkflowRequest;
+
   getAdditionalFieldsList(): Array<string>;
   setAdditionalFieldsList(value: Array<string>): GetWorkflowRequest;
   clearAdditionalFieldsList(): GetWorkflowRequest;
   addAdditionalFields(value: string, index?: number): GetWorkflowRequest;
+
+  getExcludeClarifaiWorkflows(): boolean;
+  setExcludeClarifaiWorkflows(value: boolean): GetWorkflowRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetWorkflowRequest.AsObject;
@@ -6764,7 +6770,9 @@ export namespace GetWorkflowRequest {
   export type AsObject = {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
     workflowId: string,
+    favorClarifaiWorkflows: boolean,
     additionalFieldsList: Array<string>,
+    excludeClarifaiWorkflows: boolean,
   }
 }
 
