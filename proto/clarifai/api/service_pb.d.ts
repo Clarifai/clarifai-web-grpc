@@ -5659,6 +5659,11 @@ export class MultiOutputResponse extends jspb.Message {
   clearOutputsList(): MultiOutputResponse;
   addOutputs(value?: proto_clarifai_api_resources_pb.Output, index?: number): proto_clarifai_api_resources_pb.Output;
 
+  getRunnerSelector(): proto_clarifai_api_resources_pb.RunnerSelector | undefined;
+  setRunnerSelector(value?: proto_clarifai_api_resources_pb.RunnerSelector): MultiOutputResponse;
+  hasRunnerSelector(): boolean;
+  clearRunnerSelector(): MultiOutputResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MultiOutputResponse.AsObject;
   static toObject(includeInstance: boolean, msg: MultiOutputResponse): MultiOutputResponse.AsObject;
@@ -5671,6 +5676,7 @@ export namespace MultiOutputResponse {
   export type AsObject = {
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     outputsList: Array<proto_clarifai_api_resources_pb.Output.AsObject>,
+    runnerSelector?: proto_clarifai_api_resources_pb.RunnerSelector.AsObject,
   }
 }
 
@@ -6747,16 +6753,10 @@ export class GetWorkflowRequest extends jspb.Message {
   getWorkflowId(): string;
   setWorkflowId(value: string): GetWorkflowRequest;
 
-  getFavorClarifaiWorkflows(): boolean;
-  setFavorClarifaiWorkflows(value: boolean): GetWorkflowRequest;
-
   getAdditionalFieldsList(): Array<string>;
   setAdditionalFieldsList(value: Array<string>): GetWorkflowRequest;
   clearAdditionalFieldsList(): GetWorkflowRequest;
   addAdditionalFields(value: string, index?: number): GetWorkflowRequest;
-
-  getExcludeClarifaiWorkflows(): boolean;
-  setExcludeClarifaiWorkflows(value: boolean): GetWorkflowRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetWorkflowRequest.AsObject;
@@ -6770,9 +6770,7 @@ export namespace GetWorkflowRequest {
   export type AsObject = {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
     workflowId: string,
-    favorClarifaiWorkflows: boolean,
     additionalFieldsList: Array<string>,
-    excludeClarifaiWorkflows: boolean,
   }
 }
 

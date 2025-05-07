@@ -6316,6 +6316,11 @@ export class TaskAIAssistant extends jspb.Message {
   getWorkflowId(): string;
   setWorkflowId(value: string): TaskAIAssistant;
 
+  getWorkflow(): Workflow | undefined;
+  setWorkflow(value?: Workflow): TaskAIAssistant;
+  hasWorkflow(): boolean;
+  clearWorkflow(): TaskAIAssistant;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TaskAIAssistant.AsObject;
   static toObject(includeInstance: boolean, msg: TaskAIAssistant): TaskAIAssistant.AsObject;
@@ -6327,6 +6332,7 @@ export class TaskAIAssistant extends jspb.Message {
 export namespace TaskAIAssistant {
   export type AsObject = {
     workflowId: string,
+    workflow?: Workflow.AsObject,
   }
 }
 
@@ -8575,6 +8581,11 @@ export class InstanceType extends jspb.Message {
   getRegion(): string;
   setRegion(value: string): InstanceType;
 
+  getAllowedCapacityTypes(): NodeCapacityType | undefined;
+  setAllowedCapacityTypes(value?: NodeCapacityType): InstanceType;
+  hasAllowedCapacityTypes(): boolean;
+  clearAllowedCapacityTypes(): InstanceType;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InstanceType.AsObject;
   static toObject(includeInstance: boolean, msg: InstanceType): InstanceType.AsObject;
@@ -8591,6 +8602,7 @@ export namespace InstanceType {
     price: string,
     cloudProvider?: CloudProvider.AsObject,
     region: string,
+    allowedCapacityTypes?: NodeCapacityType.AsObject,
   }
 }
 
@@ -9421,6 +9433,12 @@ export class ComputeSourceMetadata extends jspb.Message {
   getPipelineVersionRunId(): string;
   setPipelineVersionRunId(value: string): ComputeSourceMetadata;
 
+  getPipelineStepId(): string;
+  setPipelineStepId(value: string): ComputeSourceMetadata;
+
+  getPipelineStepVersionId(): string;
+  setPipelineStepVersionId(value: string): ComputeSourceMetadata;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ComputeSourceMetadata.AsObject;
   static toObject(includeInstance: boolean, msg: ComputeSourceMetadata): ComputeSourceMetadata.AsObject;
@@ -9441,6 +9459,8 @@ export namespace ComputeSourceMetadata {
     pipelineId: string,
     pipelineVersionId: string,
     pipelineVersionRunId: string,
+    pipelineStepId: string,
+    pipelineStepVersionId: string,
   }
 }
 
