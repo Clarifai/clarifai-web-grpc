@@ -30405,7 +30405,8 @@ proto.clarifai.api.ModelTypeField.toObject = function(includeInstance, msg) {
     typeArgsList: jspb.Message.toObjectList(msg.getTypeArgsList(),
     proto.clarifai.api.ModelTypeField.toObject, includeInstance),
     iterator: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
-    pb_default: jspb.Message.getFieldWithDefault(msg, 14, "")
+    pb_default: jspb.Message.getFieldWithDefault(msg, 14, ""),
+    isParam: jspb.Message.getBooleanFieldWithDefault(msg, 15, false)
   };
 
   if (includeInstance) {
@@ -30501,6 +30502,10 @@ proto.clarifai.api.ModelTypeField.deserializeBinaryFromReader = function(msg, re
     case 14:
       var value = /** @type {string} */ (reader.readString());
       msg.setDefault(value);
+      break;
+    case 15:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsParam(value);
       break;
     default:
       reader.skipField();
@@ -30633,6 +30638,13 @@ proto.clarifai.api.ModelTypeField.serializeBinaryToWriter = function(message, wr
       f
     );
   }
+  f = message.getIsParam();
+  if (f) {
+    writer.writeBool(
+      15,
+      f
+    );
+  }
 };
 
 
@@ -30683,9 +30695,9 @@ proto.clarifai.api.ModelTypeField.DataType = {
   FRAME: 12,
   AUDIO: 13,
   VIDEO: 14,
-  NAMED_FIELDS: 20,
-  TUPLE: 21,
-  LIST: 22
+  NAMED_FIELDS: 15,
+  TUPLE: 16,
+  LIST: 17
 };
 
 /**
@@ -31015,6 +31027,24 @@ proto.clarifai.api.ModelTypeField.prototype.getDefault = function() {
  */
 proto.clarifai.api.ModelTypeField.prototype.setDefault = function(value) {
   return jspb.Message.setProto3StringField(this, 14, value);
+};
+
+
+/**
+ * optional bool is_param = 15;
+ * @return {boolean}
+ */
+proto.clarifai.api.ModelTypeField.prototype.getIsParam = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.clarifai.api.ModelTypeField} returns this
+ */
+proto.clarifai.api.ModelTypeField.prototype.setIsParam = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 15, value);
 };
 
 
@@ -47808,7 +47838,8 @@ proto.clarifai.api.WorkflowVersion.toObject = function(includeInstance, msg) {
     appId: jspb.Message.getFieldWithDefault(msg, 8, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 9, ""),
     description: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    license: jspb.Message.getFieldWithDefault(msg, 11, "")
+    license: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    isDeprecated: jspb.Message.getBooleanFieldWithDefault(msg, 12, false)
   };
 
   if (includeInstance) {
@@ -47893,6 +47924,10 @@ proto.clarifai.api.WorkflowVersion.deserializeBinaryFromReader = function(msg, r
     case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.setLicense(value);
+      break;
+    case 12:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsDeprecated(value);
       break;
     default:
       reader.skipField();
@@ -48002,6 +48037,13 @@ proto.clarifai.api.WorkflowVersion.serializeBinaryToWriter = function(message, w
   if (f.length > 0) {
     writer.writeString(
       11,
+      f
+    );
+  }
+  f = message.getIsDeprecated();
+  if (f) {
+    writer.writeBool(
+      12,
       f
     );
   }
@@ -48299,6 +48341,24 @@ proto.clarifai.api.WorkflowVersion.prototype.getLicense = function() {
  */
 proto.clarifai.api.WorkflowVersion.prototype.setLicense = function(value) {
   return jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * optional bool is_deprecated = 12;
+ * @return {boolean}
+ */
+proto.clarifai.api.WorkflowVersion.prototype.getIsDeprecated = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.clarifai.api.WorkflowVersion} returns this
+ */
+proto.clarifai.api.WorkflowVersion.prototype.setIsDeprecated = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 12, value);
 };
 
 
@@ -70567,7 +70627,10 @@ proto.clarifai.api.InstanceType.toObject = function(includeInstance, msg) {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     description: jspb.Message.getFieldWithDefault(msg, 2, ""),
     computeInfo: (f = msg.getComputeInfo()) && proto.clarifai.api.ComputeInfo.toObject(includeInstance, f),
-    price: jspb.Message.getFieldWithDefault(msg, 4, "")
+    price: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    cloudProvider: (f = msg.getCloudProvider()) && proto.clarifai.api.CloudProvider.toObject(includeInstance, f),
+    region: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    allowedCapacityTypes: (f = msg.getAllowedCapacityTypes()) && proto.clarifai.api.NodeCapacityType.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -70620,6 +70683,20 @@ proto.clarifai.api.InstanceType.deserializeBinaryFromReader = function(msg, read
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setPrice(value);
+      break;
+    case 5:
+      var value = new proto.clarifai.api.CloudProvider;
+      reader.readMessage(value,proto.clarifai.api.CloudProvider.deserializeBinaryFromReader);
+      msg.setCloudProvider(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRegion(value);
+      break;
+    case 7:
+      var value = new proto.clarifai.api.NodeCapacityType;
+      reader.readMessage(value,proto.clarifai.api.NodeCapacityType.deserializeBinaryFromReader);
+      msg.setAllowedCapacityTypes(value);
       break;
     default:
       reader.skipField();
@@ -70677,6 +70754,29 @@ proto.clarifai.api.InstanceType.serializeBinaryToWriter = function(message, writ
     writer.writeString(
       4,
       f
+    );
+  }
+  f = message.getCloudProvider();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      proto.clarifai.api.CloudProvider.serializeBinaryToWriter
+    );
+  }
+  f = message.getRegion();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = message.getAllowedCapacityTypes();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      proto.clarifai.api.NodeCapacityType.serializeBinaryToWriter
     );
   }
 };
@@ -70770,6 +70870,98 @@ proto.clarifai.api.InstanceType.prototype.getPrice = function() {
  */
 proto.clarifai.api.InstanceType.prototype.setPrice = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional CloudProvider cloud_provider = 5;
+ * @return {?proto.clarifai.api.CloudProvider}
+ */
+proto.clarifai.api.InstanceType.prototype.getCloudProvider = function() {
+  return /** @type{?proto.clarifai.api.CloudProvider} */ (
+    jspb.Message.getWrapperField(this, proto.clarifai.api.CloudProvider, 5));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.CloudProvider|undefined} value
+ * @return {!proto.clarifai.api.InstanceType} returns this
+*/
+proto.clarifai.api.InstanceType.prototype.setCloudProvider = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.InstanceType} returns this
+ */
+proto.clarifai.api.InstanceType.prototype.clearCloudProvider = function() {
+  return this.setCloudProvider(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.InstanceType.prototype.hasCloudProvider = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string region = 6;
+ * @return {string}
+ */
+proto.clarifai.api.InstanceType.prototype.getRegion = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.clarifai.api.InstanceType} returns this
+ */
+proto.clarifai.api.InstanceType.prototype.setRegion = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional NodeCapacityType allowed_capacity_types = 7;
+ * @return {?proto.clarifai.api.NodeCapacityType}
+ */
+proto.clarifai.api.InstanceType.prototype.getAllowedCapacityTypes = function() {
+  return /** @type{?proto.clarifai.api.NodeCapacityType} */ (
+    jspb.Message.getWrapperField(this, proto.clarifai.api.NodeCapacityType, 7));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.NodeCapacityType|undefined} value
+ * @return {!proto.clarifai.api.InstanceType} returns this
+*/
+proto.clarifai.api.InstanceType.prototype.setAllowedCapacityTypes = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.InstanceType} returns this
+ */
+proto.clarifai.api.InstanceType.prototype.clearAllowedCapacityTypes = function() {
+  return this.setAllowedCapacityTypes(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.InstanceType.prototype.hasAllowedCapacityTypes = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -71509,6 +71701,8 @@ proto.clarifai.api.ComputeInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
     cpuLimit: jspb.Message.getFieldWithDefault(msg, 6, ""),
     cpuMemory: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    cpuRequests: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    cpuMemoryRequests: jspb.Message.getFieldWithDefault(msg, 8, ""),
     numAccelerators: jspb.Message.getFieldWithDefault(msg, 3, 0),
     acceleratorMemory: jspb.Message.getFieldWithDefault(msg, 4, ""),
     acceleratorTypeList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
@@ -71555,6 +71749,14 @@ proto.clarifai.api.ComputeInfo.deserializeBinaryFromReader = function(msg, reade
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setCpuMemory(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCpuRequests(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCpuMemoryRequests(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readUint32());
@@ -71608,6 +71810,20 @@ proto.clarifai.api.ComputeInfo.serializeBinaryToWriter = function(message, write
   if (f.length > 0) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = message.getCpuRequests();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = message.getCpuMemoryRequests();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -71668,6 +71884,42 @@ proto.clarifai.api.ComputeInfo.prototype.getCpuMemory = function() {
  */
 proto.clarifai.api.ComputeInfo.prototype.setCpuMemory = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string cpu_requests = 7;
+ * @return {string}
+ */
+proto.clarifai.api.ComputeInfo.prototype.getCpuRequests = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.clarifai.api.ComputeInfo} returns this
+ */
+proto.clarifai.api.ComputeInfo.prototype.setCpuRequests = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string cpu_memory_requests = 8;
+ * @return {string}
+ */
+proto.clarifai.api.ComputeInfo.prototype.getCpuMemoryRequests = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.clarifai.api.ComputeInfo} returns this
+ */
+proto.clarifai.api.ComputeInfo.prototype.setCpuMemoryRequests = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
@@ -72104,7 +72356,8 @@ proto.clarifai.api.Deployment.toObject = function(includeInstance, msg) {
     description: jspb.Message.getFieldWithDefault(msg, 10, ""),
     worker: (f = msg.getWorker()) && proto.clarifai.api.Worker.toObject(includeInstance, f),
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    deployLatestVersion: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
   };
 
   if (includeInstance) {
@@ -72191,6 +72444,10 @@ proto.clarifai.api.Deployment.deserializeBinaryFromReader = function(msg, reader
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setModifiedAt(value);
+      break;
+    case 14:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDeployLatestVersion(value);
       break;
     default:
       reader.skipField();
@@ -72303,6 +72560,13 @@ proto.clarifai.api.Deployment.serializeBinaryToWriter = function(message, writer
       13,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getDeployLatestVersion();
+  if (f) {
+    writer.writeBool(
+      14,
+      f
     );
   }
 };
@@ -72652,6 +72916,24 @@ proto.clarifai.api.Deployment.prototype.clearModifiedAt = function() {
  */
 proto.clarifai.api.Deployment.prototype.hasModifiedAt = function() {
   return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional bool deploy_latest_version = 14;
+ * @return {boolean}
+ */
+proto.clarifai.api.Deployment.prototype.getDeployLatestVersion = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.clarifai.api.Deployment} returns this
+ */
+proto.clarifai.api.Deployment.prototype.setDeployLatestVersion = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 14, value);
 };
 
 
@@ -73128,7 +73410,7 @@ proto.clarifai.api.ProcessingInfo.prototype.setProcessingId = function(value) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.clarifai.api.AuditLogTarget.oneofGroups_ = [[1,2,3,4,5,6,7,8,9,10]];
+proto.clarifai.api.AuditLogTarget.oneofGroups_ = [[1,2,3,4,5,6,7,8,9,10,11,12,13]];
 
 /**
  * @enum {number}
@@ -73144,7 +73426,10 @@ proto.clarifai.api.AuditLogTarget.TargetCase = {
   WORKFLOW: 7,
   WORKFLOW_VERSION: 8,
   MODEL: 9,
-  MODEL_VERSION: 10
+  MODEL_VERSION: 10,
+  COMPUTE_CLUSTER: 11,
+  NODEPOOL: 12,
+  DEPLOYMENT: 13
 };
 
 /**
@@ -73194,7 +73479,10 @@ proto.clarifai.api.AuditLogTarget.toObject = function(includeInstance, msg) {
     workflow: (f = msg.getWorkflow()) && proto.clarifai.api.Workflow.toObject(includeInstance, f),
     workflowVersion: (f = msg.getWorkflowVersion()) && proto.clarifai.api.WorkflowVersion.toObject(includeInstance, f),
     model: (f = msg.getModel()) && proto.clarifai.api.Model.toObject(includeInstance, f),
-    modelVersion: (f = msg.getModelVersion()) && proto.clarifai.api.ModelVersion.toObject(includeInstance, f)
+    modelVersion: (f = msg.getModelVersion()) && proto.clarifai.api.ModelVersion.toObject(includeInstance, f),
+    computeCluster: (f = msg.getComputeCluster()) && proto.clarifai.api.ComputeCluster.toObject(includeInstance, f),
+    nodepool: (f = msg.getNodepool()) && proto.clarifai.api.Nodepool.toObject(includeInstance, f),
+    deployment: (f = msg.getDeployment()) && proto.clarifai.api.Deployment.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -73280,6 +73568,21 @@ proto.clarifai.api.AuditLogTarget.deserializeBinaryFromReader = function(msg, re
       var value = new proto.clarifai.api.ModelVersion;
       reader.readMessage(value,proto.clarifai.api.ModelVersion.deserializeBinaryFromReader);
       msg.setModelVersion(value);
+      break;
+    case 11:
+      var value = new proto.clarifai.api.ComputeCluster;
+      reader.readMessage(value,proto.clarifai.api.ComputeCluster.deserializeBinaryFromReader);
+      msg.setComputeCluster(value);
+      break;
+    case 12:
+      var value = new proto.clarifai.api.Nodepool;
+      reader.readMessage(value,proto.clarifai.api.Nodepool.deserializeBinaryFromReader);
+      msg.setNodepool(value);
+      break;
+    case 13:
+      var value = new proto.clarifai.api.Deployment;
+      reader.readMessage(value,proto.clarifai.api.Deployment.deserializeBinaryFromReader);
+      msg.setDeployment(value);
       break;
     default:
       reader.skipField();
@@ -73388,6 +73691,30 @@ proto.clarifai.api.AuditLogTarget.serializeBinaryToWriter = function(message, wr
       10,
       f,
       proto.clarifai.api.ModelVersion.serializeBinaryToWriter
+    );
+  }
+  f = message.getComputeCluster();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      proto.clarifai.api.ComputeCluster.serializeBinaryToWriter
+    );
+  }
+  f = message.getNodepool();
+  if (f != null) {
+    writer.writeMessage(
+      12,
+      f,
+      proto.clarifai.api.Nodepool.serializeBinaryToWriter
+    );
+  }
+  f = message.getDeployment();
+  if (f != null) {
+    writer.writeMessage(
+      13,
+      f,
+      proto.clarifai.api.Deployment.serializeBinaryToWriter
     );
   }
 };
@@ -73760,6 +74087,117 @@ proto.clarifai.api.AuditLogTarget.prototype.clearModelVersion = function() {
  */
 proto.clarifai.api.AuditLogTarget.prototype.hasModelVersion = function() {
   return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional ComputeCluster compute_cluster = 11;
+ * @return {?proto.clarifai.api.ComputeCluster}
+ */
+proto.clarifai.api.AuditLogTarget.prototype.getComputeCluster = function() {
+  return /** @type{?proto.clarifai.api.ComputeCluster} */ (
+    jspb.Message.getWrapperField(this, proto.clarifai.api.ComputeCluster, 11));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.ComputeCluster|undefined} value
+ * @return {!proto.clarifai.api.AuditLogTarget} returns this
+*/
+proto.clarifai.api.AuditLogTarget.prototype.setComputeCluster = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 11, proto.clarifai.api.AuditLogTarget.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.AuditLogTarget} returns this
+ */
+proto.clarifai.api.AuditLogTarget.prototype.clearComputeCluster = function() {
+  return this.setComputeCluster(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.AuditLogTarget.prototype.hasComputeCluster = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional Nodepool nodepool = 12;
+ * @return {?proto.clarifai.api.Nodepool}
+ */
+proto.clarifai.api.AuditLogTarget.prototype.getNodepool = function() {
+  return /** @type{?proto.clarifai.api.Nodepool} */ (
+    jspb.Message.getWrapperField(this, proto.clarifai.api.Nodepool, 12));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.Nodepool|undefined} value
+ * @return {!proto.clarifai.api.AuditLogTarget} returns this
+*/
+proto.clarifai.api.AuditLogTarget.prototype.setNodepool = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 12, proto.clarifai.api.AuditLogTarget.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.AuditLogTarget} returns this
+ */
+proto.clarifai.api.AuditLogTarget.prototype.clearNodepool = function() {
+  return this.setNodepool(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.AuditLogTarget.prototype.hasNodepool = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional Deployment deployment = 13;
+ * @return {?proto.clarifai.api.Deployment}
+ */
+proto.clarifai.api.AuditLogTarget.prototype.getDeployment = function() {
+  return /** @type{?proto.clarifai.api.Deployment} */ (
+    jspb.Message.getWrapperField(this, proto.clarifai.api.Deployment, 13));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.Deployment|undefined} value
+ * @return {!proto.clarifai.api.AuditLogTarget} returns this
+*/
+proto.clarifai.api.AuditLogTarget.prototype.setDeployment = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 13, proto.clarifai.api.AuditLogTarget.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.clarifai.api.AuditLogTarget} returns this
+ */
+proto.clarifai.api.AuditLogTarget.prototype.clearDeployment = function() {
+  return this.setDeployment(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.AuditLogTarget.prototype.hasDeployment = function() {
+  return jspb.Message.getField(this, 13) != null;
 };
 
 
@@ -76591,7 +77029,9 @@ proto.clarifai.api.ComputeSourceMetadata.toObject = function(includeInstance, ms
     runnerId: jspb.Message.getFieldWithDefault(msg, 8, ""),
     pipelineId: jspb.Message.getFieldWithDefault(msg, 9, ""),
     pipelineVersionId: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    pipelineVersionRunId: jspb.Message.getFieldWithDefault(msg, 11, "")
+    pipelineVersionRunId: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    pipelineStepId: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    pipelineStepVersionId: jspb.Message.getFieldWithDefault(msg, 13, "")
   };
 
   if (includeInstance) {
@@ -76668,6 +77108,14 @@ proto.clarifai.api.ComputeSourceMetadata.deserializeBinaryFromReader = function(
     case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.setPipelineVersionRunId(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPipelineStepId(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPipelineStepVersionId(value);
       break;
     default:
       reader.skipField();
@@ -76766,6 +77214,20 @@ proto.clarifai.api.ComputeSourceMetadata.serializeBinaryToWriter = function(mess
   if (f.length > 0) {
     writer.writeString(
       11,
+      f
+    );
+  }
+  f = message.getPipelineStepId();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
+      f
+    );
+  }
+  f = message.getPipelineStepVersionId();
+  if (f.length > 0) {
+    writer.writeString(
+      13,
       f
     );
   }
@@ -76971,6 +77433,42 @@ proto.clarifai.api.ComputeSourceMetadata.prototype.setPipelineVersionRunId = fun
 };
 
 
+/**
+ * optional string pipeline_step_id = 12;
+ * @return {string}
+ */
+proto.clarifai.api.ComputeSourceMetadata.prototype.getPipelineStepId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.clarifai.api.ComputeSourceMetadata} returns this
+ */
+proto.clarifai.api.ComputeSourceMetadata.prototype.setPipelineStepId = function(value) {
+  return jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
+/**
+ * optional string pipeline_step_version_id = 13;
+ * @return {string}
+ */
+proto.clarifai.api.ComputeSourceMetadata.prototype.getPipelineStepVersionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.clarifai.api.ComputeSourceMetadata} returns this
+ */
+proto.clarifai.api.ComputeSourceMetadata.prototype.setPipelineStepVersionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 13, value);
+};
+
+
 
 
 
@@ -77004,18 +77502,17 @@ proto.clarifai.api.WorkflowVersionEvaluation.prototype.toObject = function(opt_i
 proto.clarifai.api.WorkflowVersionEvaluation.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    workflowId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    workflowVersionId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    groundTruthDatasetId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    groundTruthDatasetVersionId: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    predictionsDatasetId: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    predictionsDatasetVersionId: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    evaluationTemplateId: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    workflowVersion: (f = msg.getWorkflowVersion()) && proto.clarifai.api.WorkflowVersion.toObject(includeInstance, f),
+    targetNodeId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    groundTruthDatasetVersion: (f = msg.getGroundTruthDatasetVersion()) && proto.clarifai.api.DatasetVersion.toObject(includeInstance, f),
+    predictionsDatasetVersion: (f = msg.getPredictionsDatasetVersion()) && proto.clarifai.api.DatasetVersion.toObject(includeInstance, f),
+    workflowVersionEvaluationTemplate: (f = msg.getWorkflowVersionEvaluationTemplate()) && proto.clarifai.api.WorkflowVersionEvaluationTemplate.toObject(includeInstance, f),
+    userId: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    appId: jspb.Message.getFieldWithDefault(msg, 8, ""),
     workflowEvaluationResult: (f = msg.getWorkflowEvaluationResult()) && proto.clarifai.api.WorkflowEvaluationResult.toObject(includeInstance, f),
     status: (f = msg.getStatus()) && proto_clarifai_api_status_status_pb.Status.toObject(includeInstance, f),
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    targetNodeId: jspb.Message.getFieldWithDefault(msg, 13, "")
+    modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -77057,32 +77554,36 @@ proto.clarifai.api.WorkflowVersionEvaluation.deserializeBinaryFromReader = funct
       msg.setId(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setWorkflowId(value);
+      var value = new proto.clarifai.api.WorkflowVersion;
+      reader.readMessage(value,proto.clarifai.api.WorkflowVersion.deserializeBinaryFromReader);
+      msg.setWorkflowVersion(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setWorkflowVersionId(value);
+      msg.setTargetNodeId(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setGroundTruthDatasetId(value);
+      var value = new proto.clarifai.api.DatasetVersion;
+      reader.readMessage(value,proto.clarifai.api.DatasetVersion.deserializeBinaryFromReader);
+      msg.setGroundTruthDatasetVersion(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setGroundTruthDatasetVersionId(value);
+      var value = new proto.clarifai.api.DatasetVersion;
+      reader.readMessage(value,proto.clarifai.api.DatasetVersion.deserializeBinaryFromReader);
+      msg.setPredictionsDatasetVersion(value);
       break;
     case 6:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPredictionsDatasetId(value);
+      var value = new proto.clarifai.api.WorkflowVersionEvaluationTemplate;
+      reader.readMessage(value,proto.clarifai.api.WorkflowVersionEvaluationTemplate.deserializeBinaryFromReader);
+      msg.setWorkflowVersionEvaluationTemplate(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPredictionsDatasetVersionId(value);
+      msg.setUserId(value);
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
-      msg.setEvaluationTemplateId(value);
+      msg.setAppId(value);
       break;
     case 9:
       var value = new proto.clarifai.api.WorkflowEvaluationResult;
@@ -77103,10 +77604,6 @@ proto.clarifai.api.WorkflowVersionEvaluation.deserializeBinaryFromReader = funct
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setModifiedAt(value);
-      break;
-    case 13:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setTargetNodeId(value);
       break;
     default:
       reader.skipField();
@@ -77144,49 +77641,53 @@ proto.clarifai.api.WorkflowVersionEvaluation.serializeBinaryToWriter = function(
       f
     );
   }
-  f = message.getWorkflowId();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getWorkflowVersion();
+  if (f != null) {
+    writer.writeMessage(
       2,
-      f
+      f,
+      proto.clarifai.api.WorkflowVersion.serializeBinaryToWriter
     );
   }
-  f = message.getWorkflowVersionId();
+  f = message.getTargetNodeId();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getGroundTruthDatasetId();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getGroundTruthDatasetVersion();
+  if (f != null) {
+    writer.writeMessage(
       4,
-      f
+      f,
+      proto.clarifai.api.DatasetVersion.serializeBinaryToWriter
     );
   }
-  f = message.getGroundTruthDatasetVersionId();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getPredictionsDatasetVersion();
+  if (f != null) {
+    writer.writeMessage(
       5,
-      f
+      f,
+      proto.clarifai.api.DatasetVersion.serializeBinaryToWriter
     );
   }
-  f = message.getPredictionsDatasetId();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getWorkflowVersionEvaluationTemplate();
+  if (f != null) {
+    writer.writeMessage(
       6,
-      f
+      f,
+      proto.clarifai.api.WorkflowVersionEvaluationTemplate.serializeBinaryToWriter
     );
   }
-  f = message.getPredictionsDatasetVersionId();
+  f = message.getUserId();
   if (f.length > 0) {
     writer.writeString(
       7,
       f
     );
   }
-  f = message.getEvaluationTemplateId();
+  f = message.getAppId();
   if (f.length > 0) {
     writer.writeString(
       8,
@@ -77225,13 +77726,6 @@ proto.clarifai.api.WorkflowVersionEvaluation.serializeBinaryToWriter = function(
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = message.getTargetNodeId();
-  if (f.length > 0) {
-    writer.writeString(
-      13,
-      f
-    );
-  }
 };
 
 
@@ -77254,28 +77748,47 @@ proto.clarifai.api.WorkflowVersionEvaluation.prototype.setId = function(value) {
 
 
 /**
- * optional string workflow_id = 2;
- * @return {string}
+ * optional WorkflowVersion workflow_version = 2;
+ * @return {?proto.clarifai.api.WorkflowVersion}
  */
-proto.clarifai.api.WorkflowVersionEvaluation.prototype.getWorkflowId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.clarifai.api.WorkflowVersionEvaluation.prototype.getWorkflowVersion = function() {
+  return /** @type{?proto.clarifai.api.WorkflowVersion} */ (
+    jspb.Message.getWrapperField(this, proto.clarifai.api.WorkflowVersion, 2));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.clarifai.api.WorkflowVersion|undefined} value
+ * @return {!proto.clarifai.api.WorkflowVersionEvaluation} returns this
+*/
+proto.clarifai.api.WorkflowVersionEvaluation.prototype.setWorkflowVersion = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.clarifai.api.WorkflowVersionEvaluation} returns this
  */
-proto.clarifai.api.WorkflowVersionEvaluation.prototype.setWorkflowId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.clarifai.api.WorkflowVersionEvaluation.prototype.clearWorkflowVersion = function() {
+  return this.setWorkflowVersion(undefined);
 };
 
 
 /**
- * optional string workflow_version_id = 3;
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.WorkflowVersionEvaluation.prototype.hasWorkflowVersion = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string target_node_id = 3;
  * @return {string}
  */
-proto.clarifai.api.WorkflowVersionEvaluation.prototype.getWorkflowVersionId = function() {
+proto.clarifai.api.WorkflowVersionEvaluation.prototype.getTargetNodeId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -77284,70 +77797,127 @@ proto.clarifai.api.WorkflowVersionEvaluation.prototype.getWorkflowVersionId = fu
  * @param {string} value
  * @return {!proto.clarifai.api.WorkflowVersionEvaluation} returns this
  */
-proto.clarifai.api.WorkflowVersionEvaluation.prototype.setWorkflowVersionId = function(value) {
+proto.clarifai.api.WorkflowVersionEvaluation.prototype.setTargetNodeId = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string ground_truth_dataset_id = 4;
- * @return {string}
+ * optional DatasetVersion ground_truth_dataset_version = 4;
+ * @return {?proto.clarifai.api.DatasetVersion}
  */
-proto.clarifai.api.WorkflowVersionEvaluation.prototype.getGroundTruthDatasetId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+proto.clarifai.api.WorkflowVersionEvaluation.prototype.getGroundTruthDatasetVersion = function() {
+  return /** @type{?proto.clarifai.api.DatasetVersion} */ (
+    jspb.Message.getWrapperField(this, proto.clarifai.api.DatasetVersion, 4));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.clarifai.api.DatasetVersion|undefined} value
+ * @return {!proto.clarifai.api.WorkflowVersionEvaluation} returns this
+*/
+proto.clarifai.api.WorkflowVersionEvaluation.prototype.setGroundTruthDatasetVersion = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.clarifai.api.WorkflowVersionEvaluation} returns this
  */
-proto.clarifai.api.WorkflowVersionEvaluation.prototype.setGroundTruthDatasetId = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+proto.clarifai.api.WorkflowVersionEvaluation.prototype.clearGroundTruthDatasetVersion = function() {
+  return this.setGroundTruthDatasetVersion(undefined);
 };
 
 
 /**
- * optional string ground_truth_dataset_version_id = 5;
- * @return {string}
+ * Returns whether this field is set.
+ * @return {boolean}
  */
-proto.clarifai.api.WorkflowVersionEvaluation.prototype.getGroundTruthDatasetVersionId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+proto.clarifai.api.WorkflowVersionEvaluation.prototype.hasGroundTruthDatasetVersion = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * @param {string} value
+ * optional DatasetVersion predictions_dataset_version = 5;
+ * @return {?proto.clarifai.api.DatasetVersion}
+ */
+proto.clarifai.api.WorkflowVersionEvaluation.prototype.getPredictionsDatasetVersion = function() {
+  return /** @type{?proto.clarifai.api.DatasetVersion} */ (
+    jspb.Message.getWrapperField(this, proto.clarifai.api.DatasetVersion, 5));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.DatasetVersion|undefined} value
+ * @return {!proto.clarifai.api.WorkflowVersionEvaluation} returns this
+*/
+proto.clarifai.api.WorkflowVersionEvaluation.prototype.setPredictionsDatasetVersion = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.clarifai.api.WorkflowVersionEvaluation} returns this
  */
-proto.clarifai.api.WorkflowVersionEvaluation.prototype.setGroundTruthDatasetVersionId = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+proto.clarifai.api.WorkflowVersionEvaluation.prototype.clearPredictionsDatasetVersion = function() {
+  return this.setPredictionsDatasetVersion(undefined);
 };
 
 
 /**
- * optional string predictions_dataset_id = 6;
- * @return {string}
+ * Returns whether this field is set.
+ * @return {boolean}
  */
-proto.clarifai.api.WorkflowVersionEvaluation.prototype.getPredictionsDatasetId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+proto.clarifai.api.WorkflowVersionEvaluation.prototype.hasPredictionsDatasetVersion = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * @param {string} value
+ * optional WorkflowVersionEvaluationTemplate workflow_version_evaluation_template = 6;
+ * @return {?proto.clarifai.api.WorkflowVersionEvaluationTemplate}
+ */
+proto.clarifai.api.WorkflowVersionEvaluation.prototype.getWorkflowVersionEvaluationTemplate = function() {
+  return /** @type{?proto.clarifai.api.WorkflowVersionEvaluationTemplate} */ (
+    jspb.Message.getWrapperField(this, proto.clarifai.api.WorkflowVersionEvaluationTemplate, 6));
+};
+
+
+/**
+ * @param {?proto.clarifai.api.WorkflowVersionEvaluationTemplate|undefined} value
+ * @return {!proto.clarifai.api.WorkflowVersionEvaluation} returns this
+*/
+proto.clarifai.api.WorkflowVersionEvaluation.prototype.setWorkflowVersionEvaluationTemplate = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.clarifai.api.WorkflowVersionEvaluation} returns this
  */
-proto.clarifai.api.WorkflowVersionEvaluation.prototype.setPredictionsDatasetId = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
+proto.clarifai.api.WorkflowVersionEvaluation.prototype.clearWorkflowVersionEvaluationTemplate = function() {
+  return this.setWorkflowVersionEvaluationTemplate(undefined);
 };
 
 
 /**
- * optional string predictions_dataset_version_id = 7;
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.clarifai.api.WorkflowVersionEvaluation.prototype.hasWorkflowVersionEvaluationTemplate = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional string user_id = 7;
  * @return {string}
  */
-proto.clarifai.api.WorkflowVersionEvaluation.prototype.getPredictionsDatasetVersionId = function() {
+proto.clarifai.api.WorkflowVersionEvaluation.prototype.getUserId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
@@ -77356,16 +77926,16 @@ proto.clarifai.api.WorkflowVersionEvaluation.prototype.getPredictionsDatasetVers
  * @param {string} value
  * @return {!proto.clarifai.api.WorkflowVersionEvaluation} returns this
  */
-proto.clarifai.api.WorkflowVersionEvaluation.prototype.setPredictionsDatasetVersionId = function(value) {
+proto.clarifai.api.WorkflowVersionEvaluation.prototype.setUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
 /**
- * optional string evaluation_template_id = 8;
+ * optional string app_id = 8;
  * @return {string}
  */
-proto.clarifai.api.WorkflowVersionEvaluation.prototype.getEvaluationTemplateId = function() {
+proto.clarifai.api.WorkflowVersionEvaluation.prototype.getAppId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
@@ -77374,7 +77944,7 @@ proto.clarifai.api.WorkflowVersionEvaluation.prototype.getEvaluationTemplateId =
  * @param {string} value
  * @return {!proto.clarifai.api.WorkflowVersionEvaluation} returns this
  */
-proto.clarifai.api.WorkflowVersionEvaluation.prototype.setEvaluationTemplateId = function(value) {
+proto.clarifai.api.WorkflowVersionEvaluation.prototype.setAppId = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
 };
 
@@ -77524,24 +78094,6 @@ proto.clarifai.api.WorkflowVersionEvaluation.prototype.clearModifiedAt = functio
  */
 proto.clarifai.api.WorkflowVersionEvaluation.prototype.hasModifiedAt = function() {
   return jspb.Message.getField(this, 12) != null;
-};
-
-
-/**
- * optional string target_node_id = 13;
- * @return {string}
- */
-proto.clarifai.api.WorkflowVersionEvaluation.prototype.getTargetNodeId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.clarifai.api.WorkflowVersionEvaluation} returns this
- */
-proto.clarifai.api.WorkflowVersionEvaluation.prototype.setTargetNodeId = function(value) {
-  return jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
@@ -80169,7 +80721,15 @@ proto.clarifai.api.EventType = {
   COLLABORATOR_ADD: 700,
   COLLABORATOR_UPDATE: 701,
   COLLABORATOR_REMOVE: 702,
-  USER_UPDATE: 800
+  USER_UPDATE: 800,
+  COMPUTE_CLUSTER_CREATE: 900,
+  COMPUTE_CLUSTER_DELETE: 901,
+  NODEPOOL_CREATE: 1000,
+  NODEPOOL_UPDATE: 1001,
+  NODEPOOL_DELETE: 1002,
+  DEPLOYMENT_CREATE: 1100,
+  DEPLOYMENT_UPDATE: 1101,
+  DEPLOYMENT_DELETE: 1102
 };
 
 goog.object.extend(exports, proto.clarifai.api);

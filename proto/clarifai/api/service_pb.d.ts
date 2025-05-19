@@ -3051,6 +3051,9 @@ export class PostModelOutputsRequest extends jspb.Message {
   getUsePredictCache(): boolean;
   setUsePredictCache(value: boolean): PostModelOutputsRequest;
 
+  getEnableLogSummaryOnError(): boolean;
+  setEnableLogSummaryOnError(value: boolean): PostModelOutputsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostModelOutputsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: PostModelOutputsRequest): PostModelOutputsRequest.AsObject;
@@ -3068,6 +3071,7 @@ export namespace PostModelOutputsRequest {
     model?: proto_clarifai_api_resources_pb.Model.AsObject,
     runnerSelector?: proto_clarifai_api_resources_pb.RunnerSelector.AsObject,
     usePredictCache: boolean,
+    enableLogSummaryOnError: boolean,
   }
 }
 
@@ -3324,6 +3328,9 @@ export class ListKeysRequest extends jspb.Message {
   clearEndpointsList(): ListKeysRequest;
   addEndpoints(value: string, index?: number): ListKeysRequest;
 
+  getType(): string;
+  setType(value: string): ListKeysRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListKeysRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListKeysRequest): ListKeysRequest.AsObject;
@@ -3340,6 +3347,7 @@ export namespace ListKeysRequest {
     notExpired: boolean,
     scopesList: Array<string>,
     endpointsList: Array<string>,
+    type: string,
   }
 }
 
@@ -3652,6 +3660,9 @@ export class ListModelsRequest extends jspb.Message {
   getCreator(): string;
   setCreator(value: string): ListModelsRequest;
 
+  getMinReplicas(): number;
+  setMinReplicas(value: number): ListModelsRequest;
+
   getSortByCase(): ListModelsRequest.SortByCase;
 
   serializeBinary(): Uint8Array;
@@ -3694,6 +3705,7 @@ export namespace ListModelsRequest {
     licenseType: proto_clarifai_api_resources_pb.LicenseType,
     source: number,
     creator: string,
+    minReplicas: number,
   }
 
   export enum SortByCase { 
@@ -4217,6 +4229,9 @@ export class SingleModelResponse extends jspb.Message {
   hasModel(): boolean;
   clearModel(): SingleModelResponse;
 
+  getWorkflowCount(): number;
+  setWorkflowCount(value: number): SingleModelResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SingleModelResponse.AsObject;
   static toObject(includeInstance: boolean, msg: SingleModelResponse): SingleModelResponse.AsObject;
@@ -4229,6 +4244,7 @@ export namespace SingleModelResponse {
   export type AsObject = {
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     model?: proto_clarifai_api_resources_pb.Model.AsObject,
+    workflowCount: number,
   }
 }
 
@@ -4358,6 +4374,9 @@ export class ListModelVersionsRequest extends jspb.Message {
   getSortByCreatedAt(): boolean;
   setSortByCreatedAt(value: boolean): ListModelVersionsRequest;
 
+  getMinReplicas(): number;
+  setMinReplicas(value: number): ListModelVersionsRequest;
+
   getSortByCase(): ListModelVersionsRequest.SortByCase;
 
   serializeBinary(): Uint8Array;
@@ -4381,6 +4400,7 @@ export namespace ListModelVersionsRequest {
     sortByNumInputs: boolean,
     sortByDescription: boolean,
     sortByCreatedAt: boolean,
+    minReplicas: number,
   }
 
   export enum SortByCase { 
@@ -5643,6 +5663,11 @@ export class MultiOutputResponse extends jspb.Message {
   clearOutputsList(): MultiOutputResponse;
   addOutputs(value?: proto_clarifai_api_resources_pb.Output, index?: number): proto_clarifai_api_resources_pb.Output;
 
+  getRunnerSelector(): proto_clarifai_api_resources_pb.RunnerSelector | undefined;
+  setRunnerSelector(value?: proto_clarifai_api_resources_pb.RunnerSelector): MultiOutputResponse;
+  hasRunnerSelector(): boolean;
+  clearRunnerSelector(): MultiOutputResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MultiOutputResponse.AsObject;
   static toObject(includeInstance: boolean, msg: MultiOutputResponse): MultiOutputResponse.AsObject;
@@ -5655,6 +5680,7 @@ export namespace MultiOutputResponse {
   export type AsObject = {
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     outputsList: Array<proto_clarifai_api_resources_pb.Output.AsObject>,
+    runnerSelector?: proto_clarifai_api_resources_pb.RunnerSelector.AsObject,
   }
 }
 
@@ -10949,6 +10975,9 @@ export class ListDeploymentsRequest extends jspb.Message {
   clearWorkflowVersionIdsList(): ListDeploymentsRequest;
   addWorkflowVersionIds(value: string, index?: number): ListDeploymentsRequest;
 
+  getComputeClusterId(): string;
+  setComputeClusterId(value: string): ListDeploymentsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListDeploymentsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListDeploymentsRequest): ListDeploymentsRequest.AsObject;
@@ -10965,6 +10994,7 @@ export namespace ListDeploymentsRequest {
     perPage: number,
     modelVersionIdsList: Array<string>,
     workflowVersionIdsList: Array<string>,
+    computeClusterId: string,
   }
 }
 

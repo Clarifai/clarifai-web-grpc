@@ -3291,6 +3291,9 @@ export class ModelTypeField extends jspb.Message {
   getDefault(): string;
   setDefault(value: string): ModelTypeField;
 
+  getIsParam(): boolean;
+  setIsParam(value: boolean): ModelTypeField;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelTypeField.AsObject;
   static toObject(includeInstance: boolean, msg: ModelTypeField): ModelTypeField.AsObject;
@@ -3315,6 +3318,7 @@ export namespace ModelTypeField {
     typeArgsList: Array<ModelTypeField.AsObject>,
     iterator: boolean,
     pb_default: string,
+    isParam: boolean,
   }
 
   export enum ModelTypeFieldType { 
@@ -3358,9 +3362,9 @@ export namespace ModelTypeField {
     FRAME = 12,
     AUDIO = 13,
     VIDEO = 14,
-    NAMED_FIELDS = 20,
-    TUPLE = 21,
-    LIST = 22,
+    NAMED_FIELDS = 15,
+    TUPLE = 16,
+    LIST = 17,
   }
 }
 
@@ -5558,6 +5562,9 @@ export class WorkflowVersion extends jspb.Message {
   getLicense(): string;
   setLicense(value: string): WorkflowVersion;
 
+  getIsDeprecated(): boolean;
+  setIsDeprecated(value: boolean): WorkflowVersion;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WorkflowVersion.AsObject;
   static toObject(includeInstance: boolean, msg: WorkflowVersion): WorkflowVersion.AsObject;
@@ -5579,6 +5586,7 @@ export namespace WorkflowVersion {
     userId: string,
     description: string,
     license: string,
+    isDeprecated: boolean,
   }
 }
 
@@ -8559,6 +8567,19 @@ export class InstanceType extends jspb.Message {
   getPrice(): string;
   setPrice(value: string): InstanceType;
 
+  getCloudProvider(): CloudProvider | undefined;
+  setCloudProvider(value?: CloudProvider): InstanceType;
+  hasCloudProvider(): boolean;
+  clearCloudProvider(): InstanceType;
+
+  getRegion(): string;
+  setRegion(value: string): InstanceType;
+
+  getAllowedCapacityTypes(): NodeCapacityType | undefined;
+  setAllowedCapacityTypes(value?: NodeCapacityType): InstanceType;
+  hasAllowedCapacityTypes(): boolean;
+  clearAllowedCapacityTypes(): InstanceType;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InstanceType.AsObject;
   static toObject(includeInstance: boolean, msg: InstanceType): InstanceType.AsObject;
@@ -8573,6 +8594,9 @@ export namespace InstanceType {
     description: string,
     computeInfo?: ComputeInfo.AsObject,
     price: string,
+    cloudProvider?: CloudProvider.AsObject,
+    region: string,
+    allowedCapacityTypes?: NodeCapacityType.AsObject,
   }
 }
 
@@ -8673,6 +8697,12 @@ export class ComputeInfo extends jspb.Message {
   getCpuMemory(): string;
   setCpuMemory(value: string): ComputeInfo;
 
+  getCpuRequests(): string;
+  setCpuRequests(value: string): ComputeInfo;
+
+  getCpuMemoryRequests(): string;
+  setCpuMemoryRequests(value: string): ComputeInfo;
+
   getNumAccelerators(): number;
   setNumAccelerators(value: number): ComputeInfo;
 
@@ -8696,6 +8726,8 @@ export namespace ComputeInfo {
   export type AsObject = {
     cpuLimit: string,
     cpuMemory: string,
+    cpuRequests: string,
+    cpuMemoryRequests: string,
     numAccelerators: number,
     acceleratorMemory: string,
     acceleratorTypeList: Array<string>,
@@ -8792,6 +8824,9 @@ export class Deployment extends jspb.Message {
   hasModifiedAt(): boolean;
   clearModifiedAt(): Deployment;
 
+  getDeployLatestVersion(): boolean;
+  setDeployLatestVersion(value: boolean): Deployment;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Deployment.AsObject;
   static toObject(includeInstance: boolean, msg: Deployment): Deployment.AsObject;
@@ -8813,6 +8848,7 @@ export namespace Deployment {
     worker?: Worker.AsObject,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    deployLatestVersion: boolean,
   }
 
   export enum SchedulingChoice { 
@@ -8939,6 +8975,21 @@ export class AuditLogTarget extends jspb.Message {
   hasModelVersion(): boolean;
   clearModelVersion(): AuditLogTarget;
 
+  getComputeCluster(): ComputeCluster | undefined;
+  setComputeCluster(value?: ComputeCluster): AuditLogTarget;
+  hasComputeCluster(): boolean;
+  clearComputeCluster(): AuditLogTarget;
+
+  getNodepool(): Nodepool | undefined;
+  setNodepool(value?: Nodepool): AuditLogTarget;
+  hasNodepool(): boolean;
+  clearNodepool(): AuditLogTarget;
+
+  getDeployment(): Deployment | undefined;
+  setDeployment(value?: Deployment): AuditLogTarget;
+  hasDeployment(): boolean;
+  clearDeployment(): AuditLogTarget;
+
   getTargetCase(): AuditLogTarget.TargetCase;
 
   serializeBinary(): Uint8Array;
@@ -8961,6 +9012,9 @@ export namespace AuditLogTarget {
     workflowVersion?: WorkflowVersion.AsObject,
     model?: Model.AsObject,
     modelVersion?: ModelVersion.AsObject,
+    computeCluster?: ComputeCluster.AsObject,
+    nodepool?: Nodepool.AsObject,
+    deployment?: Deployment.AsObject,
   }
 
   export enum TargetCase { 
@@ -8975,6 +9029,9 @@ export namespace AuditLogTarget {
     WORKFLOW_VERSION = 8,
     MODEL = 9,
     MODEL_VERSION = 10,
+    COMPUTE_CLUSTER = 11,
+    NODEPOOL = 12,
+    DEPLOYMENT = 13,
   }
 }
 
@@ -9382,6 +9439,12 @@ export class ComputeSourceMetadata extends jspb.Message {
   getPipelineVersionRunId(): string;
   setPipelineVersionRunId(value: string): ComputeSourceMetadata;
 
+  getPipelineStepId(): string;
+  setPipelineStepId(value: string): ComputeSourceMetadata;
+
+  getPipelineStepVersionId(): string;
+  setPipelineStepVersionId(value: string): ComputeSourceMetadata;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ComputeSourceMetadata.AsObject;
   static toObject(includeInstance: boolean, msg: ComputeSourceMetadata): ComputeSourceMetadata.AsObject;
@@ -9402,6 +9465,8 @@ export namespace ComputeSourceMetadata {
     pipelineId: string,
     pipelineVersionId: string,
     pipelineVersionRunId: string,
+    pipelineStepId: string,
+    pipelineStepVersionId: string,
   }
 }
 
@@ -9409,26 +9474,34 @@ export class WorkflowVersionEvaluation extends jspb.Message {
   getId(): string;
   setId(value: string): WorkflowVersionEvaluation;
 
-  getWorkflowId(): string;
-  setWorkflowId(value: string): WorkflowVersionEvaluation;
+  getWorkflowVersion(): WorkflowVersion | undefined;
+  setWorkflowVersion(value?: WorkflowVersion): WorkflowVersionEvaluation;
+  hasWorkflowVersion(): boolean;
+  clearWorkflowVersion(): WorkflowVersionEvaluation;
 
-  getWorkflowVersionId(): string;
-  setWorkflowVersionId(value: string): WorkflowVersionEvaluation;
+  getTargetNodeId(): string;
+  setTargetNodeId(value: string): WorkflowVersionEvaluation;
 
-  getGroundTruthDatasetId(): string;
-  setGroundTruthDatasetId(value: string): WorkflowVersionEvaluation;
+  getGroundTruthDatasetVersion(): DatasetVersion | undefined;
+  setGroundTruthDatasetVersion(value?: DatasetVersion): WorkflowVersionEvaluation;
+  hasGroundTruthDatasetVersion(): boolean;
+  clearGroundTruthDatasetVersion(): WorkflowVersionEvaluation;
 
-  getGroundTruthDatasetVersionId(): string;
-  setGroundTruthDatasetVersionId(value: string): WorkflowVersionEvaluation;
+  getPredictionsDatasetVersion(): DatasetVersion | undefined;
+  setPredictionsDatasetVersion(value?: DatasetVersion): WorkflowVersionEvaluation;
+  hasPredictionsDatasetVersion(): boolean;
+  clearPredictionsDatasetVersion(): WorkflowVersionEvaluation;
 
-  getPredictionsDatasetId(): string;
-  setPredictionsDatasetId(value: string): WorkflowVersionEvaluation;
+  getWorkflowVersionEvaluationTemplate(): WorkflowVersionEvaluationTemplate | undefined;
+  setWorkflowVersionEvaluationTemplate(value?: WorkflowVersionEvaluationTemplate): WorkflowVersionEvaluation;
+  hasWorkflowVersionEvaluationTemplate(): boolean;
+  clearWorkflowVersionEvaluationTemplate(): WorkflowVersionEvaluation;
 
-  getPredictionsDatasetVersionId(): string;
-  setPredictionsDatasetVersionId(value: string): WorkflowVersionEvaluation;
+  getUserId(): string;
+  setUserId(value: string): WorkflowVersionEvaluation;
 
-  getEvaluationTemplateId(): string;
-  setEvaluationTemplateId(value: string): WorkflowVersionEvaluation;
+  getAppId(): string;
+  setAppId(value: string): WorkflowVersionEvaluation;
 
   getWorkflowEvaluationResult(): WorkflowEvaluationResult | undefined;
   setWorkflowEvaluationResult(value?: WorkflowEvaluationResult): WorkflowVersionEvaluation;
@@ -9450,9 +9523,6 @@ export class WorkflowVersionEvaluation extends jspb.Message {
   hasModifiedAt(): boolean;
   clearModifiedAt(): WorkflowVersionEvaluation;
 
-  getTargetNodeId(): string;
-  setTargetNodeId(value: string): WorkflowVersionEvaluation;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WorkflowVersionEvaluation.AsObject;
   static toObject(includeInstance: boolean, msg: WorkflowVersionEvaluation): WorkflowVersionEvaluation.AsObject;
@@ -9464,18 +9534,17 @@ export class WorkflowVersionEvaluation extends jspb.Message {
 export namespace WorkflowVersionEvaluation {
   export type AsObject = {
     id: string,
-    workflowId: string,
-    workflowVersionId: string,
-    groundTruthDatasetId: string,
-    groundTruthDatasetVersionId: string,
-    predictionsDatasetId: string,
-    predictionsDatasetVersionId: string,
-    evaluationTemplateId: string,
+    workflowVersion?: WorkflowVersion.AsObject,
+    targetNodeId: string,
+    groundTruthDatasetVersion?: DatasetVersion.AsObject,
+    predictionsDatasetVersion?: DatasetVersion.AsObject,
+    workflowVersionEvaluationTemplate?: WorkflowVersionEvaluationTemplate.AsObject,
+    userId: string,
+    appId: string,
     workflowEvaluationResult?: WorkflowEvaluationResult.AsObject,
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    targetNodeId: string,
   }
 }
 
@@ -9963,4 +10032,12 @@ export enum EventType {
   COLLABORATOR_UPDATE = 701,
   COLLABORATOR_REMOVE = 702,
   USER_UPDATE = 800,
+  COMPUTE_CLUSTER_CREATE = 900,
+  COMPUTE_CLUSTER_DELETE = 901,
+  NODEPOOL_CREATE = 1000,
+  NODEPOOL_UPDATE = 1001,
+  NODEPOOL_DELETE = 1002,
+  DEPLOYMENT_CREATE = 1100,
+  DEPLOYMENT_UPDATE = 1101,
+  DEPLOYMENT_DELETE = 1102,
 }
