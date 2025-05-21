@@ -15030,5 +15030,127 @@ proto.clarifai.api.V2PromiseClient.prototype.patchWorkflowVersionEvaluations =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.MCPRequest,
+ *   !proto.clarifai.api.SingleMCPResponse>}
+ */
+const methodDescriptor_V2_GetMCP = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/GetMCP',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.MCPRequest,
+  proto.clarifai.api.SingleMCPResponse,
+  /**
+   * @param {!proto.clarifai.api.MCPRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SingleMCPResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.MCPRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SingleMCPResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleMCPResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.getMCP =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/GetMCP',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetMCP,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.MCPRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.SingleMCPResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.getMCP =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/GetMCP',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetMCP);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.MCPRequest,
+ *   !proto.clarifai.api.SingleMCPResponse>}
+ */
+const methodDescriptor_V2_PostMCP = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostMCP',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.MCPRequest,
+  proto.clarifai.api.SingleMCPResponse,
+  /**
+   * @param {!proto.clarifai.api.MCPRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SingleMCPResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.MCPRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SingleMCPResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleMCPResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postMCP =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostMCP',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostMCP,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.MCPRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.SingleMCPResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postMCP =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostMCP',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostMCP);
+};
+
+
 module.exports = proto.clarifai.api;
 
