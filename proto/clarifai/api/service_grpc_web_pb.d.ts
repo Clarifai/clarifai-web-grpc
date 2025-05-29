@@ -1720,20 +1720,6 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiWorkflowVersionEvaluationResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiWorkflowVersionEvaluationResponse>;
 
-  getMCP(
-    request: proto_clarifai_api_service_pb.MCPRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.SingleMCPResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleMCPResponse>;
-
-  postMCP(
-    request: proto_clarifai_api_service_pb.MCPRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.SingleMCPResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleMCPResponse>;
-
 }
 
 export class V2PromiseClient {
@@ -2965,16 +2951,6 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.PatchWorkflowVersionEvaluationsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiWorkflowVersionEvaluationResponse>;
-
-  getMCP(
-    request: proto_clarifai_api_service_pb.MCPRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.SingleMCPResponse>;
-
-  postMCP(
-    request: proto_clarifai_api_service_pb.MCPRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.SingleMCPResponse>;
 
 }
 
