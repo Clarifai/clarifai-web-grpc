@@ -1720,6 +1720,41 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiWorkflowVersionEvaluationResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiWorkflowVersionEvaluationResponse>;
 
+  postPipelineSteps(
+    request: proto_clarifai_api_service_pb.PostPipelineStepsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiPipelineStepResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiPipelineStepResponse>;
+
+  getPipelineStep(
+    request: proto_clarifai_api_service_pb.GetPipelineStepRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SinglePipelineStepResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SinglePipelineStepResponse>;
+
+  listPipelineSteps(
+    request: proto_clarifai_api_service_pb.ListPipelineStepsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiPipelineStepResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiPipelineStepResponse>;
+
+  listPipelineStepVersions(
+    request: proto_clarifai_api_service_pb.ListPipelineStepVersionsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiPipelineStepVersionResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiPipelineStepVersionResponse>;
+
+  getPipelineStepVersion(
+    request: proto_clarifai_api_service_pb.GetPipelineStepVersionRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SinglePipelineStepVersionResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SinglePipelineStepVersionResponse>;
+
 }
 
 export class V2PromiseClient {
@@ -2951,6 +2986,31 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.PatchWorkflowVersionEvaluationsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiWorkflowVersionEvaluationResponse>;
+
+  postPipelineSteps(
+    request: proto_clarifai_api_service_pb.PostPipelineStepsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiPipelineStepResponse>;
+
+  getPipelineStep(
+    request: proto_clarifai_api_service_pb.GetPipelineStepRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SinglePipelineStepResponse>;
+
+  listPipelineSteps(
+    request: proto_clarifai_api_service_pb.ListPipelineStepsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiPipelineStepResponse>;
+
+  listPipelineStepVersions(
+    request: proto_clarifai_api_service_pb.ListPipelineStepVersionsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiPipelineStepVersionResponse>;
+
+  getPipelineStepVersion(
+    request: proto_clarifai_api_service_pb.GetPipelineStepVersionRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SinglePipelineStepVersionResponse>;
 
 }
 

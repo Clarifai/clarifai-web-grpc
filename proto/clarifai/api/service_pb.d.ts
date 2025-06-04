@@ -11456,6 +11456,354 @@ export namespace PostModelMigrationRequest {
   }
 }
 
+export class PostPipelineStepsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostPipelineStepsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostPipelineStepsRequest;
+
+  getPipelineStepsList(): Array<proto_clarifai_api_resources_pb.PipelineStep>;
+  setPipelineStepsList(value: Array<proto_clarifai_api_resources_pb.PipelineStep>): PostPipelineStepsRequest;
+  clearPipelineStepsList(): PostPipelineStepsRequest;
+  addPipelineSteps(value?: proto_clarifai_api_resources_pb.PipelineStep, index?: number): proto_clarifai_api_resources_pb.PipelineStep;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostPipelineStepsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostPipelineStepsRequest): PostPipelineStepsRequest.AsObject;
+  static serializeBinaryToWriter(message: PostPipelineStepsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostPipelineStepsRequest;
+  static deserializeBinaryFromReader(message: PostPipelineStepsRequest, reader: jspb.BinaryReader): PostPipelineStepsRequest;
+}
+
+export namespace PostPipelineStepsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    pipelineStepsList: Array<proto_clarifai_api_resources_pb.PipelineStep.AsObject>,
+  }
+}
+
+export class MultiPipelineStepResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiPipelineStepResponse;
+  hasStatus(): boolean;
+  clearStatus(): MultiPipelineStepResponse;
+
+  getPipelineStepsList(): Array<proto_clarifai_api_resources_pb.PipelineStep>;
+  setPipelineStepsList(value: Array<proto_clarifai_api_resources_pb.PipelineStep>): MultiPipelineStepResponse;
+  clearPipelineStepsList(): MultiPipelineStepResponse;
+  addPipelineSteps(value?: proto_clarifai_api_resources_pb.PipelineStep, index?: number): proto_clarifai_api_resources_pb.PipelineStep;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MultiPipelineStepResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiPipelineStepResponse): MultiPipelineStepResponse.AsObject;
+  static serializeBinaryToWriter(message: MultiPipelineStepResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiPipelineStepResponse;
+  static deserializeBinaryFromReader(message: MultiPipelineStepResponse, reader: jspb.BinaryReader): MultiPipelineStepResponse;
+}
+
+export namespace MultiPipelineStepResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    pipelineStepsList: Array<proto_clarifai_api_resources_pb.PipelineStep.AsObject>,
+  }
+}
+
+export class ListPipelineStepsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListPipelineStepsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): ListPipelineStepsRequest;
+
+  getPage(): number;
+  setPage(value: number): ListPipelineStepsRequest;
+
+  getPerPage(): number;
+  setPerPage(value: number): ListPipelineStepsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListPipelineStepsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPipelineStepsRequest): ListPipelineStepsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListPipelineStepsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPipelineStepsRequest;
+  static deserializeBinaryFromReader(message: ListPipelineStepsRequest, reader: jspb.BinaryReader): ListPipelineStepsRequest;
+}
+
+export namespace ListPipelineStepsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    page: number,
+    perPage: number,
+  }
+}
+
+export class ListPipelineStepVersionsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListPipelineStepVersionsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): ListPipelineStepVersionsRequest;
+
+  getPipelineStepId(): string;
+  setPipelineStepId(value: string): ListPipelineStepVersionsRequest;
+
+  getPage(): number;
+  setPage(value: number): ListPipelineStepVersionsRequest;
+
+  getPerPage(): number;
+  setPerPage(value: number): ListPipelineStepVersionsRequest;
+
+  getStatusCodesList(): Array<proto_clarifai_api_status_status_code_pb.StatusCode>;
+  setStatusCodesList(value: Array<proto_clarifai_api_status_status_code_pb.StatusCode>): ListPipelineStepVersionsRequest;
+  clearStatusCodesList(): ListPipelineStepVersionsRequest;
+  addStatusCodes(value: proto_clarifai_api_status_status_code_pb.StatusCode, index?: number): ListPipelineStepVersionsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListPipelineStepVersionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPipelineStepVersionsRequest): ListPipelineStepVersionsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListPipelineStepVersionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPipelineStepVersionsRequest;
+  static deserializeBinaryFromReader(message: ListPipelineStepVersionsRequest, reader: jspb.BinaryReader): ListPipelineStepVersionsRequest;
+}
+
+export namespace ListPipelineStepVersionsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    pipelineStepId: string,
+    page: number,
+    perPage: number,
+    statusCodesList: Array<proto_clarifai_api_status_status_code_pb.StatusCode>,
+  }
+}
+
+export class MultiPipelineStepVersionResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiPipelineStepVersionResponse;
+  hasStatus(): boolean;
+  clearStatus(): MultiPipelineStepVersionResponse;
+
+  getPipelineStepVersionsList(): Array<proto_clarifai_api_resources_pb.PipelineStepVersion>;
+  setPipelineStepVersionsList(value: Array<proto_clarifai_api_resources_pb.PipelineStepVersion>): MultiPipelineStepVersionResponse;
+  clearPipelineStepVersionsList(): MultiPipelineStepVersionResponse;
+  addPipelineStepVersions(value?: proto_clarifai_api_resources_pb.PipelineStepVersion, index?: number): proto_clarifai_api_resources_pb.PipelineStepVersion;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MultiPipelineStepVersionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiPipelineStepVersionResponse): MultiPipelineStepVersionResponse.AsObject;
+  static serializeBinaryToWriter(message: MultiPipelineStepVersionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiPipelineStepVersionResponse;
+  static deserializeBinaryFromReader(message: MultiPipelineStepVersionResponse, reader: jspb.BinaryReader): MultiPipelineStepVersionResponse;
+}
+
+export namespace MultiPipelineStepVersionResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    pipelineStepVersionsList: Array<proto_clarifai_api_resources_pb.PipelineStepVersion.AsObject>,
+  }
+}
+
+export class PostPipelineStepVersionsUploadRequest extends jspb.Message {
+  getUploadConfig(): PostPipelineStepVersionsUploadConfig | undefined;
+  setUploadConfig(value?: PostPipelineStepVersionsUploadConfig): PostPipelineStepVersionsUploadRequest;
+  hasUploadConfig(): boolean;
+  clearUploadConfig(): PostPipelineStepVersionsUploadRequest;
+
+  getContentPart(): proto_clarifai_api_resources_pb.UploadContentPart | undefined;
+  setContentPart(value?: proto_clarifai_api_resources_pb.UploadContentPart): PostPipelineStepVersionsUploadRequest;
+  hasContentPart(): boolean;
+  clearContentPart(): PostPipelineStepVersionsUploadRequest;
+
+  getUploadDataCase(): PostPipelineStepVersionsUploadRequest.UploadDataCase;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostPipelineStepVersionsUploadRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostPipelineStepVersionsUploadRequest): PostPipelineStepVersionsUploadRequest.AsObject;
+  static serializeBinaryToWriter(message: PostPipelineStepVersionsUploadRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostPipelineStepVersionsUploadRequest;
+  static deserializeBinaryFromReader(message: PostPipelineStepVersionsUploadRequest, reader: jspb.BinaryReader): PostPipelineStepVersionsUploadRequest;
+}
+
+export namespace PostPipelineStepVersionsUploadRequest {
+  export type AsObject = {
+    uploadConfig?: PostPipelineStepVersionsUploadConfig.AsObject,
+    contentPart?: proto_clarifai_api_resources_pb.UploadContentPart.AsObject,
+  }
+
+  export enum UploadDataCase { 
+    UPLOAD_DATA_NOT_SET = 0,
+    UPLOAD_CONFIG = 2,
+    CONTENT_PART = 3,
+  }
+}
+
+export class PostPipelineStepVersionsUploadResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): PostPipelineStepVersionsUploadResponse;
+  hasStatus(): boolean;
+  clearStatus(): PostPipelineStepVersionsUploadResponse;
+
+  getBytesRemaining(): number;
+  setBytesRemaining(value: number): PostPipelineStepVersionsUploadResponse;
+
+  getPipelineStepVersionId(): string;
+  setPipelineStepVersionId(value: string): PostPipelineStepVersionsUploadResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostPipelineStepVersionsUploadResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PostPipelineStepVersionsUploadResponse): PostPipelineStepVersionsUploadResponse.AsObject;
+  static serializeBinaryToWriter(message: PostPipelineStepVersionsUploadResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostPipelineStepVersionsUploadResponse;
+  static deserializeBinaryFromReader(message: PostPipelineStepVersionsUploadResponse, reader: jspb.BinaryReader): PostPipelineStepVersionsUploadResponse;
+}
+
+export namespace PostPipelineStepVersionsUploadResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    bytesRemaining: number,
+    pipelineStepVersionId: string,
+  }
+}
+
+export class PostPipelineStepVersionsUploadConfig extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostPipelineStepVersionsUploadConfig;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostPipelineStepVersionsUploadConfig;
+
+  getPipelineStepId(): string;
+  setPipelineStepId(value: string): PostPipelineStepVersionsUploadConfig;
+
+  getPipelineStepVersion(): proto_clarifai_api_resources_pb.PipelineStepVersion | undefined;
+  setPipelineStepVersion(value?: proto_clarifai_api_resources_pb.PipelineStepVersion): PostPipelineStepVersionsUploadConfig;
+  hasPipelineStepVersion(): boolean;
+  clearPipelineStepVersion(): PostPipelineStepVersionsUploadConfig;
+
+  getTotalSize(): number;
+  setTotalSize(value: number): PostPipelineStepVersionsUploadConfig;
+
+  getStorageRequestSize(): number;
+  setStorageRequestSize(value: number): PostPipelineStepVersionsUploadConfig;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostPipelineStepVersionsUploadConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: PostPipelineStepVersionsUploadConfig): PostPipelineStepVersionsUploadConfig.AsObject;
+  static serializeBinaryToWriter(message: PostPipelineStepVersionsUploadConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostPipelineStepVersionsUploadConfig;
+  static deserializeBinaryFromReader(message: PostPipelineStepVersionsUploadConfig, reader: jspb.BinaryReader): PostPipelineStepVersionsUploadConfig;
+}
+
+export namespace PostPipelineStepVersionsUploadConfig {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    pipelineStepId: string,
+    pipelineStepVersion?: proto_clarifai_api_resources_pb.PipelineStepVersion.AsObject,
+    totalSize: number,
+    storageRequestSize: number,
+  }
+}
+
+export class GetPipelineStepRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetPipelineStepRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): GetPipelineStepRequest;
+
+  getPipelineStepId(): string;
+  setPipelineStepId(value: string): GetPipelineStepRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetPipelineStepRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetPipelineStepRequest): GetPipelineStepRequest.AsObject;
+  static serializeBinaryToWriter(message: GetPipelineStepRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetPipelineStepRequest;
+  static deserializeBinaryFromReader(message: GetPipelineStepRequest, reader: jspb.BinaryReader): GetPipelineStepRequest;
+}
+
+export namespace GetPipelineStepRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    pipelineStepId: string,
+  }
+}
+
+export class SinglePipelineStepResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SinglePipelineStepResponse;
+  hasStatus(): boolean;
+  clearStatus(): SinglePipelineStepResponse;
+
+  getPipelineStep(): proto_clarifai_api_resources_pb.PipelineStep | undefined;
+  setPipelineStep(value?: proto_clarifai_api_resources_pb.PipelineStep): SinglePipelineStepResponse;
+  hasPipelineStep(): boolean;
+  clearPipelineStep(): SinglePipelineStepResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SinglePipelineStepResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SinglePipelineStepResponse): SinglePipelineStepResponse.AsObject;
+  static serializeBinaryToWriter(message: SinglePipelineStepResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SinglePipelineStepResponse;
+  static deserializeBinaryFromReader(message: SinglePipelineStepResponse, reader: jspb.BinaryReader): SinglePipelineStepResponse;
+}
+
+export namespace SinglePipelineStepResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    pipelineStep?: proto_clarifai_api_resources_pb.PipelineStep.AsObject,
+  }
+}
+
+export class GetPipelineStepVersionRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetPipelineStepVersionRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): GetPipelineStepVersionRequest;
+
+  getPipelineStepId(): string;
+  setPipelineStepId(value: string): GetPipelineStepVersionRequest;
+
+  getPipelineStepVersionId(): string;
+  setPipelineStepVersionId(value: string): GetPipelineStepVersionRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetPipelineStepVersionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetPipelineStepVersionRequest): GetPipelineStepVersionRequest.AsObject;
+  static serializeBinaryToWriter(message: GetPipelineStepVersionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetPipelineStepVersionRequest;
+  static deserializeBinaryFromReader(message: GetPipelineStepVersionRequest, reader: jspb.BinaryReader): GetPipelineStepVersionRequest;
+}
+
+export namespace GetPipelineStepVersionRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    pipelineStepId: string,
+    pipelineStepVersionId: string,
+  }
+}
+
+export class SinglePipelineStepVersionResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SinglePipelineStepVersionResponse;
+  hasStatus(): boolean;
+  clearStatus(): SinglePipelineStepVersionResponse;
+
+  getPipelineStepVersion(): proto_clarifai_api_resources_pb.PipelineStepVersion | undefined;
+  setPipelineStepVersion(value?: proto_clarifai_api_resources_pb.PipelineStepVersion): SinglePipelineStepVersionResponse;
+  hasPipelineStepVersion(): boolean;
+  clearPipelineStepVersion(): SinglePipelineStepVersionResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SinglePipelineStepVersionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SinglePipelineStepVersionResponse): SinglePipelineStepVersionResponse.AsObject;
+  static serializeBinaryToWriter(message: SinglePipelineStepVersionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SinglePipelineStepVersionResponse;
+  static deserializeBinaryFromReader(message: SinglePipelineStepVersionResponse, reader: jspb.BinaryReader): SinglePipelineStepVersionResponse;
+}
+
+export namespace SinglePipelineStepVersionResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    pipelineStepVersion?: proto_clarifai_api_resources_pb.PipelineStepVersion.AsObject,
+  }
+}
+
 export enum OrganizationInvitationStatus { 
   NOT_SET = 0,
   PENDING = 1,
