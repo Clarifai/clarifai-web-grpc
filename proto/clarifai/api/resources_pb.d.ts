@@ -9626,6 +9626,38 @@ export namespace EvaluationMetricValue {
   }
 }
 
+export class InputEvaluationMetricValue extends jspb.Message {
+  getEvaluationMetricId(): string;
+  setEvaluationMetricId(value: string): InputEvaluationMetricValue;
+
+  getMetricValue(): MetricValue | undefined;
+  setMetricValue(value?: MetricValue): InputEvaluationMetricValue;
+  hasMetricValue(): boolean;
+  clearMetricValue(): InputEvaluationMetricValue;
+
+  getExplanation(): string;
+  setExplanation(value: string): InputEvaluationMetricValue;
+
+  getPerRegionValuesMap(): jspb.Map<string, MetricValue>;
+  clearPerRegionValuesMap(): InputEvaluationMetricValue;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InputEvaluationMetricValue.AsObject;
+  static toObject(includeInstance: boolean, msg: InputEvaluationMetricValue): InputEvaluationMetricValue.AsObject;
+  static serializeBinaryToWriter(message: InputEvaluationMetricValue, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InputEvaluationMetricValue;
+  static deserializeBinaryFromReader(message: InputEvaluationMetricValue, reader: jspb.BinaryReader): InputEvaluationMetricValue;
+}
+
+export namespace InputEvaluationMetricValue {
+  export type AsObject = {
+    evaluationMetricId: string,
+    metricValue?: MetricValue.AsObject,
+    explanation: string,
+    perRegionValuesMap: Array<[string, MetricValue.AsObject]>,
+  }
+}
+
 export class MetricValue extends jspb.Message {
   getStringValue(): string;
   setStringValue(value: string): MetricValue;
@@ -9658,6 +9690,68 @@ export namespace MetricValue {
     STRING_VALUE = 1,
     FLOAT_VALUE = 2,
     INT_VALUE = 3,
+  }
+}
+
+export class WorkflowEvaluationInputResult extends jspb.Message {
+  getInputEvaluationMetricValuesList(): Array<InputEvaluationMetricValue>;
+  setInputEvaluationMetricValuesList(value: Array<InputEvaluationMetricValue>): WorkflowEvaluationInputResult;
+  clearInputEvaluationMetricValuesList(): WorkflowEvaluationInputResult;
+  addInputEvaluationMetricValues(value?: InputEvaluationMetricValue, index?: number): InputEvaluationMetricValue;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WorkflowEvaluationInputResult.AsObject;
+  static toObject(includeInstance: boolean, msg: WorkflowEvaluationInputResult): WorkflowEvaluationInputResult.AsObject;
+  static serializeBinaryToWriter(message: WorkflowEvaluationInputResult, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WorkflowEvaluationInputResult;
+  static deserializeBinaryFromReader(message: WorkflowEvaluationInputResult, reader: jspb.BinaryReader): WorkflowEvaluationInputResult;
+}
+
+export namespace WorkflowEvaluationInputResult {
+  export type AsObject = {
+    inputEvaluationMetricValuesList: Array<InputEvaluationMetricValue.AsObject>,
+  }
+}
+
+export class WorkflowVersionEvaluationData extends jspb.Message {
+  getId(): string;
+  setId(value: string): WorkflowVersionEvaluationData;
+
+  getInput(): Input | undefined;
+  setInput(value?: Input): WorkflowVersionEvaluationData;
+  hasInput(): boolean;
+  clearInput(): WorkflowVersionEvaluationData;
+
+  getGroundTruthsList(): Array<Data>;
+  setGroundTruthsList(value: Array<Data>): WorkflowVersionEvaluationData;
+  clearGroundTruthsList(): WorkflowVersionEvaluationData;
+  addGroundTruths(value?: Data, index?: number): Data;
+
+  getPredictionsList(): Array<Data>;
+  setPredictionsList(value: Array<Data>): WorkflowVersionEvaluationData;
+  clearPredictionsList(): WorkflowVersionEvaluationData;
+  addPredictions(value?: Data, index?: number): Data;
+
+  getWorkflowEvaluationSampleResult(): WorkflowEvaluationInputResult | undefined;
+  setWorkflowEvaluationSampleResult(value?: WorkflowEvaluationInputResult): WorkflowVersionEvaluationData;
+  hasWorkflowEvaluationSampleResult(): boolean;
+  clearWorkflowEvaluationSampleResult(): WorkflowVersionEvaluationData;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WorkflowVersionEvaluationData.AsObject;
+  static toObject(includeInstance: boolean, msg: WorkflowVersionEvaluationData): WorkflowVersionEvaluationData.AsObject;
+  static serializeBinaryToWriter(message: WorkflowVersionEvaluationData, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WorkflowVersionEvaluationData;
+  static deserializeBinaryFromReader(message: WorkflowVersionEvaluationData, reader: jspb.BinaryReader): WorkflowVersionEvaluationData;
+}
+
+export namespace WorkflowVersionEvaluationData {
+  export type AsObject = {
+    id: string,
+    input?: Input.AsObject,
+    groundTruthsList: Array<Data.AsObject>,
+    predictionsList: Array<Data.AsObject>,
+    workflowEvaluationSampleResult?: WorkflowEvaluationInputResult.AsObject,
   }
 }
 
@@ -9925,6 +10019,70 @@ export namespace PipelineStepVersion {
   }
 }
 
+export class Pipeline extends jspb.Message {
+  getId(): string;
+  setId(value: string): Pipeline;
+
+  getUserId(): string;
+  setUserId(value: string): Pipeline;
+
+  getAppId(): string;
+  setAppId(value: string): Pipeline;
+
+  getPipelineVersion(): PipelineVersion | undefined;
+  setPipelineVersion(value?: PipelineVersion): Pipeline;
+  hasPipelineVersion(): boolean;
+  clearPipelineVersion(): Pipeline;
+
+  getDescription(): string;
+  setDescription(value: string): Pipeline;
+
+  getVisibility(): Visibility | undefined;
+  setVisibility(value?: Visibility): Pipeline;
+  hasVisibility(): boolean;
+  clearVisibility(): Pipeline;
+
+  getNotes(): string;
+  setNotes(value: string): Pipeline;
+
+  getMetadata(): google_protobuf_struct_pb.Struct | undefined;
+  setMetadata(value?: google_protobuf_struct_pb.Struct): Pipeline;
+  hasMetadata(): boolean;
+  clearMetadata(): Pipeline;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Pipeline;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): Pipeline;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): Pipeline;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): Pipeline;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Pipeline.AsObject;
+  static toObject(includeInstance: boolean, msg: Pipeline): Pipeline.AsObject;
+  static serializeBinaryToWriter(message: Pipeline, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Pipeline;
+  static deserializeBinaryFromReader(message: Pipeline, reader: jspb.BinaryReader): Pipeline;
+}
+
+export namespace Pipeline {
+  export type AsObject = {
+    id: string,
+    userId: string,
+    appId: string,
+    pipelineVersion?: PipelineVersion.AsObject,
+    description: string,
+    visibility?: Visibility.AsObject,
+    notes: string,
+    metadata?: google_protobuf_struct_pb.Struct.AsObject,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
 export class PipelineVersion extends jspb.Message {
   getId(): string;
   setId(value: string): PipelineVersion;
@@ -10065,6 +10223,16 @@ export class PipelineVersionRun extends jspb.Message {
   getAppId(): string;
   setAppId(value: string): PipelineVersionRun;
 
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): PipelineVersionRun;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): PipelineVersionRun;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): PipelineVersionRun;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): PipelineVersionRun;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PipelineVersionRun.AsObject;
   static toObject(includeInstance: boolean, msg: PipelineVersionRun): PipelineVersionRun.AsObject;
@@ -10081,6 +10249,8 @@ export namespace PipelineVersionRun {
     orchestrationStatus?: OrchestrationStatus.AsObject,
     userId: string,
     appId: string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
