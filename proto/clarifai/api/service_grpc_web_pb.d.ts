@@ -1853,6 +1853,41 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.SinglePipelineStepVersionResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SinglePipelineStepVersionResponse>;
 
+  getSecret(
+    request: proto_clarifai_api_service_pb.GetSecretRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleSecretResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleSecretResponse>;
+
+  listSecrets(
+    request: proto_clarifai_api_service_pb.ListSecretsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiSecretResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiSecretResponse>;
+
+  postSecrets(
+    request: proto_clarifai_api_service_pb.PostSecretsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiSecretResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiSecretResponse>;
+
+  patchSecrets(
+    request: proto_clarifai_api_service_pb.PatchSecretsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiSecretResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiSecretResponse>;
+
+  deleteSecrets(
+    request: proto_clarifai_api_service_pb.DeleteSecretsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiSecretResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiSecretResponse>;
+
 }
 
 export class V2PromiseClient {
@@ -3179,6 +3214,31 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.GetPipelineStepVersionRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.SinglePipelineStepVersionResponse>;
+
+  getSecret(
+    request: proto_clarifai_api_service_pb.GetSecretRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleSecretResponse>;
+
+  listSecrets(
+    request: proto_clarifai_api_service_pb.ListSecretsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiSecretResponse>;
+
+  postSecrets(
+    request: proto_clarifai_api_service_pb.PostSecretsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiSecretResponse>;
+
+  patchSecrets(
+    request: proto_clarifai_api_service_pb.PatchSecretsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiSecretResponse>;
+
+  deleteSecrets(
+    request: proto_clarifai_api_service_pb.DeleteSecretsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiSecretResponse>;
 
 }
 

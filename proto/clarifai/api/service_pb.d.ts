@@ -12452,6 +12452,192 @@ export namespace SinglePipelineStepVersionResponse {
   }
 }
 
+export class GetSecretRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetSecretRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): GetSecretRequest;
+
+  getSecretId(): string;
+  setSecretId(value: string): GetSecretRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetSecretRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetSecretRequest): GetSecretRequest.AsObject;
+  static serializeBinaryToWriter(message: GetSecretRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetSecretRequest;
+  static deserializeBinaryFromReader(message: GetSecretRequest, reader: jspb.BinaryReader): GetSecretRequest;
+}
+
+export namespace GetSecretRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    secretId: string,
+  }
+}
+
+export class ListSecretsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListSecretsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): ListSecretsRequest;
+
+  getPage(): number;
+  setPage(value: number): ListSecretsRequest;
+
+  getPerPage(): number;
+  setPerPage(value: number): ListSecretsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSecretsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSecretsRequest): ListSecretsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListSecretsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSecretsRequest;
+  static deserializeBinaryFromReader(message: ListSecretsRequest, reader: jspb.BinaryReader): ListSecretsRequest;
+}
+
+export namespace ListSecretsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    page: number,
+    perPage: number,
+  }
+}
+
+export class PostSecretsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostSecretsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostSecretsRequest;
+
+  getSecretsList(): Array<proto_clarifai_api_resources_pb.Secret>;
+  setSecretsList(value: Array<proto_clarifai_api_resources_pb.Secret>): PostSecretsRequest;
+  clearSecretsList(): PostSecretsRequest;
+  addSecrets(value?: proto_clarifai_api_resources_pb.Secret, index?: number): proto_clarifai_api_resources_pb.Secret;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostSecretsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostSecretsRequest): PostSecretsRequest.AsObject;
+  static serializeBinaryToWriter(message: PostSecretsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostSecretsRequest;
+  static deserializeBinaryFromReader(message: PostSecretsRequest, reader: jspb.BinaryReader): PostSecretsRequest;
+}
+
+export namespace PostSecretsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    secretsList: Array<proto_clarifai_api_resources_pb.Secret.AsObject>,
+  }
+}
+
+export class PatchSecretsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchSecretsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PatchSecretsRequest;
+
+  getSecretsList(): Array<proto_clarifai_api_resources_pb.Secret>;
+  setSecretsList(value: Array<proto_clarifai_api_resources_pb.Secret>): PatchSecretsRequest;
+  clearSecretsList(): PatchSecretsRequest;
+  addSecrets(value?: proto_clarifai_api_resources_pb.Secret, index?: number): proto_clarifai_api_resources_pb.Secret;
+
+  getAction(): string;
+  setAction(value: string): PatchSecretsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PatchSecretsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PatchSecretsRequest): PatchSecretsRequest.AsObject;
+  static serializeBinaryToWriter(message: PatchSecretsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PatchSecretsRequest;
+  static deserializeBinaryFromReader(message: PatchSecretsRequest, reader: jspb.BinaryReader): PatchSecretsRequest;
+}
+
+export namespace PatchSecretsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    secretsList: Array<proto_clarifai_api_resources_pb.Secret.AsObject>,
+    action: string,
+  }
+}
+
+export class DeleteSecretsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteSecretsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): DeleteSecretsRequest;
+
+  getIdsList(): Array<string>;
+  setIdsList(value: Array<string>): DeleteSecretsRequest;
+  clearIdsList(): DeleteSecretsRequest;
+  addIds(value: string, index?: number): DeleteSecretsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteSecretsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteSecretsRequest): DeleteSecretsRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteSecretsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteSecretsRequest;
+  static deserializeBinaryFromReader(message: DeleteSecretsRequest, reader: jspb.BinaryReader): DeleteSecretsRequest;
+}
+
+export namespace DeleteSecretsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    idsList: Array<string>,
+  }
+}
+
+export class SingleSecretResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleSecretResponse;
+  hasStatus(): boolean;
+  clearStatus(): SingleSecretResponse;
+
+  getSecret(): proto_clarifai_api_resources_pb.Secret | undefined;
+  setSecret(value?: proto_clarifai_api_resources_pb.Secret): SingleSecretResponse;
+  hasSecret(): boolean;
+  clearSecret(): SingleSecretResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SingleSecretResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SingleSecretResponse): SingleSecretResponse.AsObject;
+  static serializeBinaryToWriter(message: SingleSecretResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SingleSecretResponse;
+  static deserializeBinaryFromReader(message: SingleSecretResponse, reader: jspb.BinaryReader): SingleSecretResponse;
+}
+
+export namespace SingleSecretResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    secret?: proto_clarifai_api_resources_pb.Secret.AsObject,
+  }
+}
+
+export class MultiSecretResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiSecretResponse;
+  hasStatus(): boolean;
+  clearStatus(): MultiSecretResponse;
+
+  getSecretsList(): Array<proto_clarifai_api_resources_pb.Secret>;
+  setSecretsList(value: Array<proto_clarifai_api_resources_pb.Secret>): MultiSecretResponse;
+  clearSecretsList(): MultiSecretResponse;
+  addSecrets(value?: proto_clarifai_api_resources_pb.Secret, index?: number): proto_clarifai_api_resources_pb.Secret;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MultiSecretResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiSecretResponse): MultiSecretResponse.AsObject;
+  static serializeBinaryToWriter(message: MultiSecretResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiSecretResponse;
+  static deserializeBinaryFromReader(message: MultiSecretResponse, reader: jspb.BinaryReader): MultiSecretResponse;
+}
+
+export namespace MultiSecretResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    secretsList: Array<proto_clarifai_api_resources_pb.Secret.AsObject>,
+  }
+}
+
 export enum OrganizationInvitationStatus { 
   NOT_SET = 0,
   PENDING = 1,

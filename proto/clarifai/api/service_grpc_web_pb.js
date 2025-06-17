@@ -16189,5 +16189,310 @@ proto.clarifai.api.V2PromiseClient.prototype.getPipelineStepVersion =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.GetSecretRequest,
+ *   !proto.clarifai.api.SingleSecretResponse>}
+ */
+const methodDescriptor_V2_GetSecret = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/GetSecret',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.GetSecretRequest,
+  proto.clarifai.api.SingleSecretResponse,
+  /**
+   * @param {!proto.clarifai.api.GetSecretRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SingleSecretResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.GetSecretRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SingleSecretResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleSecretResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.getSecret =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/GetSecret',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetSecret,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.GetSecretRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.SingleSecretResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.getSecret =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/GetSecret',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetSecret);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListSecretsRequest,
+ *   !proto.clarifai.api.MultiSecretResponse>}
+ */
+const methodDescriptor_V2_ListSecrets = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListSecrets',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListSecretsRequest,
+  proto.clarifai.api.MultiSecretResponse,
+  /**
+   * @param {!proto.clarifai.api.ListSecretsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiSecretResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListSecretsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiSecretResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiSecretResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listSecrets =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListSecrets',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListSecrets,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListSecretsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiSecretResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listSecrets =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListSecrets',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListSecrets);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostSecretsRequest,
+ *   !proto.clarifai.api.MultiSecretResponse>}
+ */
+const methodDescriptor_V2_PostSecrets = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostSecrets',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostSecretsRequest,
+  proto.clarifai.api.MultiSecretResponse,
+  /**
+   * @param {!proto.clarifai.api.PostSecretsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiSecretResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostSecretsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiSecretResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiSecretResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postSecrets =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostSecrets',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostSecrets,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostSecretsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiSecretResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postSecrets =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostSecrets',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostSecrets);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PatchSecretsRequest,
+ *   !proto.clarifai.api.MultiSecretResponse>}
+ */
+const methodDescriptor_V2_PatchSecrets = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PatchSecrets',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PatchSecretsRequest,
+  proto.clarifai.api.MultiSecretResponse,
+  /**
+   * @param {!proto.clarifai.api.PatchSecretsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiSecretResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PatchSecretsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiSecretResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiSecretResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.patchSecrets =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PatchSecrets',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PatchSecrets,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PatchSecretsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiSecretResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.patchSecrets =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PatchSecrets',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PatchSecrets);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.DeleteSecretsRequest,
+ *   !proto.clarifai.api.MultiSecretResponse>}
+ */
+const methodDescriptor_V2_DeleteSecrets = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/DeleteSecrets',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.DeleteSecretsRequest,
+  proto.clarifai.api.MultiSecretResponse,
+  /**
+   * @param {!proto.clarifai.api.DeleteSecretsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiSecretResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.DeleteSecretsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiSecretResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiSecretResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.deleteSecrets =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/DeleteSecrets',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeleteSecrets,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.DeleteSecretsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiSecretResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.deleteSecrets =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/DeleteSecrets',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeleteSecrets);
+};
+
+
 module.exports = proto.clarifai.api;
 

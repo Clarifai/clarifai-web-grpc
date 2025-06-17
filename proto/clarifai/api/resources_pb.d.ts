@@ -10258,6 +10258,68 @@ export namespace PipelineVersionRun {
   }
 }
 
+export class Secret extends jspb.Message {
+  getId(): string;
+  setId(value: string): Secret;
+
+  getAppId(): string;
+  setAppId(value: string): Secret;
+
+  getName(): string;
+  setName(value: string): Secret;
+
+  getValue(): string;
+  setValue(value: string): Secret;
+
+  getVersion(): number;
+  setVersion(value: number): Secret;
+
+  getDescription(): string;
+  setDescription(value: string): Secret;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Secret;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): Secret;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): Secret;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): Secret;
+
+  getVisibility(): Visibility | undefined;
+  setVisibility(value?: Visibility): Secret;
+  hasVisibility(): boolean;
+  clearVisibility(): Secret;
+
+  getExpiresAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setExpiresAt(value?: google_protobuf_timestamp_pb.Timestamp): Secret;
+  hasExpiresAt(): boolean;
+  clearExpiresAt(): Secret;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Secret.AsObject;
+  static toObject(includeInstance: boolean, msg: Secret): Secret.AsObject;
+  static serializeBinaryToWriter(message: Secret, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Secret;
+  static deserializeBinaryFromReader(message: Secret, reader: jspb.BinaryReader): Secret;
+}
+
+export namespace Secret {
+  export type AsObject = {
+    id: string,
+    appId: string,
+    name: string,
+    value: string,
+    version: number,
+    description: string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    visibility?: Visibility.AsObject,
+    expiresAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
 export enum WorkflowModelUseCase { 
   WORKFLOW_MODEL_USE_CASE_NOT_SET = 0,
   CLASSIFICATION = 1,
