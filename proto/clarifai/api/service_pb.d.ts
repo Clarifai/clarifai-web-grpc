@@ -11504,6 +11504,44 @@ export namespace ListWorkflowVersionEvaluationDataRequest {
   }
 }
 
+export class PostWorkflowVersionEvaluationDataRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostWorkflowVersionEvaluationDataRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostWorkflowVersionEvaluationDataRequest;
+
+  getWorkflowId(): string;
+  setWorkflowId(value: string): PostWorkflowVersionEvaluationDataRequest;
+
+  getWorkflowVersionId(): string;
+  setWorkflowVersionId(value: string): PostWorkflowVersionEvaluationDataRequest;
+
+  getWorkflowVersionEvaluationId(): string;
+  setWorkflowVersionEvaluationId(value: string): PostWorkflowVersionEvaluationDataRequest;
+
+  getWorkflowVersionEvaluationDataList(): Array<proto_clarifai_api_resources_pb.WorkflowVersionEvaluationData>;
+  setWorkflowVersionEvaluationDataList(value: Array<proto_clarifai_api_resources_pb.WorkflowVersionEvaluationData>): PostWorkflowVersionEvaluationDataRequest;
+  clearWorkflowVersionEvaluationDataList(): PostWorkflowVersionEvaluationDataRequest;
+  addWorkflowVersionEvaluationData(value?: proto_clarifai_api_resources_pb.WorkflowVersionEvaluationData, index?: number): proto_clarifai_api_resources_pb.WorkflowVersionEvaluationData;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostWorkflowVersionEvaluationDataRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostWorkflowVersionEvaluationDataRequest): PostWorkflowVersionEvaluationDataRequest.AsObject;
+  static serializeBinaryToWriter(message: PostWorkflowVersionEvaluationDataRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostWorkflowVersionEvaluationDataRequest;
+  static deserializeBinaryFromReader(message: PostWorkflowVersionEvaluationDataRequest, reader: jspb.BinaryReader): PostWorkflowVersionEvaluationDataRequest;
+}
+
+export namespace PostWorkflowVersionEvaluationDataRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    workflowId: string,
+    workflowVersionId: string,
+    workflowVersionEvaluationId: string,
+    workflowVersionEvaluationDataList: Array<proto_clarifai_api_resources_pb.WorkflowVersionEvaluationData.AsObject>,
+  }
+}
+
 export class MultiListWorkflowVersionEvaluationDataResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
   setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiListWorkflowVersionEvaluationDataResponse;

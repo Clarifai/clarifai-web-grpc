@@ -1734,6 +1734,13 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiListWorkflowVersionEvaluationDataResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiListWorkflowVersionEvaluationDataResponse>;
 
+  postWorkflowVersionEvaluationData(
+    request: proto_clarifai_api_service_pb.PostWorkflowVersionEvaluationDataRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiListWorkflowVersionEvaluationDataResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiListWorkflowVersionEvaluationDataResponse>;
+
   postPipelines(
     request: proto_clarifai_api_service_pb.PostPipelinesRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -3127,6 +3134,11 @@ export class V2PromiseClient {
 
   listWorkflowVersionEvaluationData(
     request: proto_clarifai_api_service_pb.ListWorkflowVersionEvaluationDataRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiListWorkflowVersionEvaluationDataResponse>;
+
+  postWorkflowVersionEvaluationData(
+    request: proto_clarifai_api_service_pb.PostWorkflowVersionEvaluationDataRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiListWorkflowVersionEvaluationDataResponse>;
 

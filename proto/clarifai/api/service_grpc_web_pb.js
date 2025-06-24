@@ -15155,6 +15155,67 @@ proto.clarifai.api.V2PromiseClient.prototype.listWorkflowVersionEvaluationData =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostWorkflowVersionEvaluationDataRequest,
+ *   !proto.clarifai.api.MultiListWorkflowVersionEvaluationDataResponse>}
+ */
+const methodDescriptor_V2_PostWorkflowVersionEvaluationData = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostWorkflowVersionEvaluationData',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostWorkflowVersionEvaluationDataRequest,
+  proto.clarifai.api.MultiListWorkflowVersionEvaluationDataResponse,
+  /**
+   * @param {!proto.clarifai.api.PostWorkflowVersionEvaluationDataRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiListWorkflowVersionEvaluationDataResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostWorkflowVersionEvaluationDataRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiListWorkflowVersionEvaluationDataResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiListWorkflowVersionEvaluationDataResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postWorkflowVersionEvaluationData =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostWorkflowVersionEvaluationData',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostWorkflowVersionEvaluationData,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostWorkflowVersionEvaluationDataRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiListWorkflowVersionEvaluationDataResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postWorkflowVersionEvaluationData =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostWorkflowVersionEvaluationData',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostWorkflowVersionEvaluationData);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.PostPipelinesRequest,
  *   !proto.clarifai.api.MultiPipelineResponse>}
  */
