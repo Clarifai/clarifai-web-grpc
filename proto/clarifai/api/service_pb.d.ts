@@ -9938,6 +9938,11 @@ export class ListRunnersRequest extends jspb.Message {
   getMinReplicas(): number;
   setMinReplicas(value: number): ListRunnersRequest;
 
+  getModelVersionIdsList(): Array<string>;
+  setModelVersionIdsList(value: Array<string>): ListRunnersRequest;
+  clearModelVersionIdsList(): ListRunnersRequest;
+  addModelVersionIds(value: string, index?: number): ListRunnersRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListRunnersRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListRunnersRequest): ListRunnersRequest.AsObject;
@@ -9954,6 +9959,7 @@ export namespace ListRunnersRequest {
     perPage: number,
     computeClusterId: string,
     minReplicas: number,
+    modelVersionIdsList: Array<string>,
   }
 }
 
