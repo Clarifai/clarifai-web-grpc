@@ -12903,6 +12903,67 @@ proto.clarifai.api.V2PromiseClient.prototype.postInputsUploads =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListPipelineVersionRunsRequest,
+ *   !proto.clarifai.api.MultiPipelineVersionRunResponse>}
+ */
+const methodDescriptor_V2_ListPipelineVersionRuns = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListPipelineVersionRuns',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListPipelineVersionRunsRequest,
+  proto.clarifai.api.MultiPipelineVersionRunResponse,
+  /**
+   * @param {!proto.clarifai.api.ListPipelineVersionRunsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiPipelineVersionRunResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListPipelineVersionRunsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiPipelineVersionRunResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiPipelineVersionRunResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listPipelineVersionRuns =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListPipelineVersionRuns',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListPipelineVersionRuns,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListPipelineVersionRunsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiPipelineVersionRunResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listPipelineVersionRuns =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListPipelineVersionRuns',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListPipelineVersionRuns);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.GetRunnerRequest,
  *   !proto.clarifai.api.SingleRunnerResponse>}
  */
@@ -15033,6 +15094,860 @@ proto.clarifai.api.V2PromiseClient.prototype.patchWorkflowVersionEvaluations =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListWorkflowVersionEvaluationDataRequest,
+ *   !proto.clarifai.api.MultiListWorkflowVersionEvaluationDataResponse>}
+ */
+const methodDescriptor_V2_ListWorkflowVersionEvaluationData = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListWorkflowVersionEvaluationData',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListWorkflowVersionEvaluationDataRequest,
+  proto.clarifai.api.MultiListWorkflowVersionEvaluationDataResponse,
+  /**
+   * @param {!proto.clarifai.api.ListWorkflowVersionEvaluationDataRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiListWorkflowVersionEvaluationDataResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListWorkflowVersionEvaluationDataRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiListWorkflowVersionEvaluationDataResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiListWorkflowVersionEvaluationDataResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listWorkflowVersionEvaluationData =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListWorkflowVersionEvaluationData',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListWorkflowVersionEvaluationData,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListWorkflowVersionEvaluationDataRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiListWorkflowVersionEvaluationDataResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listWorkflowVersionEvaluationData =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListWorkflowVersionEvaluationData',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListWorkflowVersionEvaluationData);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostWorkflowVersionEvaluationDataRequest,
+ *   !proto.clarifai.api.MultiListWorkflowVersionEvaluationDataResponse>}
+ */
+const methodDescriptor_V2_PostWorkflowVersionEvaluationData = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostWorkflowVersionEvaluationData',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostWorkflowVersionEvaluationDataRequest,
+  proto.clarifai.api.MultiListWorkflowVersionEvaluationDataResponse,
+  /**
+   * @param {!proto.clarifai.api.PostWorkflowVersionEvaluationDataRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiListWorkflowVersionEvaluationDataResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostWorkflowVersionEvaluationDataRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiListWorkflowVersionEvaluationDataResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiListWorkflowVersionEvaluationDataResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postWorkflowVersionEvaluationData =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostWorkflowVersionEvaluationData',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostWorkflowVersionEvaluationData,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostWorkflowVersionEvaluationDataRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiListWorkflowVersionEvaluationDataResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postWorkflowVersionEvaluationData =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostWorkflowVersionEvaluationData',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostWorkflowVersionEvaluationData);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostPipelinesRequest,
+ *   !proto.clarifai.api.MultiPipelineResponse>}
+ */
+const methodDescriptor_V2_PostPipelines = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostPipelines',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostPipelinesRequest,
+  proto.clarifai.api.MultiPipelineResponse,
+  /**
+   * @param {!proto.clarifai.api.PostPipelinesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiPipelineResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostPipelinesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiPipelineResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiPipelineResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postPipelines =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostPipelines',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostPipelines,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostPipelinesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiPipelineResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postPipelines =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostPipelines',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostPipelines);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.GetPipelineRequest,
+ *   !proto.clarifai.api.SinglePipelineResponse>}
+ */
+const methodDescriptor_V2_GetPipeline = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/GetPipeline',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.GetPipelineRequest,
+  proto.clarifai.api.SinglePipelineResponse,
+  /**
+   * @param {!proto.clarifai.api.GetPipelineRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SinglePipelineResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.GetPipelineRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SinglePipelineResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SinglePipelineResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.getPipeline =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/GetPipeline',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetPipeline,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.GetPipelineRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.SinglePipelineResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.getPipeline =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/GetPipeline',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetPipeline);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListPipelinesRequest,
+ *   !proto.clarifai.api.MultiPipelineResponse>}
+ */
+const methodDescriptor_V2_ListPipelines = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListPipelines',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListPipelinesRequest,
+  proto.clarifai.api.MultiPipelineResponse,
+  /**
+   * @param {!proto.clarifai.api.ListPipelinesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiPipelineResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListPipelinesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiPipelineResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiPipelineResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listPipelines =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListPipelines',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListPipelines,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListPipelinesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiPipelineResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listPipelines =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListPipelines',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListPipelines);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PatchPipelinesRequest,
+ *   !proto.clarifai.api.MultiPipelineResponse>}
+ */
+const methodDescriptor_V2_PatchPipelines = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PatchPipelines',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PatchPipelinesRequest,
+  proto.clarifai.api.MultiPipelineResponse,
+  /**
+   * @param {!proto.clarifai.api.PatchPipelinesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiPipelineResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PatchPipelinesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiPipelineResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiPipelineResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.patchPipelines =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PatchPipelines',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PatchPipelines,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PatchPipelinesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiPipelineResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.patchPipelines =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PatchPipelines',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PatchPipelines);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.DeletePipelinesRequest,
+ *   !proto.clarifai.api.MultiPipelineResponse>}
+ */
+const methodDescriptor_V2_DeletePipelines = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/DeletePipelines',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.DeletePipelinesRequest,
+  proto.clarifai.api.MultiPipelineResponse,
+  /**
+   * @param {!proto.clarifai.api.DeletePipelinesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiPipelineResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.DeletePipelinesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiPipelineResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiPipelineResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.deletePipelines =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/DeletePipelines',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeletePipelines,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.DeletePipelinesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiPipelineResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.deletePipelines =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/DeletePipelines',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeletePipelines);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.GetPipelineVersionRequest,
+ *   !proto.clarifai.api.SinglePipelineVersionResponse>}
+ */
+const methodDescriptor_V2_GetPipelineVersion = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/GetPipelineVersion',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.GetPipelineVersionRequest,
+  proto.clarifai.api.SinglePipelineVersionResponse,
+  /**
+   * @param {!proto.clarifai.api.GetPipelineVersionRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SinglePipelineVersionResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.GetPipelineVersionRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SinglePipelineVersionResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SinglePipelineVersionResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.getPipelineVersion =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/GetPipelineVersion',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetPipelineVersion,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.GetPipelineVersionRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.SinglePipelineVersionResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.getPipelineVersion =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/GetPipelineVersion',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetPipelineVersion);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListPipelineVersionsRequest,
+ *   !proto.clarifai.api.MultiPipelineVersionResponse>}
+ */
+const methodDescriptor_V2_ListPipelineVersions = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListPipelineVersions',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListPipelineVersionsRequest,
+  proto.clarifai.api.MultiPipelineVersionResponse,
+  /**
+   * @param {!proto.clarifai.api.ListPipelineVersionsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiPipelineVersionResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListPipelineVersionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiPipelineVersionResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiPipelineVersionResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listPipelineVersions =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListPipelineVersions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListPipelineVersions,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListPipelineVersionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiPipelineVersionResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listPipelineVersions =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListPipelineVersions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListPipelineVersions);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PatchPipelineVersionsRequest,
+ *   !proto.clarifai.api.MultiPipelineVersionResponse>}
+ */
+const methodDescriptor_V2_PatchPipelineVersions = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PatchPipelineVersions',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PatchPipelineVersionsRequest,
+  proto.clarifai.api.MultiPipelineVersionResponse,
+  /**
+   * @param {!proto.clarifai.api.PatchPipelineVersionsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiPipelineVersionResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PatchPipelineVersionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiPipelineVersionResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiPipelineVersionResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.patchPipelineVersions =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PatchPipelineVersions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PatchPipelineVersions,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PatchPipelineVersionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiPipelineVersionResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.patchPipelineVersions =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PatchPipelineVersions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PatchPipelineVersions);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.DeletePipelineVersionsRequest,
+ *   !proto.clarifai.api.MultiPipelineVersionResponse>}
+ */
+const methodDescriptor_V2_DeletePipelineVersions = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/DeletePipelineVersions',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.DeletePipelineVersionsRequest,
+  proto.clarifai.api.MultiPipelineVersionResponse,
+  /**
+   * @param {!proto.clarifai.api.DeletePipelineVersionsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiPipelineVersionResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.DeletePipelineVersionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiPipelineVersionResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiPipelineVersionResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.deletePipelineVersions =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/DeletePipelineVersions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeletePipelineVersions,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.DeletePipelineVersionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiPipelineVersionResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.deletePipelineVersions =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/DeletePipelineVersions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeletePipelineVersions);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.GetPipelineVersionRunRequest,
+ *   !proto.clarifai.api.SinglePipelineVersionRunResponse>}
+ */
+const methodDescriptor_V2_GetPipelineVersionRun = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/GetPipelineVersionRun',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.GetPipelineVersionRunRequest,
+  proto.clarifai.api.SinglePipelineVersionRunResponse,
+  /**
+   * @param {!proto.clarifai.api.GetPipelineVersionRunRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SinglePipelineVersionRunResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.GetPipelineVersionRunRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SinglePipelineVersionRunResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SinglePipelineVersionRunResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.getPipelineVersionRun =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/GetPipelineVersionRun',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetPipelineVersionRun,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.GetPipelineVersionRunRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.SinglePipelineVersionRunResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.getPipelineVersionRun =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/GetPipelineVersionRun',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetPipelineVersionRun);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostPipelineVersionRunsRequest,
+ *   !proto.clarifai.api.MultiPipelineVersionRunResponse>}
+ */
+const methodDescriptor_V2_PostPipelineVersionRuns = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostPipelineVersionRuns',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostPipelineVersionRunsRequest,
+  proto.clarifai.api.MultiPipelineVersionRunResponse,
+  /**
+   * @param {!proto.clarifai.api.PostPipelineVersionRunsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiPipelineVersionRunResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostPipelineVersionRunsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiPipelineVersionRunResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiPipelineVersionRunResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postPipelineVersionRuns =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostPipelineVersionRuns',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostPipelineVersionRuns,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostPipelineVersionRunsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiPipelineVersionRunResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postPipelineVersionRuns =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostPipelineVersionRuns',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostPipelineVersionRuns);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PatchPipelineVersionRunsRequest,
+ *   !proto.clarifai.api.MultiPipelineVersionRunResponse>}
+ */
+const methodDescriptor_V2_PatchPipelineVersionRuns = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PatchPipelineVersionRuns',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PatchPipelineVersionRunsRequest,
+  proto.clarifai.api.MultiPipelineVersionRunResponse,
+  /**
+   * @param {!proto.clarifai.api.PatchPipelineVersionRunsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiPipelineVersionRunResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PatchPipelineVersionRunsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiPipelineVersionRunResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiPipelineVersionRunResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.patchPipelineVersionRuns =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PatchPipelineVersionRuns',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PatchPipelineVersionRuns,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PatchPipelineVersionRunsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiPipelineVersionRunResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.patchPipelineVersionRuns =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PatchPipelineVersionRuns',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PatchPipelineVersionRuns);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.PostPipelineStepsRequest,
  *   !proto.clarifai.api.MultiPipelineStepResponse>}
  */
@@ -15332,6 +16247,311 @@ proto.clarifai.api.V2PromiseClient.prototype.getPipelineStepVersion =
       request,
       metadata || {},
       methodDescriptor_V2_GetPipelineStepVersion);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.GetSecretRequest,
+ *   !proto.clarifai.api.SingleSecretResponse>}
+ */
+const methodDescriptor_V2_GetSecret = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/GetSecret',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.GetSecretRequest,
+  proto.clarifai.api.SingleSecretResponse,
+  /**
+   * @param {!proto.clarifai.api.GetSecretRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SingleSecretResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.GetSecretRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SingleSecretResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleSecretResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.getSecret =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/GetSecret',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetSecret,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.GetSecretRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.SingleSecretResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.getSecret =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/GetSecret',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetSecret);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListSecretsRequest,
+ *   !proto.clarifai.api.MultiSecretResponse>}
+ */
+const methodDescriptor_V2_ListSecrets = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListSecrets',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListSecretsRequest,
+  proto.clarifai.api.MultiSecretResponse,
+  /**
+   * @param {!proto.clarifai.api.ListSecretsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiSecretResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListSecretsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiSecretResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiSecretResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listSecrets =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListSecrets',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListSecrets,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListSecretsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiSecretResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listSecrets =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListSecrets',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListSecrets);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostSecretsRequest,
+ *   !proto.clarifai.api.MultiSecretResponse>}
+ */
+const methodDescriptor_V2_PostSecrets = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostSecrets',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostSecretsRequest,
+  proto.clarifai.api.MultiSecretResponse,
+  /**
+   * @param {!proto.clarifai.api.PostSecretsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiSecretResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostSecretsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiSecretResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiSecretResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postSecrets =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostSecrets',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostSecrets,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostSecretsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiSecretResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postSecrets =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostSecrets',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostSecrets);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PatchSecretsRequest,
+ *   !proto.clarifai.api.MultiSecretResponse>}
+ */
+const methodDescriptor_V2_PatchSecrets = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PatchSecrets',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PatchSecretsRequest,
+  proto.clarifai.api.MultiSecretResponse,
+  /**
+   * @param {!proto.clarifai.api.PatchSecretsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiSecretResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PatchSecretsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiSecretResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiSecretResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.patchSecrets =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PatchSecrets',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PatchSecrets,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PatchSecretsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiSecretResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.patchSecrets =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PatchSecrets',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PatchSecrets);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.DeleteSecretsRequest,
+ *   !proto.clarifai.api.MultiSecretResponse>}
+ */
+const methodDescriptor_V2_DeleteSecrets = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/DeleteSecrets',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.DeleteSecretsRequest,
+  proto.clarifai.api.MultiSecretResponse,
+  /**
+   * @param {!proto.clarifai.api.DeleteSecretsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiSecretResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.DeleteSecretsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiSecretResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiSecretResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.deleteSecrets =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/DeleteSecrets',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeleteSecrets,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.DeleteSecretsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiSecretResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.deleteSecrets =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/DeleteSecrets',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeleteSecrets);
 };
 
 
