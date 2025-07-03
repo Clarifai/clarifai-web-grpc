@@ -3679,6 +3679,9 @@ export class ListModelsRequest extends jspb.Message {
   getMinReplicas(): number;
   setMinReplicas(value: number): ListModelsRequest;
 
+  getShowReplicas(): boolean;
+  setShowReplicas(value: boolean): ListModelsRequest;
+
   getSortByCase(): ListModelsRequest.SortByCase;
 
   serializeBinary(): Uint8Array;
@@ -3722,6 +3725,7 @@ export namespace ListModelsRequest {
     source: number,
     creator: string,
     minReplicas: number,
+    showReplicas: boolean,
   }
 
   export enum SortByCase { 
