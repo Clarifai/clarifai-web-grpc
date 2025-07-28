@@ -3181,6 +3181,9 @@ export class ListLogEntriesRequest extends jspb.Message {
   getWorkflowId(): string;
   setWorkflowId(value: string): ListLogEntriesRequest;
 
+  getComputeClusterUserId(): string;
+  setComputeClusterUserId(value: string): ListLogEntriesRequest;
+
   getComputeClusterId(): string;
   setComputeClusterId(value: string): ListLogEntriesRequest;
 
@@ -3222,6 +3225,7 @@ export namespace ListLogEntriesRequest {
     modelId: string,
     modelVersionId: string,
     workflowId: string,
+    computeClusterUserId: string,
     computeClusterId: string,
     nodepoolId: string,
     runnerId: string,
@@ -3250,6 +3254,9 @@ export class StreamLogEntriesRequest extends jspb.Message {
 
   getWorkflowId(): string;
   setWorkflowId(value: string): StreamLogEntriesRequest;
+
+  getComputeClusterUserId(): string;
+  setComputeClusterUserId(value: string): StreamLogEntriesRequest;
 
   getComputeClusterId(): string;
   setComputeClusterId(value: string): StreamLogEntriesRequest;
@@ -3290,6 +3297,7 @@ export namespace StreamLogEntriesRequest {
     modelId: string,
     modelVersionId: string,
     workflowId: string,
+    computeClusterUserId: string,
     computeClusterId: string,
     nodepoolId: string,
     runnerId: string,
