@@ -332,6 +332,164 @@ export namespace DeleteAnnotationsRequest {
   }
 }
 
+export class ListAnnotationTracksRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListAnnotationTracksRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): ListAnnotationTracksRequest;
+
+  getIdsList(): Array<string>;
+  setIdsList(value: Array<string>): ListAnnotationTracksRequest;
+  clearIdsList(): ListAnnotationTracksRequest;
+  addIds(value: string, index?: number): ListAnnotationTracksRequest;
+
+  getInputId(): string;
+  setInputId(value: string): ListAnnotationTracksRequest;
+
+  getPage(): number;
+  setPage(value: number): ListAnnotationTracksRequest;
+
+  getPerPage(): number;
+  setPerPage(value: number): ListAnnotationTracksRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAnnotationTracksRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAnnotationTracksRequest): ListAnnotationTracksRequest.AsObject;
+  static serializeBinaryToWriter(message: ListAnnotationTracksRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAnnotationTracksRequest;
+  static deserializeBinaryFromReader(message: ListAnnotationTracksRequest, reader: jspb.BinaryReader): ListAnnotationTracksRequest;
+}
+
+export namespace ListAnnotationTracksRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    idsList: Array<string>,
+    inputId: string,
+    page: number,
+    perPage: number,
+  }
+}
+
+export class PostAnnotationTracksRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostAnnotationTracksRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostAnnotationTracksRequest;
+
+  getAnnotationTracksList(): Array<proto_clarifai_api_resources_pb.AnnotationTrack>;
+  setAnnotationTracksList(value: Array<proto_clarifai_api_resources_pb.AnnotationTrack>): PostAnnotationTracksRequest;
+  clearAnnotationTracksList(): PostAnnotationTracksRequest;
+  addAnnotationTracks(value?: proto_clarifai_api_resources_pb.AnnotationTrack, index?: number): proto_clarifai_api_resources_pb.AnnotationTrack;
+
+  getInputId(): string;
+  setInputId(value: string): PostAnnotationTracksRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostAnnotationTracksRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostAnnotationTracksRequest): PostAnnotationTracksRequest.AsObject;
+  static serializeBinaryToWriter(message: PostAnnotationTracksRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostAnnotationTracksRequest;
+  static deserializeBinaryFromReader(message: PostAnnotationTracksRequest, reader: jspb.BinaryReader): PostAnnotationTracksRequest;
+}
+
+export namespace PostAnnotationTracksRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    annotationTracksList: Array<proto_clarifai_api_resources_pb.AnnotationTrack.AsObject>,
+    inputId: string,
+  }
+}
+
+export class PatchAnnotationTracksRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchAnnotationTracksRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PatchAnnotationTracksRequest;
+
+  getAnnotationTracksList(): Array<proto_clarifai_api_resources_pb.AnnotationTrack>;
+  setAnnotationTracksList(value: Array<proto_clarifai_api_resources_pb.AnnotationTrack>): PatchAnnotationTracksRequest;
+  clearAnnotationTracksList(): PatchAnnotationTracksRequest;
+  addAnnotationTracks(value?: proto_clarifai_api_resources_pb.AnnotationTrack, index?: number): proto_clarifai_api_resources_pb.AnnotationTrack;
+
+  getInputId(): string;
+  setInputId(value: string): PatchAnnotationTracksRequest;
+
+  getAction(): string;
+  setAction(value: string): PatchAnnotationTracksRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PatchAnnotationTracksRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PatchAnnotationTracksRequest): PatchAnnotationTracksRequest.AsObject;
+  static serializeBinaryToWriter(message: PatchAnnotationTracksRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PatchAnnotationTracksRequest;
+  static deserializeBinaryFromReader(message: PatchAnnotationTracksRequest, reader: jspb.BinaryReader): PatchAnnotationTracksRequest;
+}
+
+export namespace PatchAnnotationTracksRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    annotationTracksList: Array<proto_clarifai_api_resources_pb.AnnotationTrack.AsObject>,
+    inputId: string,
+    action: string,
+  }
+}
+
+export class DeleteAnnotationTracksRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteAnnotationTracksRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): DeleteAnnotationTracksRequest;
+
+  getIdsList(): Array<string>;
+  setIdsList(value: Array<string>): DeleteAnnotationTracksRequest;
+  clearIdsList(): DeleteAnnotationTracksRequest;
+  addIds(value: string, index?: number): DeleteAnnotationTracksRequest;
+
+  getInputId(): string;
+  setInputId(value: string): DeleteAnnotationTracksRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteAnnotationTracksRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteAnnotationTracksRequest): DeleteAnnotationTracksRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteAnnotationTracksRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteAnnotationTracksRequest;
+  static deserializeBinaryFromReader(message: DeleteAnnotationTracksRequest, reader: jspb.BinaryReader): DeleteAnnotationTracksRequest;
+}
+
+export namespace DeleteAnnotationTracksRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    idsList: Array<string>,
+    inputId: string,
+  }
+}
+
+export class MultiAnnotationTrackResponse extends jspb.Message {
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiAnnotationTrackResponse;
+  hasStatus(): boolean;
+  clearStatus(): MultiAnnotationTrackResponse;
+
+  getAnnotationTracksList(): Array<proto_clarifai_api_resources_pb.AnnotationTrack>;
+  setAnnotationTracksList(value: Array<proto_clarifai_api_resources_pb.AnnotationTrack>): MultiAnnotationTrackResponse;
+  clearAnnotationTracksList(): MultiAnnotationTrackResponse;
+  addAnnotationTracks(value?: proto_clarifai_api_resources_pb.AnnotationTrack, index?: number): proto_clarifai_api_resources_pb.AnnotationTrack;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MultiAnnotationTrackResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MultiAnnotationTrackResponse): MultiAnnotationTrackResponse.AsObject;
+  static serializeBinaryToWriter(message: MultiAnnotationTrackResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MultiAnnotationTrackResponse;
+  static deserializeBinaryFromReader(message: MultiAnnotationTrackResponse, reader: jspb.BinaryReader): MultiAnnotationTrackResponse;
+}
+
+export namespace MultiAnnotationTrackResponse {
+  export type AsObject = {
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    annotationTracksList: Array<proto_clarifai_api_resources_pb.AnnotationTrack.AsObject>,
+  }
+}
+
 export class SingleAnnotationResponse extends jspb.Message {
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
   setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleAnnotationResponse;

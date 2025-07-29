@@ -1501,6 +1501,250 @@ proto.clarifai.api.V2PromiseClient.prototype.deleteAnnotations =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListAnnotationTracksRequest,
+ *   !proto.clarifai.api.MultiAnnotationTrackResponse>}
+ */
+const methodDescriptor_V2_ListAnnotationTracks = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListAnnotationTracks',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListAnnotationTracksRequest,
+  proto.clarifai.api.MultiAnnotationTrackResponse,
+  /**
+   * @param {!proto.clarifai.api.ListAnnotationTracksRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiAnnotationTrackResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListAnnotationTracksRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiAnnotationTrackResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiAnnotationTrackResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listAnnotationTracks =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListAnnotationTracks',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListAnnotationTracks,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListAnnotationTracksRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiAnnotationTrackResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listAnnotationTracks =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListAnnotationTracks',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListAnnotationTracks);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostAnnotationTracksRequest,
+ *   !proto.clarifai.api.MultiAnnotationTrackResponse>}
+ */
+const methodDescriptor_V2_PostAnnotationTracks = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostAnnotationTracks',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostAnnotationTracksRequest,
+  proto.clarifai.api.MultiAnnotationTrackResponse,
+  /**
+   * @param {!proto.clarifai.api.PostAnnotationTracksRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiAnnotationTrackResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostAnnotationTracksRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiAnnotationTrackResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiAnnotationTrackResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postAnnotationTracks =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostAnnotationTracks',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostAnnotationTracks,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostAnnotationTracksRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiAnnotationTrackResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postAnnotationTracks =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostAnnotationTracks',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostAnnotationTracks);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PatchAnnotationTracksRequest,
+ *   !proto.clarifai.api.MultiAnnotationTrackResponse>}
+ */
+const methodDescriptor_V2_PatchAnnotationTracks = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PatchAnnotationTracks',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PatchAnnotationTracksRequest,
+  proto.clarifai.api.MultiAnnotationTrackResponse,
+  /**
+   * @param {!proto.clarifai.api.PatchAnnotationTracksRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiAnnotationTrackResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PatchAnnotationTracksRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiAnnotationTrackResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiAnnotationTrackResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.patchAnnotationTracks =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PatchAnnotationTracks',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PatchAnnotationTracks,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PatchAnnotationTracksRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiAnnotationTrackResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.patchAnnotationTracks =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PatchAnnotationTracks',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PatchAnnotationTracks);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.DeleteAnnotationTracksRequest,
+ *   !proto.clarifai.api.status.BaseResponse>}
+ */
+const methodDescriptor_V2_DeleteAnnotationTracks = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/DeleteAnnotationTracks',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.DeleteAnnotationTracksRequest,
+  proto_clarifai_api_status_status_pb.BaseResponse,
+  /**
+   * @param {!proto.clarifai.api.DeleteAnnotationTracksRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto_clarifai_api_status_status_pb.BaseResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.DeleteAnnotationTracksRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.status.BaseResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.status.BaseResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.deleteAnnotationTracks =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/DeleteAnnotationTracks',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeleteAnnotationTracks,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.DeleteAnnotationTracksRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.status.BaseResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.deleteAnnotationTracks =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/DeleteAnnotationTracks',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeleteAnnotationTracks);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.PatchAnnotationsSearchesRequest,
  *   !proto.clarifai.api.MultiSearchResponse>}
  */

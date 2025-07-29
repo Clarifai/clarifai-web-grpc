@@ -170,6 +170,34 @@ export class V2Client {
                response: proto_clarifai_api_status_status_pb.BaseResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
 
+  listAnnotationTracks(
+    request: proto_clarifai_api_service_pb.ListAnnotationTracksRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiAnnotationTrackResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiAnnotationTrackResponse>;
+
+  postAnnotationTracks(
+    request: proto_clarifai_api_service_pb.PostAnnotationTracksRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiAnnotationTrackResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiAnnotationTrackResponse>;
+
+  patchAnnotationTracks(
+    request: proto_clarifai_api_service_pb.PatchAnnotationTracksRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiAnnotationTrackResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiAnnotationTrackResponse>;
+
+  deleteAnnotationTracks(
+    request: proto_clarifai_api_service_pb.DeleteAnnotationTracksRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
   patchAnnotationsSearches(
     request: proto_clarifai_api_service_pb.PatchAnnotationsSearchesRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -2014,6 +2042,26 @@ export class V2PromiseClient {
 
   deleteAnnotations(
     request: proto_clarifai_api_service_pb.DeleteAnnotationsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  listAnnotationTracks(
+    request: proto_clarifai_api_service_pb.ListAnnotationTracksRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiAnnotationTrackResponse>;
+
+  postAnnotationTracks(
+    request: proto_clarifai_api_service_pb.PostAnnotationTracksRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiAnnotationTrackResponse>;
+
+  patchAnnotationTracks(
+    request: proto_clarifai_api_service_pb.PatchAnnotationTracksRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiAnnotationTrackResponse>;
+
+  deleteAnnotationTracks(
+    request: proto_clarifai_api_service_pb.DeleteAnnotationTracksRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
 
