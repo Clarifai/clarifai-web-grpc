@@ -10427,6 +10427,11 @@ export class SyncStateRequest extends jspb.Message {
   clearPipelineVersionRunsList(): SyncStateRequest;
   addPipelineVersionRuns(value?: proto_clarifai_api_resources_pb.PipelineVersionRun, index?: number): proto_clarifai_api_resources_pb.PipelineVersionRun;
 
+  getSecretsList(): Array<proto_clarifai_api_resources_pb.Secret>;
+  setSecretsList(value: Array<proto_clarifai_api_resources_pb.Secret>): SyncStateRequest;
+  clearSecretsList(): SyncStateRequest;
+  addSecrets(value?: proto_clarifai_api_resources_pb.Secret, index?: number): proto_clarifai_api_resources_pb.Secret;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SyncStateRequest.AsObject;
   static toObject(includeInstance: boolean, msg: SyncStateRequest): SyncStateRequest.AsObject;
@@ -10442,6 +10447,7 @@ export namespace SyncStateRequest {
     nodepoolsList: Array<proto_clarifai_api_resources_pb.Nodepool.AsObject>,
     runnersList: Array<proto_clarifai_api_resources_pb.Runner.AsObject>,
     pipelineVersionRunsList: Array<proto_clarifai_api_resources_pb.PipelineVersionRun.AsObject>,
+    secretsList: Array<proto_clarifai_api_resources_pb.Secret.AsObject>,
   }
 }
 
@@ -12696,8 +12702,8 @@ export class GetSecretRequest extends jspb.Message {
   hasUserAppId(): boolean;
   clearUserAppId(): GetSecretRequest;
 
-  getSecretId(): string;
-  setSecretId(value: string): GetSecretRequest;
+  getId(): string;
+  setId(value: string): GetSecretRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetSecretRequest.AsObject;
@@ -12710,7 +12716,7 @@ export class GetSecretRequest extends jspb.Message {
 export namespace GetSecretRequest {
   export type AsObject = {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
-    secretId: string,
+    id: string,
   }
 }
 
@@ -12774,10 +12780,10 @@ export class PatchSecretsRequest extends jspb.Message {
   hasUserAppId(): boolean;
   clearUserAppId(): PatchSecretsRequest;
 
-  getSecretsList(): Array<proto_clarifai_api_resources_pb.Secret>;
-  setSecretsList(value: Array<proto_clarifai_api_resources_pb.Secret>): PatchSecretsRequest;
-  clearSecretsList(): PatchSecretsRequest;
-  addSecrets(value?: proto_clarifai_api_resources_pb.Secret, index?: number): proto_clarifai_api_resources_pb.Secret;
+  getSecretList(): Array<proto_clarifai_api_resources_pb.Secret>;
+  setSecretList(value: Array<proto_clarifai_api_resources_pb.Secret>): PatchSecretsRequest;
+  clearSecretList(): PatchSecretsRequest;
+  addSecret(value?: proto_clarifai_api_resources_pb.Secret, index?: number): proto_clarifai_api_resources_pb.Secret;
 
   getAction(): string;
   setAction(value: string): PatchSecretsRequest;
@@ -12793,7 +12799,7 @@ export class PatchSecretsRequest extends jspb.Message {
 export namespace PatchSecretsRequest {
   export type AsObject = {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
-    secretsList: Array<proto_clarifai_api_resources_pb.Secret.AsObject>,
+    secretList: Array<proto_clarifai_api_resources_pb.Secret.AsObject>,
     action: string,
   }
 }

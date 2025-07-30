@@ -3418,6 +3418,7 @@ export namespace ModelTypeField {
     DATASET_VERSION = 20,
     ENCRYPTED_STRING = 21,
     CHECKPOINT_MODEL = 22,
+    ARRAY_OF_SECRETS = 23,
   }
 
   export enum DataType { 
@@ -10336,11 +10337,8 @@ export class Secret extends jspb.Message {
   getId(): string;
   setId(value: string): Secret;
 
-  getAppId(): string;
-  setAppId(value: string): Secret;
-
-  getName(): string;
-  setName(value: string): Secret;
+  getUserId(): string;
+  setUserId(value: string): Secret;
 
   getValue(): string;
   setValue(value: string): Secret;
@@ -10361,11 +10359,6 @@ export class Secret extends jspb.Message {
   hasModifiedAt(): boolean;
   clearModifiedAt(): Secret;
 
-  getVisibility(): Visibility | undefined;
-  setVisibility(value?: Visibility): Secret;
-  hasVisibility(): boolean;
-  clearVisibility(): Secret;
-
   getExpiresAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setExpiresAt(value?: google_protobuf_timestamp_pb.Timestamp): Secret;
   hasExpiresAt(): boolean;
@@ -10382,14 +10375,12 @@ export class Secret extends jspb.Message {
 export namespace Secret {
   export type AsObject = {
     id: string,
-    appId: string,
-    name: string,
+    userId: string,
     value: string,
     version: number,
     description: string,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    visibility?: Visibility.AsObject,
     expiresAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
