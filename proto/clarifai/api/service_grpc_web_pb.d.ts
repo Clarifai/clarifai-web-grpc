@@ -1801,8 +1801,8 @@ export class V2Client {
     request: proto_clarifai_api_service_pb.DeletePipelinesRequest,
     metadata: grpcWeb.Metadata | undefined,
     callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.MultiPipelineResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiPipelineResponse>;
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
 
   getPipelineVersion(
     request: proto_clarifai_api_service_pb.GetPipelineVersionRequest,
@@ -1829,8 +1829,8 @@ export class V2Client {
     request: proto_clarifai_api_service_pb.DeletePipelineVersionsRequest,
     metadata: grpcWeb.Metadata | undefined,
     callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.MultiPipelineVersionResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiPipelineVersionResponse>;
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
 
   getPipelineVersionRun(
     request: proto_clarifai_api_service_pb.GetPipelineVersionRunRequest,
@@ -3213,7 +3213,7 @@ export class V2PromiseClient {
   deletePipelines(
     request: proto_clarifai_api_service_pb.DeletePipelinesRequest,
     metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.MultiPipelineResponse>;
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
 
   getPipelineVersion(
     request: proto_clarifai_api_service_pb.GetPipelineVersionRequest,
@@ -3233,7 +3233,7 @@ export class V2PromiseClient {
   deletePipelineVersions(
     request: proto_clarifai_api_service_pb.DeletePipelineVersionsRequest,
     metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.MultiPipelineVersionResponse>;
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
 
   getPipelineVersionRun(
     request: proto_clarifai_api_service_pb.GetPipelineVersionRunRequest,

@@ -11888,10 +11888,10 @@ export class DeletePipelinesRequest extends jspb.Message {
   hasUserAppId(): boolean;
   clearUserAppId(): DeletePipelinesRequest;
 
-  getPipelineIdsList(): Array<string>;
-  setPipelineIdsList(value: Array<string>): DeletePipelinesRequest;
-  clearPipelineIdsList(): DeletePipelinesRequest;
-  addPipelineIds(value: string, index?: number): DeletePipelinesRequest;
+  getIdsList(): Array<string>;
+  setIdsList(value: Array<string>): DeletePipelinesRequest;
+  clearIdsList(): DeletePipelinesRequest;
+  addIds(value: string, index?: number): DeletePipelinesRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeletePipelinesRequest.AsObject;
@@ -11904,7 +11904,7 @@ export class DeletePipelinesRequest extends jspb.Message {
 export namespace DeletePipelinesRequest {
   export type AsObject = {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
-    pipelineIdsList: Array<string>,
+    idsList: Array<string>,
   }
 }
 

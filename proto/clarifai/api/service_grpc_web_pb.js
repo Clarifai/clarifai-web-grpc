@@ -15705,13 +15705,13 @@ proto.clarifai.api.V2PromiseClient.prototype.patchPipelines =
  * @const
  * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.DeletePipelinesRequest,
- *   !proto.clarifai.api.MultiPipelineResponse>}
+ *   !proto.clarifai.api.status.BaseResponse>}
  */
 const methodDescriptor_V2_DeletePipelines = new grpc.web.MethodDescriptor(
   '/clarifai.api.V2/DeletePipelines',
   grpc.web.MethodType.UNARY,
   proto.clarifai.api.DeletePipelinesRequest,
-  proto.clarifai.api.MultiPipelineResponse,
+  proto_clarifai_api_status_status_pb.BaseResponse,
   /**
    * @param {!proto.clarifai.api.DeletePipelinesRequest} request
    * @return {!Uint8Array}
@@ -15719,7 +15719,7 @@ const methodDescriptor_V2_DeletePipelines = new grpc.web.MethodDescriptor(
   function(request) {
     return request.serializeBinary();
   },
-  proto.clarifai.api.MultiPipelineResponse.deserializeBinary
+  proto_clarifai_api_status_status_pb.BaseResponse.deserializeBinary
 );
 
 
@@ -15728,9 +15728,9 @@ const methodDescriptor_V2_DeletePipelines = new grpc.web.MethodDescriptor(
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiPipelineResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.status.BaseResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiPipelineResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.status.BaseResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.clarifai.api.V2Client.prototype.deletePipelines =
@@ -15749,7 +15749,7 @@ proto.clarifai.api.V2Client.prototype.deletePipelines =
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.clarifai.api.MultiPipelineResponse>}
+ * @return {!Promise<!proto.clarifai.api.status.BaseResponse>}
  *     Promise that resolves to the response
  */
 proto.clarifai.api.V2PromiseClient.prototype.deletePipelines =
@@ -15949,13 +15949,13 @@ proto.clarifai.api.V2PromiseClient.prototype.patchPipelineVersions =
  * @const
  * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.DeletePipelineVersionsRequest,
- *   !proto.clarifai.api.MultiPipelineVersionResponse>}
+ *   !proto.clarifai.api.status.BaseResponse>}
  */
 const methodDescriptor_V2_DeletePipelineVersions = new grpc.web.MethodDescriptor(
   '/clarifai.api.V2/DeletePipelineVersions',
   grpc.web.MethodType.UNARY,
   proto.clarifai.api.DeletePipelineVersionsRequest,
-  proto.clarifai.api.MultiPipelineVersionResponse,
+  proto_clarifai_api_status_status_pb.BaseResponse,
   /**
    * @param {!proto.clarifai.api.DeletePipelineVersionsRequest} request
    * @return {!Uint8Array}
@@ -15963,7 +15963,7 @@ const methodDescriptor_V2_DeletePipelineVersions = new grpc.web.MethodDescriptor
   function(request) {
     return request.serializeBinary();
   },
-  proto.clarifai.api.MultiPipelineVersionResponse.deserializeBinary
+  proto_clarifai_api_status_status_pb.BaseResponse.deserializeBinary
 );
 
 
@@ -15972,9 +15972,9 @@ const methodDescriptor_V2_DeletePipelineVersions = new grpc.web.MethodDescriptor
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiPipelineVersionResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.status.BaseResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiPipelineVersionResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.status.BaseResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.clarifai.api.V2Client.prototype.deletePipelineVersions =
@@ -15993,7 +15993,7 @@ proto.clarifai.api.V2Client.prototype.deletePipelineVersions =
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.clarifai.api.MultiPipelineVersionResponse>}
+ * @return {!Promise<!proto.clarifai.api.status.BaseResponse>}
  *     Promise that resolves to the response
  */
 proto.clarifai.api.V2PromiseClient.prototype.deletePipelineVersions =
