@@ -102,9 +102,6 @@ export class AnnotationTrack extends jspb.Message {
   getId(): string;
   setId(value: string): AnnotationTrack;
 
-  getAppId(): string;
-  setAppId(value: string): AnnotationTrack;
-
   getInputId(): string;
   setInputId(value: string): AnnotationTrack;
 
@@ -113,19 +110,22 @@ export class AnnotationTrack extends jspb.Message {
   hasConcept(): boolean;
   clearConcept(): AnnotationTrack;
 
-  getUserId(): string;
-  setUserId(value: string): AnnotationTrack;
-
   getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
   setStatus(value?: proto_clarifai_api_status_status_pb.Status): AnnotationTrack;
   hasStatus(): boolean;
   clearStatus(): AnnotationTrack;
 
-  getStartFrame(): number;
-  setStartFrame(value: number): AnnotationTrack;
+  getStartFrameNr(): number;
+  setStartFrameNr(value: number): AnnotationTrack;
 
-  getEndFrame(): number;
-  setEndFrame(value: number): AnnotationTrack;
+  getEndFrameNr(): number;
+  setEndFrameNr(value: number): AnnotationTrack;
+
+  getStartFrameMs(): number;
+  setStartFrameMs(value: number): AnnotationTrack;
+
+  getEndFrameMs(): number;
+  setEndFrameMs(value: number): AnnotationTrack;
 
   getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): AnnotationTrack;
@@ -137,8 +137,11 @@ export class AnnotationTrack extends jspb.Message {
   hasModifiedAt(): boolean;
   clearModifiedAt(): AnnotationTrack;
 
-  getFrameRate(): number;
-  setFrameRate(value: number): AnnotationTrack;
+  getSampleRateMs(): number;
+  setSampleRateMs(value: number): AnnotationTrack;
+
+  getSampleRateFrame(): number;
+  setSampleRateFrame(value: number): AnnotationTrack;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AnnotationTrack.AsObject;
@@ -151,16 +154,17 @@ export class AnnotationTrack extends jspb.Message {
 export namespace AnnotationTrack {
   export type AsObject = {
     id: string,
-    appId: string,
     inputId: string,
     concept?: Concept.AsObject,
-    userId: string,
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
-    startFrame: number,
-    endFrame: number,
+    startFrameNr: number,
+    endFrameNr: number,
+    startFrameMs: number,
+    endFrameMs: number,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    frameRate: number,
+    sampleRateMs: number,
+    sampleRateFrame: number,
   }
 }
 
