@@ -8825,6 +8825,11 @@ export class ComputeInfo extends jspb.Message {
   clearAcceleratorTypeList(): ComputeInfo;
   addAcceleratorType(value: string, index?: number): ComputeInfo;
 
+  getAcceleratorTopologyList(): Array<string>;
+  setAcceleratorTopologyList(value: Array<string>): ComputeInfo;
+  clearAcceleratorTopologyList(): ComputeInfo;
+  addAcceleratorTopology(value: string, index?: number): ComputeInfo;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ComputeInfo.AsObject;
   static toObject(includeInstance: boolean, msg: ComputeInfo): ComputeInfo.AsObject;
@@ -8842,6 +8847,7 @@ export namespace ComputeInfo {
     numAccelerators: number,
     acceleratorMemory: string,
     acceleratorTypeList: Array<string>,
+    acceleratorTopologyList: Array<string>,
   }
 }
 
