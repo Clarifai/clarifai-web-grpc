@@ -16799,5 +16799,127 @@ proto.clarifai.api.V2PromiseClient.prototype.deleteSecrets =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostMetricsQueryRequest,
+ *   !proto.clarifai.api.MetricsQueryResponse>}
+ */
+const methodDescriptor_V2_PostMetricsQuery = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostMetricsQuery',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostMetricsQueryRequest,
+  proto.clarifai.api.MetricsQueryResponse,
+  /**
+   * @param {!proto.clarifai.api.PostMetricsQueryRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MetricsQueryResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostMetricsQueryRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MetricsQueryResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MetricsQueryResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postMetricsQuery =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostMetricsQuery',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostMetricsQuery,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostMetricsQueryRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MetricsQueryResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postMetricsQuery =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostMetricsQuery',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostMetricsQuery);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListMetricLabelsRequest,
+ *   !proto.clarifai.api.MultiMetricLabelsResponse>}
+ */
+const methodDescriptor_V2_ListMetricLabels = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListMetricLabels',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListMetricLabelsRequest,
+  proto.clarifai.api.MultiMetricLabelsResponse,
+  /**
+   * @param {!proto.clarifai.api.ListMetricLabelsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiMetricLabelsResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListMetricLabelsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiMetricLabelsResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiMetricLabelsResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listMetricLabels =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListMetricLabels',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListMetricLabels,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListMetricLabelsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiMetricLabelsResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listMetricLabels =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListMetricLabels',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListMetricLabels);
+};
+
+
 module.exports = proto.clarifai.api;
 

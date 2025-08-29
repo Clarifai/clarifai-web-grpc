@@ -10687,6 +10687,55 @@ export namespace MetricSearchQuery {
   }
 }
 
+export class MetricTypeLabels extends jspb.Message {
+  getMetricType(): MetricType;
+  setMetricType(value: MetricType): MetricTypeLabels;
+
+  getLabelsList(): Array<MetricTypeLabels.LabelWithValues>;
+  setLabelsList(value: Array<MetricTypeLabels.LabelWithValues>): MetricTypeLabels;
+  clearLabelsList(): MetricTypeLabels;
+  addLabels(value?: MetricTypeLabels.LabelWithValues, index?: number): MetricTypeLabels.LabelWithValues;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MetricTypeLabels.AsObject;
+  static toObject(includeInstance: boolean, msg: MetricTypeLabels): MetricTypeLabels.AsObject;
+  static serializeBinaryToWriter(message: MetricTypeLabels, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MetricTypeLabels;
+  static deserializeBinaryFromReader(message: MetricTypeLabels, reader: jspb.BinaryReader): MetricTypeLabels;
+}
+
+export namespace MetricTypeLabels {
+  export type AsObject = {
+    metricType: MetricType,
+    labelsList: Array<MetricTypeLabels.LabelWithValues.AsObject>,
+  }
+
+  export class LabelWithValues extends jspb.Message {
+    getLabel(): MetricLabel;
+    setLabel(value: MetricLabel): LabelWithValues;
+
+    getValuesList(): Array<string>;
+    setValuesList(value: Array<string>): LabelWithValues;
+    clearValuesList(): LabelWithValues;
+    addValues(value: string, index?: number): LabelWithValues;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): LabelWithValues.AsObject;
+    static toObject(includeInstance: boolean, msg: LabelWithValues): LabelWithValues.AsObject;
+    static serializeBinaryToWriter(message: LabelWithValues, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): LabelWithValues;
+    static deserializeBinaryFromReader(message: LabelWithValues, reader: jspb.BinaryReader): LabelWithValues;
+  }
+
+  export namespace LabelWithValues {
+    export type AsObject = {
+      label: MetricLabel,
+      valuesList: Array<string>,
+    }
+  }
+
+}
+
 export enum WorkflowModelUseCase { 
   WORKFLOW_MODEL_USE_CASE_NOT_SET = 0,
   CLASSIFICATION = 1,
