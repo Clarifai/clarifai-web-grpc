@@ -1923,6 +1923,20 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiSecretResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiSecretResponse>;
 
+  postMetricsQuery(
+    request: proto_clarifai_api_service_pb.PostMetricsQueryRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MetricsQueryResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MetricsQueryResponse>;
+
+  listMetricLabels(
+    request: proto_clarifai_api_service_pb.ListMetricLabelsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiMetricLabelsResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiMetricLabelsResponse>;
+
 }
 
 export class V2PromiseClient {
@@ -3299,6 +3313,16 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.DeleteSecretsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiSecretResponse>;
+
+  postMetricsQuery(
+    request: proto_clarifai_api_service_pb.PostMetricsQueryRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MetricsQueryResponse>;
+
+  listMetricLabels(
+    request: proto_clarifai_api_service_pb.ListMetricLabelsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiMetricLabelsResponse>;
 
 }
 
