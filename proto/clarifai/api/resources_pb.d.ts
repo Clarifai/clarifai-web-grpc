@@ -2626,6 +2626,9 @@ export class Key extends jspb.Message {
   clearAuthorizedIdpIdsList(): Key;
   addAuthorizedIdpIds(value: string, index?: number): Key;
 
+  getOrganizationId(): string;
+  setOrganizationId(value: string): Key;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Key.AsObject;
   static toObject(includeInstance: boolean, msg: Key): Key.AsObject;
@@ -2645,6 +2648,7 @@ export namespace Key {
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     expiresAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     authorizedIdpIdsList: Array<string>,
+    organizationId: string,
   }
 }
 
