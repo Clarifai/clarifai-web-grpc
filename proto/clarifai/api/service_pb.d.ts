@@ -667,6 +667,9 @@ export class ListAppsRequest extends jspb.Message {
   getSortById(): boolean;
   setSortById(value: boolean): ListAppsRequest;
 
+  getSortByRelevance(): boolean;
+  setSortByRelevance(value: boolean): ListAppsRequest;
+
   getFeaturedOnly(): boolean;
   setFeaturedOnly(value: boolean): ListAppsRequest;
 
@@ -715,6 +718,7 @@ export namespace ListAppsRequest {
     sortByCreatedAt: boolean,
     sortByStarCount: boolean,
     sortById: boolean,
+    sortByRelevance: boolean,
     featuredOnly: boolean,
     starredOnly: boolean,
     templateOnly: boolean,
@@ -732,6 +736,7 @@ export namespace ListAppsRequest {
     SORT_BY_CREATED_AT = 12,
     SORT_BY_STAR_COUNT = 13,
     SORT_BY_ID = 17,
+    SORT_BY_RELEVANCE = 19,
   }
 }
 
@@ -2437,6 +2442,9 @@ export class ListDatasetsRequest extends jspb.Message {
   getSortById(): boolean;
   setSortById(value: boolean): ListDatasetsRequest;
 
+  getSortByRelevance(): boolean;
+  setSortByRelevance(value: boolean): ListDatasetsRequest;
+
   getStarredOnly(): boolean;
   setStarredOnly(value: boolean): ListDatasetsRequest;
 
@@ -2470,6 +2478,7 @@ export namespace ListDatasetsRequest {
     sortByStarCount: boolean,
     sortByModifiedAt: boolean,
     sortById: boolean,
+    sortByRelevance: boolean,
     starredOnly: boolean,
     bookmark: boolean,
     search: string,
@@ -2482,6 +2491,7 @@ export namespace ListDatasetsRequest {
     SORT_BY_STAR_COUNT = 8,
     SORT_BY_MODIFIED_AT = 9,
     SORT_BY_ID = 11,
+    SORT_BY_RELEVANCE = 14,
   }
 }
 
@@ -3758,6 +3768,9 @@ export class ListModelsRequest extends jspb.Message {
   clearAdditionalFieldsList(): ListModelsRequest;
   addAdditionalFields(value: string, index?: number): ListModelsRequest;
 
+  getShowReplicas(): boolean;
+  setShowReplicas(value: boolean): ListModelsRequest;
+
   getSortAscending(): boolean;
   setSortAscending(value: boolean): ListModelsRequest;
 
@@ -3775,6 +3788,9 @@ export class ListModelsRequest extends jspb.Message {
 
   getSortByStarCount(): boolean;
   setSortByStarCount(value: boolean): ListModelsRequest;
+
+  getSortByRelevance(): boolean;
+  setSortByRelevance(value: boolean): ListModelsRequest;
 
   getModelTypeId(): string;
   setModelTypeId(value: string): ListModelsRequest;
@@ -3822,18 +3838,6 @@ export class ListModelsRequest extends jspb.Message {
   getBookmark(): boolean;
   setBookmark(value: boolean): ListModelsRequest;
 
-  getSearch(): string;
-  setSearch(value: string): ListModelsRequest;
-
-  getQuery(): string;
-  setQuery(value: string): ListModelsRequest;
-
-  getName(): string;
-  setName(value: string): ListModelsRequest;
-
-  getFilterByUserId(): boolean;
-  setFilterByUserId(value: boolean): ListModelsRequest;
-
   getModelVersionIdsList(): Array<string>;
   setModelVersionIdsList(value: Array<string>): ListModelsRequest;
   clearModelVersionIdsList(): ListModelsRequest;
@@ -3851,13 +3855,22 @@ export class ListModelsRequest extends jspb.Message {
   getMinReplicas(): number;
   setMinReplicas(value: number): ListModelsRequest;
 
-  getShowReplicas(): boolean;
-  setShowReplicas(value: boolean): ListModelsRequest;
-
   getVisibility(): proto_clarifai_api_resources_pb.Visibility | undefined;
   setVisibility(value?: proto_clarifai_api_resources_pb.Visibility): ListModelsRequest;
   hasVisibility(): boolean;
   clearVisibility(): ListModelsRequest;
+
+  getSearch(): string;
+  setSearch(value: string): ListModelsRequest;
+
+  getQuery(): string;
+  setQuery(value: string): ListModelsRequest;
+
+  getName(): string;
+  setName(value: string): ListModelsRequest;
+
+  getFilterByUserId(): boolean;
+  setFilterByUserId(value: boolean): ListModelsRequest;
 
   getSortByCase(): ListModelsRequest.SortByCase;
 
@@ -3875,12 +3888,14 @@ export namespace ListModelsRequest {
     page: number,
     perPage: number,
     additionalFieldsList: Array<string>,
+    showReplicas: boolean,
     sortAscending: boolean,
     sortByName: boolean,
     sortByNumInputs: boolean,
     sortByModifiedAt: boolean,
     sortByCreatedAt: boolean,
     sortByStarCount: boolean,
+    sortByRelevance: boolean,
     modelTypeId: string,
     trainedOnly: boolean,
     inputFieldsList: Array<string>,
@@ -3893,17 +3908,16 @@ export namespace ListModelsRequest {
     languagesList: Array<string>,
     dontFetchFromMain: boolean,
     bookmark: boolean,
-    search: string,
-    query: string,
-    name: string,
-    filterByUserId: boolean,
     modelVersionIdsList: Array<string>,
     licenseType: proto_clarifai_api_resources_pb.LicenseType,
     source: number,
     creator: string,
     minReplicas: number,
-    showReplicas: boolean,
     visibility?: proto_clarifai_api_resources_pb.Visibility.AsObject,
+    search: string,
+    query: string,
+    name: string,
+    filterByUserId: boolean,
   }
 
   export enum SortByCase { 
@@ -3913,6 +3927,7 @@ export namespace ListModelsRequest {
     SORT_BY_MODIFIED_AT = 13,
     SORT_BY_CREATED_AT = 24,
     SORT_BY_STAR_COUNT = 25,
+    SORT_BY_RELEVANCE = 36,
   }
 }
 
@@ -4557,6 +4572,9 @@ export class ListModelVersionsRequest extends jspb.Message {
   getTrainedOnly(): boolean;
   setTrainedOnly(value: boolean): ListModelVersionsRequest;
 
+  getMinReplicas(): number;
+  setMinReplicas(value: number): ListModelVersionsRequest;
+
   getSortAscending(): boolean;
   setSortAscending(value: boolean): ListModelVersionsRequest;
 
@@ -4571,9 +4589,6 @@ export class ListModelVersionsRequest extends jspb.Message {
 
   getSortByCreatedAt(): boolean;
   setSortByCreatedAt(value: boolean): ListModelVersionsRequest;
-
-  getMinReplicas(): number;
-  setMinReplicas(value: number): ListModelVersionsRequest;
 
   getSortByCase(): ListModelVersionsRequest.SortByCase;
 
@@ -4593,12 +4608,12 @@ export namespace ListModelVersionsRequest {
     perPage: number,
     conceptIdsList: Array<string>,
     trainedOnly: boolean,
+    minReplicas: number,
     sortAscending: boolean,
     sortByStatusCode: boolean,
     sortByNumInputs: boolean,
     sortByDescription: boolean,
     sortByCreatedAt: boolean,
-    minReplicas: number,
   }
 
   export enum SortByCase { 
@@ -7008,6 +7023,9 @@ export class ListWorkflowsRequest extends jspb.Message {
   getSortByStarCount(): boolean;
   setSortByStarCount(value: boolean): ListWorkflowsRequest;
 
+  getSortByRelevance(): boolean;
+  setSortByRelevance(value: boolean): ListWorkflowsRequest;
+
   getFeaturedOnly(): boolean;
   setFeaturedOnly(value: boolean): ListWorkflowsRequest;
 
@@ -7055,6 +7073,7 @@ export namespace ListWorkflowsRequest {
     sortByModifiedAt: boolean,
     sortByCreatedAt: boolean,
     sortByStarCount: boolean,
+    sortByRelevance: boolean,
     featuredOnly: boolean,
     starredOnly: boolean,
     bookmark: boolean,
@@ -7071,6 +7090,7 @@ export namespace ListWorkflowsRequest {
     SORT_BY_MODIFIED_AT = 7,
     SORT_BY_CREATED_AT = 13,
     SORT_BY_STAR_COUNT = 14,
+    SORT_BY_RELEVANCE = 18,
   }
 }
 
@@ -8518,6 +8538,9 @@ export class ListModulesRequest extends jspb.Message {
   getSortById(): boolean;
   setSortById(value: boolean): ListModulesRequest;
 
+  getSortByRelevance(): boolean;
+  setSortByRelevance(value: boolean): ListModulesRequest;
+
   getStarredOnly(): boolean;
   setStarredOnly(value: boolean): ListModulesRequest;
 
@@ -8559,6 +8582,7 @@ export namespace ListModulesRequest {
     sortByStarCount: boolean,
     sortByModifiedAt: boolean,
     sortById: boolean,
+    sortByRelevance: boolean,
     starredOnly: boolean,
     bookmark: boolean,
     search: string,
@@ -8573,6 +8597,7 @@ export namespace ListModulesRequest {
     SORT_BY_STAR_COUNT = 8,
     SORT_BY_MODIFIED_AT = 9,
     SORT_BY_ID = 11,
+    SORT_BY_RELEVANCE = 16,
   }
 }
 
