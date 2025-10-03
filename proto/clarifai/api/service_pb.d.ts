@@ -138,6 +138,60 @@ export namespace ListAnnotationsRequest {
   }
 }
 
+export class PostTrackAnnotationsSearchesRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostTrackAnnotationsSearchesRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostTrackAnnotationsSearchesRequest;
+
+  getInputId(): string;
+  setInputId(value: string): PostTrackAnnotationsSearchesRequest;
+
+  getTrackId(): string;
+  setTrackId(value: string): PostTrackAnnotationsSearchesRequest;
+
+  getFrameNumberStart(): number;
+  setFrameNumberStart(value: number): PostTrackAnnotationsSearchesRequest;
+
+  getFrameTimeStart(): number;
+  setFrameTimeStart(value: number): PostTrackAnnotationsSearchesRequest;
+
+  getAnnotationType(): proto_clarifai_api_resources_pb.AnnotationDataType;
+  setAnnotationType(value: proto_clarifai_api_resources_pb.AnnotationDataType): PostTrackAnnotationsSearchesRequest;
+
+  getMaxFrames(): number;
+  setMaxFrames(value: number): PostTrackAnnotationsSearchesRequest;
+
+  getMaxDuration(): number;
+  setMaxDuration(value: number): PostTrackAnnotationsSearchesRequest;
+
+  getWorker(): proto_clarifai_api_resources_pb.Worker | undefined;
+  setWorker(value?: proto_clarifai_api_resources_pb.Worker): PostTrackAnnotationsSearchesRequest;
+  hasWorker(): boolean;
+  clearWorker(): PostTrackAnnotationsSearchesRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostTrackAnnotationsSearchesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostTrackAnnotationsSearchesRequest): PostTrackAnnotationsSearchesRequest.AsObject;
+  static serializeBinaryToWriter(message: PostTrackAnnotationsSearchesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostTrackAnnotationsSearchesRequest;
+  static deserializeBinaryFromReader(message: PostTrackAnnotationsSearchesRequest, reader: jspb.BinaryReader): PostTrackAnnotationsSearchesRequest;
+}
+
+export namespace PostTrackAnnotationsSearchesRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    inputId: string,
+    trackId: string,
+    frameNumberStart: number,
+    frameTimeStart: number,
+    annotationType: proto_clarifai_api_resources_pb.AnnotationDataType,
+    maxFrames: number,
+    maxDuration: number,
+    worker?: proto_clarifai_api_resources_pb.Worker.AsObject,
+  }
+}
+
 export class PostAnnotationsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
   setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostAnnotationsRequest;
