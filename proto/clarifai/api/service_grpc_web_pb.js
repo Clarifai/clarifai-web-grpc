@@ -1196,6 +1196,67 @@ proto.clarifai.api.V2PromiseClient.prototype.listAnnotations =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostTrackAnnotationsSearchesRequest,
+ *   !proto.clarifai.api.MultiAnnotationResponse>}
+ */
+const methodDescriptor_V2_PostTrackAnnotationsSearches = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostTrackAnnotationsSearches',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostTrackAnnotationsSearchesRequest,
+  proto.clarifai.api.MultiAnnotationResponse,
+  /**
+   * @param {!proto.clarifai.api.PostTrackAnnotationsSearchesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiAnnotationResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostTrackAnnotationsSearchesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiAnnotationResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiAnnotationResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postTrackAnnotationsSearches =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostTrackAnnotationsSearches',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostTrackAnnotationsSearches,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostTrackAnnotationsSearchesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiAnnotationResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postTrackAnnotationsSearches =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostTrackAnnotationsSearches',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostTrackAnnotationsSearches);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.PostAnnotationsRequest,
  *   !proto.clarifai.api.MultiAnnotationResponse>}
  */

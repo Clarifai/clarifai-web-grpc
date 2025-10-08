@@ -135,6 +135,13 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiAnnotationResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiAnnotationResponse>;
 
+  postTrackAnnotationsSearches(
+    request: proto_clarifai_api_service_pb.PostTrackAnnotationsSearchesRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiAnnotationResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiAnnotationResponse>;
+
   postAnnotations(
     request: proto_clarifai_api_service_pb.PostAnnotationsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -2031,6 +2038,11 @@ export class V2PromiseClient {
 
   listAnnotations(
     request: proto_clarifai_api_service_pb.ListAnnotationsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiAnnotationResponse>;
+
+  postTrackAnnotationsSearches(
+    request: proto_clarifai_api_service_pb.PostTrackAnnotationsSearchesRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiAnnotationResponse>;
 

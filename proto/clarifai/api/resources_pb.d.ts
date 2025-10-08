@@ -1450,6 +1450,9 @@ export class FrameInfo extends jspb.Message {
   getTime(): number;
   setTime(value: number): FrameInfo;
 
+  getNumber(): number;
+  setNumber(value: number): FrameInfo;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FrameInfo.AsObject;
   static toObject(includeInstance: boolean, msg: FrameInfo): FrameInfo.AsObject;
@@ -1462,6 +1465,7 @@ export namespace FrameInfo {
   export type AsObject = {
     index: number,
     time: number,
+    number: number,
   }
 }
 
@@ -8530,6 +8534,28 @@ export namespace BookmarkOrigin {
   }
 }
 
+export class RunnerMetrics extends jspb.Message {
+  getPodsTotal(): number;
+  setPodsTotal(value: number): RunnerMetrics;
+
+  getPodsRunning(): number;
+  setPodsRunning(value: number): RunnerMetrics;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RunnerMetrics.AsObject;
+  static toObject(includeInstance: boolean, msg: RunnerMetrics): RunnerMetrics.AsObject;
+  static serializeBinaryToWriter(message: RunnerMetrics, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RunnerMetrics;
+  static deserializeBinaryFromReader(message: RunnerMetrics, reader: jspb.BinaryReader): RunnerMetrics;
+}
+
+export namespace RunnerMetrics {
+  export type AsObject = {
+    podsTotal: number,
+    podsRunning: number,
+  }
+}
+
 export class Runner extends jspb.Message {
   getId(): string;
   setId(value: string): Runner;
@@ -8580,6 +8606,11 @@ export class Runner extends jspb.Message {
   clearSpecialHandlingList(): Runner;
   addSpecialHandling(value?: SpecialHandling, index?: number): SpecialHandling;
 
+  getRunnerMetrics(): RunnerMetrics | undefined;
+  setRunnerMetrics(value?: RunnerMetrics): Runner;
+  hasRunnerMetrics(): boolean;
+  clearRunnerMetrics(): Runner;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Runner.AsObject;
   static toObject(includeInstance: boolean, msg: Runner): Runner.AsObject;
@@ -8601,6 +8632,7 @@ export namespace Runner {
     computeInfo?: ComputeInfo.AsObject,
     numReplicas: number,
     specialHandlingList: Array<SpecialHandling.AsObject>,
+    runnerMetrics?: RunnerMetrics.AsObject,
   }
 }
 
