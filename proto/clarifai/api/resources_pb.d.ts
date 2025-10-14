@@ -1923,6 +1923,11 @@ export class Input extends jspb.Message {
   clearDatasetIdsList(): Input;
   addDatasetIds(value: string, index?: number): Input;
 
+  getSettings(): InputSettings | undefined;
+  setSettings(value?: InputSettings): Input;
+  hasSettings(): boolean;
+  clearSettings(): Input;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Input.AsObject;
   static toObject(includeInstance: boolean, msg: Input): Input.AsObject;
@@ -1939,6 +1944,41 @@ export namespace Input {
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     status?: proto_clarifai_api_status_status_pb.Status.AsObject,
     datasetIdsList: Array<string>,
+    settings?: InputSettings.AsObject,
+  }
+}
+
+export class InputSettings extends jspb.Message {
+  getWorker(): Worker | undefined;
+  setWorker(value?: Worker): InputSettings;
+  hasWorker(): boolean;
+  clearWorker(): InputSettings;
+
+  getSampleRateMs(): number;
+  setSampleRateMs(value: number): InputSettings;
+
+  getSampleRateFrame(): number;
+  setSampleRateFrame(value: number): InputSettings;
+
+  getPinnedConceptIdsList(): Array<string>;
+  setPinnedConceptIdsList(value: Array<string>): InputSettings;
+  clearPinnedConceptIdsList(): InputSettings;
+  addPinnedConceptIds(value: string, index?: number): InputSettings;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InputSettings.AsObject;
+  static toObject(includeInstance: boolean, msg: InputSettings): InputSettings.AsObject;
+  static serializeBinaryToWriter(message: InputSettings, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InputSettings;
+  static deserializeBinaryFromReader(message: InputSettings, reader: jspb.BinaryReader): InputSettings;
+}
+
+export namespace InputSettings {
+  export type AsObject = {
+    worker?: Worker.AsObject,
+    sampleRateMs: number,
+    sampleRateFrame: number,
+    pinnedConceptIdsList: Array<string>,
   }
 }
 
