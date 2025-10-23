@@ -1960,10 +1960,10 @@ export class InputSettings extends jspb.Message {
   getSampleRateFrame(): number;
   setSampleRateFrame(value: number): InputSettings;
 
-  getPinnedConceptIdsList(): Array<string>;
-  setPinnedConceptIdsList(value: Array<string>): InputSettings;
-  clearPinnedConceptIdsList(): InputSettings;
-  addPinnedConceptIds(value: string, index?: number): InputSettings;
+  getPinnedConceptsList(): Array<Concept>;
+  setPinnedConceptsList(value: Array<Concept>): InputSettings;
+  clearPinnedConceptsList(): InputSettings;
+  addPinnedConcepts(value?: Concept, index?: number): Concept;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InputSettings.AsObject;
@@ -1978,7 +1978,7 @@ export namespace InputSettings {
     worker?: Worker.AsObject,
     sampleRateMs: number,
     sampleRateFrame: number,
-    pinnedConceptIdsList: Array<string>,
+    pinnedConceptsList: Array<Concept.AsObject>,
   }
 }
 
