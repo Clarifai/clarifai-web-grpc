@@ -1960,10 +1960,10 @@ export class InputSettings extends jspb.Message {
   getSampleRateFrame(): number;
   setSampleRateFrame(value: number): InputSettings;
 
-  getPinnedConceptIdsList(): Array<string>;
-  setPinnedConceptIdsList(value: Array<string>): InputSettings;
-  clearPinnedConceptIdsList(): InputSettings;
-  addPinnedConceptIds(value: string, index?: number): InputSettings;
+  getPinnedConceptsList(): Array<Concept>;
+  setPinnedConceptsList(value: Array<Concept>): InputSettings;
+  clearPinnedConceptsList(): InputSettings;
+  addPinnedConcepts(value?: Concept, index?: number): Concept;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InputSettings.AsObject;
@@ -1978,7 +1978,7 @@ export namespace InputSettings {
     worker?: Worker.AsObject,
     sampleRateMs: number,
     sampleRateFrame: number,
-    pinnedConceptIdsList: Array<string>,
+    pinnedConceptsList: Array<Concept.AsObject>,
   }
 }
 
@@ -10339,6 +10339,42 @@ export namespace Pipeline {
   }
 }
 
+export class PipelineVersionConfig extends jspb.Message {
+  getStepVersionSecretsMap(): jspb.Map<string, StepSecretConfig>;
+  clearStepVersionSecretsMap(): PipelineVersionConfig;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PipelineVersionConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: PipelineVersionConfig): PipelineVersionConfig.AsObject;
+  static serializeBinaryToWriter(message: PipelineVersionConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PipelineVersionConfig;
+  static deserializeBinaryFromReader(message: PipelineVersionConfig, reader: jspb.BinaryReader): PipelineVersionConfig;
+}
+
+export namespace PipelineVersionConfig {
+  export type AsObject = {
+    stepVersionSecretsMap: Array<[string, StepSecretConfig.AsObject]>,
+  }
+}
+
+export class StepSecretConfig extends jspb.Message {
+  getSecretsMap(): jspb.Map<string, string>;
+  clearSecretsMap(): StepSecretConfig;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StepSecretConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: StepSecretConfig): StepSecretConfig.AsObject;
+  static serializeBinaryToWriter(message: StepSecretConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StepSecretConfig;
+  static deserializeBinaryFromReader(message: StepSecretConfig, reader: jspb.BinaryReader): StepSecretConfig;
+}
+
+export namespace StepSecretConfig {
+  export type AsObject = {
+    secretsMap: Array<[string, string]>,
+  }
+}
+
 export class PipelineVersion extends jspb.Message {
   getId(): string;
   setId(value: string): PipelineVersion;
@@ -10380,6 +10416,11 @@ export class PipelineVersion extends jspb.Message {
   hasModifiedAt(): boolean;
   clearModifiedAt(): PipelineVersion;
 
+  getConfig(): PipelineVersionConfig | undefined;
+  setConfig(value?: PipelineVersionConfig): PipelineVersion;
+  hasConfig(): boolean;
+  clearConfig(): PipelineVersion;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PipelineVersion.AsObject;
   static toObject(includeInstance: boolean, msg: PipelineVersion): PipelineVersion.AsObject;
@@ -10400,6 +10441,7 @@ export namespace PipelineVersion {
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    config?: PipelineVersionConfig.AsObject,
   }
 }
 
