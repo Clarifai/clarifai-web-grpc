@@ -1624,6 +1624,13 @@ export class V2Client {
                response: proto_clarifai_api_status_status_pb.BaseResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
 
+  patchComputeClusters(
+    request: proto_clarifai_api_service_pb.PatchComputeClustersRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiComputeClusterResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiComputeClusterResponse>;
+
   getNodepool(
     request: proto_clarifai_api_service_pb.GetNodepoolRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -3105,6 +3112,11 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.DeleteComputeClustersRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  patchComputeClusters(
+    request: proto_clarifai_api_service_pb.PatchComputeClustersRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiComputeClusterResponse>;
 
   getNodepool(
     request: proto_clarifai_api_service_pb.GetNodepoolRequest,
