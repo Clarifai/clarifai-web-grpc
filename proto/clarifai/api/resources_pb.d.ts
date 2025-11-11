@@ -10409,7 +10409,7 @@ export namespace Pipeline {
 }
 
 export class PipelineVersionConfig extends jspb.Message {
-  getStepVersionSecretsMap(): jspb.Map<string, StepSecretConfig>;
+  getStepVersionSecretsMap(): jspb.Map<string, google_protobuf_struct_pb.Struct>;
   clearStepVersionSecretsMap(): PipelineVersionConfig;
 
   serializeBinary(): Uint8Array;
@@ -10422,25 +10422,7 @@ export class PipelineVersionConfig extends jspb.Message {
 
 export namespace PipelineVersionConfig {
   export type AsObject = {
-    stepVersionSecretsMap: Array<[string, StepSecretConfig.AsObject]>,
-  }
-}
-
-export class StepSecretConfig extends jspb.Message {
-  getSecretsMap(): jspb.Map<string, string>;
-  clearSecretsMap(): StepSecretConfig;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): StepSecretConfig.AsObject;
-  static toObject(includeInstance: boolean, msg: StepSecretConfig): StepSecretConfig.AsObject;
-  static serializeBinaryToWriter(message: StepSecretConfig, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): StepSecretConfig;
-  static deserializeBinaryFromReader(message: StepSecretConfig, reader: jspb.BinaryReader): StepSecretConfig;
-}
-
-export namespace StepSecretConfig {
-  export type AsObject = {
-    secretsMap: Array<[string, string]>,
+    stepVersionSecretsMap: Array<[string, google_protobuf_struct_pb.Struct.AsObject]>,
   }
 }
 

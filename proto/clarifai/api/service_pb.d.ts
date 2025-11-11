@@ -10931,6 +10931,36 @@ export namespace PostComputeClustersRequest {
   }
 }
 
+export class PatchComputeClustersRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchComputeClustersRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PatchComputeClustersRequest;
+
+  getComputeClustersList(): Array<proto_clarifai_api_resources_pb.ComputeCluster>;
+  setComputeClustersList(value: Array<proto_clarifai_api_resources_pb.ComputeCluster>): PatchComputeClustersRequest;
+  clearComputeClustersList(): PatchComputeClustersRequest;
+  addComputeClusters(value?: proto_clarifai_api_resources_pb.ComputeCluster, index?: number): proto_clarifai_api_resources_pb.ComputeCluster;
+
+  getAction(): string;
+  setAction(value: string): PatchComputeClustersRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PatchComputeClustersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PatchComputeClustersRequest): PatchComputeClustersRequest.AsObject;
+  static serializeBinaryToWriter(message: PatchComputeClustersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PatchComputeClustersRequest;
+  static deserializeBinaryFromReader(message: PatchComputeClustersRequest, reader: jspb.BinaryReader): PatchComputeClustersRequest;
+}
+
+export namespace PatchComputeClustersRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    computeClustersList: Array<proto_clarifai_api_resources_pb.ComputeCluster.AsObject>,
+    action: string,
+  }
+}
+
 export class DeleteComputeClustersRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
   setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteComputeClustersRequest;
