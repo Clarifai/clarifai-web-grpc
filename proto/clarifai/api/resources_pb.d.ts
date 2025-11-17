@@ -1259,6 +1259,11 @@ export class Data extends jspb.Message {
   getStringValue(): string;
   setStringValue(value: string): Data;
 
+  getStructValue(): google_protobuf_struct_pb.Struct | undefined;
+  setStructValue(value?: google_protobuf_struct_pb.Struct): Data;
+  hasStructValue(): boolean;
+  clearStructValue(): Data;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Data.AsObject;
   static toObject(includeInstance: boolean, msg: Data): Data.AsObject;
@@ -1292,6 +1297,7 @@ export namespace Data {
     bytesValue: Uint8Array | string,
     boolValue: boolean,
     stringValue: string,
+    structValue?: google_protobuf_struct_pb.Struct.AsObject,
   }
 }
 
