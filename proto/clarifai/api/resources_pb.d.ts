@@ -1259,6 +1259,11 @@ export class Data extends jspb.Message {
   getStringValue(): string;
   setStringValue(value: string): Data;
 
+  getStructValue(): google_protobuf_struct_pb.Struct | undefined;
+  setStructValue(value?: google_protobuf_struct_pb.Struct): Data;
+  hasStructValue(): boolean;
+  clearStructValue(): Data;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Data.AsObject;
   static toObject(includeInstance: boolean, msg: Data): Data.AsObject;
@@ -1292,6 +1297,7 @@ export namespace Data {
     bytesValue: Uint8Array | string,
     boolValue: boolean,
     stringValue: string,
+    structValue?: google_protobuf_struct_pb.Struct.AsObject,
   }
 }
 
@@ -11007,17 +11013,6 @@ export enum DatasetVersionExportFormat {
   CLARIFAI_DATA_PROTOBUF = 1,
   CLARIFAI_DATA_JSON = 3,
   COCO = 2,
-}
-export enum ExpirationAction { 
-  EXPIRATION_ACTION_NOT_SET = 0,
-  DELAY = 1,
-  EXPIRY = 2,
-}
-export enum LicenseScope { 
-  LICENSE_SCOPE_NOT_SET = 0,
-  PREDICT = 1,
-  TRAIN = 2,
-  SEARCH = 3,
 }
 export enum LicenseType { 
   UNKNOWN_LICENSE_TYPE = 0,
