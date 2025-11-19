@@ -4384,44 +4384,6 @@ export namespace EvalTestSetEntry {
   }
 }
 
-export class LOPQEvalResult extends jspb.Message {
-  getK(): number;
-  setK(value: number): LOPQEvalResult;
-
-  getRecallVsBruteForce(): number;
-  setRecallVsBruteForce(value: number): LOPQEvalResult;
-
-  getKendallTauVsBruteForce(): number;
-  setKendallTauVsBruteForce(value: number): LOPQEvalResult;
-
-  getMostFrequentCodePercent(): number;
-  setMostFrequentCodePercent(value: number): LOPQEvalResult;
-
-  getLopqNdcg(): number;
-  setLopqNdcg(value: number): LOPQEvalResult;
-
-  getBruteForceNdcg(): number;
-  setBruteForceNdcg(value: number): LOPQEvalResult;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): LOPQEvalResult.AsObject;
-  static toObject(includeInstance: boolean, msg: LOPQEvalResult): LOPQEvalResult.AsObject;
-  static serializeBinaryToWriter(message: LOPQEvalResult, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): LOPQEvalResult;
-  static deserializeBinaryFromReader(message: LOPQEvalResult, reader: jspb.BinaryReader): LOPQEvalResult;
-}
-
-export namespace LOPQEvalResult {
-  export type AsObject = {
-    k: number,
-    recallVsBruteForce: number,
-    kendallTauVsBruteForce: number,
-    mostFrequentCodePercent: number,
-    lopqNdcg: number,
-    bruteForceNdcg: number,
-  }
-}
-
 export class MetricsSummary extends jspb.Message {
   getTop1Accuracy(): number;
   setTop1Accuracy(value: number): MetricsSummary;
@@ -4453,11 +4415,6 @@ export class MetricsSummary extends jspb.Message {
   getMeanAvgPrecisionIouRange(): number;
   setMeanAvgPrecisionIouRange(value: number): MetricsSummary;
 
-  getLopqMetricsList(): Array<LOPQEvalResult>;
-  setLopqMetricsList(value: Array<LOPQEvalResult>): MetricsSummary;
-  clearLopqMetricsList(): MetricsSummary;
-  addLopqMetrics(value?: LOPQEvalResult, index?: number): LOPQEvalResult;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MetricsSummary.AsObject;
   static toObject(includeInstance: boolean, msg: MetricsSummary): MetricsSummary.AsObject;
@@ -4478,7 +4435,6 @@ export namespace MetricsSummary {
     macroAvgRecall: number,
     meanAvgPrecisionIou50: number,
     meanAvgPrecisionIouRange: number,
-    lopqMetricsList: Array<LOPQEvalResult.AsObject>,
   }
 }
 
@@ -5057,54 +5013,6 @@ export namespace Rank {
   export type AsObject = {
     negate: boolean,
     annotation?: Annotation.AsObject,
-  }
-}
-
-export class AnnotationSearchMetrics extends jspb.Message {
-  getGroundTruth(): Search | undefined;
-  setGroundTruth(value?: Search): AnnotationSearchMetrics;
-  hasGroundTruth(): boolean;
-  clearGroundTruth(): AnnotationSearchMetrics;
-
-  getSearchToEval(): Search | undefined;
-  setSearchToEval(value?: Search): AnnotationSearchMetrics;
-  hasSearchToEval(): boolean;
-  clearSearchToEval(): AnnotationSearchMetrics;
-
-  getMetrics(): EvalMetrics | undefined;
-  setMetrics(value?: EvalMetrics): AnnotationSearchMetrics;
-  hasMetrics(): boolean;
-  clearMetrics(): AnnotationSearchMetrics;
-
-  getData(): Data | undefined;
-  setData(value?: Data): AnnotationSearchMetrics;
-  hasData(): boolean;
-  clearData(): AnnotationSearchMetrics;
-
-  getActiveConceptCount(): number;
-  setActiveConceptCount(value: number): AnnotationSearchMetrics;
-
-  getVisibility(): Visibility | undefined;
-  setVisibility(value?: Visibility): AnnotationSearchMetrics;
-  hasVisibility(): boolean;
-  clearVisibility(): AnnotationSearchMetrics;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AnnotationSearchMetrics.AsObject;
-  static toObject(includeInstance: boolean, msg: AnnotationSearchMetrics): AnnotationSearchMetrics.AsObject;
-  static serializeBinaryToWriter(message: AnnotationSearchMetrics, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AnnotationSearchMetrics;
-  static deserializeBinaryFromReader(message: AnnotationSearchMetrics, reader: jspb.BinaryReader): AnnotationSearchMetrics;
-}
-
-export namespace AnnotationSearchMetrics {
-  export type AsObject = {
-    groundTruth?: Search.AsObject,
-    searchToEval?: Search.AsObject,
-    metrics?: EvalMetrics.AsObject,
-    data?: Data.AsObject,
-    activeConceptCount: number,
-    visibility?: Visibility.AsObject,
   }
 }
 
