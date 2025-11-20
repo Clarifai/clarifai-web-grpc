@@ -987,34 +987,6 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiSearchResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiSearchResponse>;
 
-  postAnnotationSearchMetrics(
-    request: proto_clarifai_api_service_pb.PostAnnotationSearchMetricsRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.MultiAnnotationSearchMetricsResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiAnnotationSearchMetricsResponse>;
-
-  getAnnotationSearchMetrics(
-    request: proto_clarifai_api_service_pb.GetAnnotationSearchMetricsRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.MultiAnnotationSearchMetricsResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiAnnotationSearchMetricsResponse>;
-
-  listAnnotationSearchMetrics(
-    request: proto_clarifai_api_service_pb.ListAnnotationSearchMetricsRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.MultiAnnotationSearchMetricsResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiAnnotationSearchMetricsResponse>;
-
-  deleteAnnotationSearchMetrics(
-    request: proto_clarifai_api_service_pb.DeleteAnnotationSearchMetricsRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
-
   deleteSearch(
     request: proto_clarifai_api_service_pb.DeleteSearchRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -2657,26 +2629,6 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.PostSearchesByIDRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiSearchResponse>;
-
-  postAnnotationSearchMetrics(
-    request: proto_clarifai_api_service_pb.PostAnnotationSearchMetricsRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.MultiAnnotationSearchMetricsResponse>;
-
-  getAnnotationSearchMetrics(
-    request: proto_clarifai_api_service_pb.GetAnnotationSearchMetricsRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.MultiAnnotationSearchMetricsResponse>;
-
-  listAnnotationSearchMetrics(
-    request: proto_clarifai_api_service_pb.ListAnnotationSearchMetricsRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.MultiAnnotationSearchMetricsResponse>;
-
-  deleteAnnotationSearchMetrics(
-    request: proto_clarifai_api_service_pb.DeleteAnnotationSearchMetricsRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
 
   deleteSearch(
     request: proto_clarifai_api_service_pb.DeleteSearchRequest,
