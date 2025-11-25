@@ -16375,6 +16375,128 @@ proto.clarifai.api.V2PromiseClient.prototype.getPipelineStepVersion =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.DeletePipelineStepsRequest,
+ *   !proto.clarifai.api.status.BaseResponse>}
+ */
+const methodDescriptor_V2_DeletePipelineSteps = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/DeletePipelineSteps',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.DeletePipelineStepsRequest,
+  proto_clarifai_api_status_status_pb.BaseResponse,
+  /**
+   * @param {!proto.clarifai.api.DeletePipelineStepsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto_clarifai_api_status_status_pb.BaseResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.DeletePipelineStepsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.status.BaseResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.status.BaseResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.deletePipelineSteps =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/DeletePipelineSteps',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeletePipelineSteps,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.DeletePipelineStepsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.status.BaseResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.deletePipelineSteps =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/DeletePipelineSteps',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeletePipelineSteps);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.DeletePipelineStepVersionsRequest,
+ *   !proto.clarifai.api.status.BaseResponse>}
+ */
+const methodDescriptor_V2_DeletePipelineStepVersions = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/DeletePipelineStepVersions',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.DeletePipelineStepVersionsRequest,
+  proto_clarifai_api_status_status_pb.BaseResponse,
+  /**
+   * @param {!proto.clarifai.api.DeletePipelineStepVersionsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto_clarifai_api_status_status_pb.BaseResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.DeletePipelineStepVersionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.status.BaseResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.status.BaseResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.deletePipelineStepVersions =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/DeletePipelineStepVersions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeletePipelineStepVersions,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.DeletePipelineStepVersionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.status.BaseResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.deletePipelineStepVersions =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/DeletePipelineStepVersions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeletePipelineStepVersions);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.GetSecretRequest,
  *   !proto.clarifai.api.SingleSecretResponse>}
  */

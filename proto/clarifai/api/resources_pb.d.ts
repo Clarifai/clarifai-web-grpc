@@ -3860,6 +3860,9 @@ export class BuildInfo extends jspb.Message {
   getDockerImageDigest(): string;
   setDockerImageDigest(value: string): BuildInfo;
 
+  getPlatform(): string;
+  setPlatform(value: string): BuildInfo;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BuildInfo.AsObject;
   static toObject(includeInstance: boolean, msg: BuildInfo): BuildInfo.AsObject;
@@ -3873,6 +3876,7 @@ export namespace BuildInfo {
     dockerImageName: string,
     dockerImageTag: string,
     dockerImageDigest: string,
+    platform: string,
   }
 }
 
@@ -8738,6 +8742,9 @@ export class InstanceType extends jspb.Message {
   clearSpecialHandlingList(): InstanceType;
   addSpecialHandling(value?: SpecialHandling, index?: number): SpecialHandling;
 
+  getArchitecture(): string;
+  setArchitecture(value: string): InstanceType;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InstanceType.AsObject;
   static toObject(includeInstance: boolean, msg: InstanceType): InstanceType.AsObject;
@@ -8757,6 +8764,7 @@ export namespace InstanceType {
     allowedCapacityTypes?: NodeCapacityType.AsObject,
     featureFlagGroup: string,
     specialHandlingList: Array<SpecialHandling.AsObject>,
+    architecture: string,
   }
 }
 

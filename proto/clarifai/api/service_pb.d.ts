@@ -12665,6 +12665,62 @@ export namespace SinglePipelineStepVersionResponse {
   }
 }
 
+export class DeletePipelineStepsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeletePipelineStepsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): DeletePipelineStepsRequest;
+
+  getIdsList(): Array<string>;
+  setIdsList(value: Array<string>): DeletePipelineStepsRequest;
+  clearIdsList(): DeletePipelineStepsRequest;
+  addIds(value: string, index?: number): DeletePipelineStepsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeletePipelineStepsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeletePipelineStepsRequest): DeletePipelineStepsRequest.AsObject;
+  static serializeBinaryToWriter(message: DeletePipelineStepsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeletePipelineStepsRequest;
+  static deserializeBinaryFromReader(message: DeletePipelineStepsRequest, reader: jspb.BinaryReader): DeletePipelineStepsRequest;
+}
+
+export namespace DeletePipelineStepsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    idsList: Array<string>,
+  }
+}
+
+export class DeletePipelineStepVersionsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeletePipelineStepVersionsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): DeletePipelineStepVersionsRequest;
+
+  getPipelineStepId(): string;
+  setPipelineStepId(value: string): DeletePipelineStepVersionsRequest;
+
+  getPipelineStepVersionIdsList(): Array<string>;
+  setPipelineStepVersionIdsList(value: Array<string>): DeletePipelineStepVersionsRequest;
+  clearPipelineStepVersionIdsList(): DeletePipelineStepVersionsRequest;
+  addPipelineStepVersionIds(value: string, index?: number): DeletePipelineStepVersionsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeletePipelineStepVersionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeletePipelineStepVersionsRequest): DeletePipelineStepVersionsRequest.AsObject;
+  static serializeBinaryToWriter(message: DeletePipelineStepVersionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeletePipelineStepVersionsRequest;
+  static deserializeBinaryFromReader(message: DeletePipelineStepVersionsRequest, reader: jspb.BinaryReader): DeletePipelineStepVersionsRequest;
+}
+
+export namespace DeletePipelineStepVersionsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    pipelineStepId: string,
+    pipelineStepVersionIdsList: Array<string>,
+  }
+}
+
 export class GetSecretRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
   setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetSecretRequest;
