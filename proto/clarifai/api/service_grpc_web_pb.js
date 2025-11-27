@@ -1257,6 +1257,62 @@ proto.clarifai.api.V2PromiseClient.prototype.postTrackAnnotationsSearches =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.StreamTrackAnnotationsSearchesRequest,
+ *   !proto.clarifai.api.SingleAnnotationResponse>}
+ */
+const methodDescriptor_V2_StreamTrackAnnotationsSearches = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/StreamTrackAnnotationsSearches',
+  grpc.web.MethodType.SERVER_STREAMING,
+  proto.clarifai.api.StreamTrackAnnotationsSearchesRequest,
+  proto.clarifai.api.SingleAnnotationResponse,
+  /**
+   * @param {!proto.clarifai.api.StreamTrackAnnotationsSearchesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SingleAnnotationResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.StreamTrackAnnotationsSearchesRequest} request The request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleAnnotationResponse>}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.streamTrackAnnotationsSearches =
+    function(request, metadata) {
+  return this.client_.serverStreaming(this.hostname_ +
+      '/clarifai.api.V2/StreamTrackAnnotationsSearches',
+      request,
+      metadata || {},
+      methodDescriptor_V2_StreamTrackAnnotationsSearches);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.StreamTrackAnnotationsSearchesRequest} request The request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleAnnotationResponse>}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2PromiseClient.prototype.streamTrackAnnotationsSearches =
+    function(request, metadata) {
+  return this.client_.serverStreaming(this.hostname_ +
+      '/clarifai.api.V2/StreamTrackAnnotationsSearches',
+      request,
+      metadata || {},
+      methodDescriptor_V2_StreamTrackAnnotationsSearches);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.PostAnnotationsRequest,
  *   !proto.clarifai.api.MultiAnnotationResponse>}
  */
@@ -16369,6 +16425,555 @@ proto.clarifai.api.V2PromiseClient.prototype.getPipelineStepVersion =
       request,
       metadata || {},
       methodDescriptor_V2_GetPipelineStepVersion);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.DeletePipelineStepsRequest,
+ *   !proto.clarifai.api.status.BaseResponse>}
+ */
+const methodDescriptor_V2_DeletePipelineSteps = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/DeletePipelineSteps',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.DeletePipelineStepsRequest,
+  proto_clarifai_api_status_status_pb.BaseResponse,
+  /**
+   * @param {!proto.clarifai.api.DeletePipelineStepsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto_clarifai_api_status_status_pb.BaseResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.DeletePipelineStepsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.status.BaseResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.status.BaseResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.deletePipelineSteps =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/DeletePipelineSteps',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeletePipelineSteps,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.DeletePipelineStepsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.status.BaseResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.deletePipelineSteps =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/DeletePipelineSteps',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeletePipelineSteps);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.DeletePipelineStepVersionsRequest,
+ *   !proto.clarifai.api.status.BaseResponse>}
+ */
+const methodDescriptor_V2_DeletePipelineStepVersions = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/DeletePipelineStepVersions',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.DeletePipelineStepVersionsRequest,
+  proto_clarifai_api_status_status_pb.BaseResponse,
+  /**
+   * @param {!proto.clarifai.api.DeletePipelineStepVersionsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto_clarifai_api_status_status_pb.BaseResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.DeletePipelineStepVersionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.status.BaseResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.status.BaseResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.deletePipelineStepVersions =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/DeletePipelineStepVersions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeletePipelineStepVersions,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.DeletePipelineStepVersionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.status.BaseResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.deletePipelineStepVersions =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/DeletePipelineStepVersions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeletePipelineStepVersions);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostArtifactsRequest,
+ *   !proto.clarifai.api.MultiArtifactResponse>}
+ */
+const methodDescriptor_V2_PostArtifacts = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostArtifacts',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostArtifactsRequest,
+  proto.clarifai.api.MultiArtifactResponse,
+  /**
+   * @param {!proto.clarifai.api.PostArtifactsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiArtifactResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostArtifactsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiArtifactResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiArtifactResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postArtifacts =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostArtifacts',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostArtifacts,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostArtifactsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiArtifactResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postArtifacts =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostArtifacts',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostArtifacts);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.GetArtifactRequest,
+ *   !proto.clarifai.api.SingleArtifactResponse>}
+ */
+const methodDescriptor_V2_GetArtifact = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/GetArtifact',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.GetArtifactRequest,
+  proto.clarifai.api.SingleArtifactResponse,
+  /**
+   * @param {!proto.clarifai.api.GetArtifactRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SingleArtifactResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.GetArtifactRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SingleArtifactResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleArtifactResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.getArtifact =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/GetArtifact',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetArtifact,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.GetArtifactRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.SingleArtifactResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.getArtifact =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/GetArtifact',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetArtifact);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListArtifactsRequest,
+ *   !proto.clarifai.api.MultiArtifactResponse>}
+ */
+const methodDescriptor_V2_ListArtifacts = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListArtifacts',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListArtifactsRequest,
+  proto.clarifai.api.MultiArtifactResponse,
+  /**
+   * @param {!proto.clarifai.api.ListArtifactsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiArtifactResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListArtifactsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiArtifactResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiArtifactResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listArtifacts =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListArtifacts',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListArtifacts,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListArtifactsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiArtifactResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listArtifacts =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListArtifacts',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListArtifacts);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.DeleteArtifactRequest,
+ *   !proto.clarifai.api.status.BaseResponse>}
+ */
+const methodDescriptor_V2_DeleteArtifact = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/DeleteArtifact',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.DeleteArtifactRequest,
+  proto_clarifai_api_status_status_pb.BaseResponse,
+  /**
+   * @param {!proto.clarifai.api.DeleteArtifactRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto_clarifai_api_status_status_pb.BaseResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.DeleteArtifactRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.status.BaseResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.status.BaseResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.deleteArtifact =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/DeleteArtifact',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeleteArtifact,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.DeleteArtifactRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.status.BaseResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.deleteArtifact =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/DeleteArtifact',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeleteArtifact);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListArtifactVersionsRequest,
+ *   !proto.clarifai.api.MultiArtifactVersionResponse>}
+ */
+const methodDescriptor_V2_ListArtifactVersions = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListArtifactVersions',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListArtifactVersionsRequest,
+  proto.clarifai.api.MultiArtifactVersionResponse,
+  /**
+   * @param {!proto.clarifai.api.ListArtifactVersionsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiArtifactVersionResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListArtifactVersionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiArtifactVersionResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiArtifactVersionResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listArtifactVersions =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListArtifactVersions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListArtifactVersions,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListArtifactVersionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiArtifactVersionResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listArtifactVersions =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListArtifactVersions',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListArtifactVersions);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.GetArtifactVersionRequest,
+ *   !proto.clarifai.api.SingleArtifactVersionResponse>}
+ */
+const methodDescriptor_V2_GetArtifactVersion = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/GetArtifactVersion',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.GetArtifactVersionRequest,
+  proto.clarifai.api.SingleArtifactVersionResponse,
+  /**
+   * @param {!proto.clarifai.api.GetArtifactVersionRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.SingleArtifactVersionResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.GetArtifactVersionRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.SingleArtifactVersionResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleArtifactVersionResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.getArtifactVersion =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/GetArtifactVersion',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetArtifactVersion,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.GetArtifactVersionRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.SingleArtifactVersionResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.getArtifactVersion =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/GetArtifactVersion',
+      request,
+      metadata || {},
+      methodDescriptor_V2_GetArtifactVersion);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.DeleteArtifactVersionRequest,
+ *   !proto.clarifai.api.status.BaseResponse>}
+ */
+const methodDescriptor_V2_DeleteArtifactVersion = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/DeleteArtifactVersion',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.DeleteArtifactVersionRequest,
+  proto_clarifai_api_status_status_pb.BaseResponse,
+  /**
+   * @param {!proto.clarifai.api.DeleteArtifactVersionRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto_clarifai_api_status_status_pb.BaseResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.DeleteArtifactVersionRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.status.BaseResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.status.BaseResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.deleteArtifactVersion =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/DeleteArtifactVersion',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeleteArtifactVersion,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.DeleteArtifactVersionRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.status.BaseResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.deleteArtifactVersion =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/DeleteArtifactVersion',
+      request,
+      metadata || {},
+      methodDescriptor_V2_DeleteArtifactVersion);
 };
 
 

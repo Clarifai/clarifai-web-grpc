@@ -142,6 +142,11 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiAnnotationResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiAnnotationResponse>;
 
+  streamTrackAnnotationsSearches(
+    request: proto_clarifai_api_service_pb.StreamTrackAnnotationsSearchesRequest,
+    metadata?: grpcWeb.Metadata
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleAnnotationResponse>;
+
   postAnnotations(
     request: proto_clarifai_api_service_pb.PostAnnotationsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -1874,6 +1879,69 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.SinglePipelineStepVersionResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SinglePipelineStepVersionResponse>;
 
+  deletePipelineSteps(
+    request: proto_clarifai_api_service_pb.DeletePipelineStepsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  deletePipelineStepVersions(
+    request: proto_clarifai_api_service_pb.DeletePipelineStepVersionsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postArtifacts(
+    request: proto_clarifai_api_service_pb.PostArtifactsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiArtifactResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiArtifactResponse>;
+
+  getArtifact(
+    request: proto_clarifai_api_service_pb.GetArtifactRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleArtifactResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleArtifactResponse>;
+
+  listArtifacts(
+    request: proto_clarifai_api_service_pb.ListArtifactsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiArtifactResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiArtifactResponse>;
+
+  deleteArtifact(
+    request: proto_clarifai_api_service_pb.DeleteArtifactRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  listArtifactVersions(
+    request: proto_clarifai_api_service_pb.ListArtifactVersionsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiArtifactVersionResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiArtifactVersionResponse>;
+
+  getArtifactVersion(
+    request: proto_clarifai_api_service_pb.GetArtifactVersionRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleArtifactVersionResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleArtifactVersionResponse>;
+
+  deleteArtifactVersion(
+    request: proto_clarifai_api_service_pb.DeleteArtifactVersionRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
   getSecret(
     request: proto_clarifai_api_service_pb.GetSecretRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -2024,6 +2092,11 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.PostTrackAnnotationsSearchesRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiAnnotationResponse>;
+
+  streamTrackAnnotationsSearches(
+    request: proto_clarifai_api_service_pb.StreamTrackAnnotationsSearchesRequest,
+    metadata?: grpcWeb.Metadata
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleAnnotationResponse>;
 
   postAnnotations(
     request: proto_clarifai_api_service_pb.PostAnnotationsRequest,
@@ -3264,6 +3337,51 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.GetPipelineStepVersionRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.SinglePipelineStepVersionResponse>;
+
+  deletePipelineSteps(
+    request: proto_clarifai_api_service_pb.DeletePipelineStepsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  deletePipelineStepVersions(
+    request: proto_clarifai_api_service_pb.DeletePipelineStepVersionsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postArtifacts(
+    request: proto_clarifai_api_service_pb.PostArtifactsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiArtifactResponse>;
+
+  getArtifact(
+    request: proto_clarifai_api_service_pb.GetArtifactRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleArtifactResponse>;
+
+  listArtifacts(
+    request: proto_clarifai_api_service_pb.ListArtifactsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiArtifactResponse>;
+
+  deleteArtifact(
+    request: proto_clarifai_api_service_pb.DeleteArtifactRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  listArtifactVersions(
+    request: proto_clarifai_api_service_pb.ListArtifactVersionsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiArtifactVersionResponse>;
+
+  getArtifactVersion(
+    request: proto_clarifai_api_service_pb.GetArtifactVersionRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleArtifactVersionResponse>;
+
+  deleteArtifactVersion(
+    request: proto_clarifai_api_service_pb.DeleteArtifactVersionRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
 
   getSecret(
     request: proto_clarifai_api_service_pb.GetSecretRequest,
