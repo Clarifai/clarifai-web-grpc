@@ -10900,6 +10900,120 @@ export namespace MetricTypeLabels {
 
 }
 
+export class Artifact extends jspb.Message {
+  getId(): string;
+  setId(value: string): Artifact;
+
+  getUserId(): string;
+  setUserId(value: string): Artifact;
+
+  getAppId(): string;
+  setAppId(value: string): Artifact;
+
+  getArtifactVersion(): ArtifactVersion | undefined;
+  setArtifactVersion(value?: ArtifactVersion): Artifact;
+  hasArtifactVersion(): boolean;
+  clearArtifactVersion(): Artifact;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Artifact;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): Artifact;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): Artifact;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): Artifact;
+
+  getDeletedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDeletedAt(value?: google_protobuf_timestamp_pb.Timestamp): Artifact;
+  hasDeletedAt(): boolean;
+  clearDeletedAt(): Artifact;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Artifact.AsObject;
+  static toObject(includeInstance: boolean, msg: Artifact): Artifact.AsObject;
+  static serializeBinaryToWriter(message: Artifact, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Artifact;
+  static deserializeBinaryFromReader(message: Artifact, reader: jspb.BinaryReader): Artifact;
+}
+
+export namespace Artifact {
+  export type AsObject = {
+    id: string,
+    userId: string,
+    appId: string,
+    artifactVersion?: ArtifactVersion.AsObject,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    deletedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class ArtifactVersion extends jspb.Message {
+  getId(): string;
+  setId(value: string): ArtifactVersion;
+
+  getDescription(): string;
+  setDescription(value: string): ArtifactVersion;
+
+  getArtifact(): Artifact | undefined;
+  setArtifact(value?: Artifact): ArtifactVersion;
+  hasArtifact(): boolean;
+  clearArtifact(): ArtifactVersion;
+
+  getUpload(): Upload | undefined;
+  setUpload(value?: Upload): ArtifactVersion;
+  hasUpload(): boolean;
+  clearUpload(): ArtifactVersion;
+
+  getVisibility(): Visibility | undefined;
+  setVisibility(value?: Visibility): ArtifactVersion;
+  hasVisibility(): boolean;
+  clearVisibility(): ArtifactVersion;
+
+  getExpiresAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setExpiresAt(value?: google_protobuf_timestamp_pb.Timestamp): ArtifactVersion;
+  hasExpiresAt(): boolean;
+  clearExpiresAt(): ArtifactVersion;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): ArtifactVersion;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): ArtifactVersion;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): ArtifactVersion;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): ArtifactVersion;
+
+  getDeletedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDeletedAt(value?: google_protobuf_timestamp_pb.Timestamp): ArtifactVersion;
+  hasDeletedAt(): boolean;
+  clearDeletedAt(): ArtifactVersion;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ArtifactVersion.AsObject;
+  static toObject(includeInstance: boolean, msg: ArtifactVersion): ArtifactVersion.AsObject;
+  static serializeBinaryToWriter(message: ArtifactVersion, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ArtifactVersion;
+  static deserializeBinaryFromReader(message: ArtifactVersion, reader: jspb.BinaryReader): ArtifactVersion;
+}
+
+export namespace ArtifactVersion {
+  export type AsObject = {
+    id: string,
+    description: string,
+    artifact?: Artifact.AsObject,
+    upload?: Upload.AsObject,
+    visibility?: Visibility.AsObject,
+    expiresAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    deletedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
 export enum WorkflowModelUseCase { 
   WORKFLOW_MODEL_USE_CASE_NOT_SET = 0,
   CLASSIFICATION = 1,
