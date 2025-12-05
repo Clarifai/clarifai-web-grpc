@@ -8749,6 +8749,11 @@ export class InstanceType extends jspb.Message {
   getArchitecture(): string;
   setArchitecture(value: string): InstanceType;
 
+  getAvailableComputeInfo(): ComputeInfo | undefined;
+  setAvailableComputeInfo(value?: ComputeInfo): InstanceType;
+  hasAvailableComputeInfo(): boolean;
+  clearAvailableComputeInfo(): InstanceType;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InstanceType.AsObject;
   static toObject(includeInstance: boolean, msg: InstanceType): InstanceType.AsObject;
@@ -8769,6 +8774,7 @@ export namespace InstanceType {
     featureFlagGroup: string,
     specialHandlingList: Array<SpecialHandling.AsObject>,
     architecture: string,
+    availableComputeInfo?: ComputeInfo.AsObject,
   }
 }
 
