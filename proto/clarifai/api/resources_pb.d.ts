@@ -2936,6 +2936,7 @@ export namespace SpecialHandling {
   export enum Reason { 
     REASON_NOT_SET = 0,
     CONTACT_SALES = 1,
+    INTERNAL_ONLY = 2,
   }
 }
 
@@ -8785,6 +8786,11 @@ export class CloudProvider extends jspb.Message {
   getName(): string;
   setName(value: string): CloudProvider;
 
+  getSpecialHandlingList(): Array<SpecialHandling>;
+  setSpecialHandlingList(value: Array<SpecialHandling>): CloudProvider;
+  clearSpecialHandlingList(): CloudProvider;
+  addSpecialHandling(value?: SpecialHandling, index?: number): SpecialHandling;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CloudProvider.AsObject;
   static toObject(includeInstance: boolean, msg: CloudProvider): CloudProvider.AsObject;
@@ -8797,6 +8803,31 @@ export namespace CloudProvider {
   export type AsObject = {
     id: string,
     name: string,
+    specialHandlingList: Array<SpecialHandling.AsObject>,
+  }
+}
+
+export class CloudRegion extends jspb.Message {
+  getId(): string;
+  setId(value: string): CloudRegion;
+
+  getSpecialHandlingList(): Array<SpecialHandling>;
+  setSpecialHandlingList(value: Array<SpecialHandling>): CloudRegion;
+  clearSpecialHandlingList(): CloudRegion;
+  addSpecialHandling(value?: SpecialHandling, index?: number): SpecialHandling;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CloudRegion.AsObject;
+  static toObject(includeInstance: boolean, msg: CloudRegion): CloudRegion.AsObject;
+  static serializeBinaryToWriter(message: CloudRegion, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CloudRegion;
+  static deserializeBinaryFromReader(message: CloudRegion, reader: jspb.BinaryReader): CloudRegion;
+}
+
+export namespace CloudRegion {
+  export type AsObject = {
+    id: string,
+    specialHandlingList: Array<SpecialHandling.AsObject>,
   }
 }
 
