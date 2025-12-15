@@ -6317,6 +6317,7 @@ export namespace TaskInputSource {
     ALL_INPUTS = 1,
     SAVED_SEARCH = 2,
     DATASET = 3,
+    INPUT = 4,
   }
 }
 
