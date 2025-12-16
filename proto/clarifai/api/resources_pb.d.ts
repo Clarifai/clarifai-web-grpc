@@ -387,6 +387,9 @@ export class AppResourceCounts extends jspb.Message {
   getInputs(): number;
   setInputs(value: number): AppResourceCounts;
 
+  getPipelines(): number;
+  setPipelines(value: number): AppResourceCounts;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AppResourceCounts.AsObject;
   static toObject(includeInstance: boolean, msg: AppResourceCounts): AppResourceCounts.AsObject;
@@ -402,6 +405,7 @@ export namespace AppResourceCounts {
     workflows: number,
     modules: number,
     inputs: number,
+    pipelines: number,
   }
 }
 

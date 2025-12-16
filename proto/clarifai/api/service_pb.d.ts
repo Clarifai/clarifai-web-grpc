@@ -4112,6 +4112,9 @@ export class GetResourceCountsResponse extends jspb.Message {
   getInputs(): number;
   setInputs(value: number): GetResourceCountsResponse;
 
+  getPipelines(): number;
+  setPipelines(value: number): GetResourceCountsResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetResourceCountsResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetResourceCountsResponse): GetResourceCountsResponse.AsObject;
@@ -4128,6 +4131,7 @@ export namespace GetResourceCountsResponse {
     workflows: number,
     modules: number,
     inputs: number,
+    pipelines: number,
   }
 }
 
