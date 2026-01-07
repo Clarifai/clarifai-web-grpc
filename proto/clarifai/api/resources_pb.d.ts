@@ -10589,6 +10589,48 @@ export namespace PipelineVersionRun {
   }
 }
 
+export class PipelineVersionRunStatusLog extends jspb.Message {
+  getId(): string;
+  setId(value: string): PipelineVersionRunStatusLog;
+
+  getPipelineVersionRunId(): string;
+  setPipelineVersionRunId(value: string): PipelineVersionRunStatusLog;
+
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): PipelineVersionRunStatusLog;
+  hasStatus(): boolean;
+  clearStatus(): PipelineVersionRunStatusLog;
+
+  getMessage(): string;
+  setMessage(value: string): PipelineVersionRunStatusLog;
+
+  getTriggeredByUserId(): string;
+  setTriggeredByUserId(value: string): PipelineVersionRunStatusLog;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): PipelineVersionRunStatusLog;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): PipelineVersionRunStatusLog;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PipelineVersionRunStatusLog.AsObject;
+  static toObject(includeInstance: boolean, msg: PipelineVersionRunStatusLog): PipelineVersionRunStatusLog.AsObject;
+  static serializeBinaryToWriter(message: PipelineVersionRunStatusLog, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PipelineVersionRunStatusLog;
+  static deserializeBinaryFromReader(message: PipelineVersionRunStatusLog, reader: jspb.BinaryReader): PipelineVersionRunStatusLog;
+}
+
+export namespace PipelineVersionRunStatusLog {
+  export type AsObject = {
+    id: string,
+    pipelineVersionRunId: string,
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    message: string,
+    triggeredByUserId: string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
 export class Secret extends jspb.Message {
   getId(): string;
   setId(value: string): Secret;
