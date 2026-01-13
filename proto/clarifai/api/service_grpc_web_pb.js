@@ -1257,56 +1257,56 @@ proto.clarifai.api.V2PromiseClient.prototype.postTrackAnnotationsSearches =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.clarifai.api.StreamTrackAnnotationsSearchesRequest,
- *   !proto.clarifai.api.SingleStreamTrackAnnotationResponse>}
+ *   !proto.clarifai.api.StreamAnnotationsRequest,
+ *   !proto.clarifai.api.SingleStreamAnnotationResponse>}
  */
-const methodDescriptor_V2_StreamTrackAnnotationsSearches = new grpc.web.MethodDescriptor(
-  '/clarifai.api.V2/StreamTrackAnnotationsSearches',
+const methodDescriptor_V2_StreamAnnotations = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/StreamAnnotations',
   grpc.web.MethodType.SERVER_STREAMING,
-  proto.clarifai.api.StreamTrackAnnotationsSearchesRequest,
-  proto.clarifai.api.SingleStreamTrackAnnotationResponse,
+  proto.clarifai.api.StreamAnnotationsRequest,
+  proto.clarifai.api.SingleStreamAnnotationResponse,
   /**
-   * @param {!proto.clarifai.api.StreamTrackAnnotationsSearchesRequest} request
+   * @param {!proto.clarifai.api.StreamAnnotationsRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.clarifai.api.SingleStreamTrackAnnotationResponse.deserializeBinary
+  proto.clarifai.api.SingleStreamAnnotationResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.clarifai.api.StreamTrackAnnotationsSearchesRequest} request The request proto
+ * @param {!proto.clarifai.api.StreamAnnotationsRequest} request The request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleStreamTrackAnnotationResponse>}
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleStreamAnnotationResponse>}
  *     The XHR Node Readable Stream
  */
-proto.clarifai.api.V2Client.prototype.streamTrackAnnotationsSearches =
+proto.clarifai.api.V2Client.prototype.streamAnnotations =
     function(request, metadata) {
   return this.client_.serverStreaming(this.hostname_ +
-      '/clarifai.api.V2/StreamTrackAnnotationsSearches',
+      '/clarifai.api.V2/StreamAnnotations',
       request,
       metadata || {},
-      methodDescriptor_V2_StreamTrackAnnotationsSearches);
+      methodDescriptor_V2_StreamAnnotations);
 };
 
 
 /**
- * @param {!proto.clarifai.api.StreamTrackAnnotationsSearchesRequest} request The request proto
+ * @param {!proto.clarifai.api.StreamAnnotationsRequest} request The request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleStreamTrackAnnotationResponse>}
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleStreamAnnotationResponse>}
  *     The XHR Node Readable Stream
  */
-proto.clarifai.api.V2PromiseClient.prototype.streamTrackAnnotationsSearches =
+proto.clarifai.api.V2PromiseClient.prototype.streamAnnotations =
     function(request, metadata) {
   return this.client_.serverStreaming(this.hostname_ +
-      '/clarifai.api.V2/StreamTrackAnnotationsSearches',
+      '/clarifai.api.V2/StreamAnnotations',
       request,
       metadata || {},
-      methodDescriptor_V2_StreamTrackAnnotationsSearches);
+      methodDescriptor_V2_StreamAnnotations);
 };
 
 
@@ -1314,13 +1314,13 @@ proto.clarifai.api.V2PromiseClient.prototype.streamTrackAnnotationsSearches =
  * @const
  * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.StreamLivestreamAnnotationsRequest,
- *   !proto.clarifai.api.SingleStreamTrackAnnotationResponse>}
+ *   !proto.clarifai.api.SingleStreamAnnotationResponse>}
  */
 const methodDescriptor_V2_StreamLivestreamAnnotations = new grpc.web.MethodDescriptor(
   '/clarifai.api.V2/StreamLivestreamAnnotations',
   grpc.web.MethodType.SERVER_STREAMING,
   proto.clarifai.api.StreamLivestreamAnnotationsRequest,
-  proto.clarifai.api.SingleStreamTrackAnnotationResponse,
+  proto.clarifai.api.SingleStreamAnnotationResponse,
   /**
    * @param {!proto.clarifai.api.StreamLivestreamAnnotationsRequest} request
    * @return {!Uint8Array}
@@ -1328,7 +1328,7 @@ const methodDescriptor_V2_StreamLivestreamAnnotations = new grpc.web.MethodDescr
   function(request) {
     return request.serializeBinary();
   },
-  proto.clarifai.api.SingleStreamTrackAnnotationResponse.deserializeBinary
+  proto.clarifai.api.SingleStreamAnnotationResponse.deserializeBinary
 );
 
 
@@ -1336,7 +1336,7 @@ const methodDescriptor_V2_StreamLivestreamAnnotations = new grpc.web.MethodDescr
  * @param {!proto.clarifai.api.StreamLivestreamAnnotationsRequest} request The request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleStreamTrackAnnotationResponse>}
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleStreamAnnotationResponse>}
  *     The XHR Node Readable Stream
  */
 proto.clarifai.api.V2Client.prototype.streamLivestreamAnnotations =
@@ -1353,7 +1353,7 @@ proto.clarifai.api.V2Client.prototype.streamLivestreamAnnotations =
  * @param {!proto.clarifai.api.StreamLivestreamAnnotationsRequest} request The request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleStreamTrackAnnotationResponse>}
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.SingleStreamAnnotationResponse>}
  *     The XHR Node Readable Stream
  */
 proto.clarifai.api.V2PromiseClient.prototype.streamLivestreamAnnotations =
