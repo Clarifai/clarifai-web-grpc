@@ -10528,6 +10528,11 @@ export class RunnerItem extends jspb.Message {
   hasSyncStateRequest(): boolean;
   clearSyncStateRequest(): RunnerItem;
 
+  getAutoAnnotationRequest(): AutoAnnotationRequest | undefined;
+  setAutoAnnotationRequest(value?: AutoAnnotationRequest): RunnerItem;
+  hasAutoAnnotationRequest(): boolean;
+  clearAutoAnnotationRequest(): RunnerItem;
+
   getRequestCase(): RunnerItem.RequestCase;
 
   serializeBinary(): Uint8Array;
@@ -10545,13 +10550,70 @@ export namespace RunnerItem {
     processingInfo?: proto_clarifai_api_resources_pb.ProcessingInfo.AsObject,
     postModelOutputsRequest?: PostModelOutputsRequest.AsObject,
     syncStateRequest?: SyncStateRequest.AsObject,
+    autoAnnotationRequest?: AutoAnnotationRequest.AsObject,
   }
 
   export enum RequestCase { 
     REQUEST_NOT_SET = 0,
     POST_MODEL_OUTPUTS_REQUEST = 4,
     SYNC_STATE_REQUEST = 5,
+    AUTO_ANNOTATION_REQUEST = 6,
   }
+}
+
+export class AutoAnnotationRequest extends jspb.Message {
+  getPostModelOutputsRequest(): PostModelOutputsRequest | undefined;
+  setPostModelOutputsRequest(value?: PostModelOutputsRequest): AutoAnnotationRequest;
+  hasPostModelOutputsRequest(): boolean;
+  clearPostModelOutputsRequest(): AutoAnnotationRequest;
+
+  getPostAnnotationsInfo(): AutoAnnotationRequest.PostAnnotationsInfo | undefined;
+  setPostAnnotationsInfo(value?: AutoAnnotationRequest.PostAnnotationsInfo): AutoAnnotationRequest;
+  hasPostAnnotationsInfo(): boolean;
+  clearPostAnnotationsInfo(): AutoAnnotationRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AutoAnnotationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AutoAnnotationRequest): AutoAnnotationRequest.AsObject;
+  static serializeBinaryToWriter(message: AutoAnnotationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AutoAnnotationRequest;
+  static deserializeBinaryFromReader(message: AutoAnnotationRequest, reader: jspb.BinaryReader): AutoAnnotationRequest;
+}
+
+export namespace AutoAnnotationRequest {
+  export type AsObject = {
+    postModelOutputsRequest?: PostModelOutputsRequest.AsObject,
+    postAnnotationsInfo?: AutoAnnotationRequest.PostAnnotationsInfo.AsObject,
+  }
+
+  export class PostAnnotationsInfo extends jspb.Message {
+    getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+    setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostAnnotationsInfo;
+    hasUserAppId(): boolean;
+    clearUserAppId(): PostAnnotationsInfo;
+
+    getAuthorizationValue(): string;
+    setAuthorizationValue(value: string): PostAnnotationsInfo;
+
+    getTaskId(): string;
+    setTaskId(value: string): PostAnnotationsInfo;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): PostAnnotationsInfo.AsObject;
+    static toObject(includeInstance: boolean, msg: PostAnnotationsInfo): PostAnnotationsInfo.AsObject;
+    static serializeBinaryToWriter(message: PostAnnotationsInfo, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): PostAnnotationsInfo;
+    static deserializeBinaryFromReader(message: PostAnnotationsInfo, reader: jspb.BinaryReader): PostAnnotationsInfo;
+  }
+
+  export namespace PostAnnotationsInfo {
+    export type AsObject = {
+      userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+      authorizationValue: string,
+      taskId: string,
+    }
+  }
+
 }
 
 export class RunnerItemOutput extends jspb.Message {
