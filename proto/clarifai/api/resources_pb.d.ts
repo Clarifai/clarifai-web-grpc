@@ -5,6 +5,7 @@ import * as proto_clarifai_api_status_status_code_pb from '../../../proto/clarif
 import * as proto_clarifai_api_utils_extensions_pb from '../../../proto/clarifai/api/utils/extensions_pb';
 import * as proto_clarifai_api_utils_matrix_pb from '../../../proto/clarifai/api/utils/matrix_pb';
 import * as proto_clarifai_auth_util_extension_pb from '../../../proto/clarifai/auth/util/extension_pb';
+import * as google_protobuf_duration_pb from 'google-protobuf/google/protobuf/duration_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 import * as google_protobuf_wrappers_pb from 'google-protobuf/google/protobuf/wrappers_pb';
@@ -6222,6 +6223,11 @@ export class TaskWorker extends jspb.Message {
   getType(): TaskWorker.WorkerType;
   setType(value: TaskWorker.WorkerType): TaskWorker;
 
+  getRunnerSelectorsList(): Array<RunnerSelector>;
+  setRunnerSelectorsList(value: Array<RunnerSelector>): TaskWorker;
+  clearRunnerSelectorsList(): TaskWorker;
+  addRunnerSelectors(value?: RunnerSelector, index?: number): RunnerSelector;
+
   getStrategyInfoCase(): TaskWorker.StrategyInfoCase;
 
   serializeBinary(): Uint8Array;
@@ -6240,6 +6246,7 @@ export namespace TaskWorker {
     partitionedStrategyInfo?: TaskWorkerPartitionedStrategyInfo.AsObject,
     workersList: Array<Worker.AsObject>,
     type: TaskWorker.WorkerType,
+    runnerSelectorsList: Array<RunnerSelector.AsObject>,
   }
 
   export enum TaskWorkerStrategy { 
@@ -10566,6 +10573,21 @@ export class PipelineVersionRun extends jspb.Message {
   hasOrchestrationSpec(): boolean;
   clearOrchestrationSpec(): PipelineVersionRun;
 
+  getStartedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartedAt(value?: google_protobuf_timestamp_pb.Timestamp): PipelineVersionRun;
+  hasStartedAt(): boolean;
+  clearStartedAt(): PipelineVersionRun;
+
+  getEndedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEndedAt(value?: google_protobuf_timestamp_pb.Timestamp): PipelineVersionRun;
+  hasEndedAt(): boolean;
+  clearEndedAt(): PipelineVersionRun;
+
+  getTotalRunDuration(): google_protobuf_duration_pb.Duration | undefined;
+  setTotalRunDuration(value?: google_protobuf_duration_pb.Duration): PipelineVersionRun;
+  hasTotalRunDuration(): boolean;
+  clearTotalRunDuration(): PipelineVersionRun;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PipelineVersionRun.AsObject;
   static toObject(includeInstance: boolean, msg: PipelineVersionRun): PipelineVersionRun.AsObject;
@@ -10586,6 +10608,51 @@ export namespace PipelineVersionRun {
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     inputArgsOverride?: OrchestrationArgsOverride.AsObject,
     orchestrationSpec?: OrchestrationSpec.AsObject,
+    startedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    endedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    totalRunDuration?: google_protobuf_duration_pb.Duration.AsObject,
+  }
+}
+
+export class PipelineVersionRunStatusLog extends jspb.Message {
+  getId(): string;
+  setId(value: string): PipelineVersionRunStatusLog;
+
+  getPipelineVersionRunId(): string;
+  setPipelineVersionRunId(value: string): PipelineVersionRunStatusLog;
+
+  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
+  setStatus(value?: proto_clarifai_api_status_status_pb.Status): PipelineVersionRunStatusLog;
+  hasStatus(): boolean;
+  clearStatus(): PipelineVersionRunStatusLog;
+
+  getMessage(): string;
+  setMessage(value: string): PipelineVersionRunStatusLog;
+
+  getTriggeredByUserId(): string;
+  setTriggeredByUserId(value: string): PipelineVersionRunStatusLog;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): PipelineVersionRunStatusLog;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): PipelineVersionRunStatusLog;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PipelineVersionRunStatusLog.AsObject;
+  static toObject(includeInstance: boolean, msg: PipelineVersionRunStatusLog): PipelineVersionRunStatusLog.AsObject;
+  static serializeBinaryToWriter(message: PipelineVersionRunStatusLog, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PipelineVersionRunStatusLog;
+  static deserializeBinaryFromReader(message: PipelineVersionRunStatusLog, reader: jspb.BinaryReader): PipelineVersionRunStatusLog;
+}
+
+export namespace PipelineVersionRunStatusLog {
+  export type AsObject = {
+    id: string,
+    pipelineVersionRunId: string,
+    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
+    message: string,
+    triggeredByUserId: string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 

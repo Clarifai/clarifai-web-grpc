@@ -1844,6 +1844,13 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiPipelineVersionRunResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiPipelineVersionRunResponse>;
 
+  listPipelineVersionRunStatusLogs(
+    request: proto_clarifai_api_service_pb.ListPipelineVersionRunStatusLogsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiPipelineVersionRunStatusLogResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiPipelineVersionRunStatusLogResponse>;
+
   postPipelineSteps(
     request: proto_clarifai_api_service_pb.PostPipelineStepsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -3312,6 +3319,11 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.PatchPipelineVersionRunsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiPipelineVersionRunResponse>;
+
+  listPipelineVersionRunStatusLogs(
+    request: proto_clarifai_api_service_pb.ListPipelineVersionRunStatusLogsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiPipelineVersionRunStatusLogResponse>;
 
   postPipelineSteps(
     request: proto_clarifai_api_service_pb.PostPipelineStepsRequest,
