@@ -8670,6 +8670,9 @@ export class Nodepool extends jspb.Message {
   clearSpecialHandlingList(): Nodepool;
   addSpecialHandling(value?: SpecialHandling, index?: number): SpecialHandling;
 
+  getNodeCount(): number;
+  setNodeCount(value: number): Nodepool;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Nodepool.AsObject;
   static toObject(includeInstance: boolean, msg: Nodepool): Nodepool.AsObject;
@@ -8694,6 +8697,7 @@ export namespace Nodepool {
     visibility?: Visibility.AsObject,
     metadata?: google_protobuf_struct_pb.Struct.AsObject,
     specialHandlingList: Array<SpecialHandling.AsObject>,
+    nodeCount: number,
   }
 }
 
