@@ -142,10 +142,15 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiAnnotationResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiAnnotationResponse>;
 
-  streamTrackAnnotationsSearches(
-    request: proto_clarifai_api_service_pb.StreamTrackAnnotationsSearchesRequest,
+  streamAnnotations(
+    request: proto_clarifai_api_service_pb.StreamAnnotationsRequest,
     metadata?: grpcWeb.Metadata
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleStreamTrackAnnotationResponse>;
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleStreamAnnotationResponse>;
+
+  streamLivestreamAnnotations(
+    request: proto_clarifai_api_service_pb.StreamLivestreamAnnotationsRequest,
+    metadata?: grpcWeb.Metadata
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleStreamAnnotationResponse>;
 
   postAnnotations(
     request: proto_clarifai_api_service_pb.PostAnnotationsRequest,
@@ -2100,10 +2105,15 @@ export class V2PromiseClient {
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiAnnotationResponse>;
 
-  streamTrackAnnotationsSearches(
-    request: proto_clarifai_api_service_pb.StreamTrackAnnotationsSearchesRequest,
+  streamAnnotations(
+    request: proto_clarifai_api_service_pb.StreamAnnotationsRequest,
     metadata?: grpcWeb.Metadata
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleStreamTrackAnnotationResponse>;
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleStreamAnnotationResponse>;
+
+  streamLivestreamAnnotations(
+    request: proto_clarifai_api_service_pb.StreamLivestreamAnnotationsRequest,
+    metadata?: grpcWeb.Metadata
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleStreamAnnotationResponse>;
 
   postAnnotations(
     request: proto_clarifai_api_service_pb.PostAnnotationsRequest,
