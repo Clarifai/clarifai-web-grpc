@@ -7816,6 +7816,11 @@ export class ListTasksRequest extends jspb.Message {
   clearInputSourceIdsList(): ListTasksRequest;
   addInputSourceIds(value: string, index?: number): ListTasksRequest;
 
+  getWorkerIdsList(): Array<proto_clarifai_api_resources_pb.WorkerIDSet>;
+  setWorkerIdsList(value: Array<proto_clarifai_api_resources_pb.WorkerIDSet>): ListTasksRequest;
+  clearWorkerIdsList(): ListTasksRequest;
+  addWorkerIds(value?: proto_clarifai_api_resources_pb.WorkerIDSet, index?: number): proto_clarifai_api_resources_pb.WorkerIDSet;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListTasksRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListTasksRequest): ListTasksRequest.AsObject;
@@ -7837,6 +7842,7 @@ export namespace ListTasksRequest {
     idsList: Array<string>,
     inputSourceType: proto_clarifai_api_resources_pb.TaskInputSource.TaskInputSourceType,
     inputSourceIdsList: Array<string>,
+    workerIdsList: Array<proto_clarifai_api_resources_pb.WorkerIDSet.AsObject>,
   }
 }
 
