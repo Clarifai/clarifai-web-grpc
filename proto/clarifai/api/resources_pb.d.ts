@@ -3819,6 +3819,9 @@ export class ModelVersion extends jspb.Message {
   clearSpecialHandlingList(): ModelVersion;
   addSpecialHandling(value?: SpecialHandling, index?: number): SpecialHandling;
 
+  getNumThreads(): number;
+  setNumThreads(value: number): ModelVersion;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelVersion.AsObject;
   static toObject(includeInstance: boolean, msg: ModelVersion): ModelVersion.AsObject;
@@ -3853,6 +3856,7 @@ export namespace ModelVersion {
     buildInfo?: BuildInfo.AsObject,
     methodSignaturesList: Array<MethodSignature.AsObject>,
     specialHandlingList: Array<SpecialHandling.AsObject>,
+    numThreads: number,
   }
 }
 
