@@ -640,6 +640,13 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.SingleModelResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleModelResponse>;
 
+  deleteModelMigration(
+    request: proto_clarifai_api_service_pb.DeleteModelMigrationRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.SingleModelResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleModelResponse>;
+
   putModelVersionExports(
     request: proto_clarifai_api_service_pb.PutModelVersionExportsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -2462,6 +2469,11 @@ export class V2PromiseClient {
 
   postModelMigration(
     request: proto_clarifai_api_service_pb.PostModelMigrationRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.SingleModelResponse>;
+
+  deleteModelMigration(
+    request: proto_clarifai_api_service_pb.DeleteModelMigrationRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.SingleModelResponse>;
 
