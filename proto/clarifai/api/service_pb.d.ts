@@ -11787,6 +11787,9 @@ export class PostModelMigrationRequest extends jspb.Message {
   getModelId(): string;
   setModelId(value: string): PostModelMigrationRequest;
 
+  getVersionId(): string;
+  setVersionId(value: string): PostModelMigrationRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostModelMigrationRequest.AsObject;
   static toObject(includeInstance: boolean, msg: PostModelMigrationRequest): PostModelMigrationRequest.AsObject;
@@ -11799,6 +11802,7 @@ export namespace PostModelMigrationRequest {
   export type AsObject = {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
     modelId: string,
+    versionId: string,
   }
 }
 
