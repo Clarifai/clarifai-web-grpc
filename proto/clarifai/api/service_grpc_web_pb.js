@@ -14169,6 +14169,67 @@ proto.clarifai.api.V2PromiseClient.prototype.postComputePlaneMetrics =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostRunnerReplicaTaskMetricsRequest,
+ *   !proto.clarifai.api.status.BaseResponse>}
+ */
+const methodDescriptor_V2_PostRunnerReplicaTaskMetrics = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostRunnerReplicaTaskMetrics',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostRunnerReplicaTaskMetricsRequest,
+  proto_clarifai_api_status_status_pb.BaseResponse,
+  /**
+   * @param {!proto.clarifai.api.PostRunnerReplicaTaskMetricsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto_clarifai_api_status_status_pb.BaseResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostRunnerReplicaTaskMetricsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.status.BaseResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.status.BaseResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postRunnerReplicaTaskMetrics =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostRunnerReplicaTaskMetrics',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostRunnerReplicaTaskMetrics,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostRunnerReplicaTaskMetricsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.status.BaseResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postRunnerReplicaTaskMetrics =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostRunnerReplicaTaskMetrics',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostRunnerReplicaTaskMetrics);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.PostWorkflowVersionEvaluationsRequest,
  *   !proto.clarifai.api.MultiWorkflowVersionEvaluationResponse>}
  */

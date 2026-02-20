@@ -3469,6 +3469,32 @@ export namespace PostComputePlaneMetricsRequest {
   }
 }
 
+export class PostRunnerReplicaTaskMetricsRequest extends jspb.Message {
+  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
+  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostRunnerReplicaTaskMetricsRequest;
+  hasUserAppId(): boolean;
+  clearUserAppId(): PostRunnerReplicaTaskMetricsRequest;
+
+  getRunnerReplicaTaskMetricsList(): Array<proto_clarifai_api_resources_pb.RunnerReplicaTaskMetrics>;
+  setRunnerReplicaTaskMetricsList(value: Array<proto_clarifai_api_resources_pb.RunnerReplicaTaskMetrics>): PostRunnerReplicaTaskMetricsRequest;
+  clearRunnerReplicaTaskMetricsList(): PostRunnerReplicaTaskMetricsRequest;
+  addRunnerReplicaTaskMetrics(value?: proto_clarifai_api_resources_pb.RunnerReplicaTaskMetrics, index?: number): proto_clarifai_api_resources_pb.RunnerReplicaTaskMetrics;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PostRunnerReplicaTaskMetricsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PostRunnerReplicaTaskMetricsRequest): PostRunnerReplicaTaskMetricsRequest.AsObject;
+  static serializeBinaryToWriter(message: PostRunnerReplicaTaskMetricsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PostRunnerReplicaTaskMetricsRequest;
+  static deserializeBinaryFromReader(message: PostRunnerReplicaTaskMetricsRequest, reader: jspb.BinaryReader): PostRunnerReplicaTaskMetricsRequest;
+}
+
+export namespace PostRunnerReplicaTaskMetricsRequest {
+  export type AsObject = {
+    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
+    runnerReplicaTaskMetricsList: Array<proto_clarifai_api_resources_pb.RunnerReplicaTaskMetrics.AsObject>,
+  }
+}
+
 export class PostLogEntriesRequest extends jspb.Message {
   getLogEntriesList(): Array<proto_clarifai_api_resources_pb.LogEntry>;
   setLogEntriesList(value: Array<proto_clarifai_api_resources_pb.LogEntry>): PostLogEntriesRequest;

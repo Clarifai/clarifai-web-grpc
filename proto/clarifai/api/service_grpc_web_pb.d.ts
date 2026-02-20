@@ -1618,6 +1618,13 @@ export class V2Client {
                response: proto_clarifai_api_status_status_pb.BaseResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
 
+  postRunnerReplicaTaskMetrics(
+    request: proto_clarifai_api_service_pb.PostRunnerReplicaTaskMetricsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
   postWorkflowVersionEvaluations(
     request: proto_clarifai_api_service_pb.PostWorkflowVersionEvaluationsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -3057,6 +3064,11 @@ export class V2PromiseClient {
 
   postComputePlaneMetrics(
     request: proto_clarifai_api_service_pb.PostComputePlaneMetricsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postRunnerReplicaTaskMetrics(
+    request: proto_clarifai_api_service_pb.PostRunnerReplicaTaskMetricsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
 
