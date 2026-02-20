@@ -8799,6 +8799,9 @@ export class Deployment extends jspb.Message {
   clearSpecialHandlingList(): Deployment;
   addSpecialHandling(value?: SpecialHandling, index?: number): SpecialHandling;
 
+  getGracefulDeploy(): boolean;
+  setGracefulDeploy(value: boolean): Deployment;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Deployment.AsObject;
   static toObject(includeInstance: boolean, msg: Deployment): Deployment.AsObject;
@@ -8823,6 +8826,7 @@ export namespace Deployment {
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     deployLatestVersion: boolean,
     specialHandlingList: Array<SpecialHandling.AsObject>,
+    gracefulDeploy: boolean,
   }
 
   export enum SchedulingChoice { 
