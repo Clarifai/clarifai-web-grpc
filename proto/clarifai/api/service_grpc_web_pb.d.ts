@@ -1249,118 +1249,6 @@ export class V2Client {
                response: proto_clarifai_api_service_pb.MultiStatValueAggregateResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiStatValueAggregateResponse>;
 
-  getModule(
-    request: proto_clarifai_api_service_pb.GetModuleRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.SingleModuleResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleModuleResponse>;
-
-  listModules(
-    request: proto_clarifai_api_service_pb.ListModulesRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.MultiModuleResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiModuleResponse>;
-
-  postModules(
-    request: proto_clarifai_api_service_pb.PostModulesRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.MultiModuleResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiModuleResponse>;
-
-  patchModules(
-    request: proto_clarifai_api_service_pb.PatchModulesRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.MultiModuleResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiModuleResponse>;
-
-  deleteModules(
-    request: proto_clarifai_api_service_pb.DeleteModulesRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
-
-  getModuleVersion(
-    request: proto_clarifai_api_service_pb.GetModuleVersionRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.SingleModuleVersionResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleModuleVersionResponse>;
-
-  listModuleVersions(
-    request: proto_clarifai_api_service_pb.ListModuleVersionsRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.MultiModuleVersionResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiModuleVersionResponse>;
-
-  postModuleVersions(
-    request: proto_clarifai_api_service_pb.PostModuleVersionsRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.MultiModuleVersionResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiModuleVersionResponse>;
-
-  patchModuleVersions(
-    request: proto_clarifai_api_service_pb.PatchModuleVersionsRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.MultiModuleVersionResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiModuleVersionResponse>;
-
-  deleteModuleVersions(
-    request: proto_clarifai_api_service_pb.DeleteModuleVersionsRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
-
-  getModuleVersionUsageCount(
-    request: proto_clarifai_api_service_pb.GetModuleVersionUsageCountRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.SingleModuleVersionUsageCountResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleModuleVersionUsageCountResponse>;
-
-  getInstalledModuleVersion(
-    request: proto_clarifai_api_service_pb.GetInstalledModuleVersionRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.SingleInstalledModuleVersionResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleInstalledModuleVersionResponse>;
-
-  listInstalledModuleVersions(
-    request: proto_clarifai_api_service_pb.ListInstalledModuleVersionsRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.MultiInstalledModuleVersionResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiInstalledModuleVersionResponse>;
-
-  postInstalledModuleVersions(
-    request: proto_clarifai_api_service_pb.PostInstalledModuleVersionsRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.MultiInstalledModuleVersionResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiInstalledModuleVersionResponse>;
-
-  deleteInstalledModuleVersions(
-    request: proto_clarifai_api_service_pb.DeleteInstalledModuleVersionsRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
-
-  postInstalledModuleVersionsKey(
-    request: proto_clarifai_api_service_pb.PostInstalledModuleVersionsKeyRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.SingleKeyResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleKeyResponse>;
-
   postBulkOperations(
     request: proto_clarifai_api_service_pb.PostBulkOperationsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -1725,6 +1613,13 @@ export class V2Client {
 
   postComputePlaneMetrics(
     request: proto_clarifai_api_service_pb.PostComputePlaneMetricsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postRunnerReplicaTaskMetrics(
+    request: proto_clarifai_api_service_pb.PostRunnerReplicaTaskMetricsRequest,
     metadata: grpcWeb.Metadata | undefined,
     callback: (err: grpcWeb.RpcError,
                response: proto_clarifai_api_status_status_pb.BaseResponse) => void
@@ -2907,86 +2802,6 @@ export class V2PromiseClient {
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_service_pb.MultiStatValueAggregateResponse>;
 
-  getModule(
-    request: proto_clarifai_api_service_pb.GetModuleRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.SingleModuleResponse>;
-
-  listModules(
-    request: proto_clarifai_api_service_pb.ListModulesRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.MultiModuleResponse>;
-
-  postModules(
-    request: proto_clarifai_api_service_pb.PostModulesRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.MultiModuleResponse>;
-
-  patchModules(
-    request: proto_clarifai_api_service_pb.PatchModulesRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.MultiModuleResponse>;
-
-  deleteModules(
-    request: proto_clarifai_api_service_pb.DeleteModulesRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
-
-  getModuleVersion(
-    request: proto_clarifai_api_service_pb.GetModuleVersionRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.SingleModuleVersionResponse>;
-
-  listModuleVersions(
-    request: proto_clarifai_api_service_pb.ListModuleVersionsRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.MultiModuleVersionResponse>;
-
-  postModuleVersions(
-    request: proto_clarifai_api_service_pb.PostModuleVersionsRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.MultiModuleVersionResponse>;
-
-  patchModuleVersions(
-    request: proto_clarifai_api_service_pb.PatchModuleVersionsRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.MultiModuleVersionResponse>;
-
-  deleteModuleVersions(
-    request: proto_clarifai_api_service_pb.DeleteModuleVersionsRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
-
-  getModuleVersionUsageCount(
-    request: proto_clarifai_api_service_pb.GetModuleVersionUsageCountRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.SingleModuleVersionUsageCountResponse>;
-
-  getInstalledModuleVersion(
-    request: proto_clarifai_api_service_pb.GetInstalledModuleVersionRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.SingleInstalledModuleVersionResponse>;
-
-  listInstalledModuleVersions(
-    request: proto_clarifai_api_service_pb.ListInstalledModuleVersionsRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.MultiInstalledModuleVersionResponse>;
-
-  postInstalledModuleVersions(
-    request: proto_clarifai_api_service_pb.PostInstalledModuleVersionsRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.MultiInstalledModuleVersionResponse>;
-
-  deleteInstalledModuleVersions(
-    request: proto_clarifai_api_service_pb.DeleteInstalledModuleVersionsRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
-
-  postInstalledModuleVersionsKey(
-    request: proto_clarifai_api_service_pb.PostInstalledModuleVersionsKeyRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.SingleKeyResponse>;
-
   postBulkOperations(
     request: proto_clarifai_api_service_pb.PostBulkOperationsRequest,
     metadata?: grpcWeb.Metadata
@@ -3249,6 +3064,11 @@ export class V2PromiseClient {
 
   postComputePlaneMetrics(
     request: proto_clarifai_api_service_pb.PostComputePlaneMetricsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  postRunnerReplicaTaskMetrics(
+    request: proto_clarifai_api_service_pb.PostRunnerReplicaTaskMetricsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
 
