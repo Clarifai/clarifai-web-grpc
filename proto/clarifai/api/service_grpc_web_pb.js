@@ -15816,6 +15816,128 @@ proto.clarifai.api.V2PromiseClient.prototype.deletePipelineStepVersions =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.ListPipelineTemplatesRequest,
+ *   !proto.clarifai.api.MultiPipelineTemplateResponse>}
+ */
+const methodDescriptor_V2_ListPipelineTemplates = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/ListPipelineTemplates',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.ListPipelineTemplatesRequest,
+  proto.clarifai.api.MultiPipelineTemplateResponse,
+  /**
+   * @param {!proto.clarifai.api.ListPipelineTemplatesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.MultiPipelineTemplateResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.ListPipelineTemplatesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.MultiPipelineTemplateResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.MultiPipelineTemplateResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.listPipelineTemplates =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/ListPipelineTemplates',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListPipelineTemplates,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.ListPipelineTemplatesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.MultiPipelineTemplateResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.listPipelineTemplates =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/ListPipelineTemplates',
+      request,
+      metadata || {},
+      methodDescriptor_V2_ListPipelineTemplates);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostPipelineVersionRunFromTemplateRequest,
+ *   !proto.clarifai.api.PostPipelineVersionRunFromTemplateResponse>}
+ */
+const methodDescriptor_V2_PostPipelineVersionRunFromTemplate = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostPipelineVersionRunFromTemplate',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostPipelineVersionRunFromTemplateRequest,
+  proto.clarifai.api.PostPipelineVersionRunFromTemplateResponse,
+  /**
+   * @param {!proto.clarifai.api.PostPipelineVersionRunFromTemplateRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.clarifai.api.PostPipelineVersionRunFromTemplateResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostPipelineVersionRunFromTemplateRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.PostPipelineVersionRunFromTemplateResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.PostPipelineVersionRunFromTemplateResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postPipelineVersionRunFromTemplate =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostPipelineVersionRunFromTemplate',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostPipelineVersionRunFromTemplate,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostPipelineVersionRunFromTemplateRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.PostPipelineVersionRunFromTemplateResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postPipelineVersionRunFromTemplate =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostPipelineVersionRunFromTemplate',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostPipelineVersionRunFromTemplate);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.PostArtifactsRequest,
  *   !proto.clarifai.api.MultiArtifactResponse>}
  */
