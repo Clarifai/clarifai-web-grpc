@@ -13503,6 +13503,67 @@ proto.clarifai.api.V2PromiseClient.prototype.deleteNodepools =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.clarifai.api.PostNodepoolStatusRequest,
+ *   !proto.clarifai.api.status.BaseResponse>}
+ */
+const methodDescriptor_V2_PostNodepoolStatus = new grpc.web.MethodDescriptor(
+  '/clarifai.api.V2/PostNodepoolStatus',
+  grpc.web.MethodType.UNARY,
+  proto.clarifai.api.PostNodepoolStatusRequest,
+  proto_clarifai_api_status_status_pb.BaseResponse,
+  /**
+   * @param {!proto.clarifai.api.PostNodepoolStatusRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto_clarifai_api_status_status_pb.BaseResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.clarifai.api.PostNodepoolStatusRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.clarifai.api.status.BaseResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.clarifai.api.status.BaseResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.clarifai.api.V2Client.prototype.postNodepoolStatus =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/clarifai.api.V2/PostNodepoolStatus',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostNodepoolStatus,
+      callback);
+};
+
+
+/**
+ * @param {!proto.clarifai.api.PostNodepoolStatusRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.clarifai.api.status.BaseResponse>}
+ *     Promise that resolves to the response
+ */
+proto.clarifai.api.V2PromiseClient.prototype.postNodepoolStatus =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/clarifai.api.V2/PostNodepoolStatus',
+      request,
+      metadata || {},
+      methodDescriptor_V2_PostNodepoolStatus);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.clarifai.api.GetDeploymentRequest,
  *   !proto.clarifai.api.SingleDeploymentResponse>}
  */
