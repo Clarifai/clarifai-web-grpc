@@ -1543,6 +1543,13 @@ export class V2Client {
                response: proto_clarifai_api_status_status_pb.BaseResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
 
+  postNodepoolStatus(
+    request: proto_clarifai_api_service_pb.PostNodepoolStatusRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
   getDeployment(
     request: proto_clarifai_api_service_pb.GetDeploymentRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -1806,6 +1813,20 @@ export class V2Client {
     callback: (err: grpcWeb.RpcError,
                response: proto_clarifai_api_status_status_pb.BaseResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  listPipelineTemplates(
+    request: proto_clarifai_api_service_pb.ListPipelineTemplatesRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.MultiPipelineTemplateResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiPipelineTemplateResponse>;
+
+  postPipelineVersionRunFromTemplate(
+    request: proto_clarifai_api_service_pb.PostPipelineVersionRunFromTemplateRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_clarifai_api_service_pb.PostPipelineVersionRunFromTemplateResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.PostPipelineVersionRunFromTemplateResponse>;
 
   postArtifacts(
     request: proto_clarifai_api_service_pb.PostArtifactsRequest,
@@ -3012,6 +3033,11 @@ export class V2PromiseClient {
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
 
+  postNodepoolStatus(
+    request: proto_clarifai_api_service_pb.PostNodepoolStatusRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
   getDeployment(
     request: proto_clarifai_api_service_pb.GetDeploymentRequest,
     metadata?: grpcWeb.Metadata
@@ -3201,6 +3227,16 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.DeletePipelineStepVersionsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
+
+  listPipelineTemplates(
+    request: proto_clarifai_api_service_pb.ListPipelineTemplatesRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.MultiPipelineTemplateResponse>;
+
+  postPipelineVersionRunFromTemplate(
+    request: proto_clarifai_api_service_pb.PostPipelineVersionRunFromTemplateRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_clarifai_api_service_pb.PostPipelineVersionRunFromTemplateResponse>;
 
   postArtifacts(
     request: proto_clarifai_api_service_pb.PostArtifactsRequest,
