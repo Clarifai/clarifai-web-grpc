@@ -4,6 +4,7 @@ import * as proto_clarifai_api_status_status_pb from '../../../proto/clarifai/ap
 import * as proto_clarifai_api_status_status_code_pb from '../../../proto/clarifai/api/status/status_code_pb';
 import * as proto_clarifai_api_utils_extensions_pb from '../../../proto/clarifai/api/utils/extensions_pb';
 import * as proto_clarifai_api_utils_matrix_pb from '../../../proto/clarifai/api/utils/matrix_pb';
+import * as proto_clarifai_api_utils_time_pb from '../../../proto/clarifai/api/utils/time_pb';
 import * as proto_clarifai_auth_util_extension_pb from '../../../proto/clarifai/auth/util/extension_pb';
 import * as google_protobuf_duration_pb from 'google-protobuf/google/protobuf/duration_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
@@ -6629,6 +6630,16 @@ export class TaskConceptAutoAnnotationConfig extends jspb.Message {
   getStatusCode(): proto_clarifai_api_status_status_code_pb.StatusCode;
   setStatusCode(value: proto_clarifai_api_status_status_code_pb.StatusCode): TaskConceptAutoAnnotationConfig;
 
+  getTimeOfDayRange(): proto_clarifai_api_utils_time_pb.TimeOfDayRange | undefined;
+  setTimeOfDayRange(value?: proto_clarifai_api_utils_time_pb.TimeOfDayRange): TaskConceptAutoAnnotationConfig;
+  hasTimeOfDayRange(): boolean;
+  clearTimeOfDayRange(): TaskConceptAutoAnnotationConfig;
+
+  getPolygon(): Polygon | undefined;
+  setPolygon(value?: Polygon): TaskConceptAutoAnnotationConfig;
+  hasPolygon(): boolean;
+  clearPolygon(): TaskConceptAutoAnnotationConfig;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TaskConceptAutoAnnotationConfig.AsObject;
   static toObject(includeInstance: boolean, msg: TaskConceptAutoAnnotationConfig): TaskConceptAutoAnnotationConfig.AsObject;
@@ -6642,6 +6653,8 @@ export namespace TaskConceptAutoAnnotationConfig {
     annotationDataTypes: number,
     thresholdRange?: ThresholdRange.AsObject,
     statusCode: proto_clarifai_api_status_status_code_pb.StatusCode,
+    timeOfDayRange?: proto_clarifai_api_utils_time_pb.TimeOfDayRange.AsObject,
+    polygon?: Polygon.AsObject,
   }
 }
 
@@ -8738,6 +8751,9 @@ export class AutoscaleConfig extends jspb.Message {
   getScaleToZeroDelaySeconds(): number;
   setScaleToZeroDelaySeconds(value: number): AutoscaleConfig;
 
+  getSoftMinReplicas(): number;
+  setSoftMinReplicas(value: number): AutoscaleConfig;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AutoscaleConfig.AsObject;
   static toObject(includeInstance: boolean, msg: AutoscaleConfig): AutoscaleConfig.AsObject;
@@ -8755,6 +8771,7 @@ export namespace AutoscaleConfig {
     scaleUpDelaySeconds: number,
     disablePacking: boolean,
     scaleToZeroDelaySeconds: number,
+    softMinReplicas: number,
   }
 }
 
