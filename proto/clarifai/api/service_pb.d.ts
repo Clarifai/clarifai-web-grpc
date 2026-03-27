@@ -9888,6 +9888,11 @@ export class RunnerItem extends jspb.Message {
   hasAutoAnnotationRequest(): boolean;
   clearAutoAnnotationRequest(): RunnerItem;
 
+  getMetadata(): RunnerItemMetadata | undefined;
+  setMetadata(value?: RunnerItemMetadata): RunnerItem;
+  hasMetadata(): boolean;
+  clearMetadata(): RunnerItem;
+
   getRequestCase(): RunnerItem.RequestCase;
 
   serializeBinary(): Uint8Array;
@@ -9906,6 +9911,7 @@ export namespace RunnerItem {
     postModelOutputsRequest?: PostModelOutputsRequest.AsObject,
     syncStateRequest?: SyncStateRequest.AsObject,
     autoAnnotationRequest?: AutoAnnotationRequest.AsObject,
+    metadata?: RunnerItemMetadata.AsObject,
   }
 
   export enum RequestCase { 
@@ -9913,6 +9919,30 @@ export namespace RunnerItem {
     POST_MODEL_OUTPUTS_REQUEST = 4,
     SYNC_STATE_REQUEST = 5,
     AUTO_ANNOTATION_REQUEST = 6,
+  }
+}
+
+export class RunnerItemMetadata extends jspb.Message {
+  getUserId(): string;
+  setUserId(value: string): RunnerItemMetadata;
+
+  getBlockHashesList(): Array<number>;
+  setBlockHashesList(value: Array<number>): RunnerItemMetadata;
+  clearBlockHashesList(): RunnerItemMetadata;
+  addBlockHashes(value: number, index?: number): RunnerItemMetadata;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RunnerItemMetadata.AsObject;
+  static toObject(includeInstance: boolean, msg: RunnerItemMetadata): RunnerItemMetadata.AsObject;
+  static serializeBinaryToWriter(message: RunnerItemMetadata, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RunnerItemMetadata;
+  static deserializeBinaryFromReader(message: RunnerItemMetadata, reader: jspb.BinaryReader): RunnerItemMetadata;
+}
+
+export namespace RunnerItemMetadata {
+  export type AsObject = {
+    userId: string,
+    blockHashesList: Array<number>,
   }
 }
 
