@@ -8267,6 +8267,9 @@ export class RunnerMetrics extends jspb.Message {
   getTotalPodsRunningTimeS(): number;
   setTotalPodsRunningTimeS(value: number): RunnerMetrics;
 
+  getPodsPreemptedTotal(): number;
+  setPodsPreemptedTotal(value: number): RunnerMetrics;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RunnerMetrics.AsObject;
   static toObject(includeInstance: boolean, msg: RunnerMetrics): RunnerMetrics.AsObject;
@@ -8280,6 +8283,7 @@ export namespace RunnerMetrics {
     podsTotal: number,
     podsRunning: number,
     totalPodsRunningTimeS: number,
+    podsPreemptedTotal: number,
   }
 }
 
