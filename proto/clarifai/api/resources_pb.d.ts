@@ -4700,6 +4700,9 @@ export class Output extends jspb.Message {
   getCompletionTokens(): number;
   setCompletionTokens(value: number): Output;
 
+  getCachedTokens(): number;
+  setCachedTokens(value: number): Output;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Output.AsObject;
   static toObject(includeInstance: boolean, msg: Output): Output.AsObject;
@@ -4718,6 +4721,7 @@ export namespace Output {
     data?: Data.AsObject,
     promptTokens: number,
     completionTokens: number,
+    cachedTokens: number,
   }
 }
 
