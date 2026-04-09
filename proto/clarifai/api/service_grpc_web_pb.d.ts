@@ -1200,41 +1200,6 @@ export class V2Client {
                response: proto_clarifai_api_status_status_pb.BaseResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
 
-  postCollectors(
-    request: proto_clarifai_api_service_pb.PostCollectorsRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.MultiCollectorResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiCollectorResponse>;
-
-  getCollector(
-    request: proto_clarifai_api_service_pb.GetCollectorRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.SingleCollectorResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.SingleCollectorResponse>;
-
-  listCollectors(
-    request: proto_clarifai_api_service_pb.ListCollectorsRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.MultiCollectorResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiCollectorResponse>;
-
-  patchCollectors(
-    request: proto_clarifai_api_service_pb.PatchCollectorsRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.MultiCollectorResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiCollectorResponse>;
-
-  deleteCollectors(
-    request: proto_clarifai_api_service_pb.DeleteCollectorsRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_status_status_pb.BaseResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
-
   postStatValues(
     request: proto_clarifai_api_service_pb.PostStatValuesRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -2785,31 +2750,6 @@ export class V2PromiseClient {
 
   deleteLabelOrders(
     request: proto_clarifai_api_service_pb.DeleteLabelOrdersRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
-
-  postCollectors(
-    request: proto_clarifai_api_service_pb.PostCollectorsRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.MultiCollectorResponse>;
-
-  getCollector(
-    request: proto_clarifai_api_service_pb.GetCollectorRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.SingleCollectorResponse>;
-
-  listCollectors(
-    request: proto_clarifai_api_service_pb.ListCollectorsRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.MultiCollectorResponse>;
-
-  patchCollectors(
-    request: proto_clarifai_api_service_pb.PatchCollectorsRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.MultiCollectorResponse>;
-
-  deleteCollectors(
-    request: proto_clarifai_api_service_pb.DeleteCollectorsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
 
