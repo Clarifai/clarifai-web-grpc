@@ -8238,196 +8238,6 @@ export namespace SingleLabelOrderResponse {
   }
 }
 
-export class PostCollectorsRequest extends jspb.Message {
-  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostCollectorsRequest;
-  hasUserAppId(): boolean;
-  clearUserAppId(): PostCollectorsRequest;
-
-  getCollectorsList(): Array<proto_clarifai_api_resources_pb.Collector>;
-  setCollectorsList(value: Array<proto_clarifai_api_resources_pb.Collector>): PostCollectorsRequest;
-  clearCollectorsList(): PostCollectorsRequest;
-  addCollectors(value?: proto_clarifai_api_resources_pb.Collector, index?: number): proto_clarifai_api_resources_pb.Collector;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PostCollectorsRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: PostCollectorsRequest): PostCollectorsRequest.AsObject;
-  static serializeBinaryToWriter(message: PostCollectorsRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PostCollectorsRequest;
-  static deserializeBinaryFromReader(message: PostCollectorsRequest, reader: jspb.BinaryReader): PostCollectorsRequest;
-}
-
-export namespace PostCollectorsRequest {
-  export type AsObject = {
-    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
-    collectorsList: Array<proto_clarifai_api_resources_pb.Collector.AsObject>,
-  }
-}
-
-export class PatchCollectorsRequest extends jspb.Message {
-  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PatchCollectorsRequest;
-  hasUserAppId(): boolean;
-  clearUserAppId(): PatchCollectorsRequest;
-
-  getCollectorsList(): Array<proto_clarifai_api_resources_pb.Collector>;
-  setCollectorsList(value: Array<proto_clarifai_api_resources_pb.Collector>): PatchCollectorsRequest;
-  clearCollectorsList(): PatchCollectorsRequest;
-  addCollectors(value?: proto_clarifai_api_resources_pb.Collector, index?: number): proto_clarifai_api_resources_pb.Collector;
-
-  getAction(): string;
-  setAction(value: string): PatchCollectorsRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PatchCollectorsRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: PatchCollectorsRequest): PatchCollectorsRequest.AsObject;
-  static serializeBinaryToWriter(message: PatchCollectorsRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PatchCollectorsRequest;
-  static deserializeBinaryFromReader(message: PatchCollectorsRequest, reader: jspb.BinaryReader): PatchCollectorsRequest;
-}
-
-export namespace PatchCollectorsRequest {
-  export type AsObject = {
-    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
-    collectorsList: Array<proto_clarifai_api_resources_pb.Collector.AsObject>,
-    action: string,
-  }
-}
-
-export class DeleteCollectorsRequest extends jspb.Message {
-  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): DeleteCollectorsRequest;
-  hasUserAppId(): boolean;
-  clearUserAppId(): DeleteCollectorsRequest;
-
-  getIdsList(): Array<string>;
-  setIdsList(value: Array<string>): DeleteCollectorsRequest;
-  clearIdsList(): DeleteCollectorsRequest;
-  addIds(value: string, index?: number): DeleteCollectorsRequest;
-
-  getDeleteAll(): boolean;
-  setDeleteAll(value: boolean): DeleteCollectorsRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DeleteCollectorsRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: DeleteCollectorsRequest): DeleteCollectorsRequest.AsObject;
-  static serializeBinaryToWriter(message: DeleteCollectorsRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DeleteCollectorsRequest;
-  static deserializeBinaryFromReader(message: DeleteCollectorsRequest, reader: jspb.BinaryReader): DeleteCollectorsRequest;
-}
-
-export namespace DeleteCollectorsRequest {
-  export type AsObject = {
-    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
-    idsList: Array<string>,
-    deleteAll: boolean,
-  }
-}
-
-export class GetCollectorRequest extends jspb.Message {
-  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): GetCollectorRequest;
-  hasUserAppId(): boolean;
-  clearUserAppId(): GetCollectorRequest;
-
-  getCollectorId(): string;
-  setCollectorId(value: string): GetCollectorRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetCollectorRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetCollectorRequest): GetCollectorRequest.AsObject;
-  static serializeBinaryToWriter(message: GetCollectorRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetCollectorRequest;
-  static deserializeBinaryFromReader(message: GetCollectorRequest, reader: jspb.BinaryReader): GetCollectorRequest;
-}
-
-export namespace GetCollectorRequest {
-  export type AsObject = {
-    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
-    collectorId: string,
-  }
-}
-
-export class ListCollectorsRequest extends jspb.Message {
-  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListCollectorsRequest;
-  hasUserAppId(): boolean;
-  clearUserAppId(): ListCollectorsRequest;
-
-  getPage(): number;
-  setPage(value: number): ListCollectorsRequest;
-
-  getPerPage(): number;
-  setPerPage(value: number): ListCollectorsRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListCollectorsRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListCollectorsRequest): ListCollectorsRequest.AsObject;
-  static serializeBinaryToWriter(message: ListCollectorsRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListCollectorsRequest;
-  static deserializeBinaryFromReader(message: ListCollectorsRequest, reader: jspb.BinaryReader): ListCollectorsRequest;
-}
-
-export namespace ListCollectorsRequest {
-  export type AsObject = {
-    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
-    page: number,
-    perPage: number,
-  }
-}
-
-export class MultiCollectorResponse extends jspb.Message {
-  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiCollectorResponse;
-  hasStatus(): boolean;
-  clearStatus(): MultiCollectorResponse;
-
-  getCollectorsList(): Array<proto_clarifai_api_resources_pb.Collector>;
-  setCollectorsList(value: Array<proto_clarifai_api_resources_pb.Collector>): MultiCollectorResponse;
-  clearCollectorsList(): MultiCollectorResponse;
-  addCollectors(value?: proto_clarifai_api_resources_pb.Collector, index?: number): proto_clarifai_api_resources_pb.Collector;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): MultiCollectorResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: MultiCollectorResponse): MultiCollectorResponse.AsObject;
-  static serializeBinaryToWriter(message: MultiCollectorResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): MultiCollectorResponse;
-  static deserializeBinaryFromReader(message: MultiCollectorResponse, reader: jspb.BinaryReader): MultiCollectorResponse;
-}
-
-export namespace MultiCollectorResponse {
-  export type AsObject = {
-    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
-    collectorsList: Array<proto_clarifai_api_resources_pb.Collector.AsObject>,
-  }
-}
-
-export class SingleCollectorResponse extends jspb.Message {
-  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): SingleCollectorResponse;
-  hasStatus(): boolean;
-  clearStatus(): SingleCollectorResponse;
-
-  getCollector(): proto_clarifai_api_resources_pb.Collector | undefined;
-  setCollector(value?: proto_clarifai_api_resources_pb.Collector): SingleCollectorResponse;
-  hasCollector(): boolean;
-  clearCollector(): SingleCollectorResponse;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SingleCollectorResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: SingleCollectorResponse): SingleCollectorResponse.AsObject;
-  static serializeBinaryToWriter(message: SingleCollectorResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SingleCollectorResponse;
-  static deserializeBinaryFromReader(message: SingleCollectorResponse, reader: jspb.BinaryReader): SingleCollectorResponse;
-}
-
-export namespace SingleCollectorResponse {
-  export type AsObject = {
-    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
-    collector?: proto_clarifai_api_resources_pb.Collector.AsObject,
-  }
-}
-
 export class PostStatValuesRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
   setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostStatValuesRequest;
@@ -9888,6 +9698,11 @@ export class RunnerItem extends jspb.Message {
   hasAutoAnnotationRequest(): boolean;
   clearAutoAnnotationRequest(): RunnerItem;
 
+  getMetadata(): RunnerItemMetadata | undefined;
+  setMetadata(value?: RunnerItemMetadata): RunnerItem;
+  hasMetadata(): boolean;
+  clearMetadata(): RunnerItem;
+
   getRequestCase(): RunnerItem.RequestCase;
 
   serializeBinary(): Uint8Array;
@@ -9906,6 +9721,7 @@ export namespace RunnerItem {
     postModelOutputsRequest?: PostModelOutputsRequest.AsObject,
     syncStateRequest?: SyncStateRequest.AsObject,
     autoAnnotationRequest?: AutoAnnotationRequest.AsObject,
+    metadata?: RunnerItemMetadata.AsObject,
   }
 
   export enum RequestCase { 
@@ -9913,6 +9729,30 @@ export namespace RunnerItem {
     POST_MODEL_OUTPUTS_REQUEST = 4,
     SYNC_STATE_REQUEST = 5,
     AUTO_ANNOTATION_REQUEST = 6,
+  }
+}
+
+export class RunnerItemMetadata extends jspb.Message {
+  getUserId(): string;
+  setUserId(value: string): RunnerItemMetadata;
+
+  getBlockHashesList(): Array<number>;
+  setBlockHashesList(value: Array<number>): RunnerItemMetadata;
+  clearBlockHashesList(): RunnerItemMetadata;
+  addBlockHashes(value: number, index?: number): RunnerItemMetadata;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RunnerItemMetadata.AsObject;
+  static toObject(includeInstance: boolean, msg: RunnerItemMetadata): RunnerItemMetadata.AsObject;
+  static serializeBinaryToWriter(message: RunnerItemMetadata, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RunnerItemMetadata;
+  static deserializeBinaryFromReader(message: RunnerItemMetadata, reader: jspb.BinaryReader): RunnerItemMetadata;
+}
+
+export namespace RunnerItemMetadata {
+  export type AsObject = {
+    userId: string,
+    blockHashesList: Array<number>,
   }
 }
 
