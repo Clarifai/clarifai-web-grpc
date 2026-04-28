@@ -8246,110 +8246,6 @@ export namespace SingleLabelOrderResponse {
   }
 }
 
-export class PostStatValuesRequest extends jspb.Message {
-  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostStatValuesRequest;
-  hasUserAppId(): boolean;
-  clearUserAppId(): PostStatValuesRequest;
-
-  getStatValuesList(): Array<proto_clarifai_api_resources_pb.StatValue>;
-  setStatValuesList(value: Array<proto_clarifai_api_resources_pb.StatValue>): PostStatValuesRequest;
-  clearStatValuesList(): PostStatValuesRequest;
-  addStatValues(value?: proto_clarifai_api_resources_pb.StatValue, index?: number): proto_clarifai_api_resources_pb.StatValue;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PostStatValuesRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: PostStatValuesRequest): PostStatValuesRequest.AsObject;
-  static serializeBinaryToWriter(message: PostStatValuesRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PostStatValuesRequest;
-  static deserializeBinaryFromReader(message: PostStatValuesRequest, reader: jspb.BinaryReader): PostStatValuesRequest;
-}
-
-export namespace PostStatValuesRequest {
-  export type AsObject = {
-    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
-    statValuesList: Array<proto_clarifai_api_resources_pb.StatValue.AsObject>,
-  }
-}
-
-export class MultiStatValueResponse extends jspb.Message {
-  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiStatValueResponse;
-  hasStatus(): boolean;
-  clearStatus(): MultiStatValueResponse;
-
-  getStatValuesList(): Array<proto_clarifai_api_resources_pb.StatValue>;
-  setStatValuesList(value: Array<proto_clarifai_api_resources_pb.StatValue>): MultiStatValueResponse;
-  clearStatValuesList(): MultiStatValueResponse;
-  addStatValues(value?: proto_clarifai_api_resources_pb.StatValue, index?: number): proto_clarifai_api_resources_pb.StatValue;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): MultiStatValueResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: MultiStatValueResponse): MultiStatValueResponse.AsObject;
-  static serializeBinaryToWriter(message: MultiStatValueResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): MultiStatValueResponse;
-  static deserializeBinaryFromReader(message: MultiStatValueResponse, reader: jspb.BinaryReader): MultiStatValueResponse;
-}
-
-export namespace MultiStatValueResponse {
-  export type AsObject = {
-    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
-    statValuesList: Array<proto_clarifai_api_resources_pb.StatValue.AsObject>,
-  }
-}
-
-export class PostStatValuesAggregateRequest extends jspb.Message {
-  getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
-  setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): PostStatValuesAggregateRequest;
-  hasUserAppId(): boolean;
-  clearUserAppId(): PostStatValuesAggregateRequest;
-
-  getStatValueAggregateQueriesList(): Array<proto_clarifai_api_resources_pb.StatValueAggregateQuery>;
-  setStatValueAggregateQueriesList(value: Array<proto_clarifai_api_resources_pb.StatValueAggregateQuery>): PostStatValuesAggregateRequest;
-  clearStatValueAggregateQueriesList(): PostStatValuesAggregateRequest;
-  addStatValueAggregateQueries(value?: proto_clarifai_api_resources_pb.StatValueAggregateQuery, index?: number): proto_clarifai_api_resources_pb.StatValueAggregateQuery;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PostStatValuesAggregateRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: PostStatValuesAggregateRequest): PostStatValuesAggregateRequest.AsObject;
-  static serializeBinaryToWriter(message: PostStatValuesAggregateRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PostStatValuesAggregateRequest;
-  static deserializeBinaryFromReader(message: PostStatValuesAggregateRequest, reader: jspb.BinaryReader): PostStatValuesAggregateRequest;
-}
-
-export namespace PostStatValuesAggregateRequest {
-  export type AsObject = {
-    userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
-    statValueAggregateQueriesList: Array<proto_clarifai_api_resources_pb.StatValueAggregateQuery.AsObject>,
-  }
-}
-
-export class MultiStatValueAggregateResponse extends jspb.Message {
-  getStatus(): proto_clarifai_api_status_status_pb.Status | undefined;
-  setStatus(value?: proto_clarifai_api_status_status_pb.Status): MultiStatValueAggregateResponse;
-  hasStatus(): boolean;
-  clearStatus(): MultiStatValueAggregateResponse;
-
-  getStatValueAggregateResultsList(): Array<proto_clarifai_api_resources_pb.StatValueAggregateResult>;
-  setStatValueAggregateResultsList(value: Array<proto_clarifai_api_resources_pb.StatValueAggregateResult>): MultiStatValueAggregateResponse;
-  clearStatValueAggregateResultsList(): MultiStatValueAggregateResponse;
-  addStatValueAggregateResults(value?: proto_clarifai_api_resources_pb.StatValueAggregateResult, index?: number): proto_clarifai_api_resources_pb.StatValueAggregateResult;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): MultiStatValueAggregateResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: MultiStatValueAggregateResponse): MultiStatValueAggregateResponse.AsObject;
-  static serializeBinaryToWriter(message: MultiStatValueAggregateResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): MultiStatValueAggregateResponse;
-  static deserializeBinaryFromReader(message: MultiStatValueAggregateResponse, reader: jspb.BinaryReader): MultiStatValueAggregateResponse;
-}
-
-export namespace MultiStatValueAggregateResponse {
-  export type AsObject = {
-    status?: proto_clarifai_api_status_status_pb.Status.AsObject,
-    statValueAggregateResultsList: Array<proto_clarifai_api_resources_pb.StatValueAggregateResult.AsObject>,
-  }
-}
-
 export class ListNextTaskAssignmentsRequest extends jspb.Message {
   getUserAppId(): proto_clarifai_api_resources_pb.UserAppIDSet | undefined;
   setUserAppId(value?: proto_clarifai_api_resources_pb.UserAppIDSet): ListNextTaskAssignmentsRequest;
@@ -10247,6 +10143,9 @@ export class GetNodepoolRequest extends jspb.Message {
   getNodepoolId(): string;
   setNodepoolId(value: string): GetNodepoolRequest;
 
+  getActiveUsage(): boolean;
+  setActiveUsage(value: boolean): GetNodepoolRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetNodepoolRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetNodepoolRequest): GetNodepoolRequest.AsObject;
@@ -10260,6 +10159,7 @@ export namespace GetNodepoolRequest {
     userAppId?: proto_clarifai_api_resources_pb.UserAppIDSet.AsObject,
     computeClusterId: string,
     nodepoolId: string,
+    activeUsage: boolean,
   }
 }
 
@@ -10533,6 +10433,11 @@ export class ListDeploymentsRequest extends jspb.Message {
   getComputeClusterId(): string;
   setComputeClusterId(value: string): ListDeploymentsRequest;
 
+  getSchedulingPrioritiesList(): Array<number>;
+  setSchedulingPrioritiesList(value: Array<number>): ListDeploymentsRequest;
+  clearSchedulingPrioritiesList(): ListDeploymentsRequest;
+  addSchedulingPriorities(value: number, index?: number): ListDeploymentsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListDeploymentsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListDeploymentsRequest): ListDeploymentsRequest.AsObject;
@@ -10550,6 +10455,7 @@ export namespace ListDeploymentsRequest {
     modelVersionIdsList: Array<string>,
     workflowVersionIdsList: Array<string>,
     computeClusterId: string,
+    schedulingPrioritiesList: Array<number>,
   }
 }
 

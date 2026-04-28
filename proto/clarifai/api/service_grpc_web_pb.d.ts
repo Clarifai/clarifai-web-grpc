@@ -1200,20 +1200,6 @@ export class V2Client {
                response: proto_clarifai_api_status_status_pb.BaseResponse) => void
   ): grpcWeb.ClientReadableStream<proto_clarifai_api_status_status_pb.BaseResponse>;
 
-  postStatValues(
-    request: proto_clarifai_api_service_pb.PostStatValuesRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.MultiStatValueResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiStatValueResponse>;
-
-  postStatValuesAggregate(
-    request: proto_clarifai_api_service_pb.PostStatValuesAggregateRequest,
-    metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
-               response: proto_clarifai_api_service_pb.MultiStatValueAggregateResponse) => void
-  ): grpcWeb.ClientReadableStream<proto_clarifai_api_service_pb.MultiStatValueAggregateResponse>;
-
   postBulkOperations(
     request: proto_clarifai_api_service_pb.PostBulkOperationsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -2752,16 +2738,6 @@ export class V2PromiseClient {
     request: proto_clarifai_api_service_pb.DeleteLabelOrdersRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_clarifai_api_status_status_pb.BaseResponse>;
-
-  postStatValues(
-    request: proto_clarifai_api_service_pb.PostStatValuesRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.MultiStatValueResponse>;
-
-  postStatValuesAggregate(
-    request: proto_clarifai_api_service_pb.PostStatValuesAggregateRequest,
-    metadata?: grpcWeb.Metadata
-  ): Promise<proto_clarifai_api_service_pb.MultiStatValueAggregateResponse>;
 
   postBulkOperations(
     request: proto_clarifai_api_service_pb.PostBulkOperationsRequest,
